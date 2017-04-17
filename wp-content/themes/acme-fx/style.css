@@ -1041,7 +1041,7 @@ img.alignright,
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
-	background-color: hotpink;
+	background-color: #fff;
 }
 
 .site-header > .wrap {
@@ -1078,7 +1078,7 @@ img.alignright,
 .site-title a,
 .site-title a:focus,
 .site-title a:hover {
-	color: blue; /* was #333 */
+	color: #333;
 	text-decoration: none;
 }
 
