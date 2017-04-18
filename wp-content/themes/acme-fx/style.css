@@ -1042,6 +1042,8 @@ img.alignright,
 
 .site-header {
  	background-color: hotpink;
+ 	color: violet;
+ 	text-align: right;
 }
 
 .site-header > .wrap {
