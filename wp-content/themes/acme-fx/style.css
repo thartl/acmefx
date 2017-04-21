@@ -303,8 +303,8 @@ embed,
 iframe,
 img,
 object,
-video,
-.wp-caption {
+/* video,
+ */.wp-caption {
 	max-width: 100%;
 }
 
@@ -576,7 +576,7 @@ th:first-child {
 
 .site-inner,
 .wrap {
-	margin: 0 auto;
+	/* margin: 0 auto; */
 	max-width: 1280px;
 }
 
@@ -1476,11 +1476,18 @@ p.entry-meta {
 	margin-bottom: 0;
 }
 
+.title-area {
+	z-index: 1;
+	position: absolute;
+}
 
-
+.site-header {
+	position: relative;
+}
 .wp-custom-header video {
-	width: 2000px;
+	width: 1500px;
 	height:  auto;
+	position: absolute;
 }
 
 button#wp-custom-header-video-button {
@@ -1489,11 +1496,10 @@ button#wp-custom-header-video-button {
 	top: 150px;
 	background-color: transparent;
 }
-
-
-
-
-
+/* #wp-custom-header {
+	position: absolute;
+	top: 0;
+} */
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
