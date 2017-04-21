@@ -1082,6 +1082,8 @@ img.alignright,
 .site-title a:hover {
 	color: #D33C4E;
 	color: #B21F31;
+	color: orange;
+	/* font-size: 48px; */
 	text-decoration: none;
 }
 
@@ -1094,8 +1096,9 @@ img.alignright,
 }
 
 .site-description {
+	color: #fff;
 	font-size: 16px;
-	font-size: 1.6rem;
+	font-size: 2rem;
 	font-weight: 400;
 	line-height: 1.5;
 }
@@ -1475,19 +1478,19 @@ p.entry-meta {
 .site-footer p {
 	margin-bottom: 0;
 }
-
+.site-title a {
+	font-size: 96px;
+}
 .title-area {
 	z-index: 1;
 	position: absolute;
+	text-align: center;
+	margin-top: 100px;
 }
 
-.site-header {
-	position: relative;
-}
 .wp-custom-header video {
 	width: 1500px;
 	height:  auto;
-	position: absolute;
 }
 
 button#wp-custom-header-video-button {
@@ -1496,10 +1499,9 @@ button#wp-custom-header-video-button {
 	top: 150px;
 	background-color: transparent;
 }
-/* #wp-custom-header {
-	position: absolute;
+#wp-custom-header {
 	top: 0;
-} */
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
