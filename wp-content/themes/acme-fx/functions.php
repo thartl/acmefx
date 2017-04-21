@@ -99,7 +99,9 @@ add_theme_support( 'custom-header', array(
 	'header-selector' => '.site-title a',
 	'header-text'     => false,
 	'flex-height'     => true,
+	'video' => true,
 ) );
+add_action( 'genesis_header', 'the_custom_header_markup' );
 
 // Add support for custom background.
 add_theme_support( 'custom-background' );
@@ -149,3 +151,14 @@ function genesis_sample_comments_gravatar( $args ) {
 	return $args;
 
 }
+add_filter( 'header_video_settings', 'my_header_video_settings');
+function my_header_video_settings( $settings ) {
+  $settings['l10n'] = array(
+    'pause'      => __( '<span class="dashicons dashicons-controls-pause"></span>' ),
+    'play'       => __( '<span class="dashicons dashicons-controls-play"></span>' ),
+    'pauseSpeak' => __( 'Video stopped.'),
+    'playSpeak'  => __( 'Video started.'),
+  );
+  return $settings;
+}
+

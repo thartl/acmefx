@@ -614,7 +614,7 @@ th:first-child {
 
 .content {
 	float: right;
-	width: 880px;
+	width: 940px;
 }
 
 .content-sidebar .content,
@@ -637,7 +637,7 @@ th:first-child {
 
 .sidebar-primary {
 	float: right;
-	width: 360px;
+	width: 300px;
 }
 
 .sidebar-content .sidebar-primary,
@@ -1041,9 +1041,9 @@ img.alignright,
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
- 	background-color: hotpink;
- 	color: blue;
- 	text-align: right;
+ 	background-color: #111;
+ 	color: #B21F31;
+ 	color: #D33C4E;
 }
 
 .site-header > .wrap {
@@ -1080,7 +1080,8 @@ img.alignright,
 .site-title a,
 .site-title a:focus,
 .site-title a:hover {
-	color: #fff;
+	color: #D33C4E;
+	color: #B21F31;
 	text-decoration: none;
 }
 
@@ -1236,7 +1237,7 @@ img.alignright,
 --------------------------------------------- */
 
 .nav-primary {
-	background-color: #aaa;
+	background-color: #ccc;
 	border-top: 1px solid #eee;
 }
 
@@ -1474,6 +1475,24 @@ p.entry-meta {
 .site-footer p {
 	margin-bottom: 0;
 }
+
+
+
+.wp-custom-header video {
+	width: 2000px;
+	height:  auto;
+}
+
+button#wp-custom-header-video-button {
+	position: absolute;
+	right: 110px;
+	top: 150px;
+	background-color: transparent;
+}
+
+
+
+
 
 
 /* # Media Queries
