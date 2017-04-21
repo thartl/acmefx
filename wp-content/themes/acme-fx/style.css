@@ -157,7 +157,7 @@ body > div {
 }
 
 body {
-	background-color: #eee;
+	background-color: orange;
 	color: #333;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 20px;
@@ -576,7 +576,7 @@ th:first-child {
 
 .site-inner,
 .wrap {
-	/* margin: 0 auto; */
+	margin: 0 auto;
 	max-width: 1280px;
 }
 
@@ -614,7 +614,7 @@ th:first-child {
 
 .content {
 	float: right;
-	width: 940px;
+	width: 880px;
 }
 
 .content-sidebar .content,
@@ -637,7 +637,7 @@ th:first-child {
 
 .sidebar-primary {
 	float: right;
-	width: 300px;
+	width: 360px;
 }
 
 .sidebar-content .sidebar-primary,
@@ -1156,6 +1156,7 @@ img.alignright,
 .genesis-nav-menu .sub-menu .current-menu-item > a:focus,
 .genesis-nav-menu .sub-menu .current-menu-item > a:hover  {
 	color: #c3251d;
+	color: #fff;
 	text-decoration: underline;
 }
 
@@ -1240,8 +1241,8 @@ img.alignright,
 --------------------------------------------- */
 
 .nav-primary {
-	background-color: #ccc;
-	border-top: 1px solid #eee;
+	background-color: #555;
+	//border-top: 1px solid #ccc;
 }
 
 /* ## Footer Navigation
@@ -1478,6 +1479,10 @@ p.entry-meta {
 .site-footer p {
 	margin-bottom: 0;
 }
+
+/* # Header Changes
+---------------------------------------------------------------------------------------------------- */
+
 .site-title a {
 	font-size: 96px;
 }
@@ -1489,8 +1494,8 @@ p.entry-meta {
 }
 
 .wp-custom-header video {
-	width: 2000px;
-	height:  auto;
+	width: 100%;
+	height: auto;
 }
 
 button#wp-custom-header-video-button {
@@ -1506,6 +1511,11 @@ button#wp-custom-header-video-button:focus {
 #wp-custom-header {
 	top: 0;
 	/* position: relative; */
+}
+.site-header > .wrap {
+    padding: 0;
+    margin: 0;
+    max-width: inherit;
 }
 
 /* # Media Queries
