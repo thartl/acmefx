@@ -1489,7 +1489,7 @@ p.entry-meta {
 }
 
 .wp-custom-header video {
-	width: 1500px;
+	width: 2000px;
 	height:  auto;
 }
 
@@ -1498,9 +1498,11 @@ button#wp-custom-header-video-button {
 	right: 110px;
 	top: 150px;
 	background-color: transparent;
+	z-index: 1;
 }
 #wp-custom-header {
 	top: 0;
+	/* position: relative; */
 }
 
 /* # Media Queries
