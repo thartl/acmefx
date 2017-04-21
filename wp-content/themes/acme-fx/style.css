@@ -1500,6 +1500,9 @@ button#wp-custom-header-video-button {
 	background-color: transparent;
 	z-index: 1;
 }
+button#wp-custom-header-video-button:focus {
+	outline: 0;
+}
 #wp-custom-header {
 	top: 0;
 	/* position: relative; */
