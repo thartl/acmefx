@@ -1496,15 +1496,16 @@ p.entry-meta {
 
 /* # Header Changes
 ---------------------------------------------------------------------------------------------------- */
-.site-header .wrap {
+/* .site-header .wrap {
 	position: relative;
-}
+} */
 
  .title-area {
 	z-index: 1;
-	/* position: absolute; */
+	position: absolute;
 	text-align: center;
 	margin-top: 100px;
+	width: 100%;
 } 
 
 .headhesive--stick .wp-custom-header video {
@@ -1528,15 +1529,19 @@ button#wp-custom-header-video-button:focus {
 	left: 0;
 	z-index: 1;
 	margin:  0;
-	
+	width: 100%;
+	height: auto;
 }
 
 #wp-custom-header {
-	position: absolute;
+	/* position: absolute; */
 	height: auto;
 	width: 100%;
 }
-
+.header-widget-area {
+	float: right;
+	clear: left;
+}
 
 
 
@@ -1604,7 +1609,7 @@ button#wp-custom-header-video-button:focus {
 
 
 
-.site-header {
+.nav-secondary {
 	background-color: deeppink;
 }
 
