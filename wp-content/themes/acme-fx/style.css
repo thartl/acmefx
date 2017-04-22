@@ -1541,9 +1541,18 @@ button#wp-custom-header-video-button:focus {
 .header-widget-area {
 	float: right;
 	clear: left;
+	height: 50px;
+	text-align: right;
+}
+.headhesive--stick .header-widget-area {
+	float: right;
+	clear: left;
+	height: 200px;
 }
 
-
+.nav-secondary.headhesive--stick {
+	margin-top: 50px;
+}
 
 
 /* Headhesive */
