@@ -1507,9 +1507,9 @@ p.entry-meta {
 	margin-top: 100px;
 } 
 
-/* .headhesive--stick .wp-custom-header video {
+.headhesive--stick .wp-custom-header video {
 	display: none;
-} */
+}
 
 button#wp-custom-header-video-button {
 	position: absolute;
@@ -1528,12 +1528,11 @@ button#wp-custom-header-video-button:focus {
 	left: 0;
 	z-index: 1;
 	margin:  0;
-
+	
 }
 
 #wp-custom-header {
 	position: absolute;
-	/* position: relative; */
 	height: auto;
 	width: 100%;
 }
@@ -1601,24 +1600,6 @@ button#wp-custom-header-video-button:focus {
 /* Before Header
  * ========================================================================== */
 
-.before-header {
-  display: inline-block;
-  width: 100%;
-  overflow: hidden;
-}
-
-.before-header .jr-insta-slider {
-	padding: 0;
-  margin: 0;
-	width: 100%;
-  display: none;
-}
-
-@media only screen and (min-width: 800px) {
-  .before-header .jr-insta-slider {
-    display: block;
-  }
-}
 
 
 
