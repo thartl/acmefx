@@ -4,11 +4,11 @@ jQuery( function ( $ ) {
 
 	// Sticky Header options
 	var options = {
-			offset: 830
+			offset: 860
 	};
 
 	// Initialize with options
 	var header = new Headhesive('.nav-secondary', options);
-	var header = new Headhesive('.header-widget-area', 'offset: 820');
+	var header = new Headhesive('.header-widget-area', 'offset: 920');
 
 });
