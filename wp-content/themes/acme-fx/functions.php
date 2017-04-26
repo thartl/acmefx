@@ -99,6 +99,7 @@ add_theme_support( 'custom-header', array(
 	'header-selector' => '.site-title a',
 	'header-text'     => false,
 	'flex-height'     => true,
+	'video'           => false,
 ) );
 
 // Add support for custom background.

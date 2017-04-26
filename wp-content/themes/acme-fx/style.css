@@ -1041,8 +1041,9 @@ img.alignright,
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
- 	background-color: #555;
- 	color: #fff;
+ 	background-color: hotpink;
+ 	color: blue;
+ 	text-align: right;
 }
 
 .site-header > .wrap {
