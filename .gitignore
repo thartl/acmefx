@@ -15,8 +15,8 @@ wp-content/plugins/**
 # Start editing!
 
 # Theme
-!wp-content/themes/ProjectName/
-!wp-content/themes/ProjectName/**
+!wp-content/themes/acme-fx/
+!wp-content/themes/acme-fx/**
 
 # Functionality Plugin
 # !wp-content/plugins/core-functionality/
