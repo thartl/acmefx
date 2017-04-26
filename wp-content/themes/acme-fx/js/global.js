@@ -1,7 +1,5 @@
 jQuery( function ( $ ) {
-	// FitVids
-	$('.entry').fitVids();
-
+	
 	// Sticky Header options
 	var options = {
 			offset: 865

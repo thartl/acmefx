@@ -157,7 +157,7 @@ body > div {
 }
 
 body {
-	background-color: orange;
+	background-color: #000;
 	color: #333;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 20px;
@@ -1534,29 +1534,17 @@ button#wp-custom-header-video-button:focus {
 }
 
 #wp-custom-header {
-	/* position: absolute; */
 	height: auto;
 	width: 100%;
 }
-/* .headhesive--stick .header-widget-area {
-	float: right;
-	clear: left;
-	height: 200px;
-
-} */
-
 .nav-secondary.headhesive--stick {
 	//margin-top: 55px;
 }
 
 
-
-
-
 .header-widget-area {
 	padding-top: 10px;
 	padding-right: 40px;
-	//top: 120px;
 	right: 0;
 	background-color: transparent;
 	text-align: right;
@@ -1618,10 +1606,6 @@ button#wp-custom-header-video-button:focus {
 	  	-moz-transform: translateY(0%);
 	}
 
-	/* .headhesive .title-area {
-		display: none;
-	} */
-
 	.headhesive .nav-secondary,
   .headhesive .nav-secondary .wrap {
     padding: 0;
@@ -1638,7 +1622,7 @@ button#wp-custom-header-video-button:focus {
     text-align: center;
   }
 
-}
+} 
 
 /* Before Header
  * ========================================================================== */
@@ -1648,7 +1632,7 @@ button#wp-custom-header-video-button:focus {
 
 
 .nav-secondary {
-	background-color: deeppink;
+	background-color: orange;
 }
 
 
