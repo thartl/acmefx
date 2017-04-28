@@ -177,8 +177,9 @@ function my_header_video_settings( $settings ) {
 // ) );
 
 //* Reposition the primary navigation menu
-remove_action( 'genesis_after_header', 'genesis_do_nav' );
-add_action( 'genesis_before_header', 'genesis_do_nav', 5 );
 
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 add_action( 'genesis_header', 'genesis_do_subnav' );
+
+remove_action( 'genesis_after_header', 'genesis_do_nav' );
+add_action( 'genesis_after_header', 'genesis_do_nav', 5 );
