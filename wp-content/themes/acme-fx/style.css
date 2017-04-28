@@ -1648,6 +1648,10 @@ button#wp-custom-header-video-button:focus {
   .headhesive .genesis-nav-menu {
     text-align: center;
   }
+  .headhesive--stick.nav-primary {
+  	top: 80px;
+  	background-color: #333;
+  }
 
 } 
 
