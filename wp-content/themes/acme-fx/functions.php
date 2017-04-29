@@ -261,10 +261,10 @@ genesis_register_sidebar( array(
 
 //* Customize the entire footer
 remove_action( 'genesis_footer', 'genesis_do_footer' );
-add_action( 'genesis_footer', 'sp_custom_footer' );
-function sp_custom_footer() {
+add_action( 'genesis_footer', 'th_custom_footer' );
+function th_custom_footer() {
 	?>
-	<p>&copy; Copyright 2012 <a href="http://mydomain.com/">My Domain</a> &middot; All Rights Reserved &middot; Powered by <a href="http://wordpress.org/">WordPress</a> &middot; <a href="http://mydomain.com/wp-admin">Admin</a></p>
+	<p>Copyright &copy; <?php echo date('Y'); ?> &middot; <a href="http://acmefx.wpengine.com/">Acme FX</a> &middot; <?php echo do_shortcode( '[footer_loginout]' ); ?></p>
 	<?php
 }
 
