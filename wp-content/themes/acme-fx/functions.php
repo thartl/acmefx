@@ -108,12 +108,9 @@ add_theme_support( 'custom-header', array(
 	'header-selector' => '.site-title a',
 	'header-text'     => false,
 	'flex-height'     => true,
-<<<<<<< .merge_file_P8WcYY
-	'video'           => false,
-=======
 	'video' => true,
->>>>>>> .merge_file_5Cx123
 ) );
+
 add_action( 'genesis_header', 'the_custom_header_markup' );
 
 // Add support for custom background.
