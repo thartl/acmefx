@@ -7,7 +7,7 @@
  * @package Acme FX
  * @author  Parkdale Wire
  * @license GPL-2.0+
- * @link    http://www.studiopress.com/
+ * @link    http://www.parkdalewire.com/
  */
 
 // Start the engine.
@@ -168,7 +168,6 @@ function my_header_video_settings( $settings ) {
 }
 
 
-
 // Rename primary, secondary and tertiary navigation menus
 // add_theme_support ( 'genesis-menus' , array (
 // 	'primary' 	=> __( 'Above Header Menu', 'genesis-sample' ),
@@ -183,3 +182,91 @@ add_action( 'genesis_header', 'genesis_do_subnav' );
 
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
 add_action( 'genesis_after_header', 'genesis_do_nav', 5 );
+
+
+// th-- Set up the Front page. *******************************
+// Setup widget counts.
+function acme_count_widgets( $id ) {
+	global $sidebars_widgets;
+
+	if ( isset( $sidebars_widgets[ $id ] ) ) {
+		return count( $sidebars_widgets[ $id ] );
+	}
+}
+
+// Setup widget layout classes
+function acme_widget_area_class( $id ) {
+	$count = acme_count_widgets( $id );
+
+	$class = '';
+
+	if( $count == 1 ) {
+		$class .= ' widget-full';
+	} elseif( $count % 3 == 0 ) {
+		$class .= ' widget-thirds';
+	} elseif( $count % 4 == 0 ) {
+		$class .= ' widget-fourths';
+	} elseif( $count % 2 == 1 ) {
+		$class .= ' widget-halves uneven';
+	} else {
+		$class .= ' widget-halves';
+	}
+
+	return $class;
+}
+
+
+// Add Front Page Template widget areas.
+genesis_register_sidebar( array(
+	'id'          => 'front-page-1',
+	'name'        => __( 'Front Page 1', 'genesis-sample' ),
+	'description' => __( 'The first section on the front page.', 'genesis-sample' ),
+));
+genesis_register_sidebar( array(
+	'id'          => 'front-page-2',
+	'name'        => __( 'Front Page 2', 'genesis-sample' ),
+	'description' => __( 'The second section on the front page.', 'genesis-sample' ),
+));
+genesis_register_sidebar( array(
+	'id'          => 'front-page-3-a',
+	'name'        => __( 'Front Page 3 - Top', 'genesis-sample' ),
+	'description' => __( 'The top half of the third section on the front page.', 'genesis-sample' ),
+));
+genesis_register_sidebar( array(
+	'id'          => 'front-page-3-b',
+	'name'        => __( 'Front Page 3 - Bottom', 'genesis-sample' ),
+	'description' => __( 'The bottom half of the third section on the front page.', 'genesis-sample' ),
+));
+genesis_register_sidebar( array(
+	'id'          => 'front-page-4',
+	'name'        => __( 'Front Page 4', 'genesis-sample' ),
+	'description' => __( 'The fourth section on the front page.', 'genesis-sample' ),
+));
+genesis_register_sidebar( array(
+	'id'          => 'front-page-5',
+	'name'        => __( 'Front Page 5', 'genesis-sample' ),
+	'description' => __( 'The fifth section on the front page.', 'genesis-sample' ),
+));
+genesis_register_sidebar( array(
+	'id'          => 'footer-banner',
+	'name'        => __( 'Footer Banner', 'genesis-sample' ),
+	'description' => __( 'A sitewide section just above the footer section.', 'genesis-sample' ),
+));
+genesis_register_sidebar( array(
+	'id'          => 'footer-widgets',
+	'name'        => __( 'Footer Widgets', 'genesis-sample' ),
+	'description' => __( 'This is the footer section.', 'genesis-sample' ),
+));
+
+
+//* Customize the entire footer
+remove_action( 'genesis_footer', 'genesis_do_footer' );
+add_action( 'genesis_footer', 'sp_custom_footer' );
+function sp_custom_footer() {
+	?>
+	<p>&copy; Copyright 2012 <a href="http://mydomain.com/">My Domain</a> &middot; All Rights Reserved &middot; Powered by <a href="http://wordpress.org/">WordPress</a> &middot; <a href="http://mydomain.com/wp-admin">Admin</a></p>
+	<?php
+}
+
+
+
