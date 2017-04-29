@@ -2,7 +2,7 @@ jQuery( function ( $ ) {
 	
 	// Sticky Header options
 	var options = {
-			offset: 865
+			offset: 1025
 	};
 
 	// Initialize with options
