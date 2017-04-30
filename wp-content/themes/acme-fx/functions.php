@@ -273,4 +273,3 @@ function th_custom_footer() {
 }
 
 
-
