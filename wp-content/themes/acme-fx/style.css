@@ -169,7 +169,7 @@ body {
 	margin: 0;
 }
 body.home {
-	background-color: #000;
+	background-color: #fff;
 }
 
 a,
@@ -987,7 +987,10 @@ img.alignright,
 	clear: left;
 	margin-left: 0;
 }
-
+.flexible-widgets .widget-title {
+	font-size: 36px;
+	margin-bottom: 30px;
+}
 
 /* ## Featured Content
 --------------------------------------------- */
@@ -1005,7 +1008,9 @@ img.alignright,
 	font-size: 20px;
 	font-size: 2rem;
 }
-
+.flexible-widgets .entry-title {
+	font-size: 2.5rem;
+}
 
 /* # Plugins
 ---------------------------------------------------------------------------------------------------- */
@@ -1535,6 +1540,10 @@ p.entry-meta {
 
 .site-footer p {
 	margin-bottom: 0;
+	color: #666;
+}
+.site-footer p a {
+	color: #aaa;
 }
 
 
@@ -1688,10 +1697,7 @@ h1.archive-title {
 		border: 1px solid #fff !important;
 	}
 	
-	/* .home > .menu-toggle {
-		display: none;
-	}*/
-	.site-container + .menu-toggle {
+	 .home > .menu-toggle {
 		display: none;
 	}
 	.menu-toggle {
@@ -1776,15 +1782,11 @@ h1.archive-title {
 	.footer-widgets-1 {
 		margin-right: 30px;
 	}
-	.site-inner .wrap {
-		padding-top: 0;
-	}
+
 	
 
 }
-@media only screen and (max-width: 1100px) {
 
-}
 @media only screen and (max-width: 1050px) {
 	.nav-secondary {
 		background-color: #333;
@@ -1886,8 +1888,13 @@ h1.archive-title {
 	.menu-toggle {
 		line-height: 22px;
 		position: relative;
+		//position: fixed;
+		//top: 56px;
 		width: 100%;
 		z-index: 1000;
+	}
+	.headhesive--stick.nav-secondary {
+		//top: 54px;
 	}
 
 	.menu-toggle,
