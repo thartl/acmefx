@@ -169,7 +169,7 @@ body {
 	margin: 0;
 }
 body.home {
-	background-color: #000;
+	background-color: #fff;
 }
 
 a,
@@ -987,7 +987,10 @@ img.alignright,
 	clear: left;
 	margin-left: 0;
 }
-
+.flexible-widgets .widget-title {
+	font-size: 36px;
+	margin-bottom: 30px;
+}
 
 /* ## Featured Content
 --------------------------------------------- */
@@ -1005,7 +1008,9 @@ img.alignright,
 	font-size: 20px;
 	font-size: 2rem;
 }
-
+.flexible-widgets .entry-title {
+	font-size: 2.5rem;
+}
 
 /* # Plugins
 ---------------------------------------------------------------------------------------------------- */
