@@ -101,11 +101,11 @@ add_theme_support( 'genesis-responsive-viewport' );
 
 // Add support for custom header.
 add_theme_support( 'custom-header', array(
-	'width'           => 600,
-	'height'          => 160,
-	'width'           => 1800,
-	'height'          => 600,
+	'width'           => 1920,
+	'height'          => 800,
+	//'height'          => 1080,
 	'header-selector' => '.site-title a',
+	//'header-selector' => '.wp-custom-header',
 	'header-text'     => false,
 	'flex-height'     => true,
 	'video' => true,
@@ -183,16 +183,7 @@ function my_header_video_settings( $settings ) {
   return $settings;
 }
 
-
-// Rename primary, secondary and tertiary navigation menus
-// add_theme_support ( 'genesis-menus' , array (
-// 	'primary' 	=> __( 'Above Header Menu', 'genesis-sample' ),
-// 	'secondary' => __( 'Below Header Menu', 'genesis-sample' ),
-//   'tertiary'  => __( 'Footer Menu', 'genesis-sample' )
-// ) );
-
 //* Reposition the primary navigation menu
-
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 add_action( 'genesis_header', 'genesis_do_subnav' );
 
