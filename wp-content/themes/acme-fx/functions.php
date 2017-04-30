@@ -272,9 +272,10 @@ function th_custom_footer() {
 }
 
 
-add_action( 'genesis_entry_content', 'prefix_entry' );
+//* Place the Genesis Simple Share buttons: both above and below content in single entries 
+add_action( 'genesis_before_entry_content', 'prefix_entry' );
 /**
- * Adds the Genesis Share icons after the entry but within the entry content container.
+ * Adds the Genesis Share icons before the entry.
  *
  * @since 1.0.0
  *
@@ -287,8 +288,30 @@ function prefix_entry() {
 	
 	global $Genesis_Simple_Share;
 		 
-	echo '<div class="share-box"><h3 class="share-headline">' . __( 'If you liked this article, tell someone about it', 'yourtextdomain' ) . '</h3>';
-	genesis_share_icon_output( 'after-entry', $Genesis_Simple_Share->icons );
+	echo '<div class="share-box">';
+	genesis_share_icon_output( 'after', $Genesis_Simple_Share->icons );
 	echo '</div>';
 }
+
+add_action( 'genesis_entry_footer', 'suffix_entry', 20 );
+/**
+ * Adds the Genesis Share icons after the entry.
+ *
+ * @since 1.0.0
+ *
+ * @return null Return early for non-single posts
+ */
+function suffix_entry() {
+	if ( ! is_single() || ! function_exists( 'genesis_share_icon_output' ) ) {
+		return;
+	}
+	
+	global $Genesis_Simple_Share;
+		 
+	echo '<div class="share-box"><h3 class="share-headline">' . __( 'If you liked this article, tell someone about it', 'yourtextdomain' ) . '</h3>';
+	genesis_share_icon_output( 'after_content', $Genesis_Simple_Share->icons );
+	echo '</div>';
+}
+
+
 
