@@ -8,7 +8,9 @@
  * @author  Parkdale Wire
  * @license GPL-2.0+
  * @link    http://www.studiopress.com/
+ * @link    http://www.parkdalewire.com/
  */
+
 
 // Start the engine.
 include_once( get_template_directory() . '/lib/init.php' );
@@ -53,7 +55,6 @@ function genesis_sample_enqueue_scripts_styles() {
 	wp_enqueue_style( 'dashicons' );
 
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-	wp_enqueue_script( 'genesis-sample-responsive-menu', get_stylesheet_directory_uri() . "/js/responsive-menus.js", array( 'jquery' ), CHILD_THEME_VERSION, true );
 
 	wp_enqueue_script( 'genesis-sample-global', get_stylesheet_directory_uri() . '/js/global.js', array( 'jquery' ), CHILD_THEME_VERSION );
 	wp_enqueue_script( 'genesis-sample-headhesive', get_stylesheet_directory_uri() . '/js/headhesive.min.js', array( 'jquery' ), CHILD_THEME_VERSION );
@@ -108,6 +109,7 @@ add_theme_support( 'custom-header', array(
 	'flex-height'     => true,
 	'video' => true,
 ) );
+
 add_action( 'genesis_header', 'the_custom_header_markup' );
 
 // Add support for custom background.
@@ -130,17 +132,25 @@ add_image_size( 'featured-image', 720, 400, TRUE );
 // add_action( 'genesis_footer', 'genesis_do_subnav', 5 );
 
 // Reduce the secondary navigation menu to one level depth.
+add_filter( 'wp_nav_menu_args', 'genesis_sample_secondary_menu_args' );
+function genesis_sample_secondary_menu_args( $args ) {
 // add_filter( 'wp_nav_menu_args', 'genesis_sample_secondary_menu_args' );
 // function genesis_sample_secondary_menu_args( $args ) {
 
+	if ( 'secondary' != $args['theme_location'] ) {
+		return $args;
+	}
 // 	if ( 'secondary' != $args['theme_location'] ) {
 // 		return $args;
 // 	}
 
+	$args['depth'] = 1;
 // 	$args['depth'] = 1;
 
+	return $args;
 // 	return $args;
 
+}
 // }
 
 // Modify size of the Gravatar in the author box.
@@ -170,11 +180,95 @@ function my_header_video_settings( $settings ) {
 }
 
 //* Reposition the primary navigation menu
-
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 add_action( 'genesis_header', 'genesis_do_subnav' );
 
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
 add_action( 'genesis_after_header', 'genesis_do_nav', 5 );
+
+
+// th-- Set up the Front page. *******************************
+// Setup widget counts.
+function acme_count_widgets( $id ) {
+	global $sidebars_widgets;
+
+	if ( isset( $sidebars_widgets[ $id ] ) ) {
+		return count( $sidebars_widgets[ $id ] );
+	}
+}
+
+// Setup widget layout classes
+function acme_widget_area_class( $id ) {
+	$count = acme_count_widgets( $id );
+
+	$class = '';
+
+	if( $count == 1 ) {
+		$class .= ' widget-full';
+	} elseif( $count % 3 == 0 ) {
+		$class .= ' widget-thirds';
+	} elseif( $count % 4 == 0 ) {
+		$class .= ' widget-fourths';
+	} elseif( $count % 2 == 1 ) {
+		$class .= ' widget-halves uneven';
+	} else {
+		$class .= ' widget-halves';
+	}
+
+	return $class;
+}
+
+
+// Add Front Page Template widget areas.
+genesis_register_sidebar( array(
+	'id'          => 'front-page-1',
+	'name'        => __( 'Front Page 1', 'genesis-sample' ),
+	'description' => __( 'The first section on the front page.', 'genesis-sample' ),
+));
+genesis_register_sidebar( array(
+	'id'          => 'front-page-2',
+	'name'        => __( 'Front Page 2', 'genesis-sample' ),
+	'description' => __( 'The second section on the front page.', 'genesis-sample' ),
+));
+genesis_register_sidebar( array(
+	'id'          => 'front-page-3-a',
+	'name'        => __( 'Front Page 3 - Top', 'genesis-sample' ),
+	'description' => __( 'The top half of the third section on the front page.', 'genesis-sample' ),
+));
+genesis_register_sidebar( array(
+	'id'          => 'front-page-3-b',
+	'name'        => __( 'Front Page 3 - Bottom', 'genesis-sample' ),
+	'description' => __( 'The bottom half of the third section on the front page.', 'genesis-sample' ),
+));
+genesis_register_sidebar( array(
+	'id'          => 'front-page-4',
+	'name'        => __( 'Front Page 4', 'genesis-sample' ),
+	'description' => __( 'The fourth section on the front page.', 'genesis-sample' ),
+));
+genesis_register_sidebar( array(
+	'id'          => 'front-page-5',
+	'name'        => __( 'Front Page 5', 'genesis-sample' ),
+	'description' => __( 'The fifth section on the front page.', 'genesis-sample' ),
+));
+genesis_register_sidebar( array(
+	'id'          => 'footer-banner',
+	'name'        => __( 'Footer Banner', 'genesis-sample' ),
+	'description' => __( 'A sitewide section just above the footer section.', 'genesis-sample' ),
+));
+genesis_register_sidebar( array(
+	'id'          => 'footer-widgets',
+	'name'        => __( 'Footer Widgets', 'genesis-sample' ),
+	'description' => __( 'This is the footer section.', 'genesis-sample' ),
+));
+
+
+//* Customize the entire footer
+remove_action( 'genesis_footer', 'genesis_do_footer' );
+add_action( 'genesis_footer', 'th_custom_footer' );
+function th_custom_footer() {
+	?>
+	<p>Copyright &copy; <?php echo date('Y'); ?> &middot; <a href="http://acmefx.wpengine.com/">Acme FX</a> &middot; <?php echo do_shortcode( '[footer_loginout]' ); ?></p>
+	<?php
+}
 
 

@@ -11,7 +11,7 @@
  * @license GPL-2.0+
  * @link    http://www.studiopress.com/
  */
-
+ 
 // Add landing page body class to the head.
 add_filter( 'body_class', 'genesis_sample_add_body_class' );
 function genesis_sample_add_body_class( $classes ) {
