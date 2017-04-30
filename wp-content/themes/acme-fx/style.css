@@ -1495,6 +1495,10 @@ p.entry-meta {
 
 .site-footer p {
 	margin-bottom: 0;
+	color: #666;
+}
+.site-footer p a {
+	color: #aaa;
 }
 
 
