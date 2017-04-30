@@ -1612,8 +1612,6 @@ h1.archive-title {
 		background-color: transparent;
 		margin-top: 10px;
 		z-index: 1000;
-		width: inherit;
-		float: right;
 	}
 
 	.headhesive--stick {
@@ -1646,13 +1644,7 @@ h1.archive-title {
 	}
 	.headhesive .simple-social-icons ul li a,
 	.simple-social-icons ul li a:hover {
-		border: none !important;
-	}
-	.headhesive--stick .menu-toggle {
-		margin-top: 60px;
-	}
-	.headhesive--unstick .menu-toggle {
-		display: none;
+		border: 1px solid #fff !important;
 	}
 
 
