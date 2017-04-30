@@ -1563,6 +1563,7 @@ button#wp-custom-header-video-button:focus {
 
 #wp-custom-header {
 	width: 100%;
+	line-height: 0;
 }
 
 h1.archive-title {
@@ -1646,9 +1647,17 @@ h1.archive-title {
 	.simple-social-icons ul li a:hover {
 		border: 1px solid #fff !important;
 	}
-
-
-
+	
+	/* .home > .menu-toggle {
+		display: none;
+	}*/
+	.site-container + .menu-toggle {
+		display: none;
+	}
+	.menu-toggle {
+		position: fixed;
+		top: 0;
+	}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
@@ -1727,7 +1736,13 @@ h1.archive-title {
 	.footer-widgets-1 {
 		margin-right: 30px;
 	}
+	.site-inner .wrap {
+		padding-top: 0;
+	}
 	
+
+}
+@media only screen and (max-width: 1100px) {
 
 }
 @media only screen and (max-width: 1050px) {
