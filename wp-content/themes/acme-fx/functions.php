@@ -272,3 +272,23 @@ function th_custom_footer() {
 }
 
 
+add_action( 'genesis_entry_content', 'prefix_entry' );
+/**
+ * Adds the Genesis Share icons after the entry but within the entry content container.
+ *
+ * @since 1.0.0
+ *
+ * @return null Return early for non-single posts
+ */
+function prefix_entry() {
+	if ( ! is_single() || ! function_exists( 'genesis_share_icon_output' ) ) {
+		return;
+	}
+	
+	global $Genesis_Simple_Share;
+		 
+	echo '<div class="share-box"><h3 class="share-headline">' . __( 'If you liked this article, tell someone about it', 'yourtextdomain' ) . '</h3>';
+	genesis_share_icon_output( 'after-entry', $Genesis_Simple_Share->icons );
+	echo '</div>';
+}
+
