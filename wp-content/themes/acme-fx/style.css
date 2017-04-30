@@ -1524,10 +1524,10 @@ p.entry-meta {
 .simple-social-icons {
 	z-index: 1;
 }
-#simple-social-icons-2.simple-social-icons ul li a {
+.widget.simple-social-icons ul li a {
 	background-color: transparent !important;
 }
-#simple-social-icons-2.simple-social-icons ul li a:hover {
+.widget.simple-social-icons ul li a:hover {
 	background-color: transparent !important;
 }
 
