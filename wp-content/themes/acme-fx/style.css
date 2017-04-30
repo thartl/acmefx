@@ -1648,10 +1648,7 @@ h1.archive-title {
 		border: 1px solid #fff !important;
 	}
 	
-	/* .home > .menu-toggle {
-		display: none;
-	}*/
-	.site-container + .menu-toggle {
+	 .home > .menu-toggle {
 		display: none;
 	}
 	.menu-toggle {
@@ -1736,15 +1733,11 @@ h1.archive-title {
 	.footer-widgets-1 {
 		margin-right: 30px;
 	}
-	.site-inner .wrap {
-		padding-top: 0;
-	}
+
 	
 
 }
-@media only screen and (max-width: 1100px) {
 
-}
 @media only screen and (max-width: 1050px) {
 	.nav-secondary {
 		background-color: #333;
@@ -1846,8 +1839,13 @@ h1.archive-title {
 	.menu-toggle {
 		line-height: 22px;
 		position: relative;
+		//position: fixed;
+		//top: 56px;
 		width: 100%;
 		z-index: 1000;
+	}
+	.headhesive--stick.nav-secondary {
+		//top: 54px;
 	}
 
 	.menu-toggle,
