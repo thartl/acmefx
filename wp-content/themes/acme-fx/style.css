@@ -1107,7 +1107,7 @@ img.alignright,
     margin: 0;
     max-width: inherit;
     position: relative;
-	background: url('http://acmefx.dev/wp-content/themes/acme-fx/images/explode-full.svg') no-repeat right;
+	background: url('/wp-content/themes/acme-fx/images/explode-full.svg') no-repeat right;
 
 }
 
@@ -1831,7 +1831,7 @@ h1.archive-title {
 		background: #111;
 	}
 	.site-header > .wrap {
-		background: url('http://acmefx.dev/wp-content/themes/acme-fx/images/explode-black.svg') no-repeat right;
+		background: url('/wp-content/themes/acme-fx/images/explode-black.svg') no-repeat right;
 	}
 }
 
