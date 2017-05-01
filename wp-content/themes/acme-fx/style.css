@@ -1589,7 +1589,7 @@ p.entry-meta {
 
 .simple-social-icons {
 	z-index: 1;
-	text-align: center;
+	//text-align: center;
 }
 body .simple-social-icons ul li a {
 	border-color: transparent !important;
@@ -1739,6 +1739,11 @@ h1.archive-title {
 	.menu-toggle {
 		position: fixed;
 		top: 0;
+	}
+	.nav-secondary.headhesive--stick ul::before {
+		content: url('/wp-content/themes/acme-fx/images/acme-logo-orig-traced.svg');
+		float: left;
+    	margin-top: 20px;
 	}
 
 /* # Media Queries
@@ -2089,7 +2094,19 @@ h1.archive-title {
 		margin: 0;
 		width: 100%;
 	}
+	.header-widet-area .simple-social-icons ul {
+		margin: 0 auto;
+		text-align: center;
+	}
+	.header-widet-area .simple-social-icons ul a {
+		text-align: center;
+	}
 
+}
+@media only screen and (max-width: 700px) {
+	.genesis-nav-menu a {
+		padding: 20px 20px;
+	}
 }
 
 
