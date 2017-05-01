@@ -184,7 +184,7 @@ function my_header_video_settings( $settings ) {
 // add_action( 'genesis_header', 'genesis_do_subnav' );
 
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
-add_action( 'genesis_after_header', 'genesis_do_nav', 5 );
+add_action( 'genesis_after_header', 'genesis_do_nav', 10 );
 
 
 // th-- Set up the Front page. *******************************

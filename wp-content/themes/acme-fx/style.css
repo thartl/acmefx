@@ -1516,10 +1516,11 @@ p.entry-meta {
 .footer-widgets {
 	background-color: #000;
 	clear: both;
-	font-size: 18px;
-	font-size: 1.8rem;
+	font-size: 14px;
+	font-size: 1.4rem;
 	padding: 60px 0;
 	color: #aaa;
+	text-align: center;
 }
 
 .footer-widgets-1,
@@ -1588,6 +1589,7 @@ p.entry-meta {
 
 .simple-social-icons {
 	z-index: 1;
+	text-align: center;
 }
 body .simple-social-icons ul li a {
 	border-color: transparent !important;
