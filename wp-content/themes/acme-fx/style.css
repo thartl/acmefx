@@ -1107,6 +1107,8 @@ img.alignright,
     margin: 0;
     max-width: inherit;
     position: relative;
+	background: url('http://acmefx.dev/wp-content/themes/acme-fx/images/explode-full.svg') no-repeat right;
+
 }
 
 /* ## Title Area
@@ -1316,7 +1318,6 @@ img.alignright,
 }
 .nav-secondary {
 	background-color: #333;
-	background: url('http://acmefx.dev/wp-content/themes/acme-fx/images/explode-full.svg') no-repeat right;
 }
 .home .nav-secondary {
 	background-image: none;
@@ -1823,10 +1824,12 @@ h1.archive-title {
 @media only screen and (max-width: 1050px) {
 	.nav-secondary {
 		background-color: #333;
-		background: url('http://acmefx.dev/wp-content/themes/acme-fx/images/explode-black.svg') no-repeat right;
 	}
 	.menu-secondary {
 		background: #111;
+	}
+	.site-header > .wrap {
+		background: url('http://acmefx.dev/wp-content/themes/acme-fx/images/explode-black.svg') no-repeat right;
 	}
 }
 
