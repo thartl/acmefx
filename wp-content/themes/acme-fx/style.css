@@ -1541,7 +1541,10 @@ p.entry-meta {
 .footer-widgets-3 {
 	float: right;
 }
-
+.footer-widgets 
+.simple-social-icons {
+	text-align: center;
+}
 
 /* # Site Footer
 ---------------------------------------------------------------------------------------------------- */
@@ -1575,21 +1578,16 @@ p.entry-meta {
 .home .site-header > .wrap {
     padding: 0;
     margin: 0;
-    //max-width: inherit;
-   // position: relative;
 }
-
 .header-widget-area {
 	position: absolute;
-	left: 50px;
+	right: 50px;
 	top: 40px;
 	background-color: transparent;
 	z-index: 1;
 }
-
 .simple-social-icons {
 	z-index: 1;
-	//text-align: center;
 }
 body .simple-social-icons ul li a {
 	border-color: transparent !important;
