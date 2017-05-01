@@ -1581,11 +1581,20 @@ p.entry-meta {
 }
 .header-widget-area {
 	position: absolute;
-	right: 50px;
+	left: 50px;
 	top: 40px;
 	background-color: transparent;
 	z-index: 1;
 }
+.headhesive.header-widget-area {
+	margin-left: 25px;
+	display: none;
+}
+.headhesive.header-widget-area .widget-wrap ul {
+	float: right;
+	left: 0px;
+}
+
 .simple-social-icons {
 	z-index: 1;
 }
@@ -1594,6 +1603,9 @@ body .simple-social-icons ul li a {
 }
 .widget.simple-social-icons ul li a {
 	background-color: transparent !important;
+}
+body .widget.simple-social-icons ul li a {
+	border: 1px solid transparent !important;
 }
 .widget.simple-social-icons ul li a:hover {
 	background-color: transparent !important;
@@ -1723,9 +1735,11 @@ h1.archive-title {
 		top: 56px;
 		background-color: #777;
 	}
-	/* .headhesive--stick.header-widget-area {
+	.headhesive--stick.header-widget-area {
 		top: 56px;
-	} */
+	}
+
+
 	.headhesive--stick.nav-secondary a {
 		padding: 20px 20px;
 	}
@@ -1743,8 +1757,10 @@ h1.archive-title {
 	}
 	.nav-secondary.headhesive--stick ul::before {
 		content: url('/wp-content/themes/acme-fx/images/acme-logo-orig-traced.svg');
-		float: left;
-    	margin-top: 20px;
+		position: absolute;
+		left: 25px;
+    	top: 22px;
+    	//margin-left: 20px;
 	}
 
 /* # Media Queries
