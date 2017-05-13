@@ -1638,7 +1638,7 @@ body .widget.simple-social-icons ul li a {
 .home .title-area {
 	position: absolute;
 	margin-top: 100px;
-	z-index: 1;
+	z-index: 1000;
 }
 .title-area {
 	position: static;
@@ -1657,10 +1657,15 @@ button#wp-custom-header-video-button {
 button#wp-custom-header-video-button:focus {
 	outline: 0;
 }
-#wp-custom-header video {
+#wp-custom-header video,
+#wp-custom-header img {
 	z-index: 2;
-	object-fit: fill;
+	object-fit: cover;
 }
+#wp-custom-header img {
+	min-height: 600px;
+}
+
 #wp-custom-header {
 	line-height: 0;
 	
@@ -2107,7 +2112,11 @@ h1.archive-title {
 	}
 
 }
-
+@media only screen and (max-width: 900px) {
+	.site-description {
+		color: #C13636;
+	}
+}
 @media only screen and (max-width: 860px) {
 
 	body,
@@ -2166,18 +2175,22 @@ h1.archive-title {
 		margin: 0;
 		width: 100%;
 	}
-	.header-widet-area .simple-social-icons ul {
-		margin: 0 auto;
-		text-align: center;
+	.site-header .header-widget-area.widget-area {
+		display: none;
 	}
-	.header-widet-area .simple-social-icons ul a {
-		text-align: center;
+	.title-area {
+	    margin-top: 0px;
 	}
-
 }
+
 @media only screen and (max-width: 700px) {
 	.genesis-nav-menu a {
 		padding: 20px 20px;
+	}
+}
+@media only screen and (max-width: 550px) {
+	.site-title a {
+		font-size: 80px;
 	}
 }
 

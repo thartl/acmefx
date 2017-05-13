@@ -102,9 +102,9 @@ add_theme_support( 'genesis-responsive-viewport' );
 add_theme_support( 'custom-header', array(
 	'width'           => 1920,
 	'height'          => 600,
-	'header-selector' => '.site-title a',
-	'header-text'     => false,
-	'flex-height'     => true,
+	//'header-selector' => '.site-title a',
+	'header-text'     => true,
+	//'flex-height'     => true,
 	'video' => true,
 ) );
 
