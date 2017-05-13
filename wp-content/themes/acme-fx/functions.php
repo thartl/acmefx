@@ -101,10 +101,8 @@ add_theme_support( 'genesis-responsive-viewport' );
 // Add support for custom header.
 add_theme_support( 'custom-header', array(
 	'width'           => 1920,
-	'height'          => 800,
-	//'height'          => 1080,
+	'height'          => 600,
 	'header-selector' => '.site-title a',
-	//'header-selector' => '.wp-custom-header',
 	'header-text'     => false,
 	'flex-height'     => true,
 	'video' => true,
@@ -184,7 +182,7 @@ function my_header_video_settings( $settings ) {
 // add_action( 'genesis_header', 'genesis_do_subnav' );
 
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
-add_action( 'genesis_after_header', 'genesis_do_nav', 10 );
+add_action( 'genesis_after_header', 'genesis_do_nav', 5 );
 
 
 // th-- Set up the Front page. *******************************

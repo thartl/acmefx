@@ -163,8 +163,8 @@ body > div {
 }
 
 body {
-	background-color: #666;
-	color: #333;
+	background-color: #222;
+	color: #000;
 	font-family: 'Bitter', serif;
 	font-size: 20px;
 	font-size: 2rem;
@@ -174,7 +174,7 @@ body {
 	margin: 0;
 }
 body.home {
-	background-color: #fff;
+	//background-color: #fff;
 }
 
 a,
@@ -194,7 +194,7 @@ textarea:focus,
 }
 
 a {
-	color: orange;
+	color: #C13636;
 	text-decoration: none;
 }
 
@@ -405,11 +405,12 @@ textarea {
 	background-color: #fff;
 	border: 1px solid #ddd;
 	color: #333;
-	font-size: 18px;
-	font-size: 1.8rem;
+	font-size: 14px;
+	font-size: 1.4rem;
 	font-weight: 400;
-	padding: 16px;
+	padding: 4px 12px;
 	width: 100%;
+	border-radius: 10px;
 }
 
 input:focus,
@@ -582,6 +583,10 @@ th:first-child {
 
 /* ## Site Containers
 --------------------------------------------- */
+.home.site-inner,
+.home.wrap {
+		max-width: 1920px;
+}
 
 .site-inner,
 .wrap {
@@ -623,7 +628,7 @@ th:first-child {
 
 .content {
 	float: right;
-	width: 880px;
+	width: 920px;
 }
 
 .content-sidebar .content,
@@ -646,7 +651,7 @@ th:first-child {
 
 .sidebar-primary {
 	float: right;
-	width: 360px;
+	width: 320px;
 }
 
 .sidebar-content .sidebar-primary,
@@ -663,6 +668,10 @@ th:first-child {
 
 .content-sidebar-sidebar .sidebar-secondary {
 	float: right;
+}
+
+.sidebar .widget {
+	color: #fff;
 }
 
 /* ## Column Classes
@@ -880,13 +889,13 @@ img.alignnone,
 a.alignleft,
 img.alignleft,
 .wp-caption.alignleft {
-	margin: 8px 24px 0px 0;
+	margin: 8px 24px 12px 0;
 }
 
 a.alignright,
 img.alignright,
 .wp-caption.alignright {
-	margin: 15px 0 24px 24px;
+	margin: 8px 0 12px 24px;
 }
 
 .gallery-caption,
@@ -1098,7 +1107,7 @@ img.alignright,
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
- 	background-color: #222;
+ 	background-color: #111;
  	color: #D33C4E;
 }
 	
@@ -1109,6 +1118,9 @@ img.alignright,
     position: relative;
 	background: url('/wp-content/themes/acme-fx/images/explode-full.svg') no-repeat right;
 
+}
+.home .site-header > .wrap {
+	background: none;
 }
 
 /* ## Title Area
@@ -1140,7 +1152,7 @@ img.alignright,
 .site-title a,
 .site-title a:focus,
 .site-title a:hover {
-	color: orange;
+	color: #C13636;
 	font-size: 96px;
 	text-decoration: none;
 	font-family: 'Source Sans Pro', serif;
@@ -1213,9 +1225,9 @@ img.alignright,
 }
 
 .genesis-nav-menu a {
-	color: orange;
+	color: #C13636;
 	display: block;
-	padding: 32px 20px;
+	padding: 20px 20px;
 	text-decoration: none;
 }
 
@@ -1224,7 +1236,6 @@ img.alignright,
 .genesis-nav-menu .current-menu-item > a,
 .genesis-nav-menu .sub-menu .current-menu-item > a:focus,
 .genesis-nav-menu .sub-menu .current-menu-item > a:hover  {
-	color: #c3251d;
 	color: #fff;
 	text-decoration: none;
 }
@@ -1310,14 +1321,18 @@ img.alignright,
 --------------------------------------------- */
 
 .nav-primary {
-	background-color: #777;
+	background-color: #C13636;
+	/* -moz-box-shadow:    0px 3px 5px 6px #000;
+	-webkit-box-shadow: 0px 3px 5px 6px #000;
+	box-shadow: 0px 8px 8px 12px #000; */
+	z-index: 1;
 }
 .nav-primary a {
-	padding: 20px;
-	color: #333;
+	padding: 16px;
+	color: #fff;
 }
 .nav-secondary {
-	background-color: #333;
+	background-color: #111;
 }
 .home .nav-secondary {
 	background-image: none;
@@ -1505,7 +1520,7 @@ p.entry-meta {
 }
 
 .sidebar .widget {
-	background-color: #fff;
+	background-color: transparent;
 	padding: 40px;
 }
 
@@ -1545,6 +1560,16 @@ p.entry-meta {
 .simple-social-icons {
 	text-align: center;
 }
+.footer-widgets .widget-title,
+.header-widget-area .widget-title {
+	font-family: 'Bitter', serif;
+	font-size: 1.4rem;
+}
+.header-widget-area .widget-title {
+	text-align: center;
+	color: #C13636;
+	margin-bottom: 5px;
+}
 
 /* # Site Footer
 ---------------------------------------------------------------------------------------------------- */
@@ -1579,12 +1604,13 @@ p.entry-meta {
     padding: 0;
     margin: 0;
 }
-.header-widget-area {
+.site-header .widget-area.header-widget-area {
 	position: absolute;
 	left: 50px;
-	top: 40px;
+	top: 20px;
 	background-color: transparent;
 	z-index: 1;
+	width: 200px;
 }
 .headhesive.header-widget-area {
 	margin-left: 25px;
@@ -1594,7 +1620,6 @@ p.entry-meta {
 	float: right;
 	left: 0px;
 }
-
 .simple-social-icons {
 	z-index: 1;
 }
@@ -1610,7 +1635,6 @@ body .widget.simple-social-icons ul li a {
 .widget.simple-social-icons ul li a:hover {
 	background-color: transparent !important;
 }
-
 .home .title-area {
 	position: absolute;
 	margin-top: 100px;
@@ -1622,7 +1646,6 @@ body .widget.simple-social-icons ul li a {
 	margin-top: 40px;
 	width: 100%;
 }
-
 button#wp-custom-header-video-button {
 	/* position: absolute;
 	right: 110px;
@@ -1634,25 +1657,20 @@ button#wp-custom-header-video-button {
 button#wp-custom-header-video-button:focus {
 	outline: 0;
 }
-
 #wp-custom-header video {
 	z-index: 2;
-	width: 100%;
-	object-fit: cover;
-
+	object-fit: fill;
 }
-
 #wp-custom-header {
-	width: 100%;
 	line-height: 0;
+	
 }
-
 h1.archive-title {
 	font-size: 42px;
 	color: #fff;
 }
 .archive-description {
-	background-color: #666666;
+	background-color: #666;
 	padding-bottom: 30px;
 }
 .nav-primary a {
@@ -1673,6 +1691,46 @@ h1.archive-title {
 .blog .archive-description {
 	display: none;
 }
+.front-page-1 {
+	padding-top: 0;
+}
+.fx-showcase-link {
+	width: 80%;
+	float: left;
+	margin: 30px 0;
+	background: #111;
+}
+.fx-showcase-link:nth-child(even) {
+	float: right;
+}
+.fx-showcase-link:first-child {
+	margin-top: 0;
+}
+.fx-showcase-link img {
+	max-height: 155px;
+	object-fit: contain;
+}
+.fx-showcase-link h2 {
+	color: #fff;
+	margin: 50px 50px 0	50px;
+	font-family: 'Bitter', serif;
+}
+.fx-showcase-link:first-child img,
+.fx-showcase-link:nth-child(3) img,
+.fx-showcase-link:nth-child(2) h2,
+.fx-showcase-link:nth-child(4) h2 {
+	float: right;
+}
+.fx-showcase-link:nth-child(2) img,
+.fx-showcase-link:nth-child(4) img,
+.fx-showcase-link:first-child h2,
+.fx-showcase-link:nth-child(3) h2 {
+	float: left;
+}
+.home .site-inner {
+	padding-top: 120px;
+}
+
 
 /* # Headhesive
 ---------------------------------------------------------------------------------------------------- */
@@ -1732,14 +1790,12 @@ h1.archive-title {
 		text-align: center;
 	}
 	.headhesive--stick.nav-primary {
-		top: 56px;
-		background-color: #777;
+		//top: 56px;
+		//background-color: #777;
 	}
 	.headhesive--stick.header-widget-area {
-		top: 56px;
+		//top: 56px;
 	}
-
-
 	.headhesive--stick.nav-secondary a {
 		padding: 20px 20px;
 	}
@@ -1748,7 +1804,7 @@ h1.archive-title {
 		border: 1px solid #111 !important;
 	}
 	
-	 .home > .menu-toggle {
+	.home > .menu-toggle {
 		display: none;
 	}
 	.menu-toggle {
@@ -1762,6 +1818,7 @@ h1.archive-title {
     	top: 22px;
     	//margin-left: 20px;
 	}
+	
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
@@ -1809,8 +1866,8 @@ h1.archive-title {
 
 @media only screen and (max-width: 1200px) {
 
-	.site-inner/* ,
-	.wrap */ {
+	.site-inner,
+	.wrap {
 		max-width: 960px;
 	}
 
@@ -1841,17 +1898,18 @@ h1.archive-title {
 		margin-right: 30px;
 	}
 
-	
-
+}
+@media only screen and (max-width: 1100px) {
+	.nav-secondary.headhesive--stick ul::before {
+		position: static;
+		display: block;
+	}
+	.nav-secondary.headhesive--stick ul::before {
+	    margin-top: 20px;
+	}
 }
 
 @media only screen and (max-width: 1050px) {
-	.nav-secondary {
-		background-color: #333;
-	}
-	.menu-secondary {
-		background: #111;
-	}
 	.site-header > .wrap {
 		background: url('/wp-content/themes/acme-fx/images/explode-black.svg') no-repeat right;
 	}
@@ -1859,10 +1917,10 @@ h1.archive-title {
 
 @media only screen and (max-width: 1023px) {
 
-	/* .site-inner,
+	.site-inner,
 	.wrap {
 		max-width: 800px;
-	} */
+	}
 
 	.content,
 	.content-sidebar-sidebar .content,
@@ -1948,13 +2006,10 @@ h1.archive-title {
 	.menu-toggle {
 		line-height: 22px;
 		position: relative;
-		//position: fixed;
-		//top: 56px;
+		position: fixed;
+		top: 56px;
 		width: 100%;
 		z-index: 1000;
-	}
-	.headhesive--stick.nav-secondary {
-		//top: 54px;
 	}
 
 	.menu-toggle,
