@@ -98,11 +98,26 @@ add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu',
 // Add viewport meta tag for mobile browsers.
 add_theme_support( 'genesis-responsive-viewport' );
 
+remove_action( 'genesis_header', 'genesis_do_header' ); 
+add_action( 'genesis_header', 'genesis_do_new_header' ); 
+function genesis_do_new_header() { 
+    echo '<div class="title-area" id="title-area"><img src="http://acmefx.dev/wp-content/themes/acme-fx/images/acme-logo-orig-traced.svg" alt="Site Logo" />'; 
+    //do_action( 'genesis_site_title' ); 
+    do_action( 'genesis_site_description' ); 
+    echo '</div><!-- end #title-area -->'; 
+    if ( is_active_sidebar( 'header-right' ) || has_action( 'genesis_header_right' ) ) { 
+        echo '<div class="widget-area 	header-widget-area">'; 
+        do_action( 'genesis_header_right' ); 
+        dynamic_sidebar( 'header-right' ); 
+        echo '</div><!-- end .widget-area -->'; 
+    } 
+} 
+
 // Add support for custom header.
 add_theme_support( 'custom-header', array(
 	'width'           => 1920,
 	'height'          => 600,
-	//'header-selector' => '.site-title a',
+	'header-selector' => '.site-title a',
 	'header-text'     => true,
 	//'flex-height'     => true,
 	'video' => true,
@@ -311,5 +326,5 @@ function suffix_entry() {
 	echo '</div>';
 }
 
-
+ 
 
