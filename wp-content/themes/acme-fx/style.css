@@ -1614,34 +1614,23 @@ p.entry-meta {
 	z-index: 1;
 	width: 200px;
 }
-.headhesive.header-widget-area {
-	margin-left: 25px;
-	display: none;
-}
-.headhesive.header-widget-area .widget-wrap ul {
-	float: right;
-	left: 0px;
-}
+
 .simple-social-icons {
 	z-index: 1;
 }
-body .simple-social-icons ul li a {
-	border-color: transparent !important;
-}
-.widget.simple-social-icons ul li a {
-	background-color: transparent !important;
-}
+
 body .widget.simple-social-icons ul li a {
 	border: 1px solid transparent !important;
-}
-.widget.simple-social-icons ul li a:hover {
 	background-color: transparent !important;
+	border-color: transparent !important;
 }
+
 .home .title-area {
 	position: absolute;
 	z-index: 1;
 	top: 100px;
 }
+
 .title-area {
 	position: static;
 	text-align: center;
@@ -1650,37 +1639,33 @@ body .widget.simple-social-icons ul li a {
 	width: 100%;
 	padding: 0 30px;
 }
+
 .title-area img {
 	width: 600px;
 }
+
 button#wp-custom-header-video-button {
-	/* position: absolute;
-	right: 110px;
-	top: 150px;
-	background-color: transparent;
-	z-index: 1; */
 	display: none;
 }
-button#wp-custom-header-video-button:focus {
-	outline: 0;
-}
+
 #wp-custom-header video,
 #wp-custom-header img {
-	
 	z-index: 2;
 	object-fit: cover;
 }
-#wp-custom-header img {
-	//min-height: 600px;
-}
-
 #wp-custom-header {
 	line-height: 0;
-	
 }
+
 h1.archive-title {
 	font-size: 42px;
 	color: #fff;
+}
+h1.entry-title {
+	color: #333;
+	font-size: 6rem;
+	font-weight: 300;
+	font-family: Bitter, serif;
 }
 .archive-description {
 	background-color: #666;
@@ -1706,6 +1691,9 @@ h1.archive-title {
 }
 .front-page-1 {
 	padding-top: 0;
+}
+.fx-main h3 {
+	margin-bottom: 50px;
 }
 .fx-showcase-link {
 	width: 80%;
@@ -1741,8 +1729,227 @@ h1.archive-title {
 	float: left;
 }
 .home .site-inner {
-	padding-top: 120px;
+	padding-top: 60px;
 }
+.all-business,
+.all-fx {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.business-type,
+.fx-type {
+	flex-grow: 1;
+	color: white;
+	flex-basis: 45%;
+	padding: 20px;
+	transition: .3s ease-in-out;
+	position: relative;
+	margin: 5px;
+	background-size: cover;
+}
+.business-type {
+	flex-basis: 30%;
+	transition: .6s ease-in-out;
+}
+.home .atmo:hover,
+.business-type:hover {
+	background-image: none;
+	background-color: #C13636;
+}
+
+.business-type img,
+.fx-type img {
+	width: 75px;
+	max-height: 75px;
+	margin: 0 auto;
+	position: absolute;
+}
+.business-type h2,
+.fx-type h2 {
+	position: absolute;
+	top: 30px;
+	left: 120px;
+}
+a.business-type:hover,
+a.fx-type:hover {
+    color: #fff;
+}
+.business-type h2 {
+	left: 20px;
+}
+.business-type p,
+.fx-type p {
+	margin-top: 90px;
+	padding-bottom: 30px;
+	opacity: 0;
+	transition: .3s ease-in-out;
+}
+.business-type:hover p,
+.fx-type:hover p {
+	opacity: 1;
+}
+.business-type.atmo {
+	flex-basis: 100%;
+}
+.fx-type.wind img svg {
+	fill: #aaa !important;
+}
+
+
+.water {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/water.jpg');
+}
+.water:hover {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/water-dark.jpg');
+}
+.atmo {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/atmo.jpg');
+}
+.atmo:hover {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/atmo-dark.jpg');
+}
+.snow {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/snow-1.jpg');
+}
+.snow:hover {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/snow-dark.jpg');
+}
+.wind {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/wind.jpg');
+}
+.wind:hover {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/wind-dark.jpg');
+}
+.mechanical {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/mechanical.jpg');
+}
+.mechanical:hover {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/mechanical-dark.jpg');
+}
+.steam {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/steam.jpg');
+}
+.steam:hover {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/steam-dark.jpg');
+}
+.pyro {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/pyro.jpg');
+}
+.pyro:hover {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/pyro-dark.jpg');
+}
+.fire {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/fire.jpg');
+}
+.fire:hover {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/fire-dark.jpg');
+}
+.concept {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/concept.jpg');
+}
+.concept:hover {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/concept-dark.jpg');
+}
+.mold {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/mold.jpg');
+}
+.mold:hover {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/mold-dark.jpg');
+}
+
+.expendables {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/front-bulbs.jpg');
+	background-position: center;
+}
+.snow-business {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/front-snow.jpg');
+}
+.rentals {
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/front-equipment.jpg');
+	background-position: center;
+}
+
+
+
+
+/*snow*/
+
+.snowflake1 {
+	font-size: 72px;
+	position: absolute;
+	-webkit-animation: snow 10s  ease-out infinite; 
+	animation: snow 10s infinite;
+	color: orange !important;
+}
+.snowflake2 {
+	left: 300px;
+	font-size: 72px;
+	position: absolute;
+	-webkit-animation: snow 20s  ease-out infinite; 
+	animation: snow 20s infinite;
+	color: white;
+}
+.snowflake3 {
+	font-size: 72px;
+	position: absolute;
+	-webkit-animation: snow 25s  ease-out infinite; 
+	animation: snow2 25s infinite;
+	color: white;
+}
+.snowflake4 {
+	font-size: 72px;
+	position: absolute;
+	-webkit-animation: snow 30s  ease-out infinite; 
+	animation: snow2 30s infinite;
+	color: orange;
+}
+@-webkit-keyframes snow {
+    0% {
+        top :0;
+    }
+    20%, 40%, 60%, 80% {
+        margin-left: 0px;
+    }
+    /* 10%, 30%, 50%, */ 70%, 90% {
+        margin-left: 100px;
+    }
+    100% {
+        top:100%;
+    }
+}
+@-webkit-keyframes snow2 {
+    0% {
+        top :0;
+    }
+    /* 20%, 40%, 60%, */ 80% {
+        margin-left: 300px;
+    }
+    10%, 30%, 50%, 70%, 90% {
+        margin-left: 260px;
+    }
+    100% {
+        top:100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* # Headhesive
@@ -1751,88 +1958,73 @@ h1.archive-title {
 .headhesive {
 	display: none;
 }
-/* @media only screen and (min-width: 700px) { */
 
-	.site-header {
-		padding: 0;
-	}
+.site-header {
+	padding: 0;
+}
 
-	.headhesive {
-		position: fixed;
-		top: 0;
-		width: 100%;
-		line-height: .5rem;
-		// padding-top: 10px;
-		display: block;
-		background: rgba(255,255,255,1);
-		background: #111;
-		transform: translateY(-100%);
-		-webkit-transform: translateY(-100%);
-		-moz-transform: translateY(-100%);
-		transition: all 150ms ease-out;
-		-webkit-transition: all 150ms ease-out;
-		-moz-transition: all 150ms ease-out;
-		z-index: 999;
-	}
+.headhesive {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	line-height: .5rem;
+	display: block;
+	background: rgba(255,255,255,1);
+	background: #111;
+	transform: translateY(-100%);
+	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	transition: all 150ms ease-out;
+	-webkit-transition: all 150ms ease-out;
+	-moz-transition: all 150ms ease-out;
+	z-index: 999;
+}
 
-	.headhesive.header-widget-area {
-		background-color: transparent;
-		margin-top: 10px;
-		z-index: 1000;
-	}
+.headhesive--stick {
+	transform: translateY(0%);
+	-webkit-transform: translateY(0%);
+	-moz-transform: translateY(0%);
+}
 
-	.headhesive--stick {
-		transform: translateY(0%);
-		-webkit-transform: translateY(0%);
-		-moz-transform: translateY(0%);
-	}
+.headhesive .nav-secondary,
+.headhesive .nav-secondary .wrap {
+	padding: 0;
+	margin: 0;
+}
 
-	.headhesive .nav-secondary,
-	.headhesive .nav-secondary .wrap {
-		padding: 0;
-		margin: 0;
-	}
+.headhesive .nav-secondary > .genesis-nav-menu li a,
+.headhesive .title-area {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+.genesis-nav-menu,
+.headhesive .genesis-nav-menu {
+	text-align: center;
+}
+.headhesive--stick.nav-secondary a {
+	padding: 20px 20px;
+}
+.headhesive .simple-social-icons ul li a,
+.simple-social-icons ul li a:hover {
+	border: 1px solid #111 !important;
+}
 
-	.headhesive .nav-secondary > .genesis-nav-menu li a,
-	.headhesive .title-area {
-		padding-top: 2rem;
-		padding-bottom: 2rem;
-	}
-	.genesis-nav-menu,
-	.headhesive .genesis-nav-menu {
-		text-align: center;
-	}
-	.headhesive--stick.nav-primary {
-		//top: 56px;
-		//background-color: #777;
-	}
-	.headhesive--stick.header-widget-area {
-		//top: 56px;
-	}
-	.headhesive--stick.nav-secondary a {
-		padding: 20px 20px;
-	}
-	.headhesive .simple-social-icons ul li a,
-	.simple-social-icons ul li a:hover {
-		border: 1px solid #111 !important;
-	}
-	
-	.home > .menu-toggle {
-		display: none;
-	}
-	.menu-toggle {
-		position: fixed;
-		top: 0;
-	}
-	.nav-secondary.headhesive--stick ul::before {
-		content: url('/wp-content/themes/acme-fx/images/acme-logo-orig-traced.svg');
-		position: absolute;
-		left: 25px;
-    	top: 22px;
-    	//margin-left: 20px;
-	}
+/* .home > .menu-toggle {
+	display: none;
+}
+.menu-toggle {
+	position: fixed;
+	top: 0;
+} */
+.nav-secondary.headhesive--stick ul::before {
+	content: url('/wp-content/themes/acme-fx/images/acme-logo-orig-traced.svg');
+	position: absolute;
+	left: 25px;
+	top: 22px;
+}
 	
 
+	
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
@@ -1925,7 +2117,11 @@ h1.archive-title {
 		display: block;
 	}
 	.nav-secondary.headhesive--stick ul::before {
-	    margin-top: 20px;
+	    display: none;
+	}
+	.business-type,
+	.fx-type {
+		flex-basis: 100%;
 	}
 	
 }
