@@ -336,4 +336,3 @@ if ( !is_page() ) {
 	return $post_info;
 }}
 
-
