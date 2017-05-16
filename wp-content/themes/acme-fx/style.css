@@ -1656,14 +1656,17 @@ button#wp-custom-header-video-button {
 #wp-custom-header {
 	line-height: 0;
 }
-
+.front-page-2 {
+	padding: 30px;
+	background: white;
+}
 h1.archive-title {
 	font-size: 42px;
 	color: #fff;
 }
 h1.entry-title {
 	color: #333;
-	font-size: 6rem;
+	font-size: 4.5rem;
 	font-weight: 300;
 	font-family: Bitter, serif;
 }
@@ -1786,6 +1789,9 @@ a.fx-type:hover {
 	opacity: 0;
 	transition: .3s ease-in-out;
 }
+.business-type p {
+	margin-top: 70px;
+}
 .business-type:hover p,
 .fx-type:hover p {
 	opacity: 1;
@@ -1868,6 +1874,10 @@ a.fx-type:hover {
 }
 .rentals {
 	background: url('/wp-content/uploads/2017/05/front-equipment.jpg');
+	background-position: center;
+}
+.fx {
+	background: url('/wp-content/uploads/2017/05/special-effects.jpg');
 	background-position: center;
 }
 
