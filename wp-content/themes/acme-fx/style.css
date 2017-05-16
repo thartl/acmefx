@@ -1799,75 +1799,75 @@ a.fx-type:hover {
 
 
 .water {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/water.jpg');
+	background: url('/wp-content/uploads/2017/05/water.jpg');
 }
 .water:hover {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/water-dark.jpg');
+	background: url('/wp-content/uploads/2017/05/water-dark.jpg');
 }
 .atmo {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/atmo.jpg');
+	background: url('/wp-content/uploads/2017/05/atmo.jpg');
 }
 .atmo:hover {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/atmo-dark.jpg');
+	background: url('/wp-content/uploads/2017/05/atmo-dark.jpg');
 }
 .snow {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/snow-1.jpg');
+	background: url('/wp-content/uploads/2017/05/snow-1.jpg');
 }
 .snow:hover {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/snow-dark.jpg');
+	background: url('/wp-content/uploads/2017/05/snow-dark.jpg');
 }
 .wind {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/wind.jpg');
+	background: url('/wp-content/uploads/2017/05/wind.jpg');
 }
 .wind:hover {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/wind-dark.jpg');
+	background: url('/wp-content/uploads/2017/05/wind-dark.jpg');
 }
 .mechanical {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/mechanical.jpg');
+	background: url('/wp-content/uploads/2017/05/mechanical.jpg');
 }
 .mechanical:hover {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/mechanical-dark.jpg');
+	background: url('/wp-content/uploads/2017/05/mechanical-dark.jpg');
 }
 .steam {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/steam.jpg');
+	background: url('/wp-content/uploads/2017/05/steam.jpg');
 }
 .steam:hover {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/steam-dark.jpg');
+	background: url('/wp-content/uploads/2017/05/steam-dark.jpg');
 }
 .pyro {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/pyro.jpg');
+	background: url('/wp-content/uploads/2017/05/pyro.jpg');
 }
 .pyro:hover {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/pyro-dark.jpg');
+	background: url('/wp-content/uploads/2017/05/pyro-dark.jpg');
 }
 .fire {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/fire.jpg');
+	background: url('/wp-content/uploads/2017/05/fire.jpg');
 }
 .fire:hover {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/fire-dark.jpg');
+	background: url('/wp-content/uploads/2017/05/fire-dark.jpg');
 }
 .concept {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/concept.jpg');
+	background: url('/wp-content/uploads/2017/05/concept.jpg');
 }
 .concept:hover {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/concept-dark.jpg');
+	background: url('/wp-content/uploads/2017/05/concept-dark.jpg');
 }
 .mold {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/mold.jpg');
+	background: url('/wp-content/uploads/2017/05/mold.jpg');
 }
 .mold:hover {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/mold-dark.jpg');
+	background: url('/wp-content/uploads/2017/05/mold-dark.jpg');
 }
 
 .expendables {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/front-bulbs.jpg');
+	background: url('/wp-content/uploads/2017/05/front-bulbs.jpg');
 	background-position: center;
 }
 .snow-business {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/front-snow.jpg');
+	background: url('/wp-content/uploads/2017/05/front-snow.jpg');
 }
 .rentals {
-	background: url('http://acmefx.dev/wp-content/uploads/2017/05/front-equipment.jpg');
+	background: url('/wp-content/uploads/2017/05/front-equipment.jpg');
 	background-position: center;
 }
 
