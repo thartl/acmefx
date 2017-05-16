@@ -1802,6 +1802,9 @@ a.fx-type:hover {
 .fx-type.wind img svg {
 	fill: #aaa !important;
 }
+body {
+	background-image: url('http://acmefx.dev/wp-content/uploads/2017/05/carbon_fibre.png');
+}
 
 
 .water {
