@@ -1656,7 +1656,10 @@ button#wp-custom-header-video-button {
 #wp-custom-header {
 	line-height: 0;
 }
-
+.front-page-2 {
+	padding: 30px;
+	background: white;
+}
 h1.archive-title {
 	font-size: 42px;
 	color: #fff;
