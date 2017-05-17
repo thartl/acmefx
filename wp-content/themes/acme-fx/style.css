@@ -2183,6 +2183,10 @@ body {
 	.fx-type {
 		flex-basis: 100%;
 	}
+	.home #wp-custom-header video,
+	.home #wp-custom-header img {
+		max-height: 400px;
+	}
 	
 }
 
@@ -2376,10 +2380,7 @@ body {
 	.footer-widgets-2 {
 		margin: 0 auto 40px;
 	}
-	.home #wp-custom-header video,
-	.home #wp-custom-header img {
-		max-height: 400px;
-	}
+
 
 }
 @media only screen and (max-width: 900px) {
