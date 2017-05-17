@@ -133,6 +133,7 @@ add_theme_support( 'custom-header', array(
 	'header-selector' => '.site-title a',
 	'header-text'     => true,
 	'flex-width'     => true,
+	'flex-height'     => true,
 	'video' => true,
 ) );
 
