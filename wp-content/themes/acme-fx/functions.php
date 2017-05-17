@@ -105,7 +105,7 @@ add_theme_support( 'genesis-responsive-viewport' );
 remove_action( 'genesis_header', 'genesis_do_header' ); 
 add_action( 'genesis_header', 'genesis_do_new_header' ); 
 function genesis_do_new_header() { 
-    echo '<div class="title-area" id="title-area"><a href="' . site_url() . '"><img src="http://acmefx.dev/wp-content/themes/acme-fx/images/acme-logo-orig-traced.svg" alt="Site Logo" />'; 
+    echo '<div class="title-area" id="title-area"><a href="' . site_url() . '"><img src="/wp-content/themes/acme-fx/images/acme-logo-orig-traced.svg" alt="Site Logo" />'; 
     //do_action( 'genesis_site_title' ); 
     do_action( 'genesis_site_description' ); 
     echo '</a></div><!-- end #title-area -->'; 

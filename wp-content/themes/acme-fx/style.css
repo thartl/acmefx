@@ -1817,7 +1817,7 @@ a.fx-type:hover {
 	fill: #aaa !important;
 }
 body {
-	background-image: url('http://acmefx.dev/wp-content/uploads/2017/05/carbon_fibre.png');
+	background-image: url('/wp-content/uploads/2017/05/carbon_fibre.png');
 }
 .wp-custom-header img {
 	display: none;
