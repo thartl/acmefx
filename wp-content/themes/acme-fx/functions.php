@@ -103,7 +103,7 @@ add_theme_support( 'genesis-responsive-viewport' );
 remove_action( 'genesis_header', 'genesis_do_header' ); 
 add_action( 'genesis_header', 'genesis_do_new_header' ); 
 function genesis_do_new_header() { 
-    echo '<div class="title-area" id="title-area"><a href="' . site_url() . '"><img src="http://acmefx.dev/wp-content/themes/acme-fx/images/acme-logo-orig-traced.svg" alt="Site Logo" />'; 
+    echo '<div class="title-area" id="title-area"><a href="' . site_url() . '"><img src="http://acmefx.dev/wp-content/themes/acme-fx/images/clouds.svg" alt="Site Logo" />'; 
     //do_action( 'genesis_site_title' ); 
     do_action( 'genesis_site_description' ); 
     echo '</a></div><!-- end #title-area -->'; 
@@ -111,8 +111,15 @@ function genesis_do_new_header() {
         echo '<div class="widget-area header-widget-area">'; 
         do_action( 'genesis_header_right' ); 
         dynamic_sidebar( 'header-right' ); 
-        echo '</div><!-- end .widget-area -->'; 
-    } 
+        echo '</div><!-- end .widget-area -->';
+
+    }
+    if ( is_active_sidebar( 'header-left' ) || has_action( 'genesis_header_left' ) ) { 
+        echo '<div class="widget-area header-widget-area-2">'; 
+        do_action( 'genesis_header_left' ); 
+        dynamic_sidebar( 'header-left' ); 
+        echo '</div><!-- end .widget-area -->';
+    }
 } 
 
 // Add support for custom header.
@@ -232,8 +239,12 @@ function acme_widget_area_class( $id ) {
 
 	return $class;
 }
-
-
+// Add header left widget
+genesis_register_sidebar( array(
+	'id'          => 'header-left',
+	'name'        => __( 'Header-Left', 'genesis-sample' ),
+	'description' => __( 'This widget goes in the left of the header.', 'genesis-sample' ),
+));
 // Add Front Page Template widget areas.
 genesis_register_sidebar( array(
 	'id'          => 'front-page-1',

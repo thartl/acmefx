@@ -1148,8 +1148,6 @@ img.alignright,
 	font-size: 3rem;
 	font-weight: 700;
 	line-height: 1.2;
-	//background: url('/wp-content/themes/acme-fx/images/acme-logo-orig-traced.svg') no-repeat;
-	background-size: 30%;
 }
 .site-title a,
 .site-title a:focus,
@@ -1183,9 +1181,6 @@ img.alignright,
 	font-weight: 400;
 	line-height: 1.5;
 	display: none;
-}
-.home .site-description {
-	display: block;
 }
 
 .site-description,
@@ -1228,6 +1223,7 @@ img.alignright,
 
 .genesis-nav-menu a {
 	color: #C13636;
+	color: #fff;
 	display: block;
 	padding: 20px 20px;
 	text-decoration: none;
@@ -1612,7 +1608,15 @@ p.entry-meta {
 	top: 20px;
 	background-color: transparent;
 	z-index: 1;
-	width: 200px;
+	//width: 200px;
+}
+.site-header .widget-area.header-widget-area-2 {
+	position: absolute;
+	right: 50px;
+	top: 20px;
+	background-color: transparent;
+	z-index: 1;
+	//width: 200px;
 }
 
 .simple-social-icons {
@@ -1999,9 +2003,9 @@ body {
 /* # Headhesive
 ---------------------------------------------------------------------------------------------------- */
 
-.headhesive {
+/* .headhesive {
 	display: none;
-}
+} */
 
 .site-header {
 	padding: 0;
@@ -2053,8 +2057,11 @@ body {
 	border: 1px solid #111 !important;
 }
 
-.home .nav-secondary {
-	transform: translateY(-3000%);
+.home .headhesive--unstick.nav-secondary {
+	display: none;
+}
+/* .home .nav-secondary {
+	transform: translateY(-100%);
 	transition: all 150ms ease-out;
 	-webkit-transition: all 150ms ease-out;
 	-moz-transition: all 150ms ease-out;
@@ -2065,7 +2072,7 @@ body {
 	-webkit-transform: translateY(0%);
 	-moz-transform: translateY(0%);
 	
-}
+} */
 
 .nav-secondary.headhesive--stick ul::before {
 	content: url('/wp-content/themes/acme-fx/images/acme-logo-orig-traced.svg');
@@ -2374,7 +2381,7 @@ body {
 		display: none;
 	}
 	.home .title-area {
-	    top: 0px;
+	    top: 40px;
 	}
 }
 @media only screen and (max-width: 860px) {
