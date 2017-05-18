@@ -303,8 +303,8 @@ function th_custom_footer() {
 }
 
 
-//* Place the Genesis Simple Share buttons: both above and below content in single entries 
-add_action( 'genesis_before_entry_content', 'prefix_entry' );
+//* Place the Genesis Simple Share buttons below content for single products 
+add_action( 'woocommerce_share', 'acme_entry_share' );
 /**
  * Adds the Genesis Share icons before the entry.
  *
@@ -312,7 +312,7 @@ add_action( 'genesis_before_entry_content', 'prefix_entry' );
  *
  * @return null Return early for non-single posts
  */
-function prefix_entry() {
+function acme_entry_share() {
 	if ( ! is_single() || ! function_exists( 'genesis_share_icon_output' ) ) {
 		return;
 	}
@@ -320,11 +320,12 @@ function prefix_entry() {
 	global $Genesis_Simple_Share;
 		 
 	echo '<div class="share-box">';
-	genesis_share_icon_output( 'after', $Genesis_Simple_Share->icons );
+	genesis_share_icon_output( 'after_content', $Genesis_Simple_Share->icons );
 	echo '</div>';
 }
 
-add_action( 'genesis_entry_footer', 'suffix_entry', 20 );
+//* Place the Genesis Simple Share buttons above content in single entries 
+add_action( 'genesis_entry_footer', 'acme_suffix_entry', 20 );
 /**
  * Adds the Genesis Share icons after the entry.
  *
@@ -332,7 +333,7 @@ add_action( 'genesis_entry_footer', 'suffix_entry', 20 );
  *
  * @return null Return early for non-single posts
  */
-function suffix_entry() {
+function acme_suffix_entry() {
 	if ( ! is_single() || ! function_exists( 'genesis_share_icon_output' ) ) {
 		return;
 	}
@@ -360,6 +361,11 @@ function acme_woo_gallery_setup() {
     add_theme_support( 'wc-product-gallery-lightbox' );
     add_theme_support( 'wc-product-gallery-slider' );
 }
+
+// Remove the sorting dropdown from Woocommerce
+remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_catalog_ordering', 30 );
+// Remove the result count from WooCommerce
+remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_result_count', 20 );
 
 // Remove all woocommerce stylesheets
 // add_filter( 'woocommerce_enqueue_styles', '__return_false' );
