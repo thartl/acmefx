@@ -1107,8 +1107,9 @@ img.alignright,
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
- 	background-color: #111;
+ 	background-color: #1E373B;
  	color: #D33C4E;
+ 	//background: url('wp-content/uploads/2017/05/grey-fire.jpg') no-repeat;
 }
 	
 .site-header > .wrap {
@@ -1116,7 +1117,8 @@ img.alignright,
     margin: 0;
     max-width: inherit;
     position: relative;
-	background: url('/wp-content/themes/acme-fx/images/explode-full.svg') no-repeat right;
+	background: url('/wp-content/themes/acme-fx/images/explode-red.svg') no-repeat right;
+	//background: url('wp-content/uploads/2017/05/grey-fire.jpg') no-repeat;
 
 }
 .home .site-header > .wrap {
@@ -1356,6 +1358,7 @@ img.alignright,
 
 .entry {
 	background-color: hsla(0, 0%, 0%, .4);
+	background-color: #1E373B;
 	margin-bottom: 40px;
 	padding: 30px 80px 70px;
 }
@@ -1527,7 +1530,7 @@ p.entry-meta {
 ---------------------------------------------------------------------------------------------------- */
 
 .footer-widgets {
-	background-color: #000;
+	background-color: #1E373B;
 	clear: both;
 	font-size: 14px;
 	font-size: 1.4rem;
@@ -1573,11 +1576,11 @@ p.entry-meta {
 ---------------------------------------------------------------------------------------------------- */
 
 .site-footer {
-	background-color: #222;
+	background-color: #1E373B;
 	font-size: 16px;
 	font-size: 1.6rem;
 	line-height: 1;
-	padding: 60px 0;
+	padding: 0px 0 60px;
 	text-align: center;
 }
 
@@ -1823,12 +1826,17 @@ a.fx-type:hover {
 }
 body {
 	background-image: url('/wp-content/uploads/2017/05/carbon_fibre.png');
+	background-image: none;
+	background-color: #fff;
+}
+.nav-secondary {
+	background-color: #1E373B;
 }
 .wp-custom-header img {
 	display: none;
 }
 .home .wp-custom-header img {
-	display: block
+	display: block;
 }
 .user-profile img {
 	width: 30px !important;
@@ -1842,10 +1850,16 @@ body {
 	font-size: 30px;
 	color: #C13636;
 }
+/* .snow-main .content h2::before {
+	content: url('/wp-content/themes/acme-fx/images/clouds.svg');
+	color: #bbb;
+	height: 20px;
+} */
 .front-page-2,
 .business-type,
 .fx-type,
 article {
+	//background-image: url('/wp-content/uploads/2017/05/carbon_fibre.png');
 	/* -moz-box-shadow: 0px 0px 5px 6px #000; */
 	/* -webkit-box-shadow: 0px 0px 5px 6px #000; */
 	/* box-shadow: 2px 4px 15px 2px #000; */
@@ -2054,7 +2068,7 @@ h1 {
 	line-height: .5rem;
 	display: block;
 	background: rgba(255,255,255,1);
-	background: #111;
+	background: #1E373B;
 	transform: translateY(-100%);
 	-webkit-transform: translateY(-100%);
 	-moz-transform: translateY(-100%);
@@ -2204,7 +2218,8 @@ h1 {
 
 @media only screen and (max-width: 1170px) {
 	.site-header > .wrap {
-		background: url('/wp-content/themes/acme-fx/images/explode-black.svg') no-repeat right;
+		background: url('/wp-content/themes/acme-fx/images/explode-red.svg') no-repeat right;
+		//background: url('wp-content/uploads/2017/05/grey-fire.jpg') no-repeat;
 	}
 }
 
