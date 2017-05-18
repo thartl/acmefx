@@ -352,4 +352,15 @@ if ( !is_page() ) {
 	return $post_info;
 }}
 
+//  th-- enamble woocommerce product gallery + lightbox, slider
+add_action( 'after_setup_theme', 'acme_woo_gallery_setup' );
+ 
+function acme_woo_gallery_setup() {
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
+}
+
+// Remove all woocommerce stylesheets
+// add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
