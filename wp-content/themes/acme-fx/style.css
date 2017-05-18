@@ -164,7 +164,7 @@ body > div {
 
 body {
 	background-color: #222;
-	color: #000;
+	color: #ddd;
 	font-family: 'Bitter', serif;
 	font-size: 20px;
 	font-size: 2rem;
@@ -628,7 +628,7 @@ th:first-child {
 
 .content {
 	float: right;
-	width: 920px;
+	width: 980px;
 }
 
 .content-sidebar .content,
@@ -651,7 +651,7 @@ th:first-child {
 
 .sidebar-primary {
 	float: right;
-	width: 320px;
+	width: 260px;
 }
 
 .sidebar-content .sidebar-primary,
@@ -1355,9 +1355,9 @@ img.alignright,
 --------------------------------------------- */
 
 .entry {
-	background-color: #fff;
+	background-color: hsla(0, 0%, 0%, .4);
 	margin-bottom: 40px;
-	padding: 70px 80px;
+	padding: 30px 80px 70px;
 }
 
 .entry-content ol,
@@ -1664,18 +1664,21 @@ body .widget.simple-social-icons ul li a {
 }
 .front-page-2 {
 	padding: 30px;
-	background: white;
+	background: #fff;
 	margin-bottom: 40px;
+	color: #000;
 }
 h1.archive-title {
 	font-size: 42px;
 	color: #fff;
 }
 h1.entry-title {
-	color: #333;
+	color: #eee;
 	font-size: 4.5rem;
 	font-weight: 300;
 	font-family: Bitter, serif;
+	margin-bottom: 30px;
+	border-bottom: none;
 }
 .archive-description {
 	background-color: #666;
@@ -1752,17 +1755,19 @@ h1.entry-title {
 .fx-type {
 	flex-grow: 1;
 	color: white;
-	flex-basis: 45%;
 	padding: 20px;
-	transition: .3s ease-in-out;
 	position: relative;
-	margin: 5px;
 	background-size: cover;
 }
+.fx-type {
+	margin: 10px;
+	flex-basis: 40%;
+	transition: all .3s ease-in-out;
+}
 .business-type {
-	flex-basis: 400px;
-	//margin: 10px;
-	transition: .6s ease-in-out;
+	flex-basis: 28%;
+	transition: all .6s ease-in-out;
+	margin: 10px;
 }
 .home .atmo:hover,
 .business-type:hover {
@@ -1825,12 +1830,40 @@ body {
 .home .wp-custom-header img {
 	display: block
 }
+.user-profile img {
+	width: 30px !important;
+	height: 30px !important;
+}
 
-
-
-
-
-
+.snow-main h2::before,
+.rentals-main h3::before {
+	content: "\2745";
+	margin-right: 15px;
+	font-size: 30px;
+	color: #C13636;
+}
+.front-page-2,
+.business-type,
+.fx-type,
+article {
+	-moz-box-shadow: 0px 0px 5px 6px #000;
+	-webkit-box-shadow: 0px 0px 5px 6px #000;
+	box-shadow: 2px 4px 15px 2px #000;
+}
+.home article {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: 0;
+}
+h2.entry-title a {
+	color: #000;
+}
+h1 {
+	font-family: Bitter, serif;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #fff;
+	margin: 40px 0 25px;
+}
 
 
 
@@ -1922,7 +1955,7 @@ body {
 /*snow*/
 
 .snowflake1 {
-	font-size: 72px;
+	font-size: 28px;
 	position: absolute;
 	-webkit-animation: snow 10s  ease-out infinite; 
 	animation: snow 10s infinite;
@@ -1930,21 +1963,21 @@ body {
 }
 .snowflake2 {
 	left: 300px;
-	font-size: 72px;
+	font-size: 28px;
 	position: absolute;
 	-webkit-animation: snow 20s  ease-out infinite; 
 	animation: snow 20s infinite;
 	color: white;
 }
 .snowflake3 {
-	font-size: 72px;
+	font-size: 28px;
 	position: absolute;
 	-webkit-animation: snow 25s  ease-out infinite; 
 	animation: snow2 25s infinite;
 	color: white;
 }
 .snowflake4 {
-	font-size: 72px;
+	font-size: 28px;
 	position: absolute;
 	-webkit-animation: snow 30s  ease-out infinite; 
 	animation: snow2 30s infinite;
@@ -1955,10 +1988,10 @@ body {
         top :0;
     }
     20%, 40%, 60%, 80% {
-        margin-left: 0px;
+        right: 80px;
     }
-    /* 10%, 30%, 50%, */ 70%, 90% {
-        margin-left: 100px;
+    10%, 30%, 50%, 70%, 90% {
+        right: 100px;
     }
     100% {
         top:100%;
@@ -1968,11 +2001,11 @@ body {
     0% {
         top :0;
     }
-    /* 20%, 40%, 60%, */ 80% {
-        margin-left: 300px;
+    20%, 40%, 60%, 80% {
+        right: 140px;
     }
     10%, 30%, 50%, 70%, 90% {
-        margin-left: 260px;
+        right: 120px;
     }
     100% {
         top:100%;
