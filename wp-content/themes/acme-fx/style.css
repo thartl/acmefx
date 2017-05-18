@@ -1887,7 +1887,9 @@ h1 {
 	margin-right: 15px;
 }
 
-
+.snow-main .entry {
+	position: relative;
+}
 
 
 
@@ -1991,20 +1993,20 @@ h1 {
 .snowflake3 {
 	font-size: 28px;
 	position: absolute;
-	-webkit-animation: snow 25s  ease-out infinite; 
+	-webkit-animation: snow 50s  ease-out infinite; 
 	animation: snow 14s infinite;
 }
 .snowflake4 {
 	font-size: 28px;
 	position: absolute;
-	-webkit-animation: snow2 15s  ease-out infinite; 
+	-webkit-animation: snow2 45s  ease-out infinite; 
 	animation: snow2 15s infinite;
 }
 
 @-webkit-keyframes snow {
     0% {
         top :0;
-        right: 0;
+        right: 0px;
     }
     20%, 40%, 60%, 80% {
         right: 80px;
@@ -2013,22 +2015,24 @@ h1 {
         right: 100px;
     }
     100% {
-        top:100%;
+        top:600px;
+        right: 110px;
     }
 }
 @-webkit-keyframes snow2 {
     0% {
         top :0;
-        right: 0;
+        right: 0px;
     }
     20%, 40%, 60%, 80% {
-        right: 140px;
+        right: 200px;
     }
     10%, 30%, 50%, 70%, 90% {
-        right: 120px;
+        right: 220px;
     }
     100% {
-        top:100%;
+        top: 500px;
+        right: 210px;
     }
 }
 
