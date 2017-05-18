@@ -1846,9 +1846,9 @@ body {
 .business-type,
 .fx-type,
 article {
-	-moz-box-shadow: 0px 0px 5px 6px #000;
-	-webkit-box-shadow: 0px 0px 5px 6px #000;
-	box-shadow: 2px 4px 15px 2px #000;
+	/* -moz-box-shadow: 0px 0px 5px 6px #000; */
+	/* -webkit-box-shadow: 0px 0px 5px 6px #000; */
+	/* box-shadow: 2px 4px 15px 2px #000; */
 }
 .home article {
 	-moz-box-shadow: none;
@@ -1868,7 +1868,10 @@ h1 {
 	border-bottom: 1px solid #fff;
 	margin: 40px 0 25px;
 }
-
+.snow-main h1.entry-title::before {
+	content: url('/wp-content/uploads/2017/05/snow-logo.png');
+	margin-right: 15px;
+}
 
 
 
@@ -1963,7 +1966,6 @@ h1 {
 	position: absolute;
 	-webkit-animation: snow 10s  ease-out infinite; 
 	animation: snow 10s infinite;
-	color: orange !important;
 }
 .snowflake2 {
 	left: 300px;
@@ -1971,25 +1973,24 @@ h1 {
 	position: absolute;
 	-webkit-animation: snow 20s  ease-out infinite; 
 	animation: snow 20s infinite;
-	color: white;
 }
 .snowflake3 {
 	font-size: 28px;
 	position: absolute;
 	-webkit-animation: snow 25s  ease-out infinite; 
-	animation: snow2 25s infinite;
-	color: white;
+	animation: snow 14s infinite;
 }
 .snowflake4 {
 	font-size: 28px;
 	position: absolute;
-	-webkit-animation: snow 30s  ease-out infinite; 
-	animation: snow2 30s infinite;
-	color: orange;
+	-webkit-animation: snow2 15s  ease-out infinite; 
+	animation: snow2 15s infinite;
 }
+
 @-webkit-keyframes snow {
     0% {
         top :0;
+        right: 0;
     }
     20%, 40%, 60%, 80% {
         right: 80px;
@@ -2004,6 +2005,7 @@ h1 {
 @-webkit-keyframes snow2 {
     0% {
         top :0;
+        right: 0;
     }
     20%, 40%, 60%, 80% {
         right: 140px;
