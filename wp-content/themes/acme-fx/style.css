@@ -1855,6 +1855,10 @@ article {
 	-webkit-box-shadow: none;
 	box-shadow: 0;
 }
+.blog h2.entry-title a {
+	color: #fff;
+}
+
 h2.entry-title a {
 	color: #000;
 }
@@ -2426,6 +2430,9 @@ h1 {
 	.home .title-area {
 	    top: 40px;
 	}
+	.header-widget-area .widget-title {
+		display: none;
+	}
 }
 @media only screen and (max-width: 860px) {
 
@@ -2494,6 +2501,7 @@ h1 {
 	.headhesive--stick.nav-secondary {
 	padding: 5px;
 	}
+
 }
 @media only screen and (max-width: 550px) {
 	.site-title a {
