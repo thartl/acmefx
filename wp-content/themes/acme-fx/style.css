@@ -164,7 +164,7 @@ body > div {
 
 body {
 	background-color: #222;
-	color: #000;
+	color: #ddd;
 	font-family: 'Bitter', serif;
 	font-size: 20px;
 	font-size: 2rem;
@@ -628,7 +628,7 @@ th:first-child {
 
 .content {
 	float: right;
-	width: 920px;
+	width: 980px;
 }
 
 .content-sidebar .content,
@@ -651,7 +651,7 @@ th:first-child {
 
 .sidebar-primary {
 	float: right;
-	width: 320px;
+	width: 260px;
 }
 
 .sidebar-content .sidebar-primary,
@@ -1148,8 +1148,6 @@ img.alignright,
 	font-size: 3rem;
 	font-weight: 700;
 	line-height: 1.2;
-	//background: url('/wp-content/themes/acme-fx/images/acme-logo-orig-traced.svg') no-repeat;
-	background-size: 30%;
 }
 .site-title a,
 .site-title a:focus,
@@ -1184,9 +1182,6 @@ img.alignright,
 	line-height: 1.5;
 	display: none;
 }
-.home .site-description {
-	display: block;
-}
 
 .site-description,
 .site-title {
@@ -1202,7 +1197,7 @@ img.alignright,
 /* ## Widget Area
 --------------------------------------------- */
 
-.site-header .widget-area {
+.site-header .header-widget-area {
 	float: left;
 }
 
@@ -1228,6 +1223,7 @@ img.alignright,
 
 .genesis-nav-menu a {
 	color: #C13636;
+	color: #fff;
 	display: block;
 	padding: 20px 20px;
 	text-decoration: none;
@@ -1359,9 +1355,9 @@ img.alignright,
 --------------------------------------------- */
 
 .entry {
-	background-color: #fff;
+	background-color: hsla(0, 0%, 0%, .4);
 	margin-bottom: 40px;
-	padding: 70px 80px;
+	padding: 30px 80px 70px;
 }
 
 .entry-content ol,
@@ -1614,6 +1610,14 @@ p.entry-meta {
 	z-index: 1;
 	width: 200px;
 }
+.site-header .widget-area.header-widget-area-2 {
+	position: absolute;
+	right: 50px;
+	top: 20px;
+	background-color: transparent;
+	z-index: 1;
+	//width: 200px;
+}
 
 .simple-social-icons {
 	z-index: 1;
@@ -1644,10 +1648,12 @@ body .widget.simple-social-icons ul li a {
 	width: 600px;
 }
 
-button#wp-custom-header-video-button {
+#wp-custom-header-video-button {
 	display: none;
 }
-
+.home #wp-custom-header img {
+	min-height: 200px;
+}
 #wp-custom-header video,
 #wp-custom-header img {
 	z-index: 2;
@@ -1658,17 +1664,21 @@ button#wp-custom-header-video-button {
 }
 .front-page-2 {
 	padding: 30px;
-	background: white;
+	background: #fff;
+	margin-bottom: 40px;
+	color: #000;
 }
 h1.archive-title {
 	font-size: 42px;
 	color: #fff;
 }
 h1.entry-title {
-	color: #333;
+	color: #eee;
 	font-size: 4.5rem;
 	font-weight: 300;
 	font-family: Bitter, serif;
+	margin-bottom: 30px;
+	border-bottom: none;
 }
 .archive-description {
 	background-color: #666;
@@ -1745,16 +1755,19 @@ h1.entry-title {
 .fx-type {
 	flex-grow: 1;
 	color: white;
-	flex-basis: 45%;
 	padding: 20px;
-	transition: .3s ease-in-out;
 	position: relative;
-	margin: 5px;
 	background-size: cover;
 }
+.fx-type {
+	margin: 10px;
+	flex-basis: 40%;
+	transition: all .3s ease-in-out;
+}
 .business-type {
-	flex-basis: 30%;
-	transition: .6s ease-in-out;
+	flex-basis: 28%;
+	transition: all .6s ease-in-out;
+	margin: 10px;
 }
 .home .atmo:hover,
 .business-type:hover {
@@ -1774,13 +1787,19 @@ h1.entry-title {
 	position: absolute;
 	top: 30px;
 	left: 120px;
+	color: #C13636;
 }
 a.business-type:hover,
 a.fx-type:hover {
     color: #fff;
 }
 .business-type h2 {
-	left: 20px;
+	top: 0;
+	left: 0;
+	padding: 15px 20px 25px;
+	color: #fff;
+	//background-color: #C13636;
+
 }
 .business-type p,
 .fx-type p {
@@ -1802,6 +1821,59 @@ a.fx-type:hover {
 .fx-type.wind img svg {
 	fill: #aaa !important;
 }
+body {
+	background-image: url('/wp-content/uploads/2017/05/carbon_fibre.png');
+}
+.wp-custom-header img {
+	display: none;
+}
+.home .wp-custom-header img {
+	display: block
+}
+.user-profile img {
+	width: 30px !important;
+	height: 30px !important;
+}
+
+.snow-main h2::before,
+.rentals-main h3::before {
+	content: "\2745";
+	margin-right: 15px;
+	font-size: 30px;
+	color: #C13636;
+}
+.front-page-2,
+.business-type,
+.fx-type,
+article {
+	-moz-box-shadow: 0px 0px 5px 6px #000;
+	-webkit-box-shadow: 0px 0px 5px 6px #000;
+	box-shadow: 2px 4px 15px 2px #000;
+}
+.home article {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: 0;
+}
+.blog h2.entry-title a {
+	color: #fff;
+}
+
+h2.entry-title a {
+	color: #000;
+}
+h1 {
+	font-family: Bitter, serif;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #fff;
+	margin: 40px 0 25px;
+}
+
+
+
+
+
+
 
 
 .water {
@@ -1887,7 +1959,7 @@ a.fx-type:hover {
 /*snow*/
 
 .snowflake1 {
-	font-size: 72px;
+	font-size: 28px;
 	position: absolute;
 	-webkit-animation: snow 10s  ease-out infinite; 
 	animation: snow 10s infinite;
@@ -1895,21 +1967,21 @@ a.fx-type:hover {
 }
 .snowflake2 {
 	left: 300px;
-	font-size: 72px;
+	font-size: 28px;
 	position: absolute;
 	-webkit-animation: snow 20s  ease-out infinite; 
 	animation: snow 20s infinite;
 	color: white;
 }
 .snowflake3 {
-	font-size: 72px;
+	font-size: 28px;
 	position: absolute;
 	-webkit-animation: snow 25s  ease-out infinite; 
 	animation: snow2 25s infinite;
 	color: white;
 }
 .snowflake4 {
-	font-size: 72px;
+	font-size: 28px;
 	position: absolute;
 	-webkit-animation: snow 30s  ease-out infinite; 
 	animation: snow2 30s infinite;
@@ -1920,10 +1992,10 @@ a.fx-type:hover {
         top :0;
     }
     20%, 40%, 60%, 80% {
-        margin-left: 0px;
+        right: 80px;
     }
-    /* 10%, 30%, 50%, */ 70%, 90% {
-        margin-left: 100px;
+    10%, 30%, 50%, 70%, 90% {
+        right: 100px;
     }
     100% {
         top:100%;
@@ -1933,11 +2005,11 @@ a.fx-type:hover {
     0% {
         top :0;
     }
-    /* 20%, 40%, 60%, */ 80% {
-        margin-left: 300px;
+    20%, 40%, 60%, 80% {
+        right: 140px;
     }
     10%, 30%, 50%, 70%, 90% {
-        margin-left: 260px;
+        right: 120px;
     }
     100% {
         top:100%;
@@ -1965,9 +2037,9 @@ a.fx-type:hover {
 /* # Headhesive
 ---------------------------------------------------------------------------------------------------- */
 
-.headhesive {
+/* .headhesive {
 	display: none;
-}
+} */
 
 .site-header {
 	padding: 0;
@@ -2019,13 +2091,26 @@ a.fx-type:hover {
 	border: 1px solid #111 !important;
 }
 
-/* .home > .menu-toggle {
+.home .headhesive--unstick.nav-secondary {
 	display: none;
 }
-.menu-toggle {
-	position: fixed;
-	top: 0;
-} */
+.home .nav-secondary {
+	/* transform: translateY(-100%);
+	transition: all 150ms ease-out;
+	-webkit-transition: all 150ms ease-out;
+	-moz-transition: all 150ms ease-out;
+	z-index: 1000; */
+}
+.home .nav-primary {
+	z-index: 0;
+}
+
+.home .headhesive--stick.nav-secondary {
+	transform: translateY(0%);
+	-webkit-transform: translateY(0%);
+	-moz-transform: translateY(0%);
+}
+
 .nav-secondary.headhesive--stick ul::before {
 	content: url('/wp-content/themes/acme-fx/images/acme-logo-orig-traced.svg');
 	position: absolute;
@@ -2051,8 +2136,8 @@ a.fx-type:hover {
 		width: 920px;
 	}
 
-	.content,
-	.site-header .widget-area {
+	.content/* ,
+	.site-header .widget-area */ {
 		width: 800px;
 	}
 
@@ -2092,8 +2177,8 @@ a.fx-type:hover {
 		width: 740px;
 	}
 
-	.content,
-	.site-header .widget-area {
+	.content/* ,
+	.site-header .widget-area */ {
 		width: 620px;
 	}
 
@@ -2132,6 +2217,15 @@ a.fx-type:hover {
 	.business-type,
 	.fx-type {
 		flex-basis: 100%;
+		background-size: cover;
+	}
+	.business-type:hover,
+	.fx-type:hover {
+		background-size: cover;
+	}
+	.home #wp-custom-header video,
+	.home #wp-custom-header img {
+		max-height: 400px;
 	}
 	
 }
@@ -2157,7 +2251,7 @@ a.fx-type:hover {
 	.sidebar-secondary,
 	.sidebar-sidebar-content .content,
 	.sidebar-sidebar-content .content-sidebar-wrap,
-	.site-header .widget-area,
+	/* .site-header .widget-area, */
 	.title-area {
 		width: 100%;
 	}
@@ -2327,10 +2421,17 @@ a.fx-type:hover {
 		margin: 0 auto 40px;
 	}
 
+
 }
 @media only screen and (max-width: 900px) {
-	.site-description {
-		/* color: #C13636; */
+	.home .site-description {
+		display: none;
+	}
+	.home .title-area {
+	    top: 40px;
+	}
+	.header-widget-area .widget-title {
+		display: none;
 	}
 }
 @media only screen and (max-width: 860px) {
@@ -2391,18 +2492,16 @@ a.fx-type:hover {
 		margin: 0;
 		width: 100%;
 	}
-	.site-header .header-widget-area.widget-area {
-		/* display: none; */
-	}
-	/* .title-area {
-	    margin-top: 0px;
-	} */
 }
 
 @media only screen and (max-width: 700px) {
-	.genesis-nav-menu a {
-		padding: 20px 20px;
+	.headhesive--stick.nav-secondary a {
+	padding: 10px 20px;
 	}
+	.headhesive--stick.nav-secondary {
+	padding: 5px;
+	}
+
 }
 @media only screen and (max-width: 550px) {
 	.site-title a {
