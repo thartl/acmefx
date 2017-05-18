@@ -1836,7 +1836,7 @@ body {
 }
 
 .snow-main .content h2::before,
-.rentals-main h3::before {
+.rentals-main .content h3::before {
 	content: "\2587";
 	margin-right: 15px;
 	font-size: 30px;
