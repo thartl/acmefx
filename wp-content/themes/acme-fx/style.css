@@ -194,7 +194,7 @@ textarea:focus,
 }
 
 a {
-	color: #C13636;
+	color: #AE4040;
 	text-decoration: none;
 }
 
@@ -628,7 +628,7 @@ th:first-child {
 
 .content {
 	float: right;
-	width: 980px;
+	width: 940px;
 }
 
 .content-sidebar .content,
@@ -651,7 +651,7 @@ th:first-child {
 
 .sidebar-primary {
 	float: right;
-	width: 260px;
+	width: 300px;
 }
 
 .sidebar-content .sidebar-primary,
@@ -1154,7 +1154,7 @@ img.alignright,
 .site-title a,
 .site-title a:focus,
 .site-title a:hover {
-	color: #C13636;
+	color: #AE4040;
 	font-size: 96px;
 	text-decoration: none;
 	font-family: 'Source Sans Pro', serif;
@@ -1224,7 +1224,7 @@ img.alignright,
 }
 
 .genesis-nav-menu a {
-	color: #C13636;
+	color: #AE4040;
 	color: #fff;
 	display: block;
 	padding: 20px 20px;
@@ -1321,7 +1321,7 @@ img.alignright,
 --------------------------------------------- */
 
 .nav-primary {
-	background-color: #C13636;
+	background-color: #AE4040;
 	/* -moz-box-shadow:    0px 3px 5px 6px #000;
 	-webkit-box-shadow: 0px 3px 5px 6px #000;
 	box-shadow: 0px 8px 8px 12px #000; */
@@ -1362,6 +1362,7 @@ img.alignright,
 	margin-bottom: 40px;
 	padding: 30px 80px 70px;
 }
+
 
 .entry-content ol,
 .entry-content ul {
@@ -1568,7 +1569,7 @@ p.entry-meta {
 }
 .header-widget-area .widget-title {
 	text-align: center;
-	color: #C13636;
+	color: #AE4040;
 	margin-bottom: 5px;
 }
 
@@ -1678,7 +1679,7 @@ h1.archive-title {
 h1.entry-title {
 	color: #eee;
 	font-size: 4.5rem;
-	font-weight: 300;
+	font-weight: 600;
 	font-family: Bitter, serif;
 	margin-bottom: 30px;
 	border-bottom: none;
@@ -1775,7 +1776,7 @@ h1.entry-title {
 .home .atmo:hover,
 .business-type:hover {
 	background-image: none;
-	background-color: #C13636;
+	background-color: #AE4040;
 }
 
 .business-type img,
@@ -1790,7 +1791,7 @@ h1.entry-title {
 	position: absolute;
 	top: 30px;
 	left: 120px;
-	color: #C13636;
+	color: #AE4040;
 }
 a.business-type:hover,
 a.fx-type:hover {
@@ -1801,7 +1802,7 @@ a.fx-type:hover {
 	left: 0;
 	padding: 15px 20px 25px;
 	color: #fff;
-	//background-color: #C13636;
+	//background-color: #AE4040;
 
 }
 .business-type p,
@@ -1842,19 +1843,23 @@ body {
 	width: 30px !important;
 	height: 30px !important;
 }
-
-.snow-main .content h2::before,
-.rentals-main .content h3::before {
-	content: "\2587";
+.rentals-main .content .snowflake h3::before,
+.snow-main .content h2::before {
+	content: "\2745";
 	margin-right: 15px;
 	font-size: 30px;
-	color: #C13636;
+	color: #fff;
 }
-/* .snow-main .content h2::before {
-	content: url('/wp-content/themes/acme-fx/images/clouds.svg');
-	color: #bbb;
+.snow-main .content h2.ash::before,
+.rentals-main .content h3::before {
+	content: "\2601";
+	margin-right: 15px;
+	color: #777;
 	height: 20px;
-} */
+}
+.rentals-main .content h2.fire-icon::before {
+	content: "\01f525";
+}
 .front-page-2,
 .business-type,
 .fx-type,
@@ -1882,17 +1887,64 @@ h1 {
 	border-bottom: 1px solid #fff;
 	margin: 40px 0 25px;
 }
-.snow-main h1.entry-title::before {
+/* .snow-main h1.entry-title::before {
 	content: url('/wp-content/uploads/2017/05/snow-logo.png');
 	margin-right: 15px;
-}
+} */
 
 .snow-main .entry {
 	position: relative;
 }
+.sidebar {
+	background-color: #1E373B;
+}
+body.woocommerce .content {
+	background-color: #1E373B;
+}
+.woocommerce .archive-description {
+	padding: 0;
+	background-color: transparent;
+}
 
-
-
+body.woocommerce .products a.button,
+body.woocommerce-cart a.button {
+	color: #AE4040;
+	background-color: #fff;
+}
+body.woocommerce a.button:hover,
+body.woocommerce-cart a.button:hover {
+	color: #fff;
+	background-color: #AE4040;
+}
+body.woocommerce h1.archive-title {
+	border-bottom: none;
+}
+.flexible-widgets h3.widget-title {
+	color: #1E373B;
+}
+.woocommerce.widget .count,
+body.woocommerce .count {
+	color: #4B898C;
+	background-color: transparent;
+}
+body.woocommerce .products a {
+	color: #fff;
+}
+body.woocommerce ul.products li.product .price {
+    color: #fff;
+}
+.cat-parent > a {
+	font-family: Bitter, serif;
+	font-size: 20px;
+	color: #fff;
+}
+.woocommerce.widget li li {
+	margin-left: 10px;
+}
+.home h2 {
+	background-color: #1E373B;
+	width: 100%;
+}
 
 
 .water {
@@ -2015,7 +2067,7 @@ h1 {
         right: 100px;
     }
     100% {
-        top:600px;
+        top: 600px;
         right: 110px;
     }
 }
