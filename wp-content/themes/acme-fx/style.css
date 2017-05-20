@@ -1667,7 +1667,7 @@ body .widget.simple-social-icons ul li a {
 	line-height: 0;
 }
 .front-page-2 {
-	padding: 30px;
+	padding: 10px;
 	background: #fff;
 	margin-bottom: 40px;
 	color: #000;
@@ -1677,7 +1677,7 @@ h1.archive-title {
 	color: #fff;
 }
 h1.entry-title {
-	color: #eee;
+	color: #fff;
 	font-size: 4.5rem;
 	font-weight: 600;
 	font-family: Bitter, serif;
@@ -1797,14 +1797,7 @@ a.business-type:hover,
 a.fx-type:hover {
     color: #fff;
 }
-.business-type h2 {
-	top: 0;
-	left: 0;
-	padding: 15px 20px 25px;
-	color: #fff;
-	//background-color: #AE4040;
 
-}
 .business-type p,
 .fx-type p {
 	margin-top: 90px;
@@ -1919,9 +1912,7 @@ body.woocommerce-cart a.button:hover {
 body.woocommerce h1.archive-title {
 	border-bottom: none;
 }
-.flexible-widgets h3.widget-title {
-	color: #1E373B;
-}
+
 .woocommerce.widget .count,
 body.woocommerce .count {
 	color: #4B898C;
@@ -1941,9 +1932,19 @@ body.woocommerce ul.products li.product .price {
 .woocommerce.widget li li {
 	margin-left: 10px;
 }
-.home h2 {
+.flexible-widgets h3.widget-title,
+.business-type h2 {
+	top: 0;
+	left: 0;
+	padding: 15px 20px 25px;
+	color: #fff;
+	//background-color: #AE4040;
 	background-color: #1E373B;
 	width: 100%;
+	transition: .3s ease-in-out;
+}
+.business-type:hover h2 {
+	background-color: #AE4040;
 }
 
 
@@ -2274,7 +2275,7 @@ body.woocommerce ul.products li.product .price {
 
 @media only screen and (max-width: 1170px) {
 	.site-header > .wrap {
-		background: url('/wp-content/themes/acme-fx/images/explode-red.svg') no-repeat right;
+		background: url('/wp-content/themes/acme-fx/images/explode-blackf.svg') no-repeat right;
 		//background: url('wp-content/uploads/2017/05/grey-fire.jpg') no-repeat;
 	}
 }
