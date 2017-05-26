@@ -200,7 +200,7 @@ a {
 
 a:focus,
 a:hover {
-	color: #333;
+	color: #4B898C;
 	text-decoration: none;
 }
 
@@ -842,9 +842,11 @@ th:first-child {
 }
 
 .widget-title {
-	font-size: 18px;
-	font-size: 1.8rem;
-	margin-bottom: 20px;
+	font-size: 15px;
+	font-size: 1.5rem;
+	margin-bottom: 16px;
+	text-transform: uppercase;
+	font-weight: bold;
 }
 
 /* ## WordPress
@@ -1118,7 +1120,8 @@ img.alignright,
     max-width: inherit;
     position: relative;
 	background: url('/wp-content/themes/acme-fx/images/explode-red.svg') no-repeat right;
-	//background: url('wp-content/uploads/2017/05/grey-fire.jpg') no-repeat;
+	background: url('http://acmefx.dev/wp-content/uploads/2017/05/grey-fire-simple.jpg') no-repeat;
+	background-position: right;
 
 }
 .home .site-header > .wrap {
@@ -1612,7 +1615,6 @@ p.entry-meta {
 	top: 20px;
 	background-color: transparent;
 	z-index: 1;
-	width: 200px;
 }
 .site-header .widget-area.header-widget-area-2 {
 	position: absolute;
@@ -1620,7 +1622,6 @@ p.entry-meta {
 	top: 20px;
 	background-color: transparent;
 	z-index: 1;
-	//width: 200px;
 }
 
 .simple-social-icons {
@@ -1630,7 +1631,7 @@ p.entry-meta {
 body .widget.simple-social-icons ul li a {
 	border: 1px solid transparent !important;
 	background-color: transparent !important;
-	border-color: transparent !important;
+	//border-color: transparent !important;
 }
 
 .home .title-area {
@@ -1791,7 +1792,8 @@ h1.entry-title {
 	position: absolute;
 	top: 30px;
 	left: 120px;
-	color: #AE4040;
+	color: #fff;
+	font-family: Bitter, serif;
 }
 a.business-type:hover,
 a.fx-type:hover {
@@ -1891,6 +1893,9 @@ h1 {
 .sidebar {
 	background-color: #1E373B;
 }
+.sidebar .widget {
+	background-color: #1E373B;
+}
 body.woocommerce .content {
 	background-color: #1E373B;
 }
@@ -1926,84 +1931,113 @@ body.woocommerce ul.products li.product .price {
 }
 .cat-parent > a {
 	font-family: Bitter, serif;
-	font-size: 20px;
+	font-size: 1.5rem;
 	color: #fff;
 }
 .woocommerce.widget li li {
 	margin-left: 10px;
 }
-.flexible-widgets h3.widget-title,
 .business-type h2 {
 	top: 0;
 	left: 0;
 	padding: 15px 20px 25px;
 	color: #fff;
-	//background-color: #AE4040;
 	background-color: #1E373B;
 	width: 100%;
 	transition: .3s ease-in-out;
+	font-size: 24px;
+}
+.flexible-widgets h3.widget-title {
+	font-size: 30px;
+	/* text-transform: uppercase; */
+	border-bottom: 4px solid #1E373B;
+	color: #1E373B;
+
 }
 .business-type:hover h2 {
 	background-color: #AE4040;
 }
+.sidebar .widget {
+	border-top: 5px solid #fff;
+}
+
+.sidebar .widget:first-of-type {
+	border-top: none;
+}
+
+body.woocommerce div.product p.price,
+body.woocommerce div.product span.price {
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 .water {
-	background: url('/wp-content/uploads/2017/05/water.jpg');
+	background: url('/wp-content/uploads/2017/05/water-dark.jpg');
 }
 .water:hover {
 	background: url('/wp-content/uploads/2017/05/water-dark.jpg');
 }
 .atmo {
-	background: url('/wp-content/uploads/2017/05/atmo.jpg');
+	background: url('/wp-content/uploads/2017/05/atmo-dark.jpg');
 }
 .atmo:hover {
 	background: url('/wp-content/uploads/2017/05/atmo-dark.jpg');
 }
 .snow {
-	background: url('/wp-content/uploads/2017/05/snow-1.jpg');
+	background: url('/wp-content/uploads/2017/05/snow-dark.jpg');/* was snow-1.jpg */
 }
 .snow:hover {
 	background: url('/wp-content/uploads/2017/05/snow-dark.jpg');
 }
 .wind {
-	background: url('/wp-content/uploads/2017/05/wind.jpg');
+	background: url('/wp-content/uploads/2017/05/wind-dark.jpg');
 }
 .wind:hover {
 	background: url('/wp-content/uploads/2017/05/wind-dark.jpg');
 }
 .mechanical {
-	background: url('/wp-content/uploads/2017/05/mechanical.jpg');
+	background: url('/wp-content/uploads/2017/05/mechanical-dark.jpg');
 }
 .mechanical:hover {
 	background: url('/wp-content/uploads/2017/05/mechanical-dark.jpg');
 }
 .steam {
-	background: url('/wp-content/uploads/2017/05/steam.jpg');
+	background: url('/wp-content/uploads/2017/05/steam-dark.jpg');
 }
 .steam:hover {
 	background: url('/wp-content/uploads/2017/05/steam-dark.jpg');
 }
 .pyro {
-	background: url('/wp-content/uploads/2017/05/pyro.jpg');
+	background: url('/wp-content/uploads/2017/05/pyro-dark.jpg');
 }
 .pyro:hover {
 	background: url('/wp-content/uploads/2017/05/pyro-dark.jpg');
 }
 .fire {
-	background: url('/wp-content/uploads/2017/05/fire.jpg');
+	background: url('/wp-content/uploads/2017/05/fire-dark.jpg');
 }
 .fire:hover {
 	background: url('/wp-content/uploads/2017/05/fire-dark.jpg');
 }
 .concept {
-	background: url('/wp-content/uploads/2017/05/concept.jpg');
+	background: url('/wp-content/uploads/2017/05/concept-dark.jpg');
 }
 .concept:hover {
 	background: url('/wp-content/uploads/2017/05/concept-dark.jpg');
 }
 .mold {
-	background: url('/wp-content/uploads/2017/05/mold.jpg');
+	background: url('/wp-content/uploads/2017/05/mold-dark.jpg');
 }
 .mold:hover {
 	background: url('/wp-content/uploads/2017/05/mold-dark.jpg');
@@ -2063,6 +2097,7 @@ body.woocommerce ul.products li.product .price {
     }
     20%, 40%, 60%, 80% {
         right: 80px;
+        transform: rotateX(360deg);
     }
     10%, 30%, 50%, 70%, 90% {
         right: 100px;
@@ -2070,6 +2105,7 @@ body.woocommerce ul.products li.product .price {
     100% {
         top: 600px;
         right: 110px;
+        
     }
 }
 @-webkit-keyframes snow2 {
@@ -2577,6 +2613,23 @@ body.woocommerce ul.products li.product .price {
 	}
 
 }
+
+@media only screen and (max-width: 600px) {
+	.site-inner {
+		padding: 0;
+	}
+	.sidebar {
+		background-color: #fff;
+	}
+	.sidebar .widget {
+	    color: #1E373B;
+	    background-color: #fff;
+	}
+	.cat-parent > a {
+	    color: #1E373B;
+	}
+}
+
 @media only screen and (max-width: 550px) {
 	.site-title a {
 		font-size: 80px;
