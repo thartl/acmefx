@@ -1635,6 +1635,7 @@ body .woocommerce a.remove {
 
 body.woocommerce .quantity .plus, body.woocommerce-page .quantity .plus,
 body.woocommerce .quantity .minus, body.woocommerce-page .quantity .minus {
+	z-index: 1000;
     right: 14px;
     height: 1.3em;
 }
