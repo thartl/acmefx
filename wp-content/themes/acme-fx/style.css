@@ -197,7 +197,7 @@ a {
 
 a:focus,
 a:hover {
-	color: #4B898C;
+	color: #5BA5A5;
 	text-decoration: none;
 }
 
@@ -511,6 +511,9 @@ table {
 	margin-bottom: 40px;
 	width: 100%;
 	word-break: break-all;
+}
+.woocommerce table {
+	word-break: normal;
 }
 
 tbody {
@@ -1128,10 +1131,21 @@ img.alignright,
 
 .title-area {
 	float: left;
-	padding: 10px 0;
-	width: 300px;
+	position: static;
+	text-align: center;
+	margin-top: 90px;
+	margin-bottom: 20px;
+	width: 100%;
+	padding: 0 30px;
 }
-
+.home .title-area {
+	position: absolute;
+	z-index: 1;
+	top: 100px;
+}
+.title-area img {
+	width: 600px;
+}
 .header-image .title-area {
 	margin: 0 auto;
 	max-width: 300px;
@@ -1157,13 +1171,11 @@ img.alignright,
 	text-decoration: none;
 	font-family: 'Source Sans Pro', serif;
 }
-
 .home .site-title a,
 .home .site-title a:focus,
 .home .site-title a:hover {
 	font-size: 96px;
 }
-
 .header-image .site-title > a {
 	background-position: center !important;
 	background-size: contain !important;
@@ -1509,6 +1521,114 @@ p.entry-meta {
 	display: none;
 }
 
+/* # Woocommerce
+---------------------------------------------------------------------------------------------------- */
+
+body.woocommerce .content {
+	background-color: #1E373B;
+}
+.woocommerce .archive-description {
+	padding: 0;
+	background-color: transparent;
+}
+
+body.woocommerce .products a.button,
+body.woocommerce-cart a.button {
+	color: #AE4040;
+	background-color: #fff;
+}
+body.woocommerce a.button:hover,
+body.woocommerce-cart a.button:hover {
+	color: #fff;
+	background-color: #AE4040;
+}
+body.woocommerce h1.archive-title {
+	border-bottom: none;
+}
+
+.woocommerce.widget .count,
+body.woocommerce .count {
+	color: #5BA5A5;
+	background-color: transparent;
+}
+body.woocommerce .products a {
+	color: #fff;
+}
+body.woocommerce ul.products li.product .price {
+    color: #fff;
+}
+.cat-parent > a {
+	font-family: Bitter, serif;
+	//font-size: 1.5rem;
+	color: #fff;
+}
+body.woocommerce div.product p.price,
+body.woocommerce div.product span.price {
+    color: #fff;
+}
+li.cat-item a {
+	color: #ccc;
+}
+.woocommerce .sharrre .count {
+	background-color: #fff;
+}
+/* .sharrre:nth-child(4)::before {
+	content:
+} */
+
+
+.woocommerce a.button:focus,
+.woocommerce a.button:hover,
+.woocommerce a.button.alt:focus,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button:focus, 
+.woocommerce button.button:hover,
+.woocommerce button.button.alt:focus, 
+.woocommerce button.button.alt:hover,
+.woocommerce input.button:focus, html .woocommerce input.button:hover, .woocommerce input.button.alt:focus, .woocommerce input.button.alt:hover, .woocommerce input[type="submit"]:focus, html .woocommerce input[type="submit"]:hover, .woocommerce #respond input#submit:focus, .woocommerce #respond input#submit:hover, .woocommerce #respond input#submit.alt:focus, .woocommerce #respond input#submit.alt:hover  {
+	background-color: #5BA5A5 !important;
+}
+
+.woocommerce a.button, .woocommerce a.button.alt, .woocommerce button.button, .woocommerce button.button.alt, .woocommerce input.button, .woocommerce input.button.alt, .woocommerce input.button[type="submit"], .woocommerce #respond input#submit, .woocommerce #respond input#submit.alt {
+	background-color: #AE4040 !important;
+}
+
+
+
+body.woocommerce div.product .woocommerce-tabs ul.tabs {
+	padding: 0;
+}
+body.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+	background-color: #1E373B;
+	color: #fff;
+}
+body.woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
+    background-color: #fff;
+    color: #1E373B;
+}
+body.woocommerce div.product .woocommerce-tabs ul.tabs li.active a:hover {
+    color: #1E373B;
+}
+
+body.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
+    color: #5BA5A5;
+}
+body .woocommerce a.remove:hover {
+    color: #fff!important;
+    background: #AE4040;
+}
+body .woocommerce a.remove {
+	color: #AE4040	!important;
+}
+.woocommerce-cart #payment, .woocommerce-checkout #payment, #add_payment_method #payment {
+	background-color: #1E373B !important;
+}
+.woocommerce form .form-row.woocommerce-invalid label {
+    color: #5BA5A5 !important;
+}
+.woocommerce-MyAccount-navigation ul li.is-active > a {
+    color: #fff !important;
+}
 
 /* # Sidebars
 ---------------------------------------------------------------------------------------------------- */
@@ -1525,6 +1645,10 @@ p.entry-meta {
 	border-top: 5px solid #fff;
 	padding: 40px;
 }
+.sidebar .widget:first-of-type {
+	border-top: none;
+}
+
 
 /* # Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
@@ -1617,25 +1741,6 @@ p.entry-meta {
 body .widget.simple-social-icons ul li a {
 	border: 1px solid transparent !important;
 	background-color: transparent !important;
-}
-
-.home .title-area {
-	position: absolute;
-	z-index: 1;
-	top: 100px;
-}
-
-.title-area {
-	position: static;
-	text-align: center;
-	margin-top: 90px;
-	margin-bottom: 20px;
-	width: 100%;
-	padding: 0 30px;
-}
-
-.title-area img {
-	width: 600px;
 }
 
 #wp-custom-header-video-button {
@@ -1856,44 +1961,7 @@ h1 {
 .snow-main .entry {
 	position: relative;
 }
-body.woocommerce .content {
-	background-color: #1E373B;
-}
-.woocommerce .archive-description {
-	padding: 0;
-	background-color: transparent;
-}
 
-body.woocommerce .products a.button,
-body.woocommerce-cart a.button {
-	color: #AE4040;
-	background-color: #fff;
-}
-body.woocommerce a.button:hover,
-body.woocommerce-cart a.button:hover {
-	color: #fff;
-	background-color: #AE4040;
-}
-body.woocommerce h1.archive-title {
-	border-bottom: none;
-}
-
-.woocommerce.widget .count,
-body.woocommerce .count {
-	color: #4B898C;
-	background-color: transparent;
-}
-body.woocommerce .products a {
-	color: #fff;
-}
-body.woocommerce ul.products li.product .price {
-    color: #fff;
-}
-.cat-parent > a {
-	font-family: Bitter, serif;
-	//font-size: 1.5rem;
-	color: #fff;
-}
 .business-type h2 {
 	top: 0;
 	left: 0;
@@ -1915,17 +1983,8 @@ body.woocommerce ul.products li.product .price {
 	background-color: #AE4040;
 }
 
-.sidebar .widget:first-of-type {
-	border-top: none;
-}
 
-body.woocommerce div.product p.price,
-body.woocommerce div.product span.price {
-    color: #fff;
-}
-li.cat-item a {
-	color: #ccc;
-}
+
 
 
 
@@ -2027,7 +2086,6 @@ li.cat-item a {
 	animation: snow 10s infinite;
 }
 .snowflake2 {
-	left: 300px;
 	font-size: 28px;
 	position: absolute;
 	-webkit-animation: snow 20s  ease-out infinite; 
