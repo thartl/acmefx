@@ -1640,10 +1640,9 @@ body .woocommerce a.remove {
 
 body.woocommerce .quantity .plus, body.woocommerce-page .quantity .plus,
 body.woocommerce .quantity .minus, body.woocommerce-page .quantity .minus {
-//    right: 14px;
+	z-index: 100;
     height: 1.3em;
 }
-
 
 /* # Sidebars
 ---------------------------------------------------------------------------------------------------- */

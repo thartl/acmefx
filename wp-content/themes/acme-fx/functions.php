@@ -370,3 +370,5 @@ remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_result_count', 20 )
 
 // Remove all woocommerce stylesheets
 // add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+
+
