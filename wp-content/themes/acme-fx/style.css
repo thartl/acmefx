@@ -1532,16 +1532,16 @@ body.woocommerce .content {
 	background-color: transparent;
 }
 
-body.woocommerce .products a.button,
+/* body.woocommerce .products a.button,
 body.woocommerce-cart a.button {
 	color: #AE4040;
 	background-color: #fff;
-}
-body.woocommerce a.button:hover,
+} */
+/* body.woocommerce a.button:hover,
 body.woocommerce-cart a.button:hover {
 	color: #fff;
 	background-color: #AE4040;
-}
+} */
 body.woocommerce h1.archive-title {
 	border-bottom: none;
 }
@@ -1629,6 +1629,16 @@ body .woocommerce a.remove {
 .woocommerce-MyAccount-navigation ul li.is-active > a {
     color: #fff !important;
 }
+.woocommerce input[type=number].qty {
+	//font-size: 24px;
+}
+
+body.woocommerce .quantity .plus, body.woocommerce-page .quantity .plus,
+body.woocommerce .quantity .minus, body.woocommerce-page .quantity .minus {
+    right: 14px;
+    height: 1.3em;
+}
+
 
 /* # Sidebars
 ---------------------------------------------------------------------------------------------------- */
@@ -2320,6 +2330,14 @@ h1 {
 	.footer-widgets-1 {
 		margin-right: 30px;
 	}
+	body.woocommerce-cart table.cart td.actions .coupon input.input-text, body.woocommerce-checkout table.cart td.actions .coupon input.input-text, body #add_payment_method table.cart td.actions .coupon input.input-text {
+		margin-right: 10px;
+		width: calc(66.6666% - 10px);
+	}
+	body.woocommerce table.cart td.actions .coupon .input-text+.button,
+	body.woocommerce-page table.cart td.actions .coupon .input-text+.button {
+		width: 33.3333%;
+	}
 
 }
 
@@ -2353,6 +2371,7 @@ h1 {
 	}
 	
 }
+
 
 @media only screen and (max-width: 1023px) {
 
