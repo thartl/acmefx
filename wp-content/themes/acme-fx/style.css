@@ -1737,15 +1737,15 @@ body.woocommerce .quantity .minus, body.woocommerce-page .quantity .minus {
 }
 .site-header .widget-area.header-widget-area {
 	position: absolute;
-	left: 50px;
+	left: 15px;
 	top: 20px;
 	background-color: transparent;
 	z-index: 1;
 }
 .site-header .widget-area.header-widget-area-2 {
 	position: absolute;
-	right: 50px;
-	top: 20px;
+	right: 15px;
+	top: 29px;
 	background-color: transparent;
 	z-index: 1;
 }
@@ -1994,10 +1994,15 @@ h1 {
 	background-color: #AE4040;
 }
 
+header img.header-profile {
+	height: 30px;
+}
 
-
-
-
+body a.agm_mh_marker_item_directions,
+body img.agm_mh_info_icon {
+	display: none;
+}
+ 
 
 
 
