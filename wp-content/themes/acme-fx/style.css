@@ -2005,7 +2005,9 @@ body a.agm_mh_marker_item_directions,
 body img.agm_mh_info_icon {
 	display: none;
 }
- 
+body div.agm_mh_info_content {
+	color: #1E373B;
+}
 
 
 
