@@ -371,4 +371,15 @@ remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_result_count', 20 )
 // Remove all woocommerce stylesheets
 // add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
+// Remove page title from woocommerce archives
+add_filter( 'woocommerce_show_page_title', 'th_no_page_title_on_woo_archives' );
+function th_no_page_title_on_woo_archives($state) {
+	if ( is_product_category() && !is_shop() ) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+
 
