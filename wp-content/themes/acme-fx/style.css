@@ -1747,7 +1747,7 @@ body.woocommerce .quantity .minus, body.woocommerce-page .quantity .minus {
 }
 .site-header .widget-area.header-widget-area-2 {
 	position: absolute;
-	right: 15px;
+	right: 25px;
 	top: 29px;
 	background-color: transparent;
 	z-index: 1;
