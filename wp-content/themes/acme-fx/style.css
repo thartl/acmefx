@@ -1638,10 +1638,16 @@ body .woocommerce a.remove {
     margin: 0 !important;
 }
 
-body.woocommerce .quantity .plus, body.woocommerce-page .quantity .plus,
-body.woocommerce .quantity .minus, body.woocommerce-page .quantity .minus {
+body.woocommerce .cart .quantity.buttons_added .plus, body.woocommerce-page .cart .quantity.buttons_added .plus,
+body.woocommerce .cart .quantity.buttons_added .minus, body.woocommerce-page .cart .quantity.buttons_added .minus {
 	z-index: 100;
     height: 1.3em;
+    width: 1.387em;
+}
+body.woocommerce .product .cart div.quantity.buttons_added, body.woocommerce-page .product .cart div.quantity.buttons_added,
+body.woocommerce .product .cart div.quantity.buttons_added, body.woocommerce-page .product .cart div.quantity.buttons_added {
+	width: 4em;
+	margin: 0 14px 22px 0;
 }
 
 /* # Sidebars
