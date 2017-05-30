@@ -1632,14 +1632,17 @@ body .woocommerce a.remove {
 .woocommerce input[type=number].qty {
 	//font-size: 24px;
 }
+.woocommerce input.input-text.qty.text::-webkit-inner-spin-button,
+.woocommerce input.input-text.qty.text::-webkit-outer-spin-button {
+	-webkit-appearance: none !important;
+    margin: 0 !important;
+}
 
 body.woocommerce .quantity .plus, body.woocommerce-page .quantity .plus,
 body.woocommerce .quantity .minus, body.woocommerce-page .quantity .minus {
-	z-index: 1000;
-    right: 14px;
+	z-index: 100;
     height: 1.3em;
 }
-
 
 /* # Sidebars
 ---------------------------------------------------------------------------------------------------- */
