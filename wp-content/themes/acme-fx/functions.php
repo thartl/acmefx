@@ -537,6 +537,11 @@ function pw_product_link_to_view( $link ) {
 	}
 }
 
+// Increase WooCommerce Variation Limit --
+function custom_wc_ajax_variation_threshold( $qty, $product ) {
+return 100;
+}
 
+add_filter( 'woocommerce_ajax_variation_threshold', 'custom_wc_ajax_variation_threshold', 100, 2 );
 
 
