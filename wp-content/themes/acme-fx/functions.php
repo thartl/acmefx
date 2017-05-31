@@ -526,7 +526,7 @@ remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_l
 add_filter( 'woocommerce_get_price_html', 'sv_change_product_price_display' );
 function sv_change_product_price_display( $price ) {
 	global $product;
-	if ( $product && $product->regular_price == 0 ) {
+	if ( $product && $product->regular_price == 0.01 ) {
 		$price = 'Rental item';
 	}
 //		var_dump( $product );
