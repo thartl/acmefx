@@ -1675,8 +1675,22 @@ div.summary form.cart button.single_add_to_cart_button {
 a.wl-add-to-single {
 	font-size: 1.26em;
 }
-li.product-category:last-child {
+.woocommerce ul.products li.product-category:last-of-type,
+.woocommerce-page ul.products li.product-category:last-of-type {
 	float: none;
+}
+.pricing-table-heading {
+	margin-bottom: 22px;
+}
+.pricing-table,
+.pricing-table tbody,
+.pricing-table tr,
+.pricing-table th,
+.pricing-table td {
+	border-style: none;
+}
+.pricing-table tr.row-not-last {
+	border-bottom: 1px solid #eee;
 }
 
 /* # Sidebars

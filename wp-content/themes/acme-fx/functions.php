@@ -412,17 +412,17 @@ function wc_custom_add_custom_fields() {
 add_action( 'woocommerce_process_product_meta', 'pw_custom_save_custom_fields' );
 function pw_custom_save_custom_fields( $post_id ) {
 	// Update Daily rental price meta
-    if ( ! empty( $_POST['_day_rental_price'] ) ) {
+    // if ( ! empty( $_POST['_day_rental_price'] ) ) {
         update_post_meta( $post_id, '_day_rental_price', esc_attr( $_POST['_day_rental_price'] ) );
-    }
+    // }
 	// Update Weekly rental price meta
-    if ( ! empty( $_POST['_week_rental_price'] ) ) {
+    // if ( ! empty( $_POST['_week_rental_price'] ) ) {
         update_post_meta( $post_id, '_week_rental_price', esc_attr( $_POST['_week_rental_price'] ) );
-    }
+    // }
 	// Update Monthly rental price meta
-    if ( ! empty( $_POST['_month_rental_price'] ) ) {
+    // if ( ! empty( $_POST['_month_rental_price'] ) ) {
         update_post_meta( $post_id, '_month_rental_price', esc_attr( $_POST['_month_rental_price'] ) );
-    }
+    // }
 }
 
 
@@ -437,7 +437,7 @@ add_filter( 'body_class', 'pw_custom_body_class' );
 				$categories[] = $term->slug;
 			}
 
-			if ( in_array( 'rentals', $categories ) ) {
+			if ( in_array( 'rentals', $categories ) && is_product() ) {
 				$classes[] = 'rental-product';
 			}
 				return $classes;
@@ -450,14 +450,67 @@ function pw_add_price_table() {
 	$daily_rental_price = esc_html( get_post_meta( get_the_ID(), '_day_rental_price', true ) );
 	$weekly_rental_price = esc_html( get_post_meta( get_the_ID(), '_week_rental_price', true ) );
 	$monthly_rental_price = esc_html( get_post_meta( get_the_ID(), '_month_rental_price', true ) );
+
+			global $post;
+			$categories = array();
+			$terms = wp_get_post_terms( $post->ID, 'product_cat' );
+			foreach ( $terms as $term ) {
+				$categories[] = $term->slug;
+			}
+			global $product;
+
+			if ( in_array( 'rentals', $categories ) && is_product() && $product->regular_price == 0 ) { ?>
+
+				<h4 class="pricing-table-heading">Rental prices</h4>
+				<table class="pricing-table">
+					<tbody>
+
+						<?php if( $daily_rental_price ) : ?>
+									<tr class="<?php if( $weekly_rental_price>0 || $monthly_rental_price>0 ) {echo "row-not-last";} ?>">
+										<th>
+											<em>Daily</em>
+										</th>
+										<td>
+											<?php echo '$' . $daily_rental_price; ?>
+										</td>
+									</tr>
+						<?php endif ?>
+
+						<?php if( $daily_rental_price ) : ?>
+									<tr class="<?php if( $monthly_rental_price>0 ) {echo "row-not-last";} ?>">
+										<th>
+											<em>Weekly</em>
+										</th>
+										<td>
+											<?php echo '$' . $weekly_rental_price; ?>
+										</td>
+									</tr>
+						<?php endif ?>
+
+						<?php if( $daily_rental_price ) : ?>
+									<tr>
+										<th>
+											<em>Monthly</em>
+										</th>
+										<td>
+											<?php echo '$' . $monthly_rental_price; ?>
+										</td>
+									</tr>
+						<?php endif ?>
+
+					</tbody>
+				</table>
+
+	<?php }
 }
+		// echo "<p>" . $daily_rental_price . "</p>";
+		// echo "<p>" . $weekly_rental_price . "</p>";
+		// echo "<p>" . $monthly_rental_price . "</p>";
+
 
 //  If:  rental-product, and single product page, and $0 >> then display table
 
 
-//	echo "<p>" . $daily_rental_price . "</p>";
-//	echo "<p>" . $weekly_rental_price . "</p>";
-//	echo "<p>" . $monthly_rental_price . "</p>";
 // END ::  Add rental pricing fields and display them
 
 
