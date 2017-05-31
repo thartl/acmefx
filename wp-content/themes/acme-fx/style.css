@@ -1520,8 +1520,7 @@ p.entry-meta {
 .entry-pings .reply {
 	display: none;
 }
-
-.comment-subscription-form {
+div.comment-respond {
 	color: #1D373A;
 }
 
