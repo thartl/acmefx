@@ -510,7 +510,7 @@ function pw_add_price_table() {
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
 
 
-// Changes price of "0" to "Rental item" on product loops
+// Changes price of "0.01" to "Rental item" on product loops and also in admin - Products
 add_filter( 'woocommerce_get_price_html', 'sv_change_product_price_display' );
 function sv_change_product_price_display( $price ) {
 	global $product;
@@ -536,12 +536,4 @@ function pw_product_link_to_view( $link ) {
 		return $link;
 	}
 }
-
-// Increase WooCommerce Variation Limit --
-function custom_wc_ajax_variation_threshold( $qty, $product ) {
-return 100;
-}
-
-add_filter( 'woocommerce_ajax_variation_threshold', 'custom_wc_ajax_variation_threshold', 100, 2 );
-
 
