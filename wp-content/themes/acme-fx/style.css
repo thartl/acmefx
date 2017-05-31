@@ -1698,6 +1698,10 @@ table.pricing-table {
 .pricing-table tr.border-row {
 	border-bottom: 1px solid #eee;
 }
+.woocommerce-tabs div.comment-reply-title,
+.woocommerce-tabs div.comment-respond {
+	color: #fff;
+}
 
 /* # Sidebars
 ---------------------------------------------------------------------------------------------------- */
@@ -2065,7 +2069,9 @@ body div.agm_mh_info_content {
 }
 
 
-
+h2.entry-title a {
+	color: #fff;
+}
 
 
 
