@@ -1521,6 +1521,10 @@ p.entry-meta {
 	display: none;
 }
 
+.comment-subscription-form {
+	background-color: #1D373A;
+}
+
 /* # Woocommerce
 ---------------------------------------------------------------------------------------------------- */
 
@@ -1680,7 +1684,10 @@ a.wl-add-to-single {
 	float: none;
 }
 .pricing-table-heading {
-	margin-bottom: 22px;
+	margin: 42px 0 11px 0;
+}
+table.pricing-table {
+	width: 66.666%;
 }
 .pricing-table,
 .pricing-table tbody,
@@ -1689,7 +1696,7 @@ a.wl-add-to-single {
 .pricing-table td {
 	border-style: none;
 }
-.pricing-table tr.row-not-last {
+.pricing-table tr.border-row {
 	border-bottom: 1px solid #eee;
 }
 

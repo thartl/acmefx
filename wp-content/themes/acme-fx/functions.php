@@ -388,7 +388,7 @@ function wc_custom_add_custom_fields() {
     woocommerce_wp_text_input( array(
         'id' => '_day_rental_price',
         'label' => 'Daily rental price',
-        'description' => 'Price for 1-day rental',
+        'description' => 'Price for 1-day rental.<br>Please make sure Regular price is set to 0.',
         'desc_tip' => 'true',
         'placeholder' => ''
     ) );
@@ -396,7 +396,7 @@ function wc_custom_add_custom_fields() {
     woocommerce_wp_text_input( array(
         'id' => '_week_rental_price',
         'label' => 'Weekly rental price',
-        'description' => 'Price for 1-week rental',
+        'description' => 'Price for 1-week rental.<br>Please make sure Regular price is set to 0.',
         'desc_tip' => 'true',
         'placeholder' => ''
     ) );
@@ -404,7 +404,7 @@ function wc_custom_add_custom_fields() {
     woocommerce_wp_text_input( array(
         'id' => '_month_rental_price',
         'label' => 'Monthly rental price',
-        'description' => 'Price for 1-month rental',
+        'description' => 'Price for 1-month rental.<br>Please make sure Regular price is set to 0.',
         'desc_tip' => 'true',
         'placeholder' => ''
     ) );
@@ -466,7 +466,7 @@ function pw_add_price_table() {
 					<tbody>
 
 						<?php if( $daily_rental_price ) : ?>
-									<tr class="<?php if( $weekly_rental_price>0 || $monthly_rental_price>0 ) {echo "row-not-last";} ?>">
+									<tr class="border-row">
 										<th>
 											<em>Daily</em>
 										</th>
@@ -476,8 +476,8 @@ function pw_add_price_table() {
 									</tr>
 						<?php endif ?>
 
-						<?php if( $daily_rental_price ) : ?>
-									<tr class="<?php if( $monthly_rental_price>0 ) {echo "row-not-last";} ?>">
+						<?php if( $weekly_rental_price ) : ?>
+									<tr class="<?php if( !$daily_rental_price>0 || $monthly_rental_price>0 ) {echo "border-row";} ?>">
 										<th>
 											<em>Weekly</em>
 										</th>
@@ -487,8 +487,8 @@ function pw_add_price_table() {
 									</tr>
 						<?php endif ?>
 
-						<?php if( $daily_rental_price ) : ?>
-									<tr>
+						<?php if( $monthly_rental_price ) : ?>
+									<tr class="<?php if( !$daily_rental_price>0 && !$weekly_rental_price>0 ) {echo "border-row";} ?>">
 										<th>
 											<em>Monthly</em>
 										</th>
