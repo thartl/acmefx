@@ -459,7 +459,7 @@ function pw_add_price_table() {
 			}
 			global $product;
 
-			if ( in_array( 'rentals', $categories ) && is_product() && $product->regular_price == 0 ) { ?>
+			if ( in_array( 'rentals', $categories ) && is_product() && $product->regular_price == 0.01 ) { ?>
 
 				<h4 class="pricing-table-heading">Rental prices</h4>
 				<table class="pricing-table">
@@ -503,19 +503,7 @@ function pw_add_price_table() {
 
 	<?php }
 }
-		// echo "<p>" . $daily_rental_price . "</p>";
-		// echo "<p>" . $weekly_rental_price . "</p>";
-		// echo "<p>" . $monthly_rental_price . "</p>";
-
-
-//  If:  rental-product, and single product page, and $0 >> then display table
-
-
 // END ::  Add rental pricing fields and display them
-
-
-
-
 
 
 // Remove the product rating display on product loops
@@ -534,13 +522,13 @@ function sv_change_product_price_display( $price ) {
 }
 
 
-// Change the add to cart button INTO View Product button on product archive pages, if regular_price == 0
+// Change the add to cart button INTO View Product button on product archive pages, if regular_price == 0.01
 // =================================================================================================================
 
 add_filter( 'woocommerce_loop_add_to_cart_link', 'pw_product_link_to_view' );
 function pw_product_link_to_view( $link ) {
 	global $product;
-	if ( $product && $product->regular_price == 0 ) {
+	if ( $product && $product->regular_price == 0.01 ) {
 	    echo '<form action="' . esc_url( $product->get_permalink( $product->id ) ) . '" method="get">
 	            <button type="submit" class="button add_to_cart_button ">' . 'Read more' . '</button>
 	          </form>';
