@@ -305,7 +305,7 @@ function th_custom_footer() {
 
 
 //* Place the Genesis Simple Share buttons below content for single products 
-add_action( 'woocommerce_share', 'acme_entry_share' );
+add_action( 'woocommerce_after_single_product_summary', 'acme_entry_share', 8 );
 /**
  * Adds the Genesis Share icons before the entry.
  *
@@ -371,4 +371,169 @@ remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_result_count', 20 )
 // Remove all woocommerce stylesheets
 // add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
+// Remove page title from woocommerce archives
+add_filter( 'woocommerce_show_page_title', 'th_no_page_title_on_woo_archives' );
+function th_no_page_title_on_woo_archives($state) {
+	if ( is_product_category() && !is_shop() ) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+// Add rental pricing fields to the admin product page AND update meta
+add_action( 'woocommerce_product_options_general_product_data', 'wc_custom_add_custom_fields' );
+function wc_custom_add_custom_fields() {
+    // Day rental number field
+    woocommerce_wp_text_input( array(
+        'id' => '_day_rental_price',
+        'label' => 'Daily rental price',
+        'description' => 'Price for 1-day rental.<br>Please make sure Regular price is set to 0.',
+        'desc_tip' => 'true',
+        'placeholder' => ''
+    ) );
+    // Week rental number field
+    woocommerce_wp_text_input( array(
+        'id' => '_week_rental_price',
+        'label' => 'Weekly rental price',
+        'description' => 'Price for 1-week rental.<br>Please make sure Regular price is set to 0.',
+        'desc_tip' => 'true',
+        'placeholder' => ''
+    ) );
+    // Month rental number field
+    woocommerce_wp_text_input( array(
+        'id' => '_month_rental_price',
+        'label' => 'Monthly rental price',
+        'description' => 'Price for 1-month rental.<br>Please make sure Regular price is set to 0.',
+        'desc_tip' => 'true',
+        'placeholder' => ''
+    ) );
+}
+add_action( 'woocommerce_process_product_meta', 'pw_custom_save_custom_fields' );
+function pw_custom_save_custom_fields( $post_id ) {
+	// Update Daily rental price meta
+    // if ( ! empty( $_POST['_day_rental_price'] ) ) {
+        update_post_meta( $post_id, '_day_rental_price', esc_attr( $_POST['_day_rental_price'] ) );
+    // }
+	// Update Weekly rental price meta
+    // if ( ! empty( $_POST['_week_rental_price'] ) ) {
+        update_post_meta( $post_id, '_week_rental_price', esc_attr( $_POST['_week_rental_price'] ) );
+    // }
+	// Update Monthly rental price meta
+    // if ( ! empty( $_POST['_month_rental_price'] ) ) {
+        update_post_meta( $post_id, '_month_rental_price', esc_attr( $_POST['_month_rental_price'] ) );
+    // }
+}
+
+
+// remove "Add to cart" and Quantity field from Rentals category single pages, by way of CSS (.rental-product)
+add_filter( 'body_class', 'pw_custom_body_class' );
+		function pw_custom_body_class( $classes ) {
+
+			global $post;
+			$categories = array();
+			$terms = wp_get_post_terms( $post->ID, 'product_cat' );
+			foreach ( $terms as $term ) {
+				$categories[] = $term->slug;
+			}
+
+			if ( in_array( 'rentals', $categories ) && is_product() ) {
+				$classes[] = 'rental-product';
+			}
+				return $classes;
+		}
+
+
+// Display rental pricing table
+add_action( 'woocommerce_single_product_summary', 'pw_add_price_table', 25 );
+function pw_add_price_table() {
+	$daily_rental_price = esc_html( get_post_meta( get_the_ID(), '_day_rental_price', true ) );
+	$weekly_rental_price = esc_html( get_post_meta( get_the_ID(), '_week_rental_price', true ) );
+	$monthly_rental_price = esc_html( get_post_meta( get_the_ID(), '_month_rental_price', true ) );
+
+			global $post;
+			$categories = array();
+			$terms = wp_get_post_terms( $post->ID, 'product_cat' );
+			foreach ( $terms as $term ) {
+				$categories[] = $term->slug;
+			}
+			global $product;
+
+			if ( in_array( 'rentals', $categories ) && is_product() && $product->regular_price == 0.01 ) { ?>
+
+				<h4 class="pricing-table-heading">Rental prices</h4>
+				<table class="pricing-table">
+					<tbody>
+
+						<?php if( $daily_rental_price ) : ?>
+									<tr class="border-row">
+										<th>
+											<em>Daily</em>
+										</th>
+										<td>
+											<?php echo '$' . $daily_rental_price; ?>
+										</td>
+									</tr>
+						<?php endif ?>
+
+						<?php if( $weekly_rental_price ) : ?>
+									<tr class="<?php if( !$daily_rental_price>0 || $monthly_rental_price>0 ) {echo "border-row";} ?>">
+										<th>
+											<em>Weekly</em>
+										</th>
+										<td>
+											<?php echo '$' . $weekly_rental_price; ?>
+										</td>
+									</tr>
+						<?php endif ?>
+
+						<?php if( $monthly_rental_price ) : ?>
+									<tr class="<?php if( !$daily_rental_price>0 && !$weekly_rental_price>0 ) {echo "border-row";} ?>">
+										<th>
+											<em>Monthly</em>
+										</th>
+										<td>
+											<?php echo '$' . $monthly_rental_price; ?>
+										</td>
+									</tr>
+						<?php endif ?>
+
+					</tbody>
+				</table>
+
+	<?php }
+}
+// END ::  Add rental pricing fields and display them
+
+
+// Remove the product rating display on product loops
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+
+
+// Changes price of "0.01" to "Rental item" on product loops and also in admin - Products
+add_filter( 'woocommerce_get_price_html', 'sv_change_product_price_display' );
+function sv_change_product_price_display( $price ) {
+	global $product;
+	if ( $product && $product->regular_price == 0.01 ) {
+		$price = 'Rental item';
+	}
+//		var_dump( $product );
+		return $price;
+}
+
+
+// Change the add to cart button INTO View Product button on product archive pages, if regular_price == 0.01
+// =================================================================================================================
+
+add_filter( 'woocommerce_loop_add_to_cart_link', 'pw_product_link_to_view' );
+function pw_product_link_to_view( $link ) {
+	global $product;
+	if ( $product && $product->regular_price == 0.01 ) {
+	    echo '<form action="' . esc_url( $product->get_permalink( $product->id ) ) . '" method="get">
+	            <button type="submit" class="button add_to_cart_button ">' . 'Read more' . '</button>
+	          </form>';
+	} else {
+		return $link;
+	}
+}
 
