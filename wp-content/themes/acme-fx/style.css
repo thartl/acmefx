@@ -163,7 +163,7 @@ body > div {
 }
 
 body {
-	background-color: #fff;
+	background-color: #ddd;
 	color: #fff;
 	font-family: 'Bitter', serif;
 	font-size: 20px;
@@ -1961,6 +1961,9 @@ a.fx-type:hover {
 .blog h2.entry-title a {
 	color: #fff;
 }
+/* .home .blog h2.entry-title a {
+	color: #fff;
+} */
 
 h2.entry-title a {
 	color: #000;
