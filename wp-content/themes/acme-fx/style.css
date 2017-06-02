@@ -2059,7 +2059,7 @@ h1 {
 	font-size: 24px;
 }
 .flexible-widgets h3.widget-title {
-	font-size: 25px;
+	font-size: 30px;
 	/* text-transform: uppercase; */
 	border-bottom: 4px solid #1E373B;
 	color: #1E373B;
@@ -2070,7 +2070,7 @@ h1 {
 }
 
 header img.header-profile {
-	height: 30px;
+	height: 25px;
 }
 
 body a.agm_mh_marker_item_directions,
