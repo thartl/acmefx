@@ -163,7 +163,7 @@ body > div {
 }
 
 body {
-	background-color: #ddd;
+	background-color: #fff;
 	color: #fff;
 	font-family: 'Bitter', serif;
 	font-size: 20px;
@@ -2072,8 +2072,11 @@ body div.agm_mh_info_content {
 }
 
 
-h2.entry-title a {
+.blog h2.entry-title a {
 	color: #fff;
+}
+.home h2.entry-title a {
+	color: #1E373B;
 }
 
 
