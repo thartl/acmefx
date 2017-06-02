@@ -191,13 +191,14 @@ textarea:focus,
 }
 
 a {
-	color: #AE4040;
+	color: #5BA5A5;
 	text-decoration: none;
 }
 
 a:focus,
 a:hover {
-	color: #5BA5A5;
+	color: #AE4040;
+	//color: #fff;
 	text-decoration: none;
 }
 
@@ -1621,6 +1622,7 @@ body .woocommerce a.remove:hover {
     background: #AE4040;
 }
 body .woocommerce a.remove {
+	line-height: .8;
 	color: #AE4040	!important;
 }
 .woocommerce-cart #payment, .woocommerce-checkout #payment, #add_payment_method #payment {
@@ -1701,6 +1703,14 @@ table.pricing-table {
 .woocommerce-tabs div.comment-reply-title,
 .woocommerce-tabs div.comment-respond {
 	color: #fff;
+}
+body .woocommerce-error, body .woocommerce-info, body .woocommerce-message {
+    background-color: #fff;
+    border-top-color: #AE4040;
+    color: #1E373B;
+}
+body .woocommerce-error::before, body .woocommerce-info::before, body .woocommerce-message::before {
+    color: #AE4040;
 }
 
 /* # Sidebars
