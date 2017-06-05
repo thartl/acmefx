@@ -31,14 +31,19 @@
 			<?php if (!empty($heading)) { ?><h1><?php echo stripslashes($heading); ?></h1><?php } ?>
 			<?php if (!empty($text)) { ?><h2><?php echo stripslashes($text); ?></h2><?php } ?>
 
-			<?php
+
+
+			<?php if (!empty($this->plugin_settings['modules']['subscribe_status']) && $this->plugin_settings['modules']['subscribe_status'] == 1) { ?>
+				<?php if (!empty($this->plugin_settings['modules']['subscribe_text'])) { ?><h3><?php echo stripslashes($this->plugin_settings['modules']['subscribe_text']); ?></h3><?php } ?>
+
+				<?php
 			if (!empty($this->plugin_settings['modules']['countdown_status']) && $this->plugin_settings['modules']['countdown_status'] == 1) {
 				?>
 				<div class="countdown" data-start="<?php echo date('F d, Y H:i:s', strtotime($countdown_start)); ?>" data-end="<?php echo date('F d, Y H:i:s', $countdown_end); ?>"></div>
 			<?php } ?>
 
-			<?php if (!empty($this->plugin_settings['modules']['subscribe_status']) && $this->plugin_settings['modules']['subscribe_status'] == 1) { ?>
-				<?php if (!empty($this->plugin_settings['modules']['subscribe_text'])) { ?><h3><?php echo stripslashes($this->plugin_settings['modules']['subscribe_text']); ?></h3><?php } ?>
+
+
 				<div class="subscribe_wrapper" style="min-height: 100px;">
 					<form class="subscribe_form">
 						<input type="text" placeholder="<?php _e('your email...', $this->plugin_slug); ?>" name="email" class="email_input" data-rule-required="true" data-rule-email="true" data-rule-required="true" data-rule-email="true" />
