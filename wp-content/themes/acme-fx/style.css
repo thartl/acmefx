@@ -1941,6 +1941,10 @@ h1.entry-title {
 	flex-basis: 40%;
 	transition: all .3s ease-in-out;
 }
+.business-type.snow-business {
+	flex-basis: 100%;
+	height: 300px;
+}
 .business-type {
 	flex-basis: 28%;
 	transition: all .6s ease-in-out;
@@ -1952,7 +1956,15 @@ h1.entry-title {
 	background-color: #AE4040;
 }
 
-.business-type img,
+.business-type img {
+	width: 200px;
+	float: left;
+	margin: 0 auto;
+
+}
+.business-type:hover img {
+	display: none;
+}
 .fx-type img {
 	width: 75px;
 	max-height: 75px;
@@ -2057,6 +2069,7 @@ h1 {
 	width: 100%;
 	transition: .3s ease-in-out;
 	font-size: 24px;
+	text-align: center;
 }
 .flexible-widgets h3.widget-title {
 	font-size: 30px;
@@ -2088,9 +2101,17 @@ body div.agm_mh_info_content {
 .home h2.entry-title a {
 	color: #1E373B;
 }
-
-
-
+.woocommerce-MyAccount-navigation a {
+	color: #fff;
+}
+.woocommerce-MyAccount-navigation a:hover,
+.woocommerce-MyAccount-navigation a:active,
+.woocommerce-MyAccount-navigation a:focus {
+	color: #5BA5A5;
+}
+.woocommerce-MyAccount-navigation ul li.is-active > a {
+    color: #5BA5A5 !important;
+}
 
 
 
