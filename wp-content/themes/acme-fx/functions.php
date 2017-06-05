@@ -303,7 +303,7 @@ function th_custom_footer() {
 	<?php
 }
 
-//**  th-- WP Maintenance Mode plugin
+//**  th-- WP Maintenance Mode plugin styles
 function th_mm_css_styles($styles) {
     $styles['new-style'] = get_stylesheet_directory_uri() . '/style-mm.css'; // replace with the real path :)
 
