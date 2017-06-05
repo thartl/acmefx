@@ -178,7 +178,7 @@ add_image_size( 'featured-image', 720, 400, TRUE );
 //	return $args;
 // 	return $args;
 
-}
+//}
 // }
 
 // Modify size of the Gravatar in the author box.
