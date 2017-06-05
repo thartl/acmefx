@@ -303,7 +303,7 @@ function th_custom_footer() {
 	<?php
 }
 
-//**  th-- WP Maintenance Mode plugin
+//**  th-- WP Maintenance Mode plugin styles
 function th_mm_css_styles($styles) {
     $styles['new-style'] = get_stylesheet_directory_uri() . '/style-mm.css'; // replace with the real path :)
 
@@ -543,4 +543,24 @@ function pw_product_link_to_view( $link ) {
 		return $link;
 	}
 }
+
+add_action('wpmm_contact_form_end', 'th_add_mm_footnote', 200);
+function th_add_mm_footnote() {
+	echo 'TEST';
+}
+
+?>
+<!-- <p>Acme FX has provided artificial snow, rentals, and quality special effects to the film and television industry since 2000. Our passion and expertise fuel our drive for excellence in quality design and implementation. Our knowledgeable staff of professional SPFX technicians will deliver exceptional results to suit all creative visions.</p> -->
+<?php
+
+
+
+
+
+
+
+
+
+
+
 

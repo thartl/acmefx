@@ -41,7 +41,7 @@
 				<?php if (!empty($this->plugin_settings['modules']['subscribe_text'])) { ?><h3><?php echo stripslashes($this->plugin_settings['modules']['subscribe_text']); ?></h3><?php } ?>
 				<div class="subscribe_wrapper" style="min-height: 100px;">
 					<form class="subscribe_form">
-						<input type="text" placeholder="<?php _e('your e-mail...', $this->plugin_slug); ?>" name="email" class="email_input" data-rule-required="true" data-rule-email="true" data-rule-required="true" data-rule-email="true" />
+						<input type="text" placeholder="<?php _e('your email...', $this->plugin_slug); ?>" name="email" class="email_input" data-rule-required="true" data-rule-email="true" data-rule-required="true" data-rule-email="true" />
 						<input type="submit" value="<?php _e('Subscribe', $this->plugin_slug); ?>" />
 					</form>
 				</div>
@@ -104,6 +104,8 @@
 
 				<a class="contact_us" href="javascript:void(0);" data-open="<?php echo esc_attr($open); ?>" data-close="<?php echo esc_attr($close); ?>"><?php _e('Contact us', $this->plugin_slug); ?></a>
 			<?php } ?>
+
+<p class="bio">Acme FX has provided artificial snow, rentals, and quality special effects to the film and television industry since 2000. Our passion and expertise fuel our drive for excellence in quality design and implementation. Our knowledgeable staff of professional SPFX technicians will deliver exceptional results to suit all creative visions.</p>
 
 			<?php if (!empty($this->plugin_settings['general']['admin_link']) && $this->plugin_settings['general']['admin_link'] == 1) { ?>
 				<div class="author_link">
