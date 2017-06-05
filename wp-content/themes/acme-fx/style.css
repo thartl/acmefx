@@ -2382,6 +2382,9 @@ body.woocommerce span.onsale {
 	left: 25px;
 	top: 22px;
 }
+ul#menu-primary-menu a {
+	background-color: #1D373A;
+}
 
 	
 /* # Media Queries
