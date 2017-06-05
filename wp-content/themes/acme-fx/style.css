@@ -1589,12 +1589,12 @@ li.cat-item a {
 .woocommerce button.button:hover,
 .woocommerce button.button.alt:focus, 
 .woocommerce button.button.alt:hover,
-.woocommerce input.button:focus, html .woocommerce input.button:hover, .woocommerce input.button.alt:focus, .woocommerce input.button.alt:hover, .woocommerce input[type="submit"]:focus, html .woocommerce input[type="submit"]:hover, .woocommerce #respond input#submit:focus, .woocommerce #respond input#submit:hover, .woocommerce #respond input#submit.alt:focus, .woocommerce #respond input#submit.alt:hover  {
-	background-color: #5BA5A5 !important;
+.woocommerce input.button:focus, .woocommerce input.button:hover, .woocommerce input.button.alt:focus, .woocommerce input.button.alt:hover  {
+	background-color: #AE4040 !important;
 }
 
-.woocommerce a.button, .woocommerce a.button.alt, .woocommerce button.button, .woocommerce button.button.alt, .woocommerce input.button, .woocommerce input.button.alt, .woocommerce input.button[type="submit"], .woocommerce #respond input#submit, .woocommerce #respond input#submit.alt {
-	background-color: #AE4040 !important;
+.woocommerce a.button, .woocommerce a.button.alt, .woocommerce button.button, .woocommerce button.button.alt, .woocommerce input.button, .woocommerce input.button.alt {
+	background-color: #5BA5A5 !important;
 }
 
 
@@ -2112,7 +2112,29 @@ body div.agm_mh_info_content {
 .woocommerce-MyAccount-navigation ul li.is-active > a {
     color: #5BA5A5 !important;
 }
-
+.woocommerce a.button, .woocommerce a.button.alt, .woocommerce button.button, .woocommerce button.button.alt, .woocommerce input.button, .woocommerce input.button.alt, .woocommerce input.button[type="submit"], .woocommerce #respond input#submit, .woocommerce #respond input#submit.alt {
+    //background-color: #333;
+    border-radius: 7px !important;
+    font-size: 14px !important;
+    font-size: 1.4rem !important;
+    padding: 12px 18px !important;
+}
+body.woocommerce a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart,
+.woocommerce input.button[type="submit"], .woocommerce #respond input#submit,
+.woocommerce #respond input#submit.alt,
+a.button.checkout.wc-forward {
+	background-color: #AE4040 !important;
+}
+body.woocommerce a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart:focus,
+body.woocommerce a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart:hover,
+.woocommerce input[type="submit"]:focus, html .woocommerce input[type="submit"]:hover, .woocommerce #respond input#submit:focus, .woocommerce #respond input#submit:hover, .woocommerce #respond input#submit.alt:focus, .woocommerce #respond input#submit.alt:hover,
+a.button.checkout.wc-forward:hover,
+a.button.checkout.wc-forward:focus {
+	background-color: #5BA5A5 !important;
+}
+body.woocommerce span.onsale {
+	background-color: #55AA63;
+}
 
 
 
@@ -2178,14 +2200,14 @@ body div.agm_mh_info_content {
 }
 
 .expendables {
-	background: url('/wp-content/uploads/2017/05/black-comparison-2.jpg');
+	background: url('/wp-content/uploads/2017/05/Flashbulbs-1-500x500.jpg');
 	background-position: center;
 }
 .snow-business {
-	background: url('/wp-content/uploads/2017/05/front-snow.jpg');
+	background: url('/wp-content/uploads/2017/05/snow_1920.jpg');
 }
 .rentals {
-	background: url('/wp-content/uploads/2017/05/front-equipment.jpg');
+	background: url('/wp-content/uploads/2017/05/Viper-1-500x500.jpg');
 	background-position: center;
 }
 .fx {
