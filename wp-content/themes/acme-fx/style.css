@@ -1590,7 +1590,7 @@ li.cat-item a {
 .woocommerce button.button.alt:focus, 
 .woocommerce button.button.alt:hover,
 .woocommerce input.button:focus, .woocommerce input.button:hover, .woocommerce input.button.alt:focus, .woocommerce input.button.alt:hover  {
-	background-color: #AE4040 !important;
+	background-color: #4B898C !important;
 }
 
 .woocommerce a.button, .woocommerce a.button.alt, .woocommerce button.button, .woocommerce button.button.alt, .woocommerce input.button, .woocommerce input.button.alt {
@@ -2130,11 +2130,69 @@ body.woocommerce a.button.product_type_simple.add_to_cart_button.ajax_add_to_car
 .woocommerce input[type="submit"]:focus, html .woocommerce input[type="submit"]:hover, .woocommerce #respond input#submit:focus, .woocommerce #respond input#submit:hover, .woocommerce #respond input#submit.alt:focus, .woocommerce #respond input#submit.alt:hover,
 a.button.checkout.wc-forward:hover,
 a.button.checkout.wc-forward:focus {
-	background-color: #5BA5A5 !important;
+	background-color: #8E3939 !important;
 }
 body.woocommerce span.onsale {
 	background-color: #55AA63;
 }
+.rental-product h1::before {
+	content: "\2601";
+}
+.genesis-nav-menu .sub-menu,
+.genesis-nav-menu .sub-menu a {
+	background-color: #AE4040;
+	border: 0;
+}
+
+body.woocommerce nav.woocommerce-pagination ul li a:focus,
+body.woocommerce nav.woocommerce-pagination ul li a:hover {
+    background: #fff;
+    color: #1E373B;
+}
+body.woocommerce nav.woocommerce-pagination ul {
+	border: 0;
+	//font-family: "Source Sans Pro", sans-serif;
+	//font-size: 18px;
+}
+body.woocommerce nav.woocommerce-pagination ul li span.current {
+	background-color: transparent;
+	color: #fff;
+	font-weight: 700;
+}
+body.woocommerce nav.woocommerce-pagination ul li {
+	border-right: 0;
+	margin: 4px;
+	border-radius: 4px;
+}
+body.woocommerce nav.woocommerce-pagination ul li a,
+body.woocommerce nav.woocommerce-pagination ul li span {
+	padding: 6px 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
