@@ -303,6 +303,13 @@ function th_custom_footer() {
 	<?php
 }
 
+//**  th-- WP Maintenance Mode plugin
+function th_mm_css_styles($styles) {
+    $styles['new-style'] = get_stylesheet_directory_uri() . '/style-mm.css'; // replace with the real path :)
+
+    return $styles;
+}
+add_filter('wpmm_styles', 'th_mm_css_styles');
 
 //* Place the Genesis Simple Share buttons below content for single products 
 add_action( 'woocommerce_after_single_product_summary', 'acme_entry_share', 8 );
