@@ -1830,6 +1830,7 @@ body.woocommerce ul.products li.product .onsale {
 .mini_cart_item a:nth-child(2) {
 	color: #fff;
 	margin-bottom: 5px;
+	font-size: 17px;
 }
 span.quantity {
 	color: #fff;
@@ -1860,6 +1861,12 @@ div.quantity.buttons_added {
 .woocommerce .quantity input.qty, .woocommerce-page .quantity input.qty {
     border-radius: 7px 0 0 7px !important;
     border-color: #fff !important;
+}
+.sidebar .widget-title {
+	color: #5BA5A5;
+}
+li.wc-layered-nav-term a {
+	color: #fff;
 }
 
 /* .woocommerce td.actions {
