@@ -2559,7 +2559,9 @@ body div.agm_mh_info_content {
 ul#menu-primary-menu .submenu a {
 	background-color: #AE4040;
 }
-
+.no-price {
+	display: none;
+}
 	
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */

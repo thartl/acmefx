@@ -152,36 +152,6 @@ add_theme_support( 'genesis-footer-widgets', 3 );
 // Add Image Sizes.
 add_image_size( 'featured-image', 720, 400, TRUE );
 
-// Rename primary and secondary navigation menus.
-// add_theme_support( 'genesis-menus', array( 'primary' => __( 'After Header Menu', 'genesis-sample' ), 'secondary' => __( 'Footer Menu', 'genesis-sample' ) ) );
-
-// Reposition the secondary navigation menu.
-// remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-// add_action( 'genesis_footer', 'genesis_do_subnav', 5 );
-
-
-// Reduce the secondary navigation menu to one level depth.
-//add_filter( 'wp_nav_menu_args', 'genesis_sample_secondary_menu_args' );
-//function genesis_sample_secondary_menu_args( $args ) {
-// add_filter( 'wp_nav_menu_args', 'genesis_sample_secondary_menu_args' );
-// function genesis_sample_secondary_menu_args( $args ) {
-
-//	if ( 'secondary' != $args['theme_location'] ) {
-//		return $args;
-//	}
-// 	if ( 'secondary' != $args['theme_location'] ) {
-// 		return $args;
-// 	}
-
-//	$args['depth'] = 2;
-// 	$args['depth'] = 1;
-
-//	return $args;
-// 	return $args;
-
-//}
-// }
-
 // Modify size of the Gravatar in the author box.
 add_filter( 'genesis_author_box_gravatar_size', 'genesis_sample_author_box_gravatar' );
 function genesis_sample_author_box_gravatar( $size ) {
@@ -362,11 +332,11 @@ if ( !is_page() ) {
 	return $post_info;
 }}
 
-//  th-- enamble woocommerce product gallery + lightbox, slider
+//  th-- enamble woocommerce product gallery zoom, lightbox, slider
 add_action( 'after_setup_theme', 'acme_woo_gallery_setup' );
  
 function acme_woo_gallery_setup() {
-    add_theme_support( 'wc-product-gallery-zoom' );
+//    add_theme_support( 'wc-product-gallery-zoom' );
     add_theme_support( 'wc-product-gallery-lightbox' );
     add_theme_support( 'wc-product-gallery-slider' );
 }
@@ -374,20 +344,21 @@ function acme_woo_gallery_setup() {
 // Remove the sorting dropdown from Woocommerce
 remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_catalog_ordering', 30 );
 // Remove the result count from WooCommerce
-remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_result_count', 20 );
-
-// Remove all woocommerce stylesheets
-// add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+// remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_result_count', 20 );
 
 // Remove page title from woocommerce archives
 add_filter( 'woocommerce_show_page_title', 'th_no_page_title_on_woo_archives' );
 function th_no_page_title_on_woo_archives($state) {
-	if ( is_product_category() && !is_shop() ) {
+	if ( ( is_product_category() || is_product_tag() ) && !is_shop() ) {
 		return false;
 	} else {
 		return true;
 	}
 }
+
+// Remove the product rating display on product loops
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+
 
 // Add rental pricing fields to the admin product page AND update meta
 add_action( 'woocommerce_product_options_general_product_data', 'wc_custom_add_custom_fields' );
@@ -420,54 +391,55 @@ function wc_custom_add_custom_fields() {
 add_action( 'woocommerce_process_product_meta', 'pw_custom_save_custom_fields' );
 function pw_custom_save_custom_fields( $post_id ) {
 	// Update Daily rental price meta
-    // if ( ! empty( $_POST['_day_rental_price'] ) ) {
         update_post_meta( $post_id, '_day_rental_price', esc_attr( $_POST['_day_rental_price'] ) );
     // }
 	// Update Weekly rental price meta
-    // if ( ! empty( $_POST['_week_rental_price'] ) ) {
         update_post_meta( $post_id, '_week_rental_price', esc_attr( $_POST['_week_rental_price'] ) );
     // }
 	// Update Monthly rental price meta
-    // if ( ! empty( $_POST['_month_rental_price'] ) ) {
         update_post_meta( $post_id, '_month_rental_price', esc_attr( $_POST['_month_rental_price'] ) );
     // }
 }
 
 
-// remove "Add to cart" and Quantity field from Rentals category single pages, by way of CSS (.rental-product)
-add_filter( 'body_class', 'pw_custom_body_class' );
-		function pw_custom_body_class( $classes ) {
+// remove "Add to cart" and Quantity field from Rentals category single pages, by way of CSS (wrap in div.no-price)
+add_action( 'woocommerce_single_product_summary', 'th_remove_price_and_quantity', 25 );
+function th_remove_price_and_quantity() {
+	global $product;
+	$departments = $product->get_attribute( 'pa_departments' );
+	$is_rental = strpos($departments, 'Rentals' ) !== false ? true : false;
+		if( $is_rental ) {
+			add_action( 'woocommerce_before_add_to_cart_button', 'th_div_to_hide_price_and_quantity' );
+			function th_div_to_hide_price_and_quantity() {
+				echo '<div class="no-price">';
 
-			global $post;
-			$categories = array();
-			$terms = wp_get_post_terms( $post->ID, 'product_cat' );
-			foreach ( $terms as $term ) {
-				$categories[] = $term->slug;
 			}
-
-			if ( in_array( 'rentals', $categories ) && is_product() ) {
-				$classes[] = 'rental-product';
+			add_action( 'woocommerce_after_add_to_cart_button', 'th_div_to_hide_price_and_quantity_end', 25 );
+			function th_div_to_hide_price_and_quantity_end() {
+				echo '</div>';
 			}
-				return $classes;
 		}
+}
 
 
-// Display rental pricing table
+// Display rental pricing table on a single product page
 add_action( 'woocommerce_single_product_summary', 'pw_add_price_table', 25 );
 function pw_add_price_table() {
 	$daily_rental_price = esc_html( get_post_meta( get_the_ID(), '_day_rental_price', true ) );
 	$weekly_rental_price = esc_html( get_post_meta( get_the_ID(), '_week_rental_price', true ) );
 	$monthly_rental_price = esc_html( get_post_meta( get_the_ID(), '_month_rental_price', true ) );
 
-			global $post;
-			$categories = array();
-			$terms = wp_get_post_terms( $post->ID, 'product_cat' );
-			foreach ( $terms as $term ) {
-				$categories[] = $term->slug;
-			}
+			// global $post;
+			// $categories = array();
+			// $terms = wp_get_post_terms( $post->ID, 'product_cat' );
+			// foreach ( $terms as $term ) {
+			// 	$categories[] = $term->slug;
+			// }
 			global $product;
+			$departments = $product->get_attribute( 'pa_departments' );
+			$is_rental = strpos($departments, 'Rentals' ) !== false ? true : false;
 
-			if ( in_array( 'rentals', $categories ) && is_product() && $product->regular_price == 0.01 ) { ?>
+			if ( is_product() && $is_rental ) { ?>
 
 				<h4 class="pricing-table-heading">Rental prices</h4>
 				<table class="pricing-table">
@@ -514,38 +486,40 @@ function pw_add_price_table() {
 // END ::  Add rental pricing fields and display them
 
 
-// Remove the product rating display on product loops
-remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
-
-
-// Changes price of "0.01" to "Rental item" on product loops and also in admin - Products
+// Changes empty price to "Rental item" on product loops and also in admin - Products
 add_filter( 'woocommerce_get_price_html', 'sv_change_product_price_display' );
 function sv_change_product_price_display( $price ) {
 	global $product;
-	if ( $product && $product->regular_price == 0.01 ) {
-		$price = 'Rental item';
-	}
-//		var_dump( $product );
-		return $price;
+	$departments = $product->get_attribute( 'pa_departments' );
+	$is_rental = strpos($departments, 'Rentals' ) !== false ? true : false;
+
+		if ( $product && $is_rental ) {
+			$price = 'Rental item';
+		}
+	return $price;
 }
 
 
-// Change the add to cart button INTO View Product button on product archive pages, if regular_price == 0.01
+// Change the add to cart button INTO "Read more" button on product archive pages, if regular_price == ''
 // =================================================================================================================
 
 add_filter( 'woocommerce_loop_add_to_cart_link', 'pw_product_link_to_view' );
 function pw_product_link_to_view( $link ) {
 	global $product;
-	if ( $product && $product->regular_price == 0.01 ) {
-	    echo '<form action="' . esc_url( $product->get_permalink( $product->id ) ) . '" method="get">
-	            <button type="submit" class="button add_to_cart_button ">' . 'Read more' . '</button>
-	          </form>';
-	} else {
-		return $link;
-	}
+	$departments = $product->get_attribute( 'pa_departments' );
+	$is_rental = strpos($departments, 'Rentals' ) !== false ? true : false;
+
+		if ( $product && $is_rental ) {
+		    echo '<form action="' . esc_url( $product->get_permalink( $product->id ) ) . '" method="get">
+		            <button type="submit" class="button add_to_cart_button ">' . 'Read more' . '</button>
+		          </form>';
+		} else {
+			return $link;
+		}
 }
 
-
+// (Re)move taxonomy description...
+remove_action( 'genesis_archive_title_descriptions', 'genesis_do_taxonomy_title_description' );
 
 
 
