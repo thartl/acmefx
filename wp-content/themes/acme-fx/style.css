@@ -1868,6 +1868,12 @@ div.quantity.buttons_added {
 li.wc-layered-nav-term a {
 	color: #fff;
 }
+.woocommerce .widget_layered_nav ul li.chosen a::before, .woocommerce .widget_layered_nav_filters ul li a::before, .woocommerce .widget_rating_filter ul li.chosen a::before {
+    color: #55AA63 !important;
+}
+.woocommerce .widget_layered_nav ul li.chosen:hover a::before, .woocommerce .widget_layered_nav_filters ul li:hover a::before, .woocommerce .widget_rating_filter ul li.chosen:hover a::before {
+	color: #508256 !important;
+}
 
 /* .woocommerce td.actions {
 	margin-top: 60px;
