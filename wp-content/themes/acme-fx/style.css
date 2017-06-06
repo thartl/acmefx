@@ -2385,7 +2385,9 @@ body.woocommerce span.onsale {
 ul#menu-primary-menu a {
 	background-color: #1D373A;
 }
-
+.no-price {
+	display: none;
+}
 	
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
