@@ -1650,9 +1650,24 @@ body .woocommerce a.remove:hover {
 .cart .quantity.buttons_added .plus,
 .cart .quantity.buttons_added .minus {
 	z-index: 100 !important;
-    height: 1.3em !important;
+    height: 1.32em !important;
     width: 1.387em !important;
+    background-color: #5BA5A5;
+    color: #fff;
+    border-radius: 0;
+	line-height: .8;
+	border-color: #fff;
+	/* baseline-shift: super !important;
+	vertical-align: center; */
+	padding-bottom: 4px !important;
 }
+.cart .quantity.buttons_added .plus {
+	border-top-right-radius: 7px;
+}
+.cart .quantity.buttons_added .minus {
+	border-bottom-right-radius: 7px;
+}
+
 body.woocommerce .product .cart div.quantity.buttons_added, body.woocommerce-page .product .cart div.quantity.buttons_added,
 body.woocommerce .product .cart div.quantity.buttons_added, body.woocommerce-page .product .cart div.quantity.buttons_added {
 	width: 4em;
@@ -1838,6 +1853,13 @@ body .woocommerce table.shop_table {
 input,
 div.quantity.buttons_added {
 	border-radius: 7px;
+}
+.woocommerce-cart table.cart td.actions .coupon .input-text {
+	margin-right: 10px !important;
+}
+.woocommerce .quantity input.qty, .woocommerce-page .quantity input.qty {
+    border-radius: 7px 0 0 7px !important;
+    border-color: #fff !important;
 }
 
 /* .woocommerce td.actions {
@@ -2645,7 +2667,7 @@ ul#menu-primary-menu .submenu a {
 	}
 	.coupon {
 		margin-top: 40px;
-	}
+	}	
 
 }
 
