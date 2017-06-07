@@ -14,8 +14,25 @@
 
 
 
+/**
+ * Change text strings
+ *
+ * @link http://codex.wordpress.org/Plugin_API/Filter_Reference/gettext
+ */
+function th_change_text_strings( $translated_text, $text, $domain ) {
+	switch ( $translated_text ) {
+		case 'Share with Friends' :
+			$translated_text = __( 'Share:', 'wc_wishlist' );
+			break;
+	}
+	return $translated_text;
+}
+add_filter( 'gettext', 'th_change_text_strings', 20, 3 );
+
+
+
 // Change the number of products per page
-add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
+//add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
 
 function new_loop_shop_per_page( $cols ) {
   // $cols contains the current number of products per page based on the value stored on Options -> Reading
