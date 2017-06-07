@@ -43,6 +43,9 @@ include_once( get_stylesheet_directory() . '/lib/woocommerce/woocommerce-output.
 // Add the Genesis Connect WooCommerce notice.
 include_once( get_stylesheet_directory() . '/lib/woocommerce/woocommerce-notice.php' );
 
+// Add the extended functions file  (th-- )
+include_once( get_stylesheet_directory() . '/inc/functions-extended.php' );
+
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Acme FX' );
 define( 'CHILD_THEME_URL', 'http://www.studiopress.com/' );
@@ -517,14 +520,6 @@ function pw_product_link_to_view( $link ) {
 			return $link;
 		}
 }
-
-// (Re)move taxonomy description...
-remove_action( 'genesis_archive_title_descriptions', 'genesis_do_taxonomy_title_description' );
-
-
-
-
-
 
 
 
