@@ -402,7 +402,7 @@ select,
 textarea {
 	background-color: #fff;
 	border: 1px solid #ddd;
-	color: #333;
+	color: #1E373B;
 	font-size: 14px;
 	font-size: 1.4rem;
 	font-weight: 400;
@@ -527,7 +527,7 @@ body .gform_wrapper .validation_message {
 body .gform_wrapper li.gfield.gfield_error, .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
     background-color: rgba(255,223,224,.25);
     background-color: transparent;
-    margin-bottom: 6px!important;
+    margin-bottom: 40px!important;
     border-top: 0;
     border-bottom: 1px solid #fff;
     padding-bottom: 6px;
@@ -536,6 +536,9 @@ body .gform_wrapper li.gfield.gfield_error, .gform_wrapper li.gfield.gfield_erro
 }
 body .gform_wrapper li.gfield_error div.ginput_complex.ginput_container label, .gform_wrapper li.gfield_error ul.gfield_checkbox, .gform_wrapper li.gfield_error ul.gfield_radio {
     color: #fff;
+}
+body .gform_wrapper .field_description_below .gfield_description {
+    padding-top: 10px;
 }
 
 /* ## Tables
@@ -1574,7 +1577,8 @@ div.comment-respond {
 	background-color: transparent;
 }
 body.woocommerce h1.archive-title {
-	border-bottom: none;
+	//border-bottom: none;
+	font-size: 3.6rem;
 }
 
 .woocommerce.widget .count,
@@ -1790,14 +1794,17 @@ body.woocommerce a.button.product_type_simple.add_to_cart_button.ajax_add_to_car
 .woocommerce input.button[type="submit"], .woocommerce #respond input#submit,
 .woocommerce #respond input#submit.alt,
 a.button.checkout.wc-forward,
-.woocommerce a.button.checkout-button {
+.woocommerce a.button.checkout-button,
+.woocommerce button.button.single_add_to_cart_button {
 	background-color: #AE4040 !important;
 }
 body.woocommerce a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart:focus,
 body.woocommerce a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart:hover,
 .woocommerce input[type="submit"]:focus, html .woocommerce input[type="submit"]:hover, .woocommerce #respond input#submit:focus, .woocommerce #respond input#submit:hover, .woocommerce #respond input#submit.alt:focus, .woocommerce #respond input#submit.alt:hover,
 a.button.checkout.wc-forward:hover,
-a.button.checkout.wc-forward:focus {
+a.button.checkout.wc-forward:focus,
+.woocommerce button.button.single_add_to_cart_button:hover,
+.woocommerce button.button.single_add_to_cart_button:focus {
 	background-color: #8E3939 !important;
 }
 body.woocommerce span.onsale {
@@ -1862,6 +1869,7 @@ body.woocommerce ul.products li.product .onsale {
 	display: none;
 }
 .mini_cart_item a:nth-child(2) {
+	font-family: 'Bitter', serif;
 	color: #fff;
 	margin-bottom: 5px;
 	font-size: 16px;
@@ -1936,6 +1944,16 @@ li.wc-layered-nav-term a {
 #wl-wrapper .wl-actions-table {
 	margin-bottom: 10px !important;
 }
+address {
+	font-style: normal;
+	color: #5BA5A5;
+}
+.stars {
+	margin-top: 5px;
+}
+.stars a {
+	margin-right: 4px;
+}
 
 
 /* # Sidebars
@@ -1956,7 +1974,15 @@ li.wc-layered-nav-term a {
 .sidebar .widget:first-of-type {
 	border-top: none;
 }
-
+.woocommerce .total strong {
+	font-weight: 400;
+}
+.woocommerce .woocommerce-Price-amount {
+	font-weight: 700;
+}
+.woocommerce .woocommerce-Price-amount::before {
+	content: '\00a0';
+}
 
 /* # Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
