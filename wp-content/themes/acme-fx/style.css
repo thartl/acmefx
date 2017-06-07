@@ -437,14 +437,15 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .button {
-	background-color: #333;
+	background-color: #AE4040;
 	border: 0;
 	color: #fff;
 	cursor: pointer;
+	font-family: "Source Sans Pro", sans-serif;
 	font-size: 16px;
 	font-size: 1.6rem;
 	font-weight: 700;
-	padding: 16px 24px;
+	padding: 6px 10px;
 	text-decoration: none;
 	white-space: normal;
 	width: auto;
@@ -460,7 +461,7 @@ input[type="submit"]:focus,
 input[type="submit"]:hover,
 .button:focus,
 .button:hover {
-	background-color: #AE4040;
+	background-color: #5BA5A5;
 	color: #fff;
 }
 
@@ -500,6 +501,41 @@ input[type="submit"].small {
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button {
 	display: none;
+}
+body .gform_wrapper .gfield_required {
+    color: #AE4040;
+}
+body .gform_wrapper .gfield_error .gfield_label {
+    color: #fff;
+}
+body .gform_wrapper div.validation_error {
+    color: #AE4040;
+    font-size: 1em;
+    font-weight: 700;
+    margin-bottom: 25px;
+    border-top: 2px solid #AE4040;
+    border-bottom: 2px solid #AE4040;
+    background-color: #fff;
+    padding: 16px 0;
+    clear: both;
+    width: 100%;
+    text-align: center;
+}
+body .gform_wrapper .validation_message {
+    color: #AE4040;
+}
+body .gform_wrapper li.gfield.gfield_error, .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+    background-color: rgba(255,223,224,.25);
+    background-color: transparent;
+    margin-bottom: 6px!important;
+    border-top: 0;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 6px;
+    padding-top: 8px;
+    box-sizing: border-box;
+}
+body .gform_wrapper li.gfield_error div.ginput_complex.ginput_container label, .gform_wrapper li.gfield_error ul.gfield_checkbox, .gform_wrapper li.gfield_error ul.gfield_radio {
+    color: #fff;
 }
 
 /* ## Tables
@@ -1445,14 +1481,16 @@ p.entry-meta {
 
 .archive-pagination a {
 	background-color: #fff;
-	color: #333;
+	color: #1E373B;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 16px;
 	font-size: 1.6rem;
 	font-weight: 600;
 	padding: 8px 12px;
+	padding: 6px 10px;
 	text-decoration: none;
+	border-radius: 7px;
 }
 
 .archive-pagination a:focus,
@@ -1781,7 +1819,7 @@ body.woocommerce nav.woocommerce-pagination ul li a:hover {
 }
 body.woocommerce nav.woocommerce-pagination ul li span.current {
 	background: #fff;
-	color: #5BA5A5;
+	color: #1E373B;
 }
 body.woocommerce nav.woocommerce-pagination ul {
 	border: 0;
@@ -1881,8 +1919,10 @@ li.wc-layered-nav-term a {
 }
 .woocommerce ul.products li.product .woocommerce-loop-category__title,
 .woocommerce ul.products li.product .woocommerce-loop-product__title,
-.woocommerce ul.products li.product h3 {
-    font-weight: 700 !important;
+.woocommerce ul.products li.product h3,
+.woocommerce td.product-name a {
+	font-family: 'Bitter', serif;
+   // font-weight: 700 !important;
 }
 .woocommerce-checkout input#ship-to-different-address-checkbox {
 	margin-bottom: 5px;
@@ -1896,6 +1936,7 @@ li.wc-layered-nav-term a {
 #wl-wrapper .wl-actions-table {
 	margin-bottom: 10px !important;
 }
+
 
 /* # Sidebars
 ---------------------------------------------------------------------------------------------------- */
@@ -2231,7 +2272,7 @@ a.fx-type:hover {
 } */
 
 h2.entry-title a {
-	color: #000;
+	color: #fff;
 }
 h1 {
 	font-family: Bitter, serif;
