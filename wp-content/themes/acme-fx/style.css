@@ -2631,8 +2631,12 @@ body div.agm_mh_info_content {
 ul#menu-primary-menu .submenu a {
 	background-color: #AE4040;
 }
+/* th-- hides price and quantity spinner from RENTAL single product pages ************************/
 .no-price {
 	display: none;
+}
+.genesis-nav-menu .menu-item {
+	cursor: pointer;
 }
 	
 /* # Media Queries
