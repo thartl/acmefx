@@ -39,9 +39,7 @@ function th_doc_repeater() {
 		}
 
 		echo '<ul>';
-
 	}
-
 }
 
 genesis();
