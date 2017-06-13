@@ -523,5 +523,3 @@ function pw_product_link_to_view( $link ) {
 
 
 
-
-

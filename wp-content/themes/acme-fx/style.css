@@ -2127,7 +2127,7 @@ h1.entry-title {
 .front-page-1 {
 	padding-top: 0;
 }
-.front-page-2 {
+.widget.featured-content.featuredpost {
 	padding: 10px;
 	background: #fff;
 	margin-bottom: 40px;
@@ -2232,7 +2232,8 @@ h1.entry-title {
 }
 a.business-type:hover,
 a.fx-type:hover {
-    color: #fff;
+//	color: #fff;
+	opacity: 1;
 }
 
 .business-type p,
