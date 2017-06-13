@@ -146,6 +146,9 @@ add_action( 'genesis_header', 'the_custom_header_markup' );
 // Add support for custom background.
 add_theme_support( 'custom-background' );
 
+//* Remove the edit link
+add_filter ( 'genesis_edit_post_link' , '__return_false' );
+
 // Add support for after entry widget.
 add_theme_support( 'genesis-after-entry-widget-area' );
 
