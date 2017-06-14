@@ -1977,8 +1977,9 @@ address {
 .woocommerce .total strong {
 	font-weight: 400;
 }
-.woocommerce .woocommerce-Price-amount {
+.woocommerce .total .woocommerce-Price-amount {
 	font-weight: 700;
+	float: right;
 }
 .woocommerce .woocommerce-Price-amount::before {
 	content: '\00a0';
@@ -2213,9 +2214,9 @@ h1.entry-title {
 	margin: 0 auto;
 
 }
-.business-type:hover img {
+/* .business-type:hover img {
 	display: none;
-}
+} */
 .fx-type img {
 	width: 75px;
 	max-height: 75px;
@@ -2229,6 +2230,12 @@ h1.entry-title {
 	left: 120px;
 	color: #fff;
 	font-family: Bitter, serif;
+}
+img.fp1-snow-logo {
+	display: block;
+	margin: 55px 20px 20px;
+	width: 200px;
+	float: left;
 }
 a.business-type:hover,
 a.fx-type:hover {
@@ -2476,7 +2483,8 @@ body div.agm_mh_info_content {
 	background-position: center;
 }
 .snow-business {
-	background: url('/wp-content/uploads/2017/05/snow_1920.jpg');
+	background: url('/wp-content/uploads/2017/06/night-moon.jpg');
+	background-position: bottom;
 }
 .rentals {
 	background: url('/wp-content/uploads/2017/05/Viper-1-500x500.jpg');
@@ -2553,7 +2561,49 @@ body div.agm_mh_info_content {
     }
 }
 
+body .woocommerce-product-search,
+body .search-form {
+	position: relative;
+}
+form.search-form input {
+	//padding-right: 40px;
+}
+form.search-form input[type="submit"]:hover,
+.woocommerce .woocommerce-product-search input[type="submit"]:hover {
+	background-color: transparent !important;
+	color: #AE4040;
+}
 
+.genesis-nav-menu .search input[type="submit"],
+.widget_search input[type="submit"],
+.search-form input[type="submit"],
+body .woocommerce-product-search input[type="submit"] {
+    background: none !important;
+    border: none;
+   	clip: inherit;	
+    color: #4a545a;
+    display: inline-block;
+    font: 28px/1 'dashicons';
+    height: 38px;
+   // padding: 0 10px 0 12px;
+    position: absolute;
+    right: 7px;
+    top: -1px;
+    width: 38px;
+}
+/* body .woocommerce-product-search input[type="submit"] {
+	background: none !important;
+	color: #4a545a;
+	clip: inherit;
+    display: inline-block;
+    font: 28px/1 'dashicons';
+    height: 38px;
+	position: absolute;
+    right: 7px;
+    top: -1px;
+    vertical-align: top;
+    width: 38px;
+} */
 
 
 
