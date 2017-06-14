@@ -146,6 +146,9 @@ add_action( 'genesis_header', 'the_custom_header_markup' );
 // Add support for custom background.
 add_theme_support( 'custom-background' );
 
+//* Remove the edit link
+add_filter ( 'genesis_edit_post_link' , '__return_false' );
+
 // Add support for after entry widget.
 add_theme_support( 'genesis-after-entry-widget-area' );
 
@@ -335,6 +338,28 @@ if ( !is_page() ) {
 	return $post_info;
 }}
 
+
+/**
+ * Customize Read More Link
+ * @author Bill Erickson
+ * @link http://www.billerickson.net/read-more-link
+ *
+ * @param string
+ * @return string
+ */
+function be_more_link($more_link) {
+	return sprintf('... <a href="%s" class="more-link">%s</a>', get_permalink(), '&nbsp;Read more');
+}
+add_filter( 'excerpt_more', 'be_more_link' );
+add_filter( 'get_the_content_more_link', 'be_more_link' );
+add_filter( 'the_content_more_link', 'be_more_link' );
+
+
+
+
+// ******************************  WOOCOMMERCE  **************************************** //
+// ************************************************************************************* //
+
 //  th-- enamble woocommerce product gallery zoom, lightbox, slider
 add_action( 'after_setup_theme', 'acme_woo_gallery_setup' );
  
@@ -363,7 +388,11 @@ function th_no_page_title_on_woo_archives($state) {
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
 
 
-// Add rental pricing fields to the admin product page AND update meta
+
+// *************************************************
+// ************************************************* Add rental pricing fields to the admin product page AND update meta
+// *************************************************
+
 add_action( 'woocommerce_product_options_general_product_data', 'wc_custom_add_custom_fields' );
 function wc_custom_add_custom_fields() {
     // Day rental number field
@@ -432,12 +461,6 @@ function pw_add_price_table() {
 	$weekly_rental_price = esc_html( get_post_meta( get_the_ID(), '_week_rental_price', true ) );
 	$monthly_rental_price = esc_html( get_post_meta( get_the_ID(), '_month_rental_price', true ) );
 
-			// global $post;
-			// $categories = array();
-			// $terms = wp_get_post_terms( $post->ID, 'product_cat' );
-			// foreach ( $terms as $term ) {
-			// 	$categories[] = $term->slug;
-			// }
 			global $product;
 			$departments = $product->get_attribute( 'pa_departments' );
 			$is_rental = strpos($departments, 'Rentals' ) !== false ? true : false;
@@ -486,7 +509,11 @@ function pw_add_price_table() {
 
 	<?php }
 }
-// END ::  Add rental pricing fields and display them
+
+// *************************************************
+// ************************************************* END ::  Add rental pricing fields and display them
+// *************************************************
+
 
 
 // Changes empty price to "Rental item" on product loops and also in admin - Products
@@ -519,6 +546,16 @@ function pw_product_link_to_view( $link ) {
 		} else {
 			return $link;
 		}
+}
+
+//  Remove "Reviews" tab from single product page
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+
+function woo_remove_product_tabs( $tabs ) {
+
+    unset( $tabs['reviews'] );
+
+    return $tabs;
 }
 
 

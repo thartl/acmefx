@@ -2128,7 +2128,7 @@ h1.entry-title {
 .front-page-1 {
 	padding-top: 0;
 }
-.front-page-2 {
+.widget.featured-content.featuredpost {
 	padding: 10px;
 	background: #fff;
 	margin-bottom: 40px;
@@ -2239,7 +2239,7 @@ img.fp1-snow-logo {
 }
 a.business-type:hover,
 a.fx-type:hover {
-    color: #fff;
+	color: #fff;
 }
 
 .business-type p,
@@ -2479,7 +2479,7 @@ body div.agm_mh_info_content {
 }
 
 .expendables {
-	background: url('/wp-content/uploads/2017/05/Flashbulbs-1-500x500.jpg');
+	background: url('/wp-content/uploads/2017/05/flashbulbs-1-500x500.jpg');
 	background-position: center;
 }
 .snow-business {
@@ -2707,8 +2707,12 @@ body .woocommerce-product-search input[type="submit"] {
 ul#menu-primary-menu .submenu a {
 	background-color: #AE4040;
 }
+/* th-- hides price and quantity spinner from RENTAL single product pages ************************/
 .no-price {
 	display: none;
+}
+.genesis-nav-menu .menu-item {
+	cursor: pointer;
 }
 	
 /* # Media Queries
