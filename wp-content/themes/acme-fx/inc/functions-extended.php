@@ -15,7 +15,7 @@
 
 
 /**
- * Change text strings
+ * Change text strings, case by case
  *
  * @link http://codex.wordpress.org/Plugin_API/Filter_Reference/gettext
  */
@@ -41,7 +41,26 @@ function new_loop_shop_per_page( $cols ) {
   return $cols;
 }
 
+//  Add link to bottom of page if text contiues
+remove_action( 'woocommerce_archive_description', 'woocommerce_taxonomy_archive_description' );
+add_action( 'woocommerce_archive_description', 'th_woocommerce_taxonomy_archive_description' );
+	function th_woocommerce_taxonomy_archive_description() {
+		$term_id = get_queried_object()->term_id;
+		$term_meta = get_term_meta( $term_id, 'intro_text', true );
+		$term = get_term_by( 'id', $term_id, get_query_var( 'taxonomy' ) );
+		$term_name = $term->name;
+		$anchor_link = '';
+		if ( !empty( $term_meta ) ) {
+			$anchor_link = '<a href="#description-continued" class="cat-tag-continue-reading" >Continue reading about ' . $term_name . '</a>';
+		}
 
+		if ( is_product_taxonomy() && 0 === absint( get_query_var( 'paged' ) ) ) {
+			$description = wc_format_content( term_description() );
+			if ( $description ) {
+				echo '<div class="term-description">' . $description . '<p><a href="#description-continued">' . $anchor_link . '</a></p>' . '</div>';
+			}
+		}
+	}
 
 
 // th-- Unhook taxonomy title and description (Genesis), then hook in title
@@ -136,7 +155,7 @@ function th_genesis_do_taxonomy_description_only() {
 
 	$heading = '';
 
-	$intro_text = get_term_meta( $term->term_id, 'intro_text', true );
+	$intro_text = '<b id="description-continued" ></b>' . get_term_meta( $term->term_id, 'intro_text', true );
 	$intro_text = apply_filters( 'genesis_term_intro_text_output', $intro_text ? $intro_text : '' );
 
 	/**
