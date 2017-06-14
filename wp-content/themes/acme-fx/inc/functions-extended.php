@@ -197,4 +197,53 @@ function ea_disable_acf_on_frontend( $plugins ) {
 }
 add_filter( 'option_active_plugins', 'ea_disable_acf_on_frontend' );
 
+// Add ACF Repeater fields to SearchWP -- unnecessary if Custom fields for Page is set to "Any"
+function th_searchwp_custom_field_keys_like( $keys ) {
+  $keys[] = 'acf_field_name_%'; // will match any Custom Field starting with acf_field_name_
+  return $keys;
+}
+ 
+add_filter( 'searchwp_custom_field_keys', 'th_searchwp_custom_field_keys_like' );
 
+// Register Documents post type
+// add_action( 'init', 'register_cpt_document' );
+
+// function register_cpt_document() {
+
+// 	$labels = array(
+// 		'name' => __( 'Documents', 'document' ),
+// 		'singular_name' => __( 'Document', 'document' ),
+// 		'add_new' => __( 'Add new', 'document' ),
+// 		'add_new_item' => __( 'Add New Document', 'document' ),
+// 		'edit_item' => __( 'Edit Document', 'document' ),
+// 		'new_item' => __( 'New Document', 'document' ),
+// 		'view_item' => __( 'View Document', 'document' ),
+// 		'search_items' => __( 'Search Documents', 'document' ),
+// 		'not_found' => __( 'No documents found', 'document' ),
+// 		'not_found_in_trash' => __( 'No documents found in Trash', 'document' ),
+// 		'parent_item_colon' => __( 'Parent Document:', 'document' ),
+// 		'menu_name' => __( 'Documents', 'document' ),
+// 	);
+
+// 	$args = array(
+// 		'labels' => $labels,
+// 		'hierarchical' => false,
+// 		'description' => 'Documents like',
+// 		'supports' => array( 'page-attributes' ),
+// 		'taxonomies' => array( 'Document type' ),
+// 		'public' => true,
+// 		'show_ui' => true,
+// 		'show_in_menu' => true,
+// 		'menu_position' => 5,
+// 		'show_in_nav_menus' => false,
+// 		'publicly_queryable' => true,
+// 		'exclude_from_search' => false,
+// 		'has_archive' => true,
+// 		'query_var' => true,
+// 		'can_export' => true,
+// 		'rewrite' => true,
+// 		'capability_type' => 'page'
+// 	);
+
+// 	register_post_type( 'document', $args );
+// }
