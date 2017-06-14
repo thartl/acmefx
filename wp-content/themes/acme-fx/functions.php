@@ -559,6 +559,39 @@ function woo_remove_product_tabs( $tabs ) {
 }
 
 
+// Search
 
+add_filter( 'genesis_search_button_text', 'b3m_search_button_dashicon' );
+function b3m_search_button_dashicon( $text ) {
+	
+	return esc_attr( '&#xf179;' );
+	
+}
+
+//Woocommerce search
+
+add_filter( 'get_product_search_form' , 'woo_custom_product_searchform' );
+
+/**
+ * woo_custom_product_searchform
+ *
+ * @access      public
+ * @since       1.0 
+ * @return      void
+*/
+function woo_custom_product_searchform( $form ) {
+	
+	$form = '<form class="woocommerce-product-search" role="search" method="get" id="searchform" action="' . esc_url( home_url( '/'  ) ) . '">
+		
+			<label class="screen-reader-text" for="s">' . __( 'Search for:', 'woocommerce' ) . '</label>
+			<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' . __( 'Search Products', 'woocommerce' ) . '" />
+			<input type="submit" id="searchsubmit" value="'. esc_attr__( '&#xf179;', 'woocommerce' ) .'" />
+			<input type="hidden" name="post_type" value="product" />
+		
+	</form>';
+	
+	return $form;
+	
+}
 
 
