@@ -559,8 +559,7 @@ function woo_remove_product_tabs( $tabs ) {
 }
 
 
-// Search
-
+// Search button icon
 add_filter( 'genesis_search_button_text', 'b3m_search_button_dashicon' );
 function b3m_search_button_dashicon( $text ) {
 	
@@ -568,8 +567,7 @@ function b3m_search_button_dashicon( $text ) {
 	
 }
 
-//Woocommerce search
-
+// Woocommerce search search icon + 
 add_filter( 'get_product_search_form' , 'woo_custom_product_searchform' );
 
 /**
@@ -580,7 +578,12 @@ add_filter( 'get_product_search_form' , 'woo_custom_product_searchform' );
  * @return      void
 */
 function woo_custom_product_searchform( $form ) {
-	
+	//  a div was removed (inside form)
+		//  To turn on live search for WC Product search (may return site-wide results throught Ajax):
+		//  use this:
+		//  data-swplive="true" /> <!-- data-swplive="true" enables SearchWP Live Search -->
+		//  to replace this (at the end of <input type="text" line):
+		//  />
 	$form = '<form class="woocommerce-product-search" role="search" method="get" id="searchform" action="' . esc_url( home_url( '/'  ) ) . '">
 		
 			<label class="screen-reader-text" for="s">' . __( 'Search for:', 'woocommerce' ) . '</label>
