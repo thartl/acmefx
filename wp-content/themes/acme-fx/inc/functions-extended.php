@@ -2,7 +2,7 @@
 /**
  * Acme FX.
  *
- * This file adds functions to the Acme FX Theme.
+ * This file adds functions to the Acme FX theme.
  * This is overflow from functions.php
  *
  * @package Acme FX
@@ -96,8 +96,11 @@ function th_genesis_do_taxonomy_title_only() {
 		return;
 	}
 
+//	$term_link = get_term_link( $term );
+
 	$heading = get_term_meta( $term->term_id, 'headline', true );
 	if ( empty( $heading ) && genesis_a11y( 'headings' ) ) {
+//		$heading = '<a href="' . $term_link . '" class="archive-title" >' . $term->name . '</a>';
 		$heading = $term->name;
 	}
 
