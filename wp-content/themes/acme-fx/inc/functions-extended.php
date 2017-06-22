@@ -41,23 +41,42 @@ function new_loop_shop_per_page( $cols ) {
   return $cols;
 }
 
+
+// For main shop page only:  attach shop page url to page title -- used to reset filters
+add_filter( 'woocommerce_page_title', 'th_woocommerce_category_page_title', 10, 1 );
+
+function th_woocommerce_category_page_title( $page_title ) {
+	if ( is_shop() ) {
+		$shop_page_url = get_permalink( woocommerce_get_page_id( 'shop' ) );
+		$url = esc_url( $shop_page_url );
+		$heading = '<a href="' . $url . '" >' . $page_title . '<a/>';
+		return $heading;
+	}
+}
+
+
 //  Add link to bottom of page if text contiues
 remove_action( 'woocommerce_archive_description', 'woocommerce_taxonomy_archive_description' );
 add_action( 'woocommerce_archive_description', 'th_woocommerce_taxonomy_archive_description' );
 	function th_woocommerce_taxonomy_archive_description() {
-		$term_id = get_queried_object()->term_id;
-		$term_meta = get_term_meta( $term_id, 'intro_text', true );
-		$term = get_term_by( 'id', $term_id, get_query_var( 'taxonomy' ) );
-		$term_name = $term->name;
-		$anchor_link = '';
-		if ( !empty( $term_meta ) ) {
-			$anchor_link = '<a href="#description-continued" class="cat-tag-continue-reading" >Continue reading about ' . $term_name . '</a>';
-		}
 
-		if ( is_product_taxonomy() && 0 === absint( get_query_var( 'paged' ) ) ) {
-			$description = wc_format_content( term_description() );
-			if ( $description ) {
-				echo '<div class="term-description">' . $description . '<p><a href="#description-continued">' . $anchor_link . '</a></p>' . '</div>';
+		global $wp_query;
+		if ( is_product_category() || is_product_tag() ) {
+			$term_id = get_queried_object()->term_id;
+			$term_meta = get_term_meta( $term_id, 'intro_text', true );
+			$term = get_term_by( 'id', $term_id, get_query_var( 'taxonomy' ) );
+			$term_name = $term->name;
+
+			$anchor_link = '';
+			if ( !empty( $term_meta ) ) {
+				$anchor_link = '<a href="#description-continued" class="cat-tag-continue-reading" >Continue reading about ' . $term_name . '</a>';
+			}
+
+			if ( is_product_taxonomy() && 0 === absint( get_query_var( 'paged' ) ) ) {
+				$description = wc_format_content( term_description() );
+				if ( $description ) {
+					echo '<div class="term-description">' . $description . '<p><a href="#description-continued">' . $anchor_link . '</a></p>' . '</div>';
+				}
 			}
 		}
 	}
@@ -91,21 +110,21 @@ function th_genesis_do_taxonomy_title_only() {
 	}
 //  added
 //  && !is_tax( 'product_cat' ) && !is_tax( 'product_tag' )
-//  to get taxonomy and term from queried_object
+//  to get taxonomy and term from queried_object as opposed to get_query_var( 'term' ), which may grab other vars like pa_departments...
 	$term = is_tax() && !is_tax( 'product_cat' ) && !is_tax( 'product_tag' ) ? get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ) : $wp_query->get_queried_object();
 
 	if ( ! $term ) {
 		return;
 	}
 
-//	$term_link = get_term_link( $term, 'product-category' );
+	$term_link = get_term_link( $term );
 
 	$heading = get_term_meta( $term->term_id, 'headline', true );
 	if ( empty( $heading ) && genesis_a11y( 'headings' ) ) {
-//		$heading = '<a href="' . $term_link . '" class="archive-title" >' . $term->name . '</a>';
-		$heading = $term->name;
+		$heading = '<a href="' . $term_link . '" >' . $term->name . '</a>';
+		// $heading = $term->name;
 	}
-//var_dump($wp_query);
+
 	$intro_text = '';
 
 	/**
@@ -140,6 +159,7 @@ function th_do_archive_headings_headline( $heading = '', $intro_text = '', $cont
 	if ( $context && $heading ) {
 //		printf( '<h1 %s>%s</h1>', genesis_attr( 'archive-title' ), strip_tags( $heading ) );
 		printf( '<h1 %s>%s</h1>', genesis_attr( 'archive-title' ), strip_tags( $heading, '<a>' ) );
+//		printf( '<h1 %s>%s</h1>', genesis_attr( 'archive-title' ), $heading );
 	}
 
 }
