@@ -89,21 +89,23 @@ function th_genesis_do_taxonomy_title_only() {
 	if ( ! is_category() && ! is_tag() && ! is_tax() ) {
 		return;
 	}
-
-	$term = is_tax() ? get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ) : $wp_query->get_queried_object();
+//  added
+//  && !is_tax( 'product_cat' ) && !is_tax( 'product_tag' )
+//  to get taxonomy and term from queried_object
+	$term = is_tax() && !is_tax( 'product_cat' ) && !is_tax( 'product_tag' ) ? get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ) : $wp_query->get_queried_object();
 
 	if ( ! $term ) {
 		return;
 	}
 
-//	$term_link = get_term_link( $term );
+//	$term_link = get_term_link( $term, 'product-category' );
 
 	$heading = get_term_meta( $term->term_id, 'headline', true );
 	if ( empty( $heading ) && genesis_a11y( 'headings' ) ) {
 //		$heading = '<a href="' . $term_link . '" class="archive-title" >' . $term->name . '</a>';
 		$heading = $term->name;
 	}
-
+//var_dump($wp_query);
 	$intro_text = '';
 
 	/**
@@ -118,6 +120,27 @@ function th_genesis_do_taxonomy_title_only() {
 	 * @param string $context    Context.
 	 */
 	do_action( 'genesis_archive_title_descriptions', $heading, $intro_text, 'taxonomy-archive-description' );
+
+}
+
+//  Unhook originnal genesis_do_archive_headings_headline() and hook th_do_archive..., now with a link to reload page without filters
+remove_action( 'genesis_archive_title_descriptions', 'genesis_do_archive_headings_headline', 10, 3 );
+add_action( 'genesis_archive_title_descriptions', 'th_do_archive_headings_headline', 10, 3 );
+/**
+ * Add headline for archive headings to archive pages.
+ *
+ * @since 2.5.0
+ *
+ * @param string $heading    Optional. Archive heading, default is empty string.
+ * @param string $intro_text Optional. Archive intro text, default is empty string.
+ * @param string $context    Optional. Archive context, default is empty string.
+ */
+function th_do_archive_headings_headline( $heading = '', $intro_text = '', $context = '' ) {
+
+	if ( $context && $heading ) {
+//		printf( '<h1 %s>%s</h1>', genesis_attr( 'archive-title' ), strip_tags( $heading ) );
+		printf( '<h1 %s>%s</h1>', genesis_attr( 'archive-title' ), strip_tags( $heading, '<a>' ) );
+	}
 
 }
 
