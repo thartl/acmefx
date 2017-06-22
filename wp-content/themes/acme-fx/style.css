@@ -1813,9 +1813,13 @@ body.woocommerce span.onsale {
 .rental-product h1::before {
 	content: "\2601";
 }
-.genesis-nav-menu .sub-menu,
+/* .genesis-nav-menu .sub-menu, */
 .genesis-nav-menu .sub-menu a {
-	background-color: #AE4040;
+	background-color: #5BA5A5;
+	border: 0;
+}
+.genesis-nav-menu .sub-menu a:hover{
+	background-color: #1E373B;
 	border: 0;
 }
 
@@ -2484,7 +2488,7 @@ body div.agm_mh_info_content {
 }
 .snow-business {
 	background: url('/wp-content/uploads/2017/06/night-moon.jpg');
-	background-position: bottom;
+	background-position: center;
 }
 .rentals {
 	background: url('/wp-content/uploads/2017/05/Viper-1-500x500.jpg');
