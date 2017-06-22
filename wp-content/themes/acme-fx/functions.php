@@ -73,6 +73,20 @@ function genesis_sample_enqueue_scripts_styles() {
 
 }
 
+/**
+ * Remove Genesis child theme style sheet
+ * @uses genesis_meta  <genesis/lib/css/load-styles.php>
+*/ 
+remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
+/**
+ * Enqueue Genesis child theme style sheet at higher priority
+ * @uses wp_enqueue_scripts <http://codex.wordpress.org/Function_Reference/wp_enqueue_style>
+ */
+add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 15 );
+
+
+
+
 
 // Define our responsive menu settings.
 function genesis_sample_responsive_menu_settings() {
