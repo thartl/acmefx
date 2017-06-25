@@ -82,9 +82,26 @@ remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
  * Enqueue Genesis child theme style sheet at higher priority
  * @uses wp_enqueue_scripts <http://codex.wordpress.org/Function_Reference/wp_enqueue_style>
  */
-add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 15 );
-
-
+//add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 15 );
+//  enque genesis_cache_bust_load_stylesheet (below) during development, enqueue genesis_enqueue_main_stylesheet (above) for live site
+add_action( 'wp_enqueue_scripts', 'genesis_cache_bust_load_stylesheet', 15 );
+/**
+ * Get the (date &) time the theme's CSS was last modified
+ * and use it to bust the cache by appending
+ * it to the CSS output.
+ * // th-- added year, month, date
+ *
+ * @author FAT Media / th--
+ * @link http://youneedfat.com
+ */
+function genesis_cache_bust_load_stylesheet() {
+	// Get the stylesheet info.
+	$stylesheet_uri = get_stylesheet_directory_uri() . '/style.css';
+	$stylesheet_dir = get_stylesheet_directory() . '/style.css';
+	$last_modified = date ( "Y-m-d_h.i.s", filemtime( $stylesheet_dir ) );
+	// Enqueue the stylesheet.
+	wp_enqueue_style( 'th-main-style-versioned', $stylesheet_uri, array(), $last_modified );
+}
 
 
 
