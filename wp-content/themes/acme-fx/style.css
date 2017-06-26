@@ -818,7 +818,7 @@ th:first-child {
 .after-entry,
 .archive-description,
 .author-box {
-	background-color: #fff;
+	background-color: #1E373B;
 	font-size: 18px;
 	font-size: 1.8rem;
 	margin-bottom: 40px;
@@ -1457,6 +1457,7 @@ img.alignright,
 }
 .nav-secondary {
 	background-color: #1E373B;
+	background-color: #192B2D;
 }
 .home .nav-secondary {
 	background-image: none;
@@ -2549,7 +2550,6 @@ div.agm_mh_info_content {
 	width: 100%;
 	line-height: .5rem;
 	display: block;
-	background: rgba(255,255,255,1);
 	background: #1E373B;
 	transform: translateY(-100%);
 	-webkit-transform: translateY(-100%);
