@@ -201,7 +201,14 @@ function th_genesis_do_taxonomy_description_only() {
 
 	$heading = '';
 
-	$intro_text = '<b id="description-continued" ></b>' . get_term_meta( $term->term_id, 'intro_text', true );
+	$description_continued = get_term_meta( $term->term_id, 'intro_text', true );
+
+	if( $description_continued ) {
+		$intro_text = '<b id="description-continued" ></b>' . $description_continued;
+	} else {
+		$intro_text = '';
+	}
+
 	$intro_text = apply_filters( 'genesis_term_intro_text_output', $intro_text ? $intro_text : '' );
 
 	/**
