@@ -809,6 +809,8 @@ th:first-child {
 
 .breadcrumb {
 	background-color: #fff;
+	background-color: #1E373B;
+
 	font-size: 16px;
 	font-size: 1.6rem;
 	margin-bottom: 1px;
