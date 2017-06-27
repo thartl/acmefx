@@ -1371,7 +1371,7 @@ img.alignright,
 
 .genesis-nav-menu .sub-menu a {
 	background-color: #5BA5A5;
-	background-color: #192B2D;	
+	//background-color: #192B2D;	
 	border: 0;
 	font-size: 14px;
 	font-size: 1.4rem;
@@ -1459,7 +1459,6 @@ img.alignright,
 }
 .nav-secondary {
 	background-color: #1E373B;
-	background-color: #192B2D;
 }
 .home .nav-secondary {
 	background-image: none;
