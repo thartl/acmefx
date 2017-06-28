@@ -2215,6 +2215,9 @@ body .widget.simple-social-icons ul li a {
 img.header-profile {
 	height: 25px;
 }
+.wp-custom-header-video-button {
+	display: none;
+}
 
 
 /*******************************  Front Page & FX     */

@@ -164,7 +164,7 @@ function genesis_do_new_header() {
 // Add support for custom header.
 add_theme_support( 'custom-header', array(
 	'width'           => 1920,
-	'height'          => 600,
+	'height'          => 400,
 	'header-selector' => '.site-title a',
 	'header-text'     => true,
 	'flex-width'     => true,
