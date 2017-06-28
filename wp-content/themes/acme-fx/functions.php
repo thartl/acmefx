@@ -181,6 +181,7 @@ function th_header_video_settings( $settings ) {
   return $settings;
 }
 
+
 add_action( 'genesis_header', 'the_custom_header_markup' );
 
 // Add support for custom background.
