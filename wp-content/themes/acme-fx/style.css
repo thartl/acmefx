@@ -1221,14 +1221,15 @@ img.alignright,
 .site-header > .wrap {
     padding: 0;
     margin: 0;
-    max-width: inherit;
-    position: relative;
+    //max-width: inherit;
+   // position: relative;
 	background: url('/wp-content/uploads/2017/05/grey-fire-simple.jpg') no-repeat;
-	background-position: top right;
+	//background-position: top right;
 
 }
 .home .site-header > .wrap {
 	background: none;
+	width: 1920px;
 }
 
 /* ## Title Area
@@ -2204,7 +2205,7 @@ body .widget.simple-social-icons ul li a {
 .wp-custom-header video,
 .wp-custom-header img {
 	z-index: 2;
-	object-fit: cover;
+	//object-fit: cover;
 }
 .wp-custom-header {
 	line-height: 0;
@@ -2218,7 +2219,9 @@ img.header-profile {
 .wp-custom-header-video-button {
 	display: none;
 }
-
+.wp-custom-header video {
+	width: 1920px !important;
+}
 
 /*******************************  Front Page & FX     */
 
