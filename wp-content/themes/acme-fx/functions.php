@@ -164,13 +164,22 @@ function genesis_do_new_header() {
 // Add support for custom header.
 add_theme_support( 'custom-header', array(
 	'width'           => 1920,
-	'height'          => 600,
+	'height'          => 400,
 	'header-selector' => '.site-title a',
 	'header-text'     => true,
 	'flex-width'     => true,
 	'flex-height'     => true,
 	'video' => true,
 ) );
+
+add_filter( 'header_video_settings', 'th_header_video_settings');
+function th_header_video_settings( $settings ) {
+  $settings['minWidth'] = 320;  // minimum VIEWPORT width for video to play
+  $settings['minHeight'] = 568;  // minimum VIEWPORT height for video to play
+  $settings['width'] = 1920;  // video width
+  $settings['height'] = 400;  // video height
+  return $settings;
+}
 
 add_action( 'genesis_header', 'the_custom_header_markup' );
 
