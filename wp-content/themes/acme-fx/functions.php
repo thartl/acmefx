@@ -172,6 +172,15 @@ add_theme_support( 'custom-header', array(
 	'video' => true,
 ) );
 
+add_filter( 'header_video_settings', 'th_header_video_settings');
+function th_header_video_settings( $settings ) {
+  $settings['minWidth'] = 320;  // minimum VIEWPORT width for video to play
+  $settings['minHeight'] = 568;  // minimum VIEWPORT height for video to play
+  $settings['width'] = 1920;  // video width
+  $settings['height'] = 400;  // video height
+  return $settings;
+}
+
 add_action( 'genesis_header', 'the_custom_header_markup' );
 
 // Add support for custom background.

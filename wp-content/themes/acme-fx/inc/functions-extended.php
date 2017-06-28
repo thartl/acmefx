@@ -119,10 +119,11 @@ function th_genesis_do_taxonomy_title_only() {
 
 	$term_link = get_term_link( $term );
 
-	$heading = get_term_meta( $term->term_id, 'headline', true );
-	if ( empty( $heading ) && genesis_a11y( 'headings' ) ) {
+	$headline = get_term_meta( $term->term_id, 'headline', true );
+	if ( empty( $headline ) && genesis_a11y( 'headings' ) && ( is_tax( 'product_cat' ) || is_tax( 'product_tag' ) ) ) {
 		$heading = '<a href="' . $term_link . '" >' . $term->name . '</a>';
-		// $heading = $term->name;
+	} else {
+		$heading = $term->name;
 	}
 
 	$intro_text = '';
@@ -259,44 +260,44 @@ function th_searchwp_custom_field_keys_like( $keys ) {
 add_filter( 'searchwp_custom_field_keys', 'th_searchwp_custom_field_keys_like' );
 
 // Register Documents post type
-add_action( 'init', 'register_cpt_document' );
+// add_action( 'init', 'register_cpt_document' );
 
-function register_cpt_document() {
+// function register_cpt_document() {
 
-	$labels = array(
-		'name' => __( 'Documents', 'document' ),
-		'singular_name' => __( 'Document', 'document' ),
-		'add_new' => __( 'Add new', 'document' ),
-		'add_new_item' => __( 'Add New Document', 'document' ),
-		'edit_item' => __( 'Edit Document', 'document' ),
-		'new_item' => __( 'New Document', 'document' ),
-		'view_item' => __( 'View Document', 'document' ),
-		'search_items' => __( 'Search Documents', 'document' ),
-		'not_found' => __( 'No documents found', 'document' ),
-		'not_found_in_trash' => __( 'No documents found in Trash', 'document' ),
-		'parent_item_colon' => __( 'Parent Document:', 'document' ),
-		'menu_name' => __( 'Documents', 'document' ),
-	);
+// 	$labels = array(
+// 		'name' => __( 'Documents', 'document' ),
+// 		'singular_name' => __( 'Document', 'document' ),
+// 		'add_new' => __( 'Add new', 'document' ),
+// 		'add_new_item' => __( 'Add New Document', 'document' ),
+// 		'edit_item' => __( 'Edit Document', 'document' ),
+// 		'new_item' => __( 'New Document', 'document' ),
+// 		'view_item' => __( 'View Document', 'document' ),
+// 		'search_items' => __( 'Search Documents', 'document' ),
+// 		'not_found' => __( 'No documents found', 'document' ),
+// 		'not_found_in_trash' => __( 'No documents found in Trash', 'document' ),
+// 		'parent_item_colon' => __( 'Parent Document:', 'document' ),
+// 		'menu_name' => __( 'Documents', 'document' ),
+// 	);
 
-	$args = array(
-		'labels' => $labels,
-		'hierarchical' => false,
-		'description' => 'This custom post type holds support documents.',
-		'supports' => array( 'page-attributes', 'editor', 'title', 'genesis-seo', 'thumbnail','genesis-cpt-archives-settings' ),
-		'taxonomies' => array( 'Document type' ),
-		'public' => true,
-		'show_ui' => true,
-		'show_in_menu' => true,
-		'menu_position' => 5,
-		'show_in_nav_menus' => false,
-		'publicly_queryable' => true,
-		'exclude_from_search' => false,
-		'has_archive' => true,
-		'query_var' => true,
-		'can_export' => true,
-		'rewrite' => true,
-		'capability_type' => 'page'
-	);
+// 	$args = array(
+// 		'labels' => $labels,
+// 		'hierarchical' => false,
+// 		'description' => 'This custom post type holds support documents.',
+// 		'supports' => array( 'page-attributes', 'editor', 'title', 'genesis-seo', 'thumbnail','genesis-cpt-archives-settings' ),
+// 		'taxonomies' => array( 'Document type' ),
+// 		'public' => true,
+// 		'show_ui' => true,
+// 		'show_in_menu' => true,
+// 		'menu_position' => 5,
+// 		'show_in_nav_menus' => false,
+// 		'publicly_queryable' => true,
+// 		'exclude_from_search' => false,
+// 		'has_archive' => true,
+// 		'query_var' => true,
+// 		'can_export' => true,
+// 		'rewrite' => true,
+// 		'capability_type' => 'page'
+// 	);
 
-	register_post_type( 'document', $args );
-}
+// 	register_post_type( 'document', $args );
+// }
