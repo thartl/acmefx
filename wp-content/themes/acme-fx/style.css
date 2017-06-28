@@ -1356,7 +1356,7 @@ img.alignright,
 }
 
 .genesis-nav-menu .sub-menu {
-	border-top: 1px solid #eee;
+	//border-top: 1px solid #eee;
 	left: -9999px;
 	opacity: 0;
 	position: absolute;
