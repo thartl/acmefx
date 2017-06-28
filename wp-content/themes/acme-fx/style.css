@@ -2212,8 +2212,12 @@ body .widget.simple-social-icons ul li a {
 .wp-custom-header img {
 	display: none;
 }
-img.header-profile {
+svg.header-profile {
 	height: 25px;
+	width: 25px;
+}
+a:hover svg path {
+	fill: #5BA5A5;
 }
 .wp-custom-header-video-button {
 	display: none;
@@ -3016,6 +3020,16 @@ div.agm_mh_info_content {
 	.two-thirds {
 		margin: 0;
 		width: 100%;
+	}
+	.home #wp-custom-header video,
+	.home #wp-custom-header img {
+		max-height: 300px;
+	}
+}
+@media only screen and (max-width: 800px) { 
+	.home #wp-custom-header video,
+	.home #wp-custom-header img {
+		max-height: 250px;
 	}
 }
 
