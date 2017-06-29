@@ -135,7 +135,6 @@ add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu',
 add_theme_support( 'genesis-responsive-viewport' );
 
 // Header Widgets and Custom Site Title Image
-
 remove_action( 'genesis_header', 'genesis_do_header' ); 
 add_action( 'genesis_header', 'genesis_do_new_header' ); 
 function genesis_do_new_header() { 
@@ -170,7 +169,7 @@ add_theme_support( 'custom-header', array(
 	'flex-height'     => true,
 	'video' => true,
 ) );
-
+//  Video header settings
 add_filter( 'header_video_settings', 'th_header_video_settings');
 function th_header_video_settings( $settings ) {
   $settings['minWidth'] = 320;  // minimum VIEWPORT width for video to play (320)

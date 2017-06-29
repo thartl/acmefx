@@ -2519,7 +2519,7 @@ div.agm_mh_info_content {
         right: 100px;
     }
     100% {
-        top: 600px;
+        top: 320px;
         right: 110px;
         
     }
@@ -2536,7 +2536,7 @@ div.agm_mh_info_content {
         right: 220px;
     }
     100% {
-        top: 500px;
+        top: 330px;
         right: 210px;
     }
 }
@@ -2607,15 +2607,25 @@ div.agm_mh_info_content {
 	-moz-transform: translateY(0%);
 }
 
-.nav-secondary.headhesive--stick ul::before {
+/*.nav-secondary.headhesive--stick ul::before {
 	content: url('/wp-content/themes/acme-fx/images/acme-logo-orig-traced.svg');
 	position: absolute;
 	left: 25px;
 	top: 22px;
 }
+*/
 
+.wrap .genesis-nav-menu a.nav-logo {
+	display: none;
+}
 
-	
+.headhesive--stick.nav-secondary .wrap .genesis-nav-menu a.nav-logo {
+	display: inline;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
@@ -2735,13 +2745,13 @@ div.agm_mh_info_content {
 }
 
 @media only screen and (max-width: 1100px) {
-	.nav-secondary.headhesive--stick ul::before {
+/*	.nav-secondary.headhesive--stick ul::before {
 		position: static;
 		display: block;
 	}
 	.nav-secondary.headhesive--stick ul::before {
 	    display: none;
-	}
+	}*/
 	.business-type,
 	.fx-type {
 		flex-basis: 100%;
@@ -3030,6 +3040,9 @@ div.agm_mh_info_content {
 	.home #wp-custom-header video,
 	.home #wp-custom-header img {
 		max-height: 250px;
+	}
+	.headhesive--stick.nav-secondary .wrap .genesis-nav-menu a.nav-logo {
+		display: none;
 	}
 }
 
