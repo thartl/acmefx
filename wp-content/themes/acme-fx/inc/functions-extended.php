@@ -111,8 +111,10 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 						});
 
 						$( "div.list-view-btn" ).click( function() {
-							Cookies.set( 'store_view', 'list', { expires: 365 } );
-							window.location.reload();
+							if( store_view !== 'list' ) {
+								Cookies.set( 'store_view', 'list', { expires: 365 } );
+								window.location.reload();
+							}
 						});
 
 				});
@@ -125,15 +127,15 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 
 
 /**** testing  ****************************************************************************************************************/
-add_action( 'woocommerce_before_shop_loop', 'th_read_cookies', 16 );
-function th_read_cookies() {
+// add_action( 'woocommerce_before_shop_loop', 'th_read_cookies', 16 );
+// function th_read_cookies() {
 
-if(!isset($_COOKIE['store_view'])) {
-	  echo '<br>The cookie: store_view is NOT set.';
-	} else {
-	  echo '<br>Cookie is:  <h3>' . $_COOKIE['store_view'] . '</h3><br>';
-	}
-}
+// if(!isset($_COOKIE['store_view'])) {
+// 	  echo '<br>The cookie: store_view is NOT set.';
+// 	} else {
+// 	  echo '<br>Cookie is:  <h3>' . $_COOKIE['store_view'] . '</h3><br>';
+// 	}
+// }
 /*****************************************************************************************************************************/
 
 
