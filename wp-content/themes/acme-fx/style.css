@@ -2664,7 +2664,13 @@ div.agm_mh_info_content {
 	bottom: 0;
 }
 
-/** th-- List/Grid testing... */
+/** th-- List/Grid switching ******************************/
+.grid-list-switch img {
+	width: 20px;
+	height: auto;
+	margin: 8px 8px 0 0; 
+}
+
 .woocommerce ul.products.list-view li.product {
 	float: none;
 }

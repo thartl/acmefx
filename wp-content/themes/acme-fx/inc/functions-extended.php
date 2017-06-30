@@ -44,6 +44,17 @@ function new_loop_shop_per_page( $cols ) {
 
 
 /************************ th-- Add WC Grid/List View buttons ************/
+add_action( 'woocommerce_before_shop_loop', 'th_place_grid_list_buttons', 18 );
+function th_place_grid_list_buttons() {
+//	echo '<div style="float: left" >TESTing... </div>';
+	echo '<div class="grid-list-switch">' .
+			'<img src="' . get_stylesheet_directory_uri() .
+			'/images/grid-view.svg" class="grid-view-btn" >' .
+
+			'<img src="' . get_stylesheet_directory_uri() .
+			'/images/list-view.svg" class="list-view-btn >
+		</div>';
+	}
 
 /************************ th-- END: Add WC Grid/List View buttons ************/
 
