@@ -2695,6 +2695,15 @@ div.agm_mh_info_content {
 	fill: #aaa;
 }
 
+.grid-list-switch.list-view svg.grid-view-btn:hover,
+.grid-list-switch svg.list-view-btn:hover {
+	cursor: pointer;
+}
+
+.grid-list-switch.list-view svg.list-view-btn:hover {
+	cursor: default;
+}
+
 .grid-list-switch.list-view svg.grid-view-btn {
 	fill: #fff;
 }
@@ -2707,10 +2716,6 @@ div.agm_mh_info_content {
 	border-bottom: 1px solid #fff;
 	margin-top: 30px;
 	margin-bottom: 0px;
-	 -webkit-transition: all 0.75s ease;
-    -moz-transition: all 0.75s ease;
-    -o-transition: all 0.75s ease;
-    transition: all 0.75s ease;
 }
 
 .woocommerce ul.products.list-view li.product img {
@@ -2718,10 +2723,7 @@ div.agm_mh_info_content {
 	height: 50px;
 	float: left;
 	margin-right: 15px;
-	display: block; -webkit-transition: all 0.75s ease;
-    -moz-transition: all 0.75s ease;
-    -o-transition: all 0.75s ease;
-    transition: all 0.75s ease;
+	display: block;
 }
 
 .woocommerce ul.products.list-view li.product h2 {
@@ -2730,10 +2732,6 @@ div.agm_mh_info_content {
 	width: 200px;
 	padding-top: 15px;
 	vertical-align: center;
-	 -webkit-transition: all 0.75s ease;
-    -moz-transition: all 0.75s ease;
-    -o-transition: all 0.75s ease;
-    transition: all 0.75s ease;
 }
 
 .woocommerce ul.products.list-view li.product .price {
@@ -2744,10 +2742,6 @@ div.agm_mh_info_content {
     color: #fff;
     padding-top: 15px;
     margin-left: 15px;
-     -webkit-transition: all 0.75s ease;
-    -moz-transition: all 0.75s ease;
-    -o-transition: all 0.75s ease;
-    transition: all 0.75s ease;
 }
 
 .woocommerce ul.products.list-view li.product a span.onsale {

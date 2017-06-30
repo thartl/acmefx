@@ -13,7 +13,6 @@
  */
 
 
-
 /**
  * Change text strings, case by case
  *
@@ -30,26 +29,27 @@ function th_change_text_strings( $translated_text, $text, $domain ) {
 add_filter( 'gettext', 'th_change_text_strings', 20, 3 );
 
 
-
 // Change the number of products per page
-//add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
-//			UNCOMMENT TO RUN
-function new_loop_shop_per_page( $cols ) {
-  $cols = 3;
+//add_filter( 'loop_shop_per_page', 'th_new_loop_shop_per_page', 20 );
+function th_new_loop_shop_per_page( $cols ) {
+  $cols = 12;
   return $cols;
 }
 
 
 // Change the number of products per page for list view
-add_filter( 'loop_shop_per_page', 'list_view_loop_shop_per_page', 20 );
-function list_view_loop_shop_per_page( $cols ) {
-	if(!isset($_COOKIE['store_view']) || $_COOKIE['store_view'] == 'list') {
-		$cols = 24;
+add_filter( 'loop_shop_per_page', 'th_list_view_loop_shop_per_page', 22 );
+function th_list_view_loop_shop_per_page( $cols ) {
+	if(!isset($_COOKIE['store_view']) || $_COOKIE['store_view'] == 'grid') {
+		$cols = 12;  /**  products per page in Grid view  **/
+		return $cols;
+	} elseif( $_COOKIE['store_view'] == 'list' ) {
+		$cols = 24;  /**  products per page in List view  **/
+		return $cols;
+	} else {
 		return $cols;
 	}
 }
-
-
 
 /************************ th-- Add WC Grid/List View buttons ************/
 add_action( 'woocommerce_before_shop_loop', 'th_grid_list_buttons', 18 );
@@ -67,7 +67,7 @@ if(!isset($_COOKIE['store_view']) || $_COOKIE['store_view'] == 'grid') {
 
 	echo '<svg fill="#fff" class="grid-view-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" x="0px" y="0px"><title>list-2</title><path d="M501,249v10a2,2,0,0,1-2,2H489a2,2,0,0,1-2-2V249a2,2,0,0,1,2-2h10A2,2,0,0,1,501,249Zm16-2H507a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V249A2,2,0,0,0,517,247Zm18,0H525a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V249A2,2,0,0,0,535,247Zm-36,18H489a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V267A2,2,0,0,0,499,265Zm18,0H507a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V267A2,2,0,0,0,517,265Zm18,0H525a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V267A2,2,0,0,0,535,265Zm-36,18H489a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V285A2,2,0,0,0,499,283Zm18,0H507a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V285A2,2,0,0,0,517,283Zm18,0H525a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V285A2,2,0,0,0,535,283Z" transform="translate(-487 -247)"></path></svg>' .
 
-			'<svg fill="#fff" class="list-view-btn" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><path d="M4,0h92c2.209,0,4,1.791,4,4v12c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4V4C0,1.791,1.791,0,4,0z"></path><path d="M4,26.667h92c2.209,0,4,1.791,4,4v12c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4v-12
+		'<svg fill="#fff" class="list-view-btn" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><path d="M4,0h92c2.209,0,4,1.791,4,4v12c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4V4C0,1.791,1.791,0,4,0z"></path><path d="M4,26.667h92c2.209,0,4,1.791,4,4v12c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4v-12
 	C0,28.458,1.791,26.667,4,26.667z"></path><path d="M4,53.334h92c2.209,0,4,1.79,4,4v12c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4v-12
 	C0,55.124,1.791,53.334,4,53.334z"></path><path d="M4,80h92c2.209,0,4,1.791,4,4v12c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4V84C0,81.791,1.791,80,4,80z"></path></svg>' .
 
@@ -77,8 +77,6 @@ if(!isset($_COOKIE['store_view']) || $_COOKIE['store_view'] == 'grid') {
 
 /************************ th-- END: Add WC Grid/List View buttons ************/
 
-
-/************************ th-- WC Grid/List View buttons functionality ************/
 
 // Enqueue js-cookie on WC pages
 add_action( 'wp_footer', 'th_enqueue_js_cookie', 10 );
