@@ -1370,8 +1370,8 @@ img.alignright,
 }
 
 .genesis-nav-menu .sub-menu a {
-	background-color: #5BA5A5;
-	//background-color: #192B2D;	
+	background-color: #fff;
+	color: #1E373B;	
 	border: 0;
 	font-size: 14px;
 	font-size: 1.4rem;
@@ -1410,8 +1410,9 @@ img.alignright,
 	
 }
 .genesis-nav-menu .sub-menu a:hover{
-	background-color: #1E373B;
+	background-color: #5BA5A5;
 	border: 0;
+	color: #fff;
 }
 .genesis-nav-menu .menu-item {
 	cursor: pointer;
@@ -2228,8 +2229,8 @@ body .widget.simple-social-icons ul li a {
 	display: none;
 }
 svg.header-profile {
-	height: 25px;
-	width: 25px;
+	height: 30px;
+	width: 30px;
 }
 a:hover svg path {
 	fill: #5BA5A5;
@@ -2471,7 +2472,7 @@ a.fx-type:hover {
 	background-position: center;
 }
 .rentals {
-	background: url('/wp-content/uploads/2017/05/Viper-1-500x500.jpg');
+	background: url('/wp-content/uploads/2017/06/fan.jpg');
 	background-position: center;
 }
 .fx {
@@ -2666,12 +2667,15 @@ div.agm_mh_info_content {
 
 /** th-- List/Grid switching ******************************/
 .grid-list-switch svg {
-	width: 20px;
+	width: 25px;
 	height: auto;
-	margin: 8px 8px 0 0; 
+	margin: 10px 10px 10px 0; 
+}
+.woocommerce .woocommerce-ordering, .woocommerce .woocommerce-result-count {
+    margin: 0 0 4em;
 }
 .woocommerce ul.products.list-view li.product:first-child {
-	margin-top: 70px;
+	margin-top: 0px;
 
 }
 
@@ -2682,7 +2686,7 @@ div.agm_mh_info_content {
 .grid-list-switch svg:hover,
 .grid-list-switch.list-view svg.grid-view-btn:hover,
 .grid-list-switch svg.list-view-btn:hover {
-	fill: #528498;
+	fill: #5BA5A5;
 }
 
 .grid-list-switch svg.grid-view-btn,
@@ -2723,6 +2727,7 @@ div.agm_mh_info_content {
 	float: left;
 	display: block;
 	width: 200px;
+	padding-top: 15px;
 	vertical-align: center;
 	 -webkit-transition: all 0.75s ease;
     -moz-transition: all 0.75s ease;
@@ -2736,7 +2741,7 @@ div.agm_mh_info_content {
 	width: auto;
 	text-align: right;
     color: #fff;
-    margin-top: 10px;
+    padding-top: 15px;
     margin-left: 15px;
      -webkit-transition: all 0.75s ease;
     -moz-transition: all 0.75s ease;
@@ -2756,11 +2761,11 @@ div.agm_mh_info_content {
 }
 .woocommerce ul.products.list-view li.product .button {
     float: right;
-    margin-top: 0px;
      -webkit-transition: all 0.75s ease;
     -moz-transition: all 0.75s ease;
     -o-transition: all 0.75s ease;
     transition: all 0.75s ease;
+    margin-top: 10px;
 }
 
 
@@ -3215,11 +3220,17 @@ div.agm_mh_info_content {
 	.sidebar {
 		margin-bottom: 0;
 	}
-	.woocommerce ul.products li.product .price {
+	.woocommerce ul.products.list-view li.product h2,
+	.woocommerce ul.products.list-view li.product .price {
+		padding-top: 5px;
+	}
+	/* .woocommerce ul.products li.product .price, */
+	.woocommerce ul.products.list-view li.product .price  {
 	    float: right;
 	}
-	.woocommerce ul.products li.product .button {
+	.woocommerce ul.products.list-view li.product .button {
 	    display: none;
+	    margin-top: 5px;
 	}
 	.woocommerce .content {
 		margin-bottom: 0;
@@ -3229,6 +3240,11 @@ div.agm_mh_info_content {
 @media only screen and (max-width: 550px) {
 	.site-title a {
 		font-size: 80px;
+	}
+}
+@media only screen and (max-width: 425px) {
+	.woocommerce ul.products.list-view li.product h2  {
+	    width: 180px;
 	}
 }
 
