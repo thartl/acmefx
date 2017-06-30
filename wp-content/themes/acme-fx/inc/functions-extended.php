@@ -51,40 +51,39 @@ function th_place_grid_list_buttons() {
 			'<img src="' . get_stylesheet_directory_uri() .
 			'/images/grid-view.svg" class="grid-view-btn" >' .
 
-			'<img src="' . get_stylesheet_directory_uri() .
-			'/images/list-view.svg" class="list-view-btn >
-		</div>';
+			'' .
+
+			// '<img src="' . get_stylesheet_directory_uri() .
+			// '/images/list-view.svg" class="list-view-btn >' .
+		'</div>';
 
 	}
 /************************ th-- END: Add WC Grid/List View buttons ************/
 
 
 /************************ th-- WC Grid/List View buttons functionality ************/
-add_action( 'wp_head', 'th_grid_list_switches', 10 );
+
+// Enqueue js-cookie on WC pages
+add_action( 'wp_footer', 'th_enqueue_js_cookie', 10 );
+function th_enqueue_js_cookie() {
+		if 	( is_shop() || ( is_woocommerce() && is_archive() ) ) {
+	wp_enqueue_script( 'js-cookie', get_stylesheet_directory_uri() . '/js.cookie.min.js', array( '' ), CHILD_THEME_VERSION );
+		}
+}
+
+add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 
 	function th_grid_list_switches() { 
 
-		if 	( is_shop() || ( is_woocommerce() && is_archive() ) ) {				
+		if 	( is_shop() || ( is_woocommerce() && is_archive() ) ) {		
 
 			?><script type="text/javascript">
 
 				jQuery(function( $ ) {
 
-					// if ( $( "ul.products" ).size() ) {
-						$( "ul.products" ).addClass( "list-view" );
-					// }
+					$( "ul.products" ).addClass( "list-view" );
 
-
-
-					// if ( jQuery( ".page-title" ).size() ) {
-					// 	$( ".page-title" ).text( "Testing" );
-					// }
-
-					// if ( jQuery( ".archive-title" ).size() ) {
-					// 	$( ".archive-title" ).text( "Testing" );
-					// }
-
-					// $( "body" ).prepend( $( "h1" ) );
+					Cookies.set('store_view', 'list');
 
 				});
 
