@@ -2299,8 +2299,8 @@ h1.archive-title a:hover {
 }
 .home .atmo:hover,
 .business-type:hover {
-	background-image: none;
-	background-color: #AE4040;
+	//background-image: none;
+	//background-color: #AE4040;
 }
 .business-type img {
 	width: 200px;
