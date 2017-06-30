@@ -104,17 +104,17 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 					var store_view = Cookies.get( 'store_view' );
 
 					$( "a.list-view-btn" ).click( function() {
-						if( store_view == 'grid' ) {
+						// if( store_view == 'grid' ) {
 							Cookies.set( 'store_view', 'list', { expires: 365 } );
 							// location.reload();
-						};
+						// };
 					});
 
 					$( "a.grid-view-btn" ).click( function() {
-						if( store_view == 'list' ) {
+						// if( store_view == 'list' ) {
 							Cookies.set( 'store_view', 'grid', { expires: 365 } );
 							// location.reload();
-						};
+						// };
 					});
 
 				});
