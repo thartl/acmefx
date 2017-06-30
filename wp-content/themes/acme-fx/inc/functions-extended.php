@@ -29,7 +29,7 @@ function th_change_text_strings( $translated_text, $text, $domain ) {
 add_filter( 'gettext', 'th_change_text_strings', 20, 3 );
 
 
-// Change the number of products per page
+// Change the number of products per page -- this is default, used for Grid view
 //add_filter( 'loop_shop_per_page', 'th_new_loop_shop_per_page', 20 );
 function th_new_loop_shop_per_page( $cols ) {
   $cols = 12;
@@ -37,7 +37,10 @@ function th_new_loop_shop_per_page( $cols ) {
 }
 
 
-// Change the number of products per page for list view
+/*********************************************************************************************************************************/
+/************************ th-- WC Grid/List View *********************************************************************************/
+
+// Set the number of products per page for Grid view and List view (default is set above in this file)
 add_filter( 'loop_shop_per_page', 'th_list_view_loop_shop_per_page', 22 );
 function th_list_view_loop_shop_per_page( $cols ) {
 	if(!isset($_COOKIE['store_view']) || $_COOKIE['store_view'] == 'grid') {
@@ -51,13 +54,10 @@ function th_list_view_loop_shop_per_page( $cols ) {
 	}
 }
 
-/************************ th-- Add WC Grid/List View buttons ************/
+
+/************************ Place Grid/List View buttons ***************************************************************************/
 add_action( 'woocommerce_before_shop_loop', 'th_grid_list_buttons', 18 );
 function th_grid_list_buttons() {
-
-global $wp;
-//  $current_url = home_url( add_query_arg( array(), $wp->request ) );
-$reload = home_url( add_query_arg( array(), $wp->request ) );
 
 if(!isset($_COOKIE['store_view']) || $_COOKIE['store_view'] == 'grid') {
 
@@ -79,16 +79,15 @@ if(!isset($_COOKIE['store_view']) || $_COOKIE['store_view'] == 'grid') {
 
 }
 
-/************************ th-- END: Add WC Grid/List View buttons ************/
 
-
-// Enqueue js-cookie on WC pages
+// Enqueue js-cookie on WC pages -- used to read and set cookies
 add_action( 'wp_footer', 'th_enqueue_js_cookie', 10 );
 function th_enqueue_js_cookie() {
 		if 	( is_shop() || ( is_woocommerce() && is_archive() ) ) {
 	wp_enqueue_script( 'js-cookie', get_stylesheet_directory_uri() . '/js.cookie.min.js', array( '' ), CHILD_THEME_VERSION );
 		}
 }
+
 
 /** Grid/List buttons set cookies and reload page  **********************************************************************/
 add_action( 'wp_footer', 'th_grid_list_switches', 100 );
@@ -105,14 +104,14 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 
 						$( "div.grid-view-btn" ).click( function() {
 							if( store_view == 'list' ) {
-								Cookies.set( 'store_view', 'grid', { expires: 365 } );
+								Cookies.set( 'store_view', 'grid', { expires: 30 } );
 								window.location.reload();
 							}
 						});
 
 						$( "div.list-view-btn" ).click( function() {
 							if( store_view !== 'list' ) {
-								Cookies.set( 'store_view', 'list', { expires: 365 } );
+								Cookies.set( 'store_view', 'list', { expires: 30 } );
 								window.location.reload();
 							}
 						});
@@ -125,8 +124,10 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 
 	}
 
+/** END: Grid/List buttons set cookies and reload page  **********************************************************************/
 
-/**** testing  ****************************************************************************************************************/
+
+/**** testing  ************************************************************/
 // add_action( 'woocommerce_before_shop_loop', 'th_read_cookies', 16 );
 // function th_read_cookies() {
 
@@ -136,25 +137,11 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 // 	  echo '<br>Cookie is:  <h3>' . $_COOKIE['store_view'] . '</h3><br>';
 // 	}
 // }
-/*****************************************************************************************************************************/
+/*************************************************************************/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/************************ th-- END: WC Grid/List View buttons functionality *******/
+/************************ th-- END: WC Grid/List View ****************************************************************************/
+/*********************************************************************************************************************************/
 
 
 
@@ -197,7 +184,6 @@ add_action( 'woocommerce_archive_description', 'th_woocommerce_taxonomy_archive_
 			}
 		}
 	}
-
 
 
 // th-- Unhook taxonomy title and description (Genesis), then hook in title
