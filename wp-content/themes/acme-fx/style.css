@@ -2698,13 +2698,17 @@ div.agm_mh_info_content {
 	fill: #aaa;
 }
 
-.grid-list-switch.list-view svg.grid-view-btn:hover,
-.grid-list-switch svg.list-view-btn:hover {
+.grid-list-switch {
 	cursor: pointer;
 }
 
+.grid-list-switch.list-view svg.grid-view-btn:hover,
+.grid-list-switch svg.list-view-btn:hover {
+//	cursor: pointer;
+}
+
 .grid-list-switch.list-view svg.list-view-btn:hover {
-	cursor: default;
+//	cursor: default;
 }
 
 .grid-list-switch.list-view svg.grid-view-btn {
