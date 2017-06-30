@@ -1754,10 +1754,24 @@ a.button.checkout.wc-forward:focus,
 .woocommerce #respond input#submit.disabled,
 .woocommerce #respond input#submit:disabled,
 .woocommerce #respond input#submit:disabled[disabled] {
-    /* background-color: #000; */
+    background-color: #8E3939;
     color: #fff;
     padding: 12px 18px;
 }
+.woocommerce #respond input#submit.disabled:hover,
+.woocommerce #respond input#submit:disabled:hover,
+.woocommerce #respond input#submit:disabled[disabled]:hover,
+.woocommerce a.button.disabled:hover,
+.woocommerce a.button:disabled:hover,
+.woocommerce a.button:disabled[disabled]:hover,
+.woocommerce button.button.disabled:hover,
+.woocommerce button.button:disabled:hover,
+.woocommerce button.button:disabled[disabled]:hover,
+.woocommerce input.button.disabled:hover,
+.woocommerce input.button:disabled:hover,
+.woocommerce input.button:disabled[disabled]:hover {
+    color: inherit;
+ 	background-color: #8E3939;}
 
 .woocommerce input.button[type="submit"][name="apply_coupon"] {
 	vertical-align: center;
@@ -2035,6 +2049,7 @@ li.wc-layered-nav-term a {
 .woocommerce .widget_rating_filter ul li.chosen a::before {
     color: #55AA63;
     transition: .5s ease;
+    -moz-transition: .5s ease;
 }
 .woocommerce .widget_layered_nav ul li.chosen:hover a::before,
 .woocommerce .widget_layered_nav_filters ul li:hover a::before,
@@ -2265,12 +2280,18 @@ h1.archive-title a:hover {
 .business-type {
 	flex-basis: 28%;
 	transition: all .6s ease-in-out;
+	-moz-transition: all .6s ease-in-out;
+	-webkit-transition: all .6s ease-in-out;
+	-o-transition: all .6s ease-in-out;
 	margin: 10px;
 }
 .fx-type {
 	margin: 10px;
 	flex-basis: 40%;
 	transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-webkit-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
 }
 .business-type.snow-business {
 	flex-basis: 100%;
@@ -2278,8 +2299,8 @@ h1.archive-title a:hover {
 }
 .home .atmo:hover,
 .business-type:hover {
-	background-image: none;
-	background-color: #AE4040;
+	//background-image: none;
+	//background-color: #AE4040;
 }
 .business-type img {
 	width: 200px;
@@ -2314,6 +2335,9 @@ h1.archive-title a:hover {
 	background-color: #1E373B;
 	width: 100%;
 	transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-webkit-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
 	font-size: 24px;
 	text-align: center;
 }
@@ -2332,16 +2356,21 @@ a.fx-type:hover {
 }
 
 .business-type p,
-.fx-type p {
+.fx-type p,
+.snow-business img {
 	margin-top: 90px;
 	padding-bottom: 30px;
 	opacity: 0;
 	transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-webkit-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
 }
 .business-type p {
 	margin-top: 70px;
 }
 .business-type:hover p,
+.snow-business:hover img,
 .fx-type:hover p {
 	opacity: 1;
 }
@@ -2366,8 +2395,9 @@ a.fx-type:hover {
 .rentals-main .content h2.fire-icon::before {
 	content: "\01f525";
 }
-
-
+.snow-business img {
+	margin-top: 60px;
+}
 
 /* ***************************************  Effects Gallery  */
 
@@ -2521,6 +2551,7 @@ div.agm_mh_info_content {
     20%, 40%, 60%, 80% {
         right: 80px;
         transform: rotateX(360deg);
+        -moz-transform: rotateX(360deg);
     }
     10%, 30%, 50%, 70%, 90% {
         right: 100px;
