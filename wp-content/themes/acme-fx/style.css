@@ -2672,6 +2672,7 @@ div.agm_mh_info_content {
 }
 .woocommerce ul.products.list-view li.product:first-child {
 	margin-top: 70px;
+
 }
 
 .grid-list-switch svg {
@@ -2701,6 +2702,10 @@ div.agm_mh_info_content {
 	border-bottom: 1px solid #fff;
 	margin-top: 30px;
 	margin-bottom: 0px;
+	 -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .woocommerce ul.products.list-view li.product img {
@@ -2708,7 +2713,10 @@ div.agm_mh_info_content {
 	height: 50px;
 	float: left;
 	margin-right: 15px;
-	display: block;
+	display: block; -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .woocommerce ul.products.list-view li.product h2 {
@@ -2716,6 +2724,11 @@ div.agm_mh_info_content {
 	display: block;
 	width: 200px;
 	padding-top: 15px;
+	vertical-align: center;
+	 -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .woocommerce ul.products.list-view li.product .price {
@@ -2726,6 +2739,10 @@ div.agm_mh_info_content {
     color: #fff;
     padding-top: 15px;
     margin-left: 15px;
+     -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .woocommerce ul.products.list-view li.product a span.onsale {
@@ -2733,11 +2750,23 @@ div.agm_mh_info_content {
 	right: auto;
 	left: 25px;
 	font-size: 10px;
+	 -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 .woocommerce ul.products.list-view li.product .button {
     float: right;
     margin-top: 5px;
+        margin-top: 0px;
+     -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
+
+
+/**********************************************/
 .woocommerce form .form-row .required {
 	margin-left: 3px;
     color: #AE4040;
