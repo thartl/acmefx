@@ -2664,6 +2664,35 @@ div.agm_mh_info_content {
 	bottom: 0;
 }
 
+/** th-- List/Grid switching ******************************/
+.grid-list-switch img {
+	width: 20px;
+	height: auto;
+	margin: 8px 8px 0 0; 
+}
+
+.woocommerce ul.products.list-view li.product {
+	float: none;
+}
+
+.woocommerce ul.products.list-view li.product img {
+	width: 50px;
+	float: left;
+}
+
+.woocommerce ul.products.list-view li.product h2 {
+	
+}
+
+.woocommerce ul.products.list-view li.product a span.onsale {
+	top: -4px;
+	right: auto;
+	left: 25px;
+	font-size: 10px;
+}
+
+
+
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 

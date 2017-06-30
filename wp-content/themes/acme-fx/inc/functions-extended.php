@@ -33,13 +33,67 @@ add_filter( 'gettext', 'th_change_text_strings', 20, 3 );
 
 // Change the number of products per page
 //add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
-
+//			UNCOMMENT TO RUN
 function new_loop_shop_per_page( $cols ) {
   // $cols contains the current number of products per page based on the value stored on Options -> Reading
   // Return the number of products you wanna show per page.
   $cols = 3;
   return $cols;
 }
+
+
+
+/************************ th-- Add WC Grid/List View buttons ************/
+add_action( 'woocommerce_before_shop_loop', 'th_place_grid_list_buttons', 18 );
+function th_place_grid_list_buttons() {
+
+	echo '<div class="grid-list-switch">' .
+			'<img src="' . get_stylesheet_directory_uri() .
+			'/images/grid-view.svg" class="grid-view-btn" >' .
+
+			'<img src="' . get_stylesheet_directory_uri() .
+			'/images/list-view.svg" class="list-view-btn >
+		</div>';
+
+	}
+/************************ th-- END: Add WC Grid/List View buttons ************/
+
+
+/************************ th-- WC Grid/List View buttons functionality ************/
+add_action( 'wp_head', 'th_grid_list_switches', 10 );
+
+	function th_grid_list_switches() { 
+
+		if 	( is_shop() || ( is_woocommerce() && is_archive() ) ) {				
+
+			?><script type="text/javascript">
+
+				jQuery(function( $ ) {
+
+					// if ( $( "ul.products" ).size() ) {
+						$( "ul.products" ).addClass( "list-view" );
+					// }
+
+
+
+					// if ( jQuery( ".page-title" ).size() ) {
+					// 	$( ".page-title" ).text( "Testing" );
+					// }
+
+					// if ( jQuery( ".archive-title" ).size() ) {
+					// 	$( ".archive-title" ).text( "Testing" );
+					// }
+
+					// $( "body" ).prepend( $( "h1" ) );
+
+				});
+
+			</script><?php
+
+		}
+
+	}
+/************************ th-- END: WC Grid/List View buttons functionality *******/
 
 
 
@@ -57,7 +111,7 @@ function th_woocommerce_category_page_title( $page_title ) {
 
 
 
-//  Add link to bottom of page if text contiues
+//  Add link to bottom of page if text continues
 remove_action( 'woocommerce_archive_description', 'woocommerce_taxonomy_archive_description' );
 add_action( 'woocommerce_archive_description', 'th_woocommerce_taxonomy_archive_description' );
 	function th_woocommerce_taxonomy_archive_description() {
