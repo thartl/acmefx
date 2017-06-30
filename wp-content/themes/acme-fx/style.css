@@ -2702,10 +2702,10 @@ div.agm_mh_info_content {
 	border-bottom: 1px solid #fff;
 	margin-top: 30px;
 	margin-bottom: 0px;
-	 -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+	 -webkit-transition: all 0.75s ease;
+    -moz-transition: all 0.75s ease;
+    -o-transition: all 0.75s ease;
+    transition: all 0.75s ease;
 }
 
 .woocommerce ul.products.list-view li.product img {
@@ -2713,10 +2713,10 @@ div.agm_mh_info_content {
 	height: 50px;
 	float: left;
 	margin-right: 15px;
-	display: block; -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+	display: block; -webkit-transition: all 0.75s ease;
+    -moz-transition: all 0.75s ease;
+    -o-transition: all 0.75s ease;
+    transition: all 0.75s ease;
 }
 
 .woocommerce ul.products.list-view li.product h2 {
@@ -2724,10 +2724,10 @@ div.agm_mh_info_content {
 	display: block;
 	width: 200px;
 	vertical-align: center;
-	 -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+	 -webkit-transition: all 0.75s ease;
+    -moz-transition: all 0.75s ease;
+    -o-transition: all 0.75s ease;
+    transition: all 0.75s ease;
 }
 
 .woocommerce ul.products.list-view li.product .price {
@@ -2738,10 +2738,10 @@ div.agm_mh_info_content {
     color: #fff;
     margin-top: 10px;
     margin-left: 15px;
-     -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+     -webkit-transition: all 0.75s ease;
+    -moz-transition: all 0.75s ease;
+    -o-transition: all 0.75s ease;
+    transition: all 0.75s ease;
 }
 
 .woocommerce ul.products.list-view li.product a span.onsale {
@@ -2749,18 +2749,18 @@ div.agm_mh_info_content {
 	right: auto;
 	left: 25px;
 	font-size: 10px;
-	 -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+	 -webkit-transition: all 0.75s ease;
+    -moz-transition: all 0.75s ease;
+    -o-transition: all 0.75s ease;
+    transition: all 0.75s ease;
 }
 .woocommerce ul.products.list-view li.product .button {
     float: right;
     margin-top: 0px;
-     -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+     -webkit-transition: all 0.75s ease;
+    -moz-transition: all 0.75s ease;
+    -o-transition: all 0.75s ease;
+    transition: all 0.75s ease;
 }
 
 
