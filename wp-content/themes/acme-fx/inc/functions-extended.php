@@ -69,11 +69,11 @@ if(!isset($_COOKIE['store_view']) || $_COOKIE['store_view'] == 'grid') {
 
 }
 
-	echo '<svg fill="#fff" class="grid-view-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" x="0px" y="0px"><title>list-2</title><path d="M501,249v10a2,2,0,0,1-2,2H489a2,2,0,0,1-2-2V249a2,2,0,0,1,2-2h10A2,2,0,0,1,501,249Zm16-2H507a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V249A2,2,0,0,0,517,247Zm18,0H525a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V249A2,2,0,0,0,535,247Zm-36,18H489a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V267A2,2,0,0,0,499,265Zm18,0H507a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V267A2,2,0,0,0,517,265Zm18,0H525a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V267A2,2,0,0,0,535,265Zm-36,18H489a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V285A2,2,0,0,0,499,283Zm18,0H507a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V285A2,2,0,0,0,517,283Zm18,0H525a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V285A2,2,0,0,0,535,283Z" transform="translate(-487 -247)"></path></svg>' .
+	echo '<div class="grid-view-btn" ><svg fill="#fff" class="grid-view-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" x="0px" y="0px"><title>list-2</title><path d="M501,249v10a2,2,0,0,1-2,2H489a2,2,0,0,1-2-2V249a2,2,0,0,1,2-2h10A2,2,0,0,1,501,249Zm16-2H507a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V249A2,2,0,0,0,517,247Zm18,0H525a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V249A2,2,0,0,0,535,247Zm-36,18H489a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V267A2,2,0,0,0,499,265Zm18,0H507a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V267A2,2,0,0,0,517,265Zm18,0H525a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V267A2,2,0,0,0,535,265Zm-36,18H489a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V285A2,2,0,0,0,499,283Zm18,0H507a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V285A2,2,0,0,0,517,283Zm18,0H525a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V285A2,2,0,0,0,535,283Z" transform="translate(-487 -247)"></path></svg></div>' .
 
-		'<svg fill="#fff" class="list-view-btn" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><path d="M4,0h92c2.209,0,4,1.791,4,4v12c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4V4C0,1.791,1.791,0,4,0z"></path><path d="M4,26.667h92c2.209,0,4,1.791,4,4v12c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4v-12
+		'<div class="list-view-btn" ><svg fill="#fff" class="list-view-btn" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><path d="M4,0h92c2.209,0,4,1.791,4,4v12c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4V4C0,1.791,1.791,0,4,0z"></path><path d="M4,26.667h92c2.209,0,4,1.791,4,4v12c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4v-12
 	C0,28.458,1.791,26.667,4,26.667z"></path><path d="M4,53.334h92c2.209,0,4,1.79,4,4v12c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4v-12
-	C0,55.124,1.791,53.334,4,53.334z"></path><path d="M4,80h92c2.209,0,4,1.791,4,4v12c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4V84C0,81.791,1.791,80,4,80z"></path></svg>' .
+	C0,55.124,1.791,53.334,4,53.334z"></path><path d="M4,80h92c2.209,0,4,1.791,4,4v12c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4V84C0,81.791,1.791,80,4,80z"></path></svg></div>' .
 
 		'</div><!-- div.grid-list-switch -->';
 
@@ -103,12 +103,12 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 
 					var store_view = Cookies.get( 'store_view' );
 
-						$( "svg.list-view-btn" ).click( function() {
+						$( "div.list-view-btn" ).click( function() {
 							Cookies.set( 'store_view', 'list', { expires: 365 } );
 							window.location.reload();
 						});
 
-						$( "svg.grid-view-btn" ).click( function() {
+						$( "div.grid-view-btn" ).click( function() {
 							Cookies.set( 'store_view', 'grid', { expires: 365 } );
 							window.location.reload();
 						});
@@ -121,7 +121,6 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 
 	}
 
-
 /** Test for cookie, choose shop layout  *********************************************/
 
 
@@ -132,7 +131,7 @@ function th_read_cookies() {
 if(!isset($_COOKIE['store_view'])) {
 	  echo '<br>The cookie: store_view is NOT set.';
 	} else {
-	  echo '<br>Cookie is:  ' . $_COOKIE['store_view'] . '<br>';
+	  echo '<br>Cookie is:  <h3>' . $_COOKIE['store_view'] . '</h3><br>';
 	}
 }
 /********************************************************************************************************************************************/
