@@ -42,17 +42,19 @@ function new_loop_shop_per_page( $cols ) {
 }
 
 
+
 // For main shop page only:  attach shop page url to page title -- used to reset filters
 add_filter( 'woocommerce_page_title', 'th_woocommerce_category_page_title', 10, 1 );
-
 function th_woocommerce_category_page_title( $page_title ) {
 	if ( is_shop() ) {
 		$shop_page_url = get_permalink( woocommerce_get_page_id( 'shop' ) );
 		$url = esc_url( $shop_page_url );
-		$heading = '<a href="' . $url . '" >' . $page_title . '<a/>';
+		$heading = '<a href="' . $url . '" >' . $page_title . '</a>';
+
 		return $heading;
 	}
 }
+
 
 
 //  Add link to bottom of page if text contiues
@@ -80,6 +82,7 @@ add_action( 'woocommerce_archive_description', 'th_woocommerce_taxonomy_archive_
 			}
 		}
 	}
+
 
 
 // th-- Unhook taxonomy title and description (Genesis), then hook in title
@@ -167,7 +170,6 @@ function th_do_archive_headings_headline( $heading = '', $intro_text = '', $cont
 
 
 
-
 // th-- Hook in taxonomy description (Genesis)
 add_action( 'genesis_after_loop', 'th_genesis_do_taxonomy_description_only', 15 );
 /**
@@ -227,19 +229,11 @@ function th_genesis_do_taxonomy_description_only() {
 
 }
 
-/**
- * Plugin Name: Disable ACF on Frontend
- * Description: Provides a performance boost if ACF frontend functions aren't being used
- * Version:     1.0
- * Author:      Bill Erickson
- * Author URI:  http://www.billerickson.net
- * License:     MIT
- * License URI: http://www.opensource.org/licenses/mit-license.php
- */
- 
+
+
 /**
  * Disable ACF on Frontend
- *
+ * Author:      Bill Erickson
  */
 function ea_disable_acf_on_frontend( $plugins ) {
 	if( is_admin() )
@@ -251,13 +245,26 @@ function ea_disable_acf_on_frontend( $plugins ) {
 }
 add_filter( 'option_active_plugins', 'ea_disable_acf_on_frontend' );
 
+
+
 // Add ACF Repeater fields to SearchWP -- unnecessary if Custom fields for Page is set to "Any"
 function th_searchwp_custom_field_keys_like( $keys ) {
   $keys[] = 'acf_field_name_%'; // will match any Custom Field starting with acf_field_name_
   return $keys;
 }
- 
 add_filter( 'searchwp_custom_field_keys', 'th_searchwp_custom_field_keys_like' );
+
+
+
+//  add logo to primary nav
+add_filter( 'wp_nav_menu_items', 'th_add_logo_to_nav', 10, 2 );
+function th_add_logo_to_nav( $menu, $args ) {
+	if ( 'secondary' === $args->theme_location ) {
+    	$menu = '<li><a href="' . esc_url( home_url( '/'  ) ) . '" class="nav-logo" ><img src="' . get_stylesheet_directory_uri() . '/images/acme-logo-orig-traced.svg" ></a></li>' . $menu;
+    }
+    return $menu;
+}
+
 
 // Register Documents post type
 // add_action( 'init', 'register_cpt_document' );
