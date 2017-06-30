@@ -2669,10 +2669,25 @@ div.agm_mh_info_content {
 }
 
 /** th-- List/Grid switching ******************************/
+div.grid-list-switch {
+//	float: left;
+	position: relative;
+	left: -5px;
+}
+
+ div.list-view-btn,
+ div.grid-view-btn {
+ 	display: inline-block;
+	padding: 5px;
+ 	margin-right: 36px;
+	/*z-index: 50;*/
+ }
+
 .grid-list-switch svg {
 	width: 25px;
 	height: auto;
-	margin: 10px 10px 10px 0; 
+//	margin: 10px 10px 10px 0;
+	/*z-index: 40;*/
 }
 .woocommerce .woocommerce-ordering,
 .woocommerce .woocommerce-result-count {
