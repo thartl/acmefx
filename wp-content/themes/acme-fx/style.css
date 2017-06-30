@@ -2645,6 +2645,9 @@ div.agm_mh_info_content {
 	-webkit-transform: translateY(0%);
 	-moz-transform: translateY(0%);
 }
+.headhesive--stick.nav-secondary {
+	box-shadow: 0px 3px #0C1B1C;
+}
 
 /*.nav-secondary.headhesive--stick ul::before {
 	content: url('/wp-content/themes/acme-fx/images/acme-logo-orig-traced.svg');
@@ -2717,6 +2720,9 @@ div.agm_mh_info_content {
 	margin-top: 30px;
 	margin-bottom: 0px;
 }
+.woocommerce ul.products.list-view li.product:last-child {
+	border-bottom: 0;
+} 
 
 .woocommerce ul.products.list-view li.product img {
 	width: 50px;
@@ -2781,7 +2787,14 @@ a.button.checkout.wc-forward {
 .footer-widget-area .simple-social-icons ul li a:focus {
 	color: #AE4040 !important;
 }
-
+.related.products h2 {
+	margin-bottom: 30px;
+}
+.woocommerce div.product .woocommerce-tabs .panel {
+    margin: 0 0 2em;
+    padding: 20px;
+    border: 1px solid #fff;
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
