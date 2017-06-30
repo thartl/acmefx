@@ -103,13 +103,15 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 
 					var store_view = Cookies.get( 'store_view' );
 
-						$( "div.list-view-btn" ).click( function() {
-							Cookies.set( 'store_view', 'list', { expires: 365 } );
-							window.location.reload();
+						$( "div.grid-view-btn" ).click( function() {
+							if( store_view == 'list' ) {
+								Cookies.set( 'store_view', 'grid', { expires: 365 } );
+								window.location.reload();
+							}
 						});
 
-						$( "div.grid-view-btn" ).click( function() {
-							Cookies.set( 'store_view', 'grid', { expires: 365 } );
+						$( "div.list-view-btn" ).click( function() {
+							Cookies.set( 'store_view', 'list', { expires: 365 } );
 							window.location.reload();
 						});
 
@@ -121,10 +123,8 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 
 	}
 
-/** Test for cookie, choose shop layout  *********************************************/
 
-
-/**** testing  ******************************************************************************************************************************/
+/**** testing  ****************************************************************************************************************/
 add_action( 'woocommerce_before_shop_loop', 'th_read_cookies', 16 );
 function th_read_cookies() {
 
@@ -134,7 +134,7 @@ if(!isset($_COOKIE['store_view'])) {
 	  echo '<br>Cookie is:  <h3>' . $_COOKIE['store_view'] . '</h3><br>';
 	}
 }
-/********************************************************************************************************************************************/
+/*****************************************************************************************************************************/
 
 
 

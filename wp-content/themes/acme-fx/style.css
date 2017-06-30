@@ -2712,7 +2712,8 @@ div.grid-list-switch {
 }
 
 
-
+/** Cursor must be pointer for touch devices to trigger jQuery click()
+ **/
 .grid-list-switch div {
 	cursor: pointer;
 }
@@ -2725,16 +2726,7 @@ div.grid-list-switch {
 .grid-list-switch.list-view div.grid-view-btn {
 	cursor: pointer;
 }
-
-.grid-list-switch.list-view svg.grid-view-btn:hover,
-.grid-list-switch svg.list-view-btn:hover {
-//	cursor: pointer;
-}
-
-.grid-list-switch.list-view svg.list-view-btn:hover {
-//	cursor: default;
-}
-
+/** END:  Cursor must be pointer for touch devices to trigger jQuery click() **/
 
 
 .grid-list-switch.list-view svg.grid-view-btn {
