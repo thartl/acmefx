@@ -2711,7 +2711,18 @@ div.grid-list-switch {
 	fill: #aaa;
 }
 
-.grid-list-switch {
+
+
+.grid-list-switch div {
+	cursor: pointer;
+}
+
+.grid-list-switch div.grid-view-btn:hover,
+.grid-list-switch.list-view div.list-view-btn:hover {
+	cursor: default;
+}
+
+.grid-list-switch.list-view div.grid-view-btn {
 	cursor: pointer;
 }
 
@@ -2723,6 +2734,8 @@ div.grid-list-switch {
 .grid-list-switch.list-view svg.list-view-btn:hover {
 //	cursor: default;
 }
+
+
 
 .grid-list-switch.list-view svg.grid-view-btn {
 	fill: #fff;
