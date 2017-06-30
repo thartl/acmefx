@@ -2755,17 +2755,9 @@ div.agm_mh_info_content {
 	right: auto;
 	left: 25px;
 	font-size: 10px;
-	 -webkit-transition: all 0.75s ease;
-    -moz-transition: all 0.75s ease;
-    -o-transition: all 0.75s ease;
-    transition: all 0.75s ease;
 }
 .woocommerce ul.products.list-view li.product .button {
     float: right;
-     -webkit-transition: all 0.75s ease;
-    -moz-transition: all 0.75s ease;
-    -o-transition: all 0.75s ease;
-    transition: all 0.75s ease;
     margin-top: 10px;
 }
 
