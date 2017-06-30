@@ -81,11 +81,18 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 
 				jQuery(function( $ ) {
 
-					$( "ul.products" ).addClass( "list-view" );
-//					$( ".grid-list-switch" ).addClass( "list-view" );
+					$( "svg.list-view-btn" ).click( function() {
+						$( "ul.products" ).addClass( "list-view" );
+						$( "div.grid-list-switch" ).addClass( "list-view" );
+					});
+
+					$( "svg.grid-view-btn" ).click( function() {
+						$( "ul.products" ).removeClass( "list-view" );
+						$( "div.grid-list-switch" ).removeClass( "list-view" );
+					});
 
 //					Cookies.remove( 'store_view' );
-//					Cookies.set( 'store_view', 'grid' );
+					Cookies.set( 'store_view', 'grid', { expires: 1 } );
 
 				});
 
