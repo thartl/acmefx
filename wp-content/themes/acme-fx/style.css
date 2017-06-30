@@ -1370,8 +1370,8 @@ img.alignright,
 }
 
 .genesis-nav-menu .sub-menu a {
-	background-color: #5BA5A5;
-	//background-color: #192B2D;	
+	background-color: #fff;
+	color: #1E373B;	
 	border: 0;
 	font-size: 14px;
 	font-size: 1.4rem;
@@ -1410,8 +1410,9 @@ img.alignright,
 	
 }
 .genesis-nav-menu .sub-menu a:hover{
-	background-color: #1E373B;
+	background-color: #5BA5A5;
 	border: 0;
+	color: #fff;
 }
 .genesis-nav-menu .menu-item {
 	cursor: pointer;
@@ -2471,7 +2472,7 @@ a.fx-type:hover {
 	background-position: center;
 }
 .rentals {
-	background: url('/wp-content/uploads/2017/05/Viper-1-500x500.jpg');
+	background: url('/wp-content/uploads/2017/06/fan.jpg');
 	background-position: center;
 }
 .fx {
