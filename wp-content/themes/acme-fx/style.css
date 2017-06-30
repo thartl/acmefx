@@ -2665,7 +2665,7 @@ div.agm_mh_info_content {
 }
 
 /** th-- List/Grid switching ******************************/
-.grid-list-switch img {
+.grid-list-switch svg {
 	width: 20px;
 	height: auto;
 	margin: 8px 8px 0 0; 
@@ -2673,6 +2673,26 @@ div.agm_mh_info_content {
 .woocommerce ul.products.list-view li.product:first-child {
 	margin-top: 70px;
 }
+
+.grid-list-switch svg {
+	fill: #fff;
+}
+
+.grid-list-switch svg:hover,
+.grid-list-switch.list-view svg.grid-view-btn:hover,
+.grid-list-switch svg.list-view-btn:hover {
+	fill: #528498;
+}
+
+.grid-list-switch svg.grid-view-btn,
+.grid-list-switch.list-view svg.list-view-btn {
+	fill: #aaa;
+}
+
+.grid-list-switch.list-view svg.grid-view-btn {
+	fill: #fff;
+}
+
 .woocommerce ul.products.list-view li.product {
 	float: left;
 	clear: left;
@@ -2685,6 +2705,7 @@ div.agm_mh_info_content {
 
 .woocommerce ul.products.list-view li.product img {
 	width: 50px;
+	height: 50px;
 	float: left;
 	margin-right: 15px;
 	display: block;
