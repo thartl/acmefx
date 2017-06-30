@@ -2356,7 +2356,8 @@ a.fx-type:hover {
 }
 
 .business-type p,
-.fx-type p {
+.fx-type p,
+.snow-business img {
 	margin-top: 90px;
 	padding-bottom: 30px;
 	opacity: 0;
@@ -2369,6 +2370,7 @@ a.fx-type:hover {
 	margin-top: 70px;
 }
 .business-type:hover p,
+.snow-business:hover img,
 .fx-type:hover p {
 	opacity: 1;
 }
@@ -2393,8 +2395,9 @@ a.fx-type:hover {
 .rentals-main .content h2.fire-icon::before {
 	content: "\01f525";
 }
-
-
+.snow-business img {
+	margin-top: 60px;
+}
 
 /* ***************************************  Effects Gallery  */
 
