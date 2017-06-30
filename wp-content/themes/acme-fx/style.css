@@ -2671,8 +2671,23 @@ div.agm_mh_info_content {
 	margin: 8px 8px 0 0; 
 }
 
-.grid-list-switch svg:hover {
-	fill: #427492;
+.grid-list-switch svg {
+	fill: #fff;
+}
+
+.grid-list-switch svg:hover,
+.grid-list-switch.list-view svg.grid-view-btn:hover,
+.grid-list-switch svg.list-view-btn:hover {
+	fill: #528498;
+}
+
+.grid-list-switch svg.grid-view-btn,
+.grid-list-switch.list-view svg.list-view-btn {
+	fill: #aaa;
+}
+
+.grid-list-switch.list-view svg.grid-view-btn {
+	fill: #fff;
 }
 
 .woocommerce ul.products.list-view li.product {
