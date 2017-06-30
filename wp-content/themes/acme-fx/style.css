@@ -2295,7 +2295,7 @@ h1.archive-title a:hover {
 }
 .business-type.snow-business {
 	flex-basis: 100%;
-	height: 300px;
+	//height: 300px;
 }
 .home .atmo:hover,
 .business-type:hover {
@@ -2396,7 +2396,7 @@ a.fx-type:hover {
 	content: "\01f525";
 }
 .snow-business img {
-	margin-top: 60px;
+	margin: 60px 20px 20px 0px;
 }
 
 /* ***************************************  Effects Gallery  */
@@ -2475,7 +2475,7 @@ a.fx-type:hover {
 	background-position: center;
 }
 .fx {
-	background: url('/wp-content/uploads/2017/05/special-effects.jpg');
+	background: url('/wp-content/uploads/2017/06/fx-new.jpg');
 	background-position: center;
 }
 .term-snow-business .content {
@@ -2803,7 +2803,9 @@ div.agm_mh_info_content {
 	.home #wp-custom-header img {
 		max-height: 400px;
 	}
-	
+	.business-type {
+		min-height: 300px;
+	}
 }
 
 
