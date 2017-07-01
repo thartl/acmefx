@@ -332,22 +332,6 @@ function th_genesis_do_taxonomy_description_only() {
 
 
 
-/**
- * Disable ACF on Frontend
- * Author:      Bill Erickson
- */
-function ea_disable_acf_on_frontend( $plugins ) {
-	if( is_admin() )
-		return $plugins;
-	foreach( $plugins as $i => $plugin )
-		if( 'advanced-custom-fields-pro/acf.php' == $plugin )
-			unset( $plugins[$i] );
-	return $plugins;
-}
-add_filter( 'option_active_plugins', 'ea_disable_acf_on_frontend' );
-
-
-
 // Add ACF Repeater fields to SearchWP -- unnecessary if Custom fields for Page is set to "Any"
 function th_searchwp_custom_field_keys_like( $keys ) {
   $keys[] = 'acf_field_name_%'; // will match any Custom Field starting with acf_field_name_
