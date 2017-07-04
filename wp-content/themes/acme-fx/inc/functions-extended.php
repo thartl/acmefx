@@ -441,7 +441,10 @@ function th_genesis_do_taxonomy_description_only() {
 		return;
 	}
 
-	$term = is_tax() ? get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ) : $wp_query->get_queried_object();
+//  added
+//  && !is_tax( 'product_cat' ) && !is_tax( 'product_tag' )
+//  to get taxonomy and term from queried_object as opposed to get_query_var( 'term' ), which may grab other vars like pa_departments...
+	$term = is_tax() && !is_tax( 'product_cat' ) && !is_tax( 'product_tag' ) ? get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ) : $wp_query->get_queried_object();
 
 	if ( ! $term ) {
 		return;
@@ -451,7 +454,7 @@ function th_genesis_do_taxonomy_description_only() {
 
 	$description_continued = get_term_meta( $term->term_id, 'intro_text', true );
 
-	if( $description_continued ) {
+	if( $description_continued && !is_paged() ) {
 		$intro_text = '<b id="description-continued" ></b>' . $description_continued;
 	} else {
 		$intro_text = '';
@@ -494,7 +497,8 @@ function th_add_logo_to_nav( $menu, $args ) {
     return $menu;
 }
 
-
+/** Function to get the current URL */
+/** Source: https://gist.github.com/leereamsnyder/fac3b9ccb6b99ab14f36 */
 /********** Re-use some existing WordPress functions so
  * you don't have to write a bunch of raw PHP to check for SSL, port numbers, etc
  * Place in your functions.php (or re-use in a plugin)
