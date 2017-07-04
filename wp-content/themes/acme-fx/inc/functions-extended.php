@@ -145,14 +145,14 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 					var desc_ppp = <?php echo $desc_view_products_per_page; ?>;
 
 					var current_view_ppp = grid_ppp;  // default "products per page" is grid
-					if( store_view == 'list' ) {  // if not grid set "products per page" to one of the other views
+					if( store_view == 'list' ) {  // if grid not set "products per page" to one of the other views
 						current_view_ppp = list_ppp;
 					} else if( store_view == 'desc' ) {
 						current_view_ppp = desc_ppp;
 					}
 
-					var url_all = window.location.href;  // a straight reload woudl do this
-					var url_pageless = url_all.replace( /\/page\/[0-9]+\// , '/' );  // reload without page variable
+					var url_all = window.location.href;  // a straight reload would do this
+					var url_pageless = url_all.replace( /\/page\/[0-9]+\// , '/' );  // remove page variable
 
 					var pagination_array = url_all.match( /\/page\/[0-9]+\// );  // gives array e.g. "[ '/page/2/' ]" or null
 
@@ -497,9 +497,9 @@ function th_add_logo_to_nav( $menu, $args ) {
     return $menu;
 }
 
-/** Function to get the current URL */
-/** Source: https://gist.github.com/leereamsnyder/fac3b9ccb6b99ab14f36 */
-/********** Re-use some existing WordPress functions so
+/** Get current URL ****************************************************************/
+/** Source: https://gist.github.com/leereamsnyder/fac3b9ccb6b99ab14f36 ************
+ * Re-use some existing WordPress functions so
  * you don't have to write a bunch of raw PHP to check for SSL, port numbers, etc
  * Place in your functions.php (or re-use in a plugin)
  * If you absolutely don't need or want any query string, use home_url(add_query_arg(array(),$wp->request));
@@ -546,50 +546,7 @@ if ( ! function_exists( 'get_current_page_url' ) ) {
 		}
 	}
 
-/** th-- END: Added trailingslashit() to add "/" before query vars **/
+/** th-- END: Get current URL **/
 
 
-
-// Register Documents post type
-// add_action( 'init', 'register_cpt_document' );
-
-// function register_cpt_document() {
-
-// 	$labels = array(
-// 		'name' => __( 'Documents', 'document' ),
-// 		'singular_name' => __( 'Document', 'document' ),
-// 		'add_new' => __( 'Add new', 'document' ),
-// 		'add_new_item' => __( 'Add New Document', 'document' ),
-// 		'edit_item' => __( 'Edit Document', 'document' ),
-// 		'new_item' => __( 'New Document', 'document' ),
-// 		'view_item' => __( 'View Document', 'document' ),
-// 		'search_items' => __( 'Search Documents', 'document' ),
-// 		'not_found' => __( 'No documents found', 'document' ),
-// 		'not_found_in_trash' => __( 'No documents found in Trash', 'document' ),
-// 		'parent_item_colon' => __( 'Parent Document:', 'document' ),
-// 		'menu_name' => __( 'Documents', 'document' ),
-// 	);
-
-// 	$args = array(
-// 		'labels' => $labels,
-// 		'hierarchical' => false,
-// 		'description' => 'This custom post type holds support documents.',
-// 		'supports' => array( 'page-attributes', 'editor', 'title', 'genesis-seo', 'thumbnail','genesis-cpt-archives-settings' ),
-// 		'taxonomies' => array( 'Document type' ),
-// 		'public' => true,
-// 		'show_ui' => true,
-// 		'show_in_menu' => true,
-// 		'menu_position' => 5,
-// 		'show_in_nav_menus' => false,
-// 		'publicly_queryable' => true,
-// 		'exclude_from_search' => false,
-// 		'has_archive' => true,
-// 		'query_var' => true,
-// 		'can_export' => true,
-// 		'rewrite' => true,
-// 		'capability_type' => 'page'
-// 	);
-
-// 	register_post_type( 'document', $args );
-// }
 
