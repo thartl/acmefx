@@ -2674,6 +2674,21 @@ div.agm_mh_info_content {
 	bottom: 0;
 }
 
+/** th-- Archive page descriptions ******************************/
+.woocommerce ul.products ~ .archive-description {
+	font-size: 16px;
+	font-size: 1.6rem;
+	border-top: 1px solid #fff;
+	margin-top: 40px;
+	padding-top: 20px;
+}
+
+.description-continued {
+	position: relative;
+	bottom: 42px;
+}
+
+
 /** th-- List/Grid switching ******************************/
 div.grid-list-switch {
 	position: relative;
@@ -2903,6 +2918,8 @@ a.button.checkout.wc-forward {
 .shop_attributes tbody {
 	border-bottom: 0;
 }
+
+
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
@@ -3040,10 +3057,9 @@ a.button.checkout.wc-forward {
 		margin-left: 0px;
 	}
 
-
-	
-
 }
+
+
 
 /* @media only screen and (max-width: 1170px) {
 	.site-header > .wrap {
