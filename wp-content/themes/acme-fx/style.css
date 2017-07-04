@@ -2696,37 +2696,47 @@ div.grid-list-switch {
 	margin-top: 0px;
 }
 
+
+/** Default colour for buttons */
 .grid-list-switch svg {
 	fill: #fff;
 }
 
-.grid-list-switch svg:hover,
-.grid-list-switch.list-view svg.grid-view-btn:hover,
-.grid-list-switch svg.list-view-btn:hover {
-	fill: #5BA5A5;
-}
-
-.grid-list-switch svg.grid-view-btn,
-.grid-list-switch.list-view svg.list-view-btn {
+/** Colour for inactive buttons */
+.grid-list-switch.grid-view svg.grid-view-btn,
+.grid-list-switch.list-view svg.list-view-btn,
+.grid-list-switch.desc-view svg.desc-view-btn {
 	fill: #aaa;
 }
 
+/** Hover colours for active buttons */
+.grid-list-switch.grid-view svg.list-view-btn:hover,
+.grid-list-switch.grid-view svg.desc-view-btn:hover {
+	fill: #5BA5A5;
+}
 
-/** Cursor must be pointer for touch devices to trigger jQuery click()
- **/
+.grid-list-switch.list-view svg.grid-view-btn:hover,
+.grid-list-switch.list-view svg.desc-view-btn:hover {
+	fill: #5BA5A5;
+}
+
+.grid-list-switch.desc-view svg.grid-view-btn:hover,
+.grid-list-switch.desc-view svg.list-view-btn:hover {
+	fill: #5BA5A5;
+}
+
+
+/** Cursor must be pointer for touch devices to trigger jQuery click() ************************************/
 .grid-list-switch div {
 	cursor: pointer;
 }
-
-.grid-list-switch div.grid-view-btn:hover,
-.grid-list-switch.list-view div.list-view-btn:hover {
+/** No pointer for inactive buttons*/
+.grid-list-switch.grid-view div.grid-view-btn:hover,
+.grid-list-switch.list-view div.list-view-btn:hover,
+.grid-list-switch.desc-view div.desc-view-btn:hover {
 	cursor: default;
 }
-
-.grid-list-switch.list-view div.grid-view-btn {
-	cursor: pointer;
-}
-/** END:  Cursor must be pointer for touch devices to trigger jQuery click() **/
+/** END:  Cursor must be pointer for touch devices to trigger jQuery click() ******************************/
 
 
 .grid-list-switch.list-view svg.grid-view-btn {

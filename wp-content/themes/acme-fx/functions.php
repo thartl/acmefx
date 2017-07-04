@@ -169,6 +169,7 @@ add_theme_support( 'custom-header', array(
 	'flex-height'     => true,
 	'video' => true,
 ) );
+
 //  Video header settings
 add_filter( 'header_video_settings', 'th_header_video_settings');
 function th_header_video_settings( $settings ) {
@@ -179,6 +180,7 @@ function th_header_video_settings( $settings ) {
   return $settings;
 }
 
+// Add support for video header
 add_action( 'genesis_header', 'the_custom_header_markup' );
 
 // Add support for custom background.
@@ -462,13 +464,13 @@ add_action( 'woocommerce_process_product_meta', 'pw_custom_save_custom_fields' )
 function pw_custom_save_custom_fields( $post_id ) {
 	// Update Daily rental price meta
         update_post_meta( $post_id, '_day_rental_price', esc_attr( $_POST['_day_rental_price'] ) );
-    // }
+
 	// Update Weekly rental price meta
         update_post_meta( $post_id, '_week_rental_price', esc_attr( $_POST['_week_rental_price'] ) );
-    // }
+
 	// Update Monthly rental price meta
         update_post_meta( $post_id, '_month_rental_price', esc_attr( $_POST['_month_rental_price'] ) );
-    // }
+
 }
 
 
