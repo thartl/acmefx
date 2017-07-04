@@ -3454,7 +3454,7 @@ a.button.checkout.wc-forward {
 @media only screen and (max-width: 490px) {
 	.woocommerce ul.products.desc-view li.product .price  {
 	    float: right;
-	    clear: none;
+	    clear: right;
 	    margin-top: -25px;
 	}
 	.woocommerce ul.products.desc-view li.product .button,
@@ -3467,11 +3467,12 @@ a.button.checkout.wc-forward {
 	    float: left;
 	}
 }
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 450px) {
 	.woocommerce ul.products.list-view li.product h2  {
-	    width: 180px;
+	    width: 150px;
 	}
 }
+
 
 
 /* # Print Styles
