@@ -2676,7 +2676,8 @@ div.grid-list-switch {
 }
 
  div.list-view-btn,
- div.grid-view-btn {
+ div.grid-view-btn,
+ div.desc-view-btn {
  	display: inline-block;
 	padding: 3px;
  	margin-right: 5px;
