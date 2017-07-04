@@ -2799,7 +2799,6 @@ div.grid-list-switch {
 .woocommerce ul.products.list-view li.product .price {
 	display: block;
 	float: left;
-	clear:  left;
 	width: auto;
 	text-align: right;
     color: #fff;
@@ -2817,7 +2816,11 @@ div.grid-list-switch {
    float: right;
     margin-top: 10px;
 }
-
+.woocommerce ul.products.list-view li.product .added_to_cart.wc-forward {
+	float: right;
+	clear: right;
+	font-size: .8em;
+}
 
 
 /* Desc View ***************************************/
@@ -2826,6 +2829,10 @@ div.grid-list-switch {
 .woocommerce ul.products.desc-view li.product button {
     float: left;
     margin-top: 25px;
+}
+.woocommerce ul.products.desc-view li.product button,
+.woocommerce ul.products.desc-view li.product a.button {
+	margin-right: 15px;
 }
 .grid-list-switch.desc-view svg.grid-view-btn {
 	fill: #fff;
@@ -2845,8 +2852,8 @@ div.grid-list-switch {
 } 
 
 .woocommerce ul.products.desc-view li.product img {
-	width: 75px;
-	height: 75px;
+	width: 85px;
+	height: 85px;
 	float: left;
 	margin-right: 15px;
 	display: block;
@@ -2857,6 +2864,7 @@ div.grid-list-switch {
 	display: block;
 	width: 200px;
 	padding-top: 0;
+	padding-right: 10px;
 }
 
 .woocommerce ul.products.desc-view li.product .price {
@@ -2865,24 +2873,31 @@ div.grid-list-switch {
 	clear:  left;
 	width: auto;
     color: #fff;
-    margin-left: 90px;
+    margin-left: 100px;
     margin-top: -55px;
 }
 
 .woocommerce ul.products.desc-view li.product a span.onsale {
 	top: 21px;
 	right: auto;
-	left: 50px;
+	left: 60px;
 	font-size: 10px;
 }
 
 .woocommerce ul.products.desc-view li.product .woocommerce-product-details__short-description {
 	float: left;
-	margin-left: 15px;
 	margin-top: 25px;
-	max-width: 370px;
+	max-width: 360px;
+}
+.woocommerce ul.products.desc-view li.product .added_to_cart.wc-forward {
+		margin-left: 10px;
 }
 
+/* Grid View ************************************/
+
+.woocommerce ul.products.grid-view li.product .added_to_cart.wc-forward {
+	margin-left: 5px;
+}
 
 
 /**********************************************/
@@ -2960,6 +2975,20 @@ a.button.checkout.wc-forward {
 
 	.footer-widgets-1 {
 		margin-right: 60px;
+	}
+	.woocommerce ul.products.desc-view li.product button,
+	.woocommerce ul.products.desc-view li.product a.button {
+		float: right;
+		margin-right: 0;
+	}
+	.woocommerce ul.products.desc-view li.product .woocommerce-product-details__short-description {
+	    clear: left;
+	}
+	.woocommerce ul.products.desc-view li.product .added_to_cart.wc-forward {
+		float: right;
+		clear: right;
+		margin-right: 10px;
+		margin-top: 5px;
 	}
 
 }
@@ -3057,9 +3086,7 @@ a.button.checkout.wc-forward {
 	.woocommerce div.product .woocommerce-tabs ul.tabs li a {
 		margin-left: 0px;
 	}
-
 }
-
 
 
 /* @media only screen and (max-width: 1170px) {
@@ -3302,11 +3329,11 @@ a.button.checkout.wc-forward {
 }
 @media only screen and (max-width: 860px) {
 
-	body,
+	/* body,
 	body > div {
 		font-size: 18px;
 		font-size: 1.8rem;
-	}
+	} */
 
 	.site-inner {
 		padding: 5% 5% 0;
@@ -3406,17 +3433,39 @@ a.button.checkout.wc-forward {
 	    clear: none;
 	}
 	.woocommerce ul.products.list-view li.product .button {
-	    display: none;
+	   	display: none;
 	    margin-top: 5px;
 	}
 	.woocommerce .content {
 		margin-bottom: 0;
+	}
+	.woocommerce ul.products.list-view li.product .added_to_cart.wc-forward {
+		display: none;
+	}
+	.woocommerce ul.products.desc-view li.product .button {
+		width: auto;
 	}
 }
 
 @media only screen and (max-width: 550px) {
 	.site-title a {
 		font-size: 80px;
+	}
+}
+@media only screen and (max-width: 490px) {
+	.woocommerce ul.products.desc-view li.product .price  {
+	    float: right;
+	    clear: none;
+	    margin-top: -25px;
+	}
+	.woocommerce ul.products.desc-view li.product .button,
+	.woocommerce ul.products.desc-view li.product a.button  {
+	    float: left;
+	    margin-top: 5px;
+	    margin-bottom: 20px;
+	}
+	.woocommerce ul.products.desc-view li.product .added_to_cart.wc-forward  {
+	    float: left;
 	}
 }
 @media only screen and (max-width: 425px) {
