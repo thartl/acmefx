@@ -2096,6 +2096,9 @@ address {
     margin-top: 25px;
 }
 
+.woocommerce tr.shipping input[type="radio"]:checked + label {
+	color: rgba(240, 209, 104, 0.98);
+}
 
 /* # Sidebars
 ---------------------------------------------------------------------------------------------------- */
