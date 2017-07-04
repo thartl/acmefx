@@ -277,7 +277,7 @@ function th_add_short_description_to_desc_view() {
 
 	} elseif ( $_COOKIE['store_view'] == 'desc' ) {
 
-add_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_single_excerpt', 12 );
+		add_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_single_excerpt', 12 );
 
 	}
 
