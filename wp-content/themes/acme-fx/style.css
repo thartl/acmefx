@@ -2683,9 +2683,10 @@ div.agm_mh_info_content {
 	padding-top: 20px;
 }
 
-.description-continued {
+#description-continued {
+	display: block;
 	position: relative;
-	bottom: 42px;
+	bottom: 122px;
 }
 
 
