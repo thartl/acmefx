@@ -16,11 +16,13 @@
  * @version 3.0.3
  */
 
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 wc_print_notices();
+
 
 do_action( 'woocommerce_before_cart' ); ?>
 

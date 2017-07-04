@@ -17,6 +17,7 @@
  */
 
 
+
 if( !isset($_COOKIE['store_view']) || $_COOKIE['store_view'] == 'grid' ) {
 
 	echo '<ul class="products grid-view" >';
@@ -34,5 +35,6 @@ if( !isset($_COOKIE['store_view']) || $_COOKIE['store_view'] == 'grid' ) {
 	echo '<ul class="products" >';
 
 }
+
 
 ?>

@@ -5,6 +5,7 @@
  * Link: https://sridharkatakam.com/
  */
 
+
 remove_action( 'genesis_loop', 'genesis_do_loop' );
 add_action( 'genesis_loop', 'sk_do_search_loop' );
 /**

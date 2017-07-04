@@ -13,7 +13,6 @@
  */
 
 
-
 /**
  * Change text strings, case by case
  *
@@ -28,7 +27,6 @@ function th_change_text_strings( $translated_text, $text, $domain ) {
 	return $translated_text;
 }
 add_filter( 'gettext', 'th_change_text_strings', 20, 3 );
-
 
 
 
