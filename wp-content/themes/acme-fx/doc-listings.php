@@ -23,7 +23,7 @@ function th_doc_repeater() {
 			$year = (int) get_post_meta( get_the_ID(), 'doc_info_' . $i . '_year', true );
 			$pages = (int)  get_post_meta( get_the_ID(), 'doc_info_' . $i . '_pages', true );
 
-			$url = wp_get_attachment_url( $doc_id );
+			$url = esc_url( wp_get_attachment_url( $doc_id ) );
 			$url_prepend = get_site_url() . '/wp-content/plugins/pdfjs-viewer-shortcode/pdfjs/web/viewer.php?file=';
 			$url_encoded = urlencode( $url );
 			$url_append = '&download=true&print=true&openfile=false';
