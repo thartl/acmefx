@@ -17,13 +17,21 @@
  */
 
 
-if(!isset($_COOKIE['store_view']) || $_COOKIE['store_view'] == 'grid') {
+if( !isset($_COOKIE['store_view']) || $_COOKIE['store_view'] == 'grid' ) {
 
-	echo '<ul class="products">';
+	echo '<ul class="products grid-view" >';
+
+} elseif( $_COOKIE['store_view'] == 'list' ) {
+
+	echo '<ul class="products list-view" >';
+
+} elseif( $_COOKIE['store_view'] == 'desc' ) {
+
+	echo '<ul class="products desc-view" >';
 
 } else {
 
-	echo '<ul class="products list-view">';
+	echo '<ul class="products" >';
 
 }
 
