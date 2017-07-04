@@ -2777,6 +2777,7 @@ div.grid-list-switch {
 .woocommerce ul.products.list-view li.product .price {
 	display: block;
 	float: left;
+	clear:  left;
 	width: auto;
 	text-align: right;
     color: #fff;
@@ -2791,9 +2792,75 @@ div.grid-list-switch {
 	font-size: 10px;
 }
 .woocommerce ul.products.list-view li.product .button {
-    float: right;
+   float: right;
     margin-top: 10px;
 }
+
+
+
+/* Desc View ***************************************/
+
+.woocommerce ul.products.desc-view li.product a,
+.woocommerce ul.products.desc-view li.product button {
+    float: left;
+    margin-top: 25px;
+}
+.grid-list-switch.desc-view svg.grid-view-btn {
+	fill: #fff;
+}
+
+.woocommerce ul.products.desc-view li.product {
+	float: left;
+	clear: left;
+	width: 100%;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #fff;
+	margin-top: 30px;
+	margin-bottom: 0px;
+}
+.woocommerce ul.products.desc-view li.product:last-child {
+	border-bottom: 0;
+} 
+
+.woocommerce ul.products.desc-view li.product img {
+	width: 75px;
+	height: 75px;
+	float: left;
+	margin-right: 15px;
+	display: block;
+}
+
+.woocommerce ul.products.desc-view li.product h2 {
+	float: left;
+	display: block;
+	width: 200px;
+	padding-top: 0;
+}
+
+.woocommerce ul.products.desc-view li.product .price {
+	display: block;
+	float: left;
+	clear:  left;
+	width: auto;
+    color: #fff;
+    margin-left: 90px;
+    margin-top: -55px;
+}
+
+.woocommerce ul.products.desc-view li.product a span.onsale {
+	top: 21px;
+	right: auto;
+	left: 50px;
+	font-size: 10px;
+}
+
+.woocommerce ul.products.desc-view li.product .woocommerce-product-details__short-description {
+	float: left;
+	margin-left: 15px;
+	margin-top: 25px;
+	max-width: 370px;
+}
+
 
 
 /**********************************************/
@@ -2817,11 +2884,19 @@ a.button.checkout.wc-forward {
 	margin-bottom: 30px;
 }
 .woocommerce div.product .woocommerce-tabs .panel {
-    margin: 0 0 2em;
+    margin: -27px 0 2em;
     padding: 20px;
     border: 1px solid #fff;
 }
-
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+	border: 1px solid #fff;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+	margin-left: 5px;
+}
+.shop_attributes tbody {
+	border-bottom: 0;
+}
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
@@ -2955,7 +3030,9 @@ a.button.checkout.wc-forward {
 	    border-top: 0;
 	}
 
-
+	.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+		margin-left: 0px;
+	}
 
 
 	
@@ -3303,6 +3380,7 @@ a.button.checkout.wc-forward {
 	/* .woocommerce ul.products li.product .price, */
 	.woocommerce ul.products.list-view li.product .price  {
 	    float: right;
+	    clear: none;
 	}
 	.woocommerce ul.products.list-view li.product .button {
 	    display: none;
