@@ -2857,6 +2857,9 @@ div.grid-list-switch {
 	margin-top: 30px;
 	margin-bottom: 0px;
 }
+.woocommerce ul.products.desc-view li.product:first-child {
+	margin-top: 0;
+}
 .woocommerce ul.products.desc-view li.product:last-child {
 	border-bottom: 0;
 } 
