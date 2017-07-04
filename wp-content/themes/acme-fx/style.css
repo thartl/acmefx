@@ -2754,6 +2754,22 @@ div.grid-list-switch {
 	fill: #5BA5A5;
 }
 
+/** Repeat for active... */
+.grid-list-switch.grid-view svg.list-view-btn:active,
+.grid-list-switch.grid-view svg.desc-view-btn:active {
+	fill: #5BA5A5;
+}
+
+.grid-list-switch.list-view svg.grid-view-btn:active,
+.grid-list-switch.list-view svg.desc-view-btn:active {
+	fill: #5BA5A5;
+}
+
+.grid-list-switch.desc-view svg.grid-view-btn:active,
+.grid-list-switch.desc-view svg.list-view-btn:active {
+	fill: #5BA5A5;
+}
+
 
 /** Cursor must be pointer for touch devices to trigger jQuery click() ************************************/
 .grid-list-switch div {
