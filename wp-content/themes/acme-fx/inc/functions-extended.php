@@ -151,18 +151,18 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 						current_view_ppp = desc_ppp;
 					}
 
-					var url_all = window.location.href;  // a straight reload woudl be this
+					var url_all = window.location.href;  // a straight reload woudl do this
 					var url_pageless = url_all.replace( /\/page\/[0-9]+\// , '/' );  // reload without page variable
 
-					var naked_page_array = url_all.match( /\/page\/[0-9]+\// );  // gives e.g. "/page/21/" or null
+					var pagination_array = url_all.match( /\/page\/[0-9]+\// );  // gives array e.g. "[ '/page/2/' ]" or null
 
 					var page_or_not = 'pagination-is-on'; //  either left alone (this means construct a new paginated url) OR overwritten by url without pagination (then use that)
 
-					if( Array.isArray( naked_page_array ) ) {  // if there is pagination extract it
+					if( Array.isArray( pagination_array ) ) {  // if there is pagination extract it
 
-						var naked_page_section = naked_page_array[0];  // gives e.g. "/page/2/""
+						var pagination_string = pagination_array[0];  // gives e.g. "/page/2/"
 
-						var page_number_interim = naked_page_section.replace( /\/page\// , '' );  // removes "/page/"
+						var page_number_interim = pagination_string.replace( /\/page\// , '' );  // removes "/page/"
 						var page_number_string = page_number_interim.replace( /\// , '' );  // removes "/" before page number
 						var current_page_number = parseInt( page_number_string, 10 );  // string to int
 
@@ -178,7 +178,7 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 					var pagination;
 					var new_url;
 
-			// console.log( 'Current page number: ' + current_page_number );
+			// console.log( 'window.location.href: ' + url_all );
 			// console.log( 'Current view ppp: ' + current_view_ppp );
 			// console.log( 'Current focus product number: ' + focus_product_number );
 
