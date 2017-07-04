@@ -2491,6 +2491,10 @@ a.fx-type:hover {
 	background: url('/wp-content/uploads/2017/07/fan.jpg');
 	background-position: center;
 }
+.rentals:hover {
+	background: url('/wp-content/uploads/2017/07/fan-dark.jpg');
+	background-position: center;
+}
 .fx {
 	background: url('/wp-content/uploads/2017/07/fx-newer.jpg');
 	background-position: center;
