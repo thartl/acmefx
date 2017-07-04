@@ -2100,14 +2100,12 @@ address {
    display: none;
 }
 .woocommerce input[type="radio"]:checked + label,
-.woocommerce .wl-rad-table input[type="radio"]:checked,
 .woocommerce div.product .stock {
 	color: #f8e9a0;
 }
 .payment_box.payment_method_stripe input[type="radio"] + label {
 	color: #515151;
 }
-.woocommerce .wl-rad-table input[type="radio"]:checked
 
 /* # Sidebars
 ---------------------------------------------------------------------------------------------------- */
