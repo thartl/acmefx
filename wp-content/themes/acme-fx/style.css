@@ -2684,7 +2684,8 @@ div.agm_mh_info_content {
 	bottom: 0;
 }
 
-/** th-- Archive page descriptions ******************************/
+/** 
+th-- Archive page descriptions ******************************/
 .woocommerce ul.products ~ .archive-description {
 	font-size: 16px;
 	font-size: 1.6rem;
@@ -3497,6 +3498,9 @@ a.button.checkout.wc-forward {
 @media only screen and (max-width: 450px) {
 	.woocommerce ul.products.list-view li.product h2  {
 	    width: 150px;
+	}
+	.headhesive--stick.nav-secondary ul.menu li.menu-item:last-child {
+	display: none;
 	}
 }
 
