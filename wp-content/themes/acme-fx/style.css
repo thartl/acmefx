@@ -2103,6 +2103,9 @@ address {
 .woocommerce input[type="radio"]:checked + label {
 	color: #f8e9a0;
 }
+.payment_box.payment_method_stripe input[type="radio"] + label {
+	color: #515151;
+}
 
 /* # Sidebars
 ---------------------------------------------------------------------------------------------------- */
