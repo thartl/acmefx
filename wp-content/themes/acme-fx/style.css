@@ -2095,9 +2095,11 @@ address {
     border-top: 1px solid #eee;
     margin-top: 25px;
 }
-
-.woocommerce tr.shipping input[type="radio"]:checked + label {
-	color: rgba(240, 209, 104, 0.98);
+.woocommerce input[type="radio"]:checked + label {
+	color: #f8e9a0;
+}
+.payment_box.payment_method_stripe input[type="radio"] + label {
+	color: #515151;
 }
 
 /* # Sidebars
