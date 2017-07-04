@@ -2806,11 +2806,19 @@ a.button.checkout.wc-forward {
 	margin-bottom: 30px;
 }
 .woocommerce div.product .woocommerce-tabs .panel {
-    margin: 0 0 2em;
+    margin: -27px 0 2em;
     padding: 20px;
     border: 1px solid #fff;
 }
-
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+	border: 1px solid #fff;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+	margin-left: 5px;
+}
+.shop_attributes tbody {
+	border-bottom: 0;
+}
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
@@ -2944,7 +2952,9 @@ a.button.checkout.wc-forward {
 	    border-top: 0;
 	}
 
-
+	.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+		margin-left: 0px;
+	}
 
 
 	
