@@ -172,10 +172,11 @@ add_theme_support( 'custom-header', array(
 //  Video header settings
 add_filter( 'header_video_settings', 'th_header_video_settings');
 function th_header_video_settings( $settings ) {
-  $settings['minWidth'] = 320;  // minimum VIEWPORT width for video to play (320)
-  $settings['minHeight'] = 568;  // minimum VIEWPORT height for video to play
+  $settings['minWidth'] = 768;  // minimum VIEWPORT width for video to play (320)
+  $settings['minHeight'] = 600;  // minimum VIEWPORT height for video to play (568)
   $settings['width'] = 1920;  // video width
   $settings['height'] = 400;  // video height
+//  $settings['posterUrl'] = get_header_image();
   return $settings;
 }
 
@@ -438,7 +439,7 @@ function wc_custom_add_custom_fields() {
     woocommerce_wp_text_input( array(
         'id' => '_day_rental_price',
         'label' => 'Daily rental price',
-        'description' => 'Price for 1-day rental.<br>Please make sure Regular price is set to 0.',
+        'description' => 'Price for 1-day rental.<br>Rental prices are used when the "Departments" attribute is set to Rentals.',
         'desc_tip' => 'true',
         'placeholder' => ''
     ) );
@@ -446,7 +447,7 @@ function wc_custom_add_custom_fields() {
     woocommerce_wp_text_input( array(
         'id' => '_week_rental_price',
         'label' => 'Weekly rental price',
-        'description' => 'Price for 1-week rental.<br>Please make sure Regular price is set to 0.',
+        'description' => 'Price for 1-week rental.<br>Rental prices are used when the "Departments" attribute is set to Rentals.',
         'desc_tip' => 'true',
         'placeholder' => ''
     ) );
@@ -454,7 +455,7 @@ function wc_custom_add_custom_fields() {
     woocommerce_wp_text_input( array(
         'id' => '_month_rental_price',
         'label' => 'Monthly rental price',
-        'description' => 'Price for 1-month rental.<br>Please make sure Regular price is set to 0.',
+        'description' => 'Price for 1-month rental.<br>Rental prices are used when the "Departments" attribute is set to Rentals.',
         'desc_tip' => 'true',
         'placeholder' => ''
     ) );
@@ -494,17 +495,16 @@ function th_remove_price_and_quantity() {
 
 
 // Display rental pricing table on a single product page
-add_action( 'woocommerce_single_product_summary', 'pw_add_price_table', 25 );
-function pw_add_price_table() {
+add_action( 'woocommerce_single_product_summary', 'th_add_price_table', 25 );
+function th_add_price_table() {
 	$daily_rental_price = esc_html( get_post_meta( get_the_ID(), '_day_rental_price', true ) );
 	$weekly_rental_price = esc_html( get_post_meta( get_the_ID(), '_week_rental_price', true ) );
 	$monthly_rental_price = esc_html( get_post_meta( get_the_ID(), '_month_rental_price', true ) );
 
 			global $product;
 			$departments = $product->get_attribute( 'pa_departments' );
-			$is_rental = strpos($departments, 'Rentals' ) !== false ? true : false;
 
-			if ( is_product() && $is_rental ) { ?>
+			if ( is_product() && ( strpos( $departments, 'Rentals' ) !== false ) ) { ?>
 
 				<h4 class="pricing-table-heading">Rental prices</h4>
 				<table class="pricing-table">
@@ -556,13 +556,12 @@ function pw_add_price_table() {
 
 
 // Changes empty price to "Rental item" on product loops and also in admin - Products
-add_filter( 'woocommerce_get_price_html', 'sv_change_product_price_display' );
-function sv_change_product_price_display( $price ) {
+add_filter( 'woocommerce_get_price_html', 'th_change_product_price_display' );
+function th_change_product_price_display( $price ) {
 	global $product;
 	$departments = $product->get_attribute( 'pa_departments' );
-	$is_rental = strpos($departments, 'Rentals' ) !== false ? true : false;
 
-		if ( $product && $is_rental ) {
+		if ( $product && ( strpos( $departments, 'Rentals' ) !== false ) ) {
 			$price = 'Rental item';
 		}
 	return $price;
@@ -603,8 +602,8 @@ add_filter( 'genesis_search_button_text', 'b3m_search_button_dashicon' );
 function b3m_search_button_dashicon( $text ) {
 	
 	return esc_attr( '&#xf179;' );
-	
 }
+
 
 // Woocommerce search search icon + 
 add_filter( 'get_product_search_form' , 'woo_custom_product_searchform' );

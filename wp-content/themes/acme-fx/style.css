@@ -2684,7 +2684,8 @@ div.agm_mh_info_content {
 	bottom: 0;
 }
 
-/** th-- Archive page descriptions ******************************/
+/** 
+th-- Archive page descriptions ******************************/
 .woocommerce ul.products ~ .archive-description {
 	font-size: 16px;
 	font-size: 1.6rem;
@@ -2756,6 +2757,22 @@ div.grid-list-switch {
 
 .grid-list-switch.desc-view svg.grid-view-btn:hover,
 .grid-list-switch.desc-view svg.list-view-btn:hover {
+	fill: #5BA5A5;
+}
+
+/** Repeat for active... */
+.grid-list-switch.grid-view svg.list-view-btn:active,
+.grid-list-switch.grid-view svg.desc-view-btn:active {
+	fill: #5BA5A5;
+}
+
+.grid-list-switch.list-view svg.grid-view-btn:active,
+.grid-list-switch.list-view svg.desc-view-btn:active {
+	fill: #5BA5A5;
+}
+
+.grid-list-switch.desc-view svg.grid-view-btn:active,
+.grid-list-switch.desc-view svg.list-view-btn:active {
 	fill: #5BA5A5;
 }
 
@@ -3485,8 +3502,9 @@ a.button.checkout.wc-forward {
 	.woocommerce ul.products.list-view li.product h2  {
 	    width: 150px;
 	}
-}
-
+	.headhesive--stick.nav-secondary ul.menu > li.menu-item:last-child {
+		display: none;
+	}
 
 
 /* # Print Styles
