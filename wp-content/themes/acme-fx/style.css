@@ -3499,12 +3499,9 @@ a.button.checkout.wc-forward {
 	.woocommerce ul.products.list-view li.product h2  {
 	    width: 150px;
 	}
-	.headhesive--stick.nav-secondary ul.menu li.menu-item:last-child {
-	display: none;
+	.headhesive--stick.nav-secondary ul.menu > li.menu-item:last-child {
+		display: none;
 	}
-}
-
-
 
 /* # Print Styles
 ---------------------------------------------------------------------------------------------------- */
