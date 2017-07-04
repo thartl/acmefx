@@ -1949,10 +1949,6 @@ table.pricing-table {
     font-size: 1.4rem;
     padding: 12px 18px;
 }
-
-.woocommerce span.onsale {
-	background-color: #55AA63;
-}
 .rental-product h1::before {
 	content: "\2601";
 }
@@ -1987,10 +1983,13 @@ table.pricing-table {
 .sidebar .widget {
 	margin-bottom: 0;
 }
-
+.woocommerce span.onsale {
+	background-color: #55AA63;
+	padding: 5px;
+    border-radius: 4px;	
+}
 .woocommerce ul.products li.product .onsale {
-    padding: 5px;
-    border-radius: 4px;
+    
 }
 
 .woocommerce .woocommerce-shipping-fields {
@@ -2100,7 +2099,8 @@ address {
 .woocommerce div.product .woocommerce-tabs .panel h2 {
    display: none;
 }
-.woocommerce input[type="radio"]:checked + label {
+.woocommerce input[type="radio"]:checked + label,
+.woocommerce div.product .stock {
 	color: #f8e9a0;
 }
 .payment_box.payment_method_stripe input[type="radio"] + label {
@@ -2574,7 +2574,7 @@ div.agm_mh_info_content {
         right: 100px;
     }
     100% {
-        top: 320px;
+        top: 380px;
         right: 110px;
         
     }
@@ -2588,11 +2588,11 @@ div.agm_mh_info_content {
         right: 200px;
     }
     10%, 30%, 50%, 70%, 90% {
-        right: 220px;
+        right: 210px;
     }
     100% {
-        top: 330px;
-        right: 210px;
+        top: 400px;
+        right: 220px;
     }
 }
 
