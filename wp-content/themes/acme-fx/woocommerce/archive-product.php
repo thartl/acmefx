@@ -17,6 +17,7 @@
  *
  */
 
+
 /** Remove default Genesis loop */
 remove_action( 'genesis_loop', 'genesis_do_loop' );
 

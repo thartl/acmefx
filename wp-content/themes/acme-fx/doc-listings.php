@@ -5,6 +5,7 @@
 * Description: Used as a documents listings page
 */
 
+
 add_action( 'genesis_after_entry_content', 'th_doc_repeater' );
 
 function th_doc_repeater() {
