@@ -152,7 +152,9 @@ input[type="search"] {
 
 /* ## Typographical Elements
 --------------------------------------------- */
-
+:focus {
+	outline: 0;
+}
 html {
 	font-size: 62.5%; /* 10px browser default */
 }
@@ -2095,7 +2097,12 @@ address {
     border-top: 1px solid #eee;
     margin-top: 25px;
 }
-
+.woocommerce div.product .woocommerce-tabs .panel h2 {
+   display: none;
+}
+.woocommerce input[type="radio"]:checked + label {
+	color: #f8e9a0;
+}
 
 /* # Sidebars
 ---------------------------------------------------------------------------------------------------- */
