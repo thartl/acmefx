@@ -38,17 +38,21 @@ function th_hover_on_touch() {
 
 	?><script type="text/javascript">
 
-		$('a.taphover').on("touchstart", function (e) {
-		    "use strict";
-		    var link = $(this);
-		    if (link.hasClass('hover')) {
-		        return true;
-		    } else {
-		        link.addClass("hover");
-		        $('a.taphover').not(this).removeClass("hover");
-		        e.preventDefault();
-		        return false;
-		    }
+		jQuery( function ( $ ) {
+
+			$('a.taphover').on("touchstart", function (e) {
+			    "use strict";
+			    var link = $(this);
+			    if (link.hasClass('hover')) {
+			        return true;
+			    } else {
+			        link.addClass("hover");
+			        $('a.taphover').not(this).removeClass("hover");
+			        e.preventDefault();
+			        return false;
+			    }
+			});
+
 		});
 
 	</script><?php
