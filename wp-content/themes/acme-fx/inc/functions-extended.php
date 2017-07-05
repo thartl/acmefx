@@ -29,6 +29,35 @@ function th_change_text_strings( $translated_text, $text, $domain ) {
 add_filter( 'gettext', 'th_change_text_strings', 20, 3 );
 
 
+/** Hover on Touch *
+ *	Source:  http://jsfiddle.net/c_kick/s9rB4/
+ *********************************************************/
+add_action( 'wp_footer', 'th_hover_on_touch', 200 );
+
+function th_hover_on_touch() {
+
+	?><script type="text/javascript">
+
+		jQuery( function ( $ ) {
+
+			$('a.taphover').on("touchstart", function (e) {
+			    "use strict";
+			    var link = $(this);
+			    if (link.hasClass('hover')) {
+			        return true;
+			    } else {
+			        link.addClass("hover");
+			        $('a.taphover').not(this).removeClass("hover");
+			        e.preventDefault();
+			        return false;
+			    }
+			});
+
+		});
+
+	</script><?php
+
+}
 
 
 /*********************************************************************************************************************************/
