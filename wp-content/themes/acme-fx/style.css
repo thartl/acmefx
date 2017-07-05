@@ -2487,6 +2487,7 @@ a.fx-type:hover {
 .expendables {
 	background: url('/wp-content/uploads/2017/07/blue-bulb.jpg');
 	background-position: center;
+	background-size: cover;
 }
 .snow-business {
 	background: url('/wp-content/uploads/2017/06/night-moon.jpg');
