@@ -2293,6 +2293,11 @@ h1.archive-title a:hover {
 	padding: 20px;
 	position: relative;
 	background-size: cover;
+	-webkit-transform: translate3d(0,0,0);
+	  -moz-transform: translate3d(0,0,0);
+	  -ms-transform: translate3d(0,0,0);
+	  -o-transform: translate3d(0,0,0);
+	  transform: translate3d(0,0,0);
 }
 .business-type {
 	flex-basis: 28%;
@@ -2376,7 +2381,7 @@ a.fx-type:hover {
 .fx-type p,
 .snow-business img {
 	margin-top: 90px;
-	padding-bottom: 30px;
+	//padding-bottom: 30px;
 	opacity: 0;
 	transition: .3s ease-in-out;
 	-moz-transition: .3s ease-in-out;
@@ -2415,6 +2420,11 @@ a.fx-type:hover {
 .snow-business img {
 	margin: 60px 20px 20px 0px;
 }
+
+.simple-social-icons ul li {
+	margin-bottom: 0 !important;
+}
+
 
 /* ***************************************  Effects Gallery  */
 
@@ -2480,19 +2490,37 @@ a.fx-type:hover {
 }
 
 .expendables {
-	background: url('/wp-content/uploads/2017/05/flashbulbs-1-500x500.jpg');
+	background: url('/wp-content/uploads/2017/07/blue-bulb.jpg');
 	background-position: center;
+	background-size: cover;
+}
+.expendables:hover {
+	background: url('/wp-content/uploads/2017/07/blue-bulb-dark.jpg');
+	background-position: center;
+	background-size: cover;
 }
 .snow-business {
 	background: url('/wp-content/uploads/2017/06/night-moon.jpg');
+	background-position: center;
+}
+.snow-business:hover {
+	background: url('/wp-content/uploads/2017/07/night-moon-dark.jpg');
 	background-position: center;
 }
 .rentals {
 	background: url('/wp-content/uploads/2017/07/fan.jpg');
 	background-position: center;
 }
+.rentals:hover {
+	background: url('/wp-content/uploads/2017/07/fan-dark.jpg');
+	background-position: center;
+}
 .fx {
 	background: url('/wp-content/uploads/2017/07/fx-newer.jpg');
+	background-position: center;
+}
+.fx:hover {
+	background: url('/wp-content/uploads/2017/07/fx-newer-dark.jpg');
 	background-position: center;
 }
 .term-snow-business .content {
@@ -2662,7 +2690,7 @@ div.agm_mh_info_content {
 	-moz-transform: translateY(0%);
 }
 .headhesive--stick.nav-secondary {
-	box-shadow: 0px 3px #0C1B1C;
+	box-shadow: 2px 1px #0C1B1C;
 }
 
 /*.nav-secondary.headhesive--stick ul::before {
@@ -2855,11 +2883,11 @@ div.grid-list-switch {
 .woocommerce ul.products.desc-view li.product a,
 .woocommerce ul.products.desc-view li.product button {
     float: left;
-    margin-top: 25px;
 }
 .woocommerce ul.products.desc-view li.product button,
 .woocommerce ul.products.desc-view li.product a.button {
 	margin-right: 15px;
+	margin-top: 0;
 }
 .grid-list-switch.desc-view svg.grid-view-btn {
 	fill: #fff;
@@ -2873,6 +2901,9 @@ div.grid-list-switch {
 	border-bottom: 1px solid #fff;
 	margin-top: 30px;
 	margin-bottom: 0px;
+}
+.woocommerce ul.products.desc-view li.product:first-child {
+	margin-top: 0;
 }
 .woocommerce ul.products.desc-view li.product:last-child {
 	border-bottom: 0;
@@ -2913,7 +2944,6 @@ div.grid-list-switch {
 
 .woocommerce ul.products.desc-view li.product .woocommerce-product-details__short-description {
 	float: left;
-	margin-top: 25px;
 	max-width: 360px;
 }
 .woocommerce ul.products.desc-view li.product .added_to_cart.wc-forward {
@@ -2961,7 +2991,13 @@ a.button.checkout.wc-forward {
 .shop_attributes tbody {
 	border-bottom: 0;
 }
-
+.about .entry-content ul {
+	margin-bottom: 60px;
+}
+.embed-vimeo {
+    text-align: left !important;
+    margin-top: 60px;
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
@@ -3338,7 +3374,7 @@ a.button.checkout.wc-forward {
 
 	.footer-widgets-1,
 	.footer-widgets-2 {
-		margin: 0 auto 40px;
+		margin: 0 auto 60px;
 	}
 
 
@@ -3465,12 +3501,23 @@ a.button.checkout.wc-forward {
 	}
 	.woocommerce .content {
 		margin-bottom: 0;
+		border-bottom: 1px solid #fff;
 	}
 	.woocommerce ul.products.list-view li.product .added_to_cart.wc-forward {
 		display: none;
 	}
 	.woocommerce ul.products.desc-view li.product .button {
 		width: auto;
+	}
+	.archive-pagination {
+		margin-left: 30px;
+	}
+
+	.genesis-nav-menu.menu-secondary a {
+		color: #1E373B;
+	}
+	.nav-secondary {
+		background-color: #fff;
 	}
 }
 
@@ -3494,6 +3541,10 @@ a.button.checkout.wc-forward {
 	.woocommerce ul.products.desc-view li.product .added_to_cart.wc-forward  {
 	    float: left;
 	}
+	.genesis-nav-menu.menu-secondary li:nth-child(4) > a {
+		padding-top: 5px;
+	}
+
 }
 @media only screen and (max-width: 450px) {
 	.woocommerce ul.products.list-view li.product h2  {
