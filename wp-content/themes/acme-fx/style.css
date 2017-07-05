@@ -2376,7 +2376,7 @@ a.fx-type:hover {
 .fx-type p,
 .snow-business img {
 	margin-top: 90px;
-	padding-bottom: 30px;
+	//padding-bottom: 30px;
 	opacity: 0;
 	transition: .3s ease-in-out;
 	-moz-transition: .3s ease-in-out;
