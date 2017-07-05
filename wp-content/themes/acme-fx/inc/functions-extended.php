@@ -32,6 +32,34 @@ add_filter( 'gettext', 'th_change_text_strings', 20, 3 );
 /** Hover on Touch *
  *	Source:  http://jsfiddle.net/c_kick/s9rB4/
  *********************************************************/
+// add_action( 'wp_footer', 'th_hover_on_touch', 200 );
+
+// function th_hover_on_touch() {
+
+// 	?><script type="text/javascript">
+
+// 		jQuery( function ( $ ) {
+
+// 			$('a.taphover').on("touchstart", function (e) {
+// 			    "use strict";
+// 			    var link = $(this);
+// 			    if (link.hasClass('hover')) {
+// 			        return true;
+// 			    } else {
+// 			        link.addClass("hover");
+// 			        $('a.taphover').not(this).removeClass("hover");
+// 			        e.preventDefault();
+// 			        return false;
+// 			    }
+// 			});
+
+// 		});
+
+// 	</script><?php
+
+// }
+
+
 add_action( 'wp_footer', 'th_hover_on_touch', 200 );
 
 function th_hover_on_touch() {
@@ -43,11 +71,24 @@ function th_hover_on_touch() {
 			$('a.taphover').on("touchstart", function (e) {
 			    "use strict";
 			    var link = $(this);
-			    if (link.hasClass('hover')) {
+			    if (link.hasClass('hover') && link.hasClass( 'hover-cont' )) {
 			        return true;
 			    } else {
 			        link.addClass("hover");
 			        $('a.taphover').not(this).removeClass("hover");
+			        e.preventDefault();
+			        return false;
+			    }
+			});
+
+			$('a.taphover').on("touchend", function (e) {
+			    "use strict";
+			    var link = $(this);
+			    if (link.hasClass('hover-cont')) {
+			        return true;
+			    } else {
+			        link.addClass("hover-cont");
+			        $('a.taphover').not(this).removeClass("hover-cont");
 			        e.preventDefault();
 			        return false;
 			    }
