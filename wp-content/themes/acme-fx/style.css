@@ -2979,6 +2979,10 @@ a.button.checkout.wc-forward {
 .about .entry-content ul {
 	margin-bottom: 60px;
 }
+.embed-vimeo {
+    text-align: left !important;
+    margin-top: 60px;
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
