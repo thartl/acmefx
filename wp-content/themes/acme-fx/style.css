@@ -3541,7 +3541,7 @@ a.button.checkout.wc-forward {
 	.woocommerce ul.products.desc-view li.product .added_to_cart.wc-forward  {
 	    float: left;
 	}
-	.genesis-nav-menu.menu-secondary li:nth-child(4) a {
+	.genesis-nav-menu.menu-secondary li:nth-child(4) > a {
 		padding-top: 5px;
 	}
 
