@@ -172,8 +172,8 @@ add_theme_support( 'custom-header', array(
 //  Video header settings
 add_filter( 'header_video_settings', 'th_header_video_settings');
 function th_header_video_settings( $settings ) {
-  $settings['minWidth'] = 768;  // minimum VIEWPORT width for video to play (320)
-  $settings['minHeight'] = 600;  // minimum VIEWPORT height for video to play (568)
+  $settings['minWidth'] = 1025;  // minimum VIEWPORT width for video to play (320) (iPad = 768)
+  $settings['minHeight'] = 600;  // minimum VIEWPORT height for video to play (568) (iPad = 1024)
   $settings['width'] = 1920;  // video width
   $settings['height'] = 400;  // video height
 //  $settings['posterUrl'] = get_header_image();
