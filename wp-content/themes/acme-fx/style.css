@@ -2998,6 +2998,9 @@ a.button.checkout.wc-forward {
     text-align: left !important;
     margin-top: 60px;
 }
+.genesis-nav-menu .sub-menu a {
+	line-height: 1.3em;
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
