@@ -2416,6 +2416,11 @@ a.fx-type:hover {
 	margin: 60px 20px 20px 0px;
 }
 
+.simple-social-icons ul li {
+	margin-bottom: 0 !important;
+}
+
+
 /* ***************************************  Effects Gallery  */
 
 .water {
@@ -2971,7 +2976,9 @@ a.button.checkout.wc-forward {
 .shop_attributes tbody {
 	border-bottom: 0;
 }
-
+.about .entry-content ul {
+	margin-bottom: 60px;
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
@@ -3348,7 +3355,7 @@ a.button.checkout.wc-forward {
 
 	.footer-widgets-1,
 	.footer-widgets-2 {
-		margin: 0 auto 40px;
+		margin: 0 auto 60px;
 	}
 
 
