@@ -2489,8 +2489,17 @@ a.fx-type:hover {
 	background-position: center;
 	background-size: cover;
 }
+.expendables:hover {
+	background: url('/wp-content/uploads/2017/07/blue-bulb-dark.jpg');
+	background-position: center;
+	background-size: cover;
+}
 .snow-business {
 	background: url('/wp-content/uploads/2017/06/night-moon.jpg');
+	background-position: center;
+}
+.snow-business:hover {
+	background: url('/wp-content/uploads/2017/07/night-moon-dark.jpg');
 	background-position: center;
 }
 .rentals {
