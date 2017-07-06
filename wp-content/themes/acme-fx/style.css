@@ -3021,6 +3021,9 @@ a.button.checkout.wc-forward {
 .genesis-nav-menu .sub-menu a {
 	line-height: 1.3em;
 }
+.woocommerce-MyAccount-navigation ul {
+	margin-left: 0;
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
