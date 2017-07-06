@@ -55,7 +55,7 @@ function th_hover_on_touch() {
 
 		   			console.log( 'Current window width is: ' + current_width + ' pixels.' );
 
-				}, { passive: false });
+				}, true );
 
 
 			$('a.taphover').on("touchstart", function (e) {
