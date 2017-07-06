@@ -3035,6 +3035,9 @@ a.button.checkout.wc-forward {
 	width: 125px;
 	height: 125px;
 }
+.cameo p {
+	text-align: center;
+}
 .cameo {
 	float: left;
 	clear: left;
