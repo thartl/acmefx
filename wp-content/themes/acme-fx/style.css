@@ -3541,7 +3541,6 @@ a.button.checkout.wc-forward {
 	}
 	.nav-secondary {
 		background-color: #fff;
-		position: relative;
 	}
 	
 	.home .genesis-nav-menu.menu-secondary a {
@@ -3550,10 +3549,10 @@ a.button.checkout.wc-forward {
 	.home .nav-secondary {
 		background-color: #1E373B;
 	}
-	.genesis-nav-menu.menu-secondary li:nth-child(2) .sub-menu {
+	.genesis-nav-menu.menu-secondary > li:nth-child(2) .sub-menu {
 		left: 0;
 	}
-	.genesis-nav-menu.menu-secondary li:nth-child(4) .sub-menu {
+	.genesis-nav-menu.menu-secondary > li:nth-child(4) .sub-menu {
 		right: 0;
 	}
 	.genesis-nav-menu.menu-secondary li .sub-menu li a {
@@ -3566,9 +3565,7 @@ a.button.checkout.wc-forward {
 		color: #fff;
 		background-color: #5BA5A5;
 	}
-	.genesis-nav-menu.menu-secondary {
-		position: relative;
-	}
+	
 }
 
 @media only screen and (max-width: 550px) {
