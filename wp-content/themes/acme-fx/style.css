@@ -2665,6 +2665,9 @@ div.agm_mh_info_content {
 	-moz-transition: all 150ms ease-out;
 	z-index: 999;
 }
+.headhesive .genesis-nav-menu .sub-menu a {
+	line-height: 1.5em;
+}
 
 .headhesive--stick {
 	transform: translateY(0%);
@@ -3014,7 +3017,7 @@ a.button.checkout.wc-forward {
     margin-top: 60px;
 }
 .genesis-nav-menu .sub-menu a {
-	//line-height: 1.3em;
+	line-height: 1.3em;
 }
 .woocommerce-MyAccount-navigation ul {
 	margin-left: 0;
