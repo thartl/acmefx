@@ -40,17 +40,22 @@ function th_hover_on_touch() {
 
 		jQuery( function ( $ ) {
 
-				var current_width = 'declared';
+				var current_width;
+
+			    // Get initial screen size
+			    current_width = document.documentElement.clientWidth;
+
+		   			console.log( 'Initial window width is: ' + current_width + ' pixels.' );
 
 				// Listen for resize changes
 				window.addEventListener("resize", function() {
 
-			    // Get screen size (inner/outerWidth, inner/outerHeight)
-			    current_width = document.documentElement.clientWidth;
+				    // Update screen size
+				    current_width = document.documentElement.clientWidth;
 
-		   			// console.log( 'Width is: ' + current_width );
+		   			console.log( 'Current window width is: ' + current_width + ' pixels.' );
 
-				}, false );
+				}, true );
 
 
 			$('a.taphover').on("touchstart", function (e) {
@@ -58,7 +63,7 @@ function th_hover_on_touch() {
 			    var link = $(this);
 			    if (link.hasClass('hover')) {
 			        return true;
-			        						// deactivated
+			        						// deactivated  ( || 1 == 1 )
 			    } else if( current_width > 600 || 1 == 1 ) {  
 			        link.addClass("hover");
 			        $('a.taphover').not(this).removeClass("hover");

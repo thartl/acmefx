@@ -44,6 +44,34 @@ include_once( get_stylesheet_directory() . '/lib/woocommerce/woocommerce-notice.
 // Add the extended functions file  (th-- )
 include_once( get_stylesheet_directory() . '/inc/functions-extended.php' );
 
+
+// Remove admin bar from front end, except for select users
+add_filter('show_admin_bar', 'th_private_admin_bar');  /** '__return_false' **/
+
+function th_private_admin_bar( $content ) {
+
+	$current_user = get_current_user_id();
+
+
+	/**  User IDs:  Tomas = 3, Amy = 5, Kailey = 7, Kevin = 4;  UNCOMMENT TO ENABLE ADMIN BAR ON FRONT END     Note: there is no user 0.  *****/
+
+	if ( $current_user == 0
+//		 ||	$current_user == 3 		// Tomas
+//		 || $current_user == 5 		// Amy
+//		 || $current_user == 7 		// Kailey
+//		 || $current_user == 4 		// Kevin
+								) {
+	
+		return $content;
+
+	} else {
+
+		return false;
+	}
+}
+
+
+
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Acme FX' );
 define( 'CHILD_THEME_URL', 'http://www.studiopress.com/' );
