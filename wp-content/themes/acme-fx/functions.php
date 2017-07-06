@@ -638,7 +638,7 @@ function woo_custom_product_searchform( $form ) {
 
 /**
  * Limit Primary Menu to Top Level Items
- * 
+ * th-- or one level drop-down...
  * @author Bill Erickson
  * @link http://www.billerickson.net/customizing-menu-arguments/
  * 
@@ -647,7 +647,7 @@ function woo_custom_product_searchform( $form ) {
  *
  */
 function be_primary_menu_args( $args ) {
-  if( 'primary' == $args['theme_location'] || 1 == 1 ) {
+  if( 'primary' == $args['theme_location'] || true ) {
     $args['depth'] = 2;
   }
   

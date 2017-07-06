@@ -40,16 +40,25 @@ function th_hover_on_touch() {
 
 		jQuery( function ( $ ) {
 
-			var width = document.documentElement.clientWidth;
+			var current_width = 'declared';
 
-//			console.log( 'Width is: ' + width );
+				// Listen for resize changes
+				window.addEventListener("resize", function() {
+
+			    // Get screen size (inner/outerWidth, inner/outerHeight)
+			    current_width = document.documentElement.clientWidth;
+
+		   			console.log( 'Width is: ' + current_width );
+
+				}, false );
+
 
 			$('a.taphover').on("touchstart", function (e) {
 			    "use strict";
 			    var link = $(this);
 			    if (link.hasClass('hover')) {
 			        return true;
-			    } else if( width > 600 ) {
+			    } else if( current_width > 600 ) {
 			        link.addClass("hover");
 			        $('a.taphover').not(this).removeClass("hover");
 			        e.preventDefault();
