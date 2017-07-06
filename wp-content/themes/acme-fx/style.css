@@ -3032,12 +3032,13 @@ a.button.checkout.wc-forward {
 	float: left;
 }
 .cameo img {
-	width: 150px;
-	height: 150px;
+	width: 125px;
+	height: 125px;
 }
 .cameo {
 	float: left;
 	clear: left;
+	margin-bottom: 20px;
 }
 
 /* # Media Queries
