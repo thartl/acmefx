@@ -2445,6 +2445,9 @@ a.business-type.hover {
 
 .water {
 	background: url('/wp-content/uploads/2017/05/water.jpg');
+	-moz-transition: .3s ease-in-out;
+	-webkit-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
 }
 .water:hover {
 	background: url('/wp-content/uploads/2017/05/water-dark.jpg');
@@ -2508,6 +2511,9 @@ a.business-type.hover {
 	background: url('/wp-content/uploads/2017/07/blue-bulb.jpg');
 	background-position: center;
 	background-size: cover;
+	-moz-transition: .3s ease-in-out;
+	-webkit-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
 }
 .expendables:hover {
 	background: url('/wp-content/uploads/2017/07/blue-bulb-dark.jpg');
@@ -2660,9 +2666,13 @@ div.agm_mh_info_content {
 	transform: translateY(-100%);
 	-webkit-transform: translateY(-100%);
 	-moz-transform: translateY(-100%);
+	-o-transform: translateY(-100%);
+	-ms-transform: translateY(-100%);
 	transition: all 150ms ease-out;
 	-webkit-transition: all 150ms ease-out;
 	-moz-transition: all 150ms ease-out;
+	-o-transition: all 150ms ease-out;
+	-ms-transition: all 150ms ease-out;
 	z-index: 999;
 }
 .headhesive .genesis-nav-menu .sub-menu a {
@@ -2673,6 +2683,8 @@ div.agm_mh_info_content {
 	transform: translateY(0%);
 	-webkit-transform: translateY(0%);
 	-moz-transform: translateY(0%);
+	-o-transform: translateY(0%);
+	-ms-transform: translateY(0%);
 }
 
 .headhesive .nav-secondary,
@@ -2706,19 +2718,12 @@ div.agm_mh_info_content {
 	transform: translateY(0%);
 	-webkit-transform: translateY(0%);
 	-moz-transform: translateY(0%);
+	-o-transform: translateY(0%);
+	-ms-transform: translateY(0%);
 }
 .headhesive--stick.nav-secondary {
 	box-shadow: 2px 1px #0C1B1C;
 }
-
-/*.nav-secondary.headhesive--stick ul::before {
-	content: url('/wp-content/themes/acme-fx/images/acme-logo-orig-traced.svg');
-	position: absolute;
-	left: 25px;
-	top: 22px;
-}
-*/
-
 .wrap .genesis-nav-menu a.nav-logo {
 	display: none;
 }
