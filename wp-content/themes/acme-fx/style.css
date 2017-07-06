@@ -2396,6 +2396,21 @@ a.fx-type:hover {
 .business-type p {
 	margin-top: 70px;
 }
+
+/*testing*/
+.business-type.hover p,
+.snow-business.hover img {
+	opacity: 1;
+}
+a.business-type.hover {
+	color: #fff;
+}
+.business-type.hover h2 {
+	background-color: #AE4040;
+}
+
+/*end test*/
+
 .business-type:hover p,
 .snow-business:hover img,
 .fx-type:hover p {
@@ -3583,7 +3598,7 @@ a.button.checkout.wc-forward {
 	    width: 150px;
 	}
 	.headhesive--stick.nav-secondary ul.menu > li.menu-item:last-child {
-		display: none;
+		/*display: none;*/
 	}
 
 

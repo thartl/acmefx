@@ -55,7 +55,7 @@ define( 'CHILD_THEME_VERSION', '1.0.1' );
 add_action( 'wp_enqueue_scripts', 'genesis_sample_enqueue_scripts_styles' );
 function genesis_sample_enqueue_scripts_styles() {
 
-	wp_enqueue_style( 'genesis-sample-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700|Bitter:400,400i,700', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'genesis-sample-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700|Bitter:400,400i,700' );
 	wp_enqueue_style( 'dashicons' );
 
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
@@ -634,5 +634,25 @@ function woo_custom_product_searchform( $form ) {
 	return $form;
 	
 }
+
+
+/**
+ * Limit Primary Menu to Top Level Items
+ * 
+ * @author Bill Erickson
+ * @link http://www.billerickson.net/customizing-menu-arguments/
+ * 
+ * @param array @args
+ * @return array
+ *
+ */
+function be_primary_menu_args( $args ) {
+  if( 'primary' == $args['theme_location'] || 1 == 1 ) {
+    $args['depth'] = 2;
+  }
+  
+  return $args;
+}
+add_filter( 'wp_nav_menu_args', 'be_primary_menu_args' );
 
 

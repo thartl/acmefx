@@ -40,12 +40,16 @@ function th_hover_on_touch() {
 
 		jQuery( function ( $ ) {
 
+			var width = document.documentElement.clientWidth;
+
+//			console.log( 'Width is: ' + width );
+
 			$('a.taphover').on("touchstart", function (e) {
 			    "use strict";
 			    var link = $(this);
 			    if (link.hasClass('hover')) {
 			        return true;
-			    } else {
+			    } else if( width > 600 ) {
 			        link.addClass("hover");
 			        $('a.taphover').not(this).removeClass("hover");
 			        e.preventDefault();
@@ -58,6 +62,7 @@ function th_hover_on_touch() {
 	</script><?php
 
 }
+
 
 /*********************************************************************************************************************************/
 /************************ th-- WC Grid/List View *********************************************************************************/
