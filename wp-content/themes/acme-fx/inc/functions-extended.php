@@ -58,7 +58,7 @@ function th_hover_on_touch() {
 			    var link = $(this);
 			    if (link.hasClass('hover')) {
 			        return true;
-			    } else if( current_width > 600 ) {
+			    } else if( current_width > 600 || 1 == 1 ) {
 			        link.addClass("hover");
 			        $('a.taphover').not(this).removeClass("hover");
 			        e.preventDefault();
