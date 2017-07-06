@@ -2959,7 +2959,7 @@ div.grid-list-switch {
 }
 
 .woocommerce ul.products.desc-view li.product a span.onsale {
-	top: 21px;
+	top: 1px;
 	right: auto;
 	left: 60px;
 	font-size: 10px;
@@ -3211,6 +3211,12 @@ a.button.checkout.wc-forward {
 	}
 	.business-type {
 		min-height: 300px;
+	}
+	.term-description p {
+		float: left;
+	}
+	.term-description p:nth-child(2) {
+		clear: left;
 	}
 }
 
