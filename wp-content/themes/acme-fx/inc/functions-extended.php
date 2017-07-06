@@ -40,9 +40,9 @@ function th_hover_on_touch() {
 
 		jQuery( function ( $ ) {
 
-			var width = window.screen.availWidth;
+			var width = document.documentElement.clientWidth;
 
-			console.log( width );
+//			console.log( 'Width is: ' + width );
 
 			$('a.taphover').on("touchstart", function (e) {
 			    "use strict";

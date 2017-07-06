@@ -636,3 +636,23 @@ function woo_custom_product_searchform( $form ) {
 }
 
 
+/**
+ * Limit Primary Menu to Top Level Items
+ * 
+ * @author Bill Erickson
+ * @link http://www.billerickson.net/customizing-menu-arguments/
+ * 
+ * @param array @args
+ * @return array
+ *
+ */
+function be_primary_menu_args( $args ) {
+  if( 'primary' == $args['theme_location'] || 1 == 1 ) {
+    $args['depth'] = 2;
+  }
+  
+  return $args;
+}
+add_filter( 'wp_nav_menu_args', 'be_primary_menu_args' );
+
+
