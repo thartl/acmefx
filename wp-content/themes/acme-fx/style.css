@@ -3027,6 +3027,10 @@ a.button.checkout.wc-forward {
 .woocommerce-MyAccount-navigation ul {
 	margin-left: 0;
 }
+.cameo img,
+.cameo p {
+	float: left;
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
