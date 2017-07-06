@@ -64,13 +64,13 @@ function th_hover_on_touch() {
 			    if (link.hasClass('hover')) {
 			        return true;
 			        						// deactivated  ( || 1 == 1 )
-			    } else if( current_width > 600 ) {  
+			    } else if( current_width > 600 || 1 == 1 ) {  
 			        link.addClass("hover");
 			        $('a.taphover').not(this).removeClass("hover");
 			        e.preventDefault();
 			        return false;
 			    }
-			}, { passive: false });
+			});
 
 		});
 
