@@ -3031,6 +3031,14 @@ a.button.checkout.wc-forward {
 .cameo p {
 	float: left;
 }
+.cameo img {
+	width: 150px;
+	height: 150px;
+}
+.cameo {
+	float: left;
+	clear: left;
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
