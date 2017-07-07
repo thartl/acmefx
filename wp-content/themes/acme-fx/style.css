@@ -3027,9 +3027,19 @@ a.button.checkout.wc-forward {
 .woocommerce-MyAccount-navigation ul {
 	margin-left: 0;
 }
-.cameo img,
-.cameo p {
+
+
+
+.cameo {
+	display: block;
 	float: left;
+	//clear:  left;
+	margin: 20px;
+	width: 175px;
+}
+.cameo img {
+	margin: 0 auto;
+	//float: left;
 }
 .cameo img {
 	width: 125px;
@@ -3037,12 +3047,11 @@ a.button.checkout.wc-forward {
 }
 .cameo p {
 	text-align: center;
+	margin-top: 15px;
+
 }
-.cameo {
-	float: left;
-	clear: left;
-	margin-bottom: 20px;
-}
+.about 
+
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
