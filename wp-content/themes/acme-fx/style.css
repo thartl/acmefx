@@ -1822,11 +1822,35 @@ a.button.checkout.wc-forward:focus,
 .woocommerce-MyAccount-navigation ul li.is-active > a {
     color: #fff;
 }
+.woocommerce-MyAccount-navigation {
+	border: 0;
+}
+.woocommerce-MyAccount-navigation li {
+	font-size: 24px;	
+}
+.content-sidebar.woocommerce-account .woocommerce-MyAccount-navigation li {
+	margin-bottom: 15px;
+}
 .woocommerce input.input-text.qty.text::-webkit-inner-spin-button,
 .woocommerce input.input-text.qty.text::-webkit-outer-spin-button {
 	-webkit-appearance: none;
     margin: 0;
 }
+.woocommerce table.shop_table, .woocommerce table.shop_table td {
+    border-color: #4f686a;
+   /*  border-top-color: rgb(238, 238, 238);
+    border-right-color: rgb(238, 238, 238);
+    border-bottom-color: rgb(238, 238, 238);
+    border-left-color: rgb(238, 238, 238); */
+    border-radius: 0;
+    line-height: 1.75;
+    word-break: normal;
+}
+
+
+
+
+
 
 .cart .quantity.buttons_added .plus,
 .cart .quantity.buttons_added .minus {
@@ -2228,7 +2252,9 @@ body .widget.simple-social-icons ul li a {
 	border: 1px solid transparent !important;
 	background-color: transparent !important;
 }
-
+.simple-social-icons ul li {
+	margin-bottom: 0 !important;
+}
 .home .wp-custom-header img {
 	min-height: 200px;
 	display: block;
@@ -2279,10 +2305,10 @@ h1.archive-title a:hover {
 .fx-main h4 {
 	margin-bottom: 50px;
 }
-
 .all-business,
 .all-fx {
 	display: flex;
+	display: -moz-box-flex;
 	flex-wrap: wrap;
 	width: 100%;
 }
@@ -2293,11 +2319,11 @@ h1.archive-title a:hover {
 	padding: 20px;
 	position: relative;
 	background-size: cover;
+	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
-	  -moz-transform: translate3d(0,0,0);
-	  -ms-transform: translate3d(0,0,0);
-	  -o-transform: translate3d(0,0,0);
-	  transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	-o-transform: translate3d(0,0,0);
+	-ms-transform: translate3d(0,0,0);	  
 }
 .business-type {
 	flex-basis: 28%;
@@ -2305,6 +2331,7 @@ h1.archive-title a:hover {
 	-moz-transition: all .6s ease-in-out;
 	-webkit-transition: all .6s ease-in-out;
 	-o-transition: all .6s ease-in-out;
+	-ms-transition: all .6s ease-in-out;
 	margin: 10px;
 }
 .fx-type {
@@ -2314,15 +2341,10 @@ h1.archive-title a:hover {
 	-moz-transition: all .3s ease-in-out;
 	-webkit-transition: all .3s ease-in-out;
 	-o-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
 }
 .business-type.snow-business {
 	flex-basis: 100%;
-	//height: 300px;
-}
-.home .atmo:hover,
-.business-type:hover {
-	//background-image: none;
-	//background-color: #AE4040;
 }
 .business-type img {
 	width: 200px;
@@ -2335,9 +2357,6 @@ h1.archive-title a:hover {
 	max-height: 75px;
 	margin: 0 auto;
 	position: absolute;
-}
-.fx-type.wind img svg {
-	fill: #aaa !important;
 }
 .business-type h2,
 .fx-type h2 {
@@ -2381,7 +2400,6 @@ a.fx-type:hover {
 .fx-type p,
 .snow-business img {
 	margin-top: 90px;
-	//padding-bottom: 30px;
 	opacity: 0;
 	transition: .3s ease-in-out;
 	-moz-transition: .3s ease-in-out;
@@ -2411,43 +2429,19 @@ a.business-type.hover {
 .fx-type:hover p {
 	opacity: 1;
 }
-.business-type.atmo {
-	flex-basis: 100%;
-}
-
-.rentals-main .content .snowflake h3::before,
-.snow-main .content h2::before {
-	content: "\2745";
-	margin-right: 15px;
-	font-size: 30px;
-	color: #fff;
-}
-.snow-main .content h2.ash::before,
-.rentals-main .content h3::before {
-	content: "\2601";
-	margin-right: 15px;
-	color: #777;
-	height: 20px;
-}
-.rentals-main .content h2.fire-icon::before {
-	content: "\01f525";
-}
 .snow-business img {
 	margin: 60px 20px 20px 0px;
 }
-
-.simple-social-icons ul li {
-	margin-bottom: 0 !important;
-}
-
 
 /* ***************************************  Effects Gallery  */
 
 .water {
 	background: url('/wp-content/uploads/2017/05/water.jpg');
+	transition: .3s ease-in-out;
 	-moz-transition: .3s ease-in-out;
 	-webkit-transition: .3s ease-in-out;
 	-o-transition: .3s ease-in-out;
+	-ms-transition: .3s ease-in-out;
 }
 .water:hover {
 	background: url('/wp-content/uploads/2017/05/water-dark.jpg');
@@ -2511,9 +2505,11 @@ a.business-type.hover {
 	background: url('/wp-content/uploads/2017/07/blue-bulb.jpg');
 	background-position: center;
 	background-size: cover;
+	transition: .3s ease-in-out;
 	-moz-transition: .3s ease-in-out;
 	-webkit-transition: .3s ease-in-out;
 	-o-transition: .3s ease-in-out;
+	-ms-transition: .3s ease-in-out;
 }
 .expendables:hover {
 	background: url('/wp-content/uploads/2017/07/blue-bulb-dark.jpg');
@@ -2618,6 +2614,9 @@ div.agm_mh_info_content {
         right: 80px;
         transform: rotateX(360deg);
         -moz-transform: rotateX(360deg);
+        -webkit-transform: rotateX(360deg);
+        -o-transform: rotateX(360deg);
+        -ms-transform: rotateX(360deg);
     }
     10%, 30%, 50%, 70%, 90% {
         right: 100px;
@@ -2660,7 +2659,7 @@ div.agm_mh_info_content {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	line-height: .5rem;
+	line-height: 1rem;
 	display: block;
 	background: #1E373B;
 	transform: translateY(-100%);
@@ -2673,7 +2672,6 @@ div.agm_mh_info_content {
 	-moz-transition: all 150ms ease-out;
 	-o-transition: all 150ms ease-out;
 	-ms-transition: all 150ms ease-out;
-	z-index: 999;
 }
 .headhesive .genesis-nav-menu .sub-menu a {
 	line-height: 1.5em;
@@ -2691,6 +2689,7 @@ div.agm_mh_info_content {
 .headhesive .nav-secondary .wrap {
 	padding: 0;
 	margin: 0;
+	z-index: 999;
 }
 
 .headhesive .nav-secondary > .genesis-nav-menu li a,
@@ -2704,10 +2703,6 @@ div.agm_mh_info_content {
 }
 .headhesive--stick.nav-secondary a {
 	padding: 20px 20px;
-}
-.headhesive .simple-social-icons ul li a,
-.simple-social-icons ul li a:hover {
-	border: 1px solid #111 !important;
 }
 
 .home .headhesive--unstick.nav-secondary {
@@ -2723,6 +2718,7 @@ div.agm_mh_info_content {
 }
 .headhesive--stick.nav-secondary {
 	box-shadow: 2px 1px #0C1B1C;
+	z-index: 999;
 }
 .wrap .genesis-nav-menu a.nav-logo {
 	display: none;
@@ -2734,6 +2730,10 @@ div.agm_mh_info_content {
 	left: 0;
 	bottom: 0;
 }
+.headhesive--stick.nav-secondary .genesis-nav-menu .sub-menu,
+.headhesive--stick.nav-secondary .genesis-nav-menu .sub-menu * {
+	z-index: 1;
+}
 
 /** 
 th-- Archive page descriptions ******************************/
@@ -2742,7 +2742,7 @@ th-- Archive page descriptions ******************************/
 	font-size: 1.6rem;
 	border-top: 1px solid #fff;
 	margin-top: 40px;
-	padding-top: 20px;
+	padding-top: 40px;
 }
 
 #description-continued {
@@ -2985,6 +2985,9 @@ div.grid-list-switch {
 	margin-left: 3px;
     color: #AE4040;
 }
+ul.woocommerce-error {
+	margin-left: 0;
+}
 a.button.checkout.wc-forward {
 	float: right;
 	margin-right: 0;
@@ -3027,15 +3030,23 @@ a.button.checkout.wc-forward {
 .woocommerce-MyAccount-navigation ul {
 	margin-left: 0;
 }
-
-
-
+.all-cameos {
+	display: flex;
+	display: -moz-box-flex;
+	flex-direction: row;
+	-moz-flex-direction: row;
+	flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	justify-content: space-around;
+	-moz-justify-content: space-around;
+}
 .cameo {
-	display: block;
-	float: left;
-	//clear:  left;
 	margin: 20px;
-	width: 175px;
+	color: #fff;
+	font-family: "Source Sans Pro", sans-serif;
+}
+.cameo:hover {
+	color: #5BA5A5;
 }
 .cameo img {
 	margin: 0 auto;
@@ -3051,6 +3062,12 @@ a.button.checkout.wc-forward {
 }
 .about h2 {
 	margin-bottom: 30px;
+}
+.drop-cap {
+	font-size: 50px;
+	line-height: 40px;
+  	padding-right: 3px;
+  	padding-left: 3px;
 }
 
 /* # Media Queries
@@ -3236,6 +3253,8 @@ a.button.checkout.wc-forward {
 	}
 	.business-type {
 		min-height: 300px;
+		max-width: 680px;
+		margin: 10px auto;
 	}
 	.term-description p {
 		float: left;
@@ -3647,6 +3666,13 @@ a.button.checkout.wc-forward {
 	}
 	.about h2 {
 	    margin-bottom: 60px;
+	}
+	.fx-type h2,
+	.fx-type img {
+		position: static;
+	}
+	.fx-type p {
+		margin-top: 30px;
 	}
 }
 /* # Print Styles
