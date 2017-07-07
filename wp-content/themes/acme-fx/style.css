@@ -2742,9 +2742,11 @@ th-- Archive page descriptions ******************************/
 	font-size: 1.6rem;
 	border-top: 1px solid #fff;
 	margin-top: 40px;
-	padding-top: 40px;
+	padding-top: 50px;
 }
-
+.woocommerce ul.products ~ .archive-description p {
+	margin-bottom: 50px;
+}
 #description-continued {
 	display: block;
 	position: relative;
@@ -3064,10 +3066,12 @@ a.button.checkout.wc-forward {
 	margin-bottom: 30px;
 }
 .drop-cap {
-	font-size: 50px;
-	line-height: 40px;
-  	padding-right: 3px;
-  	padding-left: 3px;
+	float: left;
+	font-size: 79px;
+	line-height: 79px;
+  	padding-right: 6px;
+  	padding-left: 2px;
+  	padding-top: 0px;
 }
 
 /* # Media Queries
