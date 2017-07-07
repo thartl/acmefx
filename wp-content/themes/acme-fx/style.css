@@ -1836,19 +1836,24 @@ a.button.checkout.wc-forward:focus,
 	-webkit-appearance: none;
     margin: 0;
 }
+.woocommerce tr {
+	border-bottom: #4f686a;
+}
 .woocommerce table.shop_table, .woocommerce table.shop_table td {
     border-color: #4f686a;
-   /*  border-top-color: rgb(238, 238, 238);
-    border-right-color: rgb(238, 238, 238);
-    border-bottom-color: rgb(238, 238, 238);
-    border-left-color: rgb(238, 238, 238); */
     border-radius: 0;
     line-height: 1.75;
     word-break: normal;
 }
-
-
-
+#add_payment_method .cart-collaterals .cart_totals tr td, #add_payment_method .cart-collaterals .cart_totals tr th, .woocommerce-cart .cart-collaterals .cart_totals tr td, .woocommerce-cart .cart-collaterals .cart_totals tr th, .woocommerce-checkout .cart-collaterals .cart_totals tr td, .woocommerce-checkout .cart-collaterals .cart_totals tr th {
+    border-top: 1px solid #4F686A;
+}
+.wl-search-form + hr {
+	display: none;
+}
+.wl-search-form {
+	margin-bottom: 25px;
+}
 
 
 
@@ -2742,7 +2747,7 @@ th-- Archive page descriptions ******************************/
 	font-size: 1.6rem;
 	border-top: 1px solid #fff;
 	margin-top: 40px;
-	padding-top: 50px;
+	padding-top: 40px;
 }
 .woocommerce ul.products ~ .archive-description p {
 	margin-bottom: 50px;
