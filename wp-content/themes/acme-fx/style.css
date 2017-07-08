@@ -885,8 +885,8 @@ form.search-form input[type="submit"]:hover,
 }
 
 .genesis-nav-menu .search input[type="submit"],
-.widget_search input[type="submit"],
-.search-form input[type="submit"],
+.widget_search .search-form input[type="submit"],
+/* .search-form input[type="submit"], */
 .woocommerce-product-search input[type="submit"] {
     background: none !important;
     border: none;
@@ -898,6 +898,19 @@ form.search-form input[type="submit"]:hover,
     position: absolute;
     right: 7px;
     top: -1px;
+    width: 38px;
+}
+.search-form input[type="submit"] {
+	background: none !important;
+    border: none;
+   	clip: inherit;	
+    color: #4a545a;
+    display: inline-block;
+    font: 28px/1 'dashicons';
+    height: 38px;
+    position: absolute;
+    right: 10px;
+    top: -12px;
     width: 38px;
 }
 
