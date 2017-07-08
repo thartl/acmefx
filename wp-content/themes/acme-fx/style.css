@@ -3092,8 +3092,8 @@ a.button.checkout.wc-forward {
 }
 .drop-cap {
 	float: left;
-	font-size: 79px;
-	line-height: 79px;
+	font-size: 78px;
+	line-height: 78px;
   	padding-right: 6px;
   	padding-left: 2px;
   	padding-top: 0px;
@@ -3102,7 +3102,24 @@ a.button.checkout.wc-forward {
 .woocommerce-page form .form-row label {
     font-family: "Source Sans Pro", sans-serif;
 }
-
+.woocommerce-shipping-fields {
+	background-color: #5BA5A5;
+	padding: 15px;
+	border-radius: 5px;
+}
+.woocommerce-shipping-fields h3 {
+	margin-top: 7px;
+	margin-left: 5px;
+}
+.woocommerce-shipping-fields h3 input {
+	margin-top: -3px;
+}
+.woocommerce-shipping-fields h3 span {
+	margin-left: 3px;
+}
+.woocommerce-shipping-fields .form-row.woocommerce-invalid label {
+    color: #5BA5A5;
+}
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
