@@ -913,7 +913,7 @@ form.search-form input[type="submit"]:hover,
     top: -12px;
     width: 38px;
 }
-.fieldset {
+fieldset {
 	border: 1px solid #4F686A;
 }
 /* ## Titles
