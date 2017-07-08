@@ -3249,6 +3249,10 @@ a.button.checkout.wc-forward {
 	.woocommerce div.product .woocommerce-tabs ul.tabs li a {
 		margin-left: 0px;
 	}
+	form .form-row label,
+	.woocommerce-page form .form-row label {
+	    font-family: "Source Sans Pro", sans-serif;
+	}
 }
 
 
