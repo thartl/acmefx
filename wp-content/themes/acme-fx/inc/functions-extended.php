@@ -215,7 +215,7 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 						var page_number_string = page_number_interim.replace( /\// , '' );  // removes "/" before page number
 						var current_page_number = parseInt( page_number_string, 10 );  // string to int
 
-						var focus_product_number = ( ( current_page_number - 1 ) * current_view_ppp ) + 1;
+						var focus_product_number = ( ( current_page_number - 1 ) * current_view_ppp ) + 1;  // top left product on current page
 
 					} else {
 
