@@ -37,7 +37,7 @@ function th_partner_repeater() {
 	 		$name = esc_html( get_post_meta( get_the_ID(), 'about-team_' . $i . '_name', true ) );
 
 	 			$page_id = (int) get_post_meta( get_the_ID(), 'about-team_' . $i . '_personal-page', true );
-			$page_url = esc_url( wp_get_attachment_url( $page_id ) );
+	 		$page_url = esc_url( get_page_link( $page_id ) );
 
 				$image = (int) get_post_meta( get_the_ID(), 'about-team_' . $i . '_image', true );
 			$image_url = $image ? wp_get_attachment_image( $image, 'thumbnail' ) : '<img src="' . get_stylesheet_directory_uri() . '/images/default-gravatar.png" />';
