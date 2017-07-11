@@ -49,7 +49,7 @@ function th_partner_repeater() {
 		}
 
 		echo '</div>';
-		echo '<br>' . var_dump( $partners_array );
+		// echo '<br>' . var_dump( $partners_array );
 
 	}
 
