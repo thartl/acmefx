@@ -6,13 +6,7 @@
 */
 
 
-/* Template Name: Test */
-/**
- * Genesis custom loop
- */
-
-
-function th_custom_loop() {
+function th_admin_docs_loop() {
 	global $post;
 
 	// 
@@ -70,7 +64,7 @@ function th_custom_loop() {
 	wp_reset_postdata();}
 
 
-add_action( 'genesis_after_entry_content', 'th_custom_loop' );
+add_action( 'genesis_after_entry_content', 'th_admin_docs_loop' );
 //remove_action( 'genesis_loop', 'genesis_do_loop' );
 
 
