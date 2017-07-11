@@ -56,7 +56,7 @@ function th_private_admin_bar( $content ) {
 	/**  User IDs:  Tomas = 3, Amy = 5, Kailey = 7, Kevin = 4;  UNCOMMENT TO ENABLE ADMIN BAR ON FRONT END     Note: there is no user 0.  *****/
 
 	if ( $current_user == 0
-		 ||	$current_user == 3 		// Tomas
+//		 ||	$current_user == 3 		// Tomas
 //		 || $current_user == 5 		// Amy
 //		 || $current_user == 7 		// Kailey
 //		 || $current_user == 4 		// Kevin
