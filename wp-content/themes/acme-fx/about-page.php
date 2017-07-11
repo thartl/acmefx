@@ -17,7 +17,7 @@ function th_partner_repeater() {
 
 	$partners_array = array();
 
-	if( $team_members && $section_title ) {
+	if( $team_members ) {
 
 		for( $i = 0; $i < $team_members; $i++ ) {
 
@@ -49,7 +49,7 @@ function th_partner_repeater() {
 		}
 
 		echo '</div>';
-		// echo '<br>' . var_dump( $partners_array );
+		echo '<br>' . var_dump( $partners_array );
 
 	}
 
