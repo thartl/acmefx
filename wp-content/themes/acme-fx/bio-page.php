@@ -50,27 +50,28 @@ function th_individual_credits_loop() {
 
 			$credit_partner_array = get_post_meta( get_the_ID(), 'partner_credits', true );
 
+			if( in_array( $sync_name, $credit_partner_array ) ) {
+
+				$title = get_the_title();
+
+					$image = (int) get_post_meta( get_the_ID(), 'poster_image', true );
+				$image_url = $image ? wp_get_attachment_image( $image, 'full' ) : '';
+
+					$release_date = (int) get_post_meta( get_the_ID(), 'release_date', true );
+					$year = substr( $release_date , 0, 4 );
+					$front_end_date = esc_html( get_post_meta( get_the_ID(), 'front_end_date', true ) );
+				if( $front_end_date ) :
+					$year = $front_end_date ? $front_end_date : $year;
+				endif;
+
+				$url = esc_url( get_post_meta( get_the_ID(), 'imdb_link', true ) );
+
+				$project_type = esc_html( get_post_meta( get_the_ID(), 'project_type', true ) );
 
 
-			$title = get_the_title();
+				echo '<li><a href="' . $url . '" target="_blank" >' . $image_url . '<p>' . $title . '</p><p>' . $year . '</p><p>' . $project_type . '</p></a></li>';
 
-				$image = (int) get_post_meta( get_the_ID(), 'poster_image', true );
-			$image_url = $image ? wp_get_attachment_image( $image, 'full' ) : '';
-
-				$release_date = (int) get_post_meta( get_the_ID(), 'release_date', true );
-				$year = substr( $release_date , 0, 4 );
-				$front_end_date = esc_html( get_post_meta( get_the_ID(), 'front_end_date', true ) );
-			if( $front_end_date ) :
-				$year = $front_end_date ? $front_end_date : $year;
-			endif;
-
-			$url = esc_url( get_post_meta( get_the_ID(), 'imdb_link', true ) );
-
-			$project_type = esc_html( get_post_meta( get_the_ID(), 'project_type', true ) );
-
-
-			echo '<li><a href="' . $url . '" target="_blank" >' . $image_url . '<p>' . $title . '</p><p>' . $year . '</p><p>' . $project_type . '</p></a></li>';
-
+			}
 
 	// $all_meta = get_post_meta( get_the_ID() );  // for testing only
 	// var_dump( $all_meta );
