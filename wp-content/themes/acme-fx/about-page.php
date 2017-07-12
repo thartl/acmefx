@@ -107,7 +107,7 @@ function th_main_credits_loop() {
 
 	if ( $loop->have_posts() ) : 
 
-		echo '<div class="credits-grid" >';
+		echo '<ul class="credits-list" >';
 
 
 
@@ -138,7 +138,7 @@ function th_main_credits_loop() {
 
 
 
-			echo '<a href="' . $url . '" target="_blank" >' . $image_url . '<p>' . $title . '</p><p>' . $year . '</p><p>' . $project_type . '</p></a>';
+			echo '<li><a href="' . $url . '" target="_blank" >' . $image_url . '<p>' . $title . '</p><p>' . $year . '</p><p>' . $project_type . '</p></a></li>';
 
 
 	$all_meta = get_post_meta( get_the_ID() );  // for testing only
@@ -153,7 +153,7 @@ function th_main_credits_loop() {
 
 
 
-		echo '<div>';
+		echo '</ul>';
 
 		do_action( 'genesis_after_endwhile' );
 
