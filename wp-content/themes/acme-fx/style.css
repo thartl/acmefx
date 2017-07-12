@@ -3074,6 +3074,7 @@ a.button.checkout.wc-forward {
 	margin-left: 0;
 }
 .all-cameos {
+	padding-bottom: 40px;
 	display: flex;
 	display: -moz-box-flex;
 	flex-direction: row;
@@ -3136,6 +3137,24 @@ a.button.checkout.wc-forward {
 .woocommerce-shipping-fields .form-row.woocommerce-invalid label {
     color: #5BA5A5;
 }
+.credits-grid a {
+	float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
