@@ -138,7 +138,7 @@ function th_main_credits_loop() {
 
 
 
-			echo '<a href="' . $url . '" target="_blank" style="display:block" >' . $image_url . $title . $year . $project_type . '</a>';
+			echo '<a href="' . $url . '" target="_blank" >' . $image_url . $title . $year . $project_type . '</a>';
 
 
 	$all_meta = get_post_meta( get_the_ID() );  // for testing only
