@@ -3137,9 +3137,31 @@ a.button.checkout.wc-forward {
 .woocommerce-shipping-fields .form-row.woocommerce-invalid label {
     color: #5BA5A5;
 }
-.credits-grid a {
-	float: left;
+
+
+.credits-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
 }
+.credits-grid img {
+	margin-bottom: 15px;
+}
+.credits-grid a {
+	color: #fff;
+	min-width: 214px;
+	flex-basis: 1;
+	margin: 40px 15px; 
+
+}
+.credits-grid a p {
+	text-align: center;
+	margin-bottom: 15px;
+}
+.credits-grid a p:first-child {
+	font-size: 24px;
+}
+
 
 
 
