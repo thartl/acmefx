@@ -599,7 +599,7 @@ if ( ! function_exists( 'get_current_page_url' ) ) {
 
 
 
-add_action( 'wp_enqueue_scripts', 'th_elements_match_height', 101 );
+add_action( 'wp_enqueue_scripts', 'th_elements_match_height', 99 );
 /**
  * Print an inline script to the footer to keep chosen elements the same height.
  * Adpated from genesis_sample_products_match_height(), from woocommerce-setup.php
@@ -608,13 +608,13 @@ add_action( 'wp_enqueue_scripts', 'th_elements_match_height', 101 );
  */
 function th_elements_match_height() {
 
-	// If Woocommerce is not activated, or a product page isn't showing, exit early.
-	if ( ! is_page( 69, 'about-me', 'About Me And Joe' ) ) {
-		return;
-	}
+	// List pages by ID, post_name (slug), or post_title
+	// if ( ! is_page( 'about-us' ) ) {
+	// 	return;
+	// }
 
 	wp_enqueue_script( 'th-page-match-height', get_stylesheet_directory_uri() . '/js/jquery.matchHeight.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
-	wp_add_inline_script( 'genesis-sample-match-height', "jQuery(document).ready( function() { jQuery( '.match-height-item').matchHeight(); });" );
+	wp_add_inline_script( 'th-page-match-height', "jQuery(document).ready( function() { jQuery( '.match-height-item').matchHeight(); });" );
 
 }
 
