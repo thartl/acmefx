@@ -3151,7 +3151,7 @@ a.button.checkout.wc-forward {
 	color: #fff;
 }
 .credits-list li {	
-	min-width: 214px;
+	width: 214px;
 	flex-basis: 1;
 	margin: 60px 15px 40px; 
 }
