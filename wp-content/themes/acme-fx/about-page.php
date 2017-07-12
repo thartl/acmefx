@@ -111,7 +111,6 @@ function th_main_credits_loop() {
 
 
 
-
 		while ( $loop->have_posts() ) : $loop->the_post(); 
 
 			$title = get_the_title();
@@ -119,10 +118,9 @@ function th_main_credits_loop() {
 				$image = (int) get_post_meta( get_the_ID(), 'poster_image', true );
 			$image_url = $image ? wp_get_attachment_image( $image, 'full' ) : '';
 
-			$release_date = (int) get_post_meta( get_the_ID(), 'release_date', true );
-			$year = substr( $release_date , 0, 4 );
-			$front_end_date = esc_html( get_post_meta( get_the_ID(), 'front_end_date', true ) );
-
+				$release_date = (int) get_post_meta( get_the_ID(), 'release_date', true );
+				$year = substr( $release_date , 0, 4 );
+				$front_end_date = esc_html( get_post_meta( get_the_ID(), 'front_end_date', true ) );
 			if( $front_end_date ) :
 				$year = $front_end_date ? $front_end_date : $year;
 			endif;
@@ -132,13 +130,8 @@ function th_main_credits_loop() {
 			$project_type = esc_html( get_post_meta( get_the_ID(), 'project_type', true ) );
 
 
-//			$credit_partner_array = get_post_meta( get_the_ID(), 'partner_credits', true );
 
-//			$docs = get_post_meta( get_the_ID(), 'doc_info', true );
-
-
-
-			echo '<li class="match-height-item" ><a href="' . $url . '" target="_blank" >' . $image_url . '<p>' . $title . '</p><p>' . $year . '</p><p>' . $project_type . '</p></a></li>';
+			echo '<li><a href="' . $url . '" target="_blank" >' . $image_url . '<p>' . $title . '</p><p>' . $year . '</p><p>' . $project_type . '</p></a></li>';
 
 
 	$all_meta = get_post_meta( get_the_ID() );  // for testing only
