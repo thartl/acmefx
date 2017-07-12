@@ -3238,7 +3238,7 @@ a.button.checkout.wc-forward {
 }
 @media only screen and (max-width: 1300px) {
 	.site-header > .wrap {
-		background-image: url('http://acmefx.dev/wp-content/uploads/2017/07/grey-fire-1300.jpg');
+		background-image: url('/wp-content/uploads/2017/07/grey-fire-1300.jpg');
 		background-position: bottom left;
 	}
 }
@@ -3657,7 +3657,7 @@ a.button.checkout.wc-forward {
 		display: none;
 	}
 	.site-header > .wrap {
-		background-image: url('http://acmefx.staging.wpengine.com/wp-content/uploads/2017/07/grey-fire-800.jpg');
+		background-image: url('/wp-content/uploads/2017/07/grey-fire-800.jpg');
 		background-position: right;
 	}
 }
