@@ -1247,7 +1247,7 @@ img.alignright,
     max-width: inherit;
     position: relative;
 	background: url('/wp-content/uploads/2017/05/grey-fire-simple.jpg') no-repeat;
-	//background-position: top right;
+	background-position: center right;
 
 }
 .home .site-header > .wrap {
@@ -1799,6 +1799,18 @@ a.button.checkout.wc-forward:focus,
 
 .woocommerce input.button[type="submit"][name="apply_coupon"] {
 	vertical-align: center;
+}
+.woocommerce-MyAccount-content mark {
+	background-color: transparent;
+	font-weight: 700;
+	color: #fff;
+	font-size: 1.1em;
+}
+.select2-results__option {
+	background-color: #777;
+}
+.woocommerce a.button:nth-child(n+2) {
+	margin-left: 5px;
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs {
@@ -3180,6 +3192,12 @@ a.button.checkout.wc-forward {
 	}
 
 }
+@media only screen and (max-width: 1300px) {
+	.site-header > .wrap {
+		background-image: url('http://acmefx.dev/wp-content/uploads/2017/07/grey-fire-1300.jpg');
+		background-position: bottom left;
+	}
+}
 
 
 @media only screen and (max-width: 1200px) {
@@ -3594,6 +3612,10 @@ a.button.checkout.wc-forward {
 	.headhesive--stick.nav-secondary .wrap .genesis-nav-menu a.nav-logo {
 		display: none;
 	}
+	.site-header > .wrap {
+		background-image: url('http://acmefx.staging.wpengine.com/wp-content/uploads/2017/07/grey-fire-800.jpg');
+		background-position: right;
+	}
 }
 
 @media only screen and (max-width: 700px) {
@@ -3680,6 +3702,9 @@ a.button.checkout.wc-forward {
 		left: 0;
 		opacity: 1;
 	}
+	.site-header > .wrap {
+		//background-image: none;
+	}
 	
 }
 
@@ -3727,6 +3752,12 @@ a.button.checkout.wc-forward {
 	}
 	.fx-type p {
 		margin-top: 30px;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.site-header > .wrap {
+		background-position: center;
 	}
 }
 /* # Print Styles
