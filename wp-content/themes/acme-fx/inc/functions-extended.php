@@ -215,7 +215,7 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 						var page_number_string = page_number_interim.replace( /\// , '' );  // removes "/" before page number
 						var current_page_number = parseInt( page_number_string, 10 );  // string to int
 
-						var focus_product_number = ( ( current_page_number - 1 ) * current_view_ppp ) + 1;
+						var focus_product_number = ( ( current_page_number - 1 ) * current_view_ppp ) + 1;  // top left product on current page
 
 					} else {
 
@@ -596,6 +596,28 @@ if ( ! function_exists( 'get_current_page_url' ) ) {
 	}
 
 /** th-- END: Get current URL **/
+
+
+
+add_action( 'wp_enqueue_scripts', 'th_elements_match_height', 101 );
+/**
+ * Print an inline script to the footer to keep chosen elements the same height.
+ * Adpated from genesis_sample_products_match_height(), from woocommerce-setup.php
+ *
+ * @since 2.3.0
+ */
+function th_elements_match_height() {
+
+	// If Woocommerce is not activated, or a product page isn't showing, exit early.
+	if ( ! is_page( 69, 'about-me', 'About Me And Joe' ) ) {
+		return;
+	}
+
+	wp_enqueue_script( 'th-page-match-height', get_stylesheet_directory_uri() . '/js/jquery.matchHeight.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+	wp_add_inline_script( 'genesis-sample-match-height', "jQuery(document).ready( function() { jQuery( '.match-height-item').matchHeight(); });" );
+
+}
+
 
 
 

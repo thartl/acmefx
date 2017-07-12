@@ -11,7 +11,7 @@ add_action( 'genesis_after_entry_content', 'th_doc_repeater' );
 function th_doc_repeater() {
 
 	$docs = get_post_meta( get_the_ID(), 'doc_info', true );
-	$all_meta = get_post_meta( get_the_ID() );
+	$all_meta = get_post_meta( get_the_ID() );  // for testing only
 
 	if( $docs ) {
 
