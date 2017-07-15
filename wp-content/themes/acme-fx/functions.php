@@ -197,7 +197,7 @@ add_theme_support( 'custom-header', array(
 	'header-text'     => true,
 	'flex-width'     => true,
 	'flex-height'     => true,
-	'video' => true,
+	'video' => false,
 ) );
 
 //  Video header settings
