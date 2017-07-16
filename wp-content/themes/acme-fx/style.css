@@ -1247,6 +1247,7 @@ img.alignright,
     max-width: inherit;
     position: relative;
 	background: url('/wp-content/uploads/2017/05/grey-fire-simple.jpg') no-repeat;
+	background-image: url('/wp-content/uploads/2017/07/grey-fire-vdark2.jpg');
 	background-position: center right;
 
 }
@@ -3240,6 +3241,7 @@ a.button.checkout.wc-forward {
 @media only screen and (max-width: 1300px) {
 	.site-header > .wrap {
 		background-image: url('/wp-content/uploads/2017/07/grey-fire-1300.jpg');
+		background-image: url('/wp-content/uploads/2017/07/grey-fire-vdark2.jpg');
 		background-position: bottom left;
 	}
 }
@@ -3659,6 +3661,7 @@ a.button.checkout.wc-forward {
 	}
 	.site-header > .wrap {
 		background-image: url('/wp-content/uploads/2017/07/grey-fire-800.jpg');
+		background-image: url('/wp-content/uploads/2017/07/grey-fire-vdark2.jpg');
 		background-position: right;
 	}
 }
