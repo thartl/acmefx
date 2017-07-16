@@ -190,8 +190,8 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 					var store_view = Cookies.get( 'store_view' );  // which cookie is set?
 
 					var grid_ppp = <?php echo $grid_view_products_per_page; ?>;  // how many products per page for each view?
-					var list_ppp = <?php echo $list_view_products_per_page; ?>;
 					var desc_ppp = <?php echo $desc_view_products_per_page; ?>;
+					var list_ppp = <?php echo $list_view_products_per_page; ?>;
 
 					var current_view_ppp = grid_ppp;  // default "products per page" is grid
 					if( store_view == 'list' ) {  // if grid not set "products per page" to one of the other views

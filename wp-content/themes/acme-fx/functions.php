@@ -44,6 +44,9 @@ include_once( get_stylesheet_directory() . '/lib/woocommerce/woocommerce-notice.
 // Add the extended functions file  (th-- )
 include_once( get_stylesheet_directory() . '/inc/functions-extended.php' );
 
+// Add the 2nd extended functions file  (th-- )
+include_once( get_stylesheet_directory() . '/inc/functions-extended-2.php' );
+
 
 // Remove admin bar from front end, except for select users
 add_filter('show_admin_bar', 'th_private_admin_bar');  /** '__return_false' **/
