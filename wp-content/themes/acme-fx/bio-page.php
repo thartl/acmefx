@@ -81,13 +81,10 @@ function th_individual_credits_loop() {
 
 		endwhile;
 
-
-
-
+		do_action( 'genesis_after_endwhile' );
 
 		echo '<div>';
 
-		do_action( 'genesis_after_endwhile' );
 
 	endif;
 
