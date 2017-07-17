@@ -190,7 +190,7 @@ function th_main_credits_loop() {
 			echo '<li><a href="' . $url . '" target="_blank" >' . $image_url . '<p>' . $title . '</p><p>' . $year . '</p><p>' . $project_type . '</p></a></li>';
 
 
-	$all_meta = get_post_meta( get_the_ID() );  // for testing only
+	// $all_meta = get_post_meta( get_the_ID() );  // for testing only
 	// var_dump( $all_meta );
 	// var_dump( $post );
 	// var_dump( $credit_partner_array );
@@ -198,21 +198,20 @@ function th_main_credits_loop() {
 
 		endwhile;
 
-
-
-
-
 		echo '</ul>';
+
+$current_user_object = wp_get_current_user();
+$current_username = $current_user_object->user_login;
+
+echo 'Username: ' . $current_username . '<br>';
+var_dump( $current_user_object );
+
 
 		do_action( 'genesis_after_endwhile' );
 
 	endif;
 
-
-	// We only need to reset the $post variable. If we overwrote $wp_query,
-	// we'd need to use wp_reset_query() which does both.
 	wp_reset_postdata();}
-
 
 
 genesis();

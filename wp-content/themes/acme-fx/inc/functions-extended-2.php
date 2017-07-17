@@ -13,5 +13,80 @@
  */
 
 
+/*
+ *  To create more widgets:
+ *  1. Comment out "Hide ACF Menu" and "ACF Widgets -- Enable LITE MODE" to bring back admin menus; OR conditionally turn on for some users...
+ *  2. Add widget areas (displayed in admin): genesis_register_widget_area()
+ *  3. Hook widget output on page: th_add_fx_gallery_widgets()
+ *  ====  IN ADMIN  ====
+ *  4. Appearance >> Add New Widgets; Add Widget
+ *  5. Back to "Add New Widgets" page; copy theme template file name
+ *  6. Create template in child theme folder (use file name from previous step)
+ *  7. Modify template to display custom fields etc.
+**/
+
+
+
+/**
+ *   Hide ACF menu, except for user: tomas-acme-dev-admin  (hides when false)
+ */
+add_filter( 'acf/settings/show_admin', 'th_acf_hide_for_most' );
+
+function th_acf_hide_for_most( $content ) {
+
+$current_user = wp_get_current_user();
+$current_username = $current_user->user_login;
+
+	if ( $current_username == 'tomas-acme-dev-admin' ) {
+		return $content;
+	} else {
+		return false;
+	}
+}
+
+
+/**
+ *   ACF Widgets -- Enable LITE MODE, except for user: tomas-acme-dev-admin  (hides when true)
+ */
+add_filter( 'acfw_lite', 'th_acf_widgets_hide_for_most' ); // hides all admin screens but the plugin stays active if installed. Similar to ACF hide.
+
+function th_acf_widgets_hide_for_most( $content ) {
+
+$current_user = wp_get_current_user();
+$current_username = $current_user->user_login;
+
+	if ( $current_username == 'tomas-acme-dev-admin' ) {
+		return $content;
+	} else {
+		return true;
+	}
+}
+
+
+
+//  Add widget areas: FX Gallery Widget, 
+genesis_register_widget_area( array(
+	'id'		=> 'fx-gallery-widget',
+	'name'		=> __( 'FX Gallery Widget', 'genesis-child' ),
+	'description'	=> __( 'This widget area appears on the FX Gallery page, below regular content.', 'genesis-child' ),
+) );
+
+
+//  Display FX Gallery wigets on the FX Gallery page
+add_action( 'genesis_after_entry_content', 'th_add_fx_gallery_widgets' );
+function th_add_fx_gallery_widgets() {
+	if ( is_page( 'special-effects') )
+	genesis_widget_area( 'fx-gallery-widget', array(
+        'before' => '<div class="all-fx">',
+        'after' => '</div>',
+	) );
+}
+
+
+
+
+
+
+
 
 

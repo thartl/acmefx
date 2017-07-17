@@ -533,7 +533,7 @@ function th_searchwp_custom_field_keys_like( $keys ) {
   $keys[] = 'acf_field_name_%'; // will match any Custom Field starting with acf_field_name_
   return $keys;
 }
-add_filter( 'searchwp_custom_field_keys', 'th_searchwp_custom_field_keys_like' );
+// add_filter( 'searchwp_custom_field_keys', 'th_searchwp_custom_field_keys_like' );
 
 
 

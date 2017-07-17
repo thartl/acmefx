@@ -2461,9 +2461,7 @@ a.fx-type.hover {
 .business-type.hover h2 {
 	background-color: #AE4040;
 }
-
-
-/*end test*/
+/** END Use class .hover added by th_hover_on_touch() ***/
 
 .business-type:hover p,
 .snow-business:hover img,
@@ -2473,6 +2471,17 @@ a.fx-type.hover {
 .snow-business img {
 	margin: 60px 20px 20px 0px;
 }
+/* ***************************************  NEW Effects Gallery --test-- Widgetized ****/
+
+.widget-wrap div.fx-widget {
+	width: 300px;
+	height: 200px;
+}
+.widget-wrap .fx-type img.fx-widget-bg {
+	width: 100%;
+	max-height: 100%;
+}
+
 
 /* ***************************************  Effects Gallery  */
 
