@@ -213,7 +213,7 @@ add_theme_support( 'custom-header', array(
 	'header-text'     => true,
 	'flex-width'     => true,
 	'flex-height'     => true,
-	'video' => false,
+	'video' => true,
 ) );
 
 //  Video header settings
@@ -363,7 +363,7 @@ remove_action( 'genesis_footer', 'genesis_do_footer' );
 add_action( 'genesis_footer', 'th_custom_footer' );
 function th_custom_footer() {
 	?>
-	<p>Copyright &copy; <?php echo date('Y'); ?> &middot; <a href="http://acmefx.wpengine.com/">Acme FX</a> &middot; <?php echo do_shortcode( '[footer_loginout]' ); ?></p>
+	<p>Copyright &copy; <?php echo date('Y'); ?> &middot; <a href="http://acmefx.wpengine.com/">Acme FX</a></p>
 	<?php
 }
 
