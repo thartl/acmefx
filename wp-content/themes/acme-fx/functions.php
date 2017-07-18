@@ -73,7 +73,7 @@ function th_private_admin_bar( $content ) {
 	}
 }
 
-// Remove WP Migrate DB Pro, except for Tomas, Amy
+// Remove WP Migrate DB Pro, CPT UI, except for Tomas, Amy
 add_action( 'admin_menu', 'th_remove_migrate_db_menu', 999 );
 function th_remove_migrate_db_menu() {
 
@@ -82,6 +82,8 @@ $current_username = $current_user->user_login;
 
 	if ( $current_username !== 'tomas-acme-dev-admin' && $current_username !== 'Amy' ) {
 		remove_submenu_page( 'tools.php', 'wp-migrate-db-pro' );
+		remove_menu_page( 'cptui_main_menu' );
+
 	}
 
 }

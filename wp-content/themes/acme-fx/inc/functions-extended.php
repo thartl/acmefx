@@ -620,4 +620,141 @@ function th_elements_match_height() {
 
 
 
+/**************  ADMIN COLUMNS  *************************************************/
+
+// Add admin columns for Credits
+add_filter( 'manage_edit-credits_columns', 'th_credits_columns' ) ;
+
+function th_credits_columns( $columns ) {
+
+	$columns = array(
+		'cb' => '<input type="checkbox" />',
+		'title' => __( 'Project' ),
+		'release_date' => __( 'Release date' ),
+		'front_end_date' => __( 'Displayed date' ),
+		'project_type' => __( 'Type' ),
+		'checked' => __( 'Checked' ),
+		'date' => __( 'Date' ),
+	);
+
+	return $columns;
+}
+
+
+//  Populate admin columns for Credits
+add_action( 'manage_credits_posts_custom_column', 'th_manage_credits_columns', 10, 2 );
+
+function th_manage_credits_columns( $column, $post_id ) {
+	global $post;
+
+	switch( $column ) {
+
+		/* If displaying the 'release_date' column. */
+		case 'release_date' :
+
+			$release_date = (int) get_post_meta( $post_id, 'release_date', true );
+			$add_dash = substr_replace( $release_date, '-', 4, 0 );
+			$nice_date = substr_replace( $add_dash, '-', 7, 0 );
+
+			if ( empty( $release_date ) )
+				echo ( '--' );
+			else
+				echo ( $nice_date );
+
+			break;
+
+
+		/* If displaying the 'front_end_date' column. */
+		case 'front_end_date' :
+
+			$release_date = (int) get_post_meta( $post_id, 'release_date', true );
+			$year = substr( $release_date , 0, 4 );
+			$front_end_date = esc_html( get_post_meta( $post_id, 'front_end_date', true ) );
+			$show_date = $front_end_date ? $front_end_date : $year;
+
+			if ( empty( $show_date ) )
+				echo ( '' );
+			else
+				echo ( $show_date );
+
+			break;
+
+
+		/* If displaying the 'project_type' column. */
+		case 'project_type' :
+
+			$project_type = esc_html( get_post_meta( $post_id, 'project_type', true ) );
+
+			if ( empty( $project_type ) )
+				echo ( 'empty !!' );
+			else
+				echo ( $project_type );
+
+			break;
+
+
+		/* If displaying the 'checked' column. */
+		case 'checked' :
+
+			$all_checked = get_post_meta( $post_id, 'partner_credits', false );
+
+			if( is_array( $all_checked[ 0 ] ) ) {
+				$all_list = join( ', ', $all_checked[ 0 ] );
+				echo $all_list;
+			} else {
+				echo '<strong>UNASSIGNED</strong>';
+			}
+
+			break;
+
+
+		/* Just break out of the switch statement for everything else. */
+		default :
+			break;
+
+
+	}
+}
+
+// Make Release date column sortable
+add_filter( 'manage_edit-credits_sortable_columns', 'th_credits_sortable_release_date' );
+
+function th_credits_sortable_release_date( $columns ) {
+
+	$columns['release_date'] = 'release_date';
+
+	return $columns;
+}
+/* Only run our customization on the 'edit.php' page in the admin. */
+add_action( 'load-edit.php', 'th_edit_credits_load' );
+
+function th_edit_credits_load() {
+	add_filter( 'request', 'th_sort_credits' );
+}
+
+/* Sorts the credits. */
+function th_sort_credits( $vars ) {
+
+	/* Check if we're viewing the 'credits' post type. */
+	if ( isset( $vars['post_type'] ) && 'credits' == $vars['post_type'] ) {
+
+		/* Check if 'orderby' is set to 'release_date'. */
+		if ( isset( $vars['orderby'] ) && 'release_date' == $vars['orderby'] ) {
+
+			/* Merge the query vars with our custom variables. */
+			$vars = array_merge(
+				$vars,
+				array(
+					'meta_key' => 'release_date',
+					'orderby' => 'meta_value_num'
+				)
+			);
+		}
+	}
+
+	return $vars;
+}
+
+/**************  END: ADMIN COLUMNS  *************************************************/
+
 

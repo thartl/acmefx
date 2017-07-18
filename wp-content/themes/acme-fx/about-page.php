@@ -133,9 +133,8 @@ function th_staff_repeater() {
 
 
 
-/** Display the Credits
- *
- *			SO FAR UNEDITED, AFTER COPY FROM ADMIN-DOCS.PHP
+/************  Display the Credits  ***********************/
+/**
  *
  **/
 
@@ -177,9 +176,7 @@ function th_main_credits_loop() {
 				$release_date = (int) get_post_meta( get_the_ID(), 'release_date', true );
 				$year = substr( $release_date , 0, 4 );
 				$front_end_date = esc_html( get_post_meta( get_the_ID(), 'front_end_date', true ) );
-			if( $front_end_date ) :
-				$year = $front_end_date ? $front_end_date : $year;
-			endif;
+				$show_date = $front_end_date ? $front_end_date : $year;
 
 			$url = esc_url( get_post_meta( get_the_ID(), 'imdb_link', true ) );
 
@@ -187,7 +184,7 @@ function th_main_credits_loop() {
 
 
 
-			echo '<li><a href="' . $url . '" target="_blank" >' . $image_url . '<p>' . $title . '</p><p>' . $year . '</p><p>' . $project_type . '</p></a></li>';
+			echo '<li><a href="' . $url . '" target="_blank" >' . $image_url . '<p>' . $title . '</p><p>' . $show_date . '</p><p>' . $project_type . '</p></a></li>';
 
 
 	// $all_meta = get_post_meta( get_the_ID() );  // for testing only
@@ -200,11 +197,11 @@ function th_main_credits_loop() {
 
 		echo '</ul>';
 
-$current_user_object = wp_get_current_user();
-$current_username = $current_user_object->user_login;
+// $current_user_object = wp_get_current_user();
+// $current_username = $current_user_object->user_login;
 
-echo 'Username: ' . $current_username . '<br>';
-var_dump( $current_user_object );
+// echo 'Username: ' . $current_username . '<br>';
+// var_dump( $current_user_object );
 
 
 		do_action( 'genesis_after_endwhile' );
