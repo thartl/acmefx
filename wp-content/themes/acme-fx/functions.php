@@ -449,7 +449,7 @@ add_filter( 'the_content_more_link', 'be_more_link' );
 // ******************************  WOOCOMMERCE  **************************************** //
 // ************************************************************************************* //
 
-//  th-- enamble woocommerce product gallery zoom, lightbox, slider
+//  Enable woocommerce product gallery zoom, lightbox, slider
 add_action( 'after_setup_theme', 'acme_woo_gallery_setup' );
  
 function acme_woo_gallery_setup() {
@@ -617,21 +617,22 @@ function th_change_product_price_display( $price ) {
 }
 
 
-// Change the add to cart button INTO "Read more" button on product archive pages, if regular_price == ''
+// Change the add to cart button INTO "Read more" button on product archive pages, if pa_departments == 'Rentals'
 // =================================================================================================================
+    // Woocommerce handles empty Regular price the same way, a zero price not, though.  This is insurance.
+	// Priority 100 hooks this after Catalog Visibioity Options (99), which also, uses "Read more" replacement.  Reverse order doubles buttons...
+add_filter( 'woocommerce_loop_add_to_cart_link', 'pw_product_link_to_view', 100, 2 );
+function pw_product_link_to_view( $markup, $product ) {
 
-add_filter( 'woocommerce_loop_add_to_cart_link', 'pw_product_link_to_view' );
-function pw_product_link_to_view( $link ) {
-	global $product;
 	$departments = $product->get_attribute( 'pa_departments' );
-	$is_rental = strpos($departments, 'Rentals' ) !== false ? true : false;
+	$is_rental = strpos( $departments, 'Rentals' ) !== false ? true : false;
 
 		if ( $product && $is_rental ) {
 		    echo '<form action="' . esc_url( $product->get_permalink( $product->id ) ) . '" method="get">
 		            <button type="submit" class="button add_to_cart_button ">' . 'Read more' . '</button>
 		          </form>';
 		} else {
-			return $link;
+			return $markup;
 		}
 }
 
@@ -654,7 +655,7 @@ function b3m_search_button_dashicon( $text ) {
 }
 
 
-// Woocommerce search search icon + 
+// Woocommerce search - search icon + 
 add_filter( 'get_product_search_form' , 'woo_custom_product_searchform' );
 
 /**
