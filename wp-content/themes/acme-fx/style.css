@@ -3182,9 +3182,20 @@ a.button.checkout.wc-forward {
 
 
 
-
-
-
+/** Site Admin Docs */
+.parent-pageid-580 li {
+	margin: 10px 0 20px;
+}
+.parent-pageid-580 .footnotes-title {
+	margin-bottom: 42px;
+}
+.parent-pageid-580 .footnote-heading {
+	font-size: 22px;
+	margin: 38px 0 28px;
+}
+.parent-pageid-580 .fn-index {
+	font-weight: 400;
+}
 
 
 
