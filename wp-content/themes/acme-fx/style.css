@@ -3184,13 +3184,16 @@ a.button.checkout.wc-forward {
 
 /** Site Admin Docs */
 .parent-pageid-580 .footnote-section {
-	margin-bottom: 14px;
+	margin-bottom: 24px;
+	padding: 32px;
+//	border-bottom: 1px solid #fff;
 }
-.parent-pageid-580 li {
+.parent-pageid-580 .admin-doc-list li {
 	margin: 10px 0 20px;
 }
 .parent-pageid-580 .footnotes-title {
-	margin-bottom: 42px;
+	margin-top: 42px;
+	margin-bottom: 11px;
 }
 .parent-pageid-580 .footnote-heading {
 	font-size: 22px;
