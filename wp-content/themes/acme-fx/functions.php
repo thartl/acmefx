@@ -44,6 +44,9 @@ include_once( get_stylesheet_directory() . '/lib/woocommerce/woocommerce-notice.
 // Add the extended functions file  (th-- )
 include_once( get_stylesheet_directory() . '/inc/functions-extended.php' );
 
+// Add the 2nd extended functions file  (th-- )
+include_once( get_stylesheet_directory() . '/inc/functions-extended-2.php' );
+
 
 // Remove admin bar from front end, except for select users
 add_filter('show_admin_bar', 'th_private_admin_bar');  /** '__return_false' **/
@@ -68,6 +71,21 @@ function th_private_admin_bar( $content ) {
 
 		return false;
 	}
+}
+
+// Remove WP Migrate DB Pro, CPT UI, except for Tomas, Amy
+add_action( 'admin_menu', 'th_remove_migrate_db_menu', 999 );
+function th_remove_migrate_db_menu() {
+
+$current_user = wp_get_current_user();
+$current_username = $current_user->user_login;
+
+	if ( $current_username !== 'tomas-acme-dev-admin' && $current_username !== 'Amy' ) {
+		remove_submenu_page( 'tools.php', 'wp-migrate-db-pro' );
+		remove_menu_page( 'cptui_main_menu' );
+
+	}
+
 }
 
 
@@ -197,7 +215,7 @@ add_theme_support( 'custom-header', array(
 	'header-text'     => true,
 	'flex-width'     => true,
 	'flex-height'     => true,
-	'video' => false,
+	'video' => true,
 ) );
 
 //  Video header settings
@@ -347,7 +365,7 @@ remove_action( 'genesis_footer', 'genesis_do_footer' );
 add_action( 'genesis_footer', 'th_custom_footer' );
 function th_custom_footer() {
 	?>
-	<p>Copyright &copy; <?php echo date('Y'); ?> &middot; <a href="http://acmefx.wpengine.com/">Acme FX</a> &middot; <?php echo do_shortcode( '[footer_loginout]' ); ?></p>
+	<p>Copyright &copy; <?php echo date('Y'); ?> &middot; <a href="http://acmefx.wpengine.com/">Acme FX</a></p>
 	<?php
 }
 
@@ -431,7 +449,7 @@ add_filter( 'the_content_more_link', 'be_more_link' );
 // ******************************  WOOCOMMERCE  **************************************** //
 // ************************************************************************************* //
 
-//  th-- enamble woocommerce product gallery zoom, lightbox, slider
+//  Enable woocommerce product gallery zoom, lightbox, slider
 add_action( 'after_setup_theme', 'acme_woo_gallery_setup' );
  
 function acme_woo_gallery_setup() {
@@ -599,21 +617,22 @@ function th_change_product_price_display( $price ) {
 }
 
 
-// Change the add to cart button INTO "Read more" button on product archive pages, if regular_price == ''
+// Change the add to cart button INTO "Read more" button on product archive pages, if pa_departments == 'Rentals'
 // =================================================================================================================
+    // Woocommerce handles empty Regular price the same way, a zero price not, though.  This is insurance.
+	// Priority 100 hooks this after Catalog Visibioity Options (99), which also, uses "Read more" replacement.  Reverse order doubles buttons...
+add_filter( 'woocommerce_loop_add_to_cart_link', 'pw_product_link_to_view', 100, 2 );
+function pw_product_link_to_view( $markup, $product ) {
 
-add_filter( 'woocommerce_loop_add_to_cart_link', 'pw_product_link_to_view' );
-function pw_product_link_to_view( $link ) {
-	global $product;
 	$departments = $product->get_attribute( 'pa_departments' );
-	$is_rental = strpos($departments, 'Rentals' ) !== false ? true : false;
+	$is_rental = strpos( $departments, 'Rentals' ) !== false ? true : false;
 
 		if ( $product && $is_rental ) {
 		    echo '<form action="' . esc_url( $product->get_permalink( $product->id ) ) . '" method="get">
 		            <button type="submit" class="button add_to_cart_button ">' . 'Read more' . '</button>
 		          </form>';
 		} else {
-			return $link;
+			return $markup;
 		}
 }
 
@@ -636,7 +655,7 @@ function b3m_search_button_dashicon( $text ) {
 }
 
 
-// Woocommerce search search icon + 
+// Woocommerce search - search icon + 
 add_filter( 'get_product_search_form' , 'woo_custom_product_searchform' );
 
 /**

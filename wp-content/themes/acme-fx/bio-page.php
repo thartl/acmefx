@@ -50,26 +50,28 @@ function th_individual_credits_loop() {
 
 			$credit_partner_array = get_post_meta( get_the_ID(), 'partner_credits', true );
 
-			if( in_array( $sync_name, $credit_partner_array ) ) {
+			if ( is_array( $credit_partner_array ) ) {  // are partners assigned to this credit?
 
-				$title = get_the_title();
+				if( in_array( $sync_name, $credit_partner_array ) ) {  // is this ($sync_name) partner among those assigned?
 
-					$image = (int) get_post_meta( get_the_ID(), 'poster_image', true );
-				$image_url = $image ? wp_get_attachment_image( $image, 'full' ) : '';
+					$title = get_the_title();
 
-					$release_date = (int) get_post_meta( get_the_ID(), 'release_date', true );
-					$year = substr( $release_date , 0, 4 );
-					$front_end_date = esc_html( get_post_meta( get_the_ID(), 'front_end_date', true ) );
-				if( $front_end_date ) :
-					$year = $front_end_date ? $front_end_date : $year;
-				endif;
+						$image = (int) get_post_meta( get_the_ID(), 'poster_image', true );
+					$image_url = $image ? wp_get_attachment_image( $image, 'full' ) : '';
 
-				$url = esc_url( get_post_meta( get_the_ID(), 'imdb_link', true ) );
+						$release_date = (int) get_post_meta( get_the_ID(), 'release_date', true );
+						$year = substr( $release_date , 0, 4 );
+						$front_end_date = esc_html( get_post_meta( get_the_ID(), 'front_end_date', true ) );
+						$show_date = $front_end_date ? $front_end_date : $year;
 
-				$project_type = esc_html( get_post_meta( get_the_ID(), 'project_type', true ) );
+					$url = esc_url( get_post_meta( get_the_ID(), 'imdb_link', true ) );
+
+					$project_type = esc_html( get_post_meta( get_the_ID(), 'project_type', true ) );
 
 
-				echo '<li><a href="' . $url . '" target="_blank" >' . $image_url . '<p>' . $title . '</p><p>' . $year . '</p><p>' . $project_type . '</p></a></li>';
+					echo '<li><a href="' . $url . '" target="_blank" >' . $image_url . '<p>' . $title . '</p><p>' . $show_date . '</p><p>' . $project_type . '</p></a></li>';
+
+				}
 
 			}
 
@@ -81,13 +83,10 @@ function th_individual_credits_loop() {
 
 		endwhile;
 
-
-
-
+		do_action( 'genesis_after_endwhile' );
 
 		echo '<div>';
 
-		do_action( 'genesis_after_endwhile' );
 
 	endif;
 

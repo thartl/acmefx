@@ -8,6 +8,8 @@
 
 add_action( 'genesis_after_entry_content', 'th_partner_repeater', 10 );
 
+add_action( 'genesis_after_entry_content', 'th_staff_repeater', 12 );
+
 add_action( 'genesis_after_entry_content', 'th_main_credits_loop', 15 );
 
 
@@ -63,6 +65,60 @@ function th_partner_repeater() {
 
 	}
 
+}
+
+
+/** Display the Team section Repeater field entries -- The Partners
+ *
+ *
+ *
+ **/
+
+function th_staff_repeater() {
+
+	$staff_section_title = esc_html( get_post_meta( get_the_ID(), 'staff_section_title', true ) );
+
+	$staff_members = get_post_meta( get_the_ID(), 'about-staff', true );
+	$all_meta = get_post_meta( get_the_ID() );  // for testing only
+
+	$staff_array = array();
+
+	if( $staff_members ) {
+
+		for( $i = 0; $i < $staff_members; $i++ ) {
+
+			$staff_array[] = $i;
+
+		}
+
+		shuffle( $staff_array );
+
+
+		echo '<hr>
+				<h2>' . $staff_section_title . '</h2>
+				<div class="all-cameos">';
+
+		foreach( $staff_array as $i ) {
+
+	 		$name = esc_html( get_post_meta( get_the_ID(), 'about-staff_' . $i . '_name', true ) );
+
+	 			$page_id = (int) get_post_meta( get_the_ID(), 'about-staff_' . $i . '_personal-page', true );
+	 		$page_url = esc_url( get_page_link( $page_id ) );
+
+				$image = (int) get_post_meta( get_the_ID(), 'about-staff_' . $i . '_image', true );
+			$image_url = $image ? wp_get_attachment_image( $image, 'thumbnail' ) : '<img src="' . get_stylesheet_directory_uri() . '/images/default-gravatar.png" />';
+
+			echo '<a class="cameo" href="' . $page_url . ' ">' . 
+					$image_url . 
+					'<p>' . $name . '</p></a>';
+
+		}
+
+		echo '</div>';
+		// echo '<br>' . var_dump( $partners_array );
+
+	}
+
 
 	$credits_section_title = esc_html( get_post_meta( get_the_ID(), 'credits_section_title', true ) );
 
@@ -77,9 +133,8 @@ function th_partner_repeater() {
 
 
 
-/** Display the Credits
- *
- *			SO FAR UNEDITED, AFTER COPY FROM ADMIN-DOCS.PHP
+/************  Display the Credits  ***********************/
+/**
  *
  **/
 
@@ -121,9 +176,7 @@ function th_main_credits_loop() {
 				$release_date = (int) get_post_meta( get_the_ID(), 'release_date', true );
 				$year = substr( $release_date , 0, 4 );
 				$front_end_date = esc_html( get_post_meta( get_the_ID(), 'front_end_date', true ) );
-			if( $front_end_date ) :
-				$year = $front_end_date ? $front_end_date : $year;
-			endif;
+				$show_date = $front_end_date ? $front_end_date : $year;
 
 			$url = esc_url( get_post_meta( get_the_ID(), 'imdb_link', true ) );
 
@@ -131,10 +184,10 @@ function th_main_credits_loop() {
 
 
 
-			echo '<li><a href="' . $url . '" target="_blank" >' . $image_url . '<p>' . $title . '</p><p>' . $year . '</p><p>' . $project_type . '</p></a></li>';
+			echo '<li><a href="' . $url . '" target="_blank" >' . $image_url . '<p>' . $title . '</p><p>' . $show_date . '</p><p>' . $project_type . '</p></a></li>';
 
 
-	$all_meta = get_post_meta( get_the_ID() );  // for testing only
+	// $all_meta = get_post_meta( get_the_ID() );  // for testing only
 	// var_dump( $all_meta );
 	// var_dump( $post );
 	// var_dump( $credit_partner_array );
@@ -142,21 +195,20 @@ function th_main_credits_loop() {
 
 		endwhile;
 
-
-
-
-
 		echo '</ul>';
+
+// $current_user_object = wp_get_current_user();
+// $current_username = $current_user_object->user_login;
+
+// echo 'Username: ' . $current_username . '<br>';
+// var_dump( $current_user_object );
+
 
 		do_action( 'genesis_after_endwhile' );
 
 	endif;
 
-
-	// We only need to reset the $post variable. If we overwrote $wp_query,
-	// we'd need to use wp_reset_query() which does both.
 	wp_reset_postdata();}
-
 
 
 genesis();

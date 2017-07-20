@@ -2448,19 +2448,20 @@ a.fx-type:hover {
 	margin-top: 70px;
 }
 
-/*testing*/
+/** th-- Use class .hover added by th_hover_on_touch() -- functions-extended.php  */
 .business-type.hover p,
+.fx-type.hover p,
 .snow-business.hover img {
 	opacity: 1;
 }
-a.business-type.hover {
+a.business-type.hover,
+a.fx-type.hover {
 	color: #fff;
 }
 .business-type.hover h2 {
 	background-color: #AE4040;
 }
-
-/*end test*/
+/** END Use class .hover added by th_hover_on_touch() ***/
 
 .business-type:hover p,
 .snow-business:hover img,
@@ -2470,6 +2471,78 @@ a.business-type.hover {
 .snow-business img {
 	margin: 60px 20px 20px 0px;
 }
+/* ***************************************  NEW FX Gallery -- Widgetized ****/
+
+.all-fx-widgets {
+	display: flex;
+	flex-wrap: wrap;
+}
+.all-fx-widgets > section.widget {
+	flex-shrink: 0;
+	flex-grow: 1;
+	flex-basis: 40%;
+	max-width: 560px;  /* only good for large screens */
+	margin-bottom: 0;
+}
+.all-fx-widgets .fx-type-widget a {
+	display: block;
+	position: relative;
+	margin: 10px;
+	padding: 20px;
+	overflow: hidden;
+	min-height: 288px;
+}
+.all-fx-widgets .fx-widget-bg {
+	max-width: none;
+	width: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-webkit-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
+}
+.all-fx-widgets .fx-type-widget a:hover img.fx-widget-bg,
+.all-fx-widgets .fx-type-widget a.hover img.fx-widget-bg {
+	filter: brightness(0.48) grayscale(20%) blur(1px);
+}
+.all-fx-widgets .fx-icon {
+	width: 75px;
+	max-height: 75px;
+	margin: 0 auto;
+	position: absolute;
+}
+.all-fx-widgets .fx-type-widget h2 {
+	position: absolute;
+	top: 30px;
+	left: 120px;
+	font-family: Bitter, serif;
+	color: #5BA5A5;
+}
+.all-fx-widgets .fx-type-widget p {
+	margin: 90px 0 28px;
+	opacity: 1;
+	color: #fff;
+	position: relative;
+	z-index: 2;
+	opacity: 0;
+	transition: opacity .3s ease-in-out;
+	-moz-transition: opacity .3s ease-in-out;
+	-webkit-transition: opacity .3s ease-in-out;
+	-o-transition: opacity .3s ease-in-out;
+}
+.all-fx-widgets .fx-type-widget:hover p,
+.all-fx-widgets .fx-type-widget.hover p {
+	opacity: 1;
+}
+
+.all-fx-widgets .widget-wrap .fx-type img.fx-widget-bg {
+	width: auto;
+	max-height: 50%;
+	position: static;
+}
+
 
 /* ***************************************  Effects Gallery  */
 
@@ -3170,9 +3243,26 @@ a.button.checkout.wc-forward {
 
 
 
-
-
-
+/** Site Admin Docs */
+.parent-pageid-580 .footnote-section {
+	margin-bottom: 24px;
+	padding: 22px;
+//	border-bottom: 1px solid #fff;
+}
+.parent-pageid-580 .admin-doc-list li {
+	margin: 10px 0 20px;
+}
+.parent-pageid-580 .footnotes-title {
+	margin-top: 42px;
+	margin-bottom: 11px;
+}
+.parent-pageid-580 .footnote-heading {
+	font-size: 22px;
+	margin: 38px 0 28px;
+}
+.parent-pageid-580 .fn-index {
+	font-weight: 400;
+}
 
 
 
