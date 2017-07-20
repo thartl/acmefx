@@ -2489,6 +2489,7 @@ a.fx-type.hover {
 	margin: 10px;
 	padding: 20px;
 	overflow: hidden;
+	min-height: 288px;
 }
 .all-fx-widgets .fx-widget-bg {
 	max-width: none;
