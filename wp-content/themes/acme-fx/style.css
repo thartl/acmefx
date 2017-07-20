@@ -1247,7 +1247,7 @@ img.alignright,
     max-width: inherit;
     position: relative;
 	background: url('/wp-content/uploads/2017/05/grey-fire-simple.jpg') no-repeat;
-	background-image: url('/wp-content/uploads/2017/07/grey-fire-vdark2.jpg');
+	background-image: url('/wp-content/uploads/2017/07/grey-fire-vdark3.jpg');
 	background-position: center right;
 
 }
@@ -2480,8 +2480,15 @@ a.fx-type.hover {
 .all-fx-widgets > section.widget {
 	flex-shrink: 0;
 	flex-grow: 1;
+<<<<<<< HEAD
 	flex-basis: 40%;
 //	max-width: 560px;  /* only good for large screens */
+=======
+	flex-basis: 50%;
+	//height: auto;
+	max-width: 560px;  /* only good for large screens */
+	min-width: 300px;
+>>>>>>> 189b4275e3f5b9295610bf0e8cdd8c70b44c7c01
 	margin-bottom: 0;
 }
 .all-fx-widgets .fx-type-widget a {
@@ -2494,7 +2501,8 @@ a.fx-type.hover {
 }
 .all-fx-widgets .fx-widget-bg {
 	max-width: none;
-	width: auto;
+	//width: auto;
+	height: auto;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -2538,79 +2546,13 @@ a.fx-type.hover {
 }
 
 .all-fx-widgets .widget-wrap .fx-type img.fx-widget-bg {
-	width: auto;
-	max-height: 50%;
-	position: static;
+	//width: auto;
+	//max-height: 50%;
+	//position: static;
 }
 
 
-/* ***************************************  Effects Gallery  */
-
-.water {
-	background: url('/wp-content/uploads/2017/05/water.jpg');
-	transition: .3s ease-in-out;
-	-moz-transition: .3s ease-in-out;
-	-webkit-transition: .3s ease-in-out;
-	-o-transition: .3s ease-in-out;
-	-ms-transition: .3s ease-in-out;
-}
-.water:hover {
-	background: url('/wp-content/uploads/2017/05/water-dark.jpg');
-}
-.atmo {
-	background: url('/wp-content/uploads/2017/05/atmo.jpg');
-}
-.atmo:hover {
-	background: url('/wp-content/uploads/2017/05/atmo-dark.jpg');
-}
-.snow {
-	background: url('/wp-content/uploads/2017/05/snow-1.jpg');/* was snow-dark.jpg */
-}
-.snow:hover {
-	background: url('/wp-content/uploads/2017/05/snow-dark.jpg');
-}
-.wind {
-	background: url('/wp-content/uploads/2017/05/wind.jpg');
-}
-.wind:hover {
-	background: url('/wp-content/uploads/2017/05/wind-dark.jpg');
-}
-.mechanical {
-	background: url('/wp-content/uploads/2017/05/mechanical.jpg');
-}
-.mechanical:hover {
-	background: url('/wp-content/uploads/2017/05/mechanical-dark.jpg');
-}
-.steam {
-	background: url('/wp-content/uploads/2017/05/steam.jpg');
-}
-.steam:hover {
-	background: url('/wp-content/uploads/2017/05/steam-dark.jpg');
-}
-.pyro {
-	background: url('/wp-content/uploads/2017/05/pyro.jpg');
-}
-.pyro:hover {
-	background: url('/wp-content/uploads/2017/05/pyro-dark.jpg');
-}
-.fire {
-	background: url('/wp-content/uploads/2017/05/fire.jpg');
-}
-.fire:hover {
-	background: url('/wp-content/uploads/2017/05/fire-dark.jpg');
-}
-.concept {
-	background: url('/wp-content/uploads/2017/05/concept.jpg');
-}
-.concept:hover {
-	background: url('/wp-content/uploads/2017/05/concept-dark.jpg');
-}
-.mold {
-	background: url('/wp-content/uploads/2017/05/mold.jpg');
-}
-.mold:hover {
-	background: url('/wp-content/uploads/2017/05/mold-dark.jpg');
-}
+/* ***************************************  Front Page Widgets  */
 
 .expendables {
 	background: url('/wp-content/uploads/2017/07/blue-bulb.jpg');
@@ -3327,12 +3269,13 @@ a.button.checkout.wc-forward {
 		margin-top: 5px;
 	}
 
+
 }
 @media only screen and (max-width: 1300px) {
 	.site-header > .wrap {
 		background-image: url('/wp-content/uploads/2017/07/grey-fire-1300.jpg');
-		background-image: url('/wp-content/uploads/2017/07/grey-fire-vdark2.jpg');
-		background-position: bottom left;
+		background-image: url('/wp-content/uploads/2017/07/grey-fire-vdark3.jpg');
+		background-position: bottom center;
 	}
 }
 
@@ -3432,28 +3375,17 @@ a.button.checkout.wc-forward {
 }
 
 
-/* @media only screen and (max-width: 1170px) {
-	.site-header > .wrap {
-		//background: url('/wp-content/themes/acme-fx/images/explode-blackf.svg') no-repeat right;
-		background: url('wp-content/uploads/2017/05/grey-fire.jpg') no-repeat;
-	}
-} */
-
 @media only screen and (max-width: 1100px) {
-/*	.nav-secondary.headhesive--stick ul::before {
-		position: static;
-		display: block;
-	}
-	.nav-secondary.headhesive--stick ul::before {
-	    display: none;
-	}*/
-	.business-type,
-	.fx-type {
+
+	.business-type {
 		flex-basis: 100%;
 		background-size: cover;
 	}
-	.business-type:hover,
-	.fx-type:hover {
+	.all-fx-widgets > section.widget {
+		flex-basis: 100%;
+		margin:  0 auto;
+	}
+	.business-type:hover {
 		background-size: cover;
 	}
 	.home #wp-custom-header video,
@@ -3751,8 +3683,8 @@ a.button.checkout.wc-forward {
 	}
 	.site-header > .wrap {
 		background-image: url('/wp-content/uploads/2017/07/grey-fire-800.jpg');
-		background-image: url('/wp-content/uploads/2017/07/grey-fire-vdark2.jpg');
-		background-position: right;
+		background-image: url('/wp-content/uploads/2017/07/grey-fire-vdark3.jpg');
+		background-position: left;
 	}
 }
 
@@ -3841,7 +3773,7 @@ a.button.checkout.wc-forward {
 		opacity: 1;
 	}
 	.site-header > .wrap {
-		//background-image: none;
+		background-position: center left;
 	}
 	
 }
@@ -3872,8 +3804,16 @@ a.button.checkout.wc-forward {
 		width: 175px;
 		float: none;
 	}
+	.all-fx-widgets .fx-icon {
+		display: none;
+	}
+	.all-fx-widgets .fx-type-widget h2 {
+		left: 20px;
+	}
 
 }
+
+
 @media only screen and (max-width: 450px) {
 	.woocommerce ul.products.list-view li.product h2  {
 	    width: 150px;
