@@ -66,8 +66,8 @@ $current_username = $current_user->user_login;
 
 //  Add widget areas: FX Gallery Widget, 
 genesis_register_widget_area( array(
-	'id'		=> 'fx-gallery-widget',
-	'name'		=> __( 'FX Gallery Widget', 'genesis-child' ),
+	'id'		=> 'fx-gallery-widget-area',
+	'name'		=> __( 'FX Gallery widget area', 'genesis-child' ),
 	'description'	=> __( 'This widget area appears on the FX Gallery page, below regular content.', 'genesis-child' ),
 ) );
 
@@ -76,8 +76,8 @@ genesis_register_widget_area( array(
 add_action( 'genesis_after_entry_content', 'th_add_fx_gallery_widgets' );
 function th_add_fx_gallery_widgets() {
 	if ( is_page( 'special-effects') )
-	genesis_widget_area( 'fx-gallery-widget', array(
-        'before' => '<div class="all-fx">',
+	genesis_widget_area( 'fx-gallery-widget-area', array(
+        'before' => '<div class="all-fx-widgets">',
         'after' => '</div>',
 	) );
 }

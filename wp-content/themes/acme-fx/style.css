@@ -2471,15 +2471,74 @@ a.fx-type.hover {
 .snow-business img {
 	margin: 60px 20px 20px 0px;
 }
-/* ***************************************  NEW Effects Gallery --test-- Widgetized ****/
+/* ***************************************  NEW FX Gallery -- Widgetized ****/
 
-.widget-wrap div.fx-widget {
-	width: 300px;
-	height: 200px;
+.all-fx-widgets {
+	display: flex;
+	flex-wrap: wrap;
 }
-.widget-wrap .fx-type img.fx-widget-bg {
-	width: 100%;
-	max-height: 100%;
+.all-fx-widgets > section.widget {
+	flex-shrink: 0;
+	flex-grow: 1;
+	flex-basis: 40%;
+	max-width: 560px;  /* only good for large screens */
+}
+.all-fx-widgets .fx-type-widget a {
+	display: block;
+	position: relative;
+	margin: 10px;
+	padding: 20px;
+	overflow: hidden;
+}
+.all-fx-widgets .fx-widget-bg {
+	max-width: none;
+	width: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-webkit-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
+}
+.all-fx-widgets .fx-type-widget a:hover img.fx-widget-bg,
+.all-fx-widgets .fx-type-widget a.hover img.fx-widget-bg {
+	filter: brightness(0.48) grayscale(20%) blur(1px);
+}
+.all-fx-widgets .fx-icon {
+	width: 75px;
+	max-height: 75px;
+	margin: 0 auto;
+	position: absolute;
+}
+.all-fx-widgets .fx-type-widget h2 {
+	position: absolute;
+	top: 30px;
+	left: 120px;
+	font-family: Bitter, serif;
+	color: #5BA5A5;
+}
+.all-fx-widgets .fx-type-widget p {
+	margin-top: 90px;
+	opacity: 1;
+	color: #fff;
+	position: relative;
+	z-index: 2;
+	opacity: 0;
+	transition: opacity .3s ease-in-out;
+	-moz-transition: opacity .3s ease-in-out;
+	-webkit-transition: opacity .3s ease-in-out;
+	-o-transition: opacity .3s ease-in-out;
+}
+.all-fx-widgets .fx-type-widget:hover p,
+.all-fx-widgets .fx-type-widget.hover p {
+	opacity: 1;
+}
+
+.all-fx-widgets .widget-wrap .fx-type img.fx-widget-bg {
+	width: auto;
+	max-height: 50%;
+	position: static;
 }
 
 
