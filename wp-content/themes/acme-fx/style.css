@@ -2519,7 +2519,7 @@ a.fx-type.hover {
 	color: #5BA5A5;
 }
 .all-fx-widgets .fx-type-widget p {
-	margin-top: 90px;
+	margin: 90px 0 28px;
 	opacity: 1;
 	color: #fff;
 	position: relative;
