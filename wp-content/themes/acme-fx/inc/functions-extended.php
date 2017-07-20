@@ -599,9 +599,9 @@ if ( ! function_exists( 'get_current_page_url' ) ) {
 
 
 
-//add_action( 'wp_enqueue_scripts', 'th_elements_match_height', 99 );
+add_action( 'wp_enqueue_scripts', 'th_elements_match_height', 99 );
 /**
- * Print an inline script to the footer to keep chosen elements the same height.
+ * Print an inline script to the footer to keep elements of class ".match-height-item" the same height.
  * Adpated from genesis_sample_products_match_height(), from woocommerce-setup.php
  *
  * @since 2.3.0

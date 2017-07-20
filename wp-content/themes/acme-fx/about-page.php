@@ -184,7 +184,7 @@ function th_main_credits_loop() {
 
 
 
-			echo '<li><a href="' . $url . '" target="_blank" >' . $image_url . '<p>' . $title . '</p><p>' . $show_date . '</p><p>' . $project_type . '</p></a></li>';
+			echo '<li><a href="' . $url . '" target="_blank" ><div class="match-height-item" >' . $image_url . '</div><p>' . $title . '</p><p>' . $show_date . '</p><p>' . $project_type . '</p></a></li>';
 
 
 	// $all_meta = get_post_meta( get_the_ID() );  // for testing only
