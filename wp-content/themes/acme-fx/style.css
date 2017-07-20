@@ -2480,15 +2480,9 @@ a.fx-type.hover {
 .all-fx-widgets > section.widget {
 	flex-shrink: 0;
 	flex-grow: 1;
-<<<<<<< HEAD
-	flex-basis: 40%;
-//	max-width: 560px;  /* only good for large screens */
-=======
 	flex-basis: 50%;
-	//height: auto;
 	max-width: 560px;  /* only good for large screens */
 	min-width: 300px;
->>>>>>> 189b4275e3f5b9295610bf0e8cdd8c70b44c7c01
 	margin-bottom: 0;
 }
 .all-fx-widgets .fx-type-widget a {
