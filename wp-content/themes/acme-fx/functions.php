@@ -120,6 +120,7 @@ function genesis_sample_enqueue_scripts_styles() {
 
 }
 
+
 /**
  * Remove Genesis child theme style sheet
  * @uses genesis_meta  <genesis/lib/css/load-styles.php>
