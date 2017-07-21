@@ -758,3 +758,34 @@ function th_sort_credits( $vars ) {
 /**************  END: ADMIN COLUMNS  *************************************************/
 
 
+// Adds parameters to vimeo embeds
+add_filter( 'oembed_fetch_url', 'th_oembed_fetch_url', 10, 3 );
+
+function th_oembed_fetch_url( $provider, $url, $args ) {
+    // You can find the list of defaults providers in WP_oEmbed::__construct()
+    if ( strpos( $provider, 'vimeo.com' ) !== false) {
+        // Check the full list of args here: https://developer.vimeo.com/apis/oembed
+        if ( isset( $args['autoplay'] ) ) {
+            $provider = add_query_arg( 'autoplay', absint( $args['autoplay'] ), $provider );
+        }
+        if ( isset( $args['color'] ) && preg_match( '/^[a-f0-9]{6}$/i', $args['color'] ) ) {
+            $provider = add_query_arg( 'color', $args['color'], $provider );
+        }
+        if ( isset( $args['portrait'] ) ) {
+            $provider = add_query_arg( 'portrait', absint( $args['portrait'] ), $provider );
+        }
+        if ( isset( $args['title'] ) ) {
+            $provider = add_query_arg( 'title', absint( $args['title'] ), $provider );
+        }
+        if ( isset( $args['byline'] ) ) {
+            $provider = add_query_arg( 'byline', absint( $args['byline'] ), $provider );
+        }
+    }
+
+    return $provider;
+}
+
+
+
+
+
