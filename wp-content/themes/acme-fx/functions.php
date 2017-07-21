@@ -151,6 +151,13 @@ function genesis_cache_bust_load_stylesheet() {
 }
 
 
+// Add categories to pages
+function add_taxonomies_to_pages() {
+// register_taxonomy_for_object_type( 'post_tag', 'page' );
+ register_taxonomy_for_object_type( 'category', 'page' );
+ }
+add_action( 'init', 'add_taxonomies_to_pages' );
+
 
 // Define our responsive menu settings.
 function genesis_sample_responsive_menu_settings() {
