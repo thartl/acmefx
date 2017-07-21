@@ -3219,7 +3219,7 @@ a.button.checkout.wc-forward {
 .contact h3.gform_title {
 	font-family: "Bitter", serif;
 	font-size: 2.4rem;
-	margin: 0 0 10px 0;
+	margin: 0 0 10px 0	;
 }
 
 
@@ -3718,6 +3718,9 @@ a.button.checkout.wc-forward {
 	}
 	article.entry {
 	    margin-bottom: 0px;
+	}
+	.home article.entry {
+		margin-bottom: 30px;
 	}
 	.sidebar {
 		margin-bottom: 0;
