@@ -2385,7 +2385,7 @@ h1.archive-title a:hover {
 	flex-basis: 100%;
 }
 .business-type img {
-	width: 200px;
+	width: 120px;
 	float: left;
 	margin: 0 auto;
 
@@ -3212,7 +3212,9 @@ a.button.checkout.wc-forward {
 }
 
 
-
+.alt-title {
+	font-family: "Bitter", serif;
+}
 
 
 
