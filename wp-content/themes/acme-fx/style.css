@@ -2310,8 +2310,9 @@ body .widget.simple-social-icons ul li a {
 	display: none;
 }
 svg.header-profile {
-	height: 30px;
-	width: 30px;
+	height: 24px;
+	width: 24px;
+	margin-top: -12px;
 }
 a:hover svg path {
 	fill: #5BA5A5;
