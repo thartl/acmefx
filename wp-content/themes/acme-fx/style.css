@@ -2488,12 +2488,14 @@ a.fx-type.hover {
 	min-width: 300px;
 	margin-bottom: 0;
 	display: flex;
+	width: calc(50% - 20px);
 }
 .all-fx-widgets .widget-wrap {
 	display: flex;
 }
 .all-fx-widgets .fx-type-widget {
 	display: flex;
+
 }
 .all-fx-widgets .fx-type-widget a {
 	display: block;
@@ -2502,11 +2504,10 @@ a.fx-type.hover {
 	padding: 20px;
 	overflow: hidden;
 	min-height: 288px;
-	
 }
 .all-fx-widgets .fx-widget-bg {
 	max-width: none;
-	//width: auto;
+	width: auto;
 	height: auto;
 	position: absolute;
 	top: 0;
@@ -2545,6 +2546,8 @@ a.fx-type.hover {
 	-moz-transition: opacity .3s ease-in-out;
 	-webkit-transition: opacity .3s ease-in-out;
 	-o-transition: opacity .3s ease-in-out;
+	width: 498px;
+
 }
 	.all-fx-widgets .fx-type-widget:hover p,
 	.all-fx-widgets .fx-type-widget.hover p {
@@ -3168,7 +3171,9 @@ a.button.checkout.wc-forward {
 	justify-content: space-around;
 }
 .credits-list img {
-	margin-bottom: 15px;
+	display: block;
+	width: 214px;
+	margin: 0 auto 15px;
 }
 .credits-list li a {
 	color: #fff;
@@ -3184,6 +3189,8 @@ a.button.checkout.wc-forward {
 }
 .credits-list a p:nth-child(2) {
 	font-size: 20px;
+	margin-top: 10px;
+
 }
 .credits-list a p:nth-child(n+3) {
 	font-family: "Source Sans Pro", sans-serif;
@@ -3851,6 +3858,14 @@ a.button.checkout.wc-forward {
 	}
 	.fx-type p {
 		margin-top: 30px;
+	}
+	.credits-list li {
+	    width: calc(50% - 20px);
+	    flex-basis: 1;
+	    margin-bottom: 10px;
+	}
+	.credits-list li:last-child {
+	    margin-bottom: 40px;
 	}
 }
 
