@@ -2295,6 +2295,7 @@ body .widget.simple-social-icons ul li a {
 }
 .home .wp-custom-header img {
 	min-height: 200px;
+	max-height: 400px;
 	display: block;
 }
 .wp-custom-header video,
@@ -3383,6 +3384,12 @@ a.button.checkout.wc-forward {
 	.woocommerce div.product .woocommerce-tabs ul.tabs li a {
 		margin-left: 0px;
 	}
+	.credits-list li {
+	    width: calc(50% - 20px);
+	    flex-basis: 1;
+	    margin: 60px 10px 40px;
+	}
+
 }
 
 
@@ -3695,7 +3702,7 @@ a.button.checkout.wc-forward {
 	.site-header > .wrap {
 		background-image: url('/wp-content/uploads/2017/07/grey-fire-800.jpg');
 		background-image: url('/wp-content/uploads/2017/07/grey-fire-vdark3.jpg');
-		background-position: left;
+		background-position: center bottom;
 	}
 }
 
@@ -3787,7 +3794,7 @@ a.button.checkout.wc-forward {
 		opacity: 1;
 	}
 	.site-header > .wrap {
-		background-position: center left;
+		//background-position: center bottom;
 	}
 	
 }
@@ -3814,7 +3821,7 @@ a.button.checkout.wc-forward {
 	}
 	.cameo {
 		display: block;
-		margin: 20px auto;
+		margin: 10px auto;
 		width: 175px;
 		float: none;
 	}
@@ -3849,8 +3856,16 @@ a.button.checkout.wc-forward {
 
 @media only screen and (max-width: 450px) {
 	.site-header > .wrap {
-		background-position: center;
+		background-position: -600px;
 	}
+}
+@media only screen and (max-width: 400px) {
+
+	.credits-list a p:nth-child(2) {
+	    font-size: 16px;
+	    font-weight: 700;
+	}
+
 }
 /* # Print Styles
 ---------------------------------------------------------------------------------------------------- */
