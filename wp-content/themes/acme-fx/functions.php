@@ -48,6 +48,8 @@ include_once( get_stylesheet_directory() . '/inc/functions-extended.php' );
 include_once( get_stylesheet_directory() . '/inc/functions-extended-2.php' );
 
 
+
+
 // Remove admin bar from front end, except for select users
 add_filter('show_admin_bar', 'th_private_admin_bar');  /** '__return_false' **/
 
@@ -66,12 +68,55 @@ function th_private_admin_bar( $content ) {
 								) {
 	
 		return $content;
-
 	} else {
-
 		return false;
 	}
 }
+
+
+
+
+// Add custom links to admin bar
+function add_upload_admin_bar_link() {
+	global $wp_admin_bar;
+	$current_user = get_current_user_id();  // See "Remove admin bar from front end, except for select users" above for User IDs
+	if ( !is_super_admin() || !is_admin_bar_showing() ) return;
+
+	if ( $current_user == 11  ) {  // Tomas
+		$wp_admin_bar->add_menu( array( 
+			'id' => 'media_link', 
+			'title' => __( 'Media'), 
+			'href' => __('http://acmefx.dev/wp-admin/upload.php') 
+			) 
+		);
+		$wp_admin_bar->add_menu( array( 
+			'id' => 'blog_link', 
+			'title' => __( 'Blog'), 
+			'href' => __('http://acmefx.dev/wp-admin/edit.php') 
+			) 
+		);
+	} 
+
+		if ( $current_user == 5  ) {  // Amy
+		$wp_admin_bar->add_menu( array( 
+			'id' => 'media_link', 
+			'title' => __( 'Media'), 
+			'href' => __('http://acmefx.dev/wp-admin/upload.php') 
+			) 
+		);
+		$wp_admin_bar->add_menu( array( 
+			'id' => 'blog_link', 
+			'title' => __( 'Blog'), 
+			'href' => __('http://acmefx.dev/wp-admin/edit.php') 
+			) 
+		);
+	}
+
+}
+add_action('wp_before_admin_bar_render', 'add_upload_admin_bar_link', 12);
+
+
+
 
 // Remove WP Migrate DB Pro, CPT UI, except for Tomas, Amy
 add_action( 'admin_menu', 'th_remove_migrate_db_menu', 999 );
@@ -83,10 +128,9 @@ $current_username = $current_user->user_login;
 	if ( $current_username !== 'tomas-acme-dev-admin' && $current_username !== 'Amy' ) {
 		remove_submenu_page( 'tools.php', 'wp-migrate-db-pro' );
 		remove_menu_page( 'cptui_main_menu' );
-
 	}
-
 }
+
 
 
 
@@ -94,6 +138,7 @@ $current_username = $current_user->user_login;
 define( 'CHILD_THEME_NAME', 'Acme FX' );
 define( 'CHILD_THEME_URL', 'http://www.studiopress.com/' );
 define( 'CHILD_THEME_VERSION', '1.0.1' );
+
 
 
 
@@ -119,6 +164,8 @@ function genesis_sample_enqueue_scripts_styles() {
 	);
 
 }
+
+
 
 
 /**
@@ -152,6 +199,8 @@ function genesis_cache_bust_load_stylesheet() {
 }
 
 
+
+
 // Add categories to pages
 function add_taxonomies_to_pages() {
 // register_taxonomy_for_object_type( 'post_tag', 'page' );
@@ -160,7 +209,9 @@ function add_taxonomies_to_pages() {
 add_action( 'init', 'add_taxonomies_to_pages' );
 
 
-// Define our responsive menu settings.
+
+
+// Define responsive menu settings.
 function genesis_sample_responsive_menu_settings() {
 
 	$settings = array(
@@ -176,10 +227,11 @@ function genesis_sample_responsive_menu_settings() {
 			'others'  => array(),
 		),
 	);
-
 	return $settings;
-
 }
+
+
+
 
 // Add HTML5 markup structure.
 add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ) );
@@ -252,6 +304,14 @@ add_theme_support( 'genesis-after-entry-widget-area' );
 // Add support for 3-column footer widgets.
 add_theme_support( 'genesis-footer-widgets', 3 );
 
+// Turn off Wordpress native jpeg compression if Smush Pro is active
+add_filter( 'jpeg_quality', 'th_jpeg_100' );
+function th_jpeg_100() {
+	if ( is_plugin_active( 'wp-smush-pro/wp-smush.php' ) ) {
+		return 100;
+	}
+}
+
 // Add Image Sizes.
 add_image_size( 'featured-image', 720, 400, TRUE );
 
@@ -287,6 +347,8 @@ function my_header_video_settings( $settings ) {
 
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
 add_action( 'genesis_after_header', 'genesis_do_nav', 5 );
+
+
 
 
 // th-- Set up the Front page. *******************************
