@@ -11,6 +11,7 @@
  * @link    http://www.parkdalewire.com/
  */
 
+
 // Start the engine.
 include_once( get_template_directory() . '/lib/init.php' );
 
@@ -85,19 +86,19 @@ function add_upload_admin_bar_link() {
 	if ( $current_user == 11 || 1 == 1 ) {  // For Tomas OR turn on for all
 		$wp_admin_bar->add_menu( array( 
 			'id' => 'page_2_link', 
-			'title' => __( 'Pages, p. 2'), 
+			'title' => __( 'Pages (2)'), 
 			'href' => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=page&paged=2',
 			)
 		);
 		$wp_admin_bar->add_menu( array( 
 			'id' => 'page_3_link', 
-			'title' => __( 'Pages, p. 3'), 
+			'title' => __( 'Pages (3)'), 
 			'href' => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=page&paged=3',
 			) 
 		);
 		$wp_admin_bar->add_menu( array( 
 			'id' => 'page_4_link', 
-			'title' => __( 'Pages, p. 4'), 
+			'title' => __( 'Pages (4)'), 
 			'href' => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=page&paged=4',
 			) 
 		);
@@ -320,6 +321,7 @@ function th_jpeg_100() {
 
 // Add Image Sizes.
 add_image_size( 'featured-image', 720, 400, TRUE );
+add_image_size( 'credit-poster', 214, 9999 );
 
 // Modify size of the Gravatar in the author box.
 add_filter( 'genesis_author_box_gravatar_size', 'genesis_sample_author_box_gravatar' );

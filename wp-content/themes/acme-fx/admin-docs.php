@@ -6,7 +6,7 @@
 *
 * This page template lists its childern pages and includes a publish or modified date, whichever comes sooner
 */
-
+ 
 
 function th_admin_docs_loop() {
 	global $post;

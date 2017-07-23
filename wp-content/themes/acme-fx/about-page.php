@@ -6,6 +6,7 @@
 */
 
 
+
 add_action( 'genesis_after_entry_content', 'th_partner_repeater', 10 );
 
 add_action( 'genesis_after_entry_content', 'th_staff_repeater', 12 );
