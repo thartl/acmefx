@@ -2310,8 +2310,9 @@ body .widget.simple-social-icons ul li a {
 	display: none;
 }
 svg.header-profile {
-	height: 30px;
-	width: 30px;
+	height: 24px;
+	width: 24px;
+	margin-top: -12px;
 }
 a:hover svg path {
 	fill: #5BA5A5;
@@ -2484,16 +2485,20 @@ a.fx-type.hover {
 	flex-shrink: 0;
 	flex-grow: 1;
 	flex-basis: 50%;
-	max-width: 560px;  /* only good for large screens */
-	min-width: 300px;
+	//max-width: 560px;  /* only good for large screens */
+	//min-width: 300px;
 	margin-bottom: 0;
 	display: flex;
+	width: calc(50% - 20px);
 }
 .all-fx-widgets .widget-wrap {
 	display: flex;
+	min-width: 100%;
 }
 .all-fx-widgets .fx-type-widget {
 	display: flex;
+	width: 100%;
+
 }
 .all-fx-widgets .fx-type-widget a {
 	display: block;
@@ -2502,12 +2507,12 @@ a.fx-type.hover {
 	padding: 20px;
 	overflow: hidden;
 	min-height: 288px;
-	
+	width: 100%;
 }
 .all-fx-widgets .fx-widget-bg {
 	max-width: none;
 	//width: auto;
-	height: auto;
+	height: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -2516,6 +2521,7 @@ a.fx-type.hover {
 	-webkit-transition: .3s ease-in-out;
 	-o-transition: .3s ease-in-out;
 	-ms-transition: .3s ease-in-out;
+	object-fit: cover;
 }
 .all-fx-widgets .fx-type-widget a:hover img.fx-widget-bg,
 .all-fx-widgets .fx-type-widget a.hover img.fx-widget-bg {
@@ -2532,7 +2538,7 @@ a.fx-type.hover {
 	top: 30px;
 	left: 120px;
 	font-family: Bitter, serif;
-	color: #5BA5A5;
+	color: #fff;
 }
 .all-fx-widgets .fx-type-widget p {
 	margin: 90px 0 28px;
@@ -3168,7 +3174,9 @@ a.button.checkout.wc-forward {
 	justify-content: space-around;
 }
 .credits-list img {
-	margin-bottom: 15px;
+	display: block;
+	width: 214px;
+	margin: 0 auto 15px;
 }
 .credits-list li a {
 	color: #fff;
@@ -3184,6 +3192,8 @@ a.button.checkout.wc-forward {
 }
 .credits-list a p:nth-child(2) {
 	font-size: 20px;
+	margin-top: 10px;
+
 }
 .credits-list a p:nth-child(n+3) {
 	font-family: "Source Sans Pro", sans-serif;
@@ -3809,7 +3819,7 @@ a.button.checkout.wc-forward {
 	.woocommerce ul.products.desc-view li.product .price  {
 	    float: right;
 	    clear: right;
-	    margin-top: -25px;
+	    margin-top: -26px;
 	}
 	.woocommerce ul.products.desc-view li.product .button,
 	.woocommerce ul.products.desc-view li.product a.button  {
@@ -3853,6 +3863,14 @@ a.button.checkout.wc-forward {
 	.fx-type p {
 		margin-top: 30px;
 	}
+	.credits-list li {
+	    width: calc(50% - 20px);
+	    flex-basis: 1;
+	    margin-bottom: 10px;
+	}
+	.credits-list li:last-child {
+	    margin-bottom: 40px;
+	}
 }
 
 @media only screen and (max-width: 450px) {
@@ -3865,6 +3883,9 @@ a.button.checkout.wc-forward {
 	.credits-list a p:nth-child(2) {
 	    font-size: 16px;
 	    font-weight: 700;
+	}
+	h1.entry-title {
+		font-size: 3.5rem;
 	}
 
 }
