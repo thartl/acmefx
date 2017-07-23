@@ -82,22 +82,28 @@ function add_upload_admin_bar_link() {
 	$current_user = get_current_user_id();  // See "Remove admin bar from front end, except for select users" above for User IDs
 	if ( !is_super_admin() || !is_admin_bar_showing() ) return;
 
-	if ( $current_user == 11  ) {  // Tomas
+	if ( $current_user == 11 || 1 == 1 ) {  // For Tomas OR turn on for all
 		$wp_admin_bar->add_menu( array( 
-			'id' => 'media_link', 
-			'title' => __( 'Media'), 
-			'href' => __('http://acmefx.dev/wp-admin/upload.php') 
+			'id' => 'page_2_link', 
+			'title' => __( 'Pages, p. 2'), 
+			'href' => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=page&paged=2',
+			)
+		);
+		$wp_admin_bar->add_menu( array( 
+			'id' => 'page_3_link', 
+			'title' => __( 'Pages, p. 3'), 
+			'href' => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=page&paged=3',
 			) 
 		);
 		$wp_admin_bar->add_menu( array( 
-			'id' => 'blog_link', 
-			'title' => __( 'Blog'), 
-			'href' => __('http://acmefx.dev/wp-admin/edit.php') 
+			'id' => 'page_4_link', 
+			'title' => __( 'Pages, p. 4'), 
+			'href' => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=page&paged=4',
 			) 
 		);
-	} 
+	}
 
-		if ( $current_user == 5  ) {  // Amy
+		if ( $current_user == 5  ) {  // For Amy
 		$wp_admin_bar->add_menu( array( 
 			'id' => 'media_link', 
 			'title' => __( 'Media'), 
@@ -742,7 +748,7 @@ function woo_custom_product_searchform( $form ) {
 		//  data-swplive="true" /> <!-- data-swplive="true" enables SearchWP Live Search -->
 		//  to replace this (at the end of <input type="text" line):
 		//  />
-	$form = '<form class="woocommerce-product-search" role="search" method="get" id="searchform" action="' . esc_url( home_url( '/'  ) ) . '">
+	$form = '<form class="woocommerce-product-search" role="search" method="get" id="searchform" action="' . esc_url( home_url( '/' ) ) . '">
 		
 			<label class="screen-reader-text" for="s">' . __( 'Search for:', 'woocommerce' ) . '</label>
 			<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' . __( 'Search Products', 'woocommerce' ) . '" />
