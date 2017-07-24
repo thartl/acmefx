@@ -4,7 +4,7 @@
 * Template Name: Bio Page
 * Description: Used as a documents listings page
 */
-
+ 
 
 add_action( 'genesis_after_entry_content', 'th_individual_credits_loop', 15 );
 
