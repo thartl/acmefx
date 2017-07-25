@@ -172,7 +172,7 @@ function th_main_credits_loop() {
 			$title = get_the_title();
 
 				$image = (int) get_post_meta( get_the_ID(), 'poster_image', true );
-			$image_url = $image ? wp_get_attachment_image( $image, 'full' ) : '';
+			$image_url = $image ? wp_get_attachment_image( $image, 'credit-poster' ) : '';
 
 				$release_date = (int) get_post_meta( get_the_ID(), 'release_date', true );
 				$year = substr( $release_date , 0, 4 );
