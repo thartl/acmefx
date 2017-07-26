@@ -102,20 +102,38 @@ function add_upload_admin_bar_link() {
 			'href' => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=page&paged=4',
 			) 
 		);
+		$wp_admin_bar->add_menu( array( 
+			'id' => 'credits_rd_desc_link', 
+			'title' => __( 'Credits r.d.'), 
+			'href' => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=credits&orderby=release_date&order=desc',
+			)
+		);
 	}
 
 		if ( $current_user == 5  ) {  // For Amy
 		$wp_admin_bar->add_menu( array( 
-			'id' => 'media_link', 
-			'title' => __( 'Media'), 
-			'href' => __('http://acmefx.dev/wp-admin/upload.php') 
+			'id' => 'amy_credits_2_link', 
+			'title' => __( 'Credits (2)'), 
+			'href' => __('http://acmefx.dev/wp-admin/edit.php?post_type=credits&paged=2') 
 			) 
 		);
 		$wp_admin_bar->add_menu( array( 
-			'id' => 'blog_link', 
-			'title' => __( 'Blog'), 
-			'href' => __('http://acmefx.dev/wp-admin/edit.php') 
+			'id' => 'amy_credits_3_link', 
+			'title' => __( 'Credits (3)'), 
+			'href' => __('http://acmefx.dev/wp-admin/edit.php?post_type=credits&paged=3') 
 			) 
+		);
+		$wp_admin_bar->add_menu( array( 
+			'id' => 'amy_credits_4_link', 
+			'title' => __( 'Credits (4)'), 
+			'href' => __('http://acmefx.dev/wp-admin/edit.php?post_type=credits&paged=4') 
+			) 
+		);
+		$wp_admin_bar->add_menu( array( 
+			'id' => 'amy_credits_5_link', 
+			'title' => __( 'Credits (5)'), 
+			'href' => __('http://acmefx.dev/wp-admin/edit.php?post_type=credits&paged=5')
+			)
 		);
 	}
 
