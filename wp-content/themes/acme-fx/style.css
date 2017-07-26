@@ -3265,7 +3265,10 @@ a.button.checkout.wc-forward {
 .parent-pageid-580 .entry-content ol {
 	margin-bottom: 16px;
 }
-
+.parent-pageid-580 ol img.alignnone,
+.parent-pageid-580 ul img.alignnone {
+	margin-top: 8px;
+}
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
