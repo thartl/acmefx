@@ -3239,7 +3239,8 @@ a.button.checkout.wc-forward {
 	list-style-type: lower-roman;
 
 }
-.code-highlight-1, .code-highlight-2, .code-highlight-3 {
+.code-highlight-1,.code-highlight-2,
+.code-highlight-3, .code-highlight-4 {
 	color: black;
 	font-weight: 700;
 }
