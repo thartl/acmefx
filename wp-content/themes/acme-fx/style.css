@@ -3243,14 +3243,17 @@ a.button.checkout.wc-forward {
 	color: black;
 	font-weight: 700;
 }
-.code-highlight {
+.code-highlight-1 {
 	background-color: yellow;
 }
-.code-out {
+.code-highlight-2 {
 	background-color: red;
 }
-.code-in {
-	background-color: yellow;
+.code-highlight-3 {
+	background-color: green;
+}
+.code-highlight-4 {
+	background-color: blue;
 }
 
 
