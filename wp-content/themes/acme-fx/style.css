@@ -3232,9 +3232,14 @@ a.button.checkout.wc-forward {
 	font-size: 2.4rem;
 	margin: 0 0 10px 0	;
 }
+.entry-content ol > li > ol > li {
+	list-style-type: lower-alpha;
+}
 
+.entry-content ol > li > ol > li > ol > li {
+	list-style-type: lower-roman;
 
-
+}
 
 
 /* # Media Queries
