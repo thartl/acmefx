@@ -3262,7 +3262,9 @@ a.button.checkout.wc-forward {
 	margin: 10px 0 16px;
 	padding: 14px;
 }
-
+.parent-pageid-580 ol {
+	margin-bottom: 16px;
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
