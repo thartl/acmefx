@@ -3257,6 +3257,11 @@ a.button.checkout.wc-forward {
 	background-color: blue;
 	color: white;
 }
+.parent-pageid-580 .entry-content code{
+	display: block;
+	margin: 10px 0 16px;
+	padding: 14px;
+}
 
 
 /* # Media Queries
