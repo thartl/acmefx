@@ -3239,13 +3239,19 @@ a.button.checkout.wc-forward {
 	list-style-type: lower-roman;
 
 }
-
-.code-highlight {
-	background-color: yellow;
+.code-highlight, .code-out, .code-in {
 	color: black;
 	font-weight: 700;
 }
-
+.code-highlight {
+	background-color: yellow;
+}
+.code-out {
+	background-color: red;
+}
+.code-in {
+	background-color: yellow;
+}
 
 
 /* # Media Queries
