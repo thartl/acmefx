@@ -3222,7 +3222,6 @@ a.button.checkout.wc-forward {
 	font-weight: 400;
 }
 
-
 .alt-title {
 	font-family: "Bitter", serif;
 }
@@ -3240,6 +3239,13 @@ a.button.checkout.wc-forward {
 	list-style-type: lower-roman;
 
 }
+
+.code-highlight {
+	background-color: yellow;
+	color: black;
+	font-weight: 700;
+}
+
 
 
 /* # Media Queries
