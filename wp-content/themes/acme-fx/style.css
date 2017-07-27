@@ -2526,6 +2526,7 @@ a.fx-type.hover {
 .all-fx-widgets .fx-type-widget a:hover img.fx-widget-bg,
 .all-fx-widgets .fx-type-widget a.hover img.fx-widget-bg {
 	filter: brightness(0.48) grayscale(20%) blur(1px);
+	-webkit-filter: brightness(0.48) grayscale(20%) blur(1px);
 }
 .all-fx-widgets .fx-icon {
 	width: 75px;
@@ -3267,7 +3268,7 @@ a.button.checkout.wc-forward {
 }
 .parent-pageid-580 ol img.alignnone,
 .parent-pageid-580 ul img.alignnone {
-	margin-top: 8px;
+	margin-top: 30px;
 }
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
