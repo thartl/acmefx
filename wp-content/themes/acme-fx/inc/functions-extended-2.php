@@ -28,7 +28,7 @@
 
 
 /**
- *   Hide ACF menu, except for user: tomas-acme-dev-admin  (hides when false)
+ *   Hide ACF menu, except for user: tomas-acme-dev-admin
  */
 add_filter( 'acf/settings/show_admin', 'th_acf_hide_for_most' );
 

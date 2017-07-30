@@ -609,7 +609,7 @@ add_action( 'wp_enqueue_scripts', 'th_elements_match_height', 99 );
 function th_elements_match_height() {
 
 	/** List pages by ID, post_name (slug), or post_title **/
-	if ( ! is_page( 'about-us' ) ) {
+	if ( ! is_page( 'about-us' ) && ! is_front_page() ) {
 		return;
 	}
 

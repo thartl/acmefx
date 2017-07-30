@@ -83,7 +83,7 @@ function acme_home_widget_loop() {
 
 }
 
-// Modify the read more link.
+// Modify the read more link.  -- hooked by acme_front_page_init()
 function spi_content_limit_read_more_markup( $output, $content, $link ) {
 
 	$output = sprintf( '<p>%s &#x02026;</p>%s', $content, str_replace( '&#x02026;', '', $link ) );
