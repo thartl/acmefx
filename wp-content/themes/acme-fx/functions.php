@@ -81,8 +81,8 @@ function th_private_admin_bar( $content ) {
 function add_upload_admin_bar_link() {
 	global $wp_admin_bar;
 	$current_user = get_current_user_id();  // See "Remove admin bar from front end, except for select users" above for User IDs
-	if ( !is_super_admin() || !is_admin_bar_showing() ) return;
-
+//	if ( !is_super_admin() || !is_admin_bar_showing() ) return;
+	if ( !( current_user_can( 'manage_options' ) || current_user_can( 'manage_woocommerce' ) ) || !is_admin_bar_showing() ) return;
 	if ( $current_user == 11 || 1 == 1 ) {  // For Tomas OR turn on for all
 		$wp_admin_bar->add_menu( array( 
 			'id' => 'page_2_link', 
@@ -102,20 +102,38 @@ function add_upload_admin_bar_link() {
 			'href' => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=page&paged=4',
 			) 
 		);
+		$wp_admin_bar->add_menu( array( 
+			'id' => 'credits_rd_desc_link', 
+			'title' => __( 'Credits r.d.'), 
+			'href' => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=credits&orderby=release_date&order=desc',
+			)
+		);
 	}
 
 		if ( $current_user == 5  ) {  // For Amy
 		$wp_admin_bar->add_menu( array( 
-			'id' => 'media_link', 
-			'title' => __( 'Media'), 
-			'href' => __('http://acmefx.dev/wp-admin/upload.php') 
+			'id' => 'amy_credits_2_link', 
+			'title' => __( 'Credits (2)'), 
+			'href' => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=credits&paged=2'
+			)
+		);
+		$wp_admin_bar->add_menu( array( 
+			'id' => 'amy_credits_3_link', 
+			'title' => __( 'Credits (3)'), 
+			'href' => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=credits&paged=3'
 			) 
 		);
 		$wp_admin_bar->add_menu( array( 
-			'id' => 'blog_link', 
-			'title' => __( 'Blog'), 
-			'href' => __('http://acmefx.dev/wp-admin/edit.php') 
+			'id' => 'amy_credits_4_link', 
+			'title' => __( 'Credits (4)'), 
+			'href' => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=credits&paged=4'
 			) 
+		);
+		$wp_admin_bar->add_menu( array( 
+			'id' => 'amy_credits_5_link', 
+			'title' => __( 'Credits (5)'), 
+			'href' => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=credits&paged=5'
+			)
 		);
 	}
 
