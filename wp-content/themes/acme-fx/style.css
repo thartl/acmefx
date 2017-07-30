@@ -3984,13 +3984,14 @@ a.button.checkout.wc-forward {
 	.site-header > .wrap {
 		background-position: -600px;
 	}
-}
-@media only screen and (max-width: 400px) {
-
 	.credits-list a p:nth-child(2) {
 	    font-size: 16px;
 	    font-weight: 700;
 	}
+}
+@media only screen and (max-width: 400px) {
+
+	
 	h1.entry-title {
 		font-size: 3.5rem;
 	}
