@@ -2568,6 +2568,76 @@ a.fx-type.hover {
 	//position: static;
 }
 
+/* ***************************************  NEW Front-page Cards -- Widgetized ****/
+.fp-card-widget {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	min-height: 280px;
+	width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.fp-card-widget .fp-card-overlay {
+	min-height: 280px;
+}
+
+.fp-card-icon {
+	position: relative;
+	float: left;
+	box-sizing: content-box;
+	max-width: 100px;
+	max-height: 100px;
+	z-index: 2;
+	padding: 10px 20px;
+	opacity: 0;
+	transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-webkit-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
+	-ms-transition: .3s ease-in-out;
+}
+.fp-card-widget h2 {
+	position: relative;
+	text-align: center;
+	padding: 15px 20px 25px 20px;
+	background-color: #1D373A;
+	color: #fff;
+	font-family: Bitter, serif;
+	font-size: 24px;
+	transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-webkit-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
+	-ms-transition: .3s ease-in-out;
+}
+.fp-card-widget p {
+	position: relative;
+	z-index: 2;
+	color: #fff;
+	padding: 20px;
+	margin-left: 0px;
+	opacity: 0;
+	transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-webkit-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
+	-ms-transition: .3s ease-in-out;
+}
+.fp-card-widget p.allow-icon {
+	margin-left: 140px;
+}
+
+.fp-card-widget .fp-card-overlay:hover {
+	background: linear-gradient(to right, hsla(190, 5%, 22%, 0.3) 0%, hsla(180, 5%, 16%, 0.5) 15%, hsla(180, 5%, 16%, 0.5) 85%, hsla(190, 5%, 22%, 0.3) 100%);
+}
+div.fp-card-widget:hover h2 {
+	background-color: #AE4040;
+}
+div.fp-card-widget:hover img.fp-card-icon,
+div.fp-card-widget:hover p {
+	opacity: 1;
+}
 
 /* ***************************************  Front Page Widgets  */
 
