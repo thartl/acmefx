@@ -55,7 +55,7 @@ function th_acf_widgets_hide_for_most( $content ) {
 $current_user = wp_get_current_user();
 $current_username = $current_user->user_login;
 
-	if ( $current_username == 'tomas-acme-dev-admin' ) {
+	if ( $current_username == 'tomas-acme-dev-admin' && 1 == 2 ) {  // DEACCTIVATED ( 1 == 2 )
 		return $content;
 	} else {
 		return true;
