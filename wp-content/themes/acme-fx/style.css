@@ -2626,10 +2626,6 @@ a.fx-type.hover {
 	-o-transition: .3s ease-in-out;
 	-ms-transition: .3s ease-in-out;
 }
-.fp-card-widget p.allow-icon {
-	margin-left: 140px;
-}
-
 .fp-card-widget .fp-card-overlay:hover {
 	background: linear-gradient(to right, hsla(190, 5%, 22%, 0.3) 0%, hsla(180, 5%, 16%, 0.5) 15%, hsla(180, 5%, 16%, 0.5) 85%, hsla(190, 5%, 22%, 0.3) 100%);
 }
@@ -2641,47 +2637,6 @@ div.fp-card-widget:hover p {
 	opacity: 1;
 }
 
-/* ***************************************  Front Page Widgets  */
-
-.expendables {
-	background: url('/wp-content/uploads/2017/07/blue-bulb.jpg');
-	background-position: center;
-	background-size: cover;
-	transition: .3s ease-in-out;
-	-moz-transition: .3s ease-in-out;
-	-webkit-transition: .3s ease-in-out;
-	-o-transition: .3s ease-in-out;
-	-ms-transition: .3s ease-in-out;
-}
-.expendables:hover {
-	background: url('/wp-content/uploads/2017/07/blue-bulb-dark.jpg');
-	background-position: center;
-	background-size: cover;
-}
-.snow-business {
-	background: url('/wp-content/uploads/2017/06/night-moon.jpg');
-	background-position: center;
-}
-.snow-business:hover {
-	background: url('/wp-content/uploads/2017/07/night-moon-dark.jpg');
-	background-position: center;
-}
-.rentals {
-	background: url('/wp-content/uploads/2017/07/fan.jpg');
-	background-position: center;
-}
-.rentals:hover {
-	background: url('/wp-content/uploads/2017/07/fan-dark.jpg');
-	background-position: center;
-}
-.fx {
-	background: url('/wp-content/uploads/2017/07/fx-newer.jpg');
-	background-position: center;
-}
-.fx:hover {
-	background: url('/wp-content/uploads/2017/07/fx-newer-dark.jpg');
-	background-position: center;
-}
 .term-snow-business .content {
 	position: relative;
 }
@@ -3738,7 +3693,10 @@ a.button.checkout.wc-forward {
 		margin: 0 auto 60px;
 	}
 	
-	.widget-area.flexible-widgets.widget-thirds .widget {
+	.widget-area.flexible-widgets.widget-halves .widget,
+	.widget-area.flexible-widgets.widget-thirds .widget,
+	.widget-area.flexible-widgets.widget-fourths .widget {
+		clear: left;
 		width: 100%;
 	}
 
@@ -3933,9 +3891,6 @@ a.button.checkout.wc-forward {
 	}
 	.site-header > .wrap {
 		//background-position: center bottom;
-	}
-	.fp-card-widget p.allow-icon {
-	    margin-left: 0px;
 	}
 }
 
