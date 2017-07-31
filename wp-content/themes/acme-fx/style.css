@@ -2575,8 +2575,9 @@ a.fx-type.hover {
 	overflow: hidden;
 	min-height: 300px;
 	width: 100%;
-	background-position: center;
 	background-repeat: no-repeat;
+	background-position: top;
+	background-size: cover;
 }
 .fp-card-widget .fp-card-overlay {
 	min-height: 300px;
