@@ -2523,13 +2523,13 @@ a.fx-type.hover {
 	-ms-transition: .3s ease-in-out;
 	object-fit: cover;
 }
-@media (hover: hover) {
+/*@media (hover: hover) {*/
 	.all-fx-widgets .fx-type-widget a:hover img.fx-widget-bg,
 	.all-fx-widgets .fx-type-widget a.hover img.fx-widget-bg {
 		filter: brightness(0.48) grayscale(20%) blur(1px);
 		-webkit-filter: brightness(0.48) grayscale(20%) blur(1px);
 	}
-}
+/*}*/
 .all-fx-widgets .fx-type-widget a:active img.fx-widget-bg {
 	filter: brightness(0.48) grayscale(20%) blur(1px);
 	-webkit-filter: brightness(0.48) grayscale(20%) blur(1px);
