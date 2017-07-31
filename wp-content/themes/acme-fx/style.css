@@ -3212,7 +3212,7 @@ a.button.checkout.wc-forward {
 }
 .credits-list img {
 	display: block;
-	width: 200px;
+	width: 190px;
 	margin: 0 auto 15px;
 }
 .credits-list li a {
@@ -3222,16 +3222,16 @@ a.button.checkout.wc-forward {
 //	flex: 1 0 200px;
 	flex-grow: 1;
 	flex-shrink: 0;
-	width: 200px;
-	margin: 60px 15px 40px; 
+	width: 190px;
+	margin: 60px 15px 20px; 
 }
 .credits-list a p {
 	text-align: center;
-	margin-bottom: 5px;
+	margin-bottom: 2px;
 }
 .credits-list a p:nth-child(2) {
 	font-size: 20px;
-	margin-top: 10px;
+	margin-top: 15px;
 
 }
 .credits-list a p:nth-child(n+3) {
@@ -3471,8 +3471,8 @@ a.button.checkout.wc-forward {
 	}
 	.credits-list li {
 	    width: calc(50% - 20px);
-	    flex-basis: 1;
-	    margin: 60px 10px 40px;
+	    flex-grow: 1;
+	    margin: 60px 10px 20px;
 	}
 
 }
@@ -3962,9 +3962,6 @@ a.button.checkout.wc-forward {
 	.credits-list li:last-child {
 	    margin-bottom: 40px;
 	}
-}
-
-@media only screen and (max-width: 450px) {
 	.site-header > .wrap {
 		background-position: -600px;
 	}
@@ -3973,9 +3970,11 @@ a.button.checkout.wc-forward {
 	    font-weight: 700;
 	}
 }
-@media only screen and (max-width: 400px) {
 
-	
+@media only screen and (max-width: 400px) {
+	.credits-list li {
+	    width: 190px;
+	}	
 	h1.entry-title {
 		font-size: 3.5rem;
 	}
