@@ -3202,20 +3202,27 @@ a.button.checkout.wc-forward {
 
 .credits-list {
 	display: flex;
+	display: -moz-box-flex;
+	flex-direction: row;
+	-moz-flex-direction: row;
 	flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
 	justify-content: space-around;
+	-moz-justify-content: space-around;
 }
 .credits-list img {
 	display: block;
-	width: 214px;
+	width: 200px;
 	margin: 0 auto 15px;
 }
 .credits-list li a {
 	color: #fff;
 }
-.credits-list li {	
-	width: 214px;
-	flex-basis: 1;
+.credits-list li {
+//	flex: 1 0 200px;
+	flex-grow: 1;
+	flex-shrink: 0;
+	width: 200px;
 	margin: 60px 15px 40px; 
 }
 .credits-list a p {
