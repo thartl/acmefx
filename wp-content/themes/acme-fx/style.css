@@ -3740,6 +3740,10 @@ a.button.checkout.wc-forward {
 		width: 100%;
 	}
 
+	.widget-area.flexible-widgets .widget {
+		margin-left: 0;
+	}
+
 
 }
 @media only screen and (max-width: 900px) {
