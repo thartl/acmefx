@@ -2576,7 +2576,8 @@ a.fx-type.hover {
 	//min-height: 300px;
 	width: 100%;
 	background-repeat: no-repeat;
-	background-position: top;
+	//background-position: 50% 32px;
+	background-position: 50% calc(50% + 32px);
 	background-size: cover;
 }
 .fp-card-widget .fp-card-overlay {
@@ -3543,9 +3544,6 @@ a.button.checkout.wc-forward {
 	.term-description p:nth-child(2) {
 		clear: left;
 	}
-	.fp-card-widget {
-		background-position: 50% 32px;
-	}
 }
 
 
@@ -3747,7 +3745,14 @@ a.button.checkout.wc-forward {
 	.widget-area.flexible-widgets .widget {
 		margin-left: 0;
 	}
+	.fp-card-widget {
+	//	background-position: 50% 0px;
+	}
+	.fp-card-widget .fp-card-overlay {
+		min-height: 420px;
+	}
 }
+
 @media only screen and (max-width: 900px) {
 	.home .site-description {
 		display: none;
@@ -3844,7 +3849,9 @@ a.button.checkout.wc-forward {
 	.headhesive--stick.nav-secondary {
 	padding: 5px;
 	}
-
+	.fp-card-widget .fp-card-overlay {
+		min-height: 340px;
+	}
 }
 
 @media only screen and (max-width: 600px) {
@@ -3926,9 +3933,6 @@ a.button.checkout.wc-forward {
 	}
 	.site-header > .wrap {
 		//background-position: center bottom;
-	}
-	.fp-card-icon {
-		display: inline-block;
 	}
 	.fp-card-widget p.allow-icon {
 	    margin-left: 0px;
