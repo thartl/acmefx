@@ -14,9 +14,10 @@ $image_url = $image ? wp_get_attachment_image( $image, 'full', false, array( 'cl
 
 $icon_url = esc_url( get_option( $current_acfw_widget_base . 'icon_url' ) );
 
+// class="taphover" (re-attach to <a>)
 
 ?><div class="fx-type-widget" >
-	<a href="<?php echo $page_url; ?>" class="taphover" >
+	<a href="<?php echo $page_url; ?>" >
 		<?php echo $image_url; ?>
 		<img src="<?php echo $icon_url; ?>" class="fx-icon" >
 		<h2><?php echo $title_field; ?></h2>
