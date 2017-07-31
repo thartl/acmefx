@@ -64,7 +64,8 @@ function th_hover_on_touch() {
 			    if (link.hasClass('hover')) {
 			        return true;
 			        						// condition deactivated  ( || 1 == 1 )
-			    } else if( current_width > 600 ) {  
+			        						// .touch-hover-off turns off .hover assignment; .taphover class is still bound to js, which makes :active styling possible
+			    } else if( current_width > 600 && !($(this).hasClass( 'touch-hover-off' ) ) ) {  
 			        link.addClass("hover");
 			        $('a.taphover').not(this).removeClass("hover");
 			        e.preventDefault();
