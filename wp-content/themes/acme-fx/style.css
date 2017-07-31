@@ -2573,7 +2573,7 @@ a.fx-type.hover {
 	display: block;
 	//position: relative;
 	overflow: hidden;
-	min-height: 300px;
+	//min-height: 300px;
 	width: 100%;
 	background-repeat: no-repeat;
 	background-position: top;
@@ -3543,6 +3543,12 @@ a.button.checkout.wc-forward {
 	.term-description p:nth-child(2) {
 		clear: left;
 	}
+	.fp-card-widget .fp-card-overlay {
+		min-height: 340px;
+	}
+	.fp-card-widget {
+		background-position: 32px 50%;
+	}
 }
 
 
@@ -3744,8 +3750,6 @@ a.button.checkout.wc-forward {
 	.widget-area.flexible-widgets .widget {
 		margin-left: 0;
 	}
-
-
 }
 @media only screen and (max-width: 900px) {
 	.home .site-description {
