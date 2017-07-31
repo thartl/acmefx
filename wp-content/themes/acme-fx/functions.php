@@ -198,8 +198,10 @@ function genesis_sample_enqueue_scripts_styles() {
  * @uses genesis_meta  <genesis/lib/css/load-styles.php>
 */ 
 remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
+
+
 /**
- * Enqueue Genesis child theme style sheet at higher priority
+ * Enqueue Genesis child theme style sheet at higher priority -- amended for cache busting, see notes below
  * @uses wp_enqueue_scripts <http://codex.wordpress.org/Function_Reference/wp_enqueue_style>
  */
 //add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 15 );
@@ -224,6 +226,17 @@ function genesis_cache_bust_load_stylesheet() {
 }
 
 
+//  Enqueue custom admin (and login) styles
+function th_admin_theme_style() {
+	// Get the stylesheet info.
+	$stylesheet_uri = get_stylesheet_directory_uri() . '/th-admin-style.css';
+	$stylesheet_dir = get_stylesheet_directory() . '/th-admin-style.css';
+	$last_modified = date ( "Y-m-d_h.i.s", filemtime( $stylesheet_dir ) );
+	// Enqueue the stylesheet.
+	wp_enqueue_style( 'th-admin-style-versioned', $stylesheet_uri, array(), $last_modified );
+}
+add_action('admin_enqueue_scripts', 'th_admin_theme_style');
+add_action('login_enqueue_scripts', 'th_admin_theme_style');
 
 
 // Add categories to pages

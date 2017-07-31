@@ -46,7 +46,7 @@ $current_username = $current_user->user_login;
 
 
 /**
- *   ACF Widgets -- Enable LITE MODE, except for user: tomas-acme-dev-admin  (hides when true)
+ *   ACF Widgets -- Enable LITE MODE, except for user: tomas-acme-dev-admin (if not deactivated)
  */
 add_filter( 'acfw_lite', 'th_acf_widgets_hide_for_most' ); // hides all admin screens but the plugin stays active if installed. Similar to ACF hide.
 
@@ -55,7 +55,7 @@ function th_acf_widgets_hide_for_most( $content ) {
 $current_user = wp_get_current_user();
 $current_username = $current_user->user_login;
 
-	if ( $current_username == 'tomas-acme-dev-admin' && 1 == 2 ) {  // DEACCTIVATED ( 1 == 2 )
+	if ( $current_username == 'tomas-acme-dev-admin' && 1 == 1 ) {  // User deactivated ( 1 == 2 )
 		return $content;
 	} else {
 		return true;
@@ -81,6 +81,9 @@ function th_add_fx_gallery_widgets() {
         'after' => '</div>',
 	) );
 }
+
+
+
 
 
 

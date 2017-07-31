@@ -2573,13 +2573,13 @@ a.fx-type.hover {
 	display: block;
 	//position: relative;
 	overflow: hidden;
-	min-height: 280px;
+	min-height: 300px;
 	width: 100%;
 	background-position: center;
 	background-repeat: no-repeat;
 }
 .fp-card-widget .fp-card-overlay {
-	min-height: 280px;
+	min-height: 300px;
 }
 
 .fp-card-icon {
@@ -3344,6 +3344,9 @@ a.button.checkout.wc-forward {
 .parent-pageid-580 ul img.alignnone {
 	margin-top: 30px;
 }
+
+
+
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
