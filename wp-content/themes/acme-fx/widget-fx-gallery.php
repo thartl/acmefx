@@ -17,7 +17,7 @@ $icon_url = esc_url( get_option( $current_acfw_widget_base . 'icon_url' ) );
 // class="taphover" (re-attach to <a>)
 
 ?><div class="fx-type-widget" >
-	<a href="<?php echo $page_url; ?>" >
+	<a href="<?php echo $page_url; ?>" class="taphover" >
 		<?php echo $image_url; ?>
 		<img src="<?php echo $icon_url; ?>" class="fx-icon" >
 		<h2><?php echo $title_field; ?></h2>
