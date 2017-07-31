@@ -2580,7 +2580,7 @@ a.fx-type.hover {
 	background-size: cover;
 }
 .fp-card-widget .fp-card-overlay {
-	min-height: 300px;
+	min-height: 340px;
 }
 
 .fp-card-icon {
@@ -3542,9 +3542,6 @@ a.button.checkout.wc-forward {
 	}
 	.term-description p:nth-child(2) {
 		clear: left;
-	}
-	.fp-card-widget .fp-card-overlay {
-		min-height: 340px;
 	}
 	.fp-card-widget {
 		background-position: 50% 32px;
