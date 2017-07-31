@@ -1093,12 +1093,12 @@ img.alignright,
 --------------------------------------------- */
 .flexible-widgets {
 	overflow: hidden;
-	padding: 4% 0 calc(4% - 40px); /* Compensate Widget margin */
+	//padding: 4% 0 calc(4% - 40px); /* Compensate Widget margin */
 }
 
 .widget-area.flexible-widgets .widget {
 	float: left;
-	margin-bottom: 40px;
+	margin-bottom: 30px;
 	margin-left: 2.564102564102564%;
 }
 
@@ -2571,7 +2571,7 @@ a.fx-type.hover {
 /* ***************************************  NEW Front-page Cards -- Widgetized ****/
 .fp-card-widget {
 	display: block;
-	position: relative;
+	//position: relative;
 	overflow: hidden;
 	min-height: 280px;
 	width: 100%;
@@ -2583,7 +2583,7 @@ a.fx-type.hover {
 }
 
 .fp-card-icon {
-	position: relative;
+	//position: relative;
 	float: left;
 	box-sizing: content-box;
 	max-width: 100px;
@@ -3732,6 +3732,10 @@ a.button.checkout.wc-forward {
 	.footer-widgets-2 {
 		margin: 0 auto 60px;
 	}
+	
+	.widget-area.flexible-widgets.widget-thirds .widget {
+		width: 100%;
+	}
 
 
 }
@@ -3914,7 +3918,12 @@ a.button.checkout.wc-forward {
 	.site-header > .wrap {
 		//background-position: center bottom;
 	}
-	
+	.fp-card-icon {
+		display: inline-block;
+	}
+	.fp-card-widget p.allow-icon {
+	    margin-left: 0px;
+	}
 }
 
 @media only screen and (max-width: 550px) {
