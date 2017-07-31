@@ -3547,7 +3547,7 @@ a.button.checkout.wc-forward {
 		min-height: 340px;
 	}
 	.fp-card-widget {
-		background-position: 32px 50%;
+		background-position: 50% 32px;
 	}
 }
 
