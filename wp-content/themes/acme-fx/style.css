@@ -2586,6 +2586,7 @@ a.fx-type.hover {
 }
 .fp-card-widget .fp-card-overlay {
 	min-height: 340px;
+	display: flex;
 }
 
 .fp-card-icon {
