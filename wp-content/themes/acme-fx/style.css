@@ -3589,10 +3589,10 @@ a.button.checkout.wc-forward {
 		width: 100%;
 	}
 
-	.site-inner {
+	/* .site-inner {
 		padding-left: 30px;
 		padding-right: 30px;
-	}
+	} */
 
 
 	.genesis-nav-menu li,
@@ -3764,6 +3764,9 @@ a.button.checkout.wc-forward {
 	.widget-area.flexible-widgets .widget {
 		margin-left: 0;
 	}
+
+
+
 	.fp-card-widget {
 	//	background-position: 50% 0px;
 	}
@@ -3868,6 +3871,9 @@ a.button.checkout.wc-forward {
 	.headhesive--stick.nav-secondary {
 	padding: 5px;
 	}
+	.woocommerce div.product .product_title {
+    font-size: 3.5rem;
+}
 	.fp-card-widget .fp-card-overlay {
 		min-height: 340px;
 	}
@@ -3987,6 +3993,16 @@ a.button.checkout.wc-forward {
 	.all-fx-widgets .fx-type-widget h2 {
 		left: 20px;
 	}
+	.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images {
+	    float: none;
+	    width: 100%;
+	}
+	.woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary {
+	    float: none;
+	    width: 100%;
+	}
+	.woocommerce div.product .product_title {
+    font-size: 4rem;
 
 }
 
