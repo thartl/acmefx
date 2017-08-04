@@ -3338,11 +3338,12 @@ a.button.checkout.wc-forward {
 /** Horizontal scrolling tables. ".horizontal-scroll-table" is added by th_wrap_table( $content ) in functions.php **/
 .entry-content .horizontal-scroll-table {
 	overflow-x: auto;
-	overflow-y: hidden;
+	overflow-y: visible;
+	margin: 30px 0 50px;
 	border: 1px solid #eee;
 }
 .horizontal-scroll-table table.hs-table {
-	margin-bottom: 0px;
+	margin-bottom: 0;
 }
 .horizontal-scroll-table .hs-table td {
 	word-break: normal;
