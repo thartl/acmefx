@@ -2530,6 +2530,10 @@ a.fx-type.hover {
 		-webkit-filter: brightness(0.48) grayscale(20%) blur(1px);
 	}
 /*}*/
+.all-fx-widgets .fx-type-widget a:active img.fx-widget-bg {
+	filter: brightness(0.48) grayscale(20%) blur(1px);
+	-webkit-filter: brightness(0.48) grayscale(20%) blur(1px);
+}
 .all-fx-widgets .fx-icon {
 	width: 75px;
 	max-height: 75px;
@@ -2555,12 +2559,12 @@ a.fx-type.hover {
 	-webkit-transition: opacity .3s ease-in-out;
 	-o-transition: opacity .3s ease-in-out;
 }
-/*@media (hover: hover) {*/
+@media (hover: hover) {
 	.all-fx-widgets .fx-type-widget:hover p,
 	.all-fx-widgets .fx-type-widget.hover p {
 		opacity: 1;
 	}
-/*}*/
+}
 
 .all-fx-widgets .widget-wrap .fx-type img.fx-widget-bg {
 	//width: auto;
@@ -2573,13 +2577,16 @@ a.fx-type.hover {
 	display: block;
 	//position: relative;
 	overflow: hidden;
-	min-height: 300px;
+	//min-height: 300px;
 	width: 100%;
-	background-position: center;
 	background-repeat: no-repeat;
+	//background-position: 50% 32px;
+	background-position: 50% calc(50% + 32px);
+	background-size: cover;
 }
 .fp-card-widget .fp-card-overlay {
-	min-height: 300px;
+	min-height: 340px;
+	display: flex;
 }
 
 .fp-card-icon {
@@ -2624,10 +2631,6 @@ a.fx-type.hover {
 	-o-transition: .3s ease-in-out;
 	-ms-transition: .3s ease-in-out;
 }
-.fp-card-widget p.allow-icon {
-	margin-left: 140px;
-}
-
 .fp-card-widget .fp-card-overlay:hover {
 	background: linear-gradient(to right, hsla(190, 5%, 22%, 0.3) 0%, hsla(180, 5%, 16%, 0.5) 15%, hsla(180, 5%, 16%, 0.5) 85%, hsla(190, 5%, 22%, 0.3) 100%);
 }
@@ -2639,47 +2642,6 @@ div.fp-card-widget:hover p {
 	opacity: 1;
 }
 
-/* ***************************************  Front Page Widgets  */
-
-.expendables {
-	background: url('/wp-content/uploads/2017/07/blue-bulb.jpg');
-	background-position: center;
-	background-size: cover;
-	transition: .3s ease-in-out;
-	-moz-transition: .3s ease-in-out;
-	-webkit-transition: .3s ease-in-out;
-	-o-transition: .3s ease-in-out;
-	-ms-transition: .3s ease-in-out;
-}
-.expendables:hover {
-	background: url('/wp-content/uploads/2017/07/blue-bulb-dark.jpg');
-	background-position: center;
-	background-size: cover;
-}
-.snow-business {
-	background: url('/wp-content/uploads/2017/06/night-moon.jpg');
-	background-position: center;
-}
-.snow-business:hover {
-	background: url('/wp-content/uploads/2017/07/night-moon-dark.jpg');
-	background-position: center;
-}
-.rentals {
-	background: url('/wp-content/uploads/2017/07/fan.jpg');
-	background-position: center;
-}
-.rentals:hover {
-	background: url('/wp-content/uploads/2017/07/fan-dark.jpg');
-	background-position: center;
-}
-.fx {
-	background: url('/wp-content/uploads/2017/07/fx-newer.jpg');
-	background-position: center;
-}
-.fx:hover {
-	background: url('/wp-content/uploads/2017/07/fx-newer-dark.jpg');
-	background-position: center;
-}
 .term-snow-business .content {
 	position: relative;
 }
@@ -3245,29 +3207,36 @@ a.button.checkout.wc-forward {
 
 .credits-list {
 	display: flex;
+	display: -moz-box-flex;
+	flex-direction: row;
+	-moz-flex-direction: row;
 	flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
 	justify-content: space-around;
+	-moz-justify-content: space-around;
 }
 .credits-list img {
 	display: block;
-	width: 214px;
+	width: 190px;
 	margin: 0 auto 15px;
 }
 .credits-list li a {
 	color: #fff;
 }
-.credits-list li {	
-	width: 214px;
-	flex-basis: 1;
-	margin: 60px 15px 40px; 
+.credits-list li {
+//	flex: 1 0 200px;
+	flex-grow: 1;
+	flex-shrink: 0;
+	width: 190px;
+	margin: 60px 15px 20px; 
 }
 .credits-list a p {
 	text-align: center;
-	margin-bottom: 5px;
+	margin-bottom: 2px;
 }
 .credits-list a p:nth-child(2) {
 	font-size: 20px;
-	margin-top: 10px;
+	margin-top: 15px;
 
 }
 .credits-list a p:nth-child(n+3) {
@@ -3344,8 +3313,56 @@ a.button.checkout.wc-forward {
 .parent-pageid-580 ul img.alignnone {
 	margin-top: 30px;
 }
+.page-id-688 .site-inner {  /* Add or edit a product */
+	max-width: 1600px;
+}
 
+/** Allows TinyMCE Advanced to set inline styles for ordered lists (TM-A styles the "ol" not the "li") **/
+.entry-content ol {
+	list-style-type: decimal;
+}
+.entry-content ol > li {
+	list-style-type: inherit;
+}
 
+/** Offset page anchors to allow for sticky header **/
+.page-anchor-ofset {
+	display: block;
+    position: relative;
+    top: -88px;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+/** Horizontal scrolling tables. ".horizontal-scroll-table" is added by th_wrap_table( $content ) in functions.php **/
+.entry-content .horizontal-scroll-table {
+	overflow-x: auto;
+	overflow-y: hidden;
+	border: 1px solid #eee;
+}
+.horizontal-scroll-table table.hs-table {
+	margin-bottom: 0px;
+}
+.horizontal-scroll-table .hs-table td {
+	word-break: normal;
+	min-width: 220px;
+	padding: 18px;
+}
+.horizontal-scroll-table .hs-table tbody {
+	border: none;
+}
+.hs-table .left-border-partial {
+	position: relative;
+}
+.hs-table .left-border-partial.lb-dashed:before {
+  content: " ";
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 0;
+  border-left: 1px dashed #fff;
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
@@ -3507,8 +3524,8 @@ a.button.checkout.wc-forward {
 	}
 	.credits-list li {
 	    width: calc(50% - 20px);
-	    flex-basis: 1;
-	    margin: 60px 10px 40px;
+	    flex-grow: 1;
+	    margin: 60px 10px 20px;
 	}
 
 }
@@ -3736,24 +3753,27 @@ a.button.checkout.wc-forward {
 		margin: 0 auto 60px;
 	}
 	
-	.widget-area.flexible-widgets.widget-thirds .widget {
+	.widget-area.flexible-widgets.widget-halves .widget,
+	.widget-area.flexible-widgets.widget-thirds .widget,
+	.widget-area.flexible-widgets.widget-fourths .widget {
+		clear: left;
 		width: 100%;
 	}
 
 	.widget-area.flexible-widgets .widget {
 		margin-left: 0;
 	}
-	.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images {
-	    float: left;
-	    width: 48%;
-	}
-	.woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary {
-	    float: right;
-	    width: 48%;
-	}
 
 
+
+	.fp-card-widget {
+	//	background-position: 50% 0px;
+	}
+	.fp-card-widget .fp-card-overlay {
+		min-height: 420px;
+	}
 }
+
 @media only screen and (max-width: 900px) {
 	.home .site-description {
 		display: none;
@@ -3853,7 +3873,9 @@ a.button.checkout.wc-forward {
 	.woocommerce div.product .product_title {
     font-size: 3.5rem;
 }
-
+	.fp-card-widget .fp-card-overlay {
+		min-height: 340px;
+	}
 }
 
 @media only screen and (max-width: 600px) {
@@ -3936,12 +3958,6 @@ a.button.checkout.wc-forward {
 	.site-header > .wrap {
 		//background-position: center bottom;
 	}
-	.fp-card-icon {
-		display: inline-block;
-	}
-	.fp-card-widget p.allow-icon {
-	    margin-left: 0px;
-	}
 }
 
 @media only screen and (max-width: 550px) {
@@ -4015,9 +4031,6 @@ a.button.checkout.wc-forward {
 	.credits-list li:last-child {
 	    margin-bottom: 40px;
 	}
-}
-
-@media only screen and (max-width: 450px) {
 	.site-header > .wrap {
 		background-position: -600px;
 	}
@@ -4026,9 +4039,11 @@ a.button.checkout.wc-forward {
 	    font-weight: 700;
 	}
 }
-@media only screen and (max-width: 400px) {
 
-	
+@media only screen and (max-width: 400px) {
+	.credits-list li {
+	    width: 190px;
+	}	
 	h1.entry-title {
 		font-size: 3.5rem;
 	}

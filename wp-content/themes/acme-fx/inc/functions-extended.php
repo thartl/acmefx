@@ -64,7 +64,8 @@ function th_hover_on_touch() {
 			    if (link.hasClass('hover')) {
 			        return true;
 			        						// condition deactivated  ( || 1 == 1 )
-			    } else if( current_width > 600 ) {  
+			        						// .touch-hover-off turns off .hover assignment; .taphover class is still bound to js, which makes :active styling possible
+			    } else if( current_width > 600 && !($(this).hasClass( 'touch-hover-off' ) ) ) {  
 			        link.addClass("hover");
 			        $('a.taphover').not(this).removeClass("hover");
 			        e.preventDefault();
@@ -219,7 +220,7 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 
 					} else {
 
-						page_or_not = url_all.replace( /\/page\/[0-9]+\// , '/' );  // we're on page 1, replace with a "/" only
+						page_or_not = 'not';  // we're on page 1, replace with a "/" only
 
 					}
 
@@ -246,7 +247,7 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 									}
 
 								} else {
-									window.location.href = page_or_not;
+									window.location.href = url_pageless;
 								}
 							}
 						});
@@ -266,7 +267,7 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 									}
 
 								} else {
-									window.location.href = page_or_not;
+									window.location.href = url_pageless;
 								}
 							}
 						});
@@ -286,7 +287,7 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 									}
 
 								} else {
-									window.location.href = page_or_not;
+									window.location.href = url_pageless;
 								}
 							}
 						});

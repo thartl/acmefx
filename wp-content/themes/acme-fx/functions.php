@@ -352,7 +352,8 @@ function th_jpeg_100() {
 
 // Add Image Sizes.
 add_image_size( 'featured-image', 720, 400, TRUE );
-add_image_size( 'credit-poster', 214, 9999 );
+add_image_size( 'credit-poster', 200, 9999 );
+
 
 // Modify size of the Gravatar in the author box.
 add_filter( 'genesis_author_box_gravatar_size', 'genesis_sample_author_box_gravatar' );

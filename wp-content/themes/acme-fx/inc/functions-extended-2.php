@@ -84,11 +84,17 @@ function th_add_fx_gallery_widgets() {
 
 
 
+//  =======================
+//  = wrap .hs-table tables in divs, for horizontal scroll
+//  =======================
 
-
-
-
-
+function th_wrap_table( $content ) {
+   $pattern = '/(<table class=\"hs-table.*?<\/table>)/is';
+   $replacement = '<div class="horizontal-scroll-table">$1</div>';
+   $content = preg_replace( $pattern, $replacement, $content );
+   return $content;
+}
+add_filter( 'the_content', 'th_wrap_table', 600 );
 
 
 
