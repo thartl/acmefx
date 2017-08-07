@@ -3214,16 +3214,16 @@ a.button.checkout.wc-forward {
 }
 .hs-wrap .hs-table td {
 	word-break: normal;
-	min-width: 250px;
+	min-width: 180px;
 	padding: 18px;
 }
 .hs-wrap .hs-table tbody {
 	border: none;
 }
-.hs-table .left-border-partial {
+.hs-table .border-partial {
 	position: relative;
 }
-.hs-table .left-border-partial.lb-dashed:before {
+.hs-table .border-partial.lb-dashed:before {
   content: " ";
   position: absolute;
   top: 20px;
