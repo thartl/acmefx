@@ -3210,6 +3210,7 @@ a.button.checkout.wc-forward {
 }
 .hs-wrap table.hs-table {
 	margin-bottom: 0;
+	background-color: #4B898C;
 }
 .hs-wrap .hs-table td {
 	word-break: normal;
@@ -3239,9 +3240,10 @@ a.button.checkout.wc-forward {
 	margin-top: 20px;
 	text-align: center;
 	display: none;
-	border: 1px dotted #f00;
+	border: 1px solid #fff;
 	border-bottom: none;
 	padding: 12px 0 8px;
+	background-color: #4B898C;
 }
 .scroll-notice .dashicons {
 	margin: 3px 6px 0;
