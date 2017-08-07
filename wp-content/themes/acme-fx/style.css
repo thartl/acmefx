@@ -3179,7 +3179,7 @@ a.button.checkout.wc-forward {
 .parent-pageid-580 ul img.alignnone {
 	margin-top: 30px;
 }
-.page-id-688 .site-inner {  /* Add or edit a product */
+.inner-1600w .site-inner {  /* Add or edit a product */
 	max-width: 1600px;
 }
 
@@ -3201,22 +3201,22 @@ a.button.checkout.wc-forward {
     visibility: hidden;
 }
 
-/** Horizontal scrolling tables. ".horizontal-scroll-table" is added by th_wrap_table( $content ) in functions.php **/
-.entry-content .horizontal-scroll-table {
+/** Horizontal scrolling tables. ".hs-wrap" is added by th_wrap_table( $content ) in functions.php **/
+.entry-content .hs-wrap {
 	overflow-x: auto;
 	overflow-y: visible;
 	margin: 30px 0 50px;
 	border: 1px solid #eee;
 }
-.horizontal-scroll-table table.hs-table {
+.hs-wrap table.hs-table {
 	margin-bottom: 0;
 }
-.horizontal-scroll-table .hs-table td {
+.hs-wrap .hs-table td {
 	word-break: normal;
-	min-width: 220px;
+	min-width: 250px;
 	padding: 18px;
 }
-.horizontal-scroll-table .hs-table tbody {
+.hs-wrap .hs-table tbody {
 	border: none;
 }
 .hs-table .left-border-partial {
@@ -3230,6 +3230,23 @@ a.button.checkout.wc-forward {
   left: 0;
   border-left: 1px dashed #fff;
 }
+.hs-wrap.scroll-enabled {
+	margin-top: 0px;
+}
+.scroll-notice {
+	font-size: 16px;
+	line-height: 26px;
+	margin-top: 20px;
+	text-align: center;
+	display: none;
+	border: 1px dotted #f00;
+	border-bottom: none;
+	padding: 12px 0 8px;
+}
+.scroll-notice .dashicons {
+	margin: 3px 6px 0;
+}
+
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */

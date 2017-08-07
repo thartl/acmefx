@@ -32,7 +32,7 @@ add_filter( 'gettext', 'th_change_text_strings', 20, 3 );
 /** Hover on Touch *
  *	Source:  http://jsfiddle.net/c_kick/s9rB4/
  *********************************************************/
-add_action( 'wp_footer', 'th_hover_on_touch', 200 );
+//add_action( 'wp_footer', 'th_hover_on_touch', 200 );
 
 function th_hover_on_touch() {
 
@@ -45,7 +45,7 @@ function th_hover_on_touch() {
 			    // Get initial screen size
 			    current_width = document.documentElement.clientWidth;
 
-		   			console.log( 'Initial window width is: ' + current_width + ' pixels.' );
+		   			// console.log( 'Initial window width is: ' + current_width + ' pixels.' );
 
 				// Listen for resize changes
 				window.addEventListener("resize", function() {
@@ -53,7 +53,7 @@ function th_hover_on_touch() {
 				    // Update screen size
 				    current_width = document.documentElement.clientWidth;
 
-		   			console.log( 'Current window width is: ' + current_width + ' pixels.' );
+		   			// console.log( 'Current window width is: ' + current_width + ' pixels.' );
 
 				}, true );
 
@@ -64,7 +64,7 @@ function th_hover_on_touch() {
 			    if (link.hasClass('hover')) {
 			        return true;
 			        						// condition deactivated  ( || 1 == 1 )
-			        						// .touch-hover-off turns off .hover assignment; .taphover class is still bound to js, which makes :active styling possible
+			        						// .touch-hover-off turns off .hover assignment; .taphover class is still bound to js, which makes :active styling possible for iOS
 			    } else if( current_width > 600 && !($(this).hasClass( 'touch-hover-off' ) ) ) {  
 			        link.addClass("hover");
 			        $('a.taphover').not(this).removeClass("hover");
@@ -301,19 +301,6 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 	}
 
 /** END: Grid/List buttons set cookies and reload page  **********************************************************************/
-
-
-/**** testing  ************************************************************/
-// add_action( 'woocommerce_before_shop_loop', 'th_read_cookies', 16 );
-// function th_read_cookies() {
-
-// if( !isset( $_COOKIE['store_view'] ) ) {
-// 	  echo '<br>The cookie: store_view is NOT set.';
-// 	} else {
-// 	  echo '<br>Cookie is:  <h3>' . $_COOKIE['store_view'] . '</h3><br>';
-// 	}
-// }
-/*************************************************************************/
 
 
 

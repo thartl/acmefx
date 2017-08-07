@@ -90,7 +90,7 @@ function th_add_fx_gallery_widgets() {
 
 function th_wrap_table( $content ) {
    $pattern = '/(<table class=\"hs-table.*?<\/table>)/is';
-   $replacement = '<div class="horizontal-scroll-table">$1</div>';
+   $replacement = '<div class="scroll-notice"><span class="dashicons dashicons-arrow-left-alt"></span> table scrolls <span class="dashicons dashicons-arrow-right-alt"></span></div><div class="hs-wrap">$1</div>';
    $content = preg_replace( $pattern, $replacement, $content );
    return $content;
 }
@@ -98,4 +98,61 @@ add_filter( 'the_content', 'th_wrap_table', 600 );
 
 
 
+/** Display scroll notice when table becomes scrollable **********************************************************************/
+add_action( 'wp_footer', 'th_table_scroll_notice', 100 );
+
+	function th_table_scroll_notice() {
+
+		if( is_page() ) {	//  was page id 688
+
+			?><script type="text/javascript">
+
+				jQuery( document ).ready(function( $ ) {
+
+					$( '.hs-wrap' ).each( function( index ) {
+
+						var wrap_w = $(this).width();
+						var table_w = $( '.hs-table', this ).width();
+
+						if( ( wrap_w - table_w + 20 ) < 0 && !$(this).hasClass( 'scroll-enabled' ) ) {
+
+							$(this).addClass( 'scroll-enabled' );
+						console.log( 'Scroll enabled.' );
+							$(this).prev( '.scroll-notice' ).slideDown();
+						}
+
+					});  //  END .each
+
+
+					// Listen for resize changes
+					window.addEventListener("resize", function() {
+
+						$( '.hs-wrap' ).each( function( index ) {
+
+							var wrap_w_new = $(this).width();
+							var table_w_new = $( '.hs-table', this ).width();
+
+							if( (wrap_w_new - table_w_new) + 20 < 0 && !$(this).hasClass( 'scroll-enabled' ) )  {
+								$(this).addClass( 'scroll-enabled' );
+								$(this).prev( '.scroll-notice' ).slideDown();
+							}
+
+							if( (wrap_w_new - table_w_new) + 5 > 0 && $(this).hasClass( 'scroll-enabled' ) )  {
+								$(this).removeClass( 'scroll-enabled' );
+								$(this).prev( '.scroll-notice' ).slideUp();
+							}
+
+						});
+
+					}, true );
+
+				});  //  END jQuery
+
+			</script><?php
+
+		}
+
+	}
+
+/** END: Testing scripts  **********************************************************************/
 
