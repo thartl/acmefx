@@ -3376,9 +3376,16 @@ a.button.checkout.wc-forward {
 	border: 1px dotted #f00;
 	border-bottom: none;
 	padding: 12px 0 8px;
+	-webkit-transition: all .6s ease-in-out;
+	-o-transition: all .6s ease-in-out;
+	transition: all .6s ease-in-out;
 }
 .scroll-notice .dashicons {
 	margin: 3px 6px 0;
+}
+.scroll-notice.sn-white {
+	background-color: white;
+	color: white;
 }
 
 

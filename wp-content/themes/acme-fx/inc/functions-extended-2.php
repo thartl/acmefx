@@ -117,8 +117,9 @@ add_action( 'wp_footer', 'th_table_scroll_notice', 100 );
 						if( ( wrap_w - table_w + 20 ) < 0 && !$(this).hasClass( 'scroll-enabled' ) ) {
 
 							$(this).addClass( 'scroll-enabled' );
-						console.log( 'Scroll enabled.' );
-							$(this).prev( '.scroll-notice' ).slideDown();
+						// console.log( 'Scroll enabled.' );
+							$(this).prev( '.scroll-notice' ).delay(1000).slideDown().delay(1000).addClass( 'sn-white' ).removeClass( 'sn-white' );
+
 						}
 
 					});  //  END .each
