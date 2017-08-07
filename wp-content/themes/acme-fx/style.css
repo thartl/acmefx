@@ -2331,9 +2331,6 @@ h1.archive-title a:hover {
 
 /*******************************  Front Page & FX     */
 
-.front-page-1 {
-	padding-top: 0;
-}
 .home article {
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
@@ -2345,136 +2342,10 @@ h1.archive-title a:hover {
 .fx-main h4 {
 	margin-bottom: 50px;
 }
-.all-business,
-.all-fx {
-	display: flex;
-	display: -moz-box-flex;
-	flex-wrap: wrap;
-	width: 100%;
-}
-.business-type,
-.fx-type {
-	flex-grow: 1;
-	color: #fff;
-	padding: 20px;
-	position: relative;
-	background-size: cover;
-	transform: translate3d(0,0,0);
-	-webkit-transform: translate3d(0,0,0);
-	-moz-transform: translate3d(0,0,0);
-	-o-transform: translate3d(0,0,0);
-	-ms-transform: translate3d(0,0,0);	  
-}
-.business-type {
-	flex-basis: 28%;
-	transition: all .6s ease-in-out;
-	-moz-transition: all .6s ease-in-out;
-	-webkit-transition: all .6s ease-in-out;
-	-o-transition: all .6s ease-in-out;
-	-ms-transition: all .6s ease-in-out;
-	margin: 10px;
-}
-.fx-type {
-	margin: 10px;
-	flex-basis: 40%;
-	transition: all .3s ease-in-out;
-	-moz-transition: all .3s ease-in-out;
-	-webkit-transition: all .3s ease-in-out;
-	-o-transition: all .3s ease-in-out;
-	-ms-transition: all .3s ease-in-out;
-}
-.business-type.snow-business {
-	flex-basis: 100%;
-}
-.business-type img {
-	width: 120px;
-	float: left;
-	margin: 0 auto;
-
-}
-.fx-type img {
-	width: 75px;
-	max-height: 75px;
-	margin: 0 auto;
-	position: absolute;
-}
-.business-type h2,
-.fx-type h2 {
-	position: absolute;
-	font-family: Bitter, serif;
-}
-.fx-type h2 {
-	top: 30px;
-	left: 120px;
-	color: #5BA5A5;
-}
-.business-type h2 {
-	top: 0;
-	left: 0;
-	color: #fff;
-	padding: 15px 20px 25px;
-	background-color: #1E373B;
-	width: 100%;
-	transition: .3s ease-in-out;
-	-moz-transition: .3s ease-in-out;
-	-webkit-transition: .3s ease-in-out;
-	-o-transition: .3s ease-in-out;
-	-ms-transition: .3s ease-in-out;
-	font-size: 24px;
-	text-align: center;
-}
-.business-type:hover h2 {
-	background-color: #AE4040;
-}
-img.fp1-snow-logo {
-	display: block;
-	margin: 55px 20px 20px;
-	width: 200px;
-	float: left;
-}
-a.business-type:hover,
-a.fx-type:hover {
-	color: #fff;
+.home .widget.featured-content {
+	margin-top: 40px;
 }
 
-.business-type p,
-.fx-type p,
-.snow-business img {
-	margin-top: 90px;
-	opacity: 0;
-	transition: .3s ease-in-out;
-	-moz-transition: .3s ease-in-out;
-	-webkit-transition: .3s ease-in-out;
-	-o-transition: .3s ease-in-out;
-	-ms-transition: .3s ease-in-out;
-}
-.business-type p {
-	margin-top: 70px;
-}
-
-/** th-- Use class .hover added by th_hover_on_touch() -- functions-extended.php  */
-.business-type.hover p,
-.fx-type.hover p,
-.snow-business.hover img {
-	opacity: 1;
-}
-a.business-type.hover,
-a.fx-type.hover {
-	color: #fff;
-}
-.business-type.hover h2 {
-	background-color: #AE4040;
-}
-/** END Use class .hover added by th_hover_on_touch() ***/
-
-.business-type:hover p,
-.snow-business:hover img,
-.fx-type:hover p {
-	opacity: 1;
-}
-.snow-business img {
-	margin: 60px 20px 20px 0px;
-}
 /* ***************************************  NEW FX Gallery -- Widgetized ****/
 
 .all-fx-widgets {
@@ -2566,12 +2437,6 @@ a.fx-type.hover {
 	}
 }
 
-.all-fx-widgets .widget-wrap .fx-type img.fx-widget-bg {
-	//width: auto;
-	//max-height: 50%;
-	//position: static;
-}
-
 /* ***************************************  NEW Front-page Cards -- Widgetized ****/
 .fp-card-widget {
 	display: block;
@@ -2630,6 +2495,7 @@ a.fx-type.hover {
 	-webkit-transition: .3s ease-in-out;
 	-o-transition: .3s ease-in-out;
 	-ms-transition: .3s ease-in-out;
+	font-size: 18px;
 }
 .fp-card-widget .fp-card-overlay:hover {
 	background: linear-gradient(to right, hsla(190, 5%, 22%, 0.3) 0%, hsla(180, 5%, 16%, 0.5) 15%, hsla(180, 5%, 16%, 0.5) 85%, hsla(190, 5%, 22%, 0.3) 100%);
@@ -3765,7 +3631,9 @@ a.button.checkout.wc-forward {
 		margin-left: 0;
 	}
 
-
+	.fp-card-widget p {
+		font-size: 20px;
+	}
 
 	.fp-card-widget {
 	//	background-position: 50% 0px;
@@ -4038,6 +3906,9 @@ a.button.checkout.wc-forward {
 	.credits-list a p:nth-child(2) {
 	    font-size: 16px;
 	    font-weight: 700;
+	}
+	.fp-card-widget p {
+		font-size: 18px;
 	}
 }
 
