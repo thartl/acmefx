@@ -112,7 +112,7 @@ add_action( 'wp_footer', 'th_table_scroll_notice', 100 );
 					$( '.hs-wrap' ).each( function( index ) {
 
 						var table_max_width = parseFloat( $( '.hs-table', this ).css( 'maxWidth' ) );
-						if( table_max_width > 100 ) {
+						if( table_max_width > 20 ) {
 							$(this).css( 'maxWidth', table_max_width );
 						}
 
