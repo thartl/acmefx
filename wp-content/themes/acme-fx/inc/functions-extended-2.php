@@ -157,5 +157,131 @@ add_action( 'wp_footer', 'th_table_scroll_notice', 100 );
 
 	}
 
-/** END: Testing scripts  **********************************************************************/
+/** END: Display scroll notice when table becomes scrollable  **********************************************************************/
+
+
+/********** Build FedEx / Shipping Class restrictions ******************************************************************************/
+add_filter( 'woocommerce_package_rates', 'th_shipping_methods_restricted', 10, 2 );
+function th_shipping_methods_restricted( $rates, $package ) {
+
+	$sb_ship_notice = false;
+
+	$shipping_class_ids = array(
+		81,
+	);
+	$shipping_services_to_hide = array(
+		'wf_fedex_woocommerce_shipping:FEDEX_EXPRESS_SAVER',
+		'wf_fedex_woocommerce_shipping:FEDEX_GROUND',
+		'wf_fedex_woocommerce_shipping:FEDEX_2_DAY',
+		'wf_fedex_woocommerce_shipping:STANDARD_OVERNIGHT',
+		'wf_fedex_woocommerce_shipping:PRIORITY_OVERNIGHT',
+		'wf_fedex_woocommerce_shipping:FIRST_OVERNIGHT'
+	);
+	$exclude_areas = array(
+		'AB',
+		'BC',
+		'YT'
+	);
+	$restricted_shipping_class = false;
+	foreach( WC()->cart->cart_contents as $key => $values ) {
+		if ( in_array($values['data']->get_shipping_class_id() , $shipping_class_ids ) ) {
+			$restricted_shipping_class = true;
+			break;
+		}
+	}
+	$shipping_area_restricted = false;
+	if ( is_array( $exclude_areas ) ) {
+		if ( in_array( WC()->customer->shipping_state, $exclude_areas ) ) {
+			$shipping_area_restricted = true;
+		}
+	}
+
+	if ( $restricted_shipping_class && $shipping_area_restricted ) {
+
+		if ( is_array( $shipping_services_to_hide ) ) {
+			// wc_add_notice( __( 'We are sorry, Snow Business products do not ship to BC, AB, and YT.', 'woocommerce' ), 'error' );
+			$sb_ship_notice = true;
+
+			foreach( $shipping_services_to_hide as $excluded_province ) {
+				unset( $rates[ $excluded_province ] );
+			}
+		}
+	}
+
+	return $rates;
+}
+
+
+/************ Output a notice if Snow Business products cannot be shipped (i.e. to BC, AB, YT) *********************************/
+add_action( 'woocommerce_calculated_shipping', 'th_shipping_restriction_notice' );
+add_action( 'woocommerce_review_order_after_order_total', 'th_shipping_restriction_notice', 100 );
+
+function th_shipping_restriction_notice() {
+	global $woocommerce;
+
+	$shipping_class_ids = array(
+		81,
+	);
+	$shipping_services_to_hide = array(
+		'wf_fedex_woocommerce_shipping:FEDEX_EXPRESS_SAVER',
+		'wf_fedex_woocommerce_shipping:FEDEX_GROUND',
+		'wf_fedex_woocommerce_shipping:FEDEX_2_DAY',
+		'wf_fedex_woocommerce_shipping:STANDARD_OVERNIGHT',
+		'wf_fedex_woocommerce_shipping:PRIORITY_OVERNIGHT',
+		'wf_fedex_woocommerce_shipping:FIRST_OVERNIGHT'
+	);
+	$exclude_areas = array(
+		'AB',
+		'BC',
+		'YT'
+	);
+	$restricted_shipping_class = false;
+	foreach( WC()->cart->cart_contents as $key => $values ) {
+		if ( in_array($values['data']->get_shipping_class_id() , $shipping_class_ids ) ) {
+			$restricted_shipping_class = true;
+			break;
+		}
+	}
+	$shipping_area_restricted = false;
+	if ( is_array( $exclude_areas ) ) {
+		if ( in_array( WC()->customer->shipping_state, $exclude_areas ) ) {
+			$shipping_area_restricted = true;
+		}
+	}
+
+	if ( $restricted_shipping_class && $shipping_area_restricted ) {
+		if ( is_cart() ) {
+			wc_add_notice( __( 'Snow Business products do not ship to BC, AB, and YT.<br>
+								You options are:<br>
+								1) Pick up the entire order at our shop.<br>
+								2) Remove Snow Business products from the cart and have the rest of the order shipped to you.', 'woocommerce' ), 'notice' );
+		} else {
+			wc_clear_notices();
+			wc_add_notice( __( 'Snow Business products do not ship to BC, AB, and YT.<br>
+							You options are:<br>
+							1) Pick up the entire order at our shop.<br>
+							2) Remove Snow Business products from the Cart and have the rest of the order shipped to you.<br>
+							<p><a class="button wc-backward" href="' . esc_url( wc_get_page_permalink( 'cart' ) ) . '">Return to cart</a></p>', 'woocommerce' ), 'notice' );
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
