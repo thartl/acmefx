@@ -268,7 +268,8 @@ function th_shipping_restriction_notice() {
 }
 
 /** Get shipping class ID (displays only for User  11) -- UNCOMMENT ONLY IN DEV --  *************/
-add_action( 'woocommerce_single_product_summary', 'th_print_shipping_class_id' );
+/** Snow Business shipping class ID = 81 *****************************/
+//add_action( 'woocommerce_single_product_summary', 'th_print_shipping_class_id' );
 function th_print_shipping_class_id() {
 	if ( is_product() && get_current_user_id() == 11 ) {
 
