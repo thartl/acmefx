@@ -61,7 +61,7 @@ function th_private_admin_bar( $content ) {
 
 	/**  User IDs:  Tomas = 11, Amy = 5, Kailey = 7, Kevin = 4;  UNCOMMENT TO ENABLE ADMIN BAR ON FRONT END     Note: there is no user 0.  *****/
 
-	if ( $current_user == 0
+	if ( $current_user == 11
 //		 ||	$current_user == 11 		// Tomas
 //		 || $current_user == 5 		// Amy
 //		 || $current_user == 7 		// Kailey
@@ -487,7 +487,8 @@ function th_mm_css_styles($styles) {
 }
 add_filter('wpmm_styles', 'th_mm_css_styles');
 
-//* Place the Genesis Simple Share buttons below content for single products 
+
+//************** Place the Genesis Simple Share buttons below content for single products 
 add_action( 'woocommerce_after_single_product_summary', 'acme_entry_share', 8 );
 /**
  * Adds the Genesis Share icons before the entry.
@@ -508,7 +509,8 @@ function acme_entry_share() {
 	echo '</div>';
 }
 
-//* Place the Genesis Simple Share buttons above content in single entries 
+
+//************** Place the Genesis Simple Share buttons above content in single entries 
 add_action( 'genesis_entry_footer', 'acme_suffix_entry', 20 );
 /**
  * Adds the Genesis Share icons after the entry.

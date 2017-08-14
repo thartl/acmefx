@@ -160,6 +160,7 @@ add_action( 'wp_footer', 'th_table_scroll_notice', 100 );
 /** END: Display scroll notice when table becomes scrollable  **********************************************************************/
 
 
+
 /********** Build FedEx / Shipping Class restrictions ******************************************************************************/
 add_filter( 'woocommerce_package_rates', 'th_shipping_methods_restricted', 10, 2 );
 function th_shipping_methods_restricted( $rates, $package ) {
@@ -213,8 +214,8 @@ function th_shipping_methods_restricted( $rates, $package ) {
 
 
 /************ Output a notice if Snow Business products cannot be shipped (i.e. to BC, AB, YT) *********************************/
-add_action( 'woocommerce_calculated_shipping', 'th_shipping_restriction_notice' );
-add_action( 'woocommerce_review_order_after_order_total', 'th_shipping_restriction_notice', 100 );
+add_action( 'woocommerce_calculated_shipping', 'th_shipping_restriction_notice' );  // Cart page
+add_action( 'woocommerce_review_order_after_order_total', 'th_shipping_restriction_notice', 100 );  // Checkout page
 
 function th_shipping_restriction_notice() {
 	global $woocommerce;
@@ -266,9 +267,17 @@ function th_shipping_restriction_notice() {
 	}
 }
 
+/** Get shipping class ID (displays only for User  11) -- UNCOMMENT ONLY IN DEV --  *************/
+add_action( 'woocommerce_single_product_summary', 'th_print_shipping_class_id' );
+function th_print_shipping_class_id() {
+	if ( is_product() && get_current_user_id() == 11 ) {
 
+		global $product;
+		$shipping_class_id = $product->get_shipping_class_id();
 
-
+		echo '<p>Shipping class ID of this product is: ' . $shipping_class_id . '</p>';
+	}
+}
 
 
 
