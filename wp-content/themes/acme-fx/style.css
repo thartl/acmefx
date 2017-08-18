@@ -3212,6 +3212,10 @@ a.button.checkout.wc-forward {
 	margin-bottom: 0;
 	background-color: #4B898C;
 }
+.hs-wrap .hs-table a {
+	color: #fff;
+	text-decoration: underline;
+}
 .hs-wrap .hs-table td {
 	word-break: normal;
 	min-width: 180px;
