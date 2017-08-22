@@ -22,6 +22,8 @@ function th_change_text_strings( $translated_text, $text, $domain ) {
 	switch ( $translated_text ) {
 		case 'Share with Friends' :
 			$translated_text = __( 'Share:', 'wc_wishlist' );
+		case 'Apply coupon' :
+			$translated_text = __( 'Redeem', 'woocommerce' );
 			break;
 	}
 	return $translated_text;
