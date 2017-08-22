@@ -34,7 +34,7 @@ add_filter( 'gettext', 'th_change_text_strings', 20, 3 );
 /** Hover on Touch *
  *	Source:  http://jsfiddle.net/c_kick/s9rB4/
  *********************************************************/
-//add_action( 'wp_footer', 'th_hover_on_touch', 200 );
+//add_action( 'wp_footer', 'th_hover_on_touch', 200 );  // DEACTIVATED
 
 function th_hover_on_touch() {
 
