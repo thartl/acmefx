@@ -162,7 +162,7 @@ add_action( 'wp_footer', 'th_table_scroll_notice', 100 );
 
 /** DEACTIVATED */
 /********** Build FedEx / Shipping Class restrictions ******************************************************************************/
-//add_filter( 'woocommerce_package_rates', 'th_shipping_methods_restricted', 10, 2 );
+add_filter( 'woocommerce_package_rates', 'th_shipping_methods_restricted', 10, 2 );
 function th_shipping_methods_restricted( $rates, $package ) {
 
 	$sb_ship_notice = false;
@@ -170,14 +170,25 @@ function th_shipping_methods_restricted( $rates, $package ) {
 	$shipping_class_ids = array(
 		81,
 	);
+
 	$shipping_services_to_hide = array(
-		'wf_fedex_woocommerce_shipping:FEDEX_EXPRESS_SAVER',
-		'wf_fedex_woocommerce_shipping:FEDEX_GROUND',
-		'wf_fedex_woocommerce_shipping:FEDEX_2_DAY',
-		'wf_fedex_woocommerce_shipping:STANDARD_OVERNIGHT',
-		'wf_fedex_woocommerce_shipping:PRIORITY_OVERNIGHT',
-		'wf_fedex_woocommerce_shipping:FIRST_OVERNIGHT'
+		'fedex:FEDEX_EXPRESS_SAVER',
+		'fedex:FEDEX_GROUND',
+		'fedex:FEDEX_2_DAY',
+		'fedex:STANDARD_OVERNIGHT',
+		'fedex:PRIORITY_OVERNIGHT',
+		'fedex:FIRST_OVERNIGHT'
 	);
+
+	// $shipping_services_to_hide = array(
+	// 	'wf_fedex_woocommerce_shipping:FEDEX_EXPRESS_SAVER',
+	// 	'wf_fedex_woocommerce_shipping:FEDEX_GROUND',
+	// 	'wf_fedex_woocommerce_shipping:FEDEX_2_DAY',
+	// 	'wf_fedex_woocommerce_shipping:STANDARD_OVERNIGHT',
+	// 	'wf_fedex_woocommerce_shipping:PRIORITY_OVERNIGHT',
+	// 	'wf_fedex_woocommerce_shipping:FIRST_OVERNIGHT'
+	// );
+
 	$exclude_areas = array(
 		'AB',
 		'BC',
@@ -214,8 +225,8 @@ function th_shipping_methods_restricted( $rates, $package ) {
 
 /** BOTH HOOKS DEACTIVATED */
 /************ Output a notice if Snow Business products cannot be shipped (i.e. to BC, AB, YT) *********************************/
-//add_action( 'woocommerce_calculated_shipping', 'th_shipping_restriction_notice' );  // Cart page
-//add_action( 'woocommerce_review_order_after_order_total', 'th_shipping_restriction_notice', 100 );  // Checkout page
+add_action( 'woocommerce_calculated_shipping', 'th_shipping_restriction_notice' );  // Cart page
+add_action( 'woocommerce_review_order_after_order_total', 'th_shipping_restriction_notice', 100 );  // Checkout page
 
 function th_shipping_restriction_notice() {
 	global $woocommerce;
@@ -223,14 +234,25 @@ function th_shipping_restriction_notice() {
 	$shipping_class_ids = array(
 		81,
 	);
+
 	$shipping_services_to_hide = array(
-		'wf_fedex_woocommerce_shipping:FEDEX_EXPRESS_SAVER',
-		'wf_fedex_woocommerce_shipping:FEDEX_GROUND',
-		'wf_fedex_woocommerce_shipping:FEDEX_2_DAY',
-		'wf_fedex_woocommerce_shipping:STANDARD_OVERNIGHT',
-		'wf_fedex_woocommerce_shipping:PRIORITY_OVERNIGHT',
-		'wf_fedex_woocommerce_shipping:FIRST_OVERNIGHT'
+		'fedex:FEDEX_EXPRESS_SAVER',
+		'fedex:FEDEX_GROUND',
+		'fedex:FEDEX_2_DAY',
+		'fedex:STANDARD_OVERNIGHT',
+		'fedex:PRIORITY_OVERNIGHT',
+		'fedex:FIRST_OVERNIGHT'
 	);
+
+	// $shipping_services_to_hide = array(
+	// 	'wf_fedex_woocommerce_shipping:FEDEX_EXPRESS_SAVER',
+	// 	'wf_fedex_woocommerce_shipping:FEDEX_GROUND',
+	// 	'wf_fedex_woocommerce_shipping:FEDEX_2_DAY',
+	// 	'wf_fedex_woocommerce_shipping:STANDARD_OVERNIGHT',
+	// 	'wf_fedex_woocommerce_shipping:PRIORITY_OVERNIGHT',
+	// 	'wf_fedex_woocommerce_shipping:FIRST_OVERNIGHT'
+	// );
+
 	$exclude_areas = array(
 		'AB',
 		'BC',
