@@ -3212,18 +3212,22 @@ a.button.checkout.wc-forward {
 	margin-bottom: 0;
 	background-color: #4B898C;
 }
+.hs-wrap .hs-table a {
+	color: #fff;
+	text-decoration: underline;
+}
 .hs-wrap .hs-table td {
 	word-break: normal;
-	min-width: 250px;
+	min-width: 180px;
 	padding: 18px;
 }
 .hs-wrap .hs-table tbody {
 	border: none;
 }
-.hs-table .left-border-partial {
+.hs-table .border-partial {
 	position: relative;
 }
-.hs-table .left-border-partial.lb-dashed:before {
+.hs-table .border-partial.lb-dashed:before {
   content: " ";
   position: absolute;
   top: 20px;

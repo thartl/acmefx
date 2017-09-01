@@ -89,6 +89,8 @@ function th_add_fx_gallery_widgets() {
 //  =======================
 
 function th_wrap_table( $content ) {
+	// if( preg_match(pattern, subject) )  //  to develop... catch style:min-width and apply to notice and wrap
+	  //  NO, instead detect if table has maxWidth in js, and if so apply to wrap
    $pattern = '/(<table class=\"hs-table.*?<\/table>)/is';
    $replacement = '<div class="scroll-notice"><span class="dashicons dashicons-arrow-left-alt"></span> table scrolls <span class="dashicons dashicons-arrow-right-alt"></span></div><div class="hs-wrap">$1</div>';
    $content = preg_replace( $pattern, $replacement, $content );
@@ -103,13 +105,16 @@ add_action( 'wp_footer', 'th_table_scroll_notice', 100 );
 
 	function th_table_scroll_notice() {
 
-		if( is_page() ) {	//  was page id 688
-
 			?><script type="text/javascript">
 
 				jQuery( document ).ready(function( $ ) {
 
 					$( '.hs-wrap' ).each( function( index ) {
+
+						var table_max_width = parseFloat( $( '.hs-table', this ).css( 'maxWidth' ) );
+						if( table_max_width > 20 ) {
+							$(this).css( 'maxWidth', table_max_width );
+						}
 
 						var wrap_w = $(this).width();
 						var table_w = $( '.hs-table', this ).width();
@@ -117,7 +122,6 @@ add_action( 'wp_footer', 'th_table_scroll_notice', 100 );
 						if( ( wrap_w - table_w + 20 ) < 0 && !$(this).hasClass( 'scroll-enabled' ) ) {
 
 							$(this).addClass( 'scroll-enabled' );
-						// console.log( 'Scroll enabled.' );
 							$(this).prev( '.scroll-notice' ).delay(660).slideDown();
 
 						}
@@ -135,12 +139,12 @@ add_action( 'wp_footer', 'th_table_scroll_notice', 100 );
 
 							if( (wrap_w_new - table_w_new) + 20 < 0 && !$(this).hasClass( 'scroll-enabled' ) )  {
 								$(this).addClass( 'scroll-enabled' );
-								$(this).prev( '.scroll-notice' ).slideDown();
+								$(this).prev( '.scroll-notice' ).slideDown( 400 );
 							}
 
 							if( (wrap_w_new - table_w_new) + 5 > 0 && $(this).hasClass( 'scroll-enabled' ) )  {
 								$(this).removeClass( 'scroll-enabled' );
-								$(this).prev( '.scroll-notice' ).slideUp();
+								$(this).prev( '.scroll-notice' ).hide( '300' );
 							}
 
 						});
@@ -151,9 +155,165 @@ add_action( 'wp_footer', 'th_table_scroll_notice', 100 );
 
 			</script><?php
 
-		}
-
 	}
 
-/** END: Testing scripts  **********************************************************************/
+/** END: Display scroll notice when table becomes scrollable  **********************************************************************/
+
+
+/** DEACTIVATED */
+/********** Build FedEx / Shipping Class restrictions ******************************************************************************/
+add_filter( 'woocommerce_package_rates', 'th_shipping_methods_restricted', 10, 2 );
+function th_shipping_methods_restricted( $rates, $package ) {
+
+	$sb_ship_notice = false;
+
+	$shipping_class_ids = array(
+		81,
+	);
+
+	$shipping_services_to_hide = array(
+		'fedex:FEDEX_EXPRESS_SAVER',
+		'fedex:FEDEX_GROUND',
+		'fedex:FEDEX_2_DAY',
+		'fedex:STANDARD_OVERNIGHT',
+		'fedex:PRIORITY_OVERNIGHT',
+		'fedex:FIRST_OVERNIGHT'
+	);
+
+	// $shipping_services_to_hide = array(
+	// 	'wf_fedex_woocommerce_shipping:FEDEX_EXPRESS_SAVER',
+	// 	'wf_fedex_woocommerce_shipping:FEDEX_GROUND',
+	// 	'wf_fedex_woocommerce_shipping:FEDEX_2_DAY',
+	// 	'wf_fedex_woocommerce_shipping:STANDARD_OVERNIGHT',
+	// 	'wf_fedex_woocommerce_shipping:PRIORITY_OVERNIGHT',
+	// 	'wf_fedex_woocommerce_shipping:FIRST_OVERNIGHT'
+	// );
+
+	$exclude_areas = array(
+		'AB',
+		'BC',
+		'YT'
+	);
+	$restricted_shipping_class = false;
+	foreach( WC()->cart->cart_contents as $key => $values ) {
+		if ( in_array($values['data']->get_shipping_class_id() , $shipping_class_ids ) ) {
+			$restricted_shipping_class = true;
+			break;
+		}
+	}
+	$shipping_area_restricted = false;
+	if ( is_array( $exclude_areas ) ) {
+		if ( in_array( WC()->customer->shipping_state, $exclude_areas ) ) {
+			$shipping_area_restricted = true;
+		}
+	}
+
+	if ( $restricted_shipping_class && $shipping_area_restricted ) {
+
+		if ( is_array( $shipping_services_to_hide ) ) {
+			// wc_add_notice( __( 'We are sorry, Snow Business products do not ship to BC, AB, and YT.', 'woocommerce' ), 'error' );
+			$sb_ship_notice = true;
+
+			foreach( $shipping_services_to_hide as $excluded_province ) {
+				unset( $rates[ $excluded_province ] );
+			}
+		}
+	}
+
+	return $rates;
+}
+
+/** BOTH HOOKS DEACTIVATED */
+/************ Output a notice if Snow Business products cannot be shipped (i.e. to BC, AB, YT) *********************************/
+add_action( 'woocommerce_calculated_shipping', 'th_shipping_restriction_notice' );  // Cart page
+add_action( 'woocommerce_review_order_after_order_total', 'th_shipping_restriction_notice', 100 );  // Checkout page
+
+function th_shipping_restriction_notice() {
+	global $woocommerce;
+
+	$shipping_class_ids = array(
+		81,
+	);
+
+	$shipping_services_to_hide = array(
+		'fedex:FEDEX_EXPRESS_SAVER',
+		'fedex:FEDEX_GROUND',
+		'fedex:FEDEX_2_DAY',
+		'fedex:STANDARD_OVERNIGHT',
+		'fedex:PRIORITY_OVERNIGHT',
+		'fedex:FIRST_OVERNIGHT'
+	);
+
+	// $shipping_services_to_hide = array(
+	// 	'wf_fedex_woocommerce_shipping:FEDEX_EXPRESS_SAVER',
+	// 	'wf_fedex_woocommerce_shipping:FEDEX_GROUND',
+	// 	'wf_fedex_woocommerce_shipping:FEDEX_2_DAY',
+	// 	'wf_fedex_woocommerce_shipping:STANDARD_OVERNIGHT',
+	// 	'wf_fedex_woocommerce_shipping:PRIORITY_OVERNIGHT',
+	// 	'wf_fedex_woocommerce_shipping:FIRST_OVERNIGHT'
+	// );
+
+	$exclude_areas = array(
+		'AB',
+		'BC',
+		'YT'
+	);
+	$restricted_shipping_class = false;
+	foreach( WC()->cart->cart_contents as $key => $values ) {
+		if ( in_array($values['data']->get_shipping_class_id() , $shipping_class_ids ) ) {
+			$restricted_shipping_class = true;
+			break;
+		}
+	}
+	$shipping_area_restricted = false;
+	if ( is_array( $exclude_areas ) ) {
+		if ( in_array( WC()->customer->shipping_state, $exclude_areas ) ) {
+			$shipping_area_restricted = true;
+		}
+	}
+
+	if ( $restricted_shipping_class && $shipping_area_restricted ) {
+		if ( is_cart() ) {
+			wc_add_notice( __( 'Snow Business products do not ship to BC, AB, and YT.<br>
+								You options are:<br>
+								1) Pick up the entire order at our shop.<br>
+								2) Remove Snow Business products from the cart and have the rest of the order shipped to you.', 'woocommerce' ), 'notice' );
+		} else {
+			wc_clear_notices();
+			wc_add_notice( __( 'Snow Business products do not ship to BC, AB, and YT.<br>
+							You options are:<br>
+							1) Pick up the entire order at our shop.<br>
+							2) Remove Snow Business products from the Cart and have the rest of the order shipped to you.<br>
+							<p><a class="button wc-backward" href="' . esc_url( wc_get_page_permalink( 'cart' ) ) . '">Return to cart</a></p>', 'woocommerce' ), 'notice' );
+		}
+	}
+}
+
+/** Get shipping class ID (displays only for User  11) -- UNCOMMENT ONLY IN DEV --  *************/
+/** Snow Business shipping class ID = 81 *****************************/
+//add_action( 'woocommerce_single_product_summary', 'th_print_shipping_class_id' );
+function th_print_shipping_class_id() {
+	if ( is_product() && get_current_user_id() == 11 ) {
+
+		global $product;
+		$shipping_class_id = $product->get_shipping_class_id();
+
+		echo '<p>Shipping class ID of this product is: ' . $shipping_class_id . '</p>';
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

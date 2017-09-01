@@ -22,6 +22,8 @@ function th_change_text_strings( $translated_text, $text, $domain ) {
 	switch ( $translated_text ) {
 		case 'Share with Friends' :
 			$translated_text = __( 'Share:', 'wc_wishlist' );
+		case 'Apply coupon' :
+			$translated_text = __( 'Redeem', 'woocommerce' );
 			break;
 	}
 	return $translated_text;
@@ -32,7 +34,7 @@ add_filter( 'gettext', 'th_change_text_strings', 20, 3 );
 /** Hover on Touch *
  *	Source:  http://jsfiddle.net/c_kick/s9rB4/
  *********************************************************/
-//add_action( 'wp_footer', 'th_hover_on_touch', 200 );
+//add_action( 'wp_footer', 'th_hover_on_touch', 200 );  // DEACTIVATED
 
 function th_hover_on_touch() {
 
@@ -589,15 +591,15 @@ if ( ! function_exists( 'get_current_page_url' ) ) {
 
 add_action( 'wp_enqueue_scripts', 'th_elements_match_height', 99 );
 /**
- * Print an inline script to the footer to keep elements of class ".match-height-item" the same height.
+ * Enqueue matchHeight.js and print an inline script to the footer to keep elements of class ".match-height-item" the same height.
  * Adpated from genesis_sample_products_match_height(), from woocommerce-setup.php
  *
  * @since 2.3.0
  */
 function th_elements_match_height() {
 
-	/** List pages by ID, post_name (slug), or post_title **/
-	if ( ! is_page( 'about-us' ) && ! is_front_page() ) {
+	/** List pages by ID, post_name (slug), or post_title. Currently for the Front page, About page, and partners' Bio pages **/
+	if ( ! is_page( array( 'about-us', 622, 619, 621, 620, 617, 618 ) ) && ! is_front_page() ) {
 		return;
 	}
 
