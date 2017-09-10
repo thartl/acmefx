@@ -19,9 +19,10 @@
  * @link http://codex.wordpress.org/Plugin_API/Filter_Reference/gettext
  */
 function th_change_text_strings( $translated_text, $text, $domain ) {
-	switch ( $translated_text ) {
+	switch ( $text ) {
 		case 'Share with Friends' :
 			$translated_text = __( 'Share:', 'wc_wishlist' );
+			break;
 		case 'Apply coupon' :
 			$translated_text = __( 'Redeem', 'woocommerce' );
 			break;
