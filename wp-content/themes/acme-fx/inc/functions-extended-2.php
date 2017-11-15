@@ -276,17 +276,17 @@ function th_shipping_restriction_notice() {
 	if ( $restricted_shipping_class && $shipping_area_restricted ) {
 		if ( is_cart() ) {
 			wc_add_notice( __( 'Snow Business products do not ship to BC, AB, or YT.<br>
-								Businesses and individuals located in Western Canada are encouraged to contact <a href="https://hollynorth.com/" target="_blank">Hollynorth Production Supplies</a> (604.299.2000) to order Snow Business products.<br>
-								Your options for this order are:<br>
-								1) Choose local pickup and pick up the entire order at our shop.<br>
-								2) Remove Snow Business products from the Cart and have the rest of the order shipped to you.', 'woocommerce' ), 'notice' );
+								Businesses and individuals located in Western Canada are encouraged to speak with <a href="https://hollynorth.com/" target="_blank">Hollynorth Production Supplies</a> (604 299 2000) to order Snow Business products.<br><br>
+								To complete this order you may:<br>
+								1) Pick up the entire order at our shop<br>
+								2) Remove the Snow Business products from your cart and have the other items shipped to you', 'woocommerce' ), 'notice' );
 		} else {
 			wc_clear_notices();
 			wc_add_notice( __( 'Snow Business products do not ship to BC, AB, or YT.<br>
-								Businesses and individuals located in Western Canada are encouraged to contact <a href="https://hollynorth.com/" target="_blank">Hollynorth Production Supplies</a> (604.299.2000) to order Snow Business products.<br>
-								Your options for this order are:<br>
-								1) Choose local pickup and pick up the entire order at our shop.<br>
-								2) Remove Snow Business products from the Cart and have the rest of the order shipped to you.<br>
+								Businesses and individuals located in Western Canada are encouraged to speak with <a href="https://hollynorth.com/" target="_blank">Hollynorth Production Supplies</a> (604 299 2000) to order Snow Business products.<br><br>
+								To complete this order you may:<br>
+								1) Pick up the entire order at our shop<br>
+								2) Remove the Snow Business products from your cart and have the other items shipped to you<br>
 								<p><a class="button wc-backward" href="' . esc_url( wc_get_page_permalink( 'cart' ) ) . '">Return to cart</a></p>', 'woocommerce' ), 'notice' );
 		}
 	}
