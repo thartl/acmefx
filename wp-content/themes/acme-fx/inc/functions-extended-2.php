@@ -142,6 +142,7 @@ add_action( 'wp_footer', 'th_table_scroll_notice', 100 );
 								$(this).prev( '.scroll-notice' ).slideDown( 400 );
 							}
 
+							// Wrap is always bigger by twice the width of border => "+ 5" to account for that
 							if( (wrap_w_new - table_w_new) + 5 > 0 && $(this).hasClass( 'scroll-enabled' ) )  {
 								$(this).removeClass( 'scroll-enabled' );
 								$(this).prev( '.scroll-notice' ).hide( '300' );
@@ -274,7 +275,8 @@ function th_shipping_restriction_notice() {
 
 	if ( $restricted_shipping_class && $shipping_area_restricted ) {
 		if ( is_cart() ) {
-			wc_add_notice( __( 'Snow Business products do not ship to BC, AB, and YT.<br>
+			wc_add_notice( __( 'Snow Business products do not ship to BC, AB, or YT.<br>
+								Businesses and individuals located in Western Canada are encouraged to speak with Hollynorth Production Supplies (604.299.2000) to order Snow Business products.
 								You options are:<br>
 								1) Pick up the entire order at our shop.<br>
 								2) Remove Snow Business products from the cart and have the rest of the order shipped to you.', 'woocommerce' ), 'notice' );
