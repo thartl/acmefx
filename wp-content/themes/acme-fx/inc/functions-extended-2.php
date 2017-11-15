@@ -276,7 +276,7 @@ function th_shipping_restriction_notice() {
 	if ( $restricted_shipping_class && $shipping_area_restricted ) {
 		if ( is_cart() ) {
 			wc_add_notice( __( 'Snow Business products do not ship to BC, AB, or YT.<br>
-								Businesses and individuals located in Western Canada are encouraged to speak with Hollynorth Production Supplies (604.299.2000) to order Snow Business products.
+								Businesses and individuals located in Western Canada are encouraged to speak with <a href="https://hollynorth.com/" target="_blank">Hollynorth Production Supplies</a> (604.299.2000) to order Snow Business products.
 								You options are:<br>
 								1) Pick up the entire order at our shop.<br>
 								2) Remove Snow Business products from the cart and have the rest of the order shipped to you.', 'woocommerce' ), 'notice' );
