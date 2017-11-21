@@ -1892,7 +1892,7 @@ a.button.checkout.wc-forward:focus,
 
 .cart .quantity.buttons_added .plus,
 .cart .quantity.buttons_added .minus {
-	z-index: 100;
+	//z-index: 100;
     height: 1.32em;
     width: 1.387em;
     background-color: #5BA5A5;
@@ -2168,6 +2168,10 @@ address {
 .payment_box.payment_method_stripe input[type="radio"] + label {
 	color: #515151;
 }
+/* .woocommerce .quantity,
+.woocommerce-page .quantity {
+    z-index: 10;
+} */
 
 /* # Sidebars
 ---------------------------------------------------------------------------------------------------- */
