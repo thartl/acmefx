@@ -2557,24 +2557,28 @@ div.agm_mh_info_content {
 	position: absolute;
 	-webkit-animation: snow 10s  ease-out infinite; 
 	animation: snow 10s infinite;
+	z-index: 1000;
 }
 .snowflake2 {
 	font-size: 28px;
 	position: absolute;
 	-webkit-animation: snow 20s  ease-out infinite; 
 	animation: snow 20s infinite;
+	z-index: 1000;
 }
 .snowflake3 {
 	font-size: 28px;
 	position: absolute;
 	-webkit-animation: snow 50s  ease-out infinite; 
 	animation: snow 14s infinite;
+	z-index: 1000;
 }
 .snowflake4 {
 	font-size: 28px;
 	position: absolute;
 	-webkit-animation: snow2 45s  ease-out infinite; 
 	animation: snow2 15s infinite;
+	z-index: 1000;
 }
 
 @-webkit-keyframes snow {
