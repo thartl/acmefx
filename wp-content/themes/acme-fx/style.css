@@ -2515,6 +2515,9 @@ div.fp-card-widget:hover p {
 .term-snow-business .content {
 	position: relative;
 }
+.front-page-2 {
+	margin-bottom: 60px;
+}
 
 
 /*******************************  Blog                */
@@ -3268,6 +3271,35 @@ a.button.checkout.wc-forward {
 }
 .scroll-notice .dashicons {
 	margin: 3px 6px 0;
+}
+
+/* Policy Page
+---------------------------------------------------------------------------------------------------- */
+
+.policy-gist .entry-content {
+	padding-right: 40px;
+	float: left;
+	width: 45%;
+	border-right: 1px solid #fff;
+	margin-top: 73px;
+}
+
+.policy-gist-no-title .entry-content {
+	padding-right: 40px;
+	float: left;
+	width: 45%;
+	border-right: 1px solid #fff;
+}
+.policy-no-gist .entry-content {
+	width: 100%;
+}
+
+
+
+.gist {
+	width: calc(55% - 40px);
+	margin-left: 40px;
+	float: right;
 }
 
 /* FooGallery
