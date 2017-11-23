@@ -163,7 +163,7 @@ add_action( 'wp_footer', 'th_table_scroll_notice', 100 );
 
 /** DEACTIVATED */
 /********** Build FedEx / Shipping Class restrictions ******************************************************************************/
-add_filter( 'woocommerce_package_rates', 'th_shipping_methods_restricted', 10, 2 );
+// add_filter( 'woocommerce_package_rates', 'th_shipping_methods_restricted', 10, 2 );
 function th_shipping_methods_restricted( $rates, $package ) {
 
 	$sb_ship_notice = false;
@@ -226,8 +226,8 @@ function th_shipping_methods_restricted( $rates, $package ) {
 
 /** BOTH HOOKS DEACTIVATED */
 /************ Output a notice if Snow Business products cannot be shipped (i.e. to BC, AB, YT) *********************************/
-add_action( 'woocommerce_calculated_shipping', 'th_shipping_restriction_notice' );  // Cart page
-add_action( 'woocommerce_review_order_after_order_total', 'th_shipping_restriction_notice', 100 );  // Checkout page
+// add_action( 'woocommerce_calculated_shipping', 'th_shipping_restriction_notice' );  // Cart page
+// add_action( 'woocommerce_review_order_after_order_total', 'th_shipping_restriction_notice', 100 );  // Checkout page
 
 function th_shipping_restriction_notice() {
 	global $woocommerce;
