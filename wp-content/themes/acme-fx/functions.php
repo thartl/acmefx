@@ -635,7 +635,7 @@ function pw_custom_save_custom_fields( $post_id ) {
 }
 
 
-// remove "Add to cart" and Quantity field from Rentals category single pages, by way of CSS (wrap in div.no-price)
+// remove "Add to cart" and Quantity field from pages with product attribute Departments set to Rentals, by way of CSS (wrap in div.no-price)
 add_action( 'woocommerce_single_product_summary', 'th_remove_price_and_quantity', 25 );
 function th_remove_price_and_quantity() {
 	global $product;
@@ -655,7 +655,7 @@ function th_remove_price_and_quantity() {
 }
 
 
-// Display rental pricing table on a single product page
+// Display rental pricing table on a single product page -- when product attribute Departments is set to Rentals
 add_action( 'woocommerce_single_product_summary', 'th_add_price_table', 25 );
 function th_add_price_table() {
 	$daily_rental_price = esc_html( get_post_meta( get_the_ID(), '_day_rental_price', true ) );
@@ -716,7 +716,7 @@ function th_add_price_table() {
 
 
 
-// Changes empty price to "Rental item" on product loops and also in admin - Products
+// Changes empty price to "Rental item" on product loops and also in admin - Products -- when product attribute Departments is set to Rentals
 add_filter( 'woocommerce_get_price_html', 'th_change_product_price_display' );
 function th_change_product_price_display( $price ) {
 	global $product;
