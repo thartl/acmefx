@@ -63,7 +63,7 @@ function th_private_admin_bar( $content ) {
 
 	if ( $current_user == 0
 //		 ||	$current_user == 11 		// Tomas
-//		 || $current_user == 5 		// Amy
+		 || $current_user == 5 		// Amy
 //		 || $current_user == 7 		// Kailey
 //		 || $current_user == 4 		// Kevin
 								) {
