@@ -3320,18 +3320,18 @@ a.button.checkout.wc-forward {
 /* FX Pages
 ---------------------------------------------------------------------------------------------------- */
 
-.page-child.parent-pageid-69 iframe {
-	margin: 0 auto 40px;
-	display: block;
-}
-.page-child.parent-pageid-69 video {
+.page-child.parent-pageid-69 video,
+.page-child.parent-pageid-69 iframe,
+.page-child.parent-pageid-69 img {
 	margin: 0 auto 40px;
 	display: block;
 } 
 .fg-caption-title {
 	padding: 5px 15px;
 }
-
+.foogallery {
+	margin-top: 60px;
+}
 
 
 /* # Media Queries
