@@ -3332,6 +3332,9 @@ a.button.checkout.wc-forward {
 .foogallery {
 	margin-top: 60px;
 }
+body .fbx-inner {
+	max-width: 100%;
+}
 
 
 /* # Media Queries
