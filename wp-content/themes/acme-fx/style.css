@@ -3320,8 +3320,8 @@ a.button.checkout.wc-forward {
 /* FX Pages
 ---------------------------------------------------------------------------------------------------- */
 
-.page-child.parent-pageid-69 video,
-.page-child.parent-pageid-69 iframe,
+.page-child.parent-pageid-69 .content video,
+.page-child.parent-pageid-69 .content iframe,
 .page-child.parent-pageid-69 .content img {
 	margin: 0 auto 40px;
 	display: block;
