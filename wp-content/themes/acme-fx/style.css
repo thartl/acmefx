@@ -3220,7 +3220,7 @@ a.button.checkout.wc-forward {
 }
 
 /** Offset page anchors to allow for sticky header **/
-.page-anchor-ofset {
+.page-anchor-offset {
 	display: block;
     position: relative;
     top: -88px;
