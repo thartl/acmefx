@@ -3343,7 +3343,7 @@ body .fbx-inner {
 	margin: initial;
 	display: initial;
 }
-.plane-gag {
+.fg-item:first-child {
 	width: 100%;
 }
 
