@@ -3347,6 +3347,10 @@ body .fbx-inner {
 	width: 100%;
 } */
 
+.page-child.parent-pageid-69 .content p + video {
+	margin-top: 60px;
+}
+
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
