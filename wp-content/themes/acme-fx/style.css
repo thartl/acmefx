@@ -3349,16 +3349,16 @@ body .fbx-inner {
 
 .page-child.parent-pageid-69 .content p > video,
 .page-child.parent-pageid-69 .content p + video {
-	//margin-top: 60px;
+	margin-top: 60px;
 }
 
-.page-child.parent-pageid-69 .content p {
+/* .page-child.parent-pageid-69 .content p {
 	position:relative;
 	padding-bottom:56.25%;
 	padding-top:30px;
 	height:0;
 	overflow:hidden;
-}
+} */
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
