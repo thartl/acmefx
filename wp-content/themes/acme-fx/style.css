@@ -3321,8 +3321,7 @@ a.button.checkout.wc-forward {
 ---------------------------------------------------------------------------------------------------- */
 
 .page-child.parent-pageid-69 .content video,
-.page-child.parent-pageid-69 .content iframe,
-.page-child.parent-pageid-69 .content img {
+.page-child.parent-pageid-69 .content iframe {
 	margin: 0 auto 40px;
 	display: block;
 } 
@@ -3334,8 +3333,16 @@ a.button.checkout.wc-forward {
 }
 body .fbx-inner {
 	max-width: 100%;
+	//height: auto;
 }
-
+.page-child.parent-pageid-69 .content img {
+	margin: 0 auto 40px;
+	display: block;
+}
+.page-child.parent-pageid-69 .content .foogallery img {
+	margin: initial;
+	display: initial;
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
