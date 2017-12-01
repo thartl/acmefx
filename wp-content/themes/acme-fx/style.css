@@ -3343,9 +3343,9 @@ body .fbx-inner {
 	margin: initial;
 	display: initial;
 }
-.fg-item:first-child {
+/* .fg-item:first-child {
 	width: 100%;
-}
+} */
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
