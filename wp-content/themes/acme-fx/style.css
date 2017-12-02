@@ -1796,7 +1796,12 @@ a.button.checkout.wc-forward:focus,
 .woocommerce input.button:disabled:hover,
 .woocommerce input.button:disabled[disabled]:hover {
     color: inherit;
- 	background-color: #8E3939;}
+ 	background-color: #8E3939;
+}
+
+.woocommerce a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart {
+	margin-bottom: 10px;
+}
 
 .woocommerce input.button[type="submit"][name="apply_coupon"] {
 	vertical-align: center;
@@ -1811,7 +1816,7 @@ a.button.checkout.wc-forward:focus,
 	background-color: #777;
 }
 .woocommerce a.button:nth-child(n+2) {
-	margin-left: 5px;
+	//margin-left: 5px;
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs {
@@ -3312,8 +3317,20 @@ a.button.checkout.wc-forward {
     padding: 10px 0 0 0;
 }
 
+/* FX Pages
+---------------------------------------------------------------------------------------------------- */
 
-
+.page-child.parent-pageid-69 iframe {
+	margin: 0 auto 40px;
+	display: block;
+}
+.page-child.parent-pageid-69 video {
+	margin: 0 auto 40px;
+	display: block;
+} 
+.fg-caption-title {
+	padding: 5px 15px;
+}
 
 
 
