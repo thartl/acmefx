@@ -3359,6 +3359,9 @@ body .fbx-inner {
 	height:0;
 	overflow:hidden;
 } */
+figcaption {
+	margin-bottom: 40px;
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
