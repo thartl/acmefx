@@ -3335,14 +3335,14 @@ body .fbx-inner {
 	max-width: 100%;
 	//height: auto;
 }
-.page-child.parent-pageid-69 .content img {
+/* .page-child.parent-pageid-69 .content img {
 	margin: 0 auto 40px;
 	display: block;
 }
 .page-child.parent-pageid-69 .content .foogallery img {
 	margin: initial;
 	display: initial;
-}
+} */
 /* .fg-item:first-child {
 	width: 100%;
 } */
@@ -3352,13 +3352,13 @@ body .fbx-inner {
 	margin-top: 60px;
 }
 
-.page-child.parent-pageid-69 .content .video-wrapper {
+/* .page-child.parent-pageid-69 .content .video-wrapper {
 	position:relative;
 	padding-bottom:56.25%;
 	padding-top:30px;
 	height:0;
 	overflow:hidden;
-}
+} */
 .wp-caption-text {
 	margin-bottom: 40px;
 	margin-top: -20px;
