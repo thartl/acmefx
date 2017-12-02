@@ -3320,19 +3320,49 @@ a.button.checkout.wc-forward {
 /* FX Pages
 ---------------------------------------------------------------------------------------------------- */
 
-.page-child.parent-pageid-69 iframe {
-	margin: 0 auto 40px;
-	display: block;
-}
-.page-child.parent-pageid-69 video {
+.page-child.parent-pageid-69 .content video,
+.page-child.parent-pageid-69 .content iframe {
 	margin: 0 auto 40px;
 	display: block;
 } 
 .fg-caption-title {
 	padding: 5px 15px;
 }
+.foogallery {
+	margin-top: 60px;
+}
+body .fbx-inner {
+	max-width: 100%;
+	//height: auto;
+}
+.page-child.parent-pageid-69 .content img {
+	margin: 0 auto 40px;
+	display: block;
+}
+.page-child.parent-pageid-69 .content .foogallery img {
+	margin: initial;
+	display: initial;
+}
+/* .fg-item:first-child {
+	width: 100%;
+} */
 
+.page-child.parent-pageid-69 .content p > video,
+.page-child.parent-pageid-69 .content p + video {
+	margin-top: 60px;
+}
 
+body .player .embed-video {
+	position:relative !important;
+	padding-bottom:56.25%;
+	padding-top:30px;
+	height:0;
+	overflow:hidden;
+}
+.wp-caption-text {
+	margin-bottom: 40px;
+	margin-top: -20px;
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
