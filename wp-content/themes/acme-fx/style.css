@@ -3359,8 +3359,9 @@ body .fbx-inner {
 	height:0;
 	overflow:hidden;
 } */
-figcaption {
+.wp-caption-text {
 	margin-bottom: 40px;
+	margin-top: -5px;
 }
 
 /* # Media Queries
