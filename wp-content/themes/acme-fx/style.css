@@ -2800,6 +2800,7 @@ div.grid-list-switch {
 .woocommerce .cart-collaterals .cross-sells,
 .woocommerce-page .cart-collaterals .cross-sells {
 	clear: both;
+	width: 100%;
 }
 
 
