@@ -2793,6 +2793,11 @@ div.grid-list-switch {
     margin-top: 30px;
 }
 
+.woocommerce .cart-collaterals .cart_totals,
+.woocommerce-page .cart-collaterals .cart_totals {
+	float: left;
+}
+
 
 /** Default colour for buttons */
 .grid-list-switch svg {
