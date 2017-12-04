@@ -2781,7 +2781,21 @@ div.grid-list-switch {
 }
 
 .woocommerce ul.products.list-view li.product:first-child {
-	margin-top: 0px;
+	//margin-top: 0px;
+}
+.woocommerce-cart .cross-sells > h2 {
+	margin-bottom: 30px;
+}
+
+#add_payment_method .cart-collaterals .cross-sells ul.products li.product,
+.woocommerce-cart .cart-collaterals .cross-sells ul.products li.product,
+.woocommerce-checkout .cart-collaterals .cross-sells ul.products li.product {
+    margin-top: 30px;
+}
+
+.woocommerce .cart-collaterals .cart_totals,
+.woocommerce-page .cart-collaterals .cart_totals {
+	float: left;
 }
 
 
@@ -2928,7 +2942,7 @@ div.grid-list-switch {
 	margin-bottom: 0px;
 }
 .woocommerce ul.products.desc-view li.product:first-child {
-	margin-top: 0;
+	//margin-top: 0;
 }
 .woocommerce ul.products.desc-view li.product:last-child {
 	border-bottom: 0;
@@ -3346,14 +3360,21 @@ body .fbx-inner {
 */}
 .entry-content video {
 	display: block;
-	width: 100%;
-	max-width: 640px;
-	margin: 60px auto 40px;
+    width: calc(50% - 20px);
+    //float: left;
+    max-width: 640px;
+    margin: 60px 10px 40px;
+
+    width: 100%;
+    margin: 60px auto 40px;
 }
 .entry-content div.embed-vimeo {
 	width: 100%;
 	max-width: 640px;
 	margin: 60px auto 40px;
+}
+.foogallery {
+	//float: left;
 }
 
 
@@ -3856,6 +3877,13 @@ body .fbx-inner {
 		background-image: url('/wp-content/uploads/2017/07/grey-fire-vdark3.jpg');
 		background-position: center bottom;
 	}
+	.entry-content video {
+		width: 100%;
+		max-width: 640px;
+		margin: 60px auto 40px;
+	}
+
+
 }
 
 @media only screen and (max-width: 700px) {
