@@ -3898,7 +3898,7 @@ body .fbx-inner {
 		width: 33.3333%;
 	}
 	.woocommerce .woocommerce-cart-form {
-		background-color: #fff;
+		//background-color: #fff;
 	}
 	.woocommerce table.shop_table_responsive tr td.product-name a {
 	    color: #fff;
@@ -3933,7 +3933,7 @@ body .fbx-inner {
 		margin-top: 5px;
 	}
 	.woocommerce .woocommerce-cart-form td {
-		color: #1E373B;
+		//color: #1E373B;
 		font-family: "Source Sans Pro", sans-serif;
 	}
 	
