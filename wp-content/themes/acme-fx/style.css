@@ -2804,7 +2804,7 @@ div.grid-list-switch {
 }
 .woocommerce .cart-collaterals .cross-sells ul.products.grid-view li,
 .woocommerce-page .cart-collaterals .cross-sells ul.products.grid-view li {
-	width: 23%;
+	width: 22.05%;
 }
 
 
@@ -3549,6 +3549,10 @@ body .fbx-inner {
 	    width: calc(50% - 20px);
 	    flex-grow: 1;
 	    margin: 60px 10px 20px;
+	}
+	.woocommerce .cart-collaterals .cross-sells ul.products.grid-view li,
+	.woocommerce-page .cart-collaterals .cross-sells ul.products.grid-view li {
+		width: 48%;
 	}
 
 }
