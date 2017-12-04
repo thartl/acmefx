@@ -3486,7 +3486,7 @@ body .fbx-inner {
 	.footer-widgets-1 {
 		margin-right: 30px;
 	}
-	.woocommerce-cart table.cart td.actions .coupon input.input-text,
+/* 	.woocommerce-cart table.cart td.actions .coupon input.input-text,
 	.woocommerce-checkout table.cart td.actions .coupon input.input-text,
 	#add_payment_method table.cart td.actions .coupon input.input-text {
 		margin-right: 10px;
@@ -3545,7 +3545,7 @@ body .fbx-inner {
 
 	.woocommerce div.product .woocommerce-tabs ul.tabs li a {
 		margin-left: 0px;
-	}
+	} */
 	.credits-list li {
 	    width: calc(50% - 20px);
 	    flex-grow: 1;
@@ -3882,6 +3882,78 @@ body .fbx-inner {
 		margin-top: 30px;
 		margin-bottom: 0px;
 	}
+
+
+
+
+	.woocommerce-cart table.cart td.actions .coupon input.input-text,
+	.woocommerce-checkout table.cart td.actions .coupon input.input-text,
+	#add_payment_method table.cart td.actions .coupon input.input-text {
+		margin-right: 10px;
+		width: calc(66.6666% - 10px);
+	}
+	.woocommerce table.cart td.actions .coupon .input-text+.button,
+	.woocommerce-page table.cart td.actions .coupon .input-text+.button {
+		width: 33.3333%;
+	}
+	.woocommerce .woocommerce-cart-form {
+		background-color: #fff;
+	}
+	.woocommerce table.shop_table_responsive tr td.product-name a {
+	    color: #fff;
+	    font-family: Bitter;
+	    font-size: 1.2em;
+	}
+	.woocommerce table.shop_table_responsive td.product-name::before {
+		display: none;
+	}
+	.woocommerce table.shop_table_responsive tr td.product-name {
+		padding-top: 0;
+	}
+	
+	.woocommerce table.shop_table_responsive tr td.product-name, .woocommerce-page table.shop_table_responsive tr td.product-name {
+	    text-align: left!important;
+	}
+	.woocommerce table.shop_table_responsive .product-subtotal .woocommerce-Price-amount.amount {
+		font-weight: 700;
+	}
+
+	.woocommerce .woocommerce-cart-form a {
+		color: #fff;
+	}
+	.woocommerce table.shop_table_responsive tr td.product-name,
+	.woocommerce table.shop_table_responsive tr td.product-remove {
+		background-color: #1E373B;
+		font-family: Bitter;
+		color: #fff;
+	}
+	.woocommerce .woocommerce-cart-form a.remove {
+		float: right;
+		margin-top: 5px;
+	}
+	.woocommerce .woocommerce-cart-form td {
+		color: #1E373B;
+		font-family: "Source Sans Pro", sans-serif;
+	}
+	
+	.coupon {
+		margin-top: 40px;
+	}
+	.woocommerce table.shop_table_responsive tbody tr td:nth-child(3), .woocommerce-page table.shop_table_responsive tbody tr td:nth-child(3) {
+	    border-top: 0;
+	}
+
+	.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+		margin-left: 0px;
+	}
+
+
+
+
+
+
+
+
 }
 @media only screen and (max-width: 800px) { 
 	.home #wp-custom-header video,
