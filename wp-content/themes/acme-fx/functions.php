@@ -753,7 +753,7 @@ function pw_product_link_to_view( $markup, $product ) {
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 add_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display', 20 );
 
-//  4 column for cross-sells
+//  4 columns for cross-sells
 add_filter( 'woocommerce_cross_sells_columns', 'th_change_cross_sells_columns' );
 function th_change_cross_sells_columns( $columns ) {
 	return 4;
