@@ -749,6 +749,10 @@ function pw_product_link_to_view( $markup, $product ) {
 		}
 }
 
+remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
+add_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display', 20 );
+
+
 //  Remove "Reviews" tab from single product page
 add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
 
