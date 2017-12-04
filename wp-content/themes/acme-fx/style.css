@@ -3370,12 +3370,13 @@ body .fbx-inner {
 */}
 .entry-content video {
 	display: block;
-    width: calc(50% - 20px);
-    //float: left;
-    max-width: 640px;
+/*    width: calc(50% - 20px);
+    float: left;
+*/  max-width: 640px;
     margin: 60px 10px 40px;
 
     width: 100%;
+    height: 100%;
     margin: 60px auto 40px;
 }
 .entry-content div.embed-vimeo {
