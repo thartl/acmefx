@@ -2797,6 +2797,10 @@ div.grid-list-switch {
 .woocommerce-page .cart-collaterals .cart_totals {
 	float: left;
 }
+.woocommerce .cart-collaterals .cross-sells,
+.woocommerce-page .cart-collaterals .cross-sells {
+	clear: both;
+}
 
 
 /** Default colour for buttons */
