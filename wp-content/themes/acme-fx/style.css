@@ -3023,10 +3023,6 @@ a.button.checkout.wc-forward {
 .about .entry-content ul {
 	margin-bottom: 60px;
 }
-.embed-vimeo {
-    text-align: left !important;
-    margin-top: 60px;
-}
 .genesis-nav-menu .sub-menu a {
 	line-height: 1.3em;
 }
@@ -3320,11 +3316,7 @@ a.button.checkout.wc-forward {
 /* FX Pages
 ---------------------------------------------------------------------------------------------------- */
 
-.page-child.parent-pageid-69 .content video,
-.page-child.parent-pageid-69 .content iframe {
-	margin: 0 auto 40px;
-	display: block;
-} 
+/** Galleries, Lightbox */
 .fg-caption-title {
 	padding: 5px 15px;
 }
@@ -3333,7 +3325,6 @@ a.button.checkout.wc-forward {
 }
 body .fbx-inner {
 	max-width: 100%;
-	//height: auto;
 }
 .page-child.parent-pageid-69 .content img {
 	margin: 0 auto 40px;
@@ -3343,41 +3334,28 @@ body .fbx-inner {
 	margin: initial;
 	display: initial;
 }
-/* .fg-item:first-child {
-	width: 100%;
-} */
-
-.page-child.parent-pageid-69 .content p > video,
-.page-child.parent-pageid-69 .content p + video {
-	margin-top: 60px;
-}
-video {
-	width: 100%;
-	max-width: 640px;
-}
-
-/* body .embed-vimeo {
-	position:relative;
-	padding-bottom:56.25%;
-	padding-top:30px;
-	height:0;
-	overflow:hidden;
-} */
-.embed-vimeo {
-/*	position:relative !important;
-	padding-bottom:56.25%;
-	padding-top:30px;
-	height:0;
-	overflow:hidden;*/
-}
 .wp-caption-text {
 	margin-bottom: 40px;
 	margin-top: -20px;
 }
-/* .embed-vimeo iframe {
-	height: auto !important;
-	width: auto !important;
-} */
+
+/** Videos */
+.page-child.parent-pageid-69 .content p > video,
+.page-child.parent-pageid-69 .content p + video {
+/*	margin-top: 60px;
+*/}
+.entry-content video {
+	display: block;
+	width: 100%;
+	max-width: 640px;
+	margin: 60px auto 40px;
+}
+.entry-content div.embed-vimeo {
+	width: 100%;
+	max-width: 640px;
+	margin: 60px auto 40px;
+}
+
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */

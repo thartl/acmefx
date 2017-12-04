@@ -1,4 +1,7 @@
 jQuery( function ( $ ) {
+
+	// FitVids
+	$('.entry-content').fitVids();
 	
 	// Sticky Header options
 	var options = {
