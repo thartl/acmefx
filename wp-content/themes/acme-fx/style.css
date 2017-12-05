@@ -2593,7 +2593,7 @@ div.agm_mh_info_content {
 	font-size: 28px;
 	position: absolute;
 	-webkit-animation: snow 20s  ease-out infinite; 
-	animation: snow 20s infinite;
+	animation: snow 18s infinite;
 	z-index: 1000;
 }
 .snowflake3 {
@@ -2633,7 +2633,7 @@ div.agm_mh_info_content {
         -ms-transform: translate3d(0, 0, 0);
     }
     100% {
-        top: 380px;
+        top: 450px;
         right: 110px;
         transform: translate3d(0, 0, 0);
         -moz-transform: translate3d(0, 0, 0);
@@ -2651,10 +2651,10 @@ div.agm_mh_info_content {
         right: 200px;
     }
     10%, 30%, 50%, 70%, 90% {
-        right: 210px;
+        right: 230px;
     }
     100% {
-        top: 400px;
+        top: 600px;
         right: 220px;
     }
 }
