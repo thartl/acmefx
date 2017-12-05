@@ -298,10 +298,16 @@ function genesis_do_new_header() {
         echo '</div><!-- end .widget-area -->';
 
     }
-    if ( is_active_sidebar( 'header-left' ) || has_action( 'genesis_header_left' ) ) { 
+    /** Turned on ( 1 == 1 ||) to activate widget area so that My Account icon appears */
+    if ( 1 == 1 || is_active_sidebar( 'header-left' ) || has_action( 'genesis_header_left' ) ) { 
         echo '<div class="widget-area header-widget-area-2">'; 
         do_action( 'genesis_header_left' ); 
         dynamic_sidebar( 'header-left' ); 
+        echo  '<a href="http://acmefx.wpengine.com/my-account/">
+<svg class="header-profile" viewBox="0 0 100 100" fill="#AE4040"><style type="text/css">  
+			.st0{fill:#AE4040;}
+		</style><foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" width="1" height="1"/><path class="st0" d="M50 51.7c12.2 0 22.1-9.9 22.1-22.1S62.2 7.5 50 7.5s-22.1 9.9-22.1 22.1S37.8 51.7 50 51.7z"/><path class="st0" d="M87.9 69.3c-0.6-1.4-1.4-2.8-2.2-4.1 -4.4-6.5-11.3-10.9-19-12 -1-0.1-2 0.1-2.8 0.7 -4 2.9-8.8 4.5-13.8 4.5s-9.8-1.6-13.8-4.5c-0.8-0.6-1.8-0.8-2.8-0.7 -7.7 1.1-14.6 5.4-19 12 -0.9 1.3-1.6 2.7-2.2 4.1 -0.3 0.6-0.2 1.3 0.1 1.8 0.8 1.3 1.7 2.7 2.6 3.9 1.3 1.8 2.8 3.5 4.4 5 1.4 1.4 2.9 2.6 4.5 3.8 7.6 5.7 16.7 8.7 26.2 8.7s18.6-3 26.2-8.7c1.6-1.2 3.1-2.5 4.5-3.8 1.6-1.5 3.1-3.2 4.4-5 0.9-1.2 1.8-2.5 2.6-3.9C88.1 70.5 88.1 69.9 87.9 69.3z"/></svg>
+</a>';
         echo '</div><!-- end .widget-area -->';
     }
 } 
@@ -353,7 +359,7 @@ function th_jpeg_100() {
 
 // Add Image Sizes.
 add_image_size( 'featured-image', 720, 400, TRUE );
-add_image_size( 'credit-poster', 200, 9999 );
+add_image_size( 'credit-poster', 190, 9999 );
 
 
 // Modify size of the Gravatar in the author box.
