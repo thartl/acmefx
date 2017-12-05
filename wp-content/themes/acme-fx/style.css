@@ -2583,17 +2583,17 @@ div.agm_mh_info_content {
 /******************************  Snowflakes  */
 
 .snowflake1 {
-	font-size: 28px;
+	font-size: 25px;
 	position: absolute;
 	-webkit-animation: snow 10s  ease-out infinite; 
 	animation: snow 10s infinite;
 	z-index: 1000;
 }
 .snowflake2 {
-	font-size: 28px;
+	font-size: 26px;
 	position: absolute;
 	-webkit-animation: snow 20s  ease-out infinite; 
-	animation: snow 18s infinite;
+	animation: snow2 18s infinite;
 	z-index: 1000;
 }
 .snowflake3 {
@@ -2604,7 +2604,7 @@ div.agm_mh_info_content {
 	z-index: 1000;
 }
 .snowflake4 {
-	font-size: 28px;
+	font-size: 24px;
 	position: absolute;
 	-webkit-animation: snow2 45s  ease-out infinite; 
 	animation: snow2 15s infinite;
@@ -2617,7 +2617,7 @@ div.agm_mh_info_content {
         right: 0px;
     }
     20%, 40%, 60%, 80% {
-        right: 80px;
+        right: 150px;
         /* transform: rotateX(360deg) translate3d(0, 0, 0);
         -moz-transform: rotateX(360deg) translate3d(0, 0, 0);
         -webkit-transform: rotateX(360deg) translate3d(0, 0, 0);
@@ -2625,7 +2625,7 @@ div.agm_mh_info_content {
         -ms-transform: rotateX(360deg) translate3d(0, 0, 0); */
     }
     10%, 30%, 50%, 70%, 90% {
-        right: 100px;
+        right: 130px;
         transform: translate3d(0, 0, 0);
         -moz-transform: translate3d(0, 0, 0);
         -webkit-transform: translate3d(0, 0, 0);
@@ -2634,7 +2634,7 @@ div.agm_mh_info_content {
     }
     100% {
         top: 450px;
-        right: 110px;
+        right: 120px;
         transform: translate3d(0, 0, 0);
         -moz-transform: translate3d(0, 0, 0);
         -webkit-transform: translate3d(0, 0, 0);
@@ -2651,7 +2651,7 @@ div.agm_mh_info_content {
         right: 200px;
     }
     10%, 30%, 50%, 70%, 90% {
-        right: 230px;
+        right: 210px;
     }
     100% {
         top: 600px;
@@ -3145,8 +3145,8 @@ a.button.checkout.wc-forward {
 	-moz-flex-direction: row;
 	flex-wrap: wrap;
 	-moz-flex-wrap: wrap;
-	justify-content: space-around;
-	-moz-justify-content: space-around;
+	justify-content: flex-start;
+	-moz-justify-content: flex-start;
 }
 .credits-list img {
 	display: block;
