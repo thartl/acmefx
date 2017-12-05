@@ -3157,7 +3157,6 @@ a.button.checkout.wc-forward {
 	color: #fff;
 }
 .credits-list li {
-//	flex: 1 0 200px;
 	flex-grow: 1;
 	flex-shrink: 0;
 	width: 190px;
@@ -3569,11 +3568,14 @@ body .fbx-inner {
 	.credits-list li {
 	    width: calc(33.3333% - 20px);
 	    flex-grow: 1;
-	    margin: 60px 10px 20px;
+	    margin: 40px 10px 20px;
 	}
 	.credits-list a p:nth-child(2) {
 	    font-size: 16px;
 	    margin-top: 12px;
+	}
+	.credits-list a p:nth-child(n+3) {
+		font-size: 14px;
 	}
 
 }
@@ -4014,13 +4016,15 @@ body .fbx-inner {
 		min-height: 340px;
 	}
 	.credits-list li {
-	    //width: calc(50% - 20px);
 	    flex-grow: 1;
-	    margin: 60px 10px 20px;
+	    margin: 40px 10px 20px;
 	}
 	.credits-list a p:nth-child(2) {
 	    font-size: 14px;
 	    margin-top: 10px;
+	}
+	.credits-list a p:nth-child(n+3) {
+		font-size: 12px;
 	}
 	.credits-list img {
 	    width: 150px;
@@ -4191,6 +4195,9 @@ body .fbx-inner {
 	.credits-list a p:nth-child(2) {
 	    font-size: 16px;
 	}
+	.credits-list a p:nth-child(n+3) {
+		font-size: 14px;
+	}
 	.fp-card-widget p {
 		font-size: 18px;
 	}
@@ -4215,6 +4222,9 @@ body .fbx-inner {
 	}
 	.credits-list a p:nth-child(2) {
 	    font-size: 13px;
+	}
+	.credits-list a p:nth-child(n+3) {
+		font-size: 12px;
 	}
 
 }
