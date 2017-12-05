@@ -1883,6 +1883,25 @@ a.button.checkout.wc-forward:focus,
     line-height: 1.75;
     word-break: normal;
 }
+
+.woocommerce table.shop_table tbody th,
+.woocommerce table.shop_table tfoot td,
+.woocommerce table.shop_table tfoot th {
+    font-weight: 700;
+    border-color: #4F686A;
+}
+
+.woocommerce-cart #payment ul.payment_methods,
+.woocommerce-checkout #payment ul.payment_methods,
+#add_payment_method #payment ul.payment_methods {
+    border-color: #4F686A;
+}
+
+.woocommerce table.shop_table tfoot tr:first-child th,
+.woocommerce table.shop_table tfoot tr:first-child td {
+	border-top: 1px solid #4F686A;
+	line-height: 3;
+}
 #add_payment_method .cart-collaterals .cart_totals tr td, #add_payment_method .cart-collaterals .cart_totals tr th, .woocommerce-cart .cart-collaterals .cart_totals tr td, .woocommerce-cart .cart-collaterals .cart_totals tr th, .woocommerce-checkout .cart-collaterals .cart_totals tr td, .woocommerce-checkout .cart-collaterals .cart_totals tr th {
     border-top: 1px solid #4F686A;
 }
