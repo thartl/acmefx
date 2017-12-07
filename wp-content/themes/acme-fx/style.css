@@ -4245,6 +4245,9 @@ body .fbx-inner {
 	.woocommerce ul.products.desc-view li.product h2 {
 	    width: 160px;
 	}
+	.woocommerce ul.products.desc-view li.product .price  {
+	    margin-top: -40px	;
+	}
 
 
 
