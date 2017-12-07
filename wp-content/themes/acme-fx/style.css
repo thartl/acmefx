@@ -3145,8 +3145,8 @@ a.button.checkout.wc-forward {
 	-moz-flex-direction: row;
 	flex-wrap: wrap;
 	-moz-flex-wrap: wrap;
-	justify-content: flex-start;
-	-moz-justify-content: flex-start;
+	/* justify-content: flex-start;
+	-moz-justify-content: flex-start; */
 }
 .credits-list img {
 	display: block;
@@ -3404,6 +3404,18 @@ body .fbx-inner {
 }
 .foogallery {
 	//float: left;
+}
+
+/* # Maintenance Mode
+---------------------------------------------------------------------------------------------------- */
+
+body.background .wrap {
+	color: #fff;
+	line-height: 1.5;
+}
+
+body.background .wrap p:first-child {
+	margin-bottom: 30px;
 }
 
 
