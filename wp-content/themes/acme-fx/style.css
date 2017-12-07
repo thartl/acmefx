@@ -4139,7 +4139,7 @@ body .fbx-inner {
 	.woocommerce ul.products.desc-view li.product .price  {
 	    float: left;
 	    clear: left;
-	    margin-top: -50px;
+	    margin-top: -50px	;
 	}
 	.woocommerce ul.products.desc-view li.product .button,
 	.woocommerce ul.products.desc-view li.product a.button  {
@@ -4242,6 +4242,11 @@ body .fbx-inner {
 	.credits-list a p:nth-child(n+3) {
 		font-size: 12px;
 	}
+	.woocommerce ul.products.desc-view li.product h2 {
+	    width: 160px;
+	}
+
+
 
 }
 /* # Print Styles
