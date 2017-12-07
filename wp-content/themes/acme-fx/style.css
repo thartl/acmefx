@@ -3012,7 +3012,7 @@ div.grid-list-switch {
 
 .woocommerce ul.products.desc-view li.product .woocommerce-product-details__short-description {
 	float: left;
-	max-width: 355px;
+	max-width: 340px;
 }
 .woocommerce ul.products.desc-view li.product .added_to_cart.wc-forward {
 		margin-left: 10px;
@@ -3409,7 +3409,14 @@ body .fbx-inner {
 /* # Maintenance Mode
 ---------------------------------------------------------------------------------------------------- */
 
+.background .wrap {
+	color: #fff;
+	line-height: 1.5;
+}
 
+.background .wrap p:first-child {
+	margin-bottom: 30px;
+}
 
 
 /* # Media Queries
