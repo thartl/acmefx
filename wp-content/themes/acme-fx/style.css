@@ -2382,6 +2382,7 @@ h1.archive-title a:hover {
 .all-fx-widgets {
 	display: flex;
 	flex-wrap: wrap;
+	margin-top: 50px;
 }
 .all-fx-widgets > section.widget {
 	flex-shrink: 0;
@@ -3395,7 +3396,7 @@ body .fbx-inner {
 
     width: 100%;
     height: 100%;
-    margin: 60px auto 40px;
+    margin: 50px auto 40px;
 }
 .entry-content div.embed-vimeo {
 	width: 100%;
