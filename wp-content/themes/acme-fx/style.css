@@ -3409,14 +3409,7 @@ body .fbx-inner {
 /* # Maintenance Mode
 ---------------------------------------------------------------------------------------------------- */
 
-body.background .wrap {
-	color: #fff;
-	line-height: 1.5;
-}
 
-body.background .wrap p:first-child {
-	margin-bottom: 30px;
-}
 
 
 /* # Media Queries
