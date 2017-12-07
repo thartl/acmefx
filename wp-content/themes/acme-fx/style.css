@@ -4139,7 +4139,7 @@ body .fbx-inner {
 	.woocommerce ul.products.desc-view li.product .price  {
 	    float: left;
 	    clear: left;
-	    margin-top: 0;
+	    margin-top: -50px;
 	}
 	.woocommerce ul.products.desc-view li.product .button,
 	.woocommerce ul.products.desc-view li.product a.button  {
