@@ -2382,7 +2382,7 @@ h1.archive-title a:hover {
 .all-fx-widgets {
 	display: flex;
 	flex-wrap: wrap;
-	margin-top: 50px;
+	margin-top: 40px;
 }
 .all-fx-widgets > section.widget {
 	flex-shrink: 0;
@@ -4137,9 +4137,9 @@ body .fbx-inner {
 }
 @media only screen and (max-width: 490px) {
 	.woocommerce ul.products.desc-view li.product .price  {
-	    float: right;
-	    clear: right;
-	    margin-top: -26px;
+	    float: left;
+	    clear: left;
+	    margin-top: 0;
 	}
 	.woocommerce ul.products.desc-view li.product .button,
 	.woocommerce ul.products.desc-view li.product a.button  {
