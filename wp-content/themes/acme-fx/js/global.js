@@ -2,17 +2,26 @@ jQuery( function ( $ ) {
 
 	// FitVids
 	$('.entry-content').fitVids();
+
 	
 	// Sticky Header options
 	var options = {
 			offset: 725
 	};
-
-	// Initialize with options
+	// Initialize Sticky Header with options
 	var header = new Headhesive('.nav-secondary', options);
-	//var header = new Headhesive('.nav-primary',  options);
-	//var header = new Headhesive('.menu-toggle',  options);
-	//var header = new Headhesive('.header-widget-area', 'offset: 1725');
-	//var header = new Headhesive('.title-area', 'offset: 865');
+
+
+	// Sticky sidebar: make room for sticky header. Note match scroll comparison to offset Sticky Header options (above)
+	$(window).scroll(function() {    
+	    var scroll = $(window).scrollTop();
+	    if (scroll > 725) {
+	        $(".sidebar").addClass("sidebar-sticky-nav");
+	    } else {
+	        $(".sidebar").removeClass("sidebar-sticky-nav");
+	    }
+
+	});
+
 
 });

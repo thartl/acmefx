@@ -3416,18 +3416,30 @@ body .fbx-inner {
 	margin-top: 50px;
 }
 
-/* # Maintenance Mode
+/* # Sticky sidebar
 ---------------------------------------------------------------------------------------------------- */
-
-.background .wrap {
-	color: #fff;
-	line-height: 1.5;
+.content-sidebar-wrap::after {
+	clear: both;
+	content: " ";
+	display: table;
 }
 
-.background .wrap p:first-child {
-	margin-bottom: 30px;
+.sidebar {
+	position: -webkit-sticky;
+	position: -moz-sticky;
+	position: -ms-sticky;
+	position: -o-sticky;
+	position: sticky;
+	top: 40px;
+	-webkit-transition: top 550ms ease-in-out;
+	-moz-transition:    top 550ms ease-in-out;
+	-ms-transition:     top 550ms ease-in-out;
+	-o-transition:      top 550ms ease-in-out;
+	transition:         top 550ms ease-in-out;
 }
-
+.sidebar-sticky-nav {
+	top: 96px;
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
