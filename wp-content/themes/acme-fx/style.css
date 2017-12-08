@@ -3406,11 +3406,30 @@ body .fbx-inner {
 	//float: left;
 }
 
-/* # Maintenance Mode
+/* # Sticky sidebar
 ---------------------------------------------------------------------------------------------------- */
+.content-sidebar-wrap::after {
+	clear: both;
+	content: " ";
+	display: table;
+}
 
-
-
+.sidebar {
+	position: -webkit-sticky;
+	position: -moz-sticky;
+	position: -ms-sticky;
+	position: -o-sticky;
+	position: sticky;
+	top: 40px;
+	-webkit-transition: top 550ms ease-in-out;
+	-moz-transition:    top 550ms ease-in-out;
+	-ms-transition:     top 550ms ease-in-out;
+	-o-transition:      top 550ms ease-in-out;
+	transition:         top 550ms ease-in-out;
+}
+.sidebar-sticky-nav {
+	top: 96px;
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
