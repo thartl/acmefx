@@ -2382,6 +2382,7 @@ h1.archive-title a:hover {
 .all-fx-widgets {
 	display: flex;
 	flex-wrap: wrap;
+	margin-top: 40px;
 }
 .all-fx-widgets > section.widget {
 	flex-shrink: 0;
@@ -3012,7 +3013,7 @@ div.grid-list-switch {
 
 .woocommerce ul.products.desc-view li.product .woocommerce-product-details__short-description {
 	float: left;
-	max-width: 355px;
+	max-width: 340px;
 }
 .woocommerce ul.products.desc-view li.product .added_to_cart.wc-forward {
 		margin-left: 10px;
@@ -3369,7 +3370,7 @@ body .fbx-inner {
 	max-width: 100%;
 }
 .page-child.parent-pageid-69 .content img {
-	margin: 0 auto 40px;
+	margin: 50px auto 40px;
 	display: block;
 }
 .page-child.parent-pageid-69 .content .foogallery img {
@@ -3391,19 +3392,22 @@ body .fbx-inner {
 /*    width: calc(50% - 20px);
     float: left;
 */  max-width: 640px;
-    margin: 60px 10px 40px;
+    margin: 50px 10px 40px;
 
     width: 100%;
     height: 100%;
-    margin: 60px auto 40px;
+    margin: 50px auto 40px;
 }
 .entry-content div.embed-vimeo {
 	width: 100%;
 	max-width: 640px;
-	margin: 60px auto 40px;
+	margin: 50px auto 40px;
 }
 .foogallery {
 	//float: left;
+}
+.entry-content figure {
+	margin-top: 50px;
 }
 
 /* # Sticky sidebar
@@ -4145,9 +4149,9 @@ body .fbx-inner {
 }
 @media only screen and (max-width: 490px) {
 	.woocommerce ul.products.desc-view li.product .price  {
-	    float: right;
-	    clear: right;
-	    margin-top: -26px;
+	    float: left;
+	    clear: left;
+	    margin-top: -50px	;
 	}
 	.woocommerce ul.products.desc-view li.product .button,
 	.woocommerce ul.products.desc-view li.product a.button  {
@@ -4184,6 +4188,18 @@ body .fbx-inner {
 	}
 	.woocommerce div.product .product_title {
     font-size: 4rem;
+	}
+	.fx-type-widget {
+		max-height: 280px;
+	}
+	.all-fx-widgets .fx-type-widget p {
+		font-size: 14px;
+		margin-top: 70px;
+
+	}
+	.all-fx-widgets .fx-type-widget a {
+	    min-height: 260px;
+	}
 
 }
 
@@ -4235,6 +4251,7 @@ body .fbx-inner {
 		font-size: 3.5rem;
 	}
 
+
 }
 
 @media only screen and (max-width: 360px) {
@@ -4250,6 +4267,17 @@ body .fbx-inner {
 	.credits-list a p:nth-child(n+3) {
 		font-size: 12px;
 	}
+	.woocommerce ul.products.desc-view li.product h2 {
+	    width: 160px;
+	}
+	.woocommerce ul.products.desc-view li.product .price  {
+	    margin-top: -40px	;
+	}
+	.fx-type-widget h2 {
+		font-size: 26px;
+	}
+
+
 
 }
 /* # Print Styles
