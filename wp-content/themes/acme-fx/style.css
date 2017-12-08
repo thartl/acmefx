@@ -2188,6 +2188,7 @@ address {
 .woocommerce input[type="radio"]:checked + label,
 .woocommerce div.product .stock {
 	color: #f8e9a0;
+	margin-bottom: 10px;
 }
 .payment_box.payment_method_stripe input[type="radio"] + label {
 	color: #515151;
@@ -2196,6 +2197,10 @@ address {
 .woocommerce-page .quantity {
     z-index: 10;
 } */
+
+.woocommerce-Price-amount.amount:nth-child(2)::before {
+	display: none;
+}
 
 /* # Sidebars
 ---------------------------------------------------------------------------------------------------- */
@@ -2626,7 +2631,7 @@ div.agm_mh_info_content {
         -ms-transform: rotateX(360deg) translate3d(0, 0, 0); */
     }
     10%, 30%, 50%, 70%, 90% {
-        right: 130px;
+        right: 145px;
         transform: translate3d(0, 0, 0);
         -moz-transform: translate3d(0, 0, 0);
         -webkit-transform: translate3d(0, 0, 0);
@@ -2635,7 +2640,7 @@ div.agm_mh_info_content {
     }
     100% {
         top: 450px;
-        right: 120px;
+        right: 150px;
         transform: translate3d(0, 0, 0);
         -moz-transform: translate3d(0, 0, 0);
         -webkit-transform: translate3d(0, 0, 0);
@@ -2649,14 +2654,14 @@ div.agm_mh_info_content {
         right: 0px;
     }
     20%, 40%, 60%, 80% {
-        right: 200px;
+        right: 205px;
     }
     10%, 30%, 50%, 70%, 90% {
         right: 210px;
     }
     100% {
         top: 600px;
-        right: 220px;
+        right: 205px;
     }
 }
 
@@ -2957,6 +2962,7 @@ div.grid-list-switch {
 .woocommerce ul.products.desc-view li.product a.button {
 	margin-right: 15px;
 	margin-top: 0;
+	width: 123.5px;
 }
 .grid-list-switch.desc-view svg.grid-view-btn {
 	fill: #fff;
