@@ -4227,6 +4227,7 @@ body .fbx-inner {
 		font-size: 3.5rem;
 	}
 
+
 }
 
 @media only screen and (max-width: 360px) {
@@ -4247,6 +4248,9 @@ body .fbx-inner {
 	}
 	.woocommerce ul.products.desc-view li.product .price  {
 	    margin-top: -40px	;
+	}
+	.fx-type-widget h2 {
+		font-size: 26px;
 	}
 
 
