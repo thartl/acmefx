@@ -2201,6 +2201,9 @@ address {
 .woocommerce-Price-amount.amount:nth-child(2)::before {
 	display: none;
 }
+table.variations td.value {
+	width: 70%;
+}
 
 /* # Sidebars
 ---------------------------------------------------------------------------------------------------- */
