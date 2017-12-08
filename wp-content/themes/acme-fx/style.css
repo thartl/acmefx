@@ -4176,6 +4176,18 @@ body .fbx-inner {
 	}
 	.woocommerce div.product .product_title {
     font-size: 4rem;
+	}
+	.fx-type-widget {
+		max-height: 280px;
+	}
+	.all-fx-widgets .fx-type-widget p {
+		font-size: 14px;
+		margin-top: 70px;
+
+	}
+	.all-fx-widgets .fx-type-widget a {
+	    min-height: 260px;
+	}
 
 }
 
