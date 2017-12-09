@@ -4198,7 +4198,7 @@ body .fbx-inner {
 	.widget-area.flexible-widgets.widget-thirds .widget,
 	.widget-area.flexible-widgets.widget-fourths .widget {
 	    width: 100%;
-	    margin: 30px auto;
+	    margin: 30px auto 0;
 	}
 	.fp-card-widget .fp-card-overlay {
 		min-height: 500px;
