@@ -3222,13 +3222,13 @@ a.button.checkout.wc-forward {
 }
 .contact .alt-title {
 	font-family: "Source Sans Pro", sans-serif;
-	/* text-decoration: underline;
-	text-underline-position: under;
-	border-bottom: 2px solid #fff; */
 }
 .contact .alt-title u {
 	text-decoration: none;
 	border-bottom: 1px solid #fff;
+}
+.contact span {
+	font-size: 8em;
 }
 .entry-content ol > li > ol > li {
 	list-style-type: lower-alpha;
