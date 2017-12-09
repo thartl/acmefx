@@ -1,7 +1,7 @@
 <?php
 
 /**
-* Template Name: Library search
+* Template Name: Library search - JW test
 * Description: Used to test SearchWP integration with Genesis
 */
  
