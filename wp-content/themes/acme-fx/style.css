@@ -3479,9 +3479,6 @@ body .fbx-inner {
 
 .sidebar {
 	position: -webkit-sticky;
-	position: -moz-sticky;
-	position: -ms-sticky;
-	position: -o-sticky;
 	position: sticky;
 	top: 40px;
 	-webkit-transition: top 550ms ease-in-out;
@@ -3493,6 +3490,11 @@ body .fbx-inner {
 .sidebar-sticky-nav {
 	top: 96px;
 }
+
+/* # SearchWP test
+---------------------------------------------------------------------------------------------------- */
+
+
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
