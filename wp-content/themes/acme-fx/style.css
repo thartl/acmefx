@@ -2504,7 +2504,7 @@ h1.archive-title a:hover {
 	max-width: 100px;
 	max-height: 100px;
 	z-index: 2;
-	padding: 10px 20px;
+	padding: 40px 20px 10px 70px;
 	opacity: 0;
 	transition: .3s ease-in-out;
 	-moz-transition: .3s ease-in-out;
@@ -2525,12 +2525,13 @@ h1.archive-title a:hover {
 	-webkit-transition: .3s ease-in-out;
 	-o-transition: .3s ease-in-out;
 	-ms-transition: .3s ease-in-out;
+	width: 100%;
 }
 .fp-card-widget p {
 	position: relative;
 	z-index: 2;
 	color: #fff;
-	padding: 20px;
+	padding: 50px 20px 20px;
 	margin-left: 0px;
 	opacity: 0;
 	transition: .3s ease-in-out;
@@ -2539,9 +2540,14 @@ h1.archive-title a:hover {
 	-o-transition: .3s ease-in-out;
 	-ms-transition: .3s ease-in-out;
 	font-size: 18px;
+	text-align: center;
+}
+.fp-card-widget p.allow-icon {
+	text-align: center;
+	padding: 50px 170px 20px;
 }
 .fp-card-widget .fp-card-overlay:hover {
-	background: linear-gradient(to right, hsla(190, 5%, 22%, 0.3) 0%, hsla(180, 5%, 16%, 0.5) 15%, hsla(180, 5%, 16%, 0.5) 85%, hsla(190, 5%, 22%, 0.3) 100%);
+	background: linear-gradient(to right, hsla(190, 5%, 22%, 0.5) 0%, hsla(180, 5%, 16%, 0.7) 15%, hsla(180, 5%, 16%, 0.7) 85%, hsla(190, 5%, 22%, 0.5) 100%);
 }
 div.fp-card-widget:hover h2 {
 	background-color: #AE4040;
@@ -3642,6 +3648,9 @@ body .fbx-inner {
 	.credits-list a p:nth-child(n+3) {
 		font-size: 14px;
 	}
+	.fp-card-widget p {
+		padding: 30px 20px 20px;
+	}
 
 }
 
@@ -3889,6 +3898,18 @@ body .fbx-inner {
 	.fp-card-widget .fp-card-overlay {
 		min-height: 420px;
 	}
+	.fp-card-widget p {
+		padding: 70px 40px 20px;
+	}
+	.fp-card-widget p.allow-icon {
+		text-align: center;
+		padding: 50px 130px 20px;
+	}
+	.fp-card-icon {
+		padding: 50px 20px 10px 50px;
+		width: 75px;
+		max-height: 75px;
+	}
 }
 
 @media only screen and (max-width: 900px) {
@@ -4063,6 +4084,16 @@ body .fbx-inner {
 		max-width: 640px;
 		margin: 60px auto 40px;
 	}
+	.fp-card-widget p {
+		padding: 70px 40px 20px;
+	}
+	.fp-card-widget p.allow-icon {
+		text-align: center;
+		padding: 50px 90px 20px;
+	}
+	.fp-card-icon {
+		padding: 50px 20px 10px 20px;
+	}
 
 
 }
@@ -4094,6 +4125,20 @@ body .fbx-inner {
 	.credits-list img {
 	    width: 150px;
 	    margin: 0 auto 15px;
+	}
+	.fp-card-widget p {
+		padding: 30px 20px 20px;
+	}
+	.fp-card-widget p.allow-icon {
+		text-align: center;
+		padding: 20px 40px 40px;
+	}
+	.fp-card-icon {
+		float: none;
+		margin: 0 auto;
+		display: block;
+		padding-top: 20px;
+		padding-bottom: 0px;
 	}
 }
 
