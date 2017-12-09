@@ -3905,7 +3905,7 @@ body .fbx-inner {
 		clear: left;
 		width: 100%;
 	    width: 33.3333%;
-	    margin: 30px auto;
+	    margin: 0px auto 30px;
 	    float: left;
 	    clear: none;
 	}
@@ -3916,7 +3916,6 @@ body .fbx-inner {
 	.widget-area.flexible-widgets .widget {
 		margin-left: 0;
 	}
-
 	.fp-card-widget p {
 		font-size: 20px;
 	}
@@ -3938,6 +3937,9 @@ body .fbx-inner {
 		padding: 50px 20px 10px 50px;
 		width: 75px;
 		max-height: 75px;
+	}
+	.home .flexible-widgets section:first-of-type {
+		margin-bottom: 0;
 	}
 
 }
@@ -4106,7 +4108,7 @@ body .fbx-inner {
 
 	.home .flexible-widgets section:first-of-type {
 		margin-top: 40px;
-		margin-bottom: 0;
+		//margin-bottom: 0;
 	}
 	.widget-area.flexible-widgets.widget-halves .widget,
 	.widget-area.flexible-widgets.widget-thirds .widget,
