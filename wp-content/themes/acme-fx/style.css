@@ -3227,8 +3227,8 @@ a.button.checkout.wc-forward {
 	text-decoration: none;
 	border-bottom: 1px solid #fff;
 }
-.contact span {
-	font-size: 8em;
+.contact span.human {
+	font-size: .8em;
 }
 .entry-content ol > li > ol > li {
 	list-style-type: lower-alpha;
