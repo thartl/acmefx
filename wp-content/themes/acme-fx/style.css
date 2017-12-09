@@ -2564,7 +2564,7 @@ div.fp-card-widget:hover p {
 .front-page-2 {
 	margin-bottom: 60px;
 }
-.home .flexible-widgets section:first-of-type .fp-card-overlay {
+.home .flexible-widgets:first-of-type section:first-of-type .fp-card-overlay {
 	background: linear-gradient(to right, hsla(190, 5%, 22%, 0.5) 0%, hsla(180, 5%, 16%, 0.7) 15%, hsla(180, 5%, 16%, 0.7) 85%, hsla(190, 5%, 22%, 0.5) 100%);
 }
 
@@ -3924,7 +3924,7 @@ body .fbx-inner {
 	//	background-position: 50% 0px;
 	}
 	.fp-card-widget .fp-card-overlay {
-		min-height: 420px;
+		min-height: 420	px;
 	}
 	.fp-card-widget p {
 		padding: 30px 40px 20px;
