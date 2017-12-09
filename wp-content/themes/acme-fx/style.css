@@ -3230,6 +3230,9 @@ a.button.checkout.wc-forward {
 .contact span.human {
 	font-size: .8em;
 }
+.gform_wrapper {
+    margin: 70px 0 16px;
+}
 .entry-content ol > li > ol > li {
 	list-style-type: lower-alpha;
 }
