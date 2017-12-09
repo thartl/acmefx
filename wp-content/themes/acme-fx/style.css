@@ -3216,7 +3216,7 @@ a.button.checkout.wc-forward {
 }
 p.bring-dock {
 	font-style: italic;
-	margin-top: 10px;
+	margin-top: -15px;
 	line-height: 1.4em;
 }
 .contact h3.gform_title {
