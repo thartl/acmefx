@@ -4030,9 +4030,6 @@ body .fbx-inner {
 		margin-bottom: 0px;
 	}
 
-
-
-
 	.woocommerce-cart table.cart td.actions .coupon input.input-text,
 	.woocommerce-checkout table.cart td.actions .coupon input.input-text,
 	#add_payment_method table.cart td.actions .coupon input.input-text {
@@ -4116,7 +4113,9 @@ body .fbx-inner {
 	.widget-area.flexible-widgets.widget-fourths .widget {
 	    margin: 0px auto 30px;
 	}
-
+	.fp-card-widget h2 {
+		padding: 20px;
+	}
 
 }
 @media only screen and (max-width: 800px) { 
