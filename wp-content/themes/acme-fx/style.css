@@ -2379,7 +2379,7 @@ h1.archive-title a:hover {
 	box-shadow: 0;
 }
 .home .site-inner {
-	padding-top: 60px;
+	padding-top: 90px;
 }
 .fx-main h4 {
 	margin-bottom: 50px;
@@ -3480,7 +3480,6 @@ body .fbx-inner {
 }
 .page-child.parent-pageid-69 h2 {
 	margin-top: 80px;
-	//margin-bottom: 0;
 }
 
  
@@ -4381,6 +4380,12 @@ body .fbx-inner {
 	    margin: 60px 0 35px;
 	    padding: 0;
 	}
+	.fp-card-widget .fp-card-overlay {
+	    min-height: 400px;
+	}
+	.fp-card-icon {
+		padding-top: 20px;
+	}
 
 }
 
@@ -4460,9 +4465,6 @@ body .fbx-inner {
 	}
 	.fx-type-widget h2 {
 		font-size: 26px;
-	}
-	.fp-card-icon {
-		padding-top: 20px;
 	}
 
 
