@@ -3931,9 +3931,6 @@ body .fbx-inner {
 	.widget-area.flexible-widgets .widget {
 		margin-left: 0;
 	}
-	.fp-card-widget p {
-		font-size: 20px;
-	}
 
 	.fp-card-widget {
 	//	background-position: 50% 0px;
@@ -4209,7 +4206,7 @@ body .fbx-inner {
 		float: none;
 		margin: 0 auto;
 		display: block;
-		padding-top: 40px;
+		padding-top: 20px;
 		padding-bottom: 0px;
 		opacity: 1;
 	}
