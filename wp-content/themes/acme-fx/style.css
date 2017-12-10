@@ -3212,7 +3212,7 @@ a.button.checkout.wc-forward {
 	flex-grow: 1;
 	flex-shrink: 0;
 	width: 190px;
-	margin: 60px 15px 20px; 
+	margin: 40px 15px; 
 }
 .credits-list a p {
 	text-align: center;
@@ -4326,6 +4326,9 @@ body .fbx-inner {
 	}
 	.site-header > .wrap {
 		//background-position: center bottom;
+	}
+	.credits-list {
+		margin-top: 20px;
 	}
 }
 
