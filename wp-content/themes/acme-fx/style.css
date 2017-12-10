@@ -2387,6 +2387,9 @@ h1.archive-title a:hover {
 .home .widget.featured-content {
 	margin-top: 40px;
 }
+.fx-main .entry {
+	padding: 30px 50px 70px;
+}
 
 /* ***************************************  NEW FX Gallery -- Widgetized ****/
 
@@ -2394,6 +2397,7 @@ h1.archive-title a:hover {
 	display: flex;
 	flex-wrap: wrap;
 	margin-top: 40px;
+	justify-content: center;
 }
 .all-fx-widgets > section.widget {
 	flex-shrink: 0;
@@ -2460,9 +2464,10 @@ h1.archive-title a:hover {
 	left: 120px;
 	font-family: Bitter, serif;
 	color: #fff;
+	font-size: 24px;
 }
 .all-fx-widgets .fx-type-widget p {
-	margin: 90px 0 28px;
+	margin: 65px 0 28px;
 	opacity: 1;
 	color: #fff;
 	position: relative;
@@ -2472,7 +2477,12 @@ h1.archive-title a:hover {
 	-moz-transition: opacity .3s ease-in-out;
 	-webkit-transition: opacity .3s ease-in-out;
 	-o-transition: opacity .3s ease-in-out;
+	padding-left: 100px;
+    padding-top: 0px;
+    padding-right: 30px;
 }
+
+
 @media (hover: hover) {
 	.all-fx-widgets .fx-type-widget:hover p,
 	.all-fx-widgets .fx-type-widget.hover p {
@@ -3417,7 +3427,7 @@ gform_wrapper .field_sublabel_below div[class*=gfield_time_].ginput_container la
 	padding: 5px 15px;
 }
 .foogallery {
-	margin-top: 60px;
+	//margin-top: 30px;
 }
 body .fbx-inner {
 	max-width: 100%;
@@ -3468,6 +3478,11 @@ body .fbx-inner {
 .page-child.parent-pageid-69 .entry-content > p:first-of-type video {
 	margin-top: 10px;
 }
+.fx-page h2 {
+	margin-top: 60px;
+	margin-bottom: 0;
+}
+
  
 /* # Sticky sidebar
 ---------------------------------------------------------------------------------------------------- */
@@ -4344,7 +4359,7 @@ body .fbx-inner {
     font-size: 4rem;
 	}
 	.fx-type-widget {
-		max-height: 280px;
+		max-height: 290px;
 	}
 	.all-fx-widgets .fx-type-widget p {
 		font-size: 14px;
@@ -4361,6 +4376,10 @@ body .fbx-inner {
 	}
 	.fp-card-widget p {
 		font-size: 16px;
+	}
+	.all-fx-widgets .fx-type-widget p {
+	    margin: 60px 0 35px;
+	    padding: 0;
 	}
 
 }
