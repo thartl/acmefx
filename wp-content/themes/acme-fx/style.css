@@ -3124,7 +3124,7 @@ a.button.checkout.wc-forward {
 	margin-left: 0;
 }
 .all-cameos {
-	padding-bottom: 40px;
+	//padding-bottom: 40px;
 	display: flex;
 	display: -moz-box-flex;
 	flex-direction: row;
