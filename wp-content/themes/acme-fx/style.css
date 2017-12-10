@@ -1342,6 +1342,13 @@ img.alignright,
 	float: left;
 }
 
+/* ## Article Spacing
+--------------------------------------------- */
+
+article.entry:nth-child(n + 2) {
+	margin-top: -120px;
+}
+
 
 /* # Site Navigation
 ---------------------------------------------------------------------------------------------------- */
@@ -2387,6 +2394,9 @@ h1.archive-title a:hover {
 .home .widget.featured-content {
 	margin-top: 40px;
 }
+.fx-main .entry {
+	padding: 30px 50px 70px;
+}
 
 /* ***************************************  NEW FX Gallery -- Widgetized ****/
 
@@ -2394,6 +2404,7 @@ h1.archive-title a:hover {
 	display: flex;
 	flex-wrap: wrap;
 	margin-top: 40px;
+	justify-content: center;
 }
 .all-fx-widgets > section.widget {
 	flex-shrink: 0;
@@ -2460,9 +2471,10 @@ h1.archive-title a:hover {
 	left: 120px;
 	font-family: Bitter, serif;
 	color: #fff;
+	font-size: 24px;
 }
 .all-fx-widgets .fx-type-widget p {
-	margin: 90px 0 28px;
+	margin: 65px 0 28px;
 	opacity: 1;
 	color: #fff;
 	position: relative;
@@ -2472,7 +2484,12 @@ h1.archive-title a:hover {
 	-moz-transition: opacity .3s ease-in-out;
 	-webkit-transition: opacity .3s ease-in-out;
 	-o-transition: opacity .3s ease-in-out;
+	padding-left: 100px;
+    padding-top: 0px;
+    padding-right: 30px;
 }
+
+
 @media (hover: hover) {
 	.all-fx-widgets .fx-type-widget:hover p,
 	.all-fx-widgets .fx-type-widget.hover p {
@@ -2566,6 +2583,7 @@ div.fp-card-widget:hover p {
 }
 .home .flexible-widgets:first-of-type section:first-of-type .fp-card-overlay {
 	background: linear-gradient(to right, hsla(190, 5%, 22%, 0.5) 0%, hsla(180, 5%, 16%, 0.7) 15%, hsla(180, 5%, 16%, 0.7) 85%, hsla(190, 5%, 22%, 0.5) 100%);
+	min-height: 350px;
 }
 
 
@@ -3417,7 +3435,7 @@ gform_wrapper .field_sublabel_below div[class*=gfield_time_].ginput_container la
 	padding: 5px 15px;
 }
 .foogallery {
-	margin-top: 60px;
+	margin-top: 30px;
 }
 body .fbx-inner {
 	max-width: 100%;
@@ -3468,6 +3486,10 @@ body .fbx-inner {
 .page-child.parent-pageid-69 .entry-content > p:first-of-type video {
 	margin-top: 10px;
 }
+.page-child.parent-pageid-69 h2 {
+	margin-top: 80px;
+}
+
  
 /* # Sticky sidebar
 ---------------------------------------------------------------------------------------------------- */
@@ -3916,15 +3938,12 @@ body .fbx-inner {
 	.widget-area.flexible-widgets .widget {
 		margin-left: 0;
 	}
-	.fp-card-widget p {
-		font-size: 20px;
-	}
 
 	.fp-card-widget {
 	//	background-position: 50% 0px;
 	}
 	.fp-card-widget .fp-card-overlay {
-		min-height: 420	px;
+		min-height: 420px;
 	}
 	.fp-card-widget p {
 		padding: 30px 40px 20px;
@@ -3939,9 +3958,14 @@ body .fbx-inner {
 		max-height: 75px;
 	}
 	.home .flexible-widgets section:first-of-type {
-		margin-bottom: 0;
+		margin-bottom: 40px;
 	}
 
+}
+@media only screen and (max-width: 960px) {
+	.home .site-inner {
+    	padding-top: 90px;
+	}
 }
 
 @media only screen and (max-width: 900px) {
@@ -3995,6 +4019,9 @@ body .fbx-inner {
 	}
 	article.entry {
 		margin-bottom: 30px;
+	}
+	article.entry:nth-child(n + 2) {
+		margin-top: -70px;
 	}
 
 	.sidebar {
@@ -4093,22 +4120,12 @@ body .fbx-inner {
 		margin-left: 0px;
 	}
 
-	.widget-area.flexible-widgets.widget-halves .widget,
-	.widget-area.flexible-widgets.widget-thirds .widget,
-	.widget-area.flexible-widgets.widget-fourths .widget {
-	   // width: 60%;
-	}
-
-	.fp-card-widget p {
-		font-size: 17px;
-	}
 	.fp-card-widget h2 {
 		font-size: 20px;
 	}
 
 	.home .flexible-widgets section:first-of-type {
-		margin-top: 40px;
-		//margin-bottom: 0;
+		margin-top: 80px;
 	}
 	.widget-area.flexible-widgets.widget-halves .widget,
 	.widget-area.flexible-widgets.widget-thirds .widget,
@@ -4117,6 +4134,16 @@ body .fbx-inner {
 	}
 	.fp-card-widget h2 {
 		padding: 20px;
+	}
+	.fp-card-widget p {
+		font-size: 15px;
+		padding: 50px 40px 40px;
+	}
+	.fp-card-widget .fp-card-overlay {
+	    min-height: 380px;
+	}
+	.home .flexible-widgets section:first-of-type p {
+		font-size: 18px;
 	}
 
 }
@@ -4192,7 +4219,7 @@ body .fbx-inner {
 		float: none;
 		margin: 0 auto;
 		display: block;
-		padding-top: 40px;
+		padding-top: 20px;
 		padding-bottom: 0px;
 		opacity: 1;
 	}
@@ -4211,6 +4238,9 @@ body .fbx-inner {
 	.home .site-inner .wrap {
 		padding-left: 5%;
 		padding-right: 5%;
+	}
+	.home .flexible-widgets section:first-of-type p {
+		font-size: 16px;
 	}
 }
 
@@ -4300,6 +4330,9 @@ body .fbx-inner {
 	.site-title a {
 		font-size: 80px;
 	}
+	.fp-card-widget .fp-card-overlay {
+	    min-height: 430px;
+	}
 }
 @media only screen and (max-width: 490px) {
 	.woocommerce ul.products.desc-view li.product .price  {
@@ -4344,7 +4377,7 @@ body .fbx-inner {
     font-size: 4rem;
 	}
 	.fx-type-widget {
-		max-height: 280px;
+		max-height: 290px;
 	}
 	.all-fx-widgets .fx-type-widget p {
 		font-size: 14px;
@@ -4361,6 +4394,16 @@ body .fbx-inner {
 	}
 	.fp-card-widget p {
 		font-size: 16px;
+	}
+	.all-fx-widgets .fx-type-widget p {
+	    margin: 60px 0 35px;
+	    padding: 0;
+	}
+	.fp-card-widget .fp-card-overlay {
+	    min-height: 400px;
+	}
+	.fp-card-icon {
+		padding-top: 20px;
 	}
 
 }
@@ -4404,6 +4447,9 @@ body .fbx-inner {
 		font-size: 16px;
 		padding: 60px 40px 40px;
 	}
+	.fp-card-widget .fp-card-overlay {
+	    min-height: 350px;
+	}
 }
 
 @media only screen and (max-width: 400px) {
@@ -4415,6 +4461,9 @@ body .fbx-inner {
 	}
 	.home .site-inner .wrap {
 	    padding: 0;
+	}
+	.fp-card-widget p {
+		padding: 40px 40px 40px;
 	}
 
 
@@ -4441,9 +4490,6 @@ body .fbx-inner {
 	}
 	.fx-type-widget h2 {
 		font-size: 26px;
-	}
-	.fp-card-icon {
-		padding-top: 20px;
 	}
 
 
