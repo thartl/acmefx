@@ -2466,15 +2466,15 @@ h1.archive-title a:hover {
 	position: absolute;
 }
 .all-fx-widgets .fx-type-widget h2 {
-	position: absolute;
-	top: 30px;
-	left: 120px;
+	position: relative;
+	top: 15px;
+	left: 100px;
 	font-family: Bitter, serif;
 	color: #fff;
 	font-size: 24px;
 }
 .all-fx-widgets .fx-type-widget p {
-	margin: 65px 0 28px;
+	margin: 35px 0 28px;
 	opacity: 1;
 	color: #fff;
 	position: relative;
@@ -4347,6 +4347,10 @@ body .fbx-inner {
 	.home .flexible-widgets section:first-of-type p {
 		font-size: 16px;
 	}
+	.fx-main .entry {
+	    padding: 30px 30px 70px;
+	}
+
 }
 @media only screen and (max-width: 490px) {
 	.woocommerce ul.products.desc-view li.product .price  {
@@ -4377,7 +4381,7 @@ body .fbx-inner {
 		display: none;
 	}
 	.all-fx-widgets .fx-type-widget h2 {
-		left: 20px;
+		left: 2px;
 	}
 	.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images {
 	    float: none;
@@ -4410,7 +4414,7 @@ body .fbx-inner {
 		font-size: 16px;
 	}
 	.all-fx-widgets .fx-type-widget p {
-	    margin: 60px 0 35px;
+	    margin: 35px 0 35px;
 	    padding: 0;
 	}
 	.home .flexible-widgets:first-of-type section:first-of-type .fp-card-overlay,
@@ -4481,6 +4485,10 @@ body .fbx-inner {
 	.fp-card-widget p {
 		padding: 40px 40px 40px;
 	}
+	.fx-type-widget {
+	    max-height: 400px;
+	}
+
 
 
 }
