@@ -4,10 +4,6 @@
 * Template Name: Bio Page
 * Description: Used as a documents listings page
 */
- 
-
-add_action( 'genesis_after_entry_content', 'th_individual_credits_loop', 15 );
-
 
 
 /** Display the Credits
@@ -39,6 +35,7 @@ function th_individual_credits_loop() {
 
 	if ( $loop->have_posts() ) :
 
+		echo '<article class="page entry">';
 
 		echo '<hr><h5>Check out ' . $sync_name . '\'s <a href="' . $personal_imdb . '" target="_blank" >IMDb resume</a> or have a look at some productions ' . $sync_name . ' has worked on:</h5>';
 
@@ -85,6 +82,8 @@ function th_individual_credits_loop() {
 
 		echo '</div>';
 
+		echo '</article>';
+
 
 	endif;
 
@@ -98,5 +97,6 @@ function th_individual_credits_loop() {
 }
 
 
+add_action( 'genesis_loop', 'th_individual_credits_loop', 15 );
 
 genesis();
