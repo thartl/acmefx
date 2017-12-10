@@ -2576,6 +2576,7 @@ div.fp-card-widget:hover p {
 }
 .home .flexible-widgets:first-of-type section:first-of-type .fp-card-overlay {
 	background: linear-gradient(to right, hsla(190, 5%, 22%, 0.5) 0%, hsla(180, 5%, 16%, 0.7) 15%, hsla(180, 5%, 16%, 0.7) 85%, hsla(190, 5%, 22%, 0.5) 100%);
+	min-height: 350px;
 }
 
 
