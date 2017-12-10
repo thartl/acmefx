@@ -4108,22 +4108,12 @@ body .fbx-inner {
 		margin-left: 0px;
 	}
 
-	.widget-area.flexible-widgets.widget-halves .widget,
-	.widget-area.flexible-widgets.widget-thirds .widget,
-	.widget-area.flexible-widgets.widget-fourths .widget {
-	   // width: 60%;
-	}
-
-	.fp-card-widget p {
-		font-size: 16px;
-	}
 	.fp-card-widget h2 {
 		font-size: 20px;
 	}
 
 	.home .flexible-widgets section:first-of-type {
 		margin-top: 40px;
-		//margin-bottom: 0;
 	}
 	.widget-area.flexible-widgets.widget-halves .widget,
 	.widget-area.flexible-widgets.widget-thirds .widget,
@@ -4132,6 +4122,13 @@ body .fbx-inner {
 	}
 	.fp-card-widget h2 {
 		padding: 20px;
+	}
+	.fp-card-widget p {
+		font-size: 15px;
+		padding: 50px 40px 40px;
+	}
+	.fp-card-widget .fp-card-overlay {
+	    min-height: 380px;
 	}
 
 }
