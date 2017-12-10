@@ -702,7 +702,6 @@ th:first-child {
 
 .full-width-content .content {
 	width: 100%;
-	background-color: #1F373B;
 }
 
 /* ### Primary Sidebar */
@@ -1341,6 +1340,13 @@ img.alignright,
 
 .site-header .header-widget-area {
 	float: left;
+}
+
+/* ## Article Spacing
+--------------------------------------------- */
+
+article.entry:nth-child(n + 2) {
+	margin-top: -120px;
 }
 
 
@@ -4014,6 +4020,9 @@ body .fbx-inner {
 	article.entry {
 		margin-bottom: 30px;
 	}
+	article.entry:nth-child(n + 2) {
+		margin-top: -110px;
+	}
 
 	.sidebar {
 		margin-bottom: 5%;
@@ -4133,6 +4142,9 @@ body .fbx-inner {
 	.fp-card-widget .fp-card-overlay {
 	    min-height: 380px;
 	}
+	.home .flexible-widgets section:first-of-type p {
+		font-size: 18px;
+	}
 
 }
 @media only screen and (max-width: 800px) { 
@@ -4226,6 +4238,9 @@ body .fbx-inner {
 	.home .site-inner .wrap {
 		padding-left: 5%;
 		padding-right: 5%;
+	}
+	.home .flexible-widgets section:first-of-type p {
+		font-size: 16px;
 	}
 }
 
