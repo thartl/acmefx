@@ -3939,7 +3939,7 @@ body .fbx-inner {
 	//	background-position: 50% 0px;
 	}
 	.fp-card-widget .fp-card-overlay {
-		min-height: 420	px;
+		min-height: 420px;
 	}
 	.fp-card-widget p {
 		padding: 30px 40px 20px;
@@ -4443,6 +4443,9 @@ body .fbx-inner {
 	}
 	.home .site-inner .wrap {
 	    padding: 0;
+	}
+	.fp-card-widget p {
+		padding: 40px 40px 40px;
 	}
 
 
