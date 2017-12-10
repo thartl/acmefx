@@ -4216,13 +4216,13 @@ body .fbx-inner {
 	}
 	.fp-card-widget p.allow-icon {
 		text-align: center;
-		padding: 20px 40px 40px;
+		padding: 20px 40px 60px;
 	}
 	.fp-card-icon {
 		float: none;
 		margin: 0 auto;
 		display: block;
-		padding-top: 20px;
+		padding-top: 40px;
 		padding-bottom: 0px;
 		opacity: 1;
 	}
@@ -4242,8 +4242,12 @@ body .fbx-inner {
 		padding-left: 5%;
 		padding-right: 5%;
 	}
-	.home .flexible-widgets section:first-of-type p {
-		font-size: 16px;
+	
+	.home .flexible-widgets:first-of-type section:first-of-type .fp-card-overlay {
+		min-height: 500px;
+	}
+	.home .flexible-widgets section:first-of-type {
+	    margin-bottom: 0;
 	}
 }
 
@@ -4336,8 +4340,12 @@ body .fbx-inner {
 	.site-title a {
 		font-size: 80px;
 	}
+	.home .flexible-widgets:first-of-type section:first-of-type .fp-card-overlay,
 	.fp-card-widget .fp-card-overlay {
 	    min-height: 430px;
+	}
+	.home .flexible-widgets section:first-of-type p {
+		font-size: 16px;
 	}
 }
 @media only screen and (max-width: 490px) {
@@ -4405,6 +4413,7 @@ body .fbx-inner {
 	    margin: 60px 0 35px;
 	    padding: 0;
 	}
+	.home .flexible-widgets:first-of-type section:first-of-type .fp-card-overlay,
 	.fp-card-widget .fp-card-overlay {
 	    min-height: 400px;
 	}
@@ -4453,6 +4462,7 @@ body .fbx-inner {
 		font-size: 16px;
 		padding: 60px 40px 40px;
 	}
+	.home .flexible-widgets:first-of-type section:first-of-type .fp-card-overlay,
 	.fp-card-widget .fp-card-overlay {
 	    min-height: 350px;
 	}
