@@ -3427,7 +3427,7 @@ gform_wrapper .field_sublabel_below div[class*=gfield_time_].ginput_container la
 	padding: 5px 15px;
 }
 .foogallery {
-	//margin-top: 30px;
+	margin-top: 30px;
 }
 body .fbx-inner {
 	max-width: 100%;
