@@ -1348,7 +1348,9 @@ img.alignright,
 article.entry:nth-child(n + 2) {
 	margin-top: -120px;
 }
-
+article > hr {
+    margin-bottom: 30px;
+}
 
 /* # Site Navigation
 ---------------------------------------------------------------------------------------------------- */
