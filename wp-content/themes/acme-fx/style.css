@@ -2460,15 +2460,15 @@ h1.archive-title a:hover {
 	-webkit-filter: brightness(0.48) grayscale(20%) blur(1px);
 }
 .all-fx-widgets .fx-icon {
-	width: 75px;
-	max-height: 75px;
+	width: 65px;
+	max-height: 65px;
 	margin: 0 auto;
 	position: absolute;
 }
 .all-fx-widgets .fx-type-widget h2 {
 	position: relative;
 	top: 15px;
-	left: 100px;
+	left: 85px;
 	font-family: Bitter, serif;
 	color: #fff;
 	font-size: 24px;
@@ -2484,7 +2484,7 @@ h1.archive-title a:hover {
 	-moz-transition: opacity .3s ease-in-out;
 	-webkit-transition: opacity .3s ease-in-out;
 	-o-transition: opacity .3s ease-in-out;
-	padding-left: 100px;
+	padding-left: 85px;
     padding-top: 0px;
     padding-right: 30px;
 }
@@ -3946,9 +3946,10 @@ body .fbx-inner {
 	//	background-position: 50% 0px;
 	}
 	.fp-card-widget .fp-card-overlay {
-		min-height: 420px;
+		min-height: 380px;
 	}
 	.fp-card-widget p {
+		font-size: 17px;
 		padding: 30px 40px 20px;
 	}
 	.fp-card-widget p.allow-icon {
@@ -3961,13 +3962,13 @@ body .fbx-inner {
 		max-height: 75px;
 	}
 	.home .flexible-widgets section:first-of-type {
-		margin-bottom: 40px;
+		margin-bottom: 0px;
 	}
 
 }
 @media only screen and (max-width: 960px) {
 	.home .site-inner {
-    	padding-top: 90px;
+    	padding-top: 60px;
 	}
 }
 
@@ -4128,7 +4129,7 @@ body .fbx-inner {
 	}
 
 	.home .flexible-widgets section:first-of-type {
-		margin-top: 80px;
+		margin-top: 30px;
 	}
 	.widget-area.flexible-widgets.widget-halves .widget,
 	.widget-area.flexible-widgets.widget-thirds .widget,
@@ -4140,12 +4141,12 @@ body .fbx-inner {
 	}
 	.fp-card-widget p {
 		font-size: 15px;
-		padding: 50px 40px 40px;
+		padding: 30px 40px 40px;
 	}
 	.fp-card-widget .fp-card-overlay {
-	    min-height: 380px;
+	    min-height: 330px;
 	}
-	.home .flexible-widgets section:first-of-type p {
+	.home .flexible-widgets:first-of-type section:first-of-type p {
 		font-size: 18px;
 	}
 
@@ -4169,7 +4170,7 @@ body .fbx-inner {
 		margin: 60px auto 40px;
 	}
 	.fp-card-widget p {
-		padding: 30px 40px 20px;
+		padding: 30px 20px 20px;
 	}
 	.fp-card-widget p.allow-icon {
 		text-align: center;
@@ -4248,6 +4249,9 @@ body .fbx-inner {
 	}
 	.home .flexible-widgets section:first-of-type {
 	    margin-bottom: 0;
+	}
+	.home .flexible-widgets section:first-of-type {
+	    margin-top: 30px;
 	}
 }
 
