@@ -11,7 +11,7 @@ function th_supplemental_engine_form () {
 	$th_custom_args = array();
 	$args = wp_parse_args( $th_custom_args, array(
 		// 'action' => home_url( '/' ),
-		'action' => '', /** try: send result to back to this template **/
+		'action' => '', /** try: send result back to this template **/
 		'engine' => 'library-engine',
 		// 'engine' => false,
 	));

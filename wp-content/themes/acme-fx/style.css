@@ -2490,12 +2490,12 @@ h1.archive-title a:hover {
 }
 
 
-@media (hover: hover) {
+/*@media (hover: hover) {*/
 	.all-fx-widgets .fx-type-widget:hover p,
 	.all-fx-widgets .fx-type-widget.hover p {
 		opacity: 1;
 	}
-}
+/*}*/
 
 /* ***************************************  NEW Front-page Cards -- Widgetized ****/
 .fp-card-widget {
