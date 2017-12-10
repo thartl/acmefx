@@ -3954,7 +3954,7 @@ body .fbx-inner {
 		max-height: 75px;
 	}
 	.home .flexible-widgets section:first-of-type {
-		margin-bottom: 0;
+		margin-bottom: 40px;
 	}
 
 }
@@ -4113,7 +4113,7 @@ body .fbx-inner {
 	}
 
 	.home .flexible-widgets section:first-of-type {
-		margin-top: 40px;
+		margin-top: 80px;
 	}
 	.widget-area.flexible-widgets.widget-halves .widget,
 	.widget-area.flexible-widgets.widget-thirds .widget,
