@@ -18,6 +18,7 @@ function th_individual_credits_loop() {
 		'post_type'	=> 'credits',
 		'post_status' => 'publish',
 		'posts_per_page' => -1,
+		'paged' => $paged,
 		'meta_key' => 'release_date',
 		'meta_type' => 'NUMERIC',
 		'orderby' => 'meta_value',
@@ -78,12 +79,11 @@ function th_individual_credits_loop() {
 
 		endwhile;
 
-		do_action( 'genesis_after_endwhile' );
-
 		echo '</div>';
 
 		echo '</article>';
 
+		do_action( 'genesis_after_endwhile' );
 
 	endif;
 

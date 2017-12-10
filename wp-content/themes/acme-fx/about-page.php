@@ -11,9 +11,6 @@ add_action( 'genesis_after_entry_content', 'th_partner_repeater', 10 );
 
 add_action( 'genesis_after_entry_content', 'th_staff_repeater', 12 );
 
-add_action( 'genesis_after_entry_content', 'th_main_credits_loop', 15 );
-
-
 
 /** Display the Team section Repeater field entries -- The Partners
  *
@@ -163,8 +160,9 @@ function th_main_credits_loop() {
 
 	if ( $loop->have_posts() ) : 
 
-		echo '<ul class="credits-list" >';
+		echo '<article class="page entry">';
 
+		echo '<ul class="credits-list" >';
 
 
 		while ( $loop->have_posts() ) : $loop->the_post(); 
@@ -198,6 +196,8 @@ function th_main_credits_loop() {
 
 		echo '</ul>';
 
+		echo '</article>';
+
 // $current_user_object = wp_get_current_user();
 // $current_username = $current_user_object->user_login;
 
@@ -211,5 +211,7 @@ function th_main_credits_loop() {
 
 	wp_reset_postdata();}
 
+
+add_action( 'genesis_loop', 'th_main_credits_loop', 15 );
 
 genesis();
