@@ -38,7 +38,7 @@ function th_individual_credits_loop() {
 
 		echo '<article class="page entry">';
 
-		echo '<hr><h5>Check out ' . $sync_name . '\'s <a href="' . $personal_imdb . '" target="_blank" >IMDb resume</a> or have a look at some productions ' . $sync_name . ' has worked on:</h5>';
+		echo '<hr><p>Check out ' . $sync_name . '\'s <a href="' . $personal_imdb . '" target="_blank" >IMDb resume</a> or have a look at some productions ' . $sync_name . ' has worked on:</p>';
 
 		echo '<div class="credits-list" >';
 
