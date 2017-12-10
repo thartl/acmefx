@@ -2379,7 +2379,7 @@ h1.archive-title a:hover {
 	box-shadow: 0;
 }
 .home .site-inner {
-	padding-top: 90px;
+	padding-top: 60px;
 }
 .fx-main h4 {
 	margin-bottom: 50px;
@@ -3957,6 +3957,11 @@ body .fbx-inner {
 		margin-bottom: 40px;
 	}
 
+}
+@media only screen and (max-width: 960px) {
+	.home .site-inner {
+    	padding-top: 90px;
+	}
 }
 
 @media only screen and (max-width: 900px) {
