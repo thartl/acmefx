@@ -186,8 +186,6 @@ function th_main_credits_loop() {
 			echo '<li><a href="' . $url . '" target="_blank" ><div class="match-height-item" >' . $image_url . '</div><p>' . $title . '</p><p>' . $show_date . '</p><p>' . $project_type . '</p></a></li>';
 
 
-	// $all_meta = get_post_meta( get_the_ID() );  // for testing only
-	// var_dump( $all_meta );
 	// var_dump( $post );
 	// var_dump( $credit_partner_array );
 	// var_dump( wp_get_additional_image_sizes() );
