@@ -75,8 +75,6 @@ function th_individual_credits_loop() {
 
 			}
 
-	// $all_meta = get_post_meta( get_the_ID() );  // for testing only
-	// var_dump( $all_meta );
 	// var_dump( $post );
 	// var_dump( $credit_partner_array );
 	// var_dump( wp_get_additional_image_sizes() );
@@ -85,7 +83,7 @@ function th_individual_credits_loop() {
 
 		do_action( 'genesis_after_endwhile' );
 
-		echo '<div>';
+		echo '</div>';
 
 
 	endif;
@@ -93,6 +91,8 @@ function th_individual_credits_loop() {
 
 	// We only need to reset the $post variable. If we overwrote $wp_query,
 	// we'd need to use wp_reset_query() which does both.
+	// In other words, wp_rest_query is only necessary if query_posts() was used.
+
 	wp_reset_postdata();
 
 }
