@@ -2696,11 +2696,11 @@ div.agm_mh_info_content {
     0% {
         top: 0;
         right: 0px;
-        opacity: 0;
+        opacity: 1;
     }
-    5% {
+   /*  5% {
     	opacity: 1;
-    }
+    } */
     20%, 40%, 60%, 80% {
         right: 180px;
         /* transform: rotateX(360deg) translate3d(0, 0, 0);
@@ -2744,13 +2744,13 @@ div.agm_mh_info_content {
 }
 @-webkit-keyframes snow2 {
     0% {
-    	opacity: 0;
+    	opacity: 1;
         top: 0;
         right: 0px;
     }
-    5% {
+    /* 5% {
     	opacity: 1;
-    }
+    } */
     20%, 40%, 60%, 80% {
         right: 205px;
     }
