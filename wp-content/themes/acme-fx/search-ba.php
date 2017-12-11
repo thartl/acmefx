@@ -28,7 +28,7 @@ function th_supplemental_engine_form () {
 		<button type="submit" class="search-submit"><i class="icon-search"></i></button>
 	</form>
 
-<?php
+<?php var_dump( get_intermediate_image_sizes() );
 }
 
 

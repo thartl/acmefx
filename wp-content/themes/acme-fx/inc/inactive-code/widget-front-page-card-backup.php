@@ -13,7 +13,7 @@ $page_url = esc_url( get_option( $current_acfw_widget_base . 'link_to_page' ) );
 
 
 $image = get_option( $current_acfw_widget_base . 'bg_image' );
-$image_array = $image ? wp_get_attachment_image_src( $image, 'medium_large', false ) : '';
+$image_array = $image ? wp_get_attachment_image_src( $image, 'full', false, array( 'class' => 'fx-widget-bg', 'alt' => $title_field, ) ) : '';
 $image_url = $image_array[ 0 ];
 // $image_width_half = round( $image_array[ 1 ] / 2 );
 // $image_height_half = round( $image_array[ 2 ] / 2 );
