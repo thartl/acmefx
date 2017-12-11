@@ -2698,7 +2698,7 @@ div.agm_mh_info_content {
         right: 0px;
         opacity: 0;
     }
-    1% {
+    5% {
     	opacity: 1;
     }
     20%, 40%, 60%, 80% {
@@ -2748,7 +2748,7 @@ div.agm_mh_info_content {
         top: 0;
         right: 0px;
     }
-    1% {
+    5% {
     	opacity: 1;
     }
     20%, 40%, 60%, 80% {
