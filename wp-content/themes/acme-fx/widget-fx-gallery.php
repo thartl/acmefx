@@ -22,7 +22,10 @@ $icon_url = esc_url( get_option( $current_acfw_widget_base . 'icon_url' ) );
 		
 	<a class="overlay" href="<?php echo $page_url; ?>" >
 	</a>
-	<img src="<?php echo $icon_url; ?>" class="fx-icon" >
-	<a href="<?php echo $page_url; ?>" ><h2><?php echo $title_field; ?></h2>
-	<p class="fx-widget-text"><?php echo $intro_text; ?></p></a>
+	
+	<a href="<?php echo $page_url; ?>" >
+		<img src="<?php echo $icon_url; ?>" class="fx-icon" >
+		<h2><?php echo $title_field; ?></h2>
+		<p class="fx-widget-text"><?php echo $intro_text; ?></p>
+	</a>
 </div>
