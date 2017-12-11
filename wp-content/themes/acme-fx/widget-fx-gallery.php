@@ -16,10 +16,10 @@ $icon_url = esc_url( get_option( $current_acfw_widget_base . 'icon_url' ) );
 
 
 ?><div class="fx-type-widget" >
-	<a href="<?php echo $page_url; ?>" class="taphover touch-hover-off" >
-		<?php echo $image_url; ?>
-		<img src="<?php echo $icon_url; ?>" class="fx-icon" >
-		<h2><?php echo $title_field; ?></h2>
-		<p><?php echo $intro_text; ?></p>
+	<div class="fx-widget-bg" style="background-image: url('<?php echo $image_url; ?>';)"></div>
+	<img src="<?php echo $icon_url; ?>" class="fx-icon" >
+	<h2><?php echo $title_field; ?></h2>	
+	<a class="overlay" href="<?php echo $page_url; ?>" >
+		<p class="fx-widget-text"><?php echo $intro_text; ?></p>
 	</a>
 </div>
