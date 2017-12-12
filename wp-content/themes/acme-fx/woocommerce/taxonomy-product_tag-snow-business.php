@@ -38,6 +38,11 @@ function th_snow_business_flakes () {
 			<div class="snowflake snowflake2">❅</div>
 			<div class="snowflake snowflake3">❅</div>
 			<div class="snowflake snowflake4">❅</div>
+			<div class="snowflake snowflake5">❅</div>
+			<div class="snowflake snowflake6">❅</div>
+			<div class="snowflake snowflake7">❅</div>
+			<div class="snowflake snowflake8">❅</div>
+			<div class="snowflake snowflake9">❅</div>
 		  </div>';
 }
 
