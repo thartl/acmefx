@@ -2222,6 +2222,15 @@ table.variations td.value {
 table.variations td.label {
 	float: left;
 }
+.woocommerce ul.product_list_widget li a {
+    color: #fff;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    font-family: Bitter;
+}
+.woocommerce.widget_products {
+	font-family: "Source Sans Pro", sans-serif;
+}
 
 /* # Sidebars
 ---------------------------------------------------------------------------------------------------- */
@@ -2250,6 +2259,15 @@ table.variations td.label {
 }
 .woocommerce .woocommerce-Price-amount::before {
 	content: '\00a0';
+}
+.menu-partners-staff-container ul {
+	padding: 15px 0 30px;
+}
+.menu-partners-staff-container a {
+	color: #fff;
+}
+.menu-partners-staff-container ul.menu li {
+	padding-bottom: 0;
 }
 
 /* # Footer Widgets
@@ -4047,8 +4065,10 @@ body .fbx-inner {
 		left: -85px;
 		top: -20px;
 	} */
-	.fx-main .site-inner, .wrap {
+	.fx-main .site-inner/* , 
+	.wrap */ {
 	    max-width: none;
+	    padding: 30px;
 	}
 }
 
@@ -4271,8 +4291,12 @@ body .fbx-inner {
 	.fp-card-widget {
 	//	background-position: 50% 0px;
 	}
-	.fp-card-widget .fp-card-overlay {
+	/* .fp-card-widget .fp-card-overlay {
 		min-height: 420px;
+	} */
+	.flexible-widgets:nth-of-type(3) .fp-card-widget:first-of-type,
+	.flexible-widgets:nth-of-type(3) .fp-card-widget:nth-of-type(2) {
+	    min-height: 380px;
 	}
 	.fp-card-widget p {
 		font-size: 17px;
@@ -4314,7 +4338,9 @@ body .fbx-inner {
 	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type .fp-card-overlay:hover {
 		background: transparent;
 	}
-
+	.all-fx-widgets .fx-type-widget {
+	    min-height: 385px;
+	}
 
 
 }
@@ -4323,7 +4349,7 @@ body .fbx-inner {
     	padding: 60px 30px 0;
 	}
 	.all-fx-widgets .fx-type-widget {
-		min-height: 400px;
+		min-height: 420px;
 	}
 }
 
@@ -4640,9 +4666,11 @@ body .fbx-inner {
 		opacity: 1;
 		padding-top: 0;
 		margin-top: -15px;
+		font-size: 16px;
 	}
 	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type {
 		height: 280px;
+		font-size: 16px;
 	}
 }
 
@@ -4708,6 +4736,7 @@ body .fbx-inner {
 	.genesis-nav-menu.menu-secondary > li:nth-child(4) .sub-menu {
 		right: 0;
 	}
+
 	.genesis-nav-menu.menu-secondary li .sub-menu li a {
 		color: #5BA5A5;
 		background-color: #fff;
@@ -4835,6 +4864,9 @@ body .fbx-inner {
 	.about h2 {
 	   // margin-bottom: 60px;
 	}
+	.genesis-nav-menu.menu-primary > li:nth-of-type(4) .sub-menu {
+	    right: 0;
+	}
 	.fx-type h2,
 	.fx-type img {
 		position: static;
@@ -4870,6 +4902,9 @@ body .fbx-inner {
 	.all-fx-widgets .fx-type-widget {
 		min-height: 330px;
 	}
+	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type {
+		height: 340px;
+	}
 }
 
 @media only screen and (max-width: 400px) {
@@ -4897,9 +4932,7 @@ body .fbx-inner {
 	.fx-widget-text {
 		//padding-top: 0;
 	}
-	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type {
-		height: 340px;
-	}
+	
 }
 
 @media only screen and (max-width: 360px) {
