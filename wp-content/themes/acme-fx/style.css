@@ -4521,8 +4521,8 @@ body .fbx-inner {
 		display: none;
 	}
 	.site-header > .wrap {
-		background-image: url('/wp-content/uploads/2017/07/grey-fire-800.jpg');
-		background-image: url('/wp-content/uploads/2017/07/grey-fire-vdark3.jpg');
+		background: url('/wp-content/uploads/2017/12/acme-flames-inverted-1.jpg') no-repeat;
+		background-image: url('/wp-content/uploads/2017/12/acme-flames-inverted-1.jpg');
 		background-position: center bottom;
 	}
 	.entry-content video {
