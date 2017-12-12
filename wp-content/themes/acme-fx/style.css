@@ -4065,8 +4065,10 @@ body .fbx-inner {
 		left: -85px;
 		top: -20px;
 	} */
-	.fx-main .site-inner, .wrap {
+	.fx-main .site-inner/* , 
+	.wrap */ {
 	    max-width: none;
+	    padding: 30px;
 	}
 }
 
@@ -4336,7 +4338,9 @@ body .fbx-inner {
 	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type .fp-card-overlay:hover {
 		background: transparent;
 	}
-
+	.all-fx-widgets .fx-type-widget {
+	    min-height: 385px;
+	}
 
 
 }
@@ -4345,7 +4349,7 @@ body .fbx-inner {
     	padding: 60px 30px 0;
 	}
 	.all-fx-widgets .fx-type-widget {
-		min-height: 400px;
+		min-height: 420px;
 	}
 }
 
