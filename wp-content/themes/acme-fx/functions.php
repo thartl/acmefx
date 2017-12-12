@@ -48,6 +48,8 @@ include_once( get_stylesheet_directory() . '/inc/functions-extended.php' );
 // Add the 2nd extended functions file  (th-- )
 include_once( get_stylesheet_directory() . '/inc/functions-extended-2.php' );
 
+// Add WooCommerce Memberships modifications  (th-- )
+include_once( get_stylesheet_directory() . '/inc/memberships-setup.php' );
 
 
 
