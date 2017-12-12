@@ -2260,6 +2260,15 @@ table.variations td.label {
 .woocommerce .woocommerce-Price-amount::before {
 	content: '\00a0';
 }
+ul.menu-partners-staff {
+	padding: 15px 0 30px;
+}
+ul.menu-partners-staff a {
+	color: #fff;
+}
+ul.menu-partners-staff li {
+	padding-bottom: 0;
+}
 
 /* # Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
