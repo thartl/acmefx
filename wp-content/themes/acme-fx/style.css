@@ -2260,13 +2260,13 @@ table.variations td.label {
 .woocommerce .woocommerce-Price-amount::before {
 	content: '\00a0';
 }
-ul.menu-partners-staff {
+.menu-partners-staff-container ul {
 	padding: 15px 0 30px;
 }
-ul.menu-partners-staff a {
+.menu-partners-staff-container a {
 	color: #fff;
 }
-ul.menu-partners-staff li {
+.menu-partners-staff-container li {
 	padding-bottom: 0;
 }
 
