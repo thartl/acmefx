@@ -4303,6 +4303,10 @@ body .fbx-inner {
 	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type .fp-card-widget p {
 		opacity: 1;
 		padding-top: 0;
+		margin-top: -15px;
+	}
+	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type .fp-card-widget h2 {
+		padding-top: 25px;
 	}
 	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type .fp-card-widget:hover h2 {
 		background-color: #1F373B;
@@ -4632,6 +4636,14 @@ body .fbx-inner {
 	    left: 90px;
 	    top: 40px;
 	}
+	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type .fp-card-widget p {
+		opacity: 1;
+		padding-top: 0;
+		margin-top: -15px;
+	}
+	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type {
+		height: 280px;
+	}
 }
 
 @media only screen and (max-width: 600px) {
@@ -4884,6 +4896,9 @@ body .fbx-inner {
 	}
 	.fx-widget-text {
 		//padding-top: 0;
+	}
+	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type {
+		height: 340px;
 	}
 }
 
