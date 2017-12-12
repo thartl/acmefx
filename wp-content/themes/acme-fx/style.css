@@ -2222,6 +2222,15 @@ table.variations td.value {
 table.variations td.label {
 	float: left;
 }
+.woocommerce ul.product_list_widget li a {
+    color: #fff;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    font-family: Bitter;
+}
+.woocommerce.widget_products {
+	font-family: "Source Sans Pro", sans-serif;
+}
 
 /* # Sidebars
 ---------------------------------------------------------------------------------------------------- */
@@ -4640,9 +4649,11 @@ body .fbx-inner {
 		opacity: 1;
 		padding-top: 0;
 		margin-top: -15px;
+		font-size: 16px;
 	}
 	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type {
 		height: 280px;
+		font-size: 16px;
 	}
 }
 
@@ -4870,6 +4881,9 @@ body .fbx-inner {
 	.all-fx-widgets .fx-type-widget {
 		min-height: 330px;
 	}
+	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type {
+		height: 340px;
+	}
 }
 
 @media only screen and (max-width: 400px) {
@@ -4897,9 +4911,7 @@ body .fbx-inner {
 	.fx-widget-text {
 		//padding-top: 0;
 	}
-	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type {
-		height: 340px;
-	}
+	
 }
 
 @media only screen and (max-width: 360px) {
