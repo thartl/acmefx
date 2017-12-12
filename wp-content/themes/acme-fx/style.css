@@ -4280,8 +4280,12 @@ body .fbx-inner {
 	.fp-card-widget {
 	//	background-position: 50% 0px;
 	}
-	.fp-card-widget .fp-card-overlay {
+	/* .fp-card-widget .fp-card-overlay {
 		min-height: 420px;
+	} */
+	.flexible-widgets:nth-of-type(3) .fp-card-widget:first-of-type,
+	.flexible-widgets:nth-of-type(3) .fp-card-widget:nth-of-type(2) {
+	    min-height: 380px;
 	}
 	.fp-card-widget p {
 		font-size: 17px;
@@ -4719,6 +4723,7 @@ body .fbx-inner {
 	.genesis-nav-menu.menu-secondary > li:nth-child(4) .sub-menu {
 		right: 0;
 	}
+
 	.genesis-nav-menu.menu-secondary li .sub-menu li a {
 		color: #5BA5A5;
 		background-color: #fff;
@@ -4845,6 +4850,9 @@ body .fbx-inner {
 	}
 	.about h2 {
 	   // margin-bottom: 60px;
+	}
+	.genesis-nav-menu.menu-primary > li:nth-of-type(4) .sub-menu {
+	    right: 0;
 	}
 	.fx-type h2,
 	.fx-type img {
