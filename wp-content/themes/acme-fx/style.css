@@ -2266,7 +2266,7 @@ table.variations td.label {
 .menu-partners-staff-container a {
 	color: #fff;
 }
-.menu-partners-staff-container li {
+.menu-partners-staff-container ul.menu li {
 	padding-bottom: 0;
 }
 
