@@ -1271,7 +1271,7 @@ img.alignright,
 .home .title-area {
 	position: absolute;
 	z-index: 1;
-	top: 100px;
+	//top: 100px;
 }
 .title-area img {
 	width: 600px;
@@ -1683,8 +1683,10 @@ div.comment-respond {
 /* # Woocommerce
 ---------------------------------------------------------------------------------------------------- */
 
+/* changed woocommerce content padding from 70px on sides */
 .woocommerce .content {
 	background-color: #1E373B;
+	padding: 70px 55px;
 }
 .woocommerce .archive-description {
 	padding: 0;
@@ -1890,11 +1892,18 @@ a.button.checkout.wc-forward:focus,
     border-color: #4F686A;
     border-radius: 0;
 }
+.woocommerce table.shop_table th {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    color: #5DA5A4;
+    text-transform: uppercase;
+}
 .woocommerce table.shop_table, .woocommerce table.shop_table td {
     border-color: #4f686a;
     border-radius: 0;
     line-height: 1.75;
     word-break: normal;
+    font-size: 1.6rem;
 }
 
 .woocommerce table.shop_table tbody th,
@@ -2296,6 +2305,9 @@ a.button.checkout.wc-forward {
 .woocommerce .related.products ul.products.grid-view {
 	margin-top: 30px;
 }
+section.up-sells.upsells.products + section.related.products {
+    margin-top: 40px;
+}
 
 
 /** th-- Archive page descriptions ******************************/
@@ -2489,9 +2501,7 @@ div.grid-list-switch {
    	float: right;
     margin-top: 10px;
     width: 123.5px;
-    width: 115px;
     margin-left: 10px;
-    font-size: 1.2rem;
 }
 
 .woocommerce ul.products.list-view li.product .added_to_cart.wc-forward {
@@ -3893,8 +3903,9 @@ body .fbx-inner {
 		width: 740px;
 	}
 
+	/* changed this from 620px along with woocommerce content padding: see top of woocommerce section */
 	.content {
-		width: 620px;
+		width: 640px;
 	}
 
 	.sidebar-content-sidebar .content,
@@ -4353,7 +4364,7 @@ body .fbx-inner {
 	    flex-basis: 100%;
 	    width: calc(100% - 20px);
 	}
-	.fx-main .site-inner {
+	/* .fx-main */ .site-inner {
 	    padding: 5% 5% 0;
 	}
 	.all-fx-widgets .fx-type-widget {
@@ -4433,7 +4444,6 @@ body .fbx-inner {
 	}
 	.woocommerce-cart .cross-sells > h2 {
 		margin-top: 30px;
-		margin-bottom: 0px;
 	}
 
 	.woocommerce-cart table.cart td.actions .coupon input.input-text,
@@ -4446,13 +4456,17 @@ body .fbx-inner {
 	.woocommerce-page table.cart td.actions .coupon .input-text+.button {
 		width: 33.3333%;
 	}
-	.woocommerce .woocommerce-cart-form {
-		//background-color: #fff;
-	}
 	.woocommerce table.shop_table_responsive tr td.product-name a {
 	    color: #fff;
 	    font-family: Bitter;
 	    font-size: 1.2em;
+	}
+	.woocommerce table.shop_table_responsive tr td, .woocommerce-page table.shop_table_responsive tr td {
+	    color: #5DA5A4;
+	}
+	.woocommerce table.shop_table_responsive tr td span.woocommerce-Price-amount,
+	.woocommerce-page table.shop_table_responsive tr td span.woocommerce-Price-amount {
+	    color: #fff;
 	}
 	.woocommerce table.shop_table_responsive td.product-name::before {
 		display: none;
@@ -4500,10 +4514,6 @@ body .fbx-inner {
 	.fp-card-widget h2 {
 		font-size: 20px;
 	}
-
-	/* .home .flexible-widgets:nth-of-type(2) section {
-		margin-top: 60px;
-	} */
 	.widget-area.flexible-widgets.widget-halves .widget,
 	.widget-area.flexible-widgets.widget-thirds .widget,
 	.widget-area.flexible-widgets.widget-fourths .widget {
@@ -4562,12 +4572,6 @@ body .fbx-inner {
 	    float: none;
 	    width: 65%;
 	}
-
-}
-
-@media only screen and (max-width: 750px) {
-	
-
 
 }
 
@@ -4828,18 +4832,26 @@ body .fbx-inner {
 	    width: 110px;
 	    height: 110px;
 	}
-	.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images {
+	.woocommerce #content div.product div.images,
+	.woocommerce div.product div.images,
+	.woocommerce-page #content div.product div.images,
+	.woocommerce-page div.product div.images {
 	    float: none;
 	    width: 100%;
 	}
-	.woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary {
+	.woocommerce #content div.product div.summary,
+	.woocommerce div.product div.summary,
+	.woocommerce-page #content div.product div.summary,
+	.woocommerce-page div.product div.summary {
 	    float: none;
 	    width: 100%;
 	}
 	.woocommerce div.product .product_title {
-    font-size: 4rem;
+    	font-size: 4rem;
 	}
-
+	.woocommerce table.shop_table td {
+	    font-size: 1.4rem;
+	}
 	.all-fx-widgets .fx-icon {
 		display: none;
 	}
