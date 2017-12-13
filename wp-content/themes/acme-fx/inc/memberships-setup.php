@@ -135,8 +135,8 @@ function th_add_membership_request_form( $original_text, $passed_user_id ) {
 
 	/** Construct the form */
 	$text    = 'Apply for Library Membership';
-	$onclick = "jQuery('#gravityform_button_{$form_id}, #gravityform_container_{$form_id}').slideToggle();";
-	$html = '<p>Looks like you don\'t have a membership yet!</p>';
+	$onclick = "jQuery('#no-memberships-yet').hide( '400' ); jQuery('#gravityform_button_{$form_id}, #gravityform_container_{$form_id}').slideToggle( '800' );";
+	$html = '<p id="no-memberships-yet">Looks like you don\'t have a membership yet!</p>';
 	$html .= sprintf( '<button id="gravityform_button_%1$d" class="gravity_button" onclick="%2$s">%3$s</button>', esc_attr( $form_id ), $onclick, esc_attr( $text ) );
 	$html .= sprintf( '<div id="gravityform_container_%1$d" class="gravity_container" style="display:none;">', esc_attr( $form_id ) );
 	$html .= gravity_form( $form_id, $attributes['title'], $attributes['description'], false, $attributes['field_values'], true, $attributes['tabindex'], false );
@@ -183,7 +183,7 @@ function wc_custom_user_redirect( $redirect, $user ) {
 	// }
 
 	$redirect = wp_get_referer() ? wp_get_referer() : home_url();
-	
+
 	return $redirect;
 }
 add_filter( 'woocommerce_login_redirect', 'wc_custom_user_redirect', 10, 2 );
