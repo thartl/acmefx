@@ -4299,6 +4299,19 @@ body .fbx-inner {
 	    min-height: 385px;
 	}
 
+/* fix full width product pages that have full screen images ***************************************************/
+
+	body.woocommerce #content div.product div.images, 
+	
+	body.woocommerce div.product div.images, 
+	
+	body.woocommerce-page #content div.product div.images,
+	
+	body.woocommerce-page div.product div.images {
+	    float: none;
+	    width: 48%;
+	}
+
 
 }
 @media only screen and (max-width: 960px) {
@@ -4526,6 +4539,16 @@ body .fbx-inner {
 	}
 	.fp-card-icon {
 		padding: 50px 20px 10px 20px;
+	}
+	body.woocommerce #content div.product div.images, 
+	
+	body.woocommerce div.product div.images, 
+	
+	body.woocommerce-page #content div.product div.images,
+	
+	body.woocommerce-page div.product div.images {
+	    float: none;
+	    width: 65%;
 	}
 
 }
@@ -4833,6 +4856,16 @@ body .fbx-inner {
 	.widget-area.flexible-widgets.widget-halves .widget,
 	.widget-area.flexible-widgets.widget-thirds .widget,
 	.widget-area.flexible-widgets.widget-fourths .widget {
+	    width: 100%;
+	}
+	body.woocommerce #content div.product div.images, 
+	
+	body.woocommerce div.product div.images, 
+	
+	body.woocommerce-page #content div.product div.images,
+	
+	body.woocommerce-page div.product div.images {
+	    float: none;
 	    width: 100%;
 	}
 
