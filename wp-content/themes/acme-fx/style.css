@@ -2523,7 +2523,7 @@ div.grid-list-switch {
 .woocommerce ul.products.desc-view li.product a.button {
 	margin-right: 15px;
 	margin-top: 0;
-	width: 123.5px;
+	width: 125px;
 }
 .grid-list-switch.desc-view svg.grid-view-btn {
 	fill: #fff;
@@ -4824,7 +4824,9 @@ body .fbx-inner {
 	    float: left;
 	    margin-top: 5px;
 	    margin-bottom: 20px;
+	    width: auto;
 	}
+
 	.woocommerce ul.products.desc-view li.product .added_to_cart.wc-forward  {
 	    float: left;
 	}
