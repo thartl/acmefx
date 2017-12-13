@@ -26,6 +26,10 @@ function th_link_to_memberships_section() {
 	$memberships_endpoint = get_option( 'woocommerce_myaccount_members_area_endpoint', 'members-area' );
 	$members_area_url = $my_account_url . $memberships_endpoint . '/';
 
+	$memberships = wc_memberships_get_user_active_memberships( $user_id );
+
+	var_dump( $memberships );
+
 	echo '<p>You may also <a href="'. esc_url( $members_area_url ) . '"	>see your active memberships or request a new membership</a>.</p>';
 
 }
