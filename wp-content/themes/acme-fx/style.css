@@ -2264,7 +2264,7 @@ a.button.checkout.wc-forward {
 	border: 1px solid #fff;
 }
 .woocommerce div.product .woocommerce-tabs ul.tabs li a {
-	margin-left: 5px;
+	//margin-left: 5px;
 }
 .shop_attributes tbody {
 	border-bottom: 0;
@@ -2474,7 +2474,7 @@ div.grid-list-switch {
 	width: auto;
 	text-align: right;
     color: #fff;
-    padding-top: 15px;
+    padding-top: 5px;
     margin-left: 15px;
 }
 
