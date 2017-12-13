@@ -12,6 +12,7 @@
  */
 
 
+
 /**
  * After My Account (Dashboard) content: add a link to Membeships section (does not test for membership plan ID, hence lists memberships even if there is only one)
  *
@@ -37,14 +38,41 @@ function th_link_to_memberships_section() {
  *
  */
 
+/** 
+ * Make sure user metadata get updated when form is submitted
+ * Set up for Gravity Form ID 2 *************************************************/
+add_action( 'gform_after_submission_2', 'th_update_user_meta', 10, 2 );
+function th_update_user_meta( $entry, $form ) {
+
+    $first_name = rgar( $entry, '1.3' );
+    $last_name = rgar( $entry, '1.6' );
+    $email = rgar( $entry, '2' );
+
+	$user_id = get_current_user_id();
+
+	wp_update_user( array(
+		'ID' => $user_id,
+		'first_name' => $first_name,
+		'last_name' => $last_name,
+		'user_email' => $email
+		) );
+		 
+}
+
+/** Get existing user data, construct form, make prefilled data fields inactive */
 add_action( 'wc_memberships_after_my_memberships', 'th_add_membership_request_form' );
 
 function th_add_membership_request_form() {
 
+	$form_id = 2;  /** Which form ID? */
+
+	/** Get user data */
 	$current_user = wp_get_current_user();
+	$user_ID = $current_user->ID;
 	$user_email = $current_user->user_email;
     $user_first_name = $current_user->user_firstname;
     $user_last_name = $current_user->user_lastname;
+
 
     /** Set up form attributes */
 		$attributes = array(
@@ -59,8 +87,48 @@ function th_add_membership_request_form() {
 		'tabindex'     => 1,
 	);
 
+
+	/** Make prefilled fields read only */
+	$gform_pre_render_hook = 'gform_pre_render_' . $form_id;
+
+	if( $user_email ) {
+		add_filter( $gform_pre_render_hook, 'th_add_readonly_email' );
+		function th_add_readonly_email( $form ) {
+			?>  		<script type="text/javascript">
+				        	jQuery(document).ready(function(){
+				        	jQuery("li.gf_email_maybe_readonly input").attr("readonly","readonly");
+			        	});
+			    		</script>
+	    	<?php	return $form;
+	    	}
+	    }
+
+	if( $user_first_name ) {
+		add_filter( $gform_pre_render_hook, 'th_add_readonly_first_name' );
+		function th_add_readonly_first_name( $form ) {
+			?>  		<script type="text/javascript">
+				        	jQuery(document).ready(function(){
+				        	jQuery("li.gf_name_maybe_readonly .name_first input").attr("readonly","readonly");
+			        	});
+			    		</script>
+	    	<?php	return $form;
+	    	}
+	    }
+
+	if( $user_last_name ) {
+		add_filter( $gform_pre_render_hook, 'th_add_readonly_last_name' );
+		function th_add_readonly_last_name( $form ) {
+			?>  		<script type="text/javascript">
+				        	jQuery(document).ready(function(){
+				        	jQuery("li.gf_name_maybe_readonly .name_last input").attr("readonly","readonly");
+			        	});
+			    		</script>
+	    	<?php	return $form;
+	    	}
+	    }
+
+
 	/** Construct the form */
-	$form_id = 2;  /** Which form ID? */
 	$text    = 'Apply for Library Membership';
 	$onclick = "jQuery('#gravityform_button_{$form_id}, #gravityform_container_{$form_id}').slideToggle();";
 	$html  = sprintf( '<button id="gravityform_button_%1$d" class="gravity_button" onclick="%2$s">%3$s</button>', esc_attr( $form_id ), $onclick, esc_attr( $text ) );
@@ -72,8 +140,6 @@ function th_add_membership_request_form() {
 	gravity_form_enqueue_scripts( $form_id, true );
 
 	echo $html;
-
-	/** Make prefilled fields read only */
 
 }
 
