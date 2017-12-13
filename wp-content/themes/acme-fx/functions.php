@@ -48,6 +48,8 @@ include_once( get_stylesheet_directory() . '/inc/functions-extended.php' );
 // Add the 2nd extended functions file  (th-- )
 include_once( get_stylesheet_directory() . '/inc/functions-extended-2.php' );
 
+// Add WooCommerce Memberships modifications  (th-- )
+include_once( get_stylesheet_directory() . '/inc/memberships-setup.php' );
 
 
 
@@ -62,7 +64,7 @@ function th_private_admin_bar( $content ) {
 	/**  User IDs:  Tomas = 11, Amy = 5, Kailey = 7, Kevin = 4;  UNCOMMENT TO ENABLE ADMIN BAR ON FRONT END     Note: there is no user 0.  *****/
 
 	if ( $current_user == 0
-//		 ||	$current_user == 11 		// Tomas
+		 ||	$current_user == 11 		// Tomas
 		 || $current_user == 5 		// Amy
 //		 || $current_user == 7 		// Kailey
 //		 || $current_user == 4 		// Kevin

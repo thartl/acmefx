@@ -19,7 +19,7 @@ add_action( 'wp_enqueue_scripts', 'genesis_sample_products_match_height', 99 );
 function genesis_sample_products_match_height() {
 
 	// If Woocommerce is not activated, or a product page isn't showing, exit early.
-	if ( ! class_exists( 'WooCommerce' ) || ! is_shop() && ! is_product_category() && ! is_product_tag() ) {
+	if ( ! class_exists( 'WooCommerce' ) || ! is_shop() && ! is_product_category() && ! is_product_tag() && ! is_cart() && ! is_product() ) {
 		return;
 	}
 
