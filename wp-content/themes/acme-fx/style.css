@@ -1246,8 +1246,8 @@ img.alignright,
     margin: 0;
     max-width: inherit;
     position: relative;
-	background: url('/wp-content/uploads/2017/12/acme-flames-inverted-1.jpg') no-repeat;
-	background-image: url('/wp-content/uploads/2017/12/acme-flames-inverted-1.jpg');
+	background: url('/wp-content/uploads/2017/12/acme-flames-inverted.jpg') no-repeat;
+	background-image: url('/wp-content/uploads/2017/12/acme-flames-inverted.jpg');
 	background-position: center right;
 
 }
@@ -3860,8 +3860,8 @@ body .fbx-inner {
 @media only screen and (max-width: 1300px) {
 
 	.site-header > .wrap {
-		background-image: url('wp-content/uploads/2017/12/acme-flames-inverted-1.jpg');
-		background-image: url('/wp-content/uploads/2017/12/acme-flames-inverted-1.jpg');
+		background-image: url('wp-content/uploads/2017/12/acme-flames-inverted.jpg');
+		background-image: url('/wp-content/uploads/2017/12/acme-flames-inverted.jpg');
 		background-position: bottom center;
 	}
 
@@ -4521,8 +4521,8 @@ body .fbx-inner {
 		display: none;
 	}
 	.site-header > .wrap {
-		background: url('/wp-content/uploads/2017/12/acme-flames-inverted-1.jpg') no-repeat;
-		background-image: url('/wp-content/uploads/2017/12/acme-flames-inverted-1.jpg');
+		background: url('/wp-content/uploads/2017/12/acme-flames-inverted.jpg') no-repeat;
+		background-image: url('/wp-content/uploads/2017/12/acme-flames-inverted.jpg');
 		background-position: center bottom;
 	}
 	.entry-content video {
