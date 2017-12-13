@@ -2485,8 +2485,10 @@ div.grid-list-switch {
 	font-size: 10px;
 }
 .woocommerce ul.products.list-view li.product .button {
-   float: right;
+   	float: right;
     margin-top: 10px;
+    width: 123.5px;
+    margin-left: 10px;
 }
 .woocommerce ul.products.list-view li.product .added_to_cart.wc-forward {
 	float: right;
@@ -4949,6 +4951,9 @@ body .fbx-inner {
 	}
 	.fx-widget-text {
 		//padding-top: 0;
+	}
+	.woocommerce ul.products li.product .onsale {
+	    margin-right: -.2em;
 	}
 	
 }
