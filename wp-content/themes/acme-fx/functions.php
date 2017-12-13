@@ -78,7 +78,6 @@ function th_private_admin_bar( $content ) {
 
 
 
-
 // Add custom links to admin bar
 function add_upload_admin_bar_link() {
 	global $wp_admin_bar;
