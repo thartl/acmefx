@@ -2291,6 +2291,10 @@ a.button.checkout.wc-forward {
 .woocommerce-shipping-fields .form-row.woocommerce-invalid label {
     color: #5BA5A5;
 }
+.woocommerce .upsells.up-sells.products ul.products.grid-view,
+.woocommerce .related.products ul.products.grid-view {
+	margin-top: 30px;
+}
 
 
 /** th-- Archive page descriptions ******************************/
