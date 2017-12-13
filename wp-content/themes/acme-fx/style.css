@@ -199,13 +199,13 @@ textarea:focus,
 }
 
 a {
-	color: #5BA5A5;
+	color: #80E0D9;
 	text-decoration: none;
 }
 
 a:focus,
 a:hover {
-	color: #AE4040;
+	color: #5BA5A5;
 	text-decoration: none;
 }
 
@@ -469,6 +469,7 @@ input[type="submit"]:hover,
 .button:focus,
 .button:hover {
 	background-color: #5BA5A5;
+	background-color: #8E3939;
 	color: #fff;
 }
 
@@ -2488,8 +2489,11 @@ div.grid-list-switch {
    	float: right;
     margin-top: 10px;
     width: 123.5px;
+    width: 119px;
     margin-left: 10px;
+    font-size: 1.3rem;
 }
+
 .woocommerce ul.products.list-view li.product .added_to_cart.wc-forward {
 	float: right;
 	clear: right;
@@ -2631,6 +2635,12 @@ div.grid-list-switch {
 	color: #aaa;
 	text-align: center;
 }
+.footer-widgets a {
+	color: #5ba5a5;
+}
+.footer-widgets a:hover {
+	color: #80E0D9;
+}
 
 .footer-widgets-1,
 .footer-widgets-2,
@@ -2669,7 +2679,7 @@ div.grid-list-switch {
 }
 .footer-widget-area .simple-social-icons ul li a:hover,
 .footer-widget-area .simple-social-icons ul li a:focus {
-	color: #AE4040 !important;
+	color: #80E0D9 !important;
 }
 
 /* # Site Footer
