@@ -31,3 +31,44 @@ function th_link_to_memberships_section() {
 
 
 
+/**
+ * Add a button to dispaly a form -- used to request Library Membership
+ *
+ */
+
+add_action( 'wc_memberships_after_my_memberships', 'th_add_membership_request_form' );
+
+function th_add_membership_request_form() {
+
+	$current_user = wp_get_current_user();
+
+	$user_email = $current_user->user_email;
+    $user_first_name = $current_user->user_firstname;
+    $user_last_name = $current_user->user_lastname;
+
+		$attributes = array(
+		'title'        => true,
+		'description'  => false,
+		'name'         => '',
+		'field_values' => array(
+			'membership_request_first_name' => $user_first_name,
+			'membership_request_last_name' => $user_last_name,
+			'membership_request_email' => $user_email,			
+			),
+		'tabindex'     => 1,
+	);
+
+
+	$form_id = 2;  /** Which form ID? */
+	$text    = 'Apply for Library Membership';
+	$onclick = "jQuery('#gravityform_button_{$form_id}, #gravityform_container_{$form_id}').slideToggle();";
+	$html  = sprintf( '<button id="gravityform_button_%1$d" class="gravity_button" onclick="%2$s">%3$s</button>', esc_attr( $form_id ), $onclick, esc_attr( $text ) );
+	$html .= sprintf( '<div id="gravityform_container_%1$d" class="gravity_container" style="display:none;">', esc_attr( $form_id ) );
+	$html .= gravity_form( $form_id, $attributes['title'], $attributes['description'], false, $attributes['field_values'], true, $attributes['tabindex'], false );
+	$html .= '</div>';
+
+	echo $html;
+
+}
+
+
