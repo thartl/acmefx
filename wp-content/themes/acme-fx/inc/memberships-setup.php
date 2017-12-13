@@ -13,7 +13,7 @@
 
 
 /**
- * Add link to Membeships section after My Account content
+ * After My Account (Dashboard) content: add a link to Membeships section (does not test for membership plan ID, hence lists memberships even if there is only one)
  *
  */
 
@@ -28,4 +28,6 @@ function th_link_to_memberships_section() {
 	echo '<p>You may also <a href="'. esc_url( $members_area_url ) . '"	>see your active memberships or request a new membership</a>.</p>';
 
 }
+
+
 
