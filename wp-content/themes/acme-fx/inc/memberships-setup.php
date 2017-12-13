@@ -32,7 +32,8 @@ function th_link_to_memberships_section() {
 
 
 /**
- * Add a button to dispaly a form -- used to request Library Membership
+ * Add a button to dispaly a form -- used to request Library Membership. Doesn't display if user already has Library Membership.
+ * Connect to form --> $form_id
  *
  */
 
@@ -41,11 +42,11 @@ add_action( 'wc_memberships_after_my_memberships', 'th_add_membership_request_fo
 function th_add_membership_request_form() {
 
 	$current_user = wp_get_current_user();
-
 	$user_email = $current_user->user_email;
     $user_first_name = $current_user->user_firstname;
     $user_last_name = $current_user->user_lastname;
 
+    /** Set up form attributes */
 		$attributes = array(
 		'title'        => true,
 		'description'  => false,
@@ -58,7 +59,7 @@ function th_add_membership_request_form() {
 		'tabindex'     => 1,
 	);
 
-
+	/** Construct the form */
 	$form_id = 2;  /** Which form ID? */
 	$text    = 'Apply for Library Membership';
 	$onclick = "jQuery('#gravityform_button_{$form_id}, #gravityform_container_{$form_id}').slideToggle();";
@@ -66,6 +67,9 @@ function th_add_membership_request_form() {
 	$html .= sprintf( '<div id="gravityform_container_%1$d" class="gravity_container" style="display:none;">', esc_attr( $form_id ) );
 	$html .= gravity_form( $form_id, $attributes['title'], $attributes['description'], false, $attributes['field_values'], true, $attributes['tabindex'], false );
 	$html .= '</div>';
+
+	/** Needed to enqueque styles and scripts. Scripts are necessary for forms that contain conditional logic or the date picker field. */
+	gravity_form_enqueue_scripts( $form_id, true );
 
 	echo $html;
 
