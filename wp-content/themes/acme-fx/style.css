@@ -4442,6 +4442,9 @@ body .fbx-inner {
 	.home #wp-custom-header img {
 		max-height: 300px;
 	}
+	.woocommerce .content {
+	    padding: 30px;
+	}
 	.woocommerce-cart .cross-sells > h2 {
 		margin-top: 30px;
 	}
