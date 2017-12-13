@@ -26,10 +26,6 @@ function th_link_to_memberships_section() {
 	$memberships_endpoint = get_option( 'woocommerce_myaccount_members_area_endpoint', 'members-area' );
 	$members_area_url = $my_account_url . $memberships_endpoint . '/';
 
-	$memberships = wc_memberships_get_user_active_memberships( $user_id );
-
-	var_dump( $memberships );
-
 	echo '<p>You may also <a href="'. esc_url( $members_area_url ) . '"	>see your active memberships or request a new membership</a>.</p>';
 
 }
@@ -67,9 +63,11 @@ function th_update_user_meta( $entry, $form ) {
 
 /** Get existing user data, construct form, make prefilled data fields inactive */
 /** $form_id refers to Gravity Forms ID */
-add_action( 'wc_memberships_after_my_memberships', 'th_add_membership_request_form' );
+// add_action( 'wc_memberships_after_my_memberships', 'th_add_membership_request_form' );
 
-function th_add_membership_request_form() {
+add_filter( 'wc_memberships_my_memberships_no_memberships_text', 'th_add_membership_request_form', 10, 2);
+
+function th_add_membership_request_form( $original_text, $passed_user_id ) {
 
 	$form_id = 3;  /** Which form ID? */
 
@@ -137,8 +135,9 @@ function th_add_membership_request_form() {
 
 	/** Construct the form */
 	$text    = 'Apply for Library Membership';
-	$onclick = "jQuery('#gravityform_button_{$form_id}, #gravityform_container_{$form_id}').slideToggle();";
-	$html  = sprintf( '<button id="gravityform_button_%1$d" class="gravity_button" onclick="%2$s">%3$s</button>', esc_attr( $form_id ), $onclick, esc_attr( $text ) );
+	$onclick = "jQuery('#no-memberships-yet').hide( '400' ); jQuery('#gravityform_button_{$form_id}, #gravityform_container_{$form_id}').slideToggle( '800' );";
+	$html = '<p id="no-memberships-yet">Looks like you don\'t have a membership yet!</p>';
+	$html .= sprintf( '<button id="gravityform_button_%1$d" class="gravity_button" onclick="%2$s">%3$s</button>', esc_attr( $form_id ), $onclick, esc_attr( $text ) );
 	$html .= sprintf( '<div id="gravityform_container_%1$d" class="gravity_container" style="display:none;">', esc_attr( $form_id ) );
 	$html .= gravity_form( $form_id, $attributes['title'], $attributes['description'], false, $attributes['field_values'], true, $attributes['tabindex'], false );
 	$html .= '</div>';
@@ -149,5 +148,44 @@ function th_add_membership_request_form() {
 	echo $html;
 
 }
+
+
+/**
+ * Redirect users to custom URL based on their role after login
+ *
+ * @param string $redirect
+ * @param object $user
+ * @return string
+ */
+function wc_custom_user_redirect( $redirect, $user ) {
+	// Get the first of all the roles assigned to the user
+	$role = $user->roles[0];
+	$dashboard = admin_url();
+	$myaccount = get_permalink( wc_get_page_id( 'myaccount' ) );
+	// if( $role == 'administrator' ) {
+	// 	//Redirect administrators to the dashboard
+	// 	$redirect = $dashboard;
+	// } elseif ( $role == 'shop-manager' ) {
+	// 	//Redirect shop managers to the dashboard
+	// 	$redirect = $dashboard;
+	// } elseif ( $role == 'editor' ) {
+	// 	//Redirect editors to the dashboard
+	// 	$redirect = $dashboard;
+	// } elseif ( $role == 'author' ) {
+	// 	//Redirect authors to the dashboard
+	// 	$redirect = $dashboard;
+	// } elseif ( $role == 'customer' || $role == 'subscriber' ) {
+	// 	//Redirect customers and subscribers to the "My Account" page
+	// 	$redirect = $myaccount;
+	// } else {
+	// 	//Redirect any other role to the previous visited page or, if not available, to the home
+	// 	$redirect = wp_get_referer() ? wp_get_referer() : home_url();
+	// }
+
+	$redirect = wp_get_referer() ? wp_get_referer() : home_url();
+
+	return $redirect;
+}
+add_filter( 'woocommerce_login_redirect', 'wc_custom_user_redirect', 10, 2 );
 
 
