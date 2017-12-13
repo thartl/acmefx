@@ -49,7 +49,7 @@ function th_add_membership_request_form() {
     /** Set up form attributes */
 		$attributes = array(
 		'title'        => true,
-		'description'  => false,
+		'description'  => true,
 		'name'         => '',
 		'field_values' => array(
 			'membership_request_first_name' => $user_first_name,
@@ -72,6 +72,8 @@ function th_add_membership_request_form() {
 	gravity_form_enqueue_scripts( $form_id, true );
 
 	echo $html;
+
+	/** Make prefilled fields read only */
 
 }
 
