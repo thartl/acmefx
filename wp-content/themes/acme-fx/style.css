@@ -1912,7 +1912,9 @@ a.button.checkout.wc-forward:focus,
     font-weight: 700;
     border-color: #4F686A;
 }
-
+.woocommerce table.shop_table form.woocommerce-shipping-calculator {
+    margin: 7px 0;
+}
 .woocommerce-cart #payment ul.payment_methods,
 .woocommerce-checkout #payment ul.payment_methods,
 #add_payment_method #payment ul.payment_methods {
@@ -4499,10 +4501,8 @@ body .fbx-inner {
 		margin-top: 5px;
 	}
 	.woocommerce .woocommerce-cart-form td {
-		//color: #1E373B;
 		font-family: "Source Sans Pro", sans-serif;
-	}
-	
+	}		
 	.coupon {
 		margin-top: 40px;
 	}
@@ -4580,13 +4580,16 @@ body .fbx-inner {
 
 @media only screen and (max-width: 700px) {
 	.headhesive--stick.nav-secondary a {
-	padding: 10px 20px;
+		padding: 10px 20px;
 	}
 	.headhesive--stick.nav-secondary {
-	padding: 5px;
+		padding: 5px;
 	}
 	.woocommerce div.product .product_title {
-    font-size: 3.5rem;
+    	font-size: 3.5rem;
+	}
+	.woocommerce-cart .cross-sells > h2 {
+	    margin-bottom: 10px;
 	}
 	.fp-card-widget .fp-card-overlay {
 		//min-height: 420px;
