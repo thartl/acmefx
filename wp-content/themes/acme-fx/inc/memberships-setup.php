@@ -26,6 +26,10 @@ function th_link_to_memberships_section() {
 	$memberships_endpoint = get_option( 'woocommerce_myaccount_members_area_endpoint', 'members-area' );
 	$members_area_url = $my_account_url . $memberships_endpoint . '/';
 
+	$memberships = wc_memberships_get_user_active_memberships( $user_id );
+
+	var_dump( $memberships );
+
 	echo '<p>You may also <a href="'. esc_url( $members_area_url ) . '"	>see your active memberships or request a new membership</a>.</p>';
 
 }
@@ -34,14 +38,16 @@ function th_link_to_memberships_section() {
 
 /**
  * Add a button to dispaly a form -- used to request Library Membership. Doesn't display if user already has Library Membership.
- * Connect to form --> $form_id
+ * Connect to form in 2 places:
+ * 1) in the first add_action --> last character of the hook 'gform_after_submission_'
+ * 2) in function th_add_membership_request_form() --> $form_id
  *
  */
 
 /** 
  * Make sure user metadata get updated when form is submitted
- * Set up for Gravity Form ID 2 *************************************************/
-add_action( 'gform_after_submission_2', 'th_update_user_meta', 10, 2 );
+ * Last character of this hook is Gravity Forms ID *************************************************/
+add_action( 'gform_after_submission_3', 'th_update_user_meta', 10, 2 );
 function th_update_user_meta( $entry, $form ) {
 
     $first_name = rgar( $entry, '1.3' );
@@ -60,11 +66,12 @@ function th_update_user_meta( $entry, $form ) {
 }
 
 /** Get existing user data, construct form, make prefilled data fields inactive */
+/** $form_id refers to Gravity Forms ID */
 add_action( 'wc_memberships_after_my_memberships', 'th_add_membership_request_form' );
 
 function th_add_membership_request_form() {
 
-	$form_id = 2;  /** Which form ID? */
+	$form_id = 3;  /** Which form ID? */
 
 	/** Get user data */
 	$current_user = wp_get_current_user();
