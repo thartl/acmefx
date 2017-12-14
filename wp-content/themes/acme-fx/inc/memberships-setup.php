@@ -173,7 +173,12 @@ function th_custom_restriction_message( $message, $args ) {
 	$message_logged_in = 'You are logged in but do not have Library Mebership on your account.<br>
 	If you are an entertainment industry professional, you may <a href="' . th_link_to_memberships_section() . '">apply for Library Memberhsip</a>.';
 
-	$message = is_user_logged_in() ? $message_logged_in : $message;
+	$message_logged_out = 'This content is only available to members of the Library Membership plan.<br>
+	Please {login} if you are a member.<br><br>
+	If you are an entertainment industry professional, and need acceess to the Library, you may <a href="' . th_link_to_memberships_section() . '">apply for membership</a>.<br>
+	Your application will be reviewed by Acme FX.'
+
+	$message = is_user_logged_in() ? $message_logged_in : $message_logged_out;
 
 	return $message;
 
