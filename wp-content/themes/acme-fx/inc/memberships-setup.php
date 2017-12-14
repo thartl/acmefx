@@ -14,19 +14,31 @@
 
 
 /**
- * After My Account (Dashboard) content: add a link to Membeships section (does not test for membership plan ID, hence lists memberships even if there is only one)
+ * Used by:
+ * th_invite_to_memberships_section() on this page
  *
  */
-
-add_action( 'woocommerce_account_dashboard', 'th_link_to_memberships_section' );
-
 function th_link_to_memberships_section() {
 
 	$my_account_url = wc_get_page_permalink( 'myaccount' );
 	$memberships_endpoint = get_option( 'woocommerce_myaccount_members_area_endpoint', 'members-area' );
 	$members_area_url = $my_account_url . $memberships_endpoint . '/';
 
-	echo '<p>You may also <a href="'. esc_url( $members_area_url ) . '"	>see your active memberships or request a new membership</a>.</p>';
+	return $members_area_url;
+
+}
+
+
+/**
+ * After My Account (Dashboard) content: add a link to Membeships section (does not test for membership plan ID, hence lists memberships even if there is only one)
+ *
+ */
+
+add_action( 'woocommerce_account_dashboard', 'th_invite_to_memberships_section' );
+
+function th_invite_to_memberships_section() {  /**** Also used in woocommerce/emails/customer-new-account.php ****/
+
+	echo '<p>You may also <a href="'. th_link_to_memberships_section() . '"	>see your active memberships or request a new membership</a>.</p>';
 
 }
 
@@ -148,5 +160,20 @@ function th_add_membership_request_form( $original_text, $passed_user_id ) {
 
 }
 
+
+/**
+ * Customize the restriction message
+ *
+ */
+
+add_filter( 'wc_memberships_content_restricted_message_no_products_html', 'th_custom_restriction_message' );
+
+function th_custom_restriction_message( $html_message, $args ) {
+
+	$html = 'testing....';
+
+	return $html;
+
+}
 
 
