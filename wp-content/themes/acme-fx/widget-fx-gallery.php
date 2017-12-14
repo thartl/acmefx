@@ -10,7 +10,6 @@ $page_id = (int) get_option( $current_acfw_widget_base . 'link_to_page' );
 $page_url = esc_url( get_page_link( $page_id ) );
 
 $image = get_option( $current_acfw_widget_base . 'bg_image' );
-//$image_url = $image ? wp_get_attachment_image( $image, 'full', false, array( 'class' => 'fx-widget-bg', 'alt' => $title_field, ) ) : '';
 $image_array = $image ? wp_get_attachment_image_src( $image, 'medium_large', false ) : '';
 $image_url = $image_array[ 0 ];
 
@@ -20,8 +19,7 @@ $icon_url = esc_url( get_option( $current_acfw_widget_base . 'icon_url' ) );
 ?><div class="fx-type-widget" >
 	<div class="fx-widget-bg" style="background-image: url('<?php echo $image_url; ?>')"></div>
 		
-	<a class="overlay" href="<?php echo $page_url; ?>" >
-	</a>
+	<a class="overlay" href="<?php echo $page_url; ?>" ></a>
 	
 	<a href="<?php echo $page_url; ?>" >
 		<img src="<?php echo $icon_url; ?>" class="fx-icon" >
@@ -29,3 +27,5 @@ $icon_url = esc_url( get_option( $current_acfw_widget_base . 'icon_url' ) );
 		<p class="fx-widget-text"><?php echo $intro_text; ?></p>
 	</a>
 </div>
+
+
