@@ -2994,7 +2994,7 @@ h1.archive-title a:hover {
 }
 .fp-card-widget p {
 	//position: relative;
-	display: block;
+	display: none;
 	color: white;
   	font-size: 16px;
   	padding: 50px 20px 20px;
@@ -3009,6 +3009,7 @@ h1.archive-title a:hover {
 }
 .fp-card-widget:hover p {
   	opacity: 1;
+  	display: block;
 }
 
 .fp-card-widget p.allow-icon {
@@ -4698,15 +4699,18 @@ body .fbx-inner {
 		padding-left: 5%;
 		padding-right: 5%;
 	}
-	.home .flexible-widgets:first-of-type .fp-widget-bg,
+	.home .flexible-widgets:first-of-type .fp-widget-bg {
+		min-height: 375px;
+	}
+	.home .flexible-widgets:nth-of-type(2) section .fp-widget-bg {
+		min-height: 480px;
+	}
 	.home .flexible-widgets:nth-of-type(3) section .fp-widget-bg {
 		min-height: 500px;
 	}
 	.home .flexible-widgets:nth-of-type(2) section {
 	    margin-bottom: 0;
-	}
-	.home .flexible-widgets:nth-of-type(2) section {
-	    margin-top: 30px;
+	     margin-top: 30px;
 	}
 	.all-fx-widgets .fx-type-widget {
 		min-height: 350px;
