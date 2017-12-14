@@ -166,13 +166,16 @@ function th_add_membership_request_form( $original_text, $passed_user_id ) {
  *
  */
 
-add_filter( 'wc_memberships_content_restricted_message_no_products_html', 'th_custom_restriction_message' );
+add_filter( 'wc_memberships_content_restricted_message_no_products', 'th_custom_restriction_message', 10, 2 );
 
-function th_custom_restriction_message( $html_message, $args ) {
+function th_custom_restriction_message( $message, $args ) {
 
-	$html = 'testing....';
+	$message_logged_in = 'You are logged in but do not have Library Mebership on your account.<br>
+	If you are an entertainment industry professional, you may <a href="' . th_link_to_memberships_section() . '">apply for Library Memberhsip</a>.';
 
-	return $html;
+	$message = is_user_logged_in() ? $message_logged_in : $message;
+
+	return $message;
 
 }
 
