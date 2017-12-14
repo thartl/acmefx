@@ -2922,7 +2922,7 @@ h1.archive-title a:hover {
 	display: block;
 	min-height: 288px;
 	margin: 10px;
-    overflow: hidden;
+   // overflow: hidden;
     background-size: cover;
 }
 .all-fx-widgets .fx-icon {
@@ -2963,7 +2963,17 @@ h1.archive-title a:hover {
 	background-position: 50% calc(50% + 32px);
 	background-size: cover; */
 }
-
+.fp-widget-bg {
+	width: 100%;
+	height: 100%;
+	display: block;
+	//min-height: 288px;
+    //overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: 50% 32px;
+    background-position: 50% calc(50% + 32px);
+    background-size: cover;
+}
 
 .fp-card-widget a.overlay {
     position: absolute;
@@ -2980,37 +2990,22 @@ h1.archive-title a:hover {
 	display: flex; */
 }
 
+.fp-card-widget:hover a.overlay,
+.home .flexible-widgets:nth-of-type(2) a.overlay {
+  	opacity: .6;
+}
+
+.fp-card-widget a:nth-of-type(2) {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	display: block;
+}
+
 /* .fp-card-widget a {
 	width: 100%;
 } */
-
-.fp-card-icon {
-	display: none;
-	/* position: relative;
-	float: left;
-	box-sizing: content-box;
-	max-width: 100px;
-	max-height: 100px;
-	z-index: 2;
-	padding: 40px 20px 10px 70px;
-	opacity: 0;
-	transition: .3s ease-in-out;
-	-moz-transition: .3s ease-in-out;
-	-webkit-transition: .3s ease-in-out;
-	-o-transition: .3s ease-in-out;
-	-ms-transition: .3s ease-in-out; */
-}
-.fp-widget-bg {
-	width: 100%;
-	height: 100%;
-	display: block;
-	//min-height: 288px;
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-position: 50% 32px;
-    background-position: 50% calc(50% + 32px);
-    background-size: cover;
-}
 
 .fp-card-widget h2 {
 	//position: relative;
@@ -3027,6 +3022,11 @@ h1.archive-title a:hover {
 	-ms-transition: .3s ease-in-out; */
 	width: 100%;
 }
+
+.fp-card-widget:hover h2 {
+	background-color: #AE4040;
+}
+
 .fp-card-widget p {
 	//position: relative;
 	display: none;
@@ -3042,10 +3042,6 @@ h1.archive-title a:hover {
 	font-size: 18px;
 	text-align: center;
 }
-.fp-card-widget:hover p {
-  	opacity: 1;
-  	display: block;
-}
 
 .fp-card-widget p.allow-icon {
 	display: block;
@@ -3053,20 +3049,26 @@ h1.archive-title a:hover {
 	padding: 50px 170px 20px;
 }
 
-.fp-card-widget:hover a.overlay,
-.home .flexible-widgets:nth-of-type(2) a.overlay {
-  	opacity: .6;
-}
-.fp-card-widget a:nth-of-type(2) {
-	position: absolute;
-	left: 0;
-	top: 0;
-	right: 0;
-	display: block;
+.fp-card-widget:hover p {
+  	opacity: 1;
+  	display: block;
 }
 
-.fp-card-widget:hover h2 {
-	background-color: #AE4040;
+.fp-card-icon {
+	display: none;
+	/* position: relative;
+	float: left;
+	box-sizing: content-box;
+	max-width: 100px;
+	max-height: 100px;
+	z-index: 2;
+	padding: 40px 20px 10px 70px;
+	opacity: 0;
+	transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-webkit-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
+	-ms-transition: .3s ease-in-out; */
 }
 
 .home .flexible-widgets:first-of-type .fp-widget-bg {
