@@ -2906,10 +2906,16 @@ h1.archive-title a:hover {
 .all-fx-widgets .fx-type-widget:hover a.overlay {
   	opacity: .6;
 }
+.all-fx-widgets .fx-type-widget .fx-widget-text {
+	color: white;
+  	font-size: 16px;
+  	padding-top: 10px;
+  	opacity: 1;
+  	display: none;
+}
 .all-fx-widgets .fx-type-widget:hover .fx-widget-text {
   	display: block;
 }
-
 .all-fx-widgets .fx-widget-bg {
 	width: 100%;
 	height: auto;
@@ -2939,14 +2945,7 @@ h1.archive-title a:hover {
 	color: #fff;
 	font-size: 22px;
 }
-.fx-widget-text {
-	display: block;
-	color: white;
-  	font-size: 16px;
-  	padding-top: 10px;
-  	opacity: 1;
-  	display: none;
-}
+
 
 
 /* ***************************************  NEW Front-page Cards -- Widgetized ****/
@@ -4417,10 +4416,6 @@ body .fbx-inner {
 	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type .fp-card-widget:hover h2 {
 		background-color: #1F373B;
 	}
-	/* .flexible-widgets.widget-area.widget-thirds section.widget:last-of-type .fp-card-widget .fp-widget-bg {
-		background: transparent; 
-	} */
-	
 	.all-fx-widgets .fx-type-widget {
 	    min-height: 385px;
 	}
