@@ -31,7 +31,6 @@ function th_link_to_memberships_section() {
 }
 
 
-
 /**
  * Add a button to dispaly a form -- used to request Library Membership. Doesn't display if user already has Library Membership.
  * Connect to form in 2 places:
@@ -137,7 +136,7 @@ function th_add_membership_request_form( $original_text, $passed_user_id ) {
 	$text    = 'Apply for Library Membership';
 	$onclick = "jQuery('#no-memberships-yet').hide( '400' ); jQuery('#gravityform_button_{$form_id}, #gravityform_container_{$form_id}').slideToggle( '800' );";
 	$html = '<p id="no-memberships-yet">Looks like you don\'t have a membership yet!</p>';
-	$html .= sprintf( '<button id="gravityform_button_%1$d" class="gravity_button" onclick="%2$s">%3$s</button>', esc_attr( $form_id ), $onclick, esc_attr( $text ) );
+	$html .= sprintf( '<button id="gravityform_button_%1$d" class="button apply gravity_button" onclick="%2$s">%3$s</button>', esc_attr( $form_id ), $onclick, esc_attr( $text ) );
 	$html .= sprintf( '<div id="gravityform_container_%1$d" class="gravity_container" style="display:none;">', esc_attr( $form_id ) );
 	$html .= gravity_form( $form_id, $attributes['title'], $attributes['description'], false, $attributes['field_values'], true, $attributes['tabindex'], false );
 	$html .= '</div>';
@@ -149,43 +148,5 @@ function th_add_membership_request_form( $original_text, $passed_user_id ) {
 
 }
 
-
-/**
- * Redirect users to custom URL based on their role after login
- *
- * @param string $redirect
- * @param object $user
- * @return string
- */
-function wc_custom_user_redirect( $redirect, $user ) {
-	// Get the first of all the roles assigned to the user
-	$role = $user->roles[0];
-	$dashboard = admin_url();
-	$myaccount = get_permalink( wc_get_page_id( 'myaccount' ) );
-	// if( $role == 'administrator' ) {
-	// 	//Redirect administrators to the dashboard
-	// 	$redirect = $dashboard;
-	// } elseif ( $role == 'shop-manager' ) {
-	// 	//Redirect shop managers to the dashboard
-	// 	$redirect = $dashboard;
-	// } elseif ( $role == 'editor' ) {
-	// 	//Redirect editors to the dashboard
-	// 	$redirect = $dashboard;
-	// } elseif ( $role == 'author' ) {
-	// 	//Redirect authors to the dashboard
-	// 	$redirect = $dashboard;
-	// } elseif ( $role == 'customer' || $role == 'subscriber' ) {
-	// 	//Redirect customers and subscribers to the "My Account" page
-	// 	$redirect = $myaccount;
-	// } else {
-	// 	//Redirect any other role to the previous visited page or, if not available, to the home
-	// 	$redirect = wp_get_referer() ? wp_get_referer() : home_url();
-	// }
-
-	$redirect = wp_get_referer() ? wp_get_referer() : home_url();
-
-	return $redirect;
-}
-add_filter( 'woocommerce_login_redirect', 'wc_custom_user_redirect', 10, 2 );
 
 
