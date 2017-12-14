@@ -111,6 +111,8 @@
 			<?php } ?>
 
 <p class="bio">Acme FX has provided artificial snow, rentals, and quality special effects to the film and television industry since 2000. Our passion and expertise fuel our drive for excellence in quality design and implementation. Our knowledgeable staff of professional SPFX technicians will deliver exceptional results to suit all creative visions.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 			<?php if (!empty($this->plugin_settings['general']['admin_link']) && $this->plugin_settings['general']['admin_link'] == 1) { ?>
 				<div class="author_link">
