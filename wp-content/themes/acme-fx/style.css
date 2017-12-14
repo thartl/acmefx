@@ -2332,6 +2332,9 @@ section.up-sells.upsells.products + section.related.products {
 #wl-wrapper .woocommerce-message .button {
     margin-left: 10px;
 }
+.woocommerce-message a {
+	display: block;
+}
 
 
 /** th-- Archive page descriptions ******************************/
@@ -2615,7 +2618,13 @@ div.grid-list-switch {
 	color: #5ba5a5;
 	margin-top: 3px;
 }
-.woocommerce ul.products.desc-view li.product .added_to_cart.wc-forward:hover {
+.woocommerce ul.products.grid-view li.product .added_to_cart.wc-forward,
+.woocommerce ul.products.list-view li.product .added_to_cart.wc-forward {
+	color: #5ba5a5;
+}
+.woocommerce ul.products.desc-view li.product .added_to_cart.wc-forward:hover,
+.woocommerce ul.products.grid-view li.product .added_to_cart.wc-forward:hover,
+.woocommerce ul.products.list-view li.product .added_to_cart.wc-forward:hover {
 	color: #80E0D9;
 }
 
