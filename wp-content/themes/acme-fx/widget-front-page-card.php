@@ -22,9 +22,15 @@ $icon_url = esc_url( get_option( $current_acfw_widget_base . 'icon_url' ) );
 $icon_img = '<img src="' . $icon_url . '" class="fp-card-icon" >';
 
 
-?><div class="fp-card-widget" style="background-image: url('<?php echo $image_url; ?>');">
-	<div class="fp-card-overlay match-height-item">
-	<a href="<?php echo $page_url; ?>" class="taphover" >
+?>
+
+
+<div class="fp-card-widget">
+	<div class="fp-widget-bg" style="background-image: url('<?php echo $image_url; ?>');"></div>
+
+	<a class="overlay" href="<?php echo $page_url; ?>" ></a>
+
+	<a href="<?php echo $page_url; ?>" >
 		<h2><?php echo $title_field; ?></h2>
 		<?php if( ! empty( $icon_url ) ) {
 					echo $icon_img;
@@ -33,5 +39,4 @@ $icon_img = '<img src="' . $icon_url . '" class="fp-card-icon" >';
 					echo '<p>' . $intro_text . '</p>';
 				} ?>
 	</a>
-</div>
 </div>
