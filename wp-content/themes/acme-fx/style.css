@@ -4396,23 +4396,27 @@ body .fbx-inner {
 		margin-left: 0;
 		height: 230px;
 	}
-	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type .fp-card-widget {
+	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type .fp-widget-bg {
 		background-image: none !important;
 		background-color: #1F373B;
 	}
-	/* .flexible-widgets.widget-area.widget-thirds section.widget:last-of-type .fp-card-widget p {
+	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type .fp-card-widget p {
+		display: block;
 		opacity: 1;
 		padding-top: 0;
 		margin-top: -15px;
-	} */
+	}
+	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type a.overlay {
+		opacity: 0;
+	}
 	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type .fp-card-widget h2 {
 		padding-top: 25px;
 	}
 	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type .fp-card-widget:hover h2 {
 		background-color: #1F373B;
 	}
-	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type .fp-card-overlay:hover {
-		background: transparent;
+	/* .flexible-widgets.widget-area.widget-thirds section.widget:last-of-type .fp-card-widget .fp-widget-bg {
+		background: transparent; */
 	}
 	.all-fx-widgets .fx-type-widget {
 	    min-height: 385px;
@@ -4883,10 +4887,7 @@ body .fbx-inner {
 	    top: 40px;
 	}
 	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type .fp-card-widget p {
-		//opacity: 1;
-		padding-top: 20px;
-		/* margin-top: -15px;
-		font-size: 16px; */
+		padding-top: 8px;
 	}
 	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type {
 		height: 280px;
