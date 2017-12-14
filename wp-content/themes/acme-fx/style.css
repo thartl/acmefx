@@ -2969,9 +2969,11 @@ h1.archive-title a:hover {
 	width: 100%;
 	height: 100%;
 	display: block;
-	min-height: 288px;
-	//margin: 10px;
+	//min-height: 288px;
     overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: 50% 32px;
+    background-position: 50% calc(50% + 32px);
     background-size: cover;
 }
 
@@ -2991,24 +2993,17 @@ h1.archive-title a:hover {
 	width: 100%;
 }
 .fp-card-widget p {
-	position: relative;
+	//position: relative;
 	display: block;
 	color: white;
   	font-size: 16px;
-  	//padding-top: 10px;
   	padding: 50px 20px 20px;
   	opacity: 0;
-  	//display: none;
-	/* position: relative;
-	z-index: 2;
-	color: #fff;
-	margin-left: 0px;
-	opacity: 0;
 	transition: .3s ease-in-out;
 	-moz-transition: .3s ease-in-out;
 	-webkit-transition: .3s ease-in-out;
 	-o-transition: .3s ease-in-out;
-	-ms-transition: .3s ease-in-out; */
+	-ms-transition: .3s ease-in-out;
 	font-size: 18px;
 	text-align: center;
 }
@@ -3040,7 +3035,7 @@ h1.archive-title a:hover {
 	min-height: 400px;
 }
 .home .flexible-widgets:nth-of-type(2) .fp-widget-bg {
-	min-height: 300px;
+	min-height: 350px;
 }
 .home .flexible-widgets:nth-of-type(3) .fp-widget-bg {
 	min-height: 400px;
@@ -3051,18 +3046,6 @@ h1.archive-title a:hover {
 .term-snow-business .content {
 	position: relative;
 }
-
-/* div.fp-card-widget:hover img.fp-card-icon,
-div.fp-card-widget:hover p {
-	opacity: 1;
-} */
-/* .fp-card-widget .fp-card-overlay:hover {
-	background: linear-gradient(to right, hsla(190, 5%, 22%, 0.6) 0%, hsla(180, 5%, 16%, 0.7) 15%, hsla(180, 5%, 16%, 0.7) 85%, hsla(190, 5%, 22%, 0.6) 100%);
-} */
-/* .home .flexible-widgets:nth-of-type(2) section .fp-card-overlay {
-	background: linear-gradient(to right, hsla(190, 5%, 22%, 0.6) 0%, hsla(180, 5%, 16%, 0.7) 15%, hsla(180, 5%, 16%, 0.7) 85%, hsla(190, 5%, 22%, 0.6) 100%);
-	min-height: 350px;
-} */
 
 
 
@@ -4366,8 +4349,8 @@ body .fbx-inner {
 	}
 	.fp-card-icon {
 		padding: 50px 20px 10px 50px;
-		width: 75px;
-		max-height: 75px;
+		width: 100px;
+		max-height: 100px;
 	}
 	.widget-area.flexible-widgets.widget-halves .widget,
 	.widget-area.flexible-widgets.widget-thirds .widget {
@@ -4382,11 +4365,11 @@ body .fbx-inner {
 		background-image: none !important;
 		background-color: #1F373B;
 	}
-	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type .fp-card-widget p {
+	/* .flexible-widgets.widget-area.widget-thirds section.widget:last-of-type .fp-card-widget p {
 		opacity: 1;
 		padding-top: 0;
 		margin-top: -15px;
-	}
+	} */
 	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type .fp-card-widget h2 {
 		padding-top: 25px;
 	}
@@ -4606,7 +4589,7 @@ body .fbx-inner {
 		font-size: 15px;
 		padding: 30px 40px 40px;
 	}
-	.fp-card-widget .fp-card-overlay {
+	.fp-card-widget .fp-widget-bg {
 	    min-height: 330px;
 	}
 	.home .flexible-widgets:nth-of-type(2) section p {
@@ -4695,7 +4678,7 @@ body .fbx-inner {
 		float: none;
 		margin: 0 auto;
 		display: block;
-		padding-top: 40px;
+		padding-top: 10px;
 		padding-bottom: 0px;
 		opacity: 1;
 	}
@@ -4705,7 +4688,7 @@ body .fbx-inner {
 	    width: 100%;
 	    margin: 30px auto 0;
 	}
-	.fp-card-widget .fp-card-overlay {
+	.fp-card-widget .fp-widget-bg {
 		min-height: 500px;
 	}
 	.home .site-inner {
@@ -4715,8 +4698,8 @@ body .fbx-inner {
 		padding-left: 5%;
 		padding-right: 5%;
 	}
-	
-	.home .flexible-widgets:nth-of-type(2) section .fp-card-overlay {
+	.home .flexible-widgets:first-of-type .fp-widget-bg,
+	.home .flexible-widgets:nth-of-type(3) section .fp-widget-bg {
 		min-height: 500px;
 	}
 	.home .flexible-widgets:nth-of-type(2) section {
@@ -4739,10 +4722,10 @@ body .fbx-inner {
 	    top: 40px;
 	}
 	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type .fp-card-widget p {
-		opacity: 1;
-		padding-top: 0;
-		margin-top: -15px;
-		font-size: 16px;
+		//opacity: 1;
+		padding-top: 20px;
+		/* margin-top: -15px;
+		font-size: 16px; */
 	}
 	.flexible-widgets.widget-area.widget-thirds section.widget:last-of-type {
 		height: 280px;
