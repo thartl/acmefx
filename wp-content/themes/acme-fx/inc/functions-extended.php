@@ -363,7 +363,7 @@ add_action( 'woocommerce_archive_description', 'th_woocommerce_taxonomy_archive_
 			if ( is_product_taxonomy() && 0 === absint( get_query_var( 'paged' ) ) ) {
 				$description = wc_format_content( term_description() );
 				if ( $description ) {
-					echo '<div class="term-description">' . $description . '<p><a href="#description-continued">' . $anchor_link . '</a></p>' . '</div>';
+					echo '<div class="term-description">' . $description . '<p>' . $anchor_link . '</p>' . '</div>';
 				}
 			}
 		}
@@ -495,7 +495,7 @@ function th_genesis_do_taxonomy_description_only() {
 	$description_continued = get_term_meta( $term->term_id, 'intro_text', true );
 
 	if( $description_continued && !is_paged() ) {
-		$intro_text = '<b id="description-continued" ></b>' . $description_continued;
+		$intro_text = '<b id="description-continued" class="raise-anchor">&nbsp;</b>' . $description_continued;
 	} else {
 		$intro_text = '';
 	}

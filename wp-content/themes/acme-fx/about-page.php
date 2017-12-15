@@ -39,6 +39,7 @@ function th_partner_repeater() {
 
 
 		echo '<hr>
+				<b id="about-01" class="raise-anchor">&nbsp</b>
 				<h2>' . $team_section_title . '</h2>
 				<div class="all-cameos">';
 
@@ -93,6 +94,7 @@ function th_staff_repeater() {
 
 
 		echo '<hr>
+				<b id="about-02" class="raise-anchor">&nbsp</b>
 				<h2>' . $staff_section_title . '</h2>
 				<div class="all-cameos">';
 
@@ -123,6 +125,7 @@ function th_staff_repeater() {
 	if( $credits_section_title ) {
 
 		echo '<hr>
+			<b id="about-03" class="raise-anchor">&nbsp</b>
 			<h2>' . $credits_section_title . '</h2>';
 
 	}

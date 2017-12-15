@@ -2390,6 +2390,8 @@ section.up-sells.upsells.products + section.related.products {
 }
 #description-continued {
 	display: block;
+}
+.raise-anchor {
 	position: relative;
 	bottom: 122px;
 }
