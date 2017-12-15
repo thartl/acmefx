@@ -4737,13 +4737,14 @@ body .fbx-inner {
 	#wl-wrapper .wl-table.manage .check-column,
 	#wl-wrapper .wl-table.manage .product-remove {
 	    text-align: left !important;
-	    padding-top: 30px;
+	    //padding-top: 30px;
 	}
 
 	.woocommerce table.shop_table.wl-table.manage a.button.wishlist-add-to-cart-button,
 	.woocommerce-page table.shop_table.wl-table.manage a.button.wishlist-add-to-cart-button {
 		padding: 12px 10px;
 	    font-size: 12px;
+	    margin-top: 20px;
 	}
 
 	#wl-wrapper .wl-table.manage .product-name {
@@ -4763,7 +4764,7 @@ body .fbx-inner {
 
 	#wl-wrapper table.shop_table.wl-table.manage .check-column input {
 	    float: left;
-	    margin-top: 50px;
+	    margin-top: 25px;
 	    margin-right: 10px;
 	}
 	#wl-wrapper table.shop_table.wl-table.manage .cart_table_item:first-of-type .check-column input {
@@ -4810,7 +4811,9 @@ body .fbx-inner {
 		margin-top: 14px;
 	}
 
-
+	#wl-wrapper table.shop_table.wl-table.manage div.quantity.buttons_added {
+	    margin-top: 5px;
+	}
 
 
 
@@ -5191,7 +5194,7 @@ body .fbx-inner {
 	}
 	#wl-wrapper table.shop_table.wl-table.manage .check-column input {
 	    float: left;
-	    margin-top: 46px;
+	    margin-top: 21px;
 	    margin-right: 10px;
 	}
 	#wl-wrapper table.shop_table.wl-table.manage .cart_table_item:first-of-type .check-column input {
