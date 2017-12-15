@@ -2353,7 +2353,14 @@ section.up-sells.upsells.products + section.related.products {
 .wl-table.wl-manage .wl-privacy-col {
 	line-height: 1.1;
 }
-
+#tab-wl-settings .wl-form .form-row-first,
+#tab-wl-settings .wl-form .form-row-last {
+	margin-top: 20px;
+}
+.wl-tab-wrap.woocommerce-tabs .wl-items-tab a:hover,
+.wl-tab-wrap.woocommerce-tabs .wl-settings-tab a:hover {
+	color: #5ba5a5;
+}
 
 /** th-- Archive page descriptions ******************************/
 
@@ -5020,6 +5027,9 @@ body .fbx-inner {
 	}
 	.woocommerce ul.products.grid-view a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart {
 		margin-bottom: 5px;
+	}
+	#tab-wl-settings .wl-form .form-row-last {
+		margin-top: 0;
 	}
 	.archive-pagination {
 		margin-left: 30px;
