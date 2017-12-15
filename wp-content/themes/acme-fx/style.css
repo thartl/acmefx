@@ -2274,9 +2274,11 @@ table.variations td.label {
  .woocommerce table.shop_table_responsive.my_account_memberships .membership-actions.order-actions {
  	text-align: right !important;
 }
+.woocommerce-page form .form-row .required
 .woocommerce form .form-row .required {
 	margin-left: 3px;
-    color: #AE4040;
+    //color: #AE4040;
+    color: #c90b06;
 }
 ul.woocommerce-error {
 	margin-left: 0;
@@ -2361,6 +2363,18 @@ section.up-sells.upsells.products + section.related.products {
 .wl-tab-wrap.woocommerce-tabs .wl-settings-tab a:hover {
 	color: #5ba5a5;
 }
+#tab-wl-settings .wl-rad-table td:first-of-type {
+	vertical-align: top;
+}
+#tab-wl-settings .wl-rad-table td:last-of-type {
+	padding-bottom: 20px;
+}
+#tab-wl-settings .wl-rad-table .wl-small {
+	font-size: 14px;
+}
+#tab-wl-settings .wl-rad-table {
+	line-height: 1.5;
+}
 
 /** th-- Archive page descriptions ******************************/
 
@@ -2409,7 +2423,7 @@ div.grid-list-switch {
 
 .woocommerce .woocommerce-ordering,
 .woocommerce .woocommerce-result-count {
-    margin: 0 0 2.5em;
+    margin: 0 0 1em;
 }
 
 .woocommerce-cart .cross-sells > h2 {
@@ -5221,7 +5235,7 @@ body .fbx-inner {
 	.woocommerce ul.products.desc-view li.product a.button,
 	.woocommerce ul.products.desc-view a.button.product_type_variable.add_to_cart_button,
 	.woocommerce ul.products.desc-view a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart {
-	    margin-bottom: 10px;
+	    margin-bottom: 15px;
 	}
 }
 
