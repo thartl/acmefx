@@ -4753,7 +4753,7 @@ body .fbx-inner {
 	.woocommerce table.shop_table.wl-table.manage a.remove,
 	.woocommerce-page table.shop_table.wl-table.manage a.remove {
 	    float: right;
-	    margin-top: 14px;
+	    margin-top: 13px;
 	    margin-left: 10px;
 	}
 
@@ -5186,11 +5186,11 @@ body .fbx-inner {
 	}
 	#wl-wrapper table.shop_table.wl-table.manage .check-column input {
 	    float: left;
-	    margin-top: 47px;
+	    margin-top: 46px;
 	    margin-right: 10px;
 	}
 	#wl-wrapper table.shop_table.wl-table.manage .cart_table_item:first-of-type .check-column input {
-		margin-top: 16px;
+		margin-top: 15px;
 	}
 
 }
