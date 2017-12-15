@@ -17,6 +17,7 @@
 
 .background .wrap h1 {
 	font-size: 70px;
+	margin-bottom: 40px;
 }
 
 .wrap form.subscribe_form {
@@ -28,6 +29,9 @@
 }
 div.response {
 	color: #000;
+}
+p.bio {
+	margin-bottom: 100px;
 }
 
  
