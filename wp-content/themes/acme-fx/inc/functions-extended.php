@@ -532,7 +532,7 @@ function th_searchwp_custom_field_keys_like( $keys ) {
 add_filter( 'wp_nav_menu_items', 'th_add_logo_to_nav', 10, 2 );
 function th_add_logo_to_nav( $menu, $args ) {
 	if ( 'secondary' === $args->theme_location ) {
-    	$menu = '<li><a href="' . esc_url( home_url( '/'  ) ) . '" class="nav-logo" ><img src="' . get_stylesheet_directory_uri() . '/images/acme-logo-orig-traced.svg" ></a></li>' . $menu;
+    	$menu = '<li><a href="' . esc_url( home_url( '/'  ) ) . '" class="nav-logo" ><img src="' . get_stylesheet_directory_uri() . '/images/acme-logo.svg" ></a></li>' . $menu;
     }
     return $menu;
 }
