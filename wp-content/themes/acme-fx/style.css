@@ -1961,11 +1961,11 @@ a.button.checkout.wc-forward:focus,
 }
 .cart .quantity.buttons_added .plus {
 	border-top-right-radius: 7px;
-	padding-bottom: 4px;
+	padding: 0;
 }
 .cart .quantity.buttons_added .minus {
 	border-bottom-right-radius: 7px;
-	padding-bottom: 4px;
+	padding-bottom: 3px;
 }
 
 .woocommerce .product .cart div.quantity.buttons_added,
