@@ -3909,6 +3909,11 @@ gform_wrapper .field_sublabel_below div[class*=gfield_time_].ginput_container la
 	margin-left: 40px;
 	float: right;
 }
+.page-template-policy h2 {
+	border-bottom: 1px solid #fff;
+	padding-bottom: 10px;
+	margin-bottom: 25px;
+}
 
 /* FooGallery
 ---------------------------------------------------------------------------------------------------- */
