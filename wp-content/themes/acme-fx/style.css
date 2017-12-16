@@ -1967,6 +1967,10 @@ a.button.checkout.wc-forward:focus,
 	border-bottom-right-radius: 7px;
 	padding-bottom: 3px;
 }
+.woocommerce .quantity input.qty,
+.woocommerce-page .quantity input.qty {
+    width: 2.1em;
+}
 
 .woocommerce .product .cart div.quantity.buttons_added,
 .woocommerce-page .product .cart div.quantity.buttons_added,
