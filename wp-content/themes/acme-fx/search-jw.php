@@ -13,10 +13,14 @@ function th_searchwp_form( $query ) {
 	echo '<button type="submit">' . __( 'Search', 'text-domain' ) . '</button>';
 	echo '</form>';
 }
+
+
 function mySearchEnginePostsPerPage() {
-	return 6; // 10 posts per page
+	return 3; // 10 posts per page
 }
-add_filter( 'searchwp_posts_per_page', 'mySearchEnginePostsPerPage' );
+// add_filter( 'searchwp_posts_per_page', 'mySearchEnginePostsPerPage' );
+
+
 function th_do_search_loop() {
 	global $wp_query, $post;
 	// Return early if SearchWP is disabled.
@@ -32,6 +36,17 @@ function th_do_search_loop() {
 		return;
 	// Instantiate SearchWP.
 	$engine = SearchWP::instance();
+
+/** try replacing
+	$engine = SearchWP::instance();
+with something like 
+    $loop = new SWP_Query( $args );
+based on Erickson and more recent JW documentation to be able to use $args
+;; then loop through it as below
+;; research found_posts in both WP_Query and foundPosts in SearchWP code base
+  */
+
+
 	// Set the supplemental search engine name.
 	$supplementalSearchEngineName = 'default';
 	// perform the search
@@ -63,3 +78,4 @@ function th_do_search_loop() {
 add_action( 'genesis_after_entry', 'th_do_search_loop' );
 
 genesis();
+

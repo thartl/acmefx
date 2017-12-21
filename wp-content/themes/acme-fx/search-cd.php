@@ -1,7 +1,7 @@
 <?php
 
 /**
-* Template Name: Library search - BE test
+* Template Name: Library search - CD test
 * Description: Used to test SearchWP integration with Genesis
 */
  
@@ -28,10 +28,7 @@ function th_supplemental_engine_form () {
 		<button type="submit" class="search-submit"><i class="icon-search"></i></button>
 	</form>
 
-<?php var_dump( get_intermediate_image_sizes() );
-}
-
-
+<?php }
 /**  The Results  */
 function ea_searchwp_query() {
     if( empty( $_GET['swpquery'] ) )
@@ -42,8 +39,9 @@ function ea_searchwp_query() {
         'page'   => get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1,
     );
 	// $tax_query = ea_get_tax_query();
-    if( !empty( $tax_query ) )
+    if( !empty( $tax_query ) ) {
         $args['tax_query'] = $tax_query;
+    }
     $loop = new SWP_Query( $args );
     global $wp_query;
     $wp_query->max_num_pages = $loop->max_num_pages; // for pagination
@@ -56,3 +54,4 @@ add_action( 'genesis_after_entry_content', 'th_supplemental_engine_form', 8 );
 // add_action( 'genesis_after_entry_content', 'wp_reset_query', 11 );
 
 genesis();
+

@@ -53,6 +53,23 @@ include_once( get_stylesheet_directory() . '/inc/memberships-setup.php' );
 
 
 
+// Change WooCommerce placeholder image
+add_action( 'init', 'th_custom_fix_thumbnail' );
+ 
+function th_custom_fix_thumbnail() {
+  add_filter('woocommerce_placeholder_img_src', 'custom_woocommerce_placeholder_img_src');
+   
+	function custom_woocommerce_placeholder_img_src( $src ) {
+	$upload_dir = wp_upload_dir();
+	$uploads = untrailingslashit( $upload_dir['baseurl'] );
+	$src = $uploads . '/2017/12/acmefx_social_media_sq.jpg';
+	 
+	return $src;
+	}
+}
+
+
+
 // Remove admin bar from front end, except for select users
 add_filter('show_admin_bar', 'th_private_admin_bar');  /** '__return_false' **/
 
