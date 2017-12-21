@@ -3073,11 +3073,11 @@ h1.archive-title a:hover {
 	display: flex; */
 }
 
-/*.fp-card-widget:hover a.overlay,
-.home .flexible-widgets:nth-of-type(2) a.overlay {
+/*.home .flexible-widgets:nth-of-type(2) a.overlay, */
+.fp-card-widget:hover a.overlay {
   	opacity: .6;
 }
-*/
+
 .fp-card-widget a:nth-of-type(2) {
 	position: absolute;
 	left: 0;
