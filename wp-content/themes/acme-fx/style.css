@@ -2384,7 +2384,7 @@ section.up-sells.upsells.products + section.related.products {
 	vertical-align: top;
 }
 #wl-wrapper .wl-form .form-row-first {
-	margin-top: 25px;
+	//margin-top: 25px;
 }
 #tab-wl-settings .wl-rad-table td:last-of-type {
 	padding-bottom: 20px;
