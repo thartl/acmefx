@@ -2862,7 +2862,7 @@ div.grid-list-switch {
     padding: 0;
     margin: 0;
     max-width: none;
-
+	background: #fff;
 }
 .site-header .widget-area.header-widget-area {
 	position: absolute;
@@ -2889,6 +2889,7 @@ body .widget.simple-social-icons ul li a {
 	min-height: 200px;
 	max-height: 400px;
 	display: block;
+	margin: 0 auto;
 }
 .wp-custom-header video,
 .wp-custom-header img {
@@ -3069,11 +3070,11 @@ h1.archive-title a:hover {
 	display: flex; */
 }
 
-.fp-card-widget:hover a.overlay,
+/*.fp-card-widget:hover a.overlay,
 .home .flexible-widgets:nth-of-type(2) a.overlay {
   	opacity: .6;
 }
-
+*/
 .fp-card-widget a:nth-of-type(2) {
 	position: absolute;
 	left: 0;
@@ -3122,8 +3123,8 @@ h1.archive-title a:hover {
 
 .fp-card-widget p.allow-icon {
 	display: block;
-	opacity: 1;
-	padding: 50px 170px 20px;
+/*	opacity: 1;
+*/	padding: 50px 170px 20px;
 }
 
 .fp-card-widget:hover p {
@@ -4906,8 +4907,8 @@ body .fbx-inner {
 		display: block;
 		padding-top: 30px;
 		padding-bottom: 0px;
-		opacity: 1;
-		padding-left: 0;
+/*		opacity: 1;
+*/		padding-left: 0;
 	}
 	.widget-area.flexible-widgets.widget-halves .widget,
 	.widget-area.flexible-widgets.widget-thirds .widget,
