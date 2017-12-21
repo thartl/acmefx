@@ -2380,8 +2380,11 @@ section.up-sells.upsells.products + section.related.products {
 .wl-tab-wrap.woocommerce-tabs .wl-settings-tab a:hover {
 	color: #5ba5a5;
 }
-#tab-wl-settings .wl-rad-table td:first-of-type {
+.wl-form .wl-rad-table td:first-of-type {
 	vertical-align: top;
+}
+#wl-wrapper .wl-form .form-row-first {
+	margin-top: 25px;
 }
 #tab-wl-settings .wl-rad-table td:last-of-type {
 	padding-bottom: 20px;
@@ -4138,6 +4141,29 @@ body .fbx-inner {
 		left: -63px;
 		top: -17px;
 	}
+	.woocommerce table.shop_table_responsive.my_membership_settings thead,
+	.woocommerce-page table.shop_table_responsive.my_membership_settings thead {
+		display: table-header-group;
+	}
+	.woocommerce table.shop_table_responsive.my_membership_settings tr,
+	.woocommerce-page table.shop_table_responsive.my_membership_settings tr {
+		display: table-row;
+	}
+	.woocommerce table.shop_table_responsive.my_membership_settings td,
+	.woocommerce-page table.shop_table_responsive.my_membership_settings td {
+		display: table-cell
+	}
+	.woocommerce table.shop_table_responsive.my_membership_settings tbody tr:first-child td:first-child,
+	.woocommerce-page table.shop_table_responsive.my_membership_settings tbody tr:first-child td:first-child {
+	    border-top: 1px solid #4f686a;
+	}
+	.woocommerce table.shop_table_responsive.my_membership_settings tr td:first-of-type,
+	.woocommerce-page table.shop_table_responsive.my_membership_settings tr td:first-of-type {
+		text-align: left !important;
+	}
+	.woocommerce table.shop_table_responsive.my_membership_settings tr td::before,
+	.woocommerce-page table.shop_table_responsive.my_membership_settings tr td::before {
+	    content: attr(data-title) " ";
 
 }
 
@@ -4628,10 +4654,30 @@ body .fbx-inner {
 /* Wishlists
 *********************************************************************************** */
 
-	.woocommerce table.shop_table.wl-table.manage::not(.my_membership_settings) thead,
-	.woocommerce-page table.shop_table.wl-table.manage thead {
+	.woocommerce table.shop_table.wl-table.manage thead tr,
+	.woocommerce-page table.shop_table.wl-table.manage thead tr {
+		border-bottom: 1px solid #4F686A;
+	}
+	
+	.woocommerce table.shop_table.wl-table.manage thead th:not(.check-column),
+	.woocommerce-page table.shop_table.wl-table.manage thead th:not(.check-column) {
 		display:none;
 	}
+
+	.woocommerce table.shop_table.wl-table.manage thead th.check-column::after,
+	.woocommerce-page table.shop_table.wl-table.manage thead th.check-column::after {
+		content: "Select All";
+		width: 150px;
+		color: #5ba5a5;
+		color: #fff;
+		margin-top: 2px;
+	}
+
+	#wl-wrapper table.shop_table.wl-table.manage thead .check-column input,
+	#wl-wrapper table.shop_table.wl-table.manage thead .check-column input {
+		margin: 8px 10px 30px 10px;
+	}
+	
 
 	.woocommerce table.shop_table.wl-table.manage tbody tr:first-child td:first-child,
 	.woocommerce-page table.shop_table.wl-table.manage tbody tr:first-child td:first-child {
@@ -5140,7 +5186,9 @@ body .fbx-inner {
 	.woocommerce button.button.add_to_cart_button {
 	    margin-bottom: 10px;
 	}
-	#wl-wrapper .woocommerce-message .button {
+	#wl-wrapper .woocommerce-message .button,
+	.woocommerce-page .woocommerce-info .button,
+	.woocommerce .woocommerce-info .button {
 		margin-bottom: 10px;
 	    display: block;
 	    float: none;
