@@ -162,7 +162,7 @@ function th_add_membership_request_form( $original_text, $passed_user_id ) {
 
 
 /**
- * Customize the restriction message
+ * Customize the restriction message [[ needs to be further customized to distinguish between different memberships ]]
  *
  */
 

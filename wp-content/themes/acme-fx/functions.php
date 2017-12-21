@@ -679,8 +679,9 @@ function th_remove_price_and_quantity() {
 }
 
 
+// HOOK DEACTIVATED TO HIDE PRICING
 // Display rental pricing table on a single product page -- when product attribute Departments is set to Rentals
-add_action( 'woocommerce_single_product_summary', 'th_add_price_table', 25 );
+// add_action( 'woocommerce_single_product_summary', 'th_add_price_table', 25 );
 function th_add_price_table() {
 	$daily_rental_price = esc_html( get_post_meta( get_the_ID(), '_day_rental_price', true ) );
 	$weekly_rental_price = esc_html( get_post_meta( get_the_ID(), '_week_rental_price', true ) );
