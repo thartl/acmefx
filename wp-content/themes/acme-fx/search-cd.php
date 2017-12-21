@@ -28,7 +28,7 @@ function th_supplemental_engine_form () {
 		<button type="submit" class="search-submit"><i class="icon-search"></i></button>
 	</form>
 
-
+<?php
 /**  The Results  */
 function ea_searchwp_query() {
     if( empty( $_GET['swpquery'] ) )
