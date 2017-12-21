@@ -1,7 +1,7 @@
 <?php
 
 /**
-* Template Name: Library search - BE test
+* Template Name: Library search - CD test
 * Description: Used to test SearchWP integration with Genesis
 */
  
@@ -27,9 +27,6 @@ function th_supplemental_engine_form () {
 		</label>
 		<button type="submit" class="search-submit"><i class="icon-search"></i></button>
 	</form>
-
-<?php var_dump( get_intermediate_image_sizes() );
-}
 
 
 /**  The Results  */
