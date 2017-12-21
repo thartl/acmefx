@@ -1238,14 +1238,14 @@ img.alignright,
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
- 	background-color: #1E373B;
+ 	background-color: #fff;
  	color: #D33C4E;
 }
 	
 .site-header > .wrap {
     padding: 0;
-    margin: 0;
-    max-width: inherit;
+    margin: 0 auto;
+    max-width: 2560px;
     position: relative;
 	background: url('/wp-content/uploads/2017/12/acme-flames-inverted.jpg') no-repeat;
 	background-image: url('/wp-content/uploads/2017/12/acme-flames-inverted.jpg');
@@ -2860,8 +2860,9 @@ div.grid-list-switch {
 
 .home .site-header > .wrap {
     padding: 0;
-    margin: 0;
-    max-width: none;
+    margin: 0 auto;
+    max-width: 2560px;
+    background: #fff;
 
 }
 .site-header .widget-area.header-widget-area {
@@ -2900,6 +2901,8 @@ body .widget.simple-social-icons ul li a {
 }
 .wp-custom-header img {
 	display: none;
+	margin: 0 auto;
+
 }
 svg.header-profile {
 	height: 24px;
