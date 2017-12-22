@@ -2810,7 +2810,7 @@ div.grid-list-switch {
 	float: right;
 }
 .footer-widgets 
-.simple-social-icons {
+.social-icons {
 	text-align: center;
 }
 .footer-widgets .widget-title,
@@ -2823,12 +2823,12 @@ div.grid-list-switch {
 	color: #AE4040;
 	margin-bottom: 5px;
 }
-.footer-widget-area .simple-social-icons ul li a {
-	color: #5ba5a5 !important;
+.footer-widget-area .social-icons ul li a {
+	color: #5ba5a5;
 }
-.footer-widget-area .simple-social-icons ul li a:hover,
-.footer-widget-area .simple-social-icons ul li a:focus {
-	color: #80E0D9 !important;
+.footer-widget-area .social-icons ul li a:hover,
+.footer-widget-area .social-icons ul li a:focus {
+	color: #80E0D9;
 }
 
 /* # Site Footer
@@ -2879,12 +2879,24 @@ div.grid-list-switch {
 	background-color: transparent;
 	z-index: 1;
 }
-body .widget.simple-social-icons ul li a {
+/* body .widget.simple-social-icons ul li a {
 	border: 1px solid transparent !important;
 	background-color: transparent !important;
 }
 .simple-social-icons ul li {
 	margin-bottom: 0 !important;
+} */
+ul.social-icons li {
+	float: left;
+	margin-right: 20px;
+}
+ul.social-icons li a {
+	color: #ae4040;
+	padding: 10px;
+	font-size: 18px;
+}
+ul.social-icons li a:hover {
+	color: #5ba5a5;
 }
 .home .wp-custom-header img {
 	min-height: 200px;
