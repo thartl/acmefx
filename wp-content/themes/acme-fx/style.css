@@ -2823,18 +2823,21 @@ div.grid-list-switch {
 	color: #AE4040;
 	margin-bottom: 5px;
 }
-.footer-widget-area .social-icons ul li a {
+.footer-social ul.social-icons li a {
 	color: #5ba5a5;
 }
-.footer-widget-area .social-icons ul li a:hover,
-.footer-widget-area .social-icons ul li a:focus {
+.footer-social ul.social-icons li a:hover,
+.footer-social ul.social-icons li a:focus {
 	color: #80E0D9;
 }
 .footer-widget-area .social-icons li {
 	display: inline-block;
 	float: none;
-	margin: 10px;
+	margin: 0 10px 10px;
 	padding: 0;
+}
+.footer-social {
+	margin-bottom: 15px;
 }
 
 /* # Site Footer
@@ -2857,7 +2860,7 @@ div.grid-list-switch {
 	color: #aaa;
 }
 .simple-social-icons {
-	margin-bottom: 15px;
+	//margin-bottom: 15px;
 }
 
 
