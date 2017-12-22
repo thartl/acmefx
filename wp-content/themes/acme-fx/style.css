@@ -2876,7 +2876,7 @@ div.grid-list-switch {
 }
 .site-header .widget-area.header-widget-area {
 	position: absolute;
-	left: 15px;
+	left: 25px;
 	top: 20px;
 	background-color: transparent;
 	z-index: 1;
