@@ -3085,11 +3085,11 @@ h1.archive-title a:hover {
 	display: flex; */
 }
 
-/*.fp-card-widget:hover a.overlay,
-.home .flexible-widgets:nth-of-type(2) a.overlay {
+/*.home .flexible-widgets:nth-of-type(2) a.overlay, */
+.fp-card-widget:hover a.overlay {
   	opacity: .6;
 }
-*/
+
 .fp-card-widget a:nth-of-type(2) {
 	position: absolute;
 	left: 0;
@@ -3148,7 +3148,8 @@ h1.archive-title a:hover {
 }
 
 .fp-card-icon {
-	display: none;
+/*	display: none;
+*/	display: block;
 	float: left;
 	box-sizing: content-box;
 	max-width: 100px;
@@ -3163,8 +3164,8 @@ h1.archive-title a:hover {
 }
 
 .fp-card-widget:hover .fp-card-icon {
-	display: block;
-	opacity: 1;
+/*	display: block;
+*/	opacity: 1;
 }
 
 .home .flexible-widgets:first-of-type .fp-widget-bg {
