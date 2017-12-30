@@ -237,7 +237,7 @@ add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 
 						$( "div.grid-view-btn" ).click( function() {
 							if( store_view !== 'grid' ) {
-								Cookies.set( 'store_view', 'grid', { expires: 30 } );
+								Cookies.set( 'store_view', 'grid', { expires: 60 } );
 								if( page_or_not == 'pagination-is-on' ) {  // either paginate or go to page 1 (no pagination)
 									new_page_number = Math.ceil( focus_product_number / grid_ppp );
 
