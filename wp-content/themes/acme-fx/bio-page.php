@@ -13,6 +13,8 @@
 function th_individual_credits_loop() {
 	global $post;
 
+	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+
 	// 
 	$args = array(
 		'post_type'	=> 'credits',
