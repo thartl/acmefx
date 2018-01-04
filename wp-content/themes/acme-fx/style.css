@@ -1994,7 +1994,7 @@ div.summary form.cart button.single_add_to_cart_button {
 }
 .product div.share-box {
 	clear: both;
-	margin: 20px 10px 30px 0;
+	margin: 20px 10px 60px 0;
 }
 .product .product_meta .sku_wrapper,
 .product .product_meta .posted_in,
@@ -2411,7 +2411,8 @@ section.up-sells.upsells.products + section.related.products {
 }
 .woocommerce ul.cart_list li dl.variation,
 .woocommerce ul.product_list_widget li dl.variation {
-    padding-left: .5em;
+    padding-left: 0;
+    margin-top: 15px;
 }
 .woocommerce div.product .woocommerce-tabs ul.tabs li:first-of-type {
 	margin: 0;
@@ -2438,6 +2439,9 @@ section.up-sells.upsells.products + section.related.products {
 	margin-inline-start: 20px;
 	clear: left;
 	margin-bottom: 8px;
+	//margin-top: 8px;
+	padding: 0;
+
 }
 
 /** th-- Archive page descriptions ******************************/
