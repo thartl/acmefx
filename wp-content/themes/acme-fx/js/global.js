@@ -12,7 +12,7 @@ jQuery( function ( $ ) {
 	var header = new Headhesive('.nav-secondary', options);
 
 
-	// Sticky sidebar: make room for sticky header. Note match scroll comparison to offset Sticky Header options (above)
+	// Sticky sidebar: make room for sticky header. Note: match scroll comparison to offset Sticky Header options (above)
 	$(window).scroll(function() {    
 	    var scroll = $(window).scrollTop();
 	    if (scroll > 725) {

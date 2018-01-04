@@ -17,7 +17,7 @@
  *  To create more widgets:
  *  1. Comment out "Hide ACF Menu" and "ACF Widgets -- Enable LITE MODE" to bring back admin menus; OR conditionally turn on for some users...
  *  2. Add widget areas (displayed in admin): genesis_register_widget_area()
- *  3. Hook widget output on page: th_add_fx_gallery_widgets()
+ *  3. Hook widget output on page: e.g. th_add_fx_gallery_widgets()
  *  ====  IN ADMIN  ====
  *  4. Appearance >> Add New Widgets; Add Widget
  *  5. Back to "Add New Widgets" page; copy theme template file name
