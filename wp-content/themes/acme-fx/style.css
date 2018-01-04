@@ -1962,10 +1962,15 @@ a.button.checkout.wc-forward:focus,
 .cart .quantity.buttons_added .plus {
 	border-top-right-radius: 7px;
 	padding: 0;
+	border-top-width: 2px;
+	border-right-width: 2px;
 }
 .cart .quantity.buttons_added .minus {
 	border-bottom-right-radius: 7px;
 	padding-bottom: 3px;
+	border-bottom-width: 2px;
+	border-top-width: 2px;
+	border-right-width: 2px;
 }
 .woocommerce .quantity input.qty,
 .woocommerce-page .quantity input.qty {
@@ -2427,6 +2432,11 @@ section.up-sells.upsells.products + section.related.products {
 }
 .woocommerce-MyAccount-content .woocommerce-account-my-memberships .gform_body #field_3_3 {
 	margin-top: 40px;
+}
+dd.variation-FromWishlist {
+	-webkit-margin-start: 10px;
+	margin-inline-start: 20px;
+	clear: left;
 }
 
 /** th-- Archive page descriptions ******************************/
