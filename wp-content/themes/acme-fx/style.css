@@ -2433,10 +2433,11 @@ section.up-sells.upsells.products + section.related.products {
 .woocommerce-MyAccount-content .woocommerce-account-my-memberships .gform_body #field_3_3 {
 	margin-top: 40px;
 }
-dd.variation-FromWishlist {
-	-webkit-margin-start: 10px;
+.woocommerce ul.cart_list li dl dd.variation-FromWishlist {
+	-webkit-margin-start: 20px;
 	margin-inline-start: 20px;
 	clear: left;
+	margin-bottom: 8px;
 }
 
 /** th-- Archive page descriptions ******************************/
