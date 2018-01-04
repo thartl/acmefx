@@ -164,7 +164,6 @@ function th_main_credits_loop() {
 	if ( $loop->have_posts() ) : 
 
 		echo '<article class="page entry">';
-
 		echo '<ul class="credits-list" >';
 
 
@@ -185,26 +184,13 @@ function th_main_credits_loop() {
 			$project_type = esc_html( get_post_meta( get_the_ID(), 'project_type', true ) );
 
 
-
 			echo '<li><a href="' . $url . '" target="_blank" ><div class="match-height-item" >' . $image_url . '</div><p>' . $title . '</p><p>' . $show_date . '</p><p>' . $project_type . '</p></a></li>';
 
-
-	// var_dump( $post );
-	// var_dump( $credit_partner_array );
-	// var_dump( wp_get_additional_image_sizes() );
 
 		endwhile;
 
 		echo '</ul>';
-
 		echo '</article>';
-
-// $current_user_object = wp_get_current_user();
-// $current_username = $current_user_object->user_login;
-
-// echo 'Username: ' . $current_username . '<br>';
-// var_dump( $current_user_object );
-
 
 		do_action( 'genesis_after_endwhile' );
 

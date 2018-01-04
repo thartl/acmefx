@@ -78,13 +78,12 @@ function th_private_admin_bar( $content ) {
 	$current_user = get_current_user_id();
 
 
-	/**  User IDs:  Tomas = 11, Amy = 5, Kailey = 7, Kevin = 4;  UNCOMMENT TO ENABLE ADMIN BAR ON FRONT END     Note: there is no user 0.  *****/
+	/**  User IDs:  Tomas = 11, Amy = 5, Kailey = 7;  UNCOMMENT TO ENABLE ADMIN BAR ON FRONT END     Note: there is no user 0.  *****/
 
 	if ( $current_user == 0
 		 ||	$current_user == 11 		// Tomas
 		 || $current_user == 5 		// Amy
 //		 || $current_user == 7 		// Kailey
-//		 || $current_user == 4 		// Kevin
 								) {
 	
 		return $content;
@@ -96,7 +95,7 @@ function th_private_admin_bar( $content ) {
 
 
 // Add custom links to admin bar
-function add_upload_admin_bar_link() {
+function th_add_admin_bar_links() {
 	global $wp_admin_bar;
 	$current_user = get_current_user_id();  // See "Remove admin bar from front end, except for select users" above for User IDs
 //	if ( !is_super_admin() || !is_admin_bar_showing() ) return;
@@ -128,7 +127,7 @@ function add_upload_admin_bar_link() {
 		);
 	}
 
-		if ( $current_user == 5  ) {  // For Amy
+		if ( $current_user == 0  ) {  // 5 for Amy
 		$wp_admin_bar->add_menu( array( 
 			'id' => 'amy_credits_2_link', 
 			'title' => __( 'Credits (2)'), 
@@ -156,13 +155,13 @@ function add_upload_admin_bar_link() {
 	}
 
 }
-add_action('wp_before_admin_bar_render', 'add_upload_admin_bar_link', 12);
+add_action('wp_before_admin_bar_render', 'th_add_admin_bar_links', 12);
 
 
 
-
+//******************************************************************* TURNED OFF FOR SWP SUPPORT ****************************************
 // Remove WP Migrate DB Pro, CPT UI, except for Tomas, Amy
-add_action( 'admin_menu', 'th_remove_migrate_db_menu', 999 );
+// add_action( 'admin_menu', 'th_remove_migrate_db_menu', 999 );
 function th_remove_migrate_db_menu() {
 
 $current_user = wp_get_current_user();
@@ -179,7 +178,7 @@ $current_username = $current_user->user_login;
 
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Acme FX' );
-define( 'CHILD_THEME_URL', 'http://www.studiopress.com/' );
+define( 'CHILD_THEME_URL', 'https://parkdalewire.com/' );
 define( 'CHILD_THEME_VERSION', '1.0.1' );
 
 
@@ -503,13 +502,13 @@ function th_custom_footer() {
 	<?php
 }
 
-//**  th-- WP Maintenance Mode plugin styles
+//**  th-- WP Maintenance Mode plugin styles -- INACTIVE
 function th_mm_css_styles($styles) {
-    $styles['new-style'] = get_stylesheet_directory_uri() . '/style-mm.css'; // replace with the real path :)
+    $styles['new-style'] = get_stylesheet_directory_uri() . '/style-mm.css'; // replace with the real path...
 
     return $styles;
 }
-add_filter('wpmm_styles', 'th_mm_css_styles');
+// add_filter('wpmm_styles', 'th_mm_css_styles');
 
 
 //************** Place the Genesis Simple Share buttons below content for single products 
@@ -679,7 +678,7 @@ function th_remove_price_and_quantity() {
 }
 
 
-// HOOK DEACTIVATED TO HIDE PRICING
+// ********************************************************************************************  HOOK DEACTIVATED TO HIDE PRICING
 // Display rental pricing table on a single product page -- when product attribute Departments is set to Rentals
 // add_action( 'woocommerce_single_product_summary', 'th_add_price_table', 25 );
 function th_add_price_table() {

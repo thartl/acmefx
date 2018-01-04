@@ -30,7 +30,8 @@
 /**
  *   Hide ACF menu, except for user: tomas-acme-dev-admin
  */
-add_filter( 'acf/settings/show_admin', 'th_acf_hide_for_most' );
+//******************************************************************* TURNED OFF FOR SWP SUPPORT ****************************************
+// add_filter( 'acf/settings/show_admin', 'th_acf_hide_for_most' );
 
 function th_acf_hide_for_most( $content ) {
 
@@ -48,7 +49,8 @@ $current_username = $current_user->user_login;
 /**
  *   ACF Widgets -- Enable LITE MODE, except for user: tomas-acme-dev-admin (if not deactivated)
  */
-add_filter( 'acfw_lite', 'th_acf_widgets_hide_for_most' ); // hides all admin screens but the plugin stays active if installed. Similar to ACF hide.
+//******************************************************************* TURNED OFF FOR SWP SUPPORT ****************************************
+// add_filter( 'acfw_lite', 'th_acf_widgets_hide_for_most' ); // hides all admin screens but the plugin stays active if installed. Similar to ACF hide.
 
 function th_acf_widgets_hide_for_most( $content ) {
 

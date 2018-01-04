@@ -13,6 +13,8 @@
 function th_individual_credits_loop() {
 	global $post;
 
+	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+
 	// 
 	$args = array(
 		'post_type'	=> 'credits',
@@ -73,9 +75,6 @@ function th_individual_credits_loop() {
 
 			}
 
-	// var_dump( $post );
-	// var_dump( $credit_partner_array );
-	// var_dump( wp_get_additional_image_sizes() );
 
 		endwhile;
 

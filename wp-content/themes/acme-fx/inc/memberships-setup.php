@@ -15,7 +15,7 @@
 
 /**
  * Used by:
- * th_invite_to_memberships_section() on this page
+ * th_invite_to_memberships_section() in this file
  *
  */
 function th_link_to_memberships_section() {
