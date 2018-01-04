@@ -67,7 +67,7 @@ function th_partner_repeater() {
 }
 
 
-/** Display the Team section Repeater field entries -- The Partners
+/** Display the Team section Repeater field entries -- The Staff
  *
  *
  *

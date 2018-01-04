@@ -4,7 +4,7 @@
 * Template Name: Admin docs
 * Description: Admin manuals etc.
 *
-* This page template lists its childern pages and includes a publish or modified date, whichever comes sooner
+* This page template lists its childern pages and includes a publish or modified date, whichever is later
 */
  
 
