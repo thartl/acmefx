@@ -75,9 +75,6 @@ function th_individual_credits_loop() {
 
 			}
 
-	// var_dump( $post );
-	// var_dump( $credit_partner_array );
-	// var_dump( wp_get_additional_image_sizes() );
 
 		endwhile;
 
