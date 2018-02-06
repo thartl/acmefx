@@ -595,17 +595,19 @@ add_action( 'wp_enqueue_scripts', 'th_elements_match_height', 99 );
  * Enqueue matchHeight.js and print an inline script to the footer to keep elements of class ".match-height-item" the same height.
  * Adpated from genesis_sample_products_match_height(), from woocommerce-setup.php
  *
+ * Filtered by page ID. Should not be called on pages already set up for matchHeight by genesis_sample_products_match_height().
+ *
  * @since 2.3.0
  */
 function th_elements_match_height() {
 
 	/** List pages by ID, post_name (slug), or post_title. Currently for the Front page, About page, and partners' Bio pages **/
-	if ( ! is_page( array( 'about-us', 622, 619, 621, 620, 617, 618 ) ) && ! is_front_page() ) {
+	if ( ! is_page( array( 52, 622, 619, 621, 620, 617, 618 ) ) && ! is_front_page() ) {
 		return;
 	}
 
-	wp_enqueue_script( 'th-page-match-height', get_stylesheet_directory_uri() . '/js/jquery.matchHeight.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
-	wp_add_inline_script( 'th-page-match-height', "jQuery(document).ready( function() { jQuery( '.match-height-item').matchHeight(); });" );
+	wp_enqueue_script( 'genesis-sample-match-height', get_stylesheet_directory_uri() . '/js/jquery.matchHeight.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+	wp_add_inline_script( 'genesis-sample-match-height', "jQuery(document).ready( function() { jQuery( '.match-height-item').matchHeight(); });" );
 
 }
 
@@ -718,10 +720,10 @@ function th_credits_sortable_release_date( $columns ) {
 }
 /* Only run our customization on the 'edit.php' page in the admin. */
 add_action( 'load-edit.php', 'th_edit_credits_load' );
-
 function th_edit_credits_load() {
 	add_filter( 'request', 'th_sort_credits' );
 }
+
 
 /* Sorts the credits. */
 function th_sort_credits( $vars ) {
