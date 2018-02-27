@@ -498,7 +498,7 @@ remove_action( 'genesis_footer', 'genesis_do_footer' );
 add_action( 'genesis_footer', 'th_custom_footer' );
 function th_custom_footer() {
 	?>
-	<p>Copyright &copy; <?php echo date('Y'); ?> &middot; <a href="<?php echo esc_url( home_url( '/' )); ?>">Acme FX</a></p>
+	<p>Copyright &copy; <?php echo date('Y'); ?> <a href="<?php echo esc_url( home_url( '/' )); ?>">Acme FX</a></p><span class="footer-middot">&nbsp; &middot; &nbsp;</span><p>Built by <a href="https://parkdalewire.com" target="_blank">Parkdale Wire</a></p>
 	<?php
 }
 
