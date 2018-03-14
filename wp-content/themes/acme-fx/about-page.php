@@ -169,6 +169,10 @@ function th_main_credits_loop() {
 
 		while ( $loop->have_posts() ) : $loop->the_post(); 
 
+// Used to transfer custom field values to taxonomy terms
+$credit_partner_array = get_post_meta( get_the_ID(), 'partner_credits', true );
+wp_set_post_terms( get_the_ID(), $credit_partner_array, 'credit_share' );
+
 			$title = get_the_title();
 
 				$image = (int) get_post_meta( get_the_ID(), 'poster_image', true );
