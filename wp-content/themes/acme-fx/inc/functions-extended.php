@@ -624,9 +624,10 @@ function th_credits_columns( $columns ) {
 		'cb' => '<input type="checkbox" />',
 		'title' => __( 'Project' ),
 		'release_date' => __( 'Release date' ),
-		'front_end_date' => __( 'Displayed date' ),
+		'front_end_date' => __( 'Display date' ),
 		'project_type' => __( 'Type' ),
 		'checked' => __( 'Checked' ),
+		'credit_share' => __( 'Credit Share' ),
 		'date' => __( 'Date' ),
 	);
 
@@ -697,6 +698,15 @@ function th_manage_credits_columns( $column, $post_id ) {
 			} else {
 				echo '<strong>UNASSIGNED</strong>';
 			}
+
+			break;
+
+
+		// display a list of the custom taxonomy terms assigned to the post 
+		case 'credit_share' :
+
+			$terms = get_the_term_list( $post_id , 'credit_share' , '' , ', ' , '' );
+			echo is_string( $terms ) ? $terms : '—';
 
 			break;
 
