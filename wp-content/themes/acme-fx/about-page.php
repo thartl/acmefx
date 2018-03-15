@@ -145,13 +145,13 @@ function th_main_credits_loop() {
 	// 
 	$args = array(
 		'post_type'	=> 'credits',
-		// 'tax_query' => array(
-		// 		array(
-		// 			'taxonomy' => 'credit_share',
-		// 			'field' => 'name',
-		// 			'terms' => 'Acme',
-		// 		)
-		// 	),
+		'tax_query' => array(
+				array(
+					'taxonomy' => 'credit_share',
+					'field' => 'name',
+					'terms' => 'Acme',
+				)
+			),
 		'post_status' => 'publish',
 		'posts_per_page' => -1,
 		'meta_key' => 'release_date',
@@ -183,7 +183,7 @@ function th_main_credits_loop() {
 
 // Add credit_share term "Acme" to all Credits -- last param of true = append, as opposed to overwrite
 // **** Comment out tax_query above to run through all Credits ****
-wp_set_post_terms( get_the_ID(), 'Acme', 'credit_share', true );
+// wp_set_post_terms( get_the_ID(), 'Acme', 'credit_share', true );
 
 
 			$title = get_the_title();
