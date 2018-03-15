@@ -17,6 +17,8 @@ function th_individual_credits_loop() {
 
  	$sync_name = esc_html( get_post_meta( get_the_ID(), 'credits_sync_name', true ) );
 
+ 	$priority = strtolower( $sync_name ) . '_credit_priority';
+
 	$args = array(
 		'post_type'	=> 'credits',
 		'post_status' => 'publish',
@@ -27,12 +29,31 @@ function th_individual_credits_loop() {
 					'terms' => $sync_name,
 				)
 			),
+		'meta_query' => array(
+			'relation' => 'AND',  // "AND" forces query to read data in date_clause !!!!
+        	array(
+        		'relation' => 'OR',  // In case priority key is missing, credit will still publish
+        		'priority_clause' => array(
+        			'key' => $priority,
+        			'type' => 'NUMERIC',
+        			'compare' => 'EXISTS',
+        			),
+        		'unused_clause' => array(
+        			'key' => $priority,
+        			'compare' => 'NOT EXISTS',
+        			),
+        		),	
+			'date_clause' => array(
+				'key' => 'release_date',
+				'type' => 'DATE',
+				),
+        	),
+        'orderby' => array(
+        	'priority_clause' => 'DESC',
+        	'date_clause' => 'DESC',
+        	),
 		'posts_per_page' => -1,
 		'paged' => $paged,
-		'meta_key' => 'release_date',
-		'meta_type' => 'NUMERIC',
-		'orderby' => 'meta_value',
-		'order' => 'DESC'
 	);
 
 
@@ -41,55 +62,54 @@ function th_individual_credits_loop() {
 	$personal_imdb = esc_url( get_post_meta( get_the_ID(), 'personal_imdb_link', true ) );
 
 
-	if ( $loop->have_posts() ) :
-
 		echo '<article class="page entry">';
 
-		echo '<hr><p>Check out ' . $sync_name . '\'s <a href="' . $personal_imdb . '" target="_blank" >IMDb resume</a> or have a look at some productions ' . $sync_name . ' has worked on:</p>';
+		echo '<hr><p>Check out ' . $sync_name . '\'s <a href="' . $personal_imdb . '" target="_blank" >IMDb resume</a>';
+
+
+	if ( $loop->have_posts() ) :
+
+		echo ' or have a look at some productions ' . $sync_name . ' has worked on:</p>';
 
 		echo '<div class="credits-list" >';
 
 
 
-		while ( $loop->have_posts() ) : $loop->the_post(); 
+		while ( $loop->have_posts() ) : $loop->the_post();
 
-			// $credit_partner_array = get_post_meta( get_the_ID(), 'partner_credits', true );
-
-			// if ( is_array( $credit_partner_array ) ) {  // are partners assigned to this credit?
-
-			// 	if( in_array( $sync_name, $credit_partner_array ) ) {  // is this ($sync_name) partner among those assigned?
+					$credit_id = get_the_ID();
 
 					$title = get_the_title();
 
-						$image = (int) get_post_meta( get_the_ID(), 'poster_image', true );
+						$image = (int) get_post_meta( $credit_id, 'poster_image', true );
 					$image_url = $image ? wp_get_attachment_image( $image, 'full' ) : '';
 
-						$release_date = (int) get_post_meta( get_the_ID(), 'release_date', true );
+						$release_date = (int) get_post_meta( $credit_id, 'release_date', true );
 						$year = substr( $release_date , 0, 4 );
-						$front_end_date = esc_html( get_post_meta( get_the_ID(), 'front_end_date', true ) );
+						$front_end_date = esc_html( get_post_meta( $credit_id, 'front_end_date', true ) );
 					$show_date = $front_end_date ? $front_end_date : $year;
 
-					$url = esc_url( get_post_meta( get_the_ID(), 'imdb_link', true ) );
+					$url = esc_url( get_post_meta( $credit_id, 'imdb_link', true ) );
 
-					$project_type = esc_html( get_post_meta( get_the_ID(), 'project_type', true ) );
+					$project_type = esc_html( get_post_meta( $credit_id, 'project_type', true ) );
+
+	$print_priority = get_post_meta( get_the_ID(), $priority, true );
 
 
-					echo '<li><a href="' . $url . '" target="_blank" ><div class="match-height-item" >' . $image_url . '</div><p>' . $title . '</p><p>' . $show_date . '</p><p>' . $project_type . '</p></a></li>';
-
-			// 	}
-
-			// }
-
+					echo '<li><a href="' . $url . '" target="_blank" ><div class="match-height-item" >' . $image_url . '</div><p>' . $title . '</p><p>' . $show_date . '</p><p>' . $project_type . '</p>
+					<p>' . $print_priority . '</p>
+					</a></li>';
 
 		endwhile;
 
 		echo '</div>';
 
-		echo '</article>';
-
 		do_action( 'genesis_after_endwhile' );
 
 	endif;
+
+		echo '</article>';
+
 
 
 	// We only need to reset the $post variable. If we overwrote $wp_query,

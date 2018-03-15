@@ -185,20 +185,35 @@ function th_main_credits_loop() {
 // **** Comment out tax_query above to run through all Credits ****
 // wp_set_post_terms( get_the_ID(), 'Acme', 'credit_share', true );
 
+// Zero out all existing credit priorities
+// $credit_array = array(
+// 	'acme_credit_priority',
+// 	'danny_credit_priority',
+// 	'john_credit_priority',
+// 	'rob_credit_priority',
+// 	'tim_credit_priority',
+// 	'terry_credit_priority',
+// 	'warren_credit_priority',
+// 	);
+// foreach ($credit_array as $key => $value) {
+// 	update_post_meta( get_the_ID(), $value, 0 );
+// }
+
+			$credit_id = get_the_ID();
 
 			$title = get_the_title();
 
-				$image = (int) get_post_meta( get_the_ID(), 'poster_image', true );
+				$image = (int) get_post_meta( $credit_id, 'poster_image', true );
 			$image_url = $image ? wp_get_attachment_image( $image, 'credit-poster' ) : '';
 
-				$release_date = (int) get_post_meta( get_the_ID(), 'release_date', true );
+				$release_date = (int) get_post_meta( $credit_id, 'release_date', true );
 				$year = substr( $release_date , 0, 4 );
-				$front_end_date = esc_html( get_post_meta( get_the_ID(), 'front_end_date', true ) );
+				$front_end_date = esc_html( get_post_meta( $credit_id, 'front_end_date', true ) );
 				$show_date = $front_end_date ? $front_end_date : $year;
 
-			$url = esc_url( get_post_meta( get_the_ID(), 'imdb_link', true ) );
+			$url = esc_url( get_post_meta( $credit_id, 'imdb_link', true ) );
 
-			$project_type = esc_html( get_post_meta( get_the_ID(), 'project_type', true ) );
+			$project_type = esc_html( get_post_meta( $credit_id, 'project_type', true ) );
 
 
 			echo '<li><a href="' . $url . '" target="_blank" ><div class="match-height-item" >' . $image_url . '</div><p>' . $title . '</p><p>' . $show_date . '</p><p>' . $project_type . '</p></a></li>';
