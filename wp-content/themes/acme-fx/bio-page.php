@@ -15,6 +15,11 @@ function th_individual_credits_loop() {
 
 	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
+	$front_end_priority = 0;
+	if ( current_user_can( 'administrator' ) && get_user_meta( get_current_user_id(),'show_credit_priority_on_front_end' , true ) ) {
+		$front_end_priority = 1;
+	}
+
  	$sync_name = esc_html( get_post_meta( get_the_ID(), 'credits_sync_name', true ) );
 
  	$priority = strtolower( $sync_name ) . '_credit_priority';
@@ -30,15 +35,15 @@ function th_individual_credits_loop() {
 				)
 			),
 		'meta_query' => array(
-			'relation' => 'AND',  // "AND" forces query to read data in date_clause !!!!
+			'relation' => 'AND',  // "AND" forces query to read data in 'date_clause', so it can be used for 'orderby' !!!!
         	array(
-        		'relation' => 'OR',  // In case priority key is missing, credit will still publish
+        		'relation' => 'OR',
         		'priority_clause' => array(
         			'key' => $priority,
         			'type' => 'NUMERIC',
         			'compare' => 'EXISTS',
         			),
-        		'unused_clause' => array(
+        		'unused_clause' => array(  // In case priority key is missing, credit will still publish
         			'key' => $priority,
         			'compare' => 'NOT EXISTS',
         			),
@@ -93,12 +98,15 @@ function th_individual_credits_loop() {
 
 					$project_type = esc_html( get_post_meta( $credit_id, 'project_type', true ) );
 
-	$print_priority = get_post_meta( get_the_ID(), $priority, true );
+					$print_priority = get_post_meta( $credit_id, $priority, true );
+
+					$show_priority = $front_end_priority ? '<p class="front-end-priority">' . $print_priority . '</p>' : '';
 
 
-					echo '<li><a href="' . $url . '" target="_blank" ><div class="match-height-item" >' . $image_url . '</div><p>' . $title . '</p><p>' . $show_date . '</p><p>' . $project_type . '</p>
-					<p>' . $print_priority . '</p>
-					</a></li>';
+					echo '<li><a href="' . $url . '" target="_blank" ><div class="match-height-item" >' . $image_url . '</div><p>' . 
+					$title . '</p><p>' . $show_date . '</p><p>' . $project_type . '</p>' .
+					$show_priority .
+					'</a></li>';
 
 		endwhile;
 

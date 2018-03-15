@@ -142,9 +142,18 @@ function th_staff_repeater() {
 function th_main_credits_loop() {
 	global $post;
 
-	// 
+	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+
+	$front_end_priority = 0;
+	if ( current_user_can( 'administrator' ) && get_user_meta( get_current_user_id(),'show_credit_priority_on_front_end' , true ) ) {
+		$front_end_priority = 1;
+	}
+
+ 	$priority = 'acme_credit_priority';
+
 	$args = array(
 		'post_type'	=> 'credits',
+		'post_status' => 'publish',
 		'tax_query' => array(
 				array(
 					'taxonomy' => 'credit_share',
@@ -152,12 +161,31 @@ function th_main_credits_loop() {
 					'terms' => 'Acme',
 				)
 			),
-		'post_status' => 'publish',
+		'meta_query' => array(
+			'relation' => 'AND',  // "AND" forces query to read data in 'date_clause', so it can be used for 'orderby' !!!!
+        	array(
+        		'relation' => 'OR',
+        		'priority_clause' => array(
+        			'key' => $priority,
+        			'type' => 'NUMERIC',
+        			'compare' => 'EXISTS',
+        			),
+        		'unused_clause' => array(  // In case priority key is missing, credit will still publish
+        			'key' => $priority,
+        			'compare' => 'NOT EXISTS',
+        			),
+        		),	
+			'date_clause' => array(
+				'key' => 'release_date',
+				'type' => 'DATE',
+				),
+        	),
+        'orderby' => array(
+        	'priority_clause' => 'DESC',
+        	'date_clause' => 'DESC',
+        	),
 		'posts_per_page' => -1,
-		'meta_key' => 'release_date',
-		'meta_type' => 'NUMERIC',
-		'orderby' => 'meta_value',
-		'order' => 'DESC'
+		'paged' => $paged,
 	);
 
 
@@ -176,29 +204,6 @@ function th_main_credits_loop() {
 
 		while ( $loop->have_posts() ) : $loop->the_post(); 
 
-
-// Used to transfer / convert custom field values to taxonomy terms
-// $credit_partner_array = get_post_meta( get_the_ID(), 'partner_credits', true );
-// wp_set_post_terms( get_the_ID(), $credit_partner_array, 'credit_share' );
-
-// Add credit_share term "Acme" to all Credits -- last param of true = append, as opposed to overwrite
-// **** Comment out tax_query above to run through all Credits ****
-// wp_set_post_terms( get_the_ID(), 'Acme', 'credit_share', true );
-
-// Zero out all existing credit priorities
-// $credit_array = array(
-// 	'acme_credit_priority',
-// 	'danny_credit_priority',
-// 	'john_credit_priority',
-// 	'rob_credit_priority',
-// 	'tim_credit_priority',
-// 	'terry_credit_priority',
-// 	'warren_credit_priority',
-// 	);
-// foreach ($credit_array as $key => $value) {
-// 	update_post_meta( get_the_ID(), $value, 10 );
-// }
-
 			$credit_id = get_the_ID();
 
 			$title = get_the_title();
@@ -215,11 +220,18 @@ function th_main_credits_loop() {
 
 			$project_type = esc_html( get_post_meta( $credit_id, 'project_type', true ) );
 
+			$print_priority = get_post_meta( $credit_id, 'acme_credit_priority', true );
 
-			echo '<li><a href="' . $url . '" target="_blank" ><div class="match-height-item" >' . $image_url . '</div><p>' . $title . '</p><p>' . $show_date . '</p><p>' . $project_type . '</p></a></li>';
+			$show_priority = $front_end_priority ? '<p class="front-end-priority">' . $print_priority . '</p>' : '';
 
+
+			echo '<li><a href="' . $url . '" target="_blank" ><div class="match-height-item" >' . $image_url . '</div><p>' . 
+			$title . '</p><p>' . $show_date . '</p><p>' . $project_type . '</p>' .
+			$show_priority .
+			'</a></li>';
 
 		endwhile;
+
 
 		echo '</ul>';
 		echo '</article>';
