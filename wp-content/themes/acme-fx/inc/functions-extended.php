@@ -626,7 +626,7 @@ function th_credits_columns( $columns ) {
 		'release_date' => __( 'Release date' ),
 		'front_end_date' => __( 'Display date' ),
 		'project_type' => __( 'Type' ),
-		'checked' => __( 'Checked' ),
+		// 'checked' => __( 'Checked' ),
 		'credit_share' => __( 'Credit Share' ),
 		'date' => __( 'Date' ),
 	);
@@ -688,18 +688,19 @@ function th_manage_credits_columns( $column, $post_id ) {
 
 
 		/* If displaying the 'checked' column. */
-		case 'checked' :
+		/** These custom fields were removed */
+		// case 'checked' :
 
-			$all_checked = get_post_meta( $post_id, 'partner_credits', false );
+		// 	$all_checked = get_post_meta( $post_id, 'partner_credits', false );
 
-			if( is_array( $all_checked[ 0 ] ) ) {
-				$all_list = join( ', ', $all_checked[ 0 ] );
-				echo $all_list;
-			} else {
-				echo '<strong>UNASSIGNED</strong>';
-			}
+		// 	if( is_array( $all_checked[ 0 ] ) ) {
+		// 		$all_list = join( ', ', $all_checked[ 0 ] );
+		// 		echo $all_list;
+		// 	} else {
+		// 		echo '<strong>UNASSIGNED</strong>';
+		// 	}
 
-			break;
+		// 	break;
 
 
 		// display a list of the custom taxonomy terms assigned to the post 
