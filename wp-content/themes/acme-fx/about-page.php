@@ -145,6 +145,13 @@ function th_main_credits_loop() {
 	// 
 	$args = array(
 		'post_type'	=> 'credits',
+		'tax_query' => array(
+			// 	array(
+			// 		'taxonomy' => 'credit_share',
+			// 		'field' => 'name',
+			// 		'terms' => 'Acme',
+			// 	)
+			// ),
 		'post_status' => 'publish',
 		'posts_per_page' => -1,
 		'meta_key' => 'release_date',
@@ -169,9 +176,15 @@ function th_main_credits_loop() {
 
 		while ( $loop->have_posts() ) : $loop->the_post(); 
 
+
 // Used to transfer / convert custom field values to taxonomy terms
 // $credit_partner_array = get_post_meta( get_the_ID(), 'partner_credits', true );
 // wp_set_post_terms( get_the_ID(), $credit_partner_array, 'credit_share' );
+
+// Add credit_share term "Acme" to all Credits -- last param of true = append, as opposed to overwrite
+// **** Comment out tax_query above to run through all Credits ****
+wp_set_post_terms( get_the_ID(), 'Acme', 'credit_share', true );
+
 
 			$title = get_the_title();
 

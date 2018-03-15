@@ -720,21 +720,21 @@ function th_manage_credits_columns( $column, $post_id ) {
 }
 
 // Make Release date column sortable
-add_filter( 'manage_edit-credits_sortable_columns', 'th_credits_sortable_release_date' );
+add_filter( 'manage_edit-credits_sortable_columns', 'th_credits_sortable_columns' );
 
-function th_credits_sortable_release_date( $columns ) {
+function th_credits_sortable_columns( $columns ) {
 
 	$columns['release_date'] = 'release_date';
 
 	return $columns;
 }
+
+
 /* Only run our customization on the 'edit.php' page in the admin. */
 add_action( 'load-edit.php', 'th_edit_credits_load' );
 function th_edit_credits_load() {
 	add_filter( 'request', 'th_sort_credits' );
 }
-
-
 /* Sorts the credits. */
 function th_sort_credits( $vars ) {
 
@@ -756,6 +756,58 @@ function th_sort_credits( $vars ) {
 	}
 
 	return $vars;
+}
+
+
+// Filter admin columns by credit_share taxonomy
+// See: https://developer.wordpress.org/reference/hooks/restrict_manage_posts/
+add_action('restrict_manage_posts','th_filter_credit_share_tax',10,2);
+function th_filter_credit_share_tax( $post_type, $which ){
+    if('credits' !== $post_type){
+      return; //check to make sure this is your cpt
+    }
+    $taxonomy_slug = 'credit_share';
+    $taxonomy = get_taxonomy($taxonomy_slug);
+    $selected = '';
+    $request_attr = 'credit_share_filter'; //this will show up in the url
+    if ( isset($_REQUEST[$request_attr] ) ) {
+      $selected = $_REQUEST[$request_attr]; //in case the current page is already filtered
+    }
+    wp_dropdown_categories(array(
+      'show_option_all' =>  __("Show All {$taxonomy->label}"),
+      'taxonomy'        =>  $taxonomy_slug,
+      'name'            =>  $request_attr,
+      'orderby'         =>  'name',
+      'selected'        =>  $selected,
+      'hierarchical'    =>  true,
+      'depth'           =>  3,
+      'show_count'      =>  true, // Show number of post in parent term
+      'hide_empty'      =>  false, // Don't show posts w/o terms
+    ));
+}
+add_filter( 'parse_query', 'th_filter_request_query' , 10);
+function th_filter_request_query($query){
+    //modify the query only if it is admin and main query.
+    if( !(is_admin() AND $query->is_main_query()) ){ 
+      return $query;
+    }
+    //we want to modify the query for the targeted custom post.
+    if( 'credits' !== $query->query['post_type'] ){
+      return $query;
+    }
+    //type filter
+    if( isset($_REQUEST['credit_share_filter']) &&  0 != $_REQUEST['credit_share_filter']){
+      $term =  $_REQUEST['credit_share_filter'];
+      $taxonomy_slug = 'credit_share';
+      $query->query_vars['tax_query'] = array(
+        array(
+            'taxonomy'  => $taxonomy_slug,
+            'field'     => 'ID',
+            'terms'     => array($term)
+        )
+      );
+    }
+    return $query;
 }
 
 /**************  END: ADMIN COLUMNS  *************************************************/
