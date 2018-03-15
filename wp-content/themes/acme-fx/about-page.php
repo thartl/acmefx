@@ -145,13 +145,13 @@ function th_main_credits_loop() {
 	// 
 	$args = array(
 		'post_type'	=> 'credits',
-		'tax_query' => array(
-			// 	array(
-			// 		'taxonomy' => 'credit_share',
-			// 		'field' => 'name',
-			// 		'terms' => 'Acme',
-			// 	)
-			// ),
+		// 'tax_query' => array(
+		// 		array(
+		// 			'taxonomy' => 'credit_share',
+		// 			'field' => 'name',
+		// 			'terms' => 'Acme',
+		// 		)
+		// 	),
 		'post_status' => 'publish',
 		'posts_per_page' => -1,
 		'meta_key' => 'release_date',
