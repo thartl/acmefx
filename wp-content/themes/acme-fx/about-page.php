@@ -186,18 +186,18 @@ function th_main_credits_loop() {
 // wp_set_post_terms( get_the_ID(), 'Acme', 'credit_share', true );
 
 // Zero out all existing credit priorities
-// $credit_array = array(
-// 	'acme_credit_priority',
-// 	'danny_credit_priority',
-// 	'john_credit_priority',
-// 	'rob_credit_priority',
-// 	'tim_credit_priority',
-// 	'terry_credit_priority',
-// 	'warren_credit_priority',
-// 	);
-// foreach ($credit_array as $key => $value) {
-// 	update_post_meta( get_the_ID(), $value, 0 );
-// }
+$credit_array = array(
+	'acme_credit_priority',
+	'danny_credit_priority',
+	'john_credit_priority',
+	'rob_credit_priority',
+	'tim_credit_priority',
+	'terry_credit_priority',
+	'warren_credit_priority',
+	);
+foreach ($credit_array as $key => $value) {
+	update_post_meta( get_the_ID(), $value, 0 );
+}
 
 			$credit_id = get_the_ID();
 
