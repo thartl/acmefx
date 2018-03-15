@@ -15,10 +15,18 @@ function th_individual_credits_loop() {
 
 	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
-	// 
+ 	$sync_name = esc_html( get_post_meta( get_the_ID(), 'credits_sync_name', true ) );
+
 	$args = array(
 		'post_type'	=> 'credits',
 		'post_status' => 'publish',
+		'tax_query' => array(
+				array(
+					'taxonomy' => 'credit_share',
+					'field' => 'name',
+					'terms' => $sync_name,
+				)
+			),
 		'posts_per_page' => -1,
 		'paged' => $paged,
 		'meta_key' => 'release_date',
@@ -29,9 +37,6 @@ function th_individual_credits_loop() {
 
 
 	$loop = new WP_Query( $args );
-
-
- 	$sync_name = esc_html( get_post_meta( get_the_ID(), 'credits_sync_name', true ) );
 
 	$personal_imdb = esc_url( get_post_meta( get_the_ID(), 'personal_imdb_link', true ) );
 
@@ -48,11 +53,11 @@ function th_individual_credits_loop() {
 
 		while ( $loop->have_posts() ) : $loop->the_post(); 
 
-			$credit_partner_array = get_post_meta( get_the_ID(), 'partner_credits', true );
+			// $credit_partner_array = get_post_meta( get_the_ID(), 'partner_credits', true );
 
-			if ( is_array( $credit_partner_array ) ) {  // are partners assigned to this credit?
+			// if ( is_array( $credit_partner_array ) ) {  // are partners assigned to this credit?
 
-				if( in_array( $sync_name, $credit_partner_array ) ) {  // is this ($sync_name) partner among those assigned?
+			// 	if( in_array( $sync_name, $credit_partner_array ) ) {  // is this ($sync_name) partner among those assigned?
 
 					$title = get_the_title();
 
@@ -62,7 +67,7 @@ function th_individual_credits_loop() {
 						$release_date = (int) get_post_meta( get_the_ID(), 'release_date', true );
 						$year = substr( $release_date , 0, 4 );
 						$front_end_date = esc_html( get_post_meta( get_the_ID(), 'front_end_date', true ) );
-						$show_date = $front_end_date ? $front_end_date : $year;
+					$show_date = $front_end_date ? $front_end_date : $year;
 
 					$url = esc_url( get_post_meta( get_the_ID(), 'imdb_link', true ) );
 
@@ -71,9 +76,9 @@ function th_individual_credits_loop() {
 
 					echo '<li><a href="' . $url . '" target="_blank" ><div class="match-height-item" >' . $image_url . '</div><p>' . $title . '</p><p>' . $show_date . '</p><p>' . $project_type . '</p></a></li>';
 
-				}
+			// 	}
 
-			}
+			// }
 
 
 		endwhile;
