@@ -242,7 +242,7 @@ function genesis_cache_bust_load_stylesheet() {
 	$print_stylesheet_dir = get_stylesheet_directory() . '/print.css';
 	$print_last_modified = date ( "Y-m-d_h.i.s", filemtime( $print_stylesheet_dir ) );
 	// Enqueue the stylesheets
-	wp_enqueue_style( 'th-main-style-versioned', $stylesheet_uri, array(), $last_modified, 'screen' );
+	wp_enqueue_style( 'th-main-style-versioned', $stylesheet_uri, array(), $last_modified );
 	wp_enqueue_style( 'th-print-style-versioned', $print_stylesheet_uri, array(), $print_last_modified, 'print' );
 }
 
