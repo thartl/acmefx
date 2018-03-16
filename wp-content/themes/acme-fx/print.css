@@ -170,9 +170,16 @@
 		display: table;
 	}
 	.credits-list img {
-/*		max-width: 190px;
-		max-height: 265px;
-*/	}
+display: block;
+width: 190px;
+height: auto;
+margin: 60px 0 10px;	
+	}
+	.credits-list img::after {
+		clear: both;
+		content: " ";
+		display: table;
+	}
 }
 
 
