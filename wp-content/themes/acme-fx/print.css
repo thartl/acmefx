@@ -151,7 +151,28 @@
 	.site-header {
 		display: none;
 	}
-
+	.genesis-skip-link {
+		visibility: hidden;
+	}
+	.credits-list {
+		display: block;
+	}
+	.credits-list li {
+		display: block;
+	}
+	.match-height-item::before {
+		content: " ";
+		display: table;
+	}
+	.match-height-item::after {
+		clear: both;
+		content: " ";
+		display: table;
+	}
+	.credits-list img {
+/*		max-width: 190px;
+		max-height: 265px;
+*/	}
 }
 
 
