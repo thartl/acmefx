@@ -233,14 +233,18 @@ add_action( 'wp_enqueue_scripts', 'genesis_cache_bust_load_stylesheet', 15 );
  * @link http://youneedfat.com
  */
 function genesis_cache_bust_load_stylesheet() {
-	// Get the stylesheet info.
+	// Get the main stylesheet info
 	$stylesheet_uri = get_stylesheet_directory_uri() . '/style.css';
 	$stylesheet_dir = get_stylesheet_directory() . '/style.css';
 	$last_modified = date ( "Y-m-d_h.i.s", filemtime( $stylesheet_dir ) );
-	// Enqueue the stylesheet.
-	wp_enqueue_style( 'th-main-style-versioned', $stylesheet_uri, array(), $last_modified );
+	// Get the print stylesheet info
+	$print_stylesheet_uri = get_stylesheet_directory_uri() . '/print.css';
+	$print_stylesheet_dir = get_stylesheet_directory() . '/print.css';
+	$print_last_modified = date ( "Y-m-d_h.i.s", filemtime( $print_stylesheet_dir ) );
+	// Enqueue the stylesheets
+	wp_enqueue_style( 'th-main-style-versioned', $stylesheet_uri, array(), $last_modified, 'screen' );
+	wp_enqueue_style( 'th-print-style-versioned', $print_stylesheet_uri, array(), $print_last_modified, 'print' );
 }
-
 
 //  Enqueue custom admin (and login) styles
 function th_admin_theme_style() {
