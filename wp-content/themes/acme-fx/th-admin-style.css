@@ -1,0 +1,4 @@
+/* ACFW bug fix -- label was covering entire widget making it inaccessible */
+.acf-field.acf-field-select.acf-field-acfw-other-widgets {
+	clear: both;
+}
