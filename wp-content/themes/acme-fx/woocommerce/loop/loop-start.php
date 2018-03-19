@@ -13,28 +13,31 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.0.0
+ * @version     3.3.0
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 
 if( !isset($_COOKIE['store_view']) || $_COOKIE['store_view'] == 'grid' ) {
 
-	echo '<ul class="products grid-view" >';
+$add_view_class = 'grid-view';
 
 } elseif( $_COOKIE['store_view'] == 'list' ) {
 
-	echo '<ul class="products list-view" >';
+$add_view_class = 'list-view';
 
 } elseif( $_COOKIE['store_view'] == 'desc' ) {
 
-	echo '<ul class="products desc-view" >';
+$add_view_class = 'desc-view';
 
 } else {
 
-	echo '<ul class="products" >';
+$add_view_class = '';
 
 }
-
-
 ?>
+
+<ul class="products columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?> <?php echo $add_view_class; ?>" >
