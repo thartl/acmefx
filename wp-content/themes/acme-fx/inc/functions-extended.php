@@ -371,7 +371,7 @@ add_action( 'woocommerce_archive_description', 'th_woocommerce_taxonomy_archive_
 
 
 // th-- Unhook taxonomy title and description (Genesis), then hook in title
-remove_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 15 );
+// remove_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 15 );  // unhooked by genesis-connect-woocommerce since 0.9.10
 add_action( 'genesis_before_loop', 'th_genesis_do_taxonomy_title_only', 15 );
 /**
  * Add custom heading and / or description to category / tag / taxonomy archive pages.
