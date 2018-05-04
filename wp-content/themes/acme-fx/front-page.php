@@ -12,7 +12,6 @@
  */
 
 
-
 // Function to initiate widgetized page render.
 add_action( 'genesis_meta', 'acme_front_page_init' );
 function acme_front_page_init() {

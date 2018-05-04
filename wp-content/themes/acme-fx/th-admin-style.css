@@ -2,3 +2,10 @@
 .acf-field.acf-field-select.acf-field-acfw-other-widgets {
 	clear: both;
 }
+
+/* ## Hide ACFW (acf widgets) nag
+--------------------------------------------- */
+.acfw-no-acf {
+	display: none;
+}
+
