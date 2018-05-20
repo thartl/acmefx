@@ -75,7 +75,7 @@ genesis_register_widget_area( array(
 //  Display FX Gallery wigets on the FX Gallery page
 add_action( 'genesis_after_entry_content', 'th_add_fx_gallery_widgets' );
 function th_add_fx_gallery_widgets() {
-	if ( is_page( 'special-effects') )
+	if ( is_page( array( 'special-effects' ) ) )
 	genesis_widget_area( 'fx-gallery-widget-area', array(
         'before' => '<div class="all-fx-widgets">',
         'after' => '</div>',
