@@ -333,7 +333,7 @@ function th_add_short_description_to_desc_view() {
 add_filter( 'woocommerce_page_title', 'th_woocommerce_category_page_title', 10, 1 );
 function th_woocommerce_category_page_title( $page_title ) {
 	if ( is_shop() ) {
-		$shop_page_url = get_permalink( woocommerce_get_page_id( 'shop' ) );
+		$shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
 		$url = esc_url( $shop_page_url );
 		$heading = '<a href="' . $url . '" >' . $page_title . '</a>';
 
