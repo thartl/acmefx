@@ -220,8 +220,8 @@ remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
  * Enqueue Genesis child theme style sheet at higher priority -- amended for cache busting, see notes below
  * @uses wp_enqueue_scripts <http://codex.wordpress.org/Function_Reference/wp_enqueue_style>
  */
-//add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 15 );
-//  enque genesis_cache_bust_load_stylesheet (below) during development, enqueue genesis_enqueue_main_stylesheet (above) for live site
+// add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 15 );
+// cache-busting version
 add_action( 'wp_enqueue_scripts', 'genesis_cache_bust_load_stylesheet', 15 );
 /**
  * Get the (date &) time the theme's CSS was last modified
@@ -745,9 +745,9 @@ function th_add_price_table() {
 
 
 // Changes empty price to "Rental item" on product loops and also in admin - Products -- when product attribute Departments is set to Rentals
-add_filter( 'woocommerce_get_price_html', 'th_change_product_price_display' );
-function th_change_product_price_display( $price ) {
-	global $product;
+add_filter( 'woocommerce_get_price_html', 'th_change_product_price_display', 10, 2 );
+function th_change_product_price_display( $price, $product ) {
+
 	$departments = $product->get_attribute( 'pa_departments' );
 
 		if ( $product && ( strpos( $departments, 'Rentals' ) !== false ) ) {
@@ -760,7 +760,7 @@ function th_change_product_price_display( $price ) {
 // Change the add to cart button INTO "Read more" button on product archive pages, if pa_departments == 'Rentals'
 // =================================================================================================================
     // Woocommerce handles empty Regular price the same way, a zero price not, though.  This is insurance.
-	// Priority 100 hooks this after Catalog Visibioity Options (99), which also, uses "Read more" replacement.  Reverse order doubles buttons...
+	// Priority 100 hooks this after Catalog VisibiLity Options (99), which also, uses "Read more" replacement.  Reverse order doubles buttons...
 add_filter( 'woocommerce_loop_add_to_cart_link', 'pw_product_link_to_view', 100, 2 );
 function pw_product_link_to_view( $markup, $product ) {
 
@@ -768,7 +768,8 @@ function pw_product_link_to_view( $markup, $product ) {
 	$is_rental = strpos( $departments, 'Rentals' ) !== false ? true : false;
 
 		if ( $product && $is_rental ) {
-		    echo '<form action="' . esc_url( $product->get_permalink( $product->id ) ) . '" method="get">
+			$id = $product->get_id();
+		    echo '<form action="' . esc_url( $product->get_permalink( $id ) ) . '" method="get">
 		            <button type="submit" class="button add_to_cart_button ">' . 'Read more' . '</button>
 		          </form>';
 		} else {
