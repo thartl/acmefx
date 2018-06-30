@@ -588,6 +588,21 @@ add_filter( 'the_content_more_link', 'be_more_link' );
 // ******************************  WOOCOMMERCE  **************************************** //
 // ************************************************************************************* //
 
+
+/** Disable Ajax call from WooCommerce, except woocommerce pages etc., incl. pages with sidebars (mini-cart) */
+add_action( 'wp_enqueue_scripts', 'dequeue_woocommerce_cart_fragments', 1001); 
+function dequeue_woocommerce_cart_fragments() {
+
+	$site_layout = genesis_site_layout();
+
+	if ( is_shop() || is_cart() || is_checkout() || is_account_page() || is_woocommerce() || 'full-width-content' !== $site_layout ) {
+		return;
+	} else {
+		wp_dequeue_script( 'wc-cart-fragments' );
+	}
+}
+
+
 //  Enable woocommerce product gallery zoom, lightbox, slider
 add_action( 'after_setup_theme', 'acme_woo_gallery_setup' );
  
