@@ -2415,11 +2415,12 @@ section.up-sells.upsells.products + section.related.products {
 .woocommerce ul.cart_list li dl dd,
 .woocommerce ul.product_list_widget li dl dd {
 	margin-bottom: 0em;
+	margin-left: 8px;
 }
 
 /** Space between products in minicart */
 .woocommerce.widget_shopping_cart ul.cart_list li:nth-child(n+2) {
-	padding-top: 3em;
+	padding-top: 2.2em;
 }
 
 /** Quantity and price to the right */
