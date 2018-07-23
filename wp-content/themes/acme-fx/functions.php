@@ -71,7 +71,6 @@ function th_custom_fix_thumbnail() {
 }
 
 
-
 // Remove admin bar from front end, except for select users
 add_filter('show_admin_bar', 'th_private_admin_bar');  /** '__return_false' **/
 
@@ -93,7 +92,6 @@ function th_private_admin_bar( $content ) {
 		return false;
 	}
 }
-
 
 
 // Add custom links to admin bar
@@ -160,7 +158,6 @@ function th_add_admin_bar_links() {
 add_action('wp_before_admin_bar_render', 'th_add_admin_bar_links', 12);
 
 
-
 //******************************************************************* TURNED OFF FOR SWP SUPPORT ****************************************
 // Remove WP Migrate DB Pro, CPT UI, except for Tomas, Amy
 // add_action( 'admin_menu', 'th_remove_migrate_db_menu', 999 );
@@ -176,14 +173,10 @@ $current_username = $current_user->user_login;
 }
 
 
-
-
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Acme FX' );
 define( 'CHILD_THEME_URL', 'https://parkdalewire.com/' );
 define( 'CHILD_THEME_VERSION', '1.0.1' );
-
-
 
 
 // Enqueue Scripts and Styles.
@@ -224,15 +217,12 @@ add_action('admin_enqueue_scripts', 'th_admin_theme_style');
 add_action('login_enqueue_scripts', 'th_admin_theme_style');
 
 
-
 // Add categories to pages
 function add_taxonomies_to_pages() {
 // register_taxonomy_for_object_type( 'post_tag', 'page' );
  register_taxonomy_for_object_type( 'category', 'page' );
  }
 add_action( 'init', 'add_taxonomies_to_pages' );
-
-
 
 
 // Define responsive menu settings.
@@ -253,8 +243,6 @@ function genesis_sample_responsive_menu_settings() {
 	);
 	return $settings;
 }
-
-
 
 
 // Add HTML5 markup structure.
@@ -296,6 +284,7 @@ function genesis_do_new_header() {
         echo '</div><!-- end .widget-area -->';
     }
 } 
+
 
 // Add support for custom header.
 add_theme_support( 'custom-header', array(
@@ -373,14 +362,13 @@ function my_header_video_settings( $settings ) {
   return $settings;
 }
 
+
 //* Reposition the primary navigation menu
 // remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 // add_action( 'genesis_header', 'genesis_do_subnav' );
 
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
 add_action( 'genesis_after_header', 'genesis_do_nav', 5 );
-
-
 
 
 // th-- Set up the Front page. *******************************
@@ -392,6 +380,7 @@ function acme_count_widgets( $id ) {
 		return count( $sidebars_widgets[ $id ] );
 	}
 }
+
 
 // Setup widget layout classes
 function acme_widget_area_class( $id ) {
@@ -549,10 +538,8 @@ add_filter( 'the_content_more_link', 'be_more_link' );
 
 
 
-
 // ******************************  WOOCOMMERCE  **************************************** //
 // ************************************************************************************* //
-
 
 /** Disable Ajax call from WooCommerce, except woocommerce pages etc., incl. pages with sidebars (mini-cart) */
 add_action( 'wp_enqueue_scripts', 'dequeue_woocommerce_cart_fragments', 1001); 
@@ -597,9 +584,9 @@ remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_l
 
 
 
-// *************************************************
-// ************************************************* Add rental pricing fields to the admin product page AND update meta
-// *************************************************
+// *
+// ** Add rental pricing fields to the admin product page AND update meta
+// *
 
 add_action( 'woocommerce_product_options_general_product_data', 'wc_custom_add_custom_fields' );
 function wc_custom_add_custom_fields() {
@@ -718,9 +705,9 @@ function th_add_price_table() {
 	<?php }
 }
 
-// *************************************************
-// ************************************************* END ::  Add rental pricing fields and display them
-// *************************************************
+// *
+// ** END ::  Add rental pricing fields and display them
+// *
 
 
 
@@ -738,7 +725,7 @@ function th_change_product_price_display( $price, $product ) {
 
 
 // Change the add to cart button INTO "Read more" button on product archive pages, if pa_departments == 'Rentals'
-// =================================================================================================================
+// ====
     // Woocommerce handles empty Regular price the same way, a zero price not, though.  This is insurance.
 	// Priority 100 hooks this after Catalog VisibiLity Options (99), which also, uses "Read more" replacement.  Reverse order doubles buttons...
 add_filter( 'woocommerce_loop_add_to_cart_link', 'pw_product_link_to_view', 100, 2 );
