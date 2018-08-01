@@ -142,6 +142,7 @@ function th_staff_repeater() {
 function th_main_credits_loop() {
 	global $post;
 
+<<<<<<< HEAD
 	// 
 	$args = array(
 		'post_type'	=> 'credits',
@@ -151,6 +152,52 @@ function th_main_credits_loop() {
 		'meta_type' => 'NUMERIC',
 		'orderby' => 'meta_value',
 		'order' => 'DESC'
+=======
+	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+
+	$front_end_priority = 0;
+	if ( current_user_can( 'administrator' ) && get_user_meta( get_current_user_id(),'show_credit_priority_on_front_end' , true ) ) {
+		$front_end_priority = 1;
+	}
+
+ 	$priority = 'acme_credit_priority';
+
+	$args = array(
+		'post_type'	=> 'credits',
+		'post_status' => 'publish',
+		'tax_query' => array(
+				array(
+					'taxonomy' => 'credit_share',
+					'field' => 'name',
+					'terms' => 'Acme',
+				)
+			),
+		'meta_query' => array(
+			'relation' => 'AND',  // "AND" forces query to read data in 'date_clause', so it can be used for 'orderby' !!!!
+        	array(
+        		'relation' => 'OR',
+        		'priority_clause' => array(
+        			'key' => $priority,
+        			'type' => 'NUMERIC',
+        			'compare' => 'EXISTS',
+        			),
+        		'unused_clause' => array(  // In case priority key is missing, credit will still publish
+        			'key' => $priority,
+        			'compare' => 'NOT EXISTS',
+        			),
+        		),	
+			'date_clause' => array(
+				'key' => 'release_date',
+				'type' => 'DATE',
+				),
+        	),
+        'orderby' => array(
+        	'priority_clause' => 'DESC',
+        	'date_clause' => 'DESC',
+        	),
+		'posts_per_page' => -1,
+		'paged' => $paged,
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 	);
 
 
@@ -169,6 +216,7 @@ function th_main_credits_loop() {
 
 		while ( $loop->have_posts() ) : $loop->the_post(); 
 
+<<<<<<< HEAD
 			$title = get_the_title();
 
 				$image = (int) get_post_meta( get_the_ID(), 'poster_image', true );
@@ -189,6 +237,37 @@ function th_main_credits_loop() {
 
 		endwhile;
 
+=======
+			$credit_id = get_the_ID();
+
+			$title = get_the_title();
+
+				$image = (int) get_post_meta( $credit_id, 'poster_image', true );
+			$image_url = $image ? wp_get_attachment_image( $image, 'credit-poster' ) : '';
+
+				$release_date = (int) get_post_meta( $credit_id, 'release_date', true );
+				$year = substr( $release_date , 0, 4 );
+				$front_end_date = esc_html( get_post_meta( $credit_id, 'front_end_date', true ) );
+				$show_date = $front_end_date ? $front_end_date : $year;
+
+			$url = esc_url( get_post_meta( $credit_id, 'imdb_link', true ) );
+
+			$project_type = esc_html( get_post_meta( $credit_id, 'project_type', true ) );
+
+			$print_priority = get_post_meta( $credit_id, 'acme_credit_priority', true );
+
+			$show_priority = $front_end_priority ? '<p class="front-end-priority">' . $print_priority . '</p>' : '';
+
+
+			echo '<li><a href="' . $url . '" target="_blank" ><div class="match-height-item" >' . $image_url . '</div><p>' . 
+			$title . '</p><p>' . $show_date . '</p><p>' . $project_type . '</p>' .
+			$show_priority .
+			'</a></li>';
+
+		endwhile;
+
+
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 		echo '</ul>';
 		echo '</article>';
 

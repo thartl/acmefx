@@ -51,6 +51,11 @@ include_once( get_stylesheet_directory() . '/inc/functions-extended-2.php' );
 // Add WooCommerce Memberships modifications  (th-- )
 include_once( get_stylesheet_directory() . '/inc/memberships-setup.php' );
 
+<<<<<<< HEAD
+=======
+// Enqueue style.css and minify, or enqueue style.min.css if available.  Cache-busting and enqueued at higher priority.
+include_once( get_stylesheet_directory() . '/lib/main-style-min.php' );
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 
 
 // Change WooCommerce placeholder image
@@ -69,7 +74,10 @@ function th_custom_fix_thumbnail() {
 }
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 // Remove admin bar from front end, except for select users
 add_filter('show_admin_bar', 'th_private_admin_bar');  /** '__return_false' **/
 
@@ -93,7 +101,10 @@ function th_private_admin_bar( $content ) {
 }
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 // Add custom links to admin bar
 function th_add_admin_bar_links() {
 	global $wp_admin_bar;
@@ -158,7 +169,10 @@ function th_add_admin_bar_links() {
 add_action('wp_before_admin_bar_render', 'th_add_admin_bar_links', 12);
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 //******************************************************************* TURNED OFF FOR SWP SUPPORT ****************************************
 // Remove WP Migrate DB Pro, CPT UI, except for Tomas, Amy
 // add_action( 'admin_menu', 'th_remove_migrate_db_menu', 999 );
@@ -174,16 +188,22 @@ $current_username = $current_user->user_login;
 }
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Acme FX' );
 define( 'CHILD_THEME_URL', 'https://parkdalewire.com/' );
 define( 'CHILD_THEME_VERSION', '1.0.1' );
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 // Enqueue Scripts and Styles.
 add_action( 'wp_enqueue_scripts', 'genesis_sample_enqueue_scripts_styles' );
 function genesis_sample_enqueue_scripts_styles() {
@@ -209,6 +229,7 @@ function genesis_sample_enqueue_scripts_styles() {
 }
 
 
+<<<<<<< HEAD
 /**
  * Remove Genesis child theme style sheet
  * @uses genesis_meta  <genesis/lib/css/load-styles.php>
@@ -242,6 +263,8 @@ function genesis_cache_bust_load_stylesheet() {
 }
 
 
+=======
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 //  Enqueue custom admin (and login) styles
 function th_admin_theme_style() {
 	// Get the stylesheet info.
@@ -255,7 +278,10 @@ add_action('admin_enqueue_scripts', 'th_admin_theme_style');
 add_action('login_enqueue_scripts', 'th_admin_theme_style');
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 // Add categories to pages
 function add_taxonomies_to_pages() {
 // register_taxonomy_for_object_type( 'post_tag', 'page' );
@@ -264,8 +290,11 @@ function add_taxonomies_to_pages() {
 add_action( 'init', 'add_taxonomies_to_pages' );
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 // Define responsive menu settings.
 function genesis_sample_responsive_menu_settings() {
 
@@ -286,8 +315,11 @@ function genesis_sample_responsive_menu_settings() {
 }
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 // Add HTML5 markup structure.
 add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ) );
 
@@ -328,6 +360,10 @@ function genesis_do_new_header() {
     }
 } 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 // Add support for custom header.
 add_theme_support( 'custom-header', array(
 	'width'           => 1920,
@@ -404,6 +440,10 @@ function my_header_video_settings( $settings ) {
   return $settings;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 //* Reposition the primary navigation menu
 // remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 // add_action( 'genesis_header', 'genesis_do_subnav' );
@@ -412,8 +452,11 @@ remove_action( 'genesis_after_header', 'genesis_do_nav' );
 add_action( 'genesis_after_header', 'genesis_do_nav', 5 );
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 // th-- Set up the Front page. *******************************
 // Setup widget counts.
 function acme_count_widgets( $id ) {
@@ -424,6 +467,10 @@ function acme_count_widgets( $id ) {
 	}
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 // Setup widget layout classes
 function acme_widget_area_class( $id ) {
 	$count = acme_count_widgets( $id );
@@ -498,7 +545,11 @@ remove_action( 'genesis_footer', 'genesis_do_footer' );
 add_action( 'genesis_footer', 'th_custom_footer' );
 function th_custom_footer() {
 	?>
+<<<<<<< HEAD
 	<p>Copyright &copy; <?php echo date('Y'); ?> &middot; <a href="<?php echo esc_url( home_url( '/' )); ?>">Acme FX</a></p>
+=======
+	<p>Copyright &copy; <?php echo date('Y'); ?> <a href="<?php echo esc_url( home_url( '/' )); ?>">Acme FX</a></p><span class="footer-middot">&nbsp; &middot; &nbsp;</span><p>Built by <a href="https://parkdalewire.com" target="_blank">Parkdale Wire</a></p>
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 	<?php
 }
 
@@ -580,10 +631,30 @@ add_filter( 'the_content_more_link', 'be_more_link' );
 
 
 
+<<<<<<< HEAD
 
 // ******************************  WOOCOMMERCE  **************************************** //
 // ************************************************************************************* //
 
+=======
+// ******************************  WOOCOMMERCE  **************************************** //
+// ************************************************************************************* //
+
+/** Disable Ajax call from WooCommerce, except woocommerce pages etc., incl. pages with sidebars (mini-cart) */
+add_action( 'wp_enqueue_scripts', 'dequeue_woocommerce_cart_fragments', 1001); 
+function dequeue_woocommerce_cart_fragments() {
+
+	$site_layout = genesis_site_layout();
+
+	if ( is_shop() || is_cart() || is_checkout() || is_account_page() || is_woocommerce() || 'full-width-content' !== $site_layout ) {
+		return;
+	} else {
+		wp_dequeue_script( 'wc-cart-fragments' );
+	}
+}
+
+
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 //  Enable woocommerce product gallery zoom, lightbox, slider
 add_action( 'after_setup_theme', 'acme_woo_gallery_setup' );
  
@@ -613,9 +684,15 @@ remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_l
 
 
 
+<<<<<<< HEAD
 // *************************************************
 // ************************************************* Add rental pricing fields to the admin product page AND update meta
 // *************************************************
+=======
+// *
+// ** Add rental pricing fields to the admin product page AND update meta
+// *
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 
 add_action( 'woocommerce_product_options_general_product_data', 'wc_custom_add_custom_fields' );
 function wc_custom_add_custom_fields() {
@@ -734,16 +811,28 @@ function th_add_price_table() {
 	<?php }
 }
 
+<<<<<<< HEAD
 // *************************************************
 // ************************************************* END ::  Add rental pricing fields and display them
 // *************************************************
+=======
+// *
+// ** END ::  Add rental pricing fields and display them
+// *
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 
 
 
 // Changes empty price to "Rental item" on product loops and also in admin - Products -- when product attribute Departments is set to Rentals
+<<<<<<< HEAD
 add_filter( 'woocommerce_get_price_html', 'th_change_product_price_display' );
 function th_change_product_price_display( $price ) {
 	global $product;
+=======
+add_filter( 'woocommerce_get_price_html', 'th_change_product_price_display', 10, 2 );
+function th_change_product_price_display( $price, $product ) {
+
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 	$departments = $product->get_attribute( 'pa_departments' );
 
 		if ( $product && ( strpos( $departments, 'Rentals' ) !== false ) ) {
@@ -754,9 +843,15 @@ function th_change_product_price_display( $price ) {
 
 
 // Change the add to cart button INTO "Read more" button on product archive pages, if pa_departments == 'Rentals'
+<<<<<<< HEAD
 // =================================================================================================================
     // Woocommerce handles empty Regular price the same way, a zero price not, though.  This is insurance.
 	// Priority 100 hooks this after Catalog Visibioity Options (99), which also, uses "Read more" replacement.  Reverse order doubles buttons...
+=======
+// ====
+    // Woocommerce handles empty Regular price the same way, a zero price not, though.  This is insurance.
+	// Priority 100 hooks this after Catalog VisibiLity Options (99), which also, uses "Read more" replacement.  Reverse order doubles buttons...
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 add_filter( 'woocommerce_loop_add_to_cart_link', 'pw_product_link_to_view', 100, 2 );
 function pw_product_link_to_view( $markup, $product ) {
 
@@ -764,7 +859,12 @@ function pw_product_link_to_view( $markup, $product ) {
 	$is_rental = strpos( $departments, 'Rentals' ) !== false ? true : false;
 
 		if ( $product && $is_rental ) {
+<<<<<<< HEAD
 		    echo '<form action="' . esc_url( $product->get_permalink( $product->id ) ) . '" method="get">
+=======
+			$id = $product->get_id();
+		    echo '<form action="' . esc_url( $product->get_permalink( $id ) ) . '" method="get">
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 		            <button type="submit" class="button add_to_cart_button ">' . 'Read more' . '</button>
 		          </form>';
 		} else {

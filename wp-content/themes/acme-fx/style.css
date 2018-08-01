@@ -3,7 +3,11 @@
 	Theme URI: https://parkdalewire.com/
 	Description: Custom theme created for Acme FX
 	Author: Parkdale Wire
+<<<<<<< HEAD
 	Author URI: http://parkdalewire.com/
+=======
+	Author URI: https://parkdalewire.com/
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 
 	Version: 1.0.1
 
@@ -19,6 +23,10 @@
 */
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 /* # Table of Contents
 - HTML5 Reset
 	- Baseline Normalize
@@ -2238,6 +2246,12 @@ address {
 .payment_box.payment_method_stripe input[type="radio"] + label {
 	color: #515151;
 }
+<<<<<<< HEAD
+=======
+.wc_payment_method.payment_method_stripe i.stripe-pf {
+	color: #fff;
+}
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 .woocommerce-Price-amount.amount:nth-child(2)::before {
 	display: none;
 }
@@ -2404,6 +2418,7 @@ section.up-sells.upsells.products + section.related.products {
 .woocommerce ul.product_list_widget li dl.variation {
 	border-left: 0;
 }
+<<<<<<< HEAD
 .woocommerce ul.cart_list li dl.variation dt::before,
 .woocommerce ul.product_list_widget li dl.variation dt::before {
 	content: "\2605";
@@ -2413,6 +2428,60 @@ section.up-sells.upsells.products + section.related.products {
 .woocommerce ul.product_list_widget li dl.variation {
     padding-left: 0;
     margin-top: 15px;
+=======
+.woocommerce ul.cart_list li.mini_cart_item a::after {
+	content: " ";
+	display: table;
+	clear: both;
+}
+.woocommerce ul.cart_list li dl dd,
+.woocommerce ul.product_list_widget li dl dd {
+	margin-bottom: 0em;
+	margin-left: 8px;
+}
+
+.woocommerce ul.cart_list li dl.variation dt,
+.woocommerce ul.product_list_widget li dl.variation dt {
+	font-weight: 400;
+}
+
+/** Space between products in minicart */
+.woocommerce.widget_shopping_cart ul.cart_list li:nth-child(n+2) {
+	padding-top: 2.2em;
+}
+
+/** Quantity and price to the right */
+.woocommerce ul.cart_list li.mini_cart_item span.quantity,
+.woocommerce ul.product_list_widget li.mini_cart_item span.quantity {
+	display: block;
+	margin-top: 0.2em;
+	text-align: right;
+}
+
+/** Mini cart in sidebar */
+.woocommerce ul.cart_list li dl.variation dt::before,
+.woocommerce ul.product_list_widget li dl.variation dt::before {
+/*	content: "\2605";
+	margin-right: 5px;
+	font-size: 10px;
+	position: relative;
+	bottom: 2px;
+*/}
+
+/** Wishlists */
+.woocommerce td.product-name dl.variation dt::before {
+	content: "\2605";
+	margin-right: 5px;
+	font-size: 10px;
+	position: relative;
+	bottom: 2px;
+}
+
+.woocommerce ul.cart_list li dl.variation,
+.woocommerce ul.product_list_widget li dl.variation {
+    padding-left: 0;
+    margin-top: 8px;
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 }
 .woocommerce div.product .woocommerce-tabs ul.tabs li:first-of-type {
 	margin: 0;
@@ -2461,7 +2530,11 @@ section.up-sells.upsells.products + section.related.products {
 }
 .raise-anchor {
 	position: relative;
+<<<<<<< HEAD
 	bottom: 122px;
+=======
+	bottom: 90px;
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 }
 
 /** Library styles */
@@ -2860,15 +2933,24 @@ div.grid-list-switch {
 
 .site-footer {
 	background-color: #1E373B;
+<<<<<<< HEAD
 	font-size: 16px;
 	font-size: 1.6rem;
+=======
+	font-size: 12px;
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 	line-height: 1;
 	padding: 0px 0 60px;
 	text-align: center;
 }
 
 .site-footer p {
+<<<<<<< HEAD
 	margin-bottom: 0;
+=======
+	display: inline-block;
+	margin-bottom: 10px;
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 	color: #666;
 }
 .site-footer p a {
@@ -3758,6 +3840,14 @@ div.agm_mh_info_content {
 	font-family: "Source Sans Pro", sans-serif;
 }
 
+<<<<<<< HEAD
+=======
+/** Doc listings pages ***************************************************************** */
+ul.doc-listings .pages-and-size {
+	color: #aaa;
+}
+
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 /** Site Admin Docs ***************************************************************** */
 .parent-pageid-580 .footnote-section {
 	margin-bottom: 24px;
@@ -4051,6 +4141,17 @@ body .fbx-inner {
 	top: 96px;
 }
 
+<<<<<<< HEAD
+=======
+
+
+/* # Admin meta
+---------------------------------------------------------------------------------------------------- */
+.front-end-priority {
+	color: #FE8E0E;
+}
+
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 /* # SearchWP test
 ---------------------------------------------------------------------------------------------------- */
 
@@ -5005,7 +5106,19 @@ body .fbx-inner {
 		height: 280px;
 		font-size: 16px;
 	}
+<<<<<<< HEAD
 
+=======
+	.woocommerce-checkout #payment {
+		padding: 20px 0;
+	}
+	.woocommerce-checkout #payment ul.payment_methods {
+		padding: 0px;
+	}
+	.woocommerce .woocommerce-checkout #payment ul.payment_methods li input[type="radio"] {
+		margin-right: 6px;
+	}
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 }
 
 @media only screen and (max-width: 600px) {
@@ -5368,6 +5481,12 @@ body .fbx-inner {
 	#wl-wrapper .wl-table.wl-manage td.wl-privacy-col {
 		width: 80px;
 	}
+<<<<<<< HEAD
+=======
+	.wc_payment_method.payment_method_stripe i.stripe-pf {
+		font-size: 13px;
+	}
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 	
 }
 
@@ -5397,6 +5516,7 @@ body .fbx-inner {
 	#wl-wrapper .wl-table.wl-manage td:first-child {
 	    max-width: 100px;
 	}
+<<<<<<< HEAD
 
 }
 
@@ -5545,3 +5665,16 @@ body .fbx-inner {
 	}
 
 }
+=======
+	.footer-middot {
+		display: none;
+	}
+	.site-footer p {
+		display: block;
+	}
+
+}
+
+
+
+>>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
