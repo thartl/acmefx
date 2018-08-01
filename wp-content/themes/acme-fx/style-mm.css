@@ -1,0 +1,45 @@
+
+
+
+.background .wrap {
+	color: #fff;
+	line-height: 1.5;
+}
+
+.background .wrap p:nth-child(4) {
+	margin-bottom: 30px;
+}
+
+.background .wrap h2 {
+	font-size: 40px;
+	margin-bottom: 60px;
+}
+
+.background .wrap h1 {
+	font-size: 70px;
+	margin-bottom: 40px;
+}
+
+.wrap form.subscribe_form {
+	margin-bottom: 40px;
+}
+.wrap form.subscribe_form input[type=submit],
+.wrap form.subscribe_form input {
+	padding: 14px 24px;
+}
+div.response {
+	color: #000;
+}
+p.bio {
+	margin-bottom: 100px;
+}
+
+ 
+@media only screen and ( max-width: 400px ) {
+	.background .wrap h1 {
+	font-size: 60px;
+	}
+	.background .wrap h2 {
+	font-size: 30px;
+	}
+}
