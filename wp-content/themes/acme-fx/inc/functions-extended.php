@@ -333,11 +333,7 @@ function th_add_short_description_to_desc_view() {
 add_filter( 'woocommerce_page_title', 'th_woocommerce_category_page_title', 10, 1 );
 function th_woocommerce_category_page_title( $page_title ) {
 	if ( is_shop() ) {
-<<<<<<< HEAD
-		$shop_page_url = get_permalink( woocommerce_get_page_id( 'shop' ) );
-=======
 		$shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
->>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 		$url = esc_url( $shop_page_url );
 		$heading = '<a href="' . $url . '" >' . $page_title . '</a>';
 
@@ -375,11 +371,7 @@ add_action( 'woocommerce_archive_description', 'th_woocommerce_taxonomy_archive_
 
 
 // th-- Unhook taxonomy title and description (Genesis), then hook in title
-<<<<<<< HEAD
-remove_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 15 );
-=======
 // remove_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 15 );  // unhooked by genesis-connect-woocommerce since 0.9.10
->>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 add_action( 'genesis_before_loop', 'th_genesis_do_taxonomy_title_only', 15 );
 /**
  * Add custom heading and / or description to category / tag / taxonomy archive pages.
@@ -598,27 +590,10 @@ if ( ! function_exists( 'get_current_page_url' ) ) {
 
 
 
-<<<<<<< HEAD
-add_action( 'wp_enqueue_scripts', 'th_elements_match_height', 99 );
-=======
->>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 /**
  * Enqueue matchHeight.js and print an inline script to the footer to keep elements of class ".match-height-item" the same height.
  * Adpated from genesis_sample_products_match_height(), from woocommerce-setup.php
  *
-<<<<<<< HEAD
- * @since 2.3.0
- */
-function th_elements_match_height() {
-
-	/** List pages by ID, post_name (slug), or post_title. Currently for the Front page, About page, and partners' Bio pages **/
-	if ( ! is_page( array( 'about-us', 622, 619, 621, 620, 617, 618 ) ) && ! is_front_page() ) {
-		return;
-	}
-
-	wp_enqueue_script( 'th-page-match-height', get_stylesheet_directory_uri() . '/js/jquery.matchHeight.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
-	wp_add_inline_script( 'th-page-match-height', "jQuery(document).ready( function() { jQuery( '.match-height-item').matchHeight(); });" );
-=======
  * Filtered by page ID. Should not be called on pages already set up for matchHeight by genesis_sample_products_match_height().
  *
  * @since 2.3.0
@@ -633,7 +608,6 @@ function th_elements_match_height() {
 
 	wp_enqueue_script( 'genesis-sample-match-height', get_stylesheet_directory_uri() . '/js/jquery.matchHeight.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 	wp_add_inline_script( 'genesis-sample-match-height', "jQuery(document).ready( function() { jQuery( '.match-height-item').matchHeight(); });" );
->>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 
 }
 
@@ -650,16 +624,10 @@ function th_credits_columns( $columns ) {
 		'cb' => '<input type="checkbox" />',
 		'title' => __( 'Project' ),
 		'release_date' => __( 'Release date' ),
-<<<<<<< HEAD
-		'front_end_date' => __( 'Displayed date' ),
-		'project_type' => __( 'Type' ),
-		'checked' => __( 'Checked' ),
-=======
 		'front_end_date' => __( 'Display date' ),
 		'project_type' => __( 'Type' ),
 		// 'checked' => __( 'Checked' ),
 		'credit_share' => __( 'Credit Share' ),
->>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 		'date' => __( 'Date' ),
 	);
 
@@ -720,18 +688,6 @@ function th_manage_credits_columns( $column, $post_id ) {
 
 
 		/* If displaying the 'checked' column. */
-<<<<<<< HEAD
-		case 'checked' :
-
-			$all_checked = get_post_meta( $post_id, 'partner_credits', false );
-
-			if( is_array( $all_checked[ 0 ] ) ) {
-				$all_list = join( ', ', $all_checked[ 0 ] );
-				echo $all_list;
-			} else {
-				echo '<strong>UNASSIGNED</strong>';
-			}
-=======
 		/** These custom fields were removed */
 		// case 'checked' :
 
@@ -752,7 +708,6 @@ function th_manage_credits_columns( $column, $post_id ) {
 
 			$terms = get_the_term_list( $post_id , 'credit_share' , '' , ', ' , '' );
 			echo is_string( $terms ) ? $terms : '—';
->>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 
 			break;
 
@@ -766,29 +721,14 @@ function th_manage_credits_columns( $column, $post_id ) {
 }
 
 // Make Release date column sortable
-<<<<<<< HEAD
-add_filter( 'manage_edit-credits_sortable_columns', 'th_credits_sortable_release_date' );
-
-function th_credits_sortable_release_date( $columns ) {
-=======
 add_filter( 'manage_edit-credits_sortable_columns', 'th_credits_sortable_columns' );
 
 function th_credits_sortable_columns( $columns ) {
->>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 
 	$columns['release_date'] = 'release_date';
 
 	return $columns;
 }
-<<<<<<< HEAD
-/* Only run our customization on the 'edit.php' page in the admin. */
-add_action( 'load-edit.php', 'th_edit_credits_load' );
-
-function th_edit_credits_load() {
-	add_filter( 'request', 'th_sort_credits' );
-}
-
-=======
 
 
 /* Only run our customization on the 'edit.php' page in the admin. */
@@ -796,7 +736,6 @@ add_action( 'load-edit.php', 'th_edit_credits_load' );
 function th_edit_credits_load() {
 	add_filter( 'request', 'th_sort_credits' );
 }
->>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 /* Sorts the credits. */
 function th_sort_credits( $vars ) {
 
@@ -820,8 +759,6 @@ function th_sort_credits( $vars ) {
 	return $vars;
 }
 
-<<<<<<< HEAD
-=======
 
 // Filter admin columns by credit_share taxonomy
 // See: https://developer.wordpress.org/reference/hooks/restrict_manage_posts/
@@ -874,7 +811,6 @@ function th_filter_request_query($query){
     return $query;
 }
 
->>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 /**************  END: ADMIN COLUMNS  *************************************************/
 
 

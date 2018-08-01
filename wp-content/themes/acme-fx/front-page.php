@@ -12,10 +12,6 @@
  */
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 // Function to initiate widgetized page render.
 add_action( 'genesis_meta', 'acme_front_page_init' );
 function acme_front_page_init() {

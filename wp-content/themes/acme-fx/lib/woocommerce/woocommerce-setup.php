@@ -14,11 +14,8 @@ add_action( 'wp_enqueue_scripts', 'genesis_sample_products_match_height', 99 );
 /**
  * Print an inline script to the footer to keep products the same height.
  *
-<<<<<<< HEAD
-=======
  * Mod:  added cart and product pages
  *
->>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
  * @since 2.3.0
  */
 function genesis_sample_products_match_height() {

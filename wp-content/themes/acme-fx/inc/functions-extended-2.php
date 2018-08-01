@@ -30,23 +30,14 @@
 /**
  *   Hide ACF menu, except for user: tomas-acme-dev-admin
  */
-<<<<<<< HEAD
-//******************************************************************* TURNED OFF FOR SWP SUPPORT ****************************************
-// add_filter( 'acf/settings/show_admin', 'th_acf_hide_for_most' );
-=======
 add_filter( 'acf/settings/show_admin', 'th_acf_hide_for_most' );
->>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 
 function th_acf_hide_for_most( $content ) {
 
 $current_user = wp_get_current_user();
 $current_username = $current_user->user_login;
 
-<<<<<<< HEAD
-	if ( $current_username == 'tomas-acme-dev-admin' || 'Amy' ) {
-=======
 	if ( $current_username == 'tomas-acme-dev-admin' ) {
->>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 		return $content;
 	} else {
 		return false;
@@ -57,12 +48,7 @@ $current_username = $current_user->user_login;
 /**
  *   ACF Widgets -- Enable LITE MODE, except for user: tomas-acme-dev-admin (if not deactivated)
  */
-<<<<<<< HEAD
-//******************************************************************* TURNED OFF FOR SWP SUPPORT ****************************************
-// add_filter( 'acfw_lite', 'th_acf_widgets_hide_for_most' ); // hides all admin screens but the plugin stays active if installed. Similar to ACF hide.
-=======
 add_filter( 'acfw_lite', 'th_acf_widgets_hide_for_most' ); // hides all admin screens but the plugin stays active if installed. Similar to ACF hide.
->>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 
 function th_acf_widgets_hide_for_most( $content ) {
 
@@ -89,11 +75,7 @@ genesis_register_widget_area( array(
 //  Display FX Gallery wigets on the FX Gallery page
 add_action( 'genesis_after_entry_content', 'th_add_fx_gallery_widgets' );
 function th_add_fx_gallery_widgets() {
-<<<<<<< HEAD
-	if ( is_page( 'special-effects') )
-=======
 	if ( is_page( array( 'special-effects' ) ) )
->>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 	genesis_widget_area( 'fx-gallery-widget-area', array(
         'before' => '<div class="all-fx-widgets">',
         'after' => '</div>',

@@ -142,17 +142,6 @@ function th_staff_repeater() {
 function th_main_credits_loop() {
 	global $post;
 
-<<<<<<< HEAD
-	// 
-	$args = array(
-		'post_type'	=> 'credits',
-		'post_status' => 'publish',
-		'posts_per_page' => -1,
-		'meta_key' => 'release_date',
-		'meta_type' => 'NUMERIC',
-		'orderby' => 'meta_value',
-		'order' => 'DESC'
-=======
 	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
 	$front_end_priority = 0;
@@ -197,7 +186,6 @@ function th_main_credits_loop() {
         	),
 		'posts_per_page' => -1,
 		'paged' => $paged,
->>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 	);
 
 
@@ -216,28 +204,6 @@ function th_main_credits_loop() {
 
 		while ( $loop->have_posts() ) : $loop->the_post(); 
 
-<<<<<<< HEAD
-			$title = get_the_title();
-
-				$image = (int) get_post_meta( get_the_ID(), 'poster_image', true );
-			$image_url = $image ? wp_get_attachment_image( $image, 'credit-poster' ) : '';
-
-				$release_date = (int) get_post_meta( get_the_ID(), 'release_date', true );
-				$year = substr( $release_date , 0, 4 );
-				$front_end_date = esc_html( get_post_meta( get_the_ID(), 'front_end_date', true ) );
-				$show_date = $front_end_date ? $front_end_date : $year;
-
-			$url = esc_url( get_post_meta( get_the_ID(), 'imdb_link', true ) );
-
-			$project_type = esc_html( get_post_meta( get_the_ID(), 'project_type', true ) );
-
-
-			echo '<li><a href="' . $url . '" target="_blank" ><div class="match-height-item" >' . $image_url . '</div><p>' . $title . '</p><p>' . $show_date . '</p><p>' . $project_type . '</p></a></li>';
-
-
-		endwhile;
-
-=======
 			$credit_id = get_the_ID();
 
 			$title = get_the_title();
@@ -267,7 +233,6 @@ function th_main_credits_loop() {
 		endwhile;
 
 
->>>>>>> 2e87e513cbc1cfae91d0ba58819db76ef4157f15
 		echo '</ul>';
 		echo '</article>';
 
