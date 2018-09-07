@@ -69,7 +69,7 @@ function th_individual_credits_loop() {
 
 		echo '<article class="page entry">';
 
-		echo '<hr><p>Check out ' . $sync_name . '\'s <a href="' . $personal_imdb . '" target="_blank" >IMDb resume</a>';
+		echo '<hr><p>Check out ' . $sync_name . '\'s <a href="' . $personal_imdb . '" target="_blank" >IMDb resume</a></p>';
 
 
 	if ( $loop->have_posts() ) :
