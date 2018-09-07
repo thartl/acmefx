@@ -431,7 +431,7 @@ function th_genesis_do_taxonomy_title_only() {
 
 }
 
-//  Unhook originnal genesis_do_archive_headings_headline() and hook th_do_archive..., now with a link to reload page without filters
+//  Unhook original genesis_do_archive_headings_headline() and hook th_do_archive..., now with a link to reload page without filters
 remove_action( 'genesis_archive_title_descriptions', 'genesis_do_archive_headings_headline', 10, 3 );
 add_action( 'genesis_archive_title_descriptions', 'th_do_archive_headings_headline', 10, 3 );
 /**
@@ -455,8 +455,8 @@ function th_do_archive_headings_headline( $heading = '', $intro_text = '', $cont
 
 
 
-// th-- Hook in taxonomy description (Genesis)
-add_action( 'genesis_after_loop', 'th_genesis_do_taxonomy_description_only', 15 );
+// th-- Hook in taxonomy intro text (Genesis) for bottom of 1st page of shop category or tag page (description continued)
+add_action( 'genesis_after_loop', 'th_genesis_do_taxonomy_description_continued_only', 15 );
 /**
  * Add custom heading and / or description to category / tag / taxonomy archive pages.
  *
@@ -473,7 +473,7 @@ add_action( 'genesis_after_loop', 'th_genesis_do_taxonomy_description_only', 15 
  *
  * @return void Return early if not the correct archive page, or no term is found.
  */
-function th_genesis_do_taxonomy_description_only() {
+function th_genesis_do_taxonomy_description_continued_only() {
 
 	global $wp_query;
 
@@ -490,8 +490,6 @@ function th_genesis_do_taxonomy_description_only() {
 		return;
 	}
 
-	$heading = '';
-
 	$description_continued = get_term_meta( $term->term_id, 'intro_text', true );
 
 	if( $description_continued && !is_paged() ) {
@@ -500,20 +498,12 @@ function th_genesis_do_taxonomy_description_only() {
 		$intro_text = '';
 	}
 
-	$intro_text = apply_filters( 'genesis_term_intro_text_output', $intro_text ? $intro_text : '' );
+//	$intro_text = apply_filters( 'genesis_term_intro_text_output', $intro_text ? $intro_text : '' );
+//	$intro_text = $intro_text ? $intro_text : '';
 
-	/**
-	 * Archive headings output hook.
-	 *
-	 * Allows you to reorganize output of the archive headings.
-	 *
-	 * @since 2.5.0
-	 *
-	 * @param string $heading    Archive heading.
-	 * @param string $intro_text Archive intro text.
-	 * @param string $context    Context.
-	 */
-	do_action( 'genesis_archive_title_descriptions', $heading, $intro_text, 'taxonomy-archive-description' );
+	if( $intro_text ) {
+		echo '<div class="archive-description">' . $intro_text . '</div>';
+    }
 
 }
 
