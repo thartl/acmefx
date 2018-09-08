@@ -4067,6 +4067,11 @@ body .fbx-inner {
 	max-width: 640px;
 	margin: 50px auto 40px;
 }
+.entry-content .fluid-width-video-wrapper {
+	width: 100%;
+	max-width: 1120px;
+	margin: 50px auto 40px;
+}
 .entry-content figure {
 	margin-top: 50px;
 }
