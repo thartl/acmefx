@@ -630,7 +630,7 @@ function pw_custom_save_custom_fields( $post_id ) {
 
 
 // remove "Add to cart" and Quantity field from pages with product attribute Departments set to Rentals, by way of CSS (wrap in div.no-price)
-add_action( 'woocommerce_single_product_summary', 'th_remove_price_and_quantity', 25 );
+add_action( 'woocommerce_single_product_summary', 'th_remove_price_and_quantity', 250 );
 function th_remove_price_and_quantity() {
 	global $product;
 	$departments = $product->get_attribute( 'pa_departments' );
@@ -641,7 +641,7 @@ function th_remove_price_and_quantity() {
 				echo '<div class="no-price">';
 
 			}
-			add_action( 'woocommerce_after_add_to_cart_button', 'th_div_to_hide_price_and_quantity_end', 25 );
+			add_action( 'woocommerce_after_add_to_cart_button', 'th_div_to_hide_price_and_quantity_end', 250 );
 			function th_div_to_hide_price_and_quantity_end() {
 				echo '</div>';
 			}
@@ -651,7 +651,7 @@ function th_remove_price_and_quantity() {
 
 // ********************************************************************************************  HOOK DEACTIVATED TO HIDE PRICING
 // Display rental pricing table on a single product page -- when product attribute Departments is set to Rentals
-// add_action( 'woocommerce_single_product_summary', 'th_add_price_table', 25 );
+//add_action( 'woocommerce_single_product_summary', 'th_add_price_table', 25 );
 function th_add_price_table() {
 	$daily_rental_price = esc_html( get_post_meta( get_the_ID(), '_day_rental_price', true ) );
 	$weekly_rental_price = esc_html( get_post_meta( get_the_ID(), '_week_rental_price', true ) );
