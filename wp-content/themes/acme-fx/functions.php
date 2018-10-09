@@ -630,7 +630,7 @@ function pw_custom_save_custom_fields( $post_id ) {
 
 
 // remove "Add to cart" and Quantity field from pages with product attribute Departments set to Rentals, by way of CSS (wrap in div.no-price)
-add_action( 'woocommerce_single_product_summary', 'th_remove_price_and_quantity', 250 );
+add_action( 'woocommerce_single_product_summary', 'th_remove_price_and_quantity', 1 );
 function th_remove_price_and_quantity() {
 	global $product;
 	$departments = $product->get_attribute( 'pa_departments' );
@@ -646,6 +646,7 @@ function th_remove_price_and_quantity() {
 				echo '</div>';
 			}
 		}
+echo 'TEST42';
 }
 
 
