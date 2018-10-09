@@ -636,14 +636,16 @@ function th_remove_price_and_quantity() {
 	$departments = $product->get_attribute( 'pa_departments' );
 	$is_rental = strpos($departments, 'Rentals' ) !== false ? true : false;
 		if( $is_rental ) {
-			add_action( 'woocommerce_before_add_to_cart_button', 'th_div_to_hide_price_and_quantity' );
+
+			add_action( 'woocommerce_before_add_to_cart_button', 'th_div_to_hide_price_and_quantity', 5 );
 			function th_div_to_hide_price_and_quantity() {
 				echo '<div class="no-price">';
 
 			}
+
 			add_action( 'woocommerce_after_add_to_cart_button', 'th_div_to_hide_price_and_quantity_end', 250 );
 			function th_div_to_hide_price_and_quantity_end() {
-				echo '</div>';
+				echo '</div><!-- .no-price -->';
 			}
 		}
 
