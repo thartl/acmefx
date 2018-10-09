@@ -646,7 +646,7 @@ function th_remove_price_and_quantity() {
 				echo '</div>';
 			}
 		}
-echo 'TEST42';
+
 }
 
 
