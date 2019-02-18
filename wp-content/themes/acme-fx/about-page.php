@@ -8,7 +8,7 @@
 
 
 // Enqueue shuffle script (cache-busting)
-add_action( 'wp_enqueue_scripts', 'th_enqueue_shuffle_on_about' );
+//add_action( 'wp_enqueue_scripts', 'th_enqueue_shuffle_on_about' );
 function th_enqueue_shuffle_on_about() {
 
 	$script_uri      = get_stylesheet_directory_uri() . '/js/th_shuffle_children.js';
