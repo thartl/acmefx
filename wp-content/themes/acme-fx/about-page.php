@@ -37,7 +37,6 @@ function th_partner_repeater() {
 	$team_section_title = esc_html( get_post_meta( get_the_ID(), 'team_section_title', true ) );
 
 	$team_members = get_post_meta( get_the_ID(), 'about-team', true );
-	$all_meta = get_post_meta( get_the_ID() );  // for testing only
 
 	$partners_array = array();
 
