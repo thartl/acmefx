@@ -7,6 +7,20 @@
 
 
 
+// Enqueue shuffle script (cache-busting)
+add_action( 'wp_enqueue_scripts', 'th_enqueue_shuffle_on_about' );
+function th_enqueue_shuffle_on_about() {
+
+	$script_uri      = get_stylesheet_directory_uri() . '/js/th_shuffle_children.js';
+	$script_location = get_stylesheet_directory() . '/js/th_shuffle_children.js';
+	$last_modified       = date( "Y-m-d_h.i.s", filemtime( $script_location ) );
+
+	// Enqueue the script.
+	wp_enqueue_script( 'th_shuffle_children', $script_uri, array( 'jquery' ), $last_modified, true );
+
+}
+
+
 add_action( 'genesis_after_entry_content', 'th_partner_repeater', 10 );
 
 add_action( 'genesis_after_entry_content', 'th_staff_repeater', 12 );
@@ -35,13 +49,14 @@ function th_partner_repeater() {
 
 		}
 
-		shuffle( $partners_array );
+		/** Using th_shuffle_children.js instead */
+//		shuffle( $partners_array );
 
 
 		echo '<hr>
 				<b id="partners" class="raise-anchor">&nbsp</b>
 				<h2>' . $team_section_title . '</h2>
-				<div class="all-cameos">';
+				<div class="all-cameos shuffle-children">';
 
 		foreach( $partners_array as $i ) {
 
@@ -96,7 +111,7 @@ function th_staff_repeater() {
 		echo '<hr>
 				<b id="staff" class="raise-anchor">&nbsp</b>
 				<h2>' . $staff_section_title . '</h2>
-				<div class="all-cameos">';
+				<div class="all-cameos shuffle-children">';
 
 		foreach( $staff_array as $i ) {
 
