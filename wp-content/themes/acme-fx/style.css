@@ -2824,14 +2824,14 @@ div.grid-list-switch {
 .woocommerce .woocommerce-Price-amount::before {
 	content: '\00a0';
 }
-.menu-partners-staff-container ul {
+.widget_nav_menu ul.menu {
 	padding: 15px 0 30px;
 }
-.menu-partners-staff-container a {
-	color: #fff;
-}
-.menu-partners-staff-container ul.menu li {
+.widget_nav_menu ul.menu li {
 	padding-bottom: 0;
+}
+.widget_nav_menu ul.menu li a {
+	color: #fff;
 }
 
 /* # Footer Widgets
