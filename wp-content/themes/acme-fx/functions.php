@@ -329,6 +329,7 @@ function th_jpeg_100() {
 	if ( is_plugin_active( 'wp-smush-pro/wp-smush.php' ) ) {
 		return 100;
 	}
+	return 90;
 }
 
 // Add Image Sizes.
