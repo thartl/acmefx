@@ -2950,13 +2950,6 @@ div.grid-list-switch {
 	background-color: transparent;
 	z-index: 1;
 }
-/* body .widget.simple-social-icons ul li a {
-	border: 1px solid transparent !important;
-	background-color: transparent !important;
-}
-.simple-social-icons ul li {
-	margin-bottom: 0 !important;
-} */
 ul.social-icons li {
 	float: left;
 	margin-right: 20px;
@@ -3627,10 +3620,6 @@ div.agm_mh_info_content {
 /* # Headhesive
 ---------------------------------------------------------------------------------------------------- */
 
-/* .headhesive {
-	display: none;
-} */
-
 .site-header {
 	padding: 0;
 }
@@ -4109,12 +4098,19 @@ body .fbx-inner {
 }
 
 
-
 /* # Admin meta
 ---------------------------------------------------------------------------------------------------- */
 .front-end-priority {
 	color: #FE8E0E;
 }
+
+
+/* # FooBox
+---------------------------------------------------------------------------------------------------- */
+.fbx-modal.fbx-light {
+	background-color: rgba(0,0,0,0.97);
+}
+
 
 /* # Temporary fix for wpmudev Google Map plugin
  * See: https://premium.wpmudev.org/forums/topic/styling-issue-with-google-maps-buttons
