@@ -4008,7 +4008,6 @@ p.bring-dock {
 
 /* FooGallery
 ---------------------------------------------------------------------------------------------------- */
-
 .foogallery-image-viewer > .fiv-inner > .fiv-ctrls {
     padding: 10px 0 0 0;
 }
@@ -4035,7 +4034,7 @@ body .fbx-inner {
 	margin: initial;
 	display: initial;
 }
-.wp-caption-text {
+.page-child.parent-pageid-69 .content .wp-caption-text {
 	margin-bottom: 40px;
 	margin-top: -20px;
 }

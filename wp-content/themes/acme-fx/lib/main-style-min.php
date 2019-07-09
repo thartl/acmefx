@@ -42,20 +42,20 @@ function genesis_cache_bust_load_stylesheet() {
 
 
 	/** MINIFICATION - turn off for development */
-	 if ( file_exists( $min_stylesheet_location ) ) {
+	if ( file_exists( $min_stylesheet_location ) && ( ! defined( 'SCRIPT_DEBUG' ) || ! SCRIPT_DEBUG ) ) {
 
-	 	$original_file_size = filesize( $stylesheet_location );
-	 	$min_file_size = filesize( $min_stylesheet_location );
-	 	$fraction_of_original = $min_file_size / $original_file_size;
-	 	$min_at_least_twenty_percent = $fraction_of_original > 0.2;
+		$original_file_size          = filesize( $stylesheet_location );
+		$min_file_size               = filesize( $min_stylesheet_location );
+		$fraction_of_original        = $min_file_size / $original_file_size;
+		$min_at_least_twenty_percent = $fraction_of_original > 0.2;
 
-	 	if ( $min_at_least_twenty_percent ) {
-	 		$stylesheet_uri = get_stylesheet_directory_uri() . '/css/main-min/' . $last_modified . '/style.min.css';
-	 	}
-	 } else {
-	 	// If minified version does not exist, create it.
-	 	add_action( 'shutdown', 'th_minify_main_style' );
-	 }
+		if ( $min_at_least_twenty_percent ) {
+			$stylesheet_uri = get_stylesheet_directory_uri() . '/css/main-min/' . $last_modified . '/style.min.css';
+		}
+	} else {
+		// If minified version does not exist, create it.
+		add_action( 'shutdown', 'th_minify_main_style' );
+	}
 
 
 	// Enqueue the stylesheet.
@@ -63,9 +63,7 @@ function genesis_cache_bust_load_stylesheet() {
 }
 
 /** Create a directory (directories), call th_get_minified_version() to get minified version, and delete previous directories */
-/** Add to .gitignore:
- *    wp-content/themes/parkdalewire/css/main-min/
- *    wp-content/themes/parkdalewire/css/main-min/**
+/**
  **/
 function th_minify_main_style() {
 
@@ -81,7 +79,9 @@ function th_minify_main_style() {
 		mkdir( get_stylesheet_directory() . '/css/main-min', 0775 );
 	}
 
-	mkdir( get_stylesheet_directory() . '/css/main-min/' . $last_modified, 0775 );
+	if ( ! is_dir( get_stylesheet_directory() . '/css/main-min/' . $last_modified ) ) {
+		mkdir( get_stylesheet_directory() . '/css/main-min/' . $last_modified, 0775 );
+	}
 
 	$new_min_folder = get_stylesheet_directory() . '/css/main-min/' . $last_modified;
 
