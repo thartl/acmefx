@@ -832,13 +832,13 @@ add_filter( 'wp_nav_menu_args', 'be_primary_menu_args' );
  * Disable REST API for non-logged-in users. Used to exclude Woo Memberships restricted content from REST API.
  */
 /** TODO: This breaks WP Engine Content Performance's connection.  Filter by request type or such... or maybe there is a DB entry for Woo protected content to look for? */
-add_filter( 'rest_authentication_errors', function( $result ) {
-	if ( ! empty( $result ) ) {
-		return $result;
-	}
-	if ( ! is_user_logged_in() ) {
-		return new WP_Error( 'rest_not_logged_in', 'You are not currently logged in.', array( 'status' => 401 ) );
-	}
-	return $result;
-});
+//add_filter( 'rest_authentication_errors', function( $result ) {
+//	if ( ! empty( $result ) ) {
+//		return $result;
+//	}
+//	if ( ! is_user_logged_in() ) {
+//		return new WP_Error( 'rest_not_logged_in', 'You are not currently logged in.', array( 'status' => 401 ) );
+//	}
+//	return $result;
+//});
 
