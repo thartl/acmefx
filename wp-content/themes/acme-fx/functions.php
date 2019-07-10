@@ -779,7 +779,6 @@ function b3m_search_button_dashicon( $text ) {
 
 // Woocommerce search - search icon + 
 add_filter( 'get_product_search_form' , 'woo_custom_product_searchform' );
-
 /**
  * woo_custom_product_searchform
  *
