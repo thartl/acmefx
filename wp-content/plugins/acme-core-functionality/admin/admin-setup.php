@@ -26,7 +26,7 @@ function load_admin_styles() {
 		'acme-fx-admin-style',
 		ACME_FX_CORE_URL . 'assets/css/admin-style.css',
 		array(),
-		'1.0.0'
+		ACME_FX_CORE_VERSION
 	);
 
 }
