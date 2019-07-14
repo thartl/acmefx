@@ -1,6 +1,5 @@
 <?php
 /**
- * Acme FX.
  *
  * This file adds functions to the Acme FX Theme.
  *
@@ -101,55 +100,10 @@ function th_add_admin_bar_links() {
 //	if ( !is_super_admin() || !is_admin_bar_showing() ) return;
 	if ( !( current_user_can( 'manage_options' ) || current_user_can( 'manage_woocommerce' ) ) || !is_admin_bar_showing() ) return;
 	if ( $current_user == 11 || 1 == 1 ) {  // For Tomas OR turn on for all
-		$wp_admin_bar->add_menu( array( 
-			'id' => 'page_2_link', 
-			'title' => __( 'Pages (2)'), 
-			'href' => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=page&paged=2',
-			)
-		);
-		$wp_admin_bar->add_menu( array( 
-			'id' => 'page_3_link', 
-			'title' => __( 'Pages (3)'), 
-			'href' => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=page&paged=3',
-			) 
-		);
-		$wp_admin_bar->add_menu( array( 
-			'id' => 'page_4_link', 
-			'title' => __( 'Pages (4)'), 
-			'href' => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=page&paged=4',
-			) 
-		);
-		$wp_admin_bar->add_menu( array( 
+		$wp_admin_bar->add_menu( array(
 			'id' => 'credits_rd_desc_link', 
 			'title' => __( 'Credits r.d.'), 
 			'href' => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=credits&orderby=release_date&order=desc',
-			)
-		);
-	}
-
-	if ( $current_user == 0 ) {  // 5 for Amy
-		$wp_admin_bar->add_menu( array(
-				'id'    => 'amy_credits_2_link',
-				'title' => __( 'Credits (2)' ),
-				'href'  => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=credits&paged=2'
-			)
-		);
-		$wp_admin_bar->add_menu( array(
-				'id'    => 'amy_credits_3_link',
-				'title' => __( 'Credits (3)' ),
-				'href'  => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=credits&paged=3'
-			)
-		);
-		$wp_admin_bar->add_menu( array(
-				'id'    => 'amy_credits_4_link',
-				'title' => __( 'Credits (4)' ),
-				'href'  => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=credits&paged=4'
-			)
-		);
-		$wp_admin_bar->add_menu( array(
-				'id'    => 'amy_credits_5_link',
-				'title' => __( 'Credits (5)' ),
-				'href'  => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=credits&paged=5'
 			)
 		);
 	}
@@ -159,9 +113,8 @@ function th_add_admin_bar_links() {
 add_action('wp_before_admin_bar_render', 'th_add_admin_bar_links', 12);
 
 
-//******************************************************************* TURNED OFF FOR SWP SUPPORT ****************************************
-// Remove WP Migrate DB Pro, CPT UI, except for Tomas, Amy
-// add_action( 'admin_menu', 'th_remove_migrate_db_menu', 999 );
+// Remove WP Migrate DB Pro, (CPT UI), except for Tomas, Amy
+ add_action( 'admin_menu', 'th_remove_migrate_db_menu', 999 );
 function th_remove_migrate_db_menu() {
 
 $current_user = wp_get_current_user();
@@ -169,7 +122,7 @@ $current_username = $current_user->user_login;
 
 	if ( $current_username !== 'tomas-acme-dev-admin' && $current_username !== 'Amy' ) {
 		remove_submenu_page( 'tools.php', 'wp-migrate-db-pro' );
-		remove_menu_page( 'cptui_main_menu' );
+//		remove_menu_page( 'cptui_main_menu' );
 	}
 }
 
@@ -177,7 +130,7 @@ $current_username = $current_user->user_login;
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Acme FX' );
 define( 'CHILD_THEME_URL', 'https://parkdalewire.com/' );
-define( 'CHILD_THEME_VERSION', '1.0.1' );
+define( 'CHILD_THEME_VERSION', '1.0.2' );
 
 
 // Enqueue Scripts and Styles.
@@ -353,7 +306,8 @@ function genesis_sample_comments_gravatar( $args ) {
 	return $args;
 
 }
-add_filter( 'header_video_settings', 'my_header_video_settings');
+
+//add_filter( 'header_video_settings', 'my_header_video_settings');
 function my_header_video_settings( $settings ) {
   $settings['l10n'] = array(
     'pause'      => __( '<span class="dashicons dashicons-controls-pause"></span>' ),
@@ -364,10 +318,6 @@ function my_header_video_settings( $settings ) {
   return $settings;
 }
 
-
-//* Reposition the primary navigation menu
-// remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-// add_action( 'genesis_header', 'genesis_do_subnav' );
 
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
 add_action( 'genesis_after_header', 'genesis_do_nav', 5 );
@@ -543,7 +493,7 @@ add_filter( 'the_content_more_link', 'be_more_link' );
 // ******************************  WOOCOMMERCE  **************************************** //
 // ************************************************************************************* //
 
-/** Disable Ajax call from WooCommerce, except woocommerce pages etc., incl. pages with sidebars (mini-cart) */
+/** Disable Ajax call from WooCommerce, except: woocommerce pages etc. AND pages with sidebars (mini-cart) */
 add_action( 'wp_enqueue_scripts', 'dequeue_woocommerce_cart_fragments', 1001); 
 function dequeue_woocommerce_cart_fragments() {
 
