@@ -606,7 +606,7 @@ function th_elements_match_height() {
 /**************  ADMIN COLUMNS  *************************************************/
 
 // Add admin columns for Credits
-add_filter( 'manage_edit-credits_columns', 'th_credits_columns' ) ;
+//add_filter( 'manage_edit-credits_columns', 'th_credits_columns' ) ;
 
 function th_credits_columns( $columns ) {
 
@@ -626,7 +626,7 @@ function th_credits_columns( $columns ) {
 
 
 //  Populate admin columns for Credits
-add_action( 'manage_credits_posts_custom_column', 'th_manage_credits_columns', 10, 2 );
+//add_action( 'manage_credits_posts_custom_column', 'th_manage_credits_columns', 10, 2 );
 
 function th_manage_credits_columns( $column, $post_id ) {
 	global $post;
@@ -711,7 +711,7 @@ function th_manage_credits_columns( $column, $post_id ) {
 }
 
 // Make Release date column sortable
-add_filter( 'manage_edit-credits_sortable_columns', 'th_credits_sortable_columns' );
+//add_filter( 'manage_edit-credits_sortable_columns', 'th_credits_sortable_columns' );
 
 function th_credits_sortable_columns( $columns ) {
 
@@ -722,7 +722,7 @@ function th_credits_sortable_columns( $columns ) {
 
 
 /* Only run our customization on the 'edit.php' page in the admin. */
-add_action( 'load-edit.php', 'th_edit_credits_load' );
+//add_action( 'load-edit.php', 'th_edit_credits_load' );
 function th_edit_credits_load() {
 	add_filter( 'request', 'th_sort_credits' );
 }
@@ -752,7 +752,7 @@ function th_sort_credits( $vars ) {
 
 // Filter admin columns by credit_share taxonomy
 // See: https://developer.wordpress.org/reference/hooks/restrict_manage_posts/
-add_action('restrict_manage_posts','th_filter_credit_share_tax',10,2);
+//add_action('restrict_manage_posts','th_filter_credit_share_tax',10,2);
 function th_filter_credit_share_tax( $post_type, $which ){
     if('credits' !== $post_type){
       return; //check to make sure this is your cpt
@@ -776,12 +776,14 @@ function th_filter_credit_share_tax( $post_type, $which ){
       'hide_empty'      =>  false, // Don't show posts w/o terms
     ));
 }
-add_filter( 'parse_query', 'th_filter_request_query' , 10);
+//add_filter( 'parse_query', 'th_filter_request_query' , 10);
 function th_filter_request_query($query){
     //modify the query only if it is admin and main query.
     if( !(is_admin() AND $query->is_main_query()) ){ 
       return $query;
     }
+//    $d = $query->is_main_query();
+//    d( 'inside inside inside inside inside inside inside inside inside ' . $d );
     //we want to modify the query for the targeted custom post.
     if( 'credits' !== $query->query['post_type'] ){
       return $query;
@@ -804,7 +806,7 @@ function th_filter_request_query($query){
 /**************  END: ADMIN COLUMNS  *************************************************/
 
 
-// Adds parameters to vimeo embeds
+// Adds parameters to Vimeo embeds
 add_filter( 'oembed_fetch_url', 'th_oembed_fetch_url', 10, 3 );
 
 function th_oembed_fetch_url( $provider, $url, $args ) {

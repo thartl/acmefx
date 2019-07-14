@@ -1,0 +1,13 @@
+#adminmenu .menu-icon-credits a,
+#adminmenu .menu-icon-credits .wp-submenu li.current a,
+#adminmenu .menu-icon-credits a .wp-menu-image:before {
+	color: #da6b03;
+}
+
+/*#adminmenu .menu-icon-YourCPT a,*/
+/*#adminmenu .menu-icon-YourCPT .wp-submenu li.current a,*/
+/*#adminmenu .menu-icon-YourCPT a .wp-menu-image:before {*/
+/*	color: #439738;*/
+/*}*/
+
+

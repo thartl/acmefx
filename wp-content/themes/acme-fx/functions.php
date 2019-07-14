@@ -127,34 +127,35 @@ function th_add_admin_bar_links() {
 		);
 	}
 
-		if ( $current_user == 0  ) {  // 5 for Amy
-		$wp_admin_bar->add_menu( array( 
-			'id' => 'amy_credits_2_link', 
-			'title' => __( 'Credits (2)'), 
-			'href' => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=credits&paged=2'
+	if ( $current_user == 0 ) {  // 5 for Amy
+		$wp_admin_bar->add_menu( array(
+				'id'    => 'amy_credits_2_link',
+				'title' => __( 'Credits (2)' ),
+				'href'  => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=credits&paged=2'
 			)
 		);
-		$wp_admin_bar->add_menu( array( 
-			'id' => 'amy_credits_3_link', 
-			'title' => __( 'Credits (3)'), 
-			'href' => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=credits&paged=3'
-			) 
+		$wp_admin_bar->add_menu( array(
+				'id'    => 'amy_credits_3_link',
+				'title' => __( 'Credits (3)' ),
+				'href'  => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=credits&paged=3'
+			)
 		);
-		$wp_admin_bar->add_menu( array( 
-			'id' => 'amy_credits_4_link', 
-			'title' => __( 'Credits (4)'), 
-			'href' => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=credits&paged=4'
-			) 
+		$wp_admin_bar->add_menu( array(
+				'id'    => 'amy_credits_4_link',
+				'title' => __( 'Credits (4)' ),
+				'href'  => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=credits&paged=4'
+			)
 		);
-		$wp_admin_bar->add_menu( array( 
-			'id' => 'amy_credits_5_link', 
-			'title' => __( 'Credits (5)'), 
-			'href' => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=credits&paged=5'
+		$wp_admin_bar->add_menu( array(
+				'id'    => 'amy_credits_5_link',
+				'title' => __( 'Credits (5)' ),
+				'href'  => esc_url( home_url( '/' ) ) . 'wp-admin/edit.php?post_type=credits&paged=5'
 			)
 		);
 	}
 
 }
+
 add_action('wp_before_admin_bar_render', 'th_add_admin_bar_links', 12);
 
 
