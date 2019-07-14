@@ -72,7 +72,7 @@ class CPT_Document {
 			'labels'             => $labels,
 			'public'             => false,
 			'show_in_menu'       => false,
-			'show_in_quick_edit' => true,
+			'show_in_quick_edit' => false, // true will delete tax info when using Quick Edit
 			'show_tagcloud'      => false,
 			'hierarchical'       => false,
 			"rewrite"            => array( 'slug' => 'doc-type', 'with_front' => true, ),
