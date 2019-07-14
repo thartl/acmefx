@@ -12,7 +12,7 @@
 namespace ParkdaleWire\AcmeFxCore;
 
 
-//add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\load_admin_styles' );
+add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\load_admin_styles' );
 /**
  * Enqueue admin styles.
  *
