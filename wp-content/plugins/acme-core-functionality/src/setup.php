@@ -21,7 +21,6 @@ if ( is_admin() ) {
 // Include post types and taxonomies
 require_once ACME_FX_CORE_DIR . 'inc/cpt-credits.php';
 
-
 //add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
 /**
  * Enqueue the plugin assets.
@@ -36,16 +35,16 @@ function enqueue_assets() {
 //		'micromodal-styles',
 //		ACME_FX_CORE_URL . 'assets/css/micromodal.css',
 //		array(),
-//		'1.0.0'
+//		ACME_FX_CORE_VERSION
 //	);
 
-//	wp_enqueue_script(
-//		'micromodal-script',
-//		ACME_FX_CORE_URL . 'assets/js/micromodal.min.js',
-//		array(),
-//		'1.0.0',
-//		true
-//	);
+	wp_enqueue_script(
+		'pw-global',
+		ACME_FX_CORE_URL . 'assets/js/pw-global.js',
+		array(),
+		ACME_FX_CORE_VERSION,
+		true
+	);
 
 }
 

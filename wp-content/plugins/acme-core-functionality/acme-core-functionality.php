@@ -28,15 +28,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'ACME_FX_CORE_VERSION', '1.0.0' );
 
-define( 'ACME_FX_CORE_PLUGIN_PATH', __FILE__ );
+define( 'ACME_FX_CORE_PLUGIN_PATH', __FILE__ ); // full path, ending in '.php'
 
-define( 'ACME_FX_CORE_DIR', trailingslashit( __DIR__ ) );
+define( 'ACME_FX_CORE_DIR', trailingslashit( __DIR__ ) ); // ends with a slash
 
 $plugin_url = plugin_dir_url( __FILE__ );
 if ( is_ssl() ) {
 	$plugin_url = str_replace( 'http://', 'https://', $plugin_url );
 }
-define( 'ACME_FX_CORE_URL', $plugin_url );
+define( 'ACME_FX_CORE_URL', $plugin_url ); // ends with a slash
 
 
 require_once ACME_FX_CORE_DIR . 'src/setup.php';
