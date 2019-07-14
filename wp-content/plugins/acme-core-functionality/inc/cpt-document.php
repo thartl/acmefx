@@ -12,7 +12,7 @@
 namespace ParkdaleWire\AcmeFxCore;
 
 /**
- * Credits custom post type + helpers
+ * Sets up the Document custom post type + helpers
  *
  * Based on: https://github.com/billerickson/Core-Functionality/blob/master/inc/cpt-testimonial.php
  *
@@ -64,24 +64,24 @@ class CPT_Document {
 	function register_tax() {
 
 		$labels = array(
-			'name'          => 'Publication Date',
-			'singular_name' => 'Publication Dates',
+			'name'          => 'Document Type',
+			'singular_name' => 'Document Types',
 		);
 
 		$args = array(
 			'labels'             => $labels,
-			'public'             => false,
-			'show_in_menu'       => false,
-			'show_in_quick_edit' => false,
+			'public'             => true,
+			'show_in_menu'       => true,
+			'show_in_quick_edit' => true,
 			'show_tagcloud'      => false,
 			'hierarchical'       => false,
-			"rewrite"            => array( 'slug' => 'date-published', 'with_front' => true, ),
+			"rewrite"            => array( 'slug' => 'doc-type', 'with_front' => true, ),
 			'query_var'          => true,
 			'show_admin_column'  => true,
 			"show_in_rest"       => false,
 		);
 
-		register_taxonomy( 'date_published', array( 'document' ), $args );
+		register_taxonomy( 'doc_type', array( 'document' ), $args );
 
 	}
 
@@ -94,17 +94,17 @@ class CPT_Document {
 	function register_cpt() {
 
 		$labels = array(
-			'name'               => 'Documents',
-			'singular_name'      => 'Document',
+			'name'               => 'Library Documents',
+			'singular_name'      => 'Library Document',
 			'add_new'            => 'Add New',
-			'add_new_item'       => 'Add New Document',
-			'edit_item'          => 'Edit Document',
-			'new_item'           => 'New Document',
-			'view_item'          => 'View Document',
-			'search_items'       => 'Search Documents',
-			'not_found'          => 'No Documents found',
-			'not_found_in_trash' => 'No Documents found in Trash',
-			'parent_item_colon'  => 'Parent Documents:',
+			'add_new_item'       => 'Add New Library Document',
+			'edit_item'          => 'Edit Library Document',
+			'new_item'           => 'New Library Document',
+			'view_item'          => 'View Library Document',
+			'search_items'       => 'Search Library Documents',
+			'not_found'          => 'No Library Documents found',
+			'not_found_in_trash' => 'No Library Documents found in Trash',
+			'parent_item_colon'  => 'Parent Library Documents:',
 			'menu_name'          => 'Library',
 		);
 
@@ -115,7 +115,7 @@ class CPT_Document {
 			'supports'            => array( 'title' ),
 			'show_ui'             => true,
 			'show_in_menu'        => true,
-			"menu_position"       => 20,
+			"menu_position"       => 21,
 			'show_in_nav_menus'   => true,
 			"delete_with_user"    => false,
 			'publicly_queryable'  => true,
@@ -146,8 +146,8 @@ class CPT_Document {
 	function title_placeholder( $translation ) {
 
 		global $post;
-		if ( isset( $post ) && 'document' == $post->post_type && 'Enter title here' == $translation ) {
-			$translation = 'Enter Document Title here';
+		if ( isset( $post ) && 'document' == $post->post_type && 'Add title' == $translation ) {
+			$translation = 'Enter Document title';
 		}
 
 		return $translation;
@@ -173,6 +173,8 @@ class CPT_Document {
 	 * @since 1.0.0
 	 */
 	function redirect_single() {
+//		global $GLOBALS;
+//		d( $GLOBALS );
 		if ( is_singular( 'document' ) ) {
 			wp_redirect( home_url( '/library/' ) );
 			exit;
@@ -194,7 +196,7 @@ class CPT_Document {
 			'cb'             => '<input type="checkbox" />',
 			'title'          => 'Document',
 			'file_name'   => 'File name',
-			'date_published' => 'Publication date',
+			'year_published' => 'Year published',
 			'doc_page_count'   => 'Pages',
 			'date'           => 'Date',
 		);

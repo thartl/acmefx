@@ -146,8 +146,8 @@ class CPT_Credits {
 	function title_placeholder( $translation ) {
 
 		global $post;
-		if ( isset( $post ) && 'credit' == $post->post_type && 'Enter title here' == $translation ) {
-			$translation = 'Enter Credit Title here';
+		if ( isset( $post ) && 'credits' == $post->post_type && 'Add title' == $translation ) {
+			$translation = 'Enter Credit title';
 		}
 
 		return $translation;

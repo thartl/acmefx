@@ -176,7 +176,7 @@ function th_main_credits_loop() {
 				)
 			),
 		'meta_query' => array(
-			'relation' => 'AND',  // "AND" forces query to read data in 'date_clause', so it can be used for 'orderby' !!!!
+			'relation' => 'AND',  // "AND" forces query to read data in 'date_clause', so it can be used for 'orderby'
         	array(
         		'relation' => 'OR',
         		'priority_clause' => array(

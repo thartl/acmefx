@@ -1,13 +1,19 @@
+#adminmenu .menu-icon-page a,
+#adminmenu .menu-icon-page .wp-submenu li.current a,
+#adminmenu .menu-icon-page a .wp-menu-image:before {
+	color: #cdc900;
+}
+
 #adminmenu .menu-icon-credits a,
 #adminmenu .menu-icon-credits .wp-submenu li.current a,
 #adminmenu .menu-icon-credits a .wp-menu-image:before {
-	color: #da6b03;
+	color: #f07203;
 }
 
-/*#adminmenu .menu-icon-YourCPT a,*/
-/*#adminmenu .menu-icon-YourCPT .wp-submenu li.current a,*/
-/*#adminmenu .menu-icon-YourCPT a .wp-menu-image:before {*/
-/*	color: #439738;*/
-/*}*/
+#adminmenu .menu-icon-document a,
+#adminmenu .menu-icon-document .wp-submenu li.current a,
+#adminmenu .menu-icon-document a .wp-menu-image:before {
+	color: #4bc340;
+}
 
 

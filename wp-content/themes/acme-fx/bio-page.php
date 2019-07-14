@@ -129,6 +129,6 @@ function th_individual_credits_loop() {
 }
 
 
-add_action( 'genesis_loop', 'th_individual_credits_loop', 15 );
+add_action( 'genesis_after_loop', 'th_individual_credits_loop' );
 
 genesis();

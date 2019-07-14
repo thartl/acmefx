@@ -18,8 +18,11 @@ if ( is_admin() ) {
 	require_once ACME_FX_CORE_DIR . 'admin/admin-setup.php';
 }
 
+
 // Include post types and taxonomies
 require_once ACME_FX_CORE_DIR . 'inc/cpt-credits.php';
+require_once ACME_FX_CORE_DIR . 'inc/cpt-document.php';
+
 
 //add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
 /**
