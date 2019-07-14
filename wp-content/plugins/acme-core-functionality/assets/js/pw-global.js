@@ -14,7 +14,7 @@
   $( document ).ready( function() {
 
 
-    window.alert( 'pw-global.js has benn enqueued.' );
+    // window.alert( 'pw-global.js has benn enqueued.' );
 
 
   } );
