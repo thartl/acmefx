@@ -70,8 +70,8 @@ class CPT_Document {
 
 		$args = array(
 			'labels'             => $labels,
-			'public'             => true,
-			'show_in_menu'       => true,
+			'public'             => false,
+			'show_in_menu'       => false,
 			'show_in_quick_edit' => true,
 			'show_tagcloud'      => false,
 			'hierarchical'       => false,
