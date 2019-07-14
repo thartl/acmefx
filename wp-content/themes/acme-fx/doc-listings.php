@@ -44,11 +44,11 @@ function th_doc_repeater() {
 
 			echo '<li><a href="' . $pdf_js_url_complete . '" target="_blank">' . $title . '</a><p>' . $maybe_year_with_middot . '<span class="pages-and-size">' . $pages . $page_s . '&nbsp; &middot; &nbsp;' . $file_size_nice . '</span></p></li>';
 
-			if ( ! th_is_migration_done() ) {
+//			if ( ! th_is_migration_done() ) {
 
-				th_migrate_fields_to_CPT( $title, $doc_id, $year, $pages );
+//				th_migrate_fields_to_CPT( $title, $doc_id, $year, $pages );
 
-			}
+//			}
 
 		}
 
@@ -57,7 +57,7 @@ function th_doc_repeater() {
 	
 }
 
-add_action( 'genesis_after_content', 'th_mark_migration_done' );
+//add_action( 'genesis_after_content', 'th_mark_migration_done' );
 function th_mark_migration_done() {
 	update_post_meta( get_the_ID(), 'th-migration_done', true);
 }
