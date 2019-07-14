@@ -1,7 +1,5 @@
 <?php
 /**
- * Acme FX.
- *
  * This file adds functions to the Acme FX theme.
  * This is overflow from functions.php and functions-extended.php
  *
