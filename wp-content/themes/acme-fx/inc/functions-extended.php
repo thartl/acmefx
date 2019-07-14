@@ -26,59 +26,65 @@ function th_change_text_strings( $translated_text, $text, $domain ) {
 		case 'Apply coupon' :
 			$translated_text = __( 'Redeem', 'woocommerce' );
 			break;
+		default :
+			break;
 	}
+
 	return $translated_text;
 }
+
 add_filter( 'gettext', 'th_change_text_strings', 20, 3 );
 
 
 /** Hover on Touch *
- *	Source:  http://jsfiddle.net/c_kick/s9rB4/
+ *    Source:  http://jsfiddle.net/c_kick/s9rB4/
  *********************************************************/
 //add_action( 'wp_footer', 'th_hover_on_touch', 200 );  // DEACTIVATED
 
 function th_hover_on_touch() {
 
-	?><script type="text/javascript">
+	?>
+    <script type="text/javascript">
 
-		jQuery( function ( $ ) {
+      jQuery( function( $ ) {
 
-				var current_width;
+        var current_width;
 
-			    // Get initial screen size
-			    current_width = document.documentElement.clientWidth;
+        // Get initial screen size
+        current_width = document.documentElement.clientWidth;
 
-		   			// console.log( 'Initial window width is: ' + current_width + ' pixels.' );
+        // console.log( 'Initial window width is: ' + current_width + ' pixels.' );
 
-				// Listen for resize changes
-				window.addEventListener("resize", function() {
+        // Listen for resize changes
+        window.addEventListener( 'resize', function() {
 
-				    // Update screen size
-				    current_width = document.documentElement.clientWidth;
+          // Update screen size
+          current_width = document.documentElement.clientWidth;
 
-		   			// console.log( 'Current window width is: ' + current_width + ' pixels.' );
+          // console.log( 'Current window width is: ' + current_width + ' pixels.' );
 
-				}, true );
+        }, true );
 
 
-			$('a.taphover').on("touchstart", function (e) {
-			    "use strict";
-			    var link = $(this);
-			    if (link.hasClass('hover')) {
-			        return true;
-			        						// condition deactivated  ( || 1 == 1 )
-			        						// .touch-hover-off turns off .hover assignment; .taphover class is still bound to js, which makes :active styling possible for iOS
-			    } else if( current_width > 600 && !($(this).hasClass( 'touch-hover-off' ) ) ) {  
-			        link.addClass("hover");
-			        $('a.taphover').not(this).removeClass("hover");
-			        e.preventDefault();
-			        return false;
-			    }
-			});
+        $( 'a.taphover' ).on( 'touchstart', function( e ) {
+          'use strict';
+          var link = $( this );
+          if ( link.hasClass( 'hover' ) ) {
+            return true;
+            // condition deactivated  ( || 1 == 1 )
+            // .touch-hover-off turns off .hover assignment; .taphover class is still bound to js, which makes :active styling possible for iOS
+          }
+          else if ( current_width > 600 && !( $( this ).hasClass( 'touch-hover-off' ) ) ) {
+            link.addClass( 'hover' );
+            $( 'a.taphover' ).not( this ).removeClass( 'hover' );
+            e.preventDefault();
+            return false;
+          }
+        } );
 
-		});
+      } );
 
-	</script><?php
+    </script><?php
 
 }
 
@@ -87,19 +93,18 @@ function th_hover_on_touch() {
 /************************ th-- WC Grid/List View *********************************************************************************/
 
 /** Add options page for store view constants */
-if( function_exists( 'acf_add_options_page' ) ) {
+if ( function_exists( 'acf_add_options_page' ) ) {
 
 	acf_add_options_page( array(
 		'page_title' => 'Site Options - Custom settings for Acme FX',
 		'menu_title' => 'Site Options',
-		'menu_slug' => 'acme-customizer',
+		'menu_slug'  => 'acme-customizer',
 		'capability' => 'edit_posts',
-		'redirect' => false,
-		'position' => '80.129'
-	));
+		'redirect'   => false,
+		'position'   => '80.129'
+	) );
 
 }
-
 
 
 // Set the number of products per page for Grid, List, and Description Views
@@ -111,14 +116,17 @@ function th_list_view_loop_shop_per_page( $cols ) {
 	$desc_view_products_per_page = esc_html( get_option( 'options_desc_view_products_per_page' ) );
 
 
-	if(!isset($_COOKIE['store_view']) || $_COOKIE['store_view'] == 'grid') {
+	if ( ! isset( $_COOKIE['store_view'] ) || $_COOKIE['store_view'] == 'grid' ) {
 		$cols = $grid_view_products_per_page;
+
 		return $cols;
 	} elseif ( $_COOKIE['store_view'] == 'list' ) {
 		$cols = $list_view_products_per_page;
+
 		return $cols;
 	} elseif ( $_COOKIE['store_view'] == 'desc' ) {
 		$cols = $desc_view_products_per_page;
+
 		return $cols;
 	} else {
 		return $cols;
@@ -130,11 +138,11 @@ function th_list_view_loop_shop_per_page( $cols ) {
 add_action( 'woocommerce_before_shop_loop', 'th_grid_list_buttons', 18 );
 function th_grid_list_buttons() {
 
-	if( !isset($_COOKIE['store_view']) || $_COOKIE['store_view'] == 'grid' ) {
+	if ( ! isset( $_COOKIE['store_view'] ) || $_COOKIE['store_view'] == 'grid' ) {
 
 		echo '<div class="grid-list-switch grid-view">';
 
-	} elseif( $_COOKIE['store_view'] == 'list' ) {
+	} elseif ( $_COOKIE['store_view'] == 'list' ) {
 
 		echo '<div class="grid-list-switch list-view">';
 
@@ -144,9 +152,9 @@ function th_grid_list_buttons() {
 
 	}
 
-		echo '<div class="grid-view-btn" ><svg fill="#fff" class="grid-view-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" x="0px" y="0px"><title>Grid view</title><path d="M501,249v10a2,2,0,0,1-2,2H489a2,2,0,0,1-2-2V249a2,2,0,0,1,2-2h10A2,2,0,0,1,501,249Zm16-2H507a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V249A2,2,0,0,0,517,247Zm18,0H525a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V249A2,2,0,0,0,535,247Zm-36,18H489a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V267A2,2,0,0,0,499,265Zm18,0H507a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V267A2,2,0,0,0,517,265Zm18,0H525a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V267A2,2,0,0,0,535,265Zm-36,18H489a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V285A2,2,0,0,0,499,283Zm18,0H507a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V285A2,2,0,0,0,517,283Zm18,0H525a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V285A2,2,0,0,0,535,283Z" transform="translate(-487 -247)"></path></svg></div>' .
+	echo '<div class="grid-view-btn" ><svg fill="#fff" class="grid-view-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" x="0px" y="0px"><title>Grid view</title><path d="M501,249v10a2,2,0,0,1-2,2H489a2,2,0,0,1-2-2V249a2,2,0,0,1,2-2h10A2,2,0,0,1,501,249Zm16-2H507a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V249A2,2,0,0,0,517,247Zm18,0H525a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V249A2,2,0,0,0,535,247Zm-36,18H489a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V267A2,2,0,0,0,499,265Zm18,0H507a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V267A2,2,0,0,0,517,265Zm18,0H525a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V267A2,2,0,0,0,535,265Zm-36,18H489a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V285A2,2,0,0,0,499,283Zm18,0H507a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V285A2,2,0,0,0,517,283Zm18,0H525a2,2,0,0,0-2,2v10a2,2,0,0,0,2,2h10a2,2,0,0,0,2-2V285A2,2,0,0,0,535,283Z" transform="translate(-487 -247)"></path></svg></div>' .
 
-			'<div class="desc-view-btn" ><?xml version="1.0" encoding="UTF-8"?>
+	     '<div class="desc-view-btn" ><?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg  PUBLIC "-//W3C//DTD SVG 1.1//EN"  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg enable-background="new 0 0 512 512" fill="#fff" class="desc-view-btn" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><title>Description view</title>
 		<path d="m492.17 0.033v-0.699h-287.67v0.681c-11.171 0.162-20.181 9.255-20.181 20.465v102.4c0 11.21 9.01 20.303 20.181 20.465v0.155h287.67v-0.173c11.009-0.344 19.833-9.354 19.833-20.447v-102.4c0-11.093-8.824-20.103-19.833-20.447z"/>
@@ -157,11 +165,11 @@ function th_grid_list_buttons() {
 			<path d="m122.88 184.32h-102.4c-11.311 0-20.48 9.169-20.48 20.48v102.4c0 11.311 9.169 20.479 20.48 20.479h102.4c11.311 0 20.48-9.169 20.48-20.479v-102.4c0-11.311-9.169-20.48-20.48-20.48z"/>
 </svg></div>' .
 
-			'<div class="list-view-btn" ><svg fill="#fff" class="list-view-btn" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><title>List view</title><path d="M4,0h92c2.209,0,4,1.791,4,4v12c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4V4C0,1.791,1.791,0,4,0z"></path><path d="M4,26.667h92c2.209,0,4,1.791,4,4v12c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4v-12
+	     '<div class="list-view-btn" ><svg fill="#fff" class="list-view-btn" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><title>List view</title><path d="M4,0h92c2.209,0,4,1.791,4,4v12c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4V4C0,1.791,1.791,0,4,0z"></path><path d="M4,26.667h92c2.209,0,4,1.791,4,4v12c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4v-12
 		C0,28.458,1.791,26.667,4,26.667z"></path><path d="M4,53.334h92c2.209,0,4,1.79,4,4v12c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4v-12
 		C0,55.124,1.791,53.334,4,53.334z"></path><path d="M4,80h92c2.209,0,4,1.791,4,4v12c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4V84C0,81.791,1.791,80,4,80z"></path></svg></div>' .
 
-			'</div><!-- div.grid-list-switch -->';
+	     '</div><!-- div.grid-list-switch -->';
 
 }
 
@@ -169,149 +177,157 @@ function th_grid_list_buttons() {
 // Enqueue js-cookie on WC pages -- used to read and set cookies
 add_action( 'wp_footer', 'th_enqueue_js_cookie', 10 );
 function th_enqueue_js_cookie() {
-		if 	( is_shop() || ( is_woocommerce() && is_archive() ) ) {
-	wp_enqueue_script( 'js-cookie', get_stylesheet_directory_uri() . '/js.cookie.min.js', array( '' ), CHILD_THEME_VERSION );
-		}
+	if ( is_shop() || ( is_woocommerce() && is_archive() ) ) {
+		wp_enqueue_script( 'js-cookie', get_stylesheet_directory_uri() . '/js.cookie.min.js', array( '' ), CHILD_THEME_VERSION );
+	}
 }
 
 
 /** Set cookies and reload page  **********************************************************************/
 add_action( 'wp_footer', 'th_grid_list_switches', 100 );
 
-	function th_grid_list_switches() {
+function th_grid_list_switches() {
 
 	$grid_view_products_per_page = esc_html( get_option( 'options_grid_view_products_per_page' ) );
 	$list_view_products_per_page = esc_html( get_option( 'options_list_view_products_per_page' ) );
 	$desc_view_products_per_page = esc_html( get_option( 'options_desc_view_products_per_page' ) );
 
 
-		if( is_shop() || ( is_woocommerce() && is_archive() ) ) {		
+	if ( is_shop() || ( is_woocommerce() && is_archive() ) ) {
 
-			?><script type="text/javascript">
+		?>
+        <script type="text/javascript">
 
-				jQuery(function( $ ) {
+          jQuery( function( $ ) {
 
-					var store_view = Cookies.get( 'store_view' );  // which cookie is set?
+            var store_view = Cookies.get( 'store_view' );  // which cookie is set?
 
-					var grid_ppp = <?php echo $grid_view_products_per_page; ?>;  // how many products per page for each view?
-					var desc_ppp = <?php echo $desc_view_products_per_page; ?>;
-					var list_ppp = <?php echo $list_view_products_per_page; ?>;
+            var grid_ppp = <?php echo $grid_view_products_per_page; ?>;  // how many products per page for each view?
+            var desc_ppp = <?php echo $desc_view_products_per_page; ?>;
+            var list_ppp = <?php echo $list_view_products_per_page; ?>;
 
-					var current_view_ppp = grid_ppp;  // default "products per page" is grid
-					if( store_view == 'list' ) {  // if grid not set "products per page" to one of the other views
-						current_view_ppp = list_ppp;
-					} else if( store_view == 'desc' ) {
-						current_view_ppp = desc_ppp;
-					}
+            var current_view_ppp = grid_ppp;  // default "products per page" is grid
+            if ( store_view == 'list' ) {  // if grid not set "products per page" to one of the other views
+              current_view_ppp = list_ppp;
+            }
+            else if ( store_view == 'desc' ) {
+              current_view_ppp = desc_ppp;
+            }
 
-					var url_all = window.location.href;  // a straight reload would do this
-					var url_pageless = url_all.replace( /\/page\/[0-9]+\// , '/' );  // remove page variable
+            var url_all = window.location.href;  // a straight reload would do this
+            var url_pageless = url_all.replace( /\/page\/[0-9]+\//, '/' );  // remove page variable
 
-					var pagination_array = url_all.match( /\/page\/[0-9]+\// );  // gives array e.g. "[ '/page/2/' ]" or null
+            var pagination_array = url_all.match( /\/page\/[0-9]+\// );  // gives array e.g. "[ '/page/2/' ]" or null
 
-					var page_or_not = 'pagination-is-on'; //  either left alone (this means construct a new paginated url) OR overwritten by url without pagination (then use that)
+            var page_or_not = 'pagination-is-on'; //  either left alone (this means construct a new paginated url) OR overwritten by url without pagination (then use that)
 
-					if( Array.isArray( pagination_array ) ) {  // if there is pagination extract it
+            if ( Array.isArray( pagination_array ) ) {  // if there is pagination extract it
 
-						var pagination_string = pagination_array[0];  // gives e.g. "/page/2/"
+              var pagination_string = pagination_array[0];  // gives e.g. "/page/2/"
 
-						var page_number_interim = pagination_string.replace( /\/page\// , '' );  // removes "/page/"
-						var page_number_string = page_number_interim.replace( /\// , '' );  // removes "/" before page number
-						var current_page_number = parseInt( page_number_string, 10 );  // string to int
+              var page_number_interim = pagination_string.replace( /\/page\//, '' );  // removes "/page/"
+              var page_number_string = page_number_interim.replace( /\//, '' );  // removes "/" before page number
+              var current_page_number = parseInt( page_number_string, 10 );  // string to int
 
-						var focus_product_number = ( ( current_page_number - 1 ) * current_view_ppp ) + 1;  // top left product on current page
+              var focus_product_number = ( ( current_page_number - 1 ) * current_view_ppp ) + 1;  // top left product on current page
 
-					} else {
+            }
+            else {
 
-						page_or_not = 'not';  // we're on page 1, replace with a "/" only
+              page_or_not = 'not';  // we're on page 1, replace with a "/" only
 
-					}
+            }
 
-					var new_page_number;
-					var pagination;
-					var new_url;
+            var new_page_number;
+            var pagination;
+            var new_url;
 
-			// console.log( 'window.location.href: ' + url_all );
-			// console.log( 'Current view ppp: ' + current_view_ppp );
-			// console.log( 'Current focus product number: ' + focus_product_number );
+            // console.log( 'window.location.href: ' + url_all );
+            // console.log( 'Current view ppp: ' + current_view_ppp );
+            // console.log( 'Current focus product number: ' + focus_product_number );
 
-						$( "div.grid-view-btn" ).click( function() {
-							if( store_view !== 'grid' ) {
-								Cookies.set( 'store_view', 'grid', { expires: 60 } );
-								if( page_or_not == 'pagination-is-on' ) {  // either paginate or go to page 1 (no pagination)
-									new_page_number = Math.ceil( focus_product_number / grid_ppp );
+            $( 'div.grid-view-btn' ).click( function() {
+              if ( store_view !== 'grid' ) {
+                Cookies.set( 'store_view', 'grid', { expires: 60 } );
+                if ( page_or_not == 'pagination-is-on' ) {  // either paginate or go to page 1 (no pagination)
+                  new_page_number = Math.ceil( focus_product_number / grid_ppp );
 
-									if( new_page_number == 1 ) {
-										window.location.href = url_pageless;
-									} else {
-										pagination = '/page/' + new_page_number + '/';
-										new_url = url_all.replace( /\/page\/[0-9]+\//, pagination );
-										window.location.href = new_url;
-									}
+                  if ( new_page_number == 1 ) {
+                    window.location.href = url_pageless;
+                  }
+                  else {
+                    pagination = '/page/' + new_page_number + '/';
+                    new_url = url_all.replace( /\/page\/[0-9]+\//, pagination );
+                    window.location.href = new_url;
+                  }
 
-								} else {
-									window.location.href = url_pageless;
-								}
-							}
-						});
+                }
+                else {
+                  window.location.href = url_pageless;
+                }
+              }
+            } );
 
-						$( "div.list-view-btn" ).click( function() {
-							if( store_view !== 'list' ) {
-								Cookies.set( 'store_view', 'list', { expires: 30 } );
-								if( page_or_not == 'pagination-is-on' ) {  // either paginate or go to page 1 (no pagination)
-									new_page_number = Math.ceil( focus_product_number / list_ppp );
+            $( 'div.list-view-btn' ).click( function() {
+              if ( store_view !== 'list' ) {
+                Cookies.set( 'store_view', 'list', { expires: 30 } );
+                if ( page_or_not == 'pagination-is-on' ) {  // either paginate or go to page 1 (no pagination)
+                  new_page_number = Math.ceil( focus_product_number / list_ppp );
 
-									if( new_page_number == 1 ) {
-										window.location.href = url_pageless;
-									} else {
-										pagination = '/page/' + new_page_number + '/';
-										new_url = url_all.replace( /\/page\/[0-9]+\//, pagination );
-										window.location.href = new_url;
-									}
+                  if ( new_page_number == 1 ) {
+                    window.location.href = url_pageless;
+                  }
+                  else {
+                    pagination = '/page/' + new_page_number + '/';
+                    new_url = url_all.replace( /\/page\/[0-9]+\//, pagination );
+                    window.location.href = new_url;
+                  }
 
-								} else {
-									window.location.href = url_pageless;
-								}
-							}
-						});
+                }
+                else {
+                  window.location.href = url_pageless;
+                }
+              }
+            } );
 
-						$( "div.desc-view-btn" ).click( function() {
-							if( store_view !== 'desc' ) {
-								Cookies.set( 'store_view', 'desc', { expires: 30 } );
-								if( page_or_not == 'pagination-is-on' ) {  // either paginate or go to page 1 (no pagination)
-									new_page_number = Math.ceil( focus_product_number / desc_ppp );
+            $( 'div.desc-view-btn' ).click( function() {
+              if ( store_view !== 'desc' ) {
+                Cookies.set( 'store_view', 'desc', { expires: 30 } );
+                if ( page_or_not == 'pagination-is-on' ) {  // either paginate or go to page 1 (no pagination)
+                  new_page_number = Math.ceil( focus_product_number / desc_ppp );
 
-									if( new_page_number == 1 ) {
-										window.location.href = url_pageless;
-									} else {
-										pagination = '/page/' + new_page_number + '/';
-										new_url = url_all.replace( /\/page\/[0-9]+\//, pagination );
-										window.location.href = new_url;
-									}
+                  if ( new_page_number == 1 ) {
+                    window.location.href = url_pageless;
+                  }
+                  else {
+                    pagination = '/page/' + new_page_number + '/';
+                    new_url = url_all.replace( /\/page\/[0-9]+\//, pagination );
+                    window.location.href = new_url;
+                  }
 
-								} else {
-									window.location.href = url_pageless;
-								}
-							}
-						});
+                }
+                else {
+                  window.location.href = url_pageless;
+                }
+              }
+            } );
 
-				});
+          } );
 
-			</script><?php
-
-		}
+        </script><?php
 
 	}
 
-/** END: Grid/List buttons set cookies and reload page  **********************************************************************/
+}
 
+/** END: Grid/List buttons set cookies and reload page  **********************************************************************/
 
 
 /*** Bring Short product description to Description view *******************************************************/
 add_action( 'genesis_before_loop', 'th_add_short_description_to_desc_view' );
 function th_add_short_description_to_desc_view() {
 
-	if( !isset($_COOKIE['store_view']) || $_COOKIE['store_view'] == 'grid' || $_COOKIE['store_view'] == 'list'  ) {
+	if ( ! isset( $_COOKIE['store_view'] ) || $_COOKIE['store_view'] == 'grid' || $_COOKIE['store_view'] == 'list' ) {
 
 		return;
 
@@ -328,46 +344,44 @@ function th_add_short_description_to_desc_view() {
 /*********************************************************************************************************************************/
 
 
-
 // For main shop page only:  attach shop page url to page title -- used to reset filters
 add_filter( 'woocommerce_page_title', 'th_woocommerce_category_page_title', 10, 1 );
 function th_woocommerce_category_page_title( $page_title ) {
 	if ( is_shop() ) {
 		$shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
-		$url = esc_url( $shop_page_url );
-		$heading = '<a href="' . $url . '" >' . $page_title . '</a>';
+		$url           = esc_url( $shop_page_url );
+		$heading       = '<a href="' . $url . '" >' . $page_title . '</a>';
 
 		return $heading;
 	}
 }
 
 
-
 //  Add link to bottom of page if text continues
 remove_action( 'woocommerce_archive_description', 'woocommerce_taxonomy_archive_description' );
 add_action( 'woocommerce_archive_description', 'th_woocommerce_taxonomy_archive_description' );
-	function th_woocommerce_taxonomy_archive_description() {
+function th_woocommerce_taxonomy_archive_description() {
 
-		global $wp_query;
-		if ( is_product_category() || is_product_tag() ) {
-			$term_id = get_queried_object()->term_id;
-			$term_meta = get_term_meta( $term_id, 'intro_text', true );
-			$term = get_term_by( 'id', $term_id, get_query_var( 'taxonomy' ) );
-			$term_name = $term->name;
+	global $wp_query;
+	if ( is_product_category() || is_product_tag() ) {
+		$term_id   = get_queried_object()->term_id;
+		$term_meta = get_term_meta( $term_id, 'intro_text', true );
+		$term      = get_term_by( 'id', $term_id, get_query_var( 'taxonomy' ) );
+		$term_name = $term->name;
 
-			$anchor_link = '';
-			if ( !empty( $term_meta ) ) {
-				$anchor_link = '<a href="#description-continued" class="cat-tag-continue-reading" >Read more about ' . $term_name . '</a>';
-			}
+		$anchor_link = '';
+		if ( ! empty( $term_meta ) ) {
+			$anchor_link = '<a href="#description-continued" class="cat-tag-continue-reading" >Read more about ' . $term_name . '</a>';
+		}
 
-			if ( is_product_taxonomy() && 0 === absint( get_query_var( 'paged' ) ) ) {
-				$description = wc_format_content( term_description() );
-				if ( $description ) {
-					echo '<div class="term-description">' . $description . '<p>' . $anchor_link . '</p>' . '</div>';
-				}
+		if ( is_product_taxonomy() && 0 === absint( get_query_var( 'paged' ) ) ) {
+			$description = wc_format_content( term_description() );
+			if ( $description ) {
+				echo '<div class="term-description">' . $description . '<p>' . $anchor_link . '</p>' . '</div>';
 			}
 		}
 	}
+}
 
 
 // th-- Unhook taxonomy title and description (Genesis), then hook in title
@@ -383,11 +397,11 @@ add_action( 'genesis_before_loop', 'th_genesis_do_taxonomy_title_only', 15 );
  *
  * If there's a description to display, it runs through `wpautop()` before being added to a div.
  *
- * @since 1.3.0
- *
+ * @return void Return early if not the correct archive page, or no term is found.
  * @global WP_Query $wp_query Query object.
  *
- * @return void Return early if not the correct archive page, or no term is found.
+ * @since 1.3.0
+ *
  */
 function th_genesis_do_taxonomy_title_only() {
 
@@ -399,7 +413,7 @@ function th_genesis_do_taxonomy_title_only() {
 //  added
 //  && !is_tax( 'product_cat' ) && !is_tax( 'product_tag' )
 //  to get taxonomy and term from queried_object as opposed to get_query_var( 'term' ), which may grab other vars like pa_departments...
-	$term = is_tax() && !is_tax( 'product_cat' ) && !is_tax( 'product_tag' ) ? get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ) : $wp_query->get_queried_object();
+	$term = is_tax() && ! is_tax( 'product_cat' ) && ! is_tax( 'product_tag' ) ? get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ) : $wp_query->get_queried_object();
 
 	if ( ! $term ) {
 		return;
@@ -421,11 +435,12 @@ function th_genesis_do_taxonomy_title_only() {
 	 *
 	 * Allows you to reorganize output of the archive headings.
 	 *
-	 * @since 2.5.0
-	 *
 	 * @param string $heading    Archive heading.
 	 * @param string $intro_text Archive intro text.
 	 * @param string $context    Context.
+	 *
+	 * @since 2.5.0
+	 *
 	 */
 	do_action( 'genesis_archive_title_descriptions', $heading, $intro_text, 'taxonomy-archive-description' );
 
@@ -437,11 +452,12 @@ add_action( 'genesis_archive_title_descriptions', 'th_do_archive_headings_headli
 /**
  * Add headline for archive headings to archive pages.
  *
- * @since 2.5.0
- *
  * @param string $heading    Optional. Archive heading, default is empty string.
  * @param string $intro_text Optional. Archive intro text, default is empty string.
  * @param string $context    Optional. Archive context, default is empty string.
+ *
+ * @since 2.5.0
+ *
  */
 function th_do_archive_headings_headline( $heading = '', $intro_text = '', $context = '' ) {
 
@@ -452,7 +468,6 @@ function th_do_archive_headings_headline( $heading = '', $intro_text = '', $cont
 	}
 
 }
-
 
 
 // th-- Hook in taxonomy intro text (Genesis) for bottom of 1st page of shop category or tag page (description continued)
@@ -467,11 +482,11 @@ add_action( 'genesis_after_loop', 'th_genesis_do_taxonomy_description_continued_
  *
  * If there's a description to display, it runs through `wpautop()` before being added to a div.
  *
- * @since 1.3.0
- *
+ * @return void Return early if not the correct archive page, or no term is found.
  * @global WP_Query $wp_query Query object.
  *
- * @return void Return early if not the correct archive page, or no term is found.
+ * @since 1.3.0
+ *
  */
 function th_genesis_do_taxonomy_description_continued_only() {
 
@@ -484,7 +499,7 @@ function th_genesis_do_taxonomy_description_continued_only() {
 //  added
 //  && !is_tax( 'product_cat' ) && !is_tax( 'product_tag' )
 //  to get taxonomy and term from queried_object as opposed to get_query_var( 'term' ), which may grab other vars like pa_departments...
-	$term = is_tax() && !is_tax( 'product_cat' ) && !is_tax( 'product_tag' ) ? get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ) : $wp_query->get_queried_object();
+	$term = is_tax() && ! is_tax( 'product_cat' ) && ! is_tax( 'product_tag' ) ? get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ) : $wp_query->get_queried_object();
 
 	if ( ! $term ) {
 		return;
@@ -492,7 +507,7 @@ function th_genesis_do_taxonomy_description_continued_only() {
 
 	$description_continued = get_term_meta( $term->term_id, 'intro_text', true );
 
-	if( $description_continued && !is_paged() ) {
+	if ( $description_continued && ! is_paged() ) {
 		$intro_text = '<b id="description-continued" class="raise-anchor">&nbsp;</b>' . $description_continued;
 	} else {
 		$intro_text = '';
@@ -501,18 +516,20 @@ function th_genesis_do_taxonomy_description_continued_only() {
 //	$intro_text = apply_filters( 'genesis_term_intro_text_output', $intro_text ? $intro_text : '' );
 //	$intro_text = $intro_text ? $intro_text : '';
 
-	if( $intro_text ) {
+	if ( $intro_text ) {
 		echo '<div class="archive-description">' . $intro_text . '</div>';
-    }
+	}
 
 }
 
 
 // Add ACF Repeater fields to SearchWP -- unnecessary if Custom fields for Page is set to "Any" in SearchWP settings
 function th_searchwp_custom_field_keys_like( $keys ) {
-  $keys[] = 'acf_field_name_%'; // will match any Custom Field starting with acf_field_name_
-  return $keys;
+	$keys[] = 'acf_field_name_%'; // will match any Custom Field starting with acf_field_name_
+
+	return $keys;
 }
+
 // add_filter( 'searchwp_custom_field_keys', 'th_searchwp_custom_field_keys_like' );
 
 
@@ -520,9 +537,10 @@ function th_searchwp_custom_field_keys_like( $keys ) {
 add_filter( 'wp_nav_menu_items', 'th_add_logo_to_nav', 10, 2 );
 function th_add_logo_to_nav( $menu, $args ) {
 	if ( 'secondary' === $args->theme_location ) {
-    	$menu = '<li><a href="' . esc_url( home_url( '/'  ) ) . '" class="nav-logo" ><img src="' . get_stylesheet_directory_uri() . '/images/acme-logo.svg" ></a></li>' . $menu;
-    }
-    return $menu;
+		$menu = '<li><a href="' . esc_url( home_url( '/' ) ) . '" class="nav-logo" ><img src="' . get_stylesheet_directory_uri() . '/images/acme-logo.svg" ></a></li>' . $menu;
+	}
+
+	return $menu;
 }
 
 /** Get current URL ****************************************************************/
@@ -537,13 +555,13 @@ function th_add_logo_to_nav( $menu, $args ) {
  *  + http://stephenharris.info/how-to-get-the-current-url-in-wordpress/
  *********************************************************************************/
 /**
-* Build the entire current page URL (incl query strings) and output it
-* Useful for social media plugins and other times you need the full page URL
-* Also can be used outside The Loop, unlike the_permalink
-* 
-* @returns the URL in PHP (so echo it if it must be output in the template)
-* Also see the_current_page_url() syntax that echoes it
-*/
+ * Build the entire current page URL (incl query strings) and output it
+ * Useful for social media plugins and other times you need the full page URL
+ * Also can be used outside The Loop, unlike the_permalink
+ *
+ * @returns the URL in PHP (so echo it if it must be output in the template)
+ * Also see the_current_page_url() syntax that echoes it
+ */
 
 
 /** th-- Added trailingslashit() to add "/" before query vars **/
@@ -560,29 +578,29 @@ if ( ! function_exists( 'get_current_page_url' ) ) {
 
 }
 
-	/*
-	* Shorthand for echo get_current_page_url(); 
-	* @returns echo'd string
-	*/
+/*
+* Shorthand for echo get_current_page_url();
+* @returns echo'd string
+*/
 
-	if ( ! function_exists( 'the_current_page_url' ) ) {
+if ( ! function_exists( 'the_current_page_url' ) ) {
 
-		function the_current_page_url() {
+	function the_current_page_url() {
 
 		echo get_current_page_url();
 
-		}
 	}
+}
 
 /** th-- END: Get current URL **/
 
 
-
 /**
- * Enqueue matchHeight.js and print an inline script to the footer to keep elements of class ".match-height-item" the same height.
- * Adpated from genesis_sample_products_match_height(), from woocommerce-setup.php
+ * Enqueue matchHeight.js and print an inline script to the footer to keep elements of class ".match-height-item" the
+ * same height. Adpated from genesis_sample_products_match_height(), from woocommerce-setup.php
  *
- * Filtered by page ID. Should not be called on pages already set up for matchHeight by genesis_sample_products_match_height().
+ * Filtered by page ID. Should not be called on pages already set up for matchHeight by
+ * genesis_sample_products_match_height().
  *
  * @since 2.3.0
  */
@@ -604,27 +622,27 @@ function th_elements_match_height() {
 add_filter( 'oembed_fetch_url', 'th_oembed_fetch_url', 10, 3 );
 
 function th_oembed_fetch_url( $provider, $url, $args ) {
-    // You can find the list of defaults providers in WP_oEmbed::__construct()
-    if ( strpos( $provider, 'vimeo.com' ) !== false) {
-        // Check the full list of args here: https://developer.vimeo.com/apis/oembed
-        if ( isset( $args['autoplay'] ) ) {
-            $provider = add_query_arg( 'autoplay', absint( $args['autoplay'] ), $provider );
-        }
-        if ( isset( $args['color'] ) && preg_match( '/^[a-f0-9]{6}$/i', $args['color'] ) ) {
-            $provider = add_query_arg( 'color', $args['color'], $provider );
-        }
-        if ( isset( $args['portrait'] ) ) {
-            $provider = add_query_arg( 'portrait', absint( $args['portrait'] ), $provider );
-        }
-        if ( isset( $args['title'] ) ) {
-            $provider = add_query_arg( 'title', absint( $args['title'] ), $provider );
-        }
-        if ( isset( $args['byline'] ) ) {
-            $provider = add_query_arg( 'byline', absint( $args['byline'] ), $provider );
-        }
-    }
+	// You can find the list of defaults providers in WP_oEmbed::__construct()
+	if ( strpos( $provider, 'vimeo.com' ) !== false ) {
+		// Check the full list of args here: https://developer.vimeo.com/apis/oembed
+		if ( isset( $args['autoplay'] ) ) {
+			$provider = add_query_arg( 'autoplay', absint( $args['autoplay'] ), $provider );
+		}
+		if ( isset( $args['color'] ) && preg_match( '/^[a-f0-9]{6}$/i', $args['color'] ) ) {
+			$provider = add_query_arg( 'color', $args['color'], $provider );
+		}
+		if ( isset( $args['portrait'] ) ) {
+			$provider = add_query_arg( 'portrait', absint( $args['portrait'] ), $provider );
+		}
+		if ( isset( $args['title'] ) ) {
+			$provider = add_query_arg( 'title', absint( $args['title'] ), $provider );
+		}
+		if ( isset( $args['byline'] ) ) {
+			$provider = add_query_arg( 'byline', absint( $args['byline'] ), $provider );
+		}
+	}
 
-    return $provider;
+	return $provider;
 }
 
 
