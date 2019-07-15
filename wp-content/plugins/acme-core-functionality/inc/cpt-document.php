@@ -334,7 +334,7 @@ class CPT_Document {
 	}
 
 	/**
-	 * Set up drop-down filter for 'credit_share' taxonomy.
+	 * Set up drop-down filter for 'doc_type' taxonomy.
 	 *
 	 * @param $post_type
 	 * @param $which
@@ -374,7 +374,7 @@ class CPT_Document {
 	}
 
 	/**
-	 * Adjust query to filter by selected 'credit_share' taxonomy term, if any.
+	 * Adjust query to filter by selected 'doc_type' taxonomy term, if any.
 	 *
 	 * @param $query
 	 *
@@ -396,7 +396,7 @@ class CPT_Document {
 			return $query;
 		}
 
-		// query_var 'credit_share_filter' is set to '0' when "Show All Credit Shares" is selected
+		// query_var 'doc_type_filter' is set to '0' when "Show All Document Types" is selected
 		if ( isset( $_REQUEST['doc_type_filter'] ) && 0 != $_REQUEST['doc_type_filter'] ) {
 
 			$term          = $_REQUEST['doc_type_filter'];
