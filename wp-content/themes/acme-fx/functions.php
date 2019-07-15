@@ -842,10 +842,10 @@ function th_inline_video_shortcode( $atts ) {
 	}
 
 	$extended_atts = shortcode_atts( array(
-		'playsinline' => '1',
-		'muted'       => '1',
-		'autoplay'    => '1',
-		'loop'        => '1',
+		'playsinline' => 'playsinline',
+		'muted'       => 'muted',
+		'autoplay'    => 'autoplay',
+		'loop'        => 'loop',
 		'preload'     => 'auto',
 		'src'         => '',
 		'width'       => '640',
