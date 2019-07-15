@@ -175,7 +175,7 @@ class CPT_Document {
 	function redirect_single() {
 
 		if ( is_singular( 'document' ) ) {
-			wp_redirect( home_url( '/library/' ) );
+			wp_redirect( home_url( '/manuals/' ) );
 			exit;
 		}
 	}
