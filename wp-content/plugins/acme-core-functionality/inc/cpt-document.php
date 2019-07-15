@@ -175,7 +175,27 @@ class CPT_Document {
 	function redirect_single() {
 
 		if ( is_singular( 'document' ) ) {
-			wp_redirect( home_url( '/manuals/' ) );
+
+			$terms           = wp_get_post_terms( get_the_ID(), 'doc_type' );
+			
+			if ( $terms[0]->slug ) {
+				$slug = $terms[0]->slug;
+			} else {
+				$slug = 'default';
+			}
+
+			$redirect_by_term_slug = array(
+				'manual'     => 'manuals',
+				'sds'        => 'sds',
+				'spec-sheet' => 'spec-sheets',
+				'default' => 'manuals'
+			);
+
+			$page = $redirect_by_term_slug[ $slug ];
+
+			$page_slug = "/" . $page . "/";
+
+			wp_redirect( home_url( $page_slug ) );
 			exit;
 		}
 	}
