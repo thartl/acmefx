@@ -126,7 +126,7 @@ class CPT_Document {
 			'query_var'           => true,
 			'can_export'          => true,
 			"rewrite"             => array( 'slug' => 'documents', 'with_front' => true ),
-			'menu_icon'           => 'dashicons-images-alt', // https://developer.wordpress.org/resource/dashicons/
+			'menu_icon'           => 'dashicons-book-alt', // https://developer.wordpress.org/resource/dashicons/
 			"show_in_rest"        => false,
 		);
 
@@ -231,7 +231,7 @@ class CPT_Document {
 				$doc_id = (int) get_post_meta( get_the_ID(), 'doc_url', true );
 				$title  = get_the_title( $doc_id );
 
-				if ( empty( $title ) ) {
+				if ( ! $title ) {
 					echo( '--' );
 				} else {
 					echo( $title );
@@ -244,7 +244,7 @@ class CPT_Document {
 
 				$year_published = (int) get_post_meta( get_the_ID(), 'G-doc-info_year', true );
 
-				if ( empty( $year_published ) ) {
+				if ( ! $year_published ) {
 					echo( '----' );
 				} else {
 					echo( $year_published );
@@ -257,7 +257,7 @@ class CPT_Document {
 
 				$doc_page_count = (int) get_post_meta( get_the_ID(), 'G-doc-info_pages', true );
 
-				if ( empty( $doc_page_count ) ) {
+				if ( ! $doc_page_count ) {
 					echo( '--' );
 				} else {
 					echo( $doc_page_count );

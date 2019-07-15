@@ -3006,7 +3006,7 @@ h1.archive-title a:hover {
 .home article {
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
-	box-shadow: 0;
+	box-shadow: none;
 }
 .home .site-inner {
 	padding-top: 60px;
@@ -3795,6 +3795,9 @@ div.agm_mh_info_content {
 }
 
 /** Doc listings pages ***************************************************************** */
+.library-block {
+	padding-top: 50px;
+}
 ul.doc-listings .pages-and-size {
 	color: #aaa;
 }

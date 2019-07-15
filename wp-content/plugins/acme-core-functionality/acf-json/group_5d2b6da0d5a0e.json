@@ -53,7 +53,7 @@
                     "placeholder": "Enter year of publication",
                     "prepend": "",
                     "append": "",
-                    "min": 1920,
+                    "min": 0,
                     "max": 2200,
                     "step": 1
                 },
@@ -134,5 +134,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1563140225
+    "modified": 1563160514
 }
