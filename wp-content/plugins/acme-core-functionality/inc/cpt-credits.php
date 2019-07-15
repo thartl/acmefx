@@ -155,7 +155,7 @@ class CPT_Credits {
 	}
 
 	/**
-	 * Customize the Species Query.
+	 * Customize the Credits Query.
 	 *
 	 * @param object $query
 	 *
@@ -357,10 +357,10 @@ class CPT_Credits {
 		$taxonomy = get_taxonomy($taxonomy_slug);
 
 		$selected      = '';
-		$request_attr  = 'credit_share_filter'; //this will show up in the url
+		$request_attr  = 'credit_share_filter'; // this will show up in the url
 
 		if ( isset( $_REQUEST[ $request_attr ] ) ) {
-			$selected = $_REQUEST[ $request_attr ]; //in case the current page is already filtered
+			$selected = $_REQUEST[ $request_attr ]; // in case the current page is already filtered
 		}
 
 		wp_dropdown_categories( array(
