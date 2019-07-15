@@ -1,7 +1,7 @@
 <?php
 
 /**
-* Template Name: Doc Listings
+* Template {DEACTIVATED} Name: Doc Listings
 * Description: Used as a documents listings page
  *
  * This version of the template checks of migration to Document CPT has been done for this page.  If not, repeater entries' data is used to create new posts.
