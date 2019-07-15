@@ -528,8 +528,16 @@ function th_searchwp_custom_field_keys_like( $keys ) {
 	return $keys;
 }
 
-// Turn off WooCommerce Integration Extension notice
+// SearchWP: Turn off WooCommerce Integration Extension notice
 add_filter( 'searchwp_missing_integration_notices', '__return_false' );
+
+// Cure for SearchWP vs WP Engine heartbeat issue
+// See: https://wordpress.org/support/topic/missing-dependencies-in-query-monitor-with-wp-auth-check-and-heatbeat-missing/
+add_filter( 'wpe_heartbeat_allowed_pages', function( $pages ) {
+	global $pagenow;
+	$pages[] =  $pagenow;
+	return $pages;
+});
 
 //  add logo to primary nav
 add_filter( 'wp_nav_menu_items', 'th_add_logo_to_nav', 10, 2 );

@@ -177,7 +177,7 @@ class CPT_Document {
 		if ( is_singular( 'document' ) ) {
 
 			$terms           = wp_get_post_terms( get_the_ID(), 'doc_type' );
-			
+
 			if ( $terms[0]->slug ) {
 				$slug = $terms[0]->slug;
 			} else {
