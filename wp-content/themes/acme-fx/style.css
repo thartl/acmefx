@@ -1995,7 +1995,8 @@ div.summary form.cart button.single_add_to_cart_button {
 }
 .product div.share-box {
 	clear: both;
-	margin: 20px 10px 60px 0;
+	display: inline-block;
+	margin: 15px 10px 40px 0;
 }
 .product .product_meta .sku_wrapper,
 .product .product_meta .posted_in,

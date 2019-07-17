@@ -430,14 +430,13 @@ function th_custom_footer() {
 	<?php
 }
 
+// add_filter('wpmm_styles', 'th_mm_css_styles');
 //**  th-- WP Maintenance Mode plugin styles -- INACTIVE
 function th_mm_css_styles( $styles ) {
 	$styles['new-style'] = get_stylesheet_directory_uri() . '/style-mm.css'; // replace with the real path...
 
 	return $styles;
 }
-
-// add_filter('wpmm_styles', 'th_mm_css_styles');
 
 
 //************** Place the Genesis Simple Share buttons below content for single products 
@@ -454,10 +453,10 @@ function acme_entry_share() {
 		return;
 	}
 
-	global $Genesis_Simple_Share;
+	global $genesis_simple_share;
 
 	echo '<div class="share-box">';
-	genesis_share_icon_output( 'after_content', $Genesis_Simple_Share->icons );
+	genesis_share_icon_output( 'after_content', $genesis_simple_share->icons );
 	echo '</div>';
 }
 
