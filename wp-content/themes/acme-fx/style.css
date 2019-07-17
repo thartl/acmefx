@@ -3794,7 +3794,13 @@ div.agm_mh_info_content {
 	font-family: "Source Sans Pro", sans-serif;
 }
 
-/** Doc listings pages ***************************************************************** */
+/** Library (formerly Doc listings pages) ***************************************************************** */
+.library-filter-buttons {
+	margin: 0 0 30px;
+}
+.library-filter-buttons button {
+	margin: 10px 0;
+}
 ul.doc-listings .pages-and-size {
 	color: #aaa;
 }
@@ -3803,7 +3809,6 @@ ul.doc-listings .pages-and-size {
 .parent-pageid-580 .footnote-section {
 	margin-bottom: 24px;
 	padding: 22px;
-//	border-bottom: 1px solid #fff;
 }
 .parent-pageid-580 .admin-doc-list li {
 	margin: 10px 0 20px;
@@ -4109,6 +4114,8 @@ body .fbx-inner {
 .fbx-modal.fbx-light {
 	background-color: rgba(0,0,0,0.96);
 }
+
+
 
 
 /* # Temporary fix for wpmudev Google Map plugin

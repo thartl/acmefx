@@ -792,3 +792,19 @@ add_filter( 'wp_nav_menu_args', 'be_primary_menu_args' );
 //	return $result;
 //});
 
+// Turn off SearchWP woocommerce nag
+add_filter( 'searchwp_missing_integration_notices', '__return_false' );
+
+
+add_filter( 'wp_default_scripts', 'ea_dequeue_jquery_migrate' );
+/**
+ * Dequeue jQuery Migrate
+ *
+ * From: EA-Genesis-Child-master
+ */
+function ea_dequeue_jquery_migrate( &$scripts ){
+	if( !is_admin() ) {
+		$scripts->remove( 'jquery');
+		$scripts->add( 'jquery', false, array( 'jquery-core' ), '1.10.2' );
+	}
+}
