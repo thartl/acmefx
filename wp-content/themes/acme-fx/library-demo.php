@@ -41,22 +41,36 @@ function th_render_transitional_listings() {
 
 		while ( $loop->have_posts() ) : $loop->the_post();
 
-			$classes = array();
+			$class_array = array();
 
 			$terms_objects = get_the_terms( get_the_ID(), 'doc_type' );
 
 			if ( $terms_objects ) {
 				foreach ( $terms_objects as $term ) {
-				$classes[] = $term->slug;
+				$class_array[] = $term->slug;
 				}
-			} else {
-				$classes = '';
 			}
 
-			if ( $classes ) {
-				$classes = implode( ' ', $classes );
-				$classes = ' class="' . $classes . '"';
+			if ( $class_array ) {
+				$classes = implode( ' ', $class_array );
+				$classes = ' class="library-item ' . $classes . '"';
+			} else {
+				$classes = ' class="library-item"';
 			}
+
+			$badges = '';
+			if ( $class_array ) {
+
+				$badges = '<div class="doc_type-badges">';
+
+				foreach ( $class_array as $single_badge ) {
+					$badges .= '<span class="' . $single_badge . '">' . $single_badge . '</span>';
+				}
+
+				$badges .= '</div>';
+
+			}
+
 
 			$title          = get_the_title();
 			$doc_id         = (int) get_post_meta( get_the_ID(), 'doc_url', true );
@@ -79,7 +93,16 @@ function th_render_transitional_listings() {
 			// Human readable, while showing 2 decimal places for files larger than 1MB
 			$file_size_nice = $file_size > 1048576 ? size_format( $file_size, 2 ) : size_format( $file_size, 0 );
 
-			echo '<li' . $classes . '><a href="' . $pdf_js_url_complete . '" target="_blank">' . $title . '</a><p>' . $maybe_year_with_middot . '<span class="pages-and-size">' . $doc_page_count . $page_s . '&nbsp; &middot; &nbsp;' . $file_size_nice . '</span></p></li>';
+			echo '<li' . $classes . '><a href="' .
+			     $pdf_js_url_complete . '" target="_blank">' .
+			     $title . '</a>' . $badges .
+			     '<p>' . $maybe_year_with_middot .
+			     '<span class="pages-and-size">' .
+			     $doc_page_count .
+			     $page_s .
+			     '&nbsp; &middot; &nbsp;' .
+			     $file_size_nice .
+			     '</span></p></li>';
 
 		endwhile;
 

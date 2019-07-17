@@ -1995,7 +1995,8 @@ div.summary form.cart button.single_add_to_cart_button {
 }
 .product div.share-box {
 	clear: both;
-	margin: 20px 10px 60px 0;
+	display: inline-block;
+	margin: 15px 10px 40px 0;
 }
 .product .product_meta .sku_wrapper,
 .product .product_meta .posted_in,
@@ -3006,7 +3007,7 @@ h1.archive-title a:hover {
 .home article {
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
-	box-shadow: 0;
+	box-shadow: none;
 }
 .home .site-inner {
 	padding-top: 60px;
@@ -3795,11 +3796,20 @@ div.agm_mh_info_content {
 }
 
 /** Library (formerly Doc listings pages) ***************************************************************** */
+.library-block {
+	padding-top: 50px;
+}
 .library-filter-buttons {
 	margin: 0 0 30px;
 }
 .library-filter-buttons button {
 	margin: 10px 0;
+}
+ul.doc-listings li.hide_doc {
+	display: none;
+}
+ul.doc-listings .doc_type-badges {
+	display: inline-block;
 }
 ul.doc-listings .pages-and-size {
 	color: #aaa;

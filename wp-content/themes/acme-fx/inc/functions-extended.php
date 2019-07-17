@@ -520,7 +520,7 @@ function th_genesis_do_taxonomy_description_continued_only() {
 
 }
 
-
+// add_filter( 'searchwp_custom_field_keys', 'th_searchwp_custom_field_keys_like' );
 // Add ACF Repeater fields to SearchWP -- unnecessary if Custom fields for Page is set to "Any" in SearchWP settings
 function th_searchwp_custom_field_keys_like( $keys ) {
 	$keys[] = 'acf_field_name_%'; // will match any Custom Field starting with acf_field_name_
@@ -528,8 +528,16 @@ function th_searchwp_custom_field_keys_like( $keys ) {
 	return $keys;
 }
 
-// add_filter( 'searchwp_custom_field_keys', 'th_searchwp_custom_field_keys_like' );
+// SearchWP: Turn off WooCommerce Integration Extension notice
+add_filter( 'searchwp_missing_integration_notices', '__return_false' );
 
+// Cure for SearchWP vs WP Engine heartbeat issue
+// See: https://wordpress.org/support/topic/missing-dependencies-in-query-monitor-with-wp-auth-check-and-heatbeat-missing/
+add_filter( 'wpe_heartbeat_allowed_pages', function( $pages ) {
+	global $pagenow;
+	$pages[] =  $pagenow;
+	return $pages;
+});
 
 //  add logo to primary nav
 add_filter( 'wp_nav_menu_items', 'th_add_logo_to_nav', 10, 2 );

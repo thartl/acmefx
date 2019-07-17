@@ -10,7 +10,7 @@
  * Plugin Name: Acme FX Core Functionality
  * Plugin URI:  https://parkdalewire.com
  * Description: Sets up Core Functionality for acmefx.ca.
- * Version:     1.0.0
+ * Version:     1.0.1
  * Author:      Tomas Hartl
  * Author URI:  https://parkdalewire.com
  * Text Domain: acme-fx-core
@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-define( 'ACME_FX_CORE_VERSION', '1.0.0' );
+define( 'ACME_FX_CORE_VERSION', '1.0.1' );
 
 define( 'ACME_FX_CORE_PLUGIN_PATH', __FILE__ ); // full path, ending in '.php'
 

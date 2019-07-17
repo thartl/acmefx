@@ -1,0 +1,47 @@
+{
+    "key": "group_5d2bd87061e1c",
+    "title": "Doc listings - TRANSITIONAL",
+    "fields": [
+        {
+            "key": "field_5d2bd9046f31f",
+            "label": "Select document Type to display",
+            "name": "select_library_page",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "manual": "Manuals",
+                "sds": "SDS",
+                "spec-sheet": "Spec sheets"
+            },
+            "allow_null": 1,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "doc-listings-TEMP.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1563160796
+}

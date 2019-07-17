@@ -34,24 +34,24 @@ class CPT_Document {
 		add_action( 'pre_get_posts', array( $this, 'document_query' ) );
 		add_action( 'template_redirect', array( $this, 'redirect_single' ) );
 
-			// Set up Credit columns
-//			add_filter( 'manage_edit-document_columns', array( $this, 'set_up_document_columns' ) );
+		// Set up Document columns
+		add_filter( 'manage_edit-document_columns', array( $this, 'set_up_document_columns' ) );
 
-			// Populate Credit columns
-//			add_action( 'manage_document_pages_custom_column', array( $this, 'populate_document_columns' ), 10, 2 );
-//			add_action( 'manage_document_posts_custom_column', array( $this, 'populate_document_columns' ), 10, 2 );
+		// Populate Credit columns
+		add_action( 'manage_document_pages_custom_column', array( $this, 'populate_document_columns' ), 10, 2 );
+		add_action( 'manage_document_posts_custom_column', array( $this, 'populate_document_columns' ), 10, 2 );
 
-			// Set up sorting for Credit columns (sorting by 'release_date')
-//			add_filter( 'manage_edit-document_sortable_columns', array( $this, 'make_document_columns_sortable' ) );
+		// Set up sorting for Document columns (sorting by 'release_date')
+		add_filter( 'manage_edit-document_sortable_columns', array( $this, 'make_document_columns_sortable' ) );
 
-		// Set up logic for sorting of Credit Columns
-//		add_action( 'load-edit.php', array( $this, 'sort_credits_by_release_date' ) );
+		// Set up logic for sorting of Document Columns
+		add_action( 'load-edit.php', array( $this, 'sort_documents_by_year_published' ) );
 
-		// Set up filter drop-down for Credit columns (filtering by 'credit_share')
-//		add_action( 'restrict_manage_posts', array( $this, 'filter_by_credit_share_tax_DROPDOWN' ), 10, 2 );
+		// Set up filter drop-down for Document columns (filtering by 'doc_type')
+		add_action( 'restrict_manage_posts', array( $this, 'filter_by_doc_type_tax_DROPDOWN' ), 10, 2 );
 
-		// Set up logic to filter by 'credit_share' taxonomy term
-//		add_filter( 'parse_query', array( $this, 'filter_by_credit_share_tax_LOGIC' ), 10 );
+		// Set up logic to filter by 'doc_type' taxonomy term
+		add_filter( 'parse_query', array( $this, 'filter_by_doc_type_tax_LOGIC' ), 10 );
 
 	}
 
@@ -64,15 +64,15 @@ class CPT_Document {
 	function register_tax() {
 
 		$labels = array(
-			'name'          => 'Document Type',
-			'singular_name' => 'Document Types',
+			'name'          => 'Document Types',
+			'singular_name' => 'Document Type',
 		);
 
 		$args = array(
 			'labels'             => $labels,
 			'public'             => false,
 			'show_in_menu'       => false,
-			'show_in_quick_edit' => true,
+			'show_in_quick_edit' => false, // true will delete tax info when using Quick Edit
 			'show_tagcloud'      => false,
 			'hierarchical'       => false,
 			"rewrite"            => array( 'slug' => 'doc-type', 'with_front' => true, ),
@@ -126,7 +126,7 @@ class CPT_Document {
 			'query_var'           => true,
 			'can_export'          => true,
 			"rewrite"             => array( 'slug' => 'documents', 'with_front' => true ),
-			'menu_icon'           => 'dashicons-images-alt', // https://developer.wordpress.org/resource/dashicons/
+			'menu_icon'           => 'dashicons-book-alt', // https://developer.wordpress.org/resource/dashicons/
 			"show_in_rest"        => false,
 		);
 
@@ -173,10 +173,29 @@ class CPT_Document {
 	 * @since 1.0.0
 	 */
 	function redirect_single() {
-//		global $GLOBALS;
-//		d( $GLOBALS );
+
 		if ( is_singular( 'document' ) ) {
-			wp_redirect( home_url( '/library/' ) );
+
+			$terms           = wp_get_post_terms( get_the_ID(), 'doc_type' );
+
+			if ( $terms[0]->slug ) {
+				$slug = $terms[0]->slug;
+			} else {
+				$slug = 'default';
+			}
+
+			$redirect_by_term_slug = array(
+				'manual'     => 'manuals',
+				'sds'        => 'sds',
+				'spec-sheet' => 'spec-sheets',
+				'default' => 'manuals'
+			);
+
+			$page = $redirect_by_term_slug[ $slug ];
+
+			$page_slug = "/" . $page . "/";
+
+			wp_redirect( home_url( $page_slug ) );
 			exit;
 		}
 	}
@@ -195,9 +214,10 @@ class CPT_Document {
 		$columns = array(
 			'cb'             => '<input type="checkbox" />',
 			'title'          => 'Document',
-			'file_name'   => 'File name',
+			'doc_type'       => 'Doc type',
+			'file_name'      => 'PDF',
 			'year_published' => 'Year published',
-			'doc_page_count'   => 'Pages',
+			'doc_page_count' => 'Pages',
 			'date'           => 'Date',
 		);
 
@@ -217,55 +237,51 @@ class CPT_Document {
 
 		switch ( $column ) {
 
-			case 'release_date' :
+			// Display a list of taxonomy terms assigned to the post
+			case 'doc_type' :
 
-				$release_date = (int) get_post_meta( $post_id, 'release_date', true );
-				$add_dash     = substr_replace( $release_date, '-', 4, 0 );
-				$nice_date    = substr_replace( $add_dash, '-', 7, 0 );
+				$terms = get_the_term_list( $post_id, 'doc_type', '', ', ', '' );
+				echo is_string( $terms ) ? $terms : '—';
 
-				if ( empty( $release_date ) ) {
+				break;
+
+
+			case 'file_name' :
+
+				$doc_id = (int) get_post_meta( get_the_ID(), 'doc_url', true );
+				$title  = get_the_title( $doc_id );
+
+				if ( ! $title ) {
 					echo( '--' );
 				} else {
-					echo( $nice_date );
+					echo( $title );
 				}
 
 				break;
 
 
-			case 'front_end_date' :
+			case 'year_published' :
 
-				$release_date   = (int) get_post_meta( $post_id, 'release_date', true );
-				$year           = substr( $release_date, 0, 4 );
-				$front_end_date = esc_html( get_post_meta( $post_id, 'front_end_date', true ) );
-				$show_date      = $front_end_date ? $front_end_date : $year;
+				$year_published = (int) get_post_meta( get_the_ID(), 'G-doc-info_year', true );
 
-				if ( empty( $show_date ) ) {
-					echo( '-' );
+				if ( ! $year_published ) {
+					echo( '----' );
 				} else {
-					echo( $show_date );
+					echo( $year_published );
 				}
 
 				break;
 
 
-			case 'project_type' :
+			case 'doc_page_count' :
 
-				$project_type = esc_html( get_post_meta( $post_id, 'project_type', true ) );
+				$doc_page_count = (int) get_post_meta( get_the_ID(), 'G-doc-info_pages', true );
 
-				if ( empty( $project_type ) ) {
-					echo( 'empty!' );
+				if ( ! $doc_page_count ) {
+					echo( '--' );
 				} else {
-					echo( $project_type );
+					echo( $doc_page_count );
 				}
-
-				break;
-
-
-			// Display a list of taxonomy terms assigned to the post
-			case 'credit_share' :
-
-				$terms = get_the_term_list( $post_id, 'credit_share', '', ', ', '' );
-				echo is_string( $terms ) ? $terms : '—';
 
 				break;
 
@@ -287,7 +303,7 @@ class CPT_Document {
 	 */
 	function make_document_columns_sortable( $columns ) {
 
-		$columns['release_date'] = 'release_date';
+		$columns['year_published'] = 'year_published';
 
 		return $columns;
 
@@ -301,9 +317,9 @@ class CPT_Document {
 	 * @since   1.0.0
 	 *
 	 */
-	function sort_documents_by_release_date() {
+	function sort_documents_by_year_published() {
 
-		add_filter( 'request', array( $this, 'sort_documents_by_release_date_FILTER' ) );
+		add_filter( 'request', array( $this, 'sort_documents_by_year_published_FILTER' ) );
 
 	}
 
@@ -316,17 +332,17 @@ class CPT_Document {
 	 * @since   1.0.0
 	 *
 	 */
-	function sort_documents_by_release_date_FILTER( $vars ) {
+	function sort_documents_by_year_published_FILTER( $vars ) {
 
 		if ( isset( $vars['post_type'] ) && 'document' == $vars['post_type'] ) {
 
-			if ( isset( $vars['orderby'] ) && 'release_date' == $vars['orderby'] ) {
+			if ( isset( $vars['orderby'] ) && 'year_published' == $vars['orderby'] ) {
 
 				/* Merge the query vars with our custom variables. */
 				$vars = array_merge(
 					$vars,
 					array(
-						'meta_key' => 'release_date',
+						'meta_key' => 'G-doc-info_year',
 						'orderby'  => 'meta_value_num'
 					)
 				);
@@ -338,7 +354,7 @@ class CPT_Document {
 	}
 
 	/**
-	 * Set up drop-down filter for 'credit_share' taxonomy.
+	 * Set up drop-down filter for 'doc_type' taxonomy.
 	 *
 	 * @param $post_type
 	 * @param $which
@@ -347,20 +363,20 @@ class CPT_Document {
 	 * @since   1.0.0
 	 *
 	 */
-	function filter_by_credit_share_tax_DROPDOWN( $post_type, $which ) {
+	function filter_by_doc_type_tax_DROPDOWN( $post_type, $which ) {
 
-		if ( 'credits' !== $post_type ) {
+		if ( 'document' !== $post_type ) {
 			return;
 		}
 
-		$taxonomy_slug = 'credit_share';
-		$taxonomy = get_taxonomy($taxonomy_slug);
+		$taxonomy_slug = 'doc_type';
+		$taxonomy      = get_taxonomy( $taxonomy_slug );
 
-		$selected      = '';
-		$request_attr  = 'credit_share_filter'; //this will show up in the url
+		$selected     = '';
+		$request_attr = 'doc_type_filter'; // this will show up in the url
 
 		if ( isset( $_REQUEST[ $request_attr ] ) ) {
-			$selected = $_REQUEST[ $request_attr ]; //in case the current page is already filtered
+			$selected = $_REQUEST[ $request_attr ]; // in case the current page is already filtered
 		}
 
 		wp_dropdown_categories( array(
@@ -378,7 +394,7 @@ class CPT_Document {
 	}
 
 	/**
-	 * Adjust query to filter by selected 'credit_share' taxonomy term, if any.
+	 * Adjust query to filter by selected 'doc_type' taxonomy term, if any.
 	 *
 	 * @param $query
 	 *
@@ -386,7 +402,7 @@ class CPT_Document {
 	 * @since   1.0.0
 	 *
 	 */
-	function filter_by_credit_share_tax_LOGIC( $query ) {
+	function filter_by_doc_type_tax_LOGIC( $query ) {
 
 		if ( ! is_admin() ) {
 			return $query;
@@ -396,15 +412,15 @@ class CPT_Document {
 			return $query;
 		}
 
-		if ( 'credits' !== $query->query['post_type'] ) {
+		if ( 'document' !== $query->query['post_type'] ) {
 			return $query;
 		}
 
-		// query_var 'credit_share_filter' is set to '0' when "Show All Credit Shares" is selected
-		if ( isset( $_REQUEST['credit_share_filter'] ) && 0 != $_REQUEST['credit_share_filter'] ) {
+		// query_var 'doc_type_filter' is set to '0' when "Show All Document Types" is selected
+		if ( isset( $_REQUEST['doc_type_filter'] ) && 0 != $_REQUEST['doc_type_filter'] ) {
 
-			$term          = $_REQUEST['credit_share_filter'];
-			$taxonomy_slug = 'credit_share';
+			$term          = $_REQUEST['doc_type_filter'];
+			$taxonomy_slug = 'doc_type';
 
 			$query->query_vars['tax_query'] = array(
 				array(

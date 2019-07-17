@@ -13,9 +13,9 @@
 
 <div id="library-button-group" class="library-filter-buttons">
 
-    <button class="lb-f-button" id="lbg-all">Show all</button>
-    <button class="lb-f-button another_class" id="lbg-manuals">Manuals</button>
-    <button class="lb-f-button" id="lbg-sds">SDS</button>
-    <button class="lb-f-button" id="lbg-spec_sheets">Spec sheets</button>
+    <button class="lbg-button" id="lbg-all" data-doc_type="all">Show all</button>
+    <button class="lbg-button" id="lbg-manuals" data-doc_type="manual">Manuals</button>
+    <button class="lbg-button" id="lbg-sds" data-doc_type="sds">SDS</button>
+    <button class="lbg-button" id="lbg-spec_sheets" data-doc_type="spec-sheet">Spec sheets</button>
 
 </div>
