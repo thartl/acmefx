@@ -25,7 +25,7 @@ function th_render_transitional_listings() {
 		'posts_per_page' => - 1,
 		'paged'          => $paged,
 		'orderby'        => 'title',
-		'order' => 'ASC'
+		'order'          => 'ASC'
 	);
 
 
@@ -47,7 +47,7 @@ function th_render_transitional_listings() {
 
 			if ( $terms_objects ) {
 				foreach ( $terms_objects as $term ) {
-				$class_array[] = $term->slug;
+					$class_array[] = $term->slug;
 				}
 			}
 
@@ -58,16 +58,21 @@ function th_render_transitional_listings() {
 				$classes = ' class="library-item"';
 			}
 
-			$badges = '';
+			$badges         = '';
+			$doc_type_Names = array(
+				'manual'     => 'Manual',
+				'sds'        => 'SDS',
+				'spec-sheet' => 'Specs'
+			);
 			if ( $class_array ) {
 
-				$badges = '<div class="doc_type-badges">';
+				$badges = '<span class="doc_type-badges">';
 
 				foreach ( $class_array as $single_badge ) {
-					$badges .= '<span class="' . $single_badge . '">' . $single_badge . '</span>';
+					$badges .= '<span class="' . $single_badge . '">' . $doc_type_Names[ $single_badge ] . '</span>';
 				}
 
-				$badges .= '</div>';
+				$badges .= '</span>';
 
 			}
 
@@ -95,14 +100,15 @@ function th_render_transitional_listings() {
 
 			echo '<li' . $classes . '><a href="' .
 			     $pdf_js_url_complete . '" target="_blank">' .
-			     $title . '</a>' . $badges .
-			     '<p>' . $maybe_year_with_middot .
-			     '<span class="pages-and-size">' .
+			     $title . '</a>' .
+			     '<p><span class="pages-and-size">' .
+			     $maybe_year_with_middot .
 			     $doc_page_count .
 			     $page_s .
 			     '&nbsp; &middot; &nbsp;' .
 			     $file_size_nice .
-			     '</span></p></li>';
+			     '</span>' .
+			     $badges . '</p></li>';
 
 		endwhile;
 
