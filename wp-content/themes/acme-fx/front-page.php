@@ -16,7 +16,7 @@
 add_action( 'genesis_meta', 'acme_front_page_init' );
 function acme_front_page_init() {
 
-	if ( is_active_sidebar( 'front-page-1' ) || is_active_sidebar( 'front-page-2' ) || is_active_sidebar( 'front-page-3-a' ) || is_active_sidebar( 'front-page-3-b' ) || is_active_sidebar( 'front-page-4' ) || is_active_sidebar( 'front-page-5' ) ) {
+	if ( is_active_sidebar( 'front-page-announcement' ) || is_active_sidebar( 'front-page-1' ) || is_active_sidebar( 'front-page-2' ) || is_active_sidebar( 'front-page-3-a' ) || is_active_sidebar( 'front-page-3-b' ) || is_active_sidebar( 'front-page-4' ) || is_active_sidebar( 'front-page-5' ) ) {
 
 		// Add front-page body class.
 		add_filter( 'body_class', 'acme_body_class' );
@@ -49,6 +49,11 @@ function acme_body_class( $classes ) {
 function acme_home_widget_loop() {
 
 	echo '<h2 class="screen-reader-text">' . __( 'Main Content', 'genesis-sample' ) . '</h2>';
+
+	genesis_widget_area( 'front-page-announcement', array(
+		'before' => '<div class="flexible-widgets front-page-announcement color' . acme_widget_area_class( 'front-page-announcement' ) . ' widget-area"><div class="wrap">',
+		'after'  => '</div></div>',
+	) );
 
 	genesis_widget_area( 'front-page-1', array(
 		'before' => '<div class="flexible-widgets front-page-1 color' . acme_widget_area_class( 'front-page-1' ) . ' widget-area"><div class="wrap">',

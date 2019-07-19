@@ -3082,7 +3082,6 @@ h1.archive-title a:hover {
 	display: block;
 	min-height: 288px;
 	margin: 10px;
-   // overflow: hidden;
     background-size: cover;
 }
 .all-fx-widgets .fx-icon {
@@ -3106,7 +3105,10 @@ h1.archive-title a:hover {
 	font-size: 22px;
 }
 
-
+/** Front page Announcement widget area */
+.front-page-announcement {
+	color: #111;
+}
 
 /* ***************************************  NEW Front-page Cards -- Widgetized ****/
 
@@ -3114,21 +3116,12 @@ h1.archive-title a:hover {
 	position: relative;
 	display: block;
 	width: 100%;
-	
 	min-height: 300px;
-	
-	/* overflow: hidden;
-	background-repeat: no-repeat;
-	background-position: 50% 32px;
-	background-position: 50% calc(50% + 32px);
-	background-size: cover; */
 }
 .fp-widget-bg {
 	width: 100%;
 	height: 100%;
 	display: block;
-	//min-height: 288px;
-    //overflow: hidden;
     background-repeat: no-repeat;
     background-position: 50% 32px;
     background-position: 50% calc(50% + 32px);
@@ -3144,13 +3137,8 @@ h1.archive-title a:hover {
     opacity: 0;
     transition: .5s ease;
     background-color: #000;
-	/* height: calc(100% - 18px);
-	width: calc(100% - 18px); */
-	/* min-height: 410px;
-	display: flex; */
 }
 
-/*.home .flexible-widgets:nth-of-type(2) a.overlay, */
 .fp-card-widget:hover a.overlay {
   	opacity: .6;
 }
@@ -3160,12 +3148,7 @@ h1.archive-title a:hover {
 	left: 0;
 	top: 0;
 	right: 0;
-	//display: block;
 }
-
-/* .fp-card-widget a {
-	width: 100%;
-} */
 
 .fp-card-widget h2 {
 	text-align: center;
@@ -3203,8 +3186,7 @@ h1.archive-title a:hover {
 
 .fp-card-widget p.allow-icon {
 	display: block;
-/*	opacity: 1;
-*/	padding: 50px 170px 20px;
+	padding: 50px 170px 20px;
 }
 
 .fp-card-widget:hover p {
@@ -3213,8 +3195,7 @@ h1.archive-title a:hover {
 }
 
 .fp-card-icon {
-/*	display: none;
-*/	display: block;
+	display: block;
 	float: left;
 	box-sizing: content-box;
 	max-width: 100px;
@@ -3229,22 +3210,20 @@ h1.archive-title a:hover {
 }
 
 .fp-card-widget:hover .fp-card-icon {
-/*	display: block;
-*/	opacity: 1;
+	opacity: 1;
 }
 
-.home .flexible-widgets:first-of-type .fp-widget-bg {
+.home .flexible-widgets.front-page-1 .fp-widget-bg {
 	min-height: 400px;
 }
-.home .flexible-widgets:nth-of-type(2) .fp-widget-bg {
+.home .flexible-widgets.front-page-2 .fp-widget-bg {
 	min-height: 350px;
 }
-.home .flexible-widgets:nth-of-type(3) .fp-widget-bg {
+.home .flexible-widgets.front-page-3 .fp-widget-bg {
 	min-height: 400px;
 }
 
-
-.home .flexible-widgets:nth-of-type(2) section {
+.home .flexible-widgets.front-page-2 section {
 	margin-bottom: 40px;
 }
 .home .flexible-widgets:last-of-type {
@@ -4277,8 +4256,8 @@ body .fbx-inner {
 	}
 	.woocommerce table.shop_table_responsive.my_membership_settings tr td::before,
 	.woocommerce-page table.shop_table_responsive.my_membership_settings tr td::before {
-	    content: attr(data-title) " ";
-
+		content: attr(data-title) " ";
+	}
 }
 
 
@@ -4325,10 +4304,6 @@ body .fbx-inner {
 	.site-inner,
 	.wrap {
 		max-width: 860px;
-	}
-	.home .site-inner,
-	.home .wrap {
-		//max-width: 960px;
 	}
 
 	.content,
@@ -4508,11 +4483,8 @@ body .fbx-inner {
 	.widget-area.flexible-widgets.widget-thirds .widget:nth-child(3n+1) {
 	    margin-left: auto;
 	}
-	.widget-area.flexible-widgets .widget {
-		//margin-left: 0;
-	}
-	.flexible-widgets:nth-of-type(3) .fp-card-widget:first-of-type,
-	.flexible-widgets:nth-of-type(3) .fp-card-widget:nth-of-type(2) {
+	.flexible-widgets.front-page-3 .fp-card-widget:first-of-type,
+	.flexible-widgets.front-page-3 .fp-card-widget:nth-of-type(2) {
 	    min-height: 380px;
 	}
 	.fp-card-widget p {
@@ -4758,10 +4730,10 @@ body .fbx-inner {
 	.fp-card-widget .fp-widget-bg {
 	    min-height: 330px;
 	}
-	.home .flexible-widgets:nth-of-type(2) section p {
+	.home .flexible-widgets.front-page-2 section p {
 		font-size: 18px;
 	}
-	.home .flexible-widgets:first-of-type .fp-widget-bg {
+	.home .flexible-widgets.front-page-1 .fp-widget-bg {
 		min-height: 330px;
 	}
 
@@ -5042,13 +5014,13 @@ body .fbx-inner {
 	.home .flexible-widgets:first-of-type .fp-widget-bg {
 		min-height: 375px;
 	}
-	.home .flexible-widgets:nth-of-type(2) section .fp-widget-bg {
+	.home .flexible-widgets.front-page-2 section .fp-widget-bg {
 		min-height: 480px;
 	}
-	.home .flexible-widgets:nth-of-type(3) section .fp-widget-bg {
+	.home .flexible-widgets.front-page-3 section .fp-widget-bg {
 		min-height: 520px;
 	}
-	.home .flexible-widgets:nth-of-type(2) section {
+	.home .flexible-widgets.front-page-2 section {
 	    margin-bottom: 0;
 	    margin-top: 30px;
 	}
@@ -5199,7 +5171,7 @@ body .fbx-inner {
 	.fx-main .site-inner {
 	    padding: 0;
 	}
-	.home .flexible-widgets:nth-of-type(3) section .fp-widget-bg {
+	.home .flexible-widgets.front-page-3 section .fp-widget-bg {
 		min-height: 475px;
 	}
 	#wl-wrapper .wl-table.wl-manage .wl-privacy-col {
@@ -5213,11 +5185,11 @@ body .fbx-inner {
 	.site-title a {
 		font-size: 80px;
 	}
-	.home .flexible-widgets:nth-of-type(2) section .fp-card-overlay,
+	.home .flexible-widgets.front-page-2 section .fp-card-overlay,
 	.fp-card-widget .fp-card-overlay {
 	    min-height: 430px;
 	}
-	.home .flexible-widgets:nth-of-type(2) section p {
+	.home .flexible-widgets.front-page-2 section p {
 		font-size: 16px;
 	}
 	.fx-main .entry {
@@ -5286,7 +5258,7 @@ body .fbx-inner {
 	.fp-card-widget p {
 		font-size: 16px;
 	}
-	.home .flexible-widgets:nth-of-type(2) section .fp-card-overlay,
+	.home .flexible-widgets..front-page-2 section .fp-card-overlay,
 	.fp-card-widget .fp-card-overlay {
 	    min-height: 400px;
 	}
@@ -5317,7 +5289,7 @@ body .fbx-inner {
 	    width: 175px;
 	    margin-left: 0;
 	}
-	.home .flexible-widgets:nth-of-type(3) section .fp-widget-bg {
+	.home .flexible-widgets.front-page-3 section .fp-widget-bg {
 		min-height: 400px;
 	}
 	#wl-wrapper table.shop_table.wl-table.manage .check-column input {
@@ -5392,7 +5364,7 @@ body .fbx-inner {
 		font-size: 16px;
 		padding: 60px 40px 40px;
 	}
-	.home .flexible-widgets:nth-of-type(2) section .fp-card-overlay,
+	.home .flexible-widgets.front-page-2 section .fp-card-overlay,
 	.fp-card-widget .fp-card-overlay {
 	    min-height: 350px;
 	}

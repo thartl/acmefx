@@ -62,7 +62,14 @@ $current_username = $current_user->user_login;
 
 
 
-//  Add widget areas: FX Gallery Widget, 
+//  Add widget area: Front page Announcement
+genesis_register_widget_area( array(
+	'id'		=> 'front-page-announcement',
+	'name'		=> __( 'Front page Announcement', 'genesis-child' ),
+	'description'	=> __( 'This widget area appears on the Front page, below navigation, above regular content.', 'genesis-child' ),
+) );
+
+//  Add widget area: FX Gallery Widget,
 genesis_register_widget_area( array(
 	'id'		=> 'fx-gallery-widget-area',
 	'name'		=> __( 'FX Gallery widget area', 'genesis-child' ),
