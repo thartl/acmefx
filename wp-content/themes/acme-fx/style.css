@@ -3088,9 +3088,12 @@ h1.archive-title a:hover {
 .home .flexible-widgets.front-page-announcement h4 {
 	margin-bottom: 25px;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
+	.home .flexible-widgets.front-page-announcement {
+		margin: 20px 0 30px;
+	}
 	.home .flexible-widgets.front-page-announcement .wrap {
-		padding: 20px;
+		padding: 30px 15px;
 	}
 }
 

@@ -475,10 +475,10 @@ function acme_suffix_entry() {
 		return;
 	}
 
-	global $Genesis_Simple_Share;
+	global $genesis_simple_share;
 
 	echo '<div class="share-box"><h3 class="share-headline">' . __( 'If you liked this article, tell someone about it', 'yourtextdomain' ) . '</h3>';
-	genesis_share_icon_output( 'after_content', $Genesis_Simple_Share->icons );
+	genesis_share_icon_output( 'after_content', $genesis_simple_share->icons );
 	echo '</div>';
 }
 
