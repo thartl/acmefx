@@ -3074,6 +3074,14 @@ h1.archive-title a:hover {
 	border: 3px solid #1E373B;
 	background-color: #daeaec;
 }
+.warren-announcement a,
+.home .flexible-widgets.front-page-announcement a {
+	color: #238f87;
+}
+.warren-announcement a:hover,
+.home .flexible-widgets.front-page-announcement a:hover {
+	color: #14504c;
+}
 .warren-announcement .wrap,
 .home .flexible-widgets.front-page-announcement .wrap {
 	padding: 30px;
