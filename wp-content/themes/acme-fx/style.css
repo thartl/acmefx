@@ -3077,11 +3077,16 @@ h1.archive-title a:hover {
 	padding: 30px;
 	border: 5px double #1E373B;
 }
+/** Title used as date meta line */
 .home .flexible-widgets.front-page-announcement .widget-title {
 	font-family: Bitter, serif;
-	font-size: 22px;
-	color: #222;
+	font-size: 16px;
+	font-weight: 400;
+	color: #000;
 	text-transform: none;
+}
+.home .flexible-widgets.front-page-announcement h4 {
+	margin-bottom: 25px;
 }
 @media only screen and (max-width: 600px) {
 	.home .flexible-widgets.front-page-announcement .wrap {
