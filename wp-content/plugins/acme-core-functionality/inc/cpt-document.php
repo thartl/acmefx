@@ -146,7 +146,7 @@ class CPT_Document {
 	function title_placeholder( $translation ) {
 
 		global $post;
-		if ( isset( $post ) && 'document' == $post->post_type && 'Add title' == $translation ) {
+		if ( isset( $post ) && isset( $post->post_type ) && 'document' == $post->post_type && 'Add title' == $translation ) {
 			$translation = 'Enter Document title';
 		}
 
