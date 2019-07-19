@@ -3066,6 +3066,7 @@ h1.archive-title a:hover {
 }
 
 /** Front page Announcement widget area */
+.warren-announcement,
 .home .flexible-widgets.front-page-announcement {
 	color: #000;
 	margin: 0 0 50px;
@@ -3073,10 +3074,18 @@ h1.archive-title a:hover {
 	border: 3px solid #1E373B;
 	background-color: #daeaec;
 }
+.warren-announcement .wrap,
 .home .flexible-widgets.front-page-announcement .wrap {
 	padding: 30px;
 	border: 5px double #1E373B;
 }
+.warren-announcement {
+	padding: 6px;
+}
+.warren-announcement h4 {
+	margin: 10px 0 30px;
+}
+
 /** Title used as date meta line */
 .home .flexible-widgets.front-page-announcement .widget-title {
 	font-family: Bitter, serif;
