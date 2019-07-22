@@ -3093,6 +3093,16 @@ h1.archive-title a:hover {
 .warren-announcement h4 {
 	margin: 10px 0 30px;
 }
+.warren-announcement hr,
+.home .flexible-widgets.front-page-announcement hr {
+	width: 30%;
+	border-top: 2px solid #1E373B;
+}
+.warren-announcement .donate-heading,
+.home .flexible-widgets.front-page-announcement .donate-heading {
+	margin: 30px 0 10px;
+}
+
 
 /** Title used as date meta line */
 .home .flexible-widgets.front-page-announcement .widget-title {
@@ -3111,6 +3121,10 @@ h1.archive-title a:hover {
 	}
 	.home .flexible-widgets.front-page-announcement .wrap {
 		padding: 30px 15px;
+	}
+	.warren-announcement .donate-heading,
+	.home .flexible-widgets.front-page-announcement .donate-heading {
+		font-size: 19px;
 	}
 }
 
