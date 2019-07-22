@@ -3065,7 +3065,7 @@ h1.archive-title a:hover {
 	font-size: 22px;
 }
 
-/** Front page Announcement widget area */
+/** Front page Announcement widget area + Warren's page */
 .warren-announcement,
 .home .flexible-widgets.front-page-announcement {
 	color: #000;
@@ -3074,6 +3074,8 @@ h1.archive-title a:hover {
 	border: 3px solid #1E373B;
 	background-color: #daeaec;
 }
+
+/** First paragraph is wrapped around floated image by wp */
 .warren-announcement a,
 .home .flexible-widgets.front-page-announcement a {
 	color: #028700;
@@ -3096,13 +3098,30 @@ h1.archive-title a:hover {
 }
 .warren-announcement p.intro,
 .home .flexible-widgets.front-page-announcement p.intro {
-	margin-bottom: 15px;
+	margin: 0 0 20px;
 }
 .warren-announcement h4.name,
 .home .flexible-widgets.front-page-announcement h4.name {
 	margin: 0 0 10px;
 	font-size: 23px;
 }
+p.image-wrap {
+	margin: 0;
+}
+img.single-desktop {
+	max-width: 200px;
+}
+img.single-mobile {
+	display: none;
+	float: none;
+	max-width: 200px;
+	margin-left: 0;
+}
+img.warren-family {
+	width: 500px;
+	margin-bottom: 0;
+}
+
 .warren-announcement hr,
 .home .flexible-widgets.front-page-announcement hr {
 	width: 66%;
@@ -3112,6 +3131,7 @@ h1.archive-title a:hover {
 .warren-announcement .donate-heading,
 .home .flexible-widgets.front-page-announcement .donate-heading {
 	margin: 30px 0 10px;
+	font-size: 18px;
 }
 
 /** Title used as date meta line */
@@ -3132,9 +3152,33 @@ h1.archive-title a:hover {
 	.home .flexible-widgets.front-page-announcement .wrap {
 		padding: 30px 15px;
 	}
+	.warren-announcement {
+		padding: 0;
+		border: none;
+	}
 	.warren-announcement .donate-heading,
 	.home .flexible-widgets.front-page-announcement .donate-heading {
-		font-size: 19px;
+		font-size: 17px;
+	}
+	.warren-announcement .donate-heading p,
+	.home .flexible-widgets.front-page-announcement .donate-heading p {
+		margin-bottom: 20px;
+	}
+	p.image-wrap.mobile {
+		margin-bottom: 65px;
+	}
+	img.single-desktop {
+		display: none;
+	}
+	img.single-mobile {
+		display: block;
+	}
+}
+@media only screen and (max-width: 414px) {
+	.warren-announcement .wrap,
+	.home .flexible-widgets.front-page-announcement .wrap {
+		padding: 25px;
+		border: 5px double #1E373B;
 	}
 }
 
