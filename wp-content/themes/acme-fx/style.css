@@ -3076,11 +3076,11 @@ h1.archive-title a:hover {
 }
 .warren-announcement a,
 .home .flexible-widgets.front-page-announcement a {
-	color: #238f87;
+	color: #028700;
 }
 .warren-announcement a:hover,
 .home .flexible-widgets.front-page-announcement a:hover {
-	color: #14504c;
+	color: #23877f;
 }
 .warren-announcement .wrap,
 .home .flexible-widgets.front-page-announcement .wrap {
@@ -3093,16 +3093,23 @@ h1.archive-title a:hover {
 .warren-announcement h4 {
 	margin: 10px 0 30px;
 }
+.warren-announcement p.intro {
+	margin-bottom: 10px;
+}
+.warren-announcement h4.name {
+	margin: 0 0 11px;
+	font-size: 23px;
+}
 .warren-announcement hr,
 .home .flexible-widgets.front-page-announcement hr {
-	width: 30%;
+	width: 66%;
+	margin: 40px 0;
 	border-top: 2px solid #1E373B;
 }
 .warren-announcement .donate-heading,
 .home .flexible-widgets.front-page-announcement .donate-heading {
 	margin: 30px 0 10px;
 }
-
 
 /** Title used as date meta line */
 .home .flexible-widgets.front-page-announcement .widget-title {

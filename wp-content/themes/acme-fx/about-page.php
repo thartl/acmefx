@@ -6,7 +6,6 @@
 */
 
 
-
 // Enqueue shuffle script (cache-busting)
 add_action( 'wp_enqueue_scripts', 'th_enqueue_shuffle_on_about' );
 function th_enqueue_shuffle_on_about() {
@@ -22,16 +21,13 @@ function th_enqueue_shuffle_on_about() {
 
 
 add_action( 'genesis_after_entry_content', 'th_partner_repeater', 10 );
-
 add_action( 'genesis_after_entry_content', 'th_staff_repeater', 12 );
 
 
-/** Display the Team section Repeater field entries -- The Partners
- *
- *
+/**
+ * Display the Team section Repeater field entries -- The Partners
  *
  **/
-
 function th_partner_repeater() {
 
 	$team_section_title = esc_html( get_post_meta( get_the_ID(), 'team_section_title', true ) );
@@ -50,7 +46,6 @@ function th_partner_repeater() {
 
 		/** Using th_shuffle_children.js instead */
 //		shuffle( $partners_array );
-
 
 		echo '<hr>
 				<b id="partners" class="raise-anchor">&nbsp</b>
