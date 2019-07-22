@@ -3068,10 +3068,11 @@ h1.archive-title a:hover {
 /** Front page Announcement widget area + Warren's page */
 .warren-announcement,
 .home .flexible-widgets.front-page-announcement {
-	color: #000;
-	margin: 0 0 50px;
+	max-width: 900px;
+	margin: 0 auto 50px;
 	padding: 7px;
 	border: 3px solid #1E373B;
+	color: #000;
 	background-color: #daeaec;
 }
 
