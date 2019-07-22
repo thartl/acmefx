@@ -3090,20 +3090,23 @@ h1.archive-title a:hover {
 .warren-announcement {
 	padding: 6px;
 }
-.warren-announcement h4 {
+.warren-announcement h4,
+.home .flexible-widgets.front-page-announcement h4 {
 	margin: 10px 0 30px;
 }
-.warren-announcement p.intro {
-	margin-bottom: 10px;
+.warren-announcement p.intro,
+.home .flexible-widgets.front-page-announcement p.intro {
+	margin-bottom: 15px;
 }
-.warren-announcement h4.name {
-	margin: 0 0 11px;
+.warren-announcement h4.name,
+.home .flexible-widgets.front-page-announcement h4.name {
+	margin: 0 0 10px;
 	font-size: 23px;
 }
 .warren-announcement hr,
 .home .flexible-widgets.front-page-announcement hr {
 	width: 66%;
-	margin: 40px 0;
+	margin: 50px 0;
 	border-top: 2px solid #1E373B;
 }
 .warren-announcement .donate-heading,
