@@ -3095,7 +3095,7 @@ h1.archive-title a:hover {
 }
 .warren-announcement h4,
 .home .flexible-widgets.front-page-announcement h4 {
-	margin: 10px 0 30px;
+	margin: 10px 0 15px;
 }
 .warren-announcement p.intro,
 .home .flexible-widgets.front-page-announcement p.intro {
@@ -3142,9 +3142,6 @@ img.warren-family {
 	font-weight: 400;
 	color: #000;
 	text-transform: none;
-}
-.home .flexible-widgets.front-page-announcement h4 {
-	margin-bottom: 25px;
 }
 @media only screen and (max-width: 700px) {
 	.home .flexible-widgets.front-page-announcement {
