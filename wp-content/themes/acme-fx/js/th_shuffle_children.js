@@ -8,17 +8,6 @@
   $( document ).ready( function() {
 
 
-    // Run on load
-    shuffleChildren();
-
-    // Or attach to a button...
-
-    // $( '#shuffle-all' ).click( function() {
-    //
-    //   shuffleChildren();
-    // } );
-
-
     function shuffleChildren() {
 
       let allShuffleParents = $( '.shuffle-children' );
@@ -35,7 +24,19 @@
 
       } );
 
+
     }
+
+
+    // Run on load
+    shuffleChildren();
+
+    // Or attach to a button...
+
+    // $( '#shuffle-all' ).click( function() {
+    //
+    //   shuffleChildren();
+    // } );
 
 
     // Ref: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array

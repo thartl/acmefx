@@ -1115,7 +1115,7 @@ img.alignright,
 .flexible-widgets .widget-title {
 	font-family: Bitter, serif;
 	font-size: 40px;
-	margin-bottom: 60px;
+	margin-bottom: 18px;
 	padding-bottom: 5px;
 	color: #777;
 }
@@ -1212,13 +1212,6 @@ img.alignright,
 	width: 0;
 }
 
-/* Display outline on focus */
-/* :focus {
-	color: #333;
-	outline: #ccc solid 1px;
-} */
-
-
 /* # Site Header
 ---------------------------------------------------------------------------------------------------- */
 
@@ -1298,8 +1291,6 @@ img.alignright,
 	width: 100%;
 }
 
-/* check best practice for not showing SEO elements */
-
 .site-description {
 	color: #fff;
 	font-size: 16px;
@@ -1366,7 +1357,6 @@ article > hr {
 
 .genesis-nav-menu a:focus,
 .genesis-nav-menu a:hover,
-/* .genesis-nav-menu .current-menu-item > a, */
 .genesis-nav-menu .sub-menu .current-menu-item > a:focus,
 .genesis-nav-menu .sub-menu .current-menu-item > a:hover  {
 	color: #fff;
@@ -1378,9 +1368,6 @@ article > hr {
 .genesis-nav-menu.menu-primary > .current-menu-ancestor > a {
 	color: #E0AFB3;
 }
-/* .genesis-nav-menu.menu-primary .sub-menu .current-menu-item > a {
-	color: #5ba5a5;
-} */
 
 .genesis-nav-menu .sub-menu {
 	left: -9999px;
@@ -1672,13 +1659,9 @@ div.comment-respond {
 	color: #1D373A;
 }
 
-
-
-
 /* # Woocommerce
 ---------------------------------------------------------------------------------------------------- */
 
-/* changed woocommerce content padding from 70px on sides */
 .woocommerce .content {
 	background-color: #1E373B;
 	padding: 70px 55px;
@@ -2016,8 +1999,7 @@ table.pricing-table {
 	border-bottom: 1px solid #eee;
 }
 
-/* th-- hides price and quantity spinner from RENTAL single product pages ************************/
-
+/* Hide price and quantity spinner from RENTAL single product pages ************************/
 .no-price {
 	display: none;
 }
@@ -2456,7 +2438,6 @@ section.up-sells.upsells.products + section.related.products {
 }
 
 /** th-- Archive page descriptions ******************************/
-
 .woocommerce ul.products ~ .archive-description {
 	font-size: 16px;
 	font-size: 1.6rem;
@@ -2481,7 +2462,6 @@ section.up-sells.upsells.products + section.related.products {
 }
 
 /** th-- List/Grid switching ******************************************************************** */
-
 div.grid-list-switch {
 	position: relative;
 	left: -3px;
@@ -2574,7 +2554,6 @@ div.grid-list-switch {
 
 
 /** Cursor must be pointer for touch devices to trigger jQuery click() ************************************/
-
 .grid-list-switch div {
 	cursor: pointer;
 }
@@ -2749,10 +2728,8 @@ div.grid-list-switch {
 }
 
 
-
 /* # Sidebars
 ---------------------------------------------------------------------------------------------------- */
-
 .sidebar {
 	background-color: #1E373B;
 	font-size: 16px;
@@ -2790,7 +2767,6 @@ div.grid-list-switch {
 
 /* # Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
-
 .footer-widgets {
 	background-color: #1E373B;
 	clear: both;
@@ -2858,7 +2834,6 @@ div.grid-list-switch {
 
 /* # Site Footer
 ---------------------------------------------------------------------------------------------------- */
-
 .site-footer {
 	background-color: #1E373B;
 	font-size: 12px;
@@ -2879,7 +2854,6 @@ div.grid-list-switch {
 
 /* # Header Changes
 ---------------------------------------------------------------------------------------------------- */
-
 .home .site-header > .wrap {
     padding: 0;
     margin: 0 auto;
@@ -2953,7 +2927,6 @@ h1.archive-title a:hover {
 }
 
 /*******************************  Front Page & FX     */
-
 .home article {
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
@@ -2973,7 +2946,6 @@ h1.archive-title a:hover {
 }
 
 /* ***************************************  NEW FX Gallery -- Widgetized ****/
-
 .all-fx-widgets {
 	display: flex;
 	flex-wrap: wrap;
@@ -2984,7 +2956,7 @@ h1.archive-title a:hover {
 	flex-shrink: 0;
 	flex-grow: 1;
 	flex-basis: 50%;
-	max-width: 560px;  /* only good for large screens */
+	max-width: 560px;
 	min-width: 300px;
 	margin-bottom: 0;
 	display: flex;
@@ -3055,7 +3027,125 @@ h1.archive-title a:hover {
 	font-size: 22px;
 }
 
+/** Front page Announcement widget area + Warren's page */
+.warren-announcement,
+.home .flexible-widgets.front-page-announcement {
+	max-width: 900px;
+	margin: 0 auto 50px;
+	padding: 7px;
+	border: 3px solid #1E373B;
+	color: #000;
+	background-color: #daeaec;
+}
 
+/** First paragraph is wrapped around floated image by wp */
+.warren-announcement a,
+.home .flexible-widgets.front-page-announcement a {
+	color: #028700;
+}
+.warren-announcement a:hover,
+.home .flexible-widgets.front-page-announcement a:hover {
+	color: #23877f;
+}
+.warren-announcement .wrap,
+.home .flexible-widgets.front-page-announcement .wrap {
+	padding: 30px;
+	border: 5px double #1E373B;
+}
+.warren-announcement {
+	padding: 6px;
+}
+.warren-announcement h4,
+.home .flexible-widgets.front-page-announcement h4 {
+	margin: 10px 0 15px;
+}
+.warren-announcement p.intro,
+.home .flexible-widgets.front-page-announcement p.intro {
+	margin: 0 0 20px;
+}
+.warren-announcement h4.name,
+.home .flexible-widgets.front-page-announcement h4.name {
+	margin: 0 0 10px;
+	font-size: 23px;
+}
+p.image-wrap {
+	margin: 0;
+}
+img.single-desktop {
+	max-width: 200px;
+}
+img.single-mobile {
+	display: none;
+	float: none;
+	max-width: 200px;
+	margin-left: 0;
+}
+img.warren-family {
+	width: 500px;
+	margin-bottom: 0;
+}
+
+.warren-announcement hr,
+.home .flexible-widgets.front-page-announcement hr {
+	width: 66%;
+	margin: 50px 0;
+	border-top: 2px solid #1E373B;
+}
+.warren-announcement .donate-heading,
+.home .flexible-widgets.front-page-announcement .donate-heading {
+	margin: 30px 0 10px;
+	font-size: 18px;
+}
+
+/** Title used as date meta line */
+.home .flexible-widgets.front-page-announcement .widget-title {
+	font-family: Bitter, serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: #000;
+	text-transform: none;
+}
+@media only screen and (max-width: 700px) {
+	.home .flexible-widgets.front-page-announcement {
+		margin: 20px 0 30px;
+	}
+	.home .flexible-widgets.front-page-announcement .wrap {
+		padding: 30px 15px;
+	}
+	.warren-announcement {
+		padding: 0;
+		border: none;
+	}
+	.warren-announcement .donate-heading,
+	.home .flexible-widgets.front-page-announcement .donate-heading {
+		font-size: 17px;
+	}
+	.warren-announcement .donate-heading p,
+	.home .flexible-widgets.front-page-announcement .donate-heading p {
+		margin-bottom: 20px;
+	}
+	p.image-wrap.mobile {
+		margin-bottom: 65px;
+	}
+	img.single-desktop {
+		display: none;
+	}
+	img.single-mobile {
+		display: block;
+	}
+}
+@media only screen and (max-width: 414px) {
+	.warren-announcement .wrap,
+	.home .flexible-widgets.front-page-announcement .wrap {
+		padding: 25px;
+		border: 5px double #1E373B;
+	}
+}
+
+/** Turn off Spots edit link */
+.icit-spot-edit-link-holder {
+	display: none;
+}
 
 /* ***************************************  NEW Front-page Cards -- Widgetized ****/
 
@@ -3133,8 +3223,7 @@ h1.archive-title a:hover {
 
 .fp-card-widget p.allow-icon {
 	display: block;
-/*	opacity: 1;
-*/	padding: 50px 170px 20px;
+	padding: 50px 170px 20px;
 }
 
 .fp-card-widget:hover p {
@@ -3143,8 +3232,7 @@ h1.archive-title a:hover {
 }
 
 .fp-card-icon {
-/*	display: none;
-*/	display: block;
+	display: block;
 	float: left;
 	box-sizing: content-box;
 	max-width: 100px;
@@ -3159,22 +3247,20 @@ h1.archive-title a:hover {
 }
 
 .fp-card-widget:hover .fp-card-icon {
-/*	display: block;
-*/	opacity: 1;
+	opacity: 1;
 }
 
-.home .flexible-widgets:first-of-type .fp-widget-bg {
+.home .flexible-widgets.front-page-1 .fp-widget-bg {
 	min-height: 400px;
 }
-.home .flexible-widgets:nth-of-type(2) .fp-widget-bg {
+.home .flexible-widgets.front-page-2 .fp-widget-bg {
 	min-height: 350px;
 }
-.home .flexible-widgets:nth-of-type(3) .fp-widget-bg {
+.home .flexible-widgets.front-page-3 .fp-widget-bg {
 	min-height: 400px;
 }
 
-
-.home .flexible-widgets:nth-of-type(2) section {
+.home .flexible-widgets.front-page-2 section {
 	margin-bottom: 40px;
 }
 .home .flexible-widgets:last-of-type {
@@ -4295,6 +4381,7 @@ body .fbx-inner {
 	.wrap {
 		max-width: 860px;
 	}
+
 	.content,
 	.content-sidebar-sidebar .content,
 	.content-sidebar-sidebar .content-sidebar-wrap,
@@ -4472,8 +4559,8 @@ body .fbx-inner {
 	.widget-area.flexible-widgets.widget-thirds .widget:nth-child(3n+1) {
 	    margin-left: auto;
 	}
-	.flexible-widgets:nth-of-type(3) .fp-card-widget:first-of-type,
-	.flexible-widgets:nth-of-type(3) .fp-card-widget:nth-of-type(2) {
+	.flexible-widgets.front-page-3 .fp-card-widget:first-of-type,
+	.flexible-widgets.front-page-3 .fp-card-widget:nth-of-type(2) {
 	    min-height: 380px;
 	}
 	.fp-card-widget p {
@@ -4719,10 +4806,10 @@ body .fbx-inner {
 	.fp-card-widget .fp-widget-bg {
 	    min-height: 330px;
 	}
-	.home .flexible-widgets:nth-of-type(2) section p {
+	.home .flexible-widgets.front-page-2 section p {
 		font-size: 18px;
 	}
-	.home .flexible-widgets:first-of-type .fp-widget-bg {
+	.home .flexible-widgets.front-page-1 .fp-widget-bg {
 		min-height: 330px;
 	}
 
@@ -5002,13 +5089,13 @@ body .fbx-inner {
 	.home .flexible-widgets:first-of-type .fp-widget-bg {
 		min-height: 375px;
 	}
-	.home .flexible-widgets:nth-of-type(2) section .fp-widget-bg {
+	.home .flexible-widgets.front-page-2 section .fp-widget-bg {
 		min-height: 480px;
 	}
-	.home .flexible-widgets:nth-of-type(3) section .fp-widget-bg {
+	.home .flexible-widgets.front-page-3 section .fp-widget-bg {
 		min-height: 520px;
 	}
-	.home .flexible-widgets:nth-of-type(2) section {
+	.home .flexible-widgets.front-page-2 section {
 	    margin-bottom: 0;
 	    margin-top: 30px;
 	}
@@ -5154,7 +5241,7 @@ body .fbx-inner {
 	.fx-main .site-inner {
 	    padding: 0;
 	}
-	.home .flexible-widgets:nth-of-type(3) section .fp-widget-bg {
+	.home .flexible-widgets.front-page-3 section .fp-widget-bg {
 		min-height: 475px;
 	}
 	#wl-wrapper .wl-table.wl-manage .wl-privacy-col {
@@ -5168,11 +5255,11 @@ body .fbx-inner {
 	.site-title a {
 		font-size: 80px;
 	}
-	.home .flexible-widgets:nth-of-type(2) section .fp-card-overlay,
+	.home .flexible-widgets.front-page-2 section .fp-card-overlay,
 	.fp-card-widget .fp-card-overlay {
 	    min-height: 430px;
 	}
-	.home .flexible-widgets:nth-of-type(2) section p {
+	.home .flexible-widgets.front-page-2 section p {
 		font-size: 16px;
 	}
 	.fx-main .entry {
@@ -5241,7 +5328,7 @@ body .fbx-inner {
 	.fp-card-widget p {
 		font-size: 16px;
 	}
-	.home .flexible-widgets:nth-of-type(2) section .fp-card-overlay,
+	.home .flexible-widgets..front-page-2 section .fp-card-overlay,
 	.fp-card-widget .fp-card-overlay {
 	    min-height: 400px;
 	}
@@ -5272,7 +5359,7 @@ body .fbx-inner {
 	    width: 175px;
 	    margin-left: 0;
 	}
-	.home .flexible-widgets:nth-of-type(3) section .fp-widget-bg {
+	.home .flexible-widgets.front-page-3 section .fp-widget-bg {
 		min-height: 400px;
 	}
 	#wl-wrapper table.shop_table.wl-table.manage .check-column input {
@@ -5344,7 +5431,7 @@ body .fbx-inner {
 		font-size: 16px;
 		padding: 60px 40px 40px;
 	}
-	.home .flexible-widgets:nth-of-type(2) section .fp-card-overlay,
+	.home .flexible-widgets.front-page-2 section .fp-card-overlay,
 	.fp-card-widget .fp-card-overlay {
 	    min-height: 350px;
 	}
