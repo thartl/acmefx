@@ -4175,20 +4175,23 @@ body .fbx-inner {
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	max-width: 1000%;
-	background-color: #ff8c00;
+	background-color: #AE4040;
 	color: #fff;
-	padding: 15px;
+	padding: 30px 15px 25px;
+}
+.header-banner section.widget {
+	margin-bottom: 0;
 }
 .header-banner .header-banner-inner {
 	font-size: 17px;
-	font-weight: 700;
+	font-weight: 400;
 }
 .header-banner a {
 	color: #fff;
 }
 .header-banner .textwidget p {
 	text-align: center;
-	margin-bottom: 0;
+	margin-bottom: 10px;
 }
 
 
