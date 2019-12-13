@@ -4169,6 +4169,27 @@ body .fbx-inner {
 }
 
 
+/* # Header Banner widget area
+---------------------------------------------------------------------------------------------------- */
+.header-banner {
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	max-width: 1000%;
+	background-color: #ff8c00;
+	color: #fff;
+	padding: 15px;
+}
+.header-banner .header-banner-inner {
+	font-size: 17px;
+	font-weight: 700;
+}
+.header-banner a {
+	color: #fff;
+}
+.header-banner .textwidget p {
+	text-align: center;
+	margin-bottom: 0;
+}
 
 
 /* # Temporary fix for wpmudev Google Map plugin
