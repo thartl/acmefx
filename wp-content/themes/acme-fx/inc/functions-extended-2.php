@@ -68,27 +68,6 @@ genesis_register_sidebar( array(
 	'description' => __( 'This is the header banner, which appears on top of every page.', 'theme-prefix' ),
 ) );
 
-add_action( 'genesis_before_header', 'th_utility_bar' );
-/**
- * Display Header Banner above header.
- */
-function th_utility_bar() {
-
-	if ( ! is_active_sidebar( 'header-banner' ) ) {
-		return;
-	}
-
-	echo '<div class="header-banner"><div class="wrap">';
-
-	genesis_widget_area( 'header-banner', array(
-		'before' => '<div class="header-banner-inner">',
-		'after'  => '</div>',
-	) );
-
-	echo '</div></div>';
-
-}
-
 //  Add widget area: Front page Announcement
 genesis_register_widget_area( array(
 	'id'		=> 'front-page-announcement',

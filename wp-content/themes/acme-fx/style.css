@@ -1224,21 +1224,19 @@ img.alignright,
     padding: 0;
     margin: 0 auto;
     max-width: 2560px;
+	min-height: 140px;
     position: relative;
-	background: url('/wp-content/uploads/2017/12/acme-flames-inverted.jpg') no-repeat;
-	background-image: url('/wp-content/uploads/2017/12/acme-flames-inverted.jpg');
-	background-position: center right;
-
+	background: url('/wp-content/uploads/2017/12/acme-flames-inverted.jpg') no-repeat center right;
 }
+
 .home .site-header > .wrap {
-	background: none;
+	min-height: 290px;
 }
 
 /* ## Title Area
 --------------------------------------------- */
 
 .title-area {
-	float: left;
 	position: static;
 	text-align: center;
 	margin-top: 90px;
@@ -1247,7 +1245,6 @@ img.alignright,
 	padding: 0 30px;
 }
 .home .title-area {
-	position: absolute;
 	z-index: 1;
 }
 .title-area img {
@@ -2854,13 +2851,6 @@ div.grid-list-switch {
 
 /* # Header Changes
 ---------------------------------------------------------------------------------------------------- */
-.home .site-header > .wrap {
-    padding: 0;
-    margin: 0 auto;
-    max-width: 2560px;
-    background: #fff;
-	background: #fff;
-}
 .site-header .widget-area.header-widget-area {
 	position: absolute;
 	left: 25px;
@@ -4175,23 +4165,31 @@ body .fbx-inner {
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	max-width: 1000%;
-	background-color: #AE4040;
-	color: #fff;
-	padding: 30px 15px 25px;
+	padding: 25px 15px 25px;
+	text-align: center;
 }
 .header-banner section.widget {
 	margin-bottom: 0;
 }
 .header-banner .header-banner-inner {
-	font-size: 17px;
+	display: inline-block;
+	width: auto;
+	margin: 0 auto;
+	padding: 30px;
+	font-size: 16px;
 	font-weight: 400;
+	color: #FFFFFF;
+	background-color: #AE4040;
 }
 .header-banner a {
 	color: #fff;
 }
 .header-banner .textwidget p {
 	text-align: center;
-	margin-bottom: 12px;
+	margin-bottom: 10px;
+}
+.header-banner strong {
+	font-size: 1.1em;
 }
 
 
@@ -4374,9 +4372,8 @@ body .fbx-inner {
 	.business-type:hover {
 		background-size: cover;
 	}
-	.home #wp-custom-header video,
-	.home #wp-custom-header img {
-		max-height: 400px;
+	.home .site-header > .wrap {
+		min-height: 200px;
 	}
 	.business-type {
 		min-height: 300px;
