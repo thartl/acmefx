@@ -59,10 +59,11 @@ function th_render_transitional_listings() {
 				'';
 
 			$url                 = esc_url( wp_get_attachment_url( $doc_id ) );
-			$url_prepend         = get_site_url() . '/wp-content/plugins/pdfjs-viewer-shortcode/pdfjs/web/viewer.php?file=';
-			$url_encoded         = urlencode( $url );
-			$url_append          = '&download=true&print=true&openfile=false';
-			$pdf_js_url_complete = $url_prepend . $url_encoded . $url_append;
+			// no longer using PDFjs
+//			$url_prepend         = get_site_url() . '/wp-content/plugins/pdfjs-viewer-shortcode/pdfjs/web/viewer.php?file=';
+//			$url_encoded         = urlencode( $url );
+//			$url_append          = '&download=true&print=true&openfile=false';
+//			$pdf_js_url_complete = $url_prepend . $url_encoded . $url_append;
 
 			$page_s = $doc_page_count > 1 ? ' pages' : ' page';
 
@@ -70,7 +71,7 @@ function th_render_transitional_listings() {
 			// Human readable, while showing 2 decimal places for files larger than 1MB
 			$file_size_nice = $file_size > 1048576 ? size_format( $file_size, 2 ) : size_format( $file_size, 0 );
 
-			echo '<li><a href="' . $pdf_js_url_complete . '" target="_blank">' . $title . '</a><p>' . $maybe_year_with_middot . '<span class="pages-and-size">' . $doc_page_count . $page_s . '&nbsp; &middot; &nbsp;' . $file_size_nice . '</span></p></li>';
+			echo '<li><a href="' . $url . '" target="_blank">' . $title . '</a><p>' . $maybe_year_with_middot . '<span class="pages-and-size">' . $doc_page_count . $page_s . '&nbsp; &middot; &nbsp;' . $file_size_nice . '</span></p></li>';
 
 		endwhile;
 
