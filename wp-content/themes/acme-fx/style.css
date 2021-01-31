@@ -1956,8 +1956,18 @@ div.summary form.cart button.single_add_to_cart_button {
 .product div.share-box {
 	clear: both;
 	display: inline-block;
-	margin: 15px 10px 40px 0;
+	margin: 0 10px 40px 0;
 }
+.share-box .shared-counts-wrap.style-buttons a.shared-counts-button {
+	width: 54px;
+	height: 28px;
+	margin-top: 0;
+	padding-bottom: 2px;
+}
+.share-box .shared-counts-wrap.style-buttons a.shared-counts-button svg {
+	margin-top: 7px;
+}
+
 .product .product_meta .sku_wrapper,
 .product .product_meta .posted_in,
 .product .product_meta .tagged_as {

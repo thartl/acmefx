@@ -455,45 +455,19 @@ function th_mm_css_styles( $styles ) {
 //************** Place the Genesis Simple Share buttons below content for single products 
 add_action( 'woocommerce_after_single_product_summary', 'acme_entry_share', 8 );
 /**
- * Adds the Genesis Share icons before the entry.
- *
- * @return null Return early for non-single posts
- * @since 1.0.0
+ * Adds Shared Counts icons to product singles.
  *
  */
 function acme_entry_share() {
-	if ( ! is_single() || ! function_exists( 'genesis_share_icon_output' ) ) {
-		return;
+
+	if ( function_exists( 'shared_counts' ) ) {
+
+		echo '<div class="share-box">';
+		shared_counts()->front->display();
+		echo '</div>';
 	}
-
-	global $genesis_simple_share;
-
-	echo '<div class="share-box">';
-	genesis_share_icon_output( 'after_content', $genesis_simple_share->icons );
-	echo '</div>';
 }
 
-
-//************** Place the Genesis Simple Share buttons above content in single entries 
-add_action( 'genesis_entry_footer', 'acme_suffix_entry', 20 );
-/**
- * Adds the Genesis Share icons after the entry.
- *
- * @return null Return early for non-single posts
- * @since 1.0.0
- *
- */
-function acme_suffix_entry() {
-	if ( ! is_single() || ! function_exists( 'genesis_share_icon_output' ) ) {
-		return;
-	}
-
-	global $genesis_simple_share;
-
-	echo '<div class="share-box"><h3 class="share-headline">' . __( 'If you liked this article, tell someone about it', 'yourtextdomain' ) . '</h3>';
-	genesis_share_icon_output( 'after_content', $genesis_simple_share->icons );
-	echo '</div>';
-}
 
 //* Customize the post info function
 add_filter( 'genesis_post_info', 'sp_post_info_filter' );
