@@ -4213,12 +4213,15 @@ body .fbx-inner {
 }
 
 
-/* # Temporary fix for wpmudev Google Map plugin
- * See: https://premium.wpmudev.org/forums/topic/styling-issue-with-google-maps-buttons
+/* Misc.
 ---------------------------------------------------------------------------------------------------- */
-.agm_google_maps button img {display:none;}
-.agm_google_maps button img:nth-of-type(2) {display:block;}
-.agm_google_maps button {padding:10px!important;}
+/** maybe make this more general */
+.page-id-620 .entry-content > p:before {
+	content: '';
+	width: 170px;
+	display: block;
+	overflow: hidden;
+}
 
 
 /* # Media Queries
