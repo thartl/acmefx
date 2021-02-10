@@ -6,14 +6,16 @@
 */
 
 
+add_action( 'genesis_after_loop', 'th_individual_credits_loop' );
 /** Display the Credits
  *
  **/
-
 function th_individual_credits_loop() {
-	global $post;
 
-	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+	// no Credits or imdb blurb on Danny's page
+	if ( get_the_ID() == 622 ) {
+		return;
+	}
 
 	$front_end_priority = 0;
 	if ( current_user_can( 'administrator' ) && get_user_meta( get_current_user_id(),'show_credit_priority_on_front_end' , true ) ) {
@@ -58,7 +60,6 @@ function th_individual_credits_loop() {
         	'date_clause' => 'DESC',
         	),
 		'posts_per_page' => -1,
-		'paged' => $paged,
 	);
 
 
@@ -119,16 +120,9 @@ function th_individual_credits_loop() {
 		echo '</article>';
 
 
-
-	// We only need to reset the $post variable. If we overwrote $wp_query,
-	// we'd need to use wp_reset_query() which does both.
-	// In other words, wp_rest_query is only necessary if query_posts() was used.
-
-	wp_reset_postdata();
+		wp_reset_postdata();
 
 }
 
-
-add_action( 'genesis_after_loop', 'th_individual_credits_loop' );
 
 genesis();
