@@ -20,8 +20,12 @@ function th_enqueue_shuffle_on_about() {
 }
 
 
+// todo: really don't need *three* repeaters, should refactor
 add_action( 'genesis_after_entry_content', 'th_partner_repeater', 10 );
 add_action( 'genesis_after_entry_content', 'th_staff_repeater', 12 );
+add_action( 'genesis_after_entry_content', 'th_former_partner_repeater', 14 );
+add_action( 'genesis_after_entry_content', 'th_main_credits_loop', 16 );
+
 
 
 /**
@@ -105,7 +109,7 @@ function th_staff_repeater() {
 		echo '<hr>
 				<b id="staff" class="raise-anchor">&nbsp</b>
 				<h2>' . $staff_section_title . '</h2>
-				<div class="all-cameos shuffle-children">';
+				<div class="all-cameos">';
 
 		foreach( $staff_array as $i ) {
 
@@ -127,7 +131,63 @@ function th_staff_repeater() {
 		// echo '<br>' . var_dump( $partners_array );
 
 	}
+}
 
+
+/**
+ * Display the Former Team section Repeater field entries -- Former Partners
+ *
+ **/
+function th_former_partner_repeater() {
+
+	$team_section_title = esc_html( get_post_meta( get_the_ID(), 'former_team_section_title', true ) );
+
+	$team_members = get_post_meta( get_the_ID(), 'about-former_team', true );
+
+	$partners_array = array();
+
+	if( $team_members ) {
+
+		for( $i = 0; $i < $team_members; $i++ ) {
+
+			$partners_array[] = $i;
+
+		}
+
+		echo '<hr>
+				<b id="former-partners" class="raise-anchor">&nbsp</b>
+				<h2>' . $team_section_title . '</h2>
+				<div class="all-cameos">';
+
+		foreach( $partners_array as $i ) {
+
+			$name = esc_html( get_post_meta( get_the_ID(), 'about-former_team_' . $i . '_name', true ) );
+
+			$page_id = (int) get_post_meta( get_the_ID(), 'about-former_team_' . $i . '_personal-page', true );
+			$page_url = esc_url( get_page_link( $page_id ) );
+
+			$image = (int) get_post_meta( get_the_ID(), 'about-former_team_' . $i . '_image', true );
+			$image_url = $image ? wp_get_attachment_image( $image, 'thumbnail' ) : '<img src="' . get_stylesheet_directory_uri() . '/images/default-gravatar.png" />';
+
+			echo '<a class="cameo" href="' . $page_url . ' ">' .
+			     $image_url .
+			     '<p>' . $name . '</p></a>';
+
+		}
+
+		echo '</div>';
+
+	}
+
+}
+
+
+/************  Display the Credits  ***********************/
+/**
+ *
+ **/
+
+function th_main_credits_loop() {
 
 	$credits_section_title = esc_html( get_post_meta( get_the_ID(), 'credits_section_title', true ) );
 
@@ -139,19 +199,7 @@ function th_staff_repeater() {
 
 	}
 
-}
-
-
-
-/************  Display the Credits  ***********************/
-/**
- *
- **/
-
-function th_main_credits_loop() {
 	global $post;
-
-	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
 	$front_end_priority = 0;
 	if ( current_user_can( 'administrator' ) && get_user_meta( get_current_user_id(),'show_credit_priority_on_front_end' , true ) ) {
@@ -194,7 +242,6 @@ function th_main_credits_loop() {
         	'date_clause' => 'DESC',
         	),
 		'posts_per_page' => -1,
-		'paged' => $paged,
 	);
 
 
@@ -202,10 +249,7 @@ function th_main_credits_loop() {
 	$loop = new WP_Query( $args );
 
 
-	// have_posts() is a wrapper function for $wp_query->have_posts(). Since we
-	// don't want to use $wp_query, use our custom variable instead.
-
-	if ( $loop->have_posts() ) : 
+	if ( $loop->have_posts() ) :
 
 		echo '<article class="page entry">';
 		echo '<ul class="credits-list" >';
@@ -245,13 +289,9 @@ function th_main_credits_loop() {
 		echo '</ul>';
 		echo '</article>';
 
-		do_action( 'genesis_after_endwhile' );
-
 	endif;
 
 	wp_reset_postdata();}
 
-
-add_action( 'genesis_loop', 'th_main_credits_loop', 15 );
 
 genesis();
