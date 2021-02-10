@@ -73,7 +73,6 @@ function th_partner_repeater() {
 		}
 
 		echo '</div>';
-		// echo '<br>' . var_dump( $partners_array );
 
 	}
 
@@ -91,7 +90,7 @@ function th_staff_repeater() {
 	$staff_section_title = esc_html( get_post_meta( get_the_ID(), 'staff_section_title', true ) );
 
 	$staff_members = get_post_meta( get_the_ID(), 'about-staff', true );
-	$all_meta = get_post_meta( get_the_ID() );  // for testing only
+//	$all_meta = get_post_meta( get_the_ID() );  // for testing only
 
 	$staff_array = array();
 
@@ -102,9 +101,6 @@ function th_staff_repeater() {
 			$staff_array[] = $i;
 
 		}
-
-		shuffle( $staff_array );
-
 
 		echo '<hr>
 				<b id="staff" class="raise-anchor">&nbsp</b>
@@ -128,7 +124,6 @@ function th_staff_repeater() {
 		}
 
 		echo '</div>';
-		// echo '<br>' . var_dump( $partners_array );
 
 	}
 }
@@ -199,7 +194,6 @@ function th_main_credits_loop() {
 
 	}
 
-	global $post;
 
 	$front_end_priority = 0;
 	if ( current_user_can( 'administrator' ) && get_user_meta( get_current_user_id(),'show_credit_priority_on_front_end' , true ) ) {
@@ -245,9 +239,7 @@ function th_main_credits_loop() {
 	);
 
 
-	// Use $loop, a custom variable we made up, so it doesn't overwrite anything
 	$loop = new WP_Query( $args );
-
 
 	if ( $loop->have_posts() ) :
 
