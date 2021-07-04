@@ -889,7 +889,9 @@ function filter_gform_entry_is_spam_name_values( $is_spam, $form, $entry ) {
 		return $is_spam;
 	}
 
+	// Name fields
 	foreach ( $form['fields'] as $field ) {
+
 		// Skipping fields which are administrative or the wrong type.
 		if ( $field->is_administrative() || $field->get_input_type() !== 'name' || $field->nameFormat === 'simple' ) {
 			continue;
@@ -898,16 +900,30 @@ function filter_gform_entry_is_spam_name_values( $is_spam, $form, $entry ) {
 		$first_name = rgar( $entry, $field->id . '.3' );
 		$last_name  = rgar( $entry, $field->id . '.6' );
 
+		// same value for first name and last name
 		if ( ! empty( $first_name ) && ! empty( $last_name ) && $first_name === $last_name ) {
 			return true;
 		}
 
-		$last_name_short = substr($last_name, 0, -2);
+		// as above + two characters added
+		$last_name_short = substr( $last_name, 0, - 2 );
 
 		if ( ! empty( $first_name ) && ! empty( $last_name_short ) && $first_name === $last_name_short ) {
 			return true;
 		}
 	}
 
+	// other fields
+	foreach ( $form['fields'] as $field ) {
+
+		$field_value = rgar( $entry, $field->id );
+
+		if ( is_string( $field_value ) && preg_match( '/[илджгзйпфцчшщъыяю]/i', $field_value ) === 1 ) {
+			return true;
+		}
+	}
+
 	return false;
 }
+
+
