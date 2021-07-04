@@ -913,7 +913,7 @@ function filter_gform_entry_is_spam_name_values( $is_spam, $form, $entry ) {
 		}
 	}
 
-	// other fields
+	// exclude any russian stuff
 	foreach ( $form['fields'] as $field ) {
 
 		$field_value = rgar( $entry, $field->id );
