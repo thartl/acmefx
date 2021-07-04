@@ -873,3 +873,41 @@ function th_inline_video_shortcode( $atts ) {
 
 }
 
+add_filter( 'gform_entry_is_spam', 'filter_gform_entry_is_spam_name_values', 11, 3 );
+/**
+ * Mark subsmissions as spam if first and last name are the same, or if last name only differs by 2 ending characters.
+ *
+ * @param $is_spam
+ * @param $form
+ * @param $entry
+ *
+ * @return bool|mixed
+ */
+function filter_gform_entry_is_spam_name_values( $is_spam, $form, $entry ) {
+
+	if ( $is_spam ) {
+		return $is_spam;
+	}
+
+	foreach ( $form['fields'] as $field ) {
+		// Skipping fields which are administrative or the wrong type.
+		if ( $field->is_administrative() || $field->get_input_type() !== 'name' || $field->nameFormat === 'simple' ) {
+			continue;
+		}
+
+		$first_name = rgar( $entry, $field->id . '.3' );
+		$last_name  = rgar( $entry, $field->id . '.6' );
+
+		if ( ! empty( $first_name ) && ! empty( $last_name ) && $first_name === $last_name ) {
+			return true;
+		}
+
+		$last_name_short = substr($last_name, 0, -2);
+
+		if ( ! empty( $first_name ) && ! empty( $last_name_short ) && $first_name === $last_name_short ) {
+			return true;
+		}
+	}
+
+	return false;
+}

@@ -37,7 +37,7 @@ class CPT_Document {
 		// Set up Document columns
 		add_filter( 'manage_edit-document_columns', array( $this, 'set_up_document_columns' ) );
 
-		// Populate Credit columns
+		// Populate Document columns
 		add_action( 'manage_document_pages_custom_column', array( $this, 'populate_document_columns' ), 10, 2 );
 		add_action( 'manage_document_posts_custom_column', array( $this, 'populate_document_columns' ), 10, 2 );
 
